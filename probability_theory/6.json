@@ -1,0 +1,121 @@
+{
+  "units": [
+    {
+      "id": "T1",
+      "kind": "theorem",
+      "title": "Неравенство Маркова",
+      "statement": "Если $\\xi\\ge0$ — случайная величина и существует $\\E\\xi$, то $\\forall\\eps>0:\\;P\\{\\xi\\ge\\eps\\}\\le\\frac{\\E\\xi}{\\eps}.$",
+      "proof": "Зафиксируем $\\eps>0$ и распишем $\\E\\xi=\\sum_{w\\in\\Omega}P(w)\\xi(w)=\\sum_{\\xi(w)\\ge\\eps}P(w)\\xi(w)+\\sum_{\\xi(w)<\\eps}P(w)\\xi(w)\\ge\\sum_{\\xi(w)\\ge\\eps}P(w)\\eps=\\eps\\,P\\{\\xi\\ge\\eps\\}.$"
+    },
+    {
+      "id": "C1",
+      "kind": "corollary",
+      "title": "Неравенство Чебышёва",
+      "statement": "Если $\\xi$ — случайная величина с дисперсией $D\\xi$, то $\\forall\\eps>0:\\;P\\{|\\xi-\\E\\xi|\\ge\\eps\\}\\le\\frac{D\\xi}{\\eps^2}.$",
+      "proof": "Положим $\\eta=(\\xi-\\E\\xi)^2\\ge0$, тогда $\\E\\eta=D\\xi$ и по Маркову $P\\{\\eta\\ge\\eps^2\\}\\le\\E\\eta/\\eps^2=D\\xi/\\eps^2$, а $\\{\\eta\\ge\\eps^2\\}=\\{|\\xi-\\E\\xi|\\ge\\eps\\}$."
+    },
+    {
+      "id": "T2",
+      "kind": "theorem",
+      "title": "Закон больших чисел",
+      "statement": "Пусть $\\xi_1,\\dots,\\xi_n$ — независимые одинаково распределённые, $\\E\\xi_i=a$, $D\\xi_i=\\sigma^2$. Тогда $\\forall\\eps>0:\\;P\\{\\bigl|\\frac1n\\sum\\xi_i-a\\bigr|\\ge\\eps\\}\\to0$ при $n\\to\\infty$.",
+      "proof": "Пусть $\\eta=\\frac1n\\sum\\xi_i$. Тогда $\\E\\eta=a$, а $D\\eta=\\sigma^2/n$. По неравенству Чебышёва $P\\{|\\eta-a|\\ge\\eps\\}\\le D\\eta/\\eps^2=\\sigma^2/(n\\eps^2)\\to0.$"
+    },
+    {
+      "id": "N1",
+      "kind": "note",
+      "statement": "ЗБЧ утверждает, что среднее большого числа измерений близко к истинному при конечной дисперсии."
+    },
+    {
+      "id": "T3",
+      "kind": "theorem",
+      "title": "Центральная предельная теорема",
+      "statement": "Пусть $\\xi_1,\\dots,\\xi_n$ — независимые одинаково распределённые, $\\E\\xi_i=a$, $D\\xi_i>0$, $S_n=\\sum\\xi_i$. Тогда\n$P\\{a\\le\\frac{S_n-\\E S_n}{\\sqrt{D S_n}}\\le b\\}\\to\\int_a^b\\frac1{\\sqrt{2\\pi}}e^{-x^2/2}dx$ при $n\\to\\infty$."
+    },
+    {
+      "id": "N2",
+      "kind": "note",
+      "statement": "Справа стоит вероятность для стандартного нормального распределения $N(0,1)$."
+    },
+    {
+      "id": "D1",
+      "kind": "definition",
+      "title": "Система множеств",
+      "statement": "Система множеств — любой набор подмножеств данного множества."
+    },
+    {
+      "id": "E1",
+      "kind": "example",
+      "statement": "$F=2^\\Omega$ или $F=\\{\\emptyset\\}$."
+    },
+    {
+      "id": "D2",
+      "kind": "definition",
+      "title": "Полукольцо",
+      "statement": "Система $S$ полукольцо, если:\n1) $\\emptyset\\in S$;\n2) $A,B\\in S\\Rightarrow A\\cap B\\in S$;\n3) $A_1\\subseteq A$, $A_1,A\\in S\\Rightarrow A=\\bigsqcup_{i=1}^nA_i$ для некоторого $n$. "
+    },
+    {
+      "id": "E2",
+      "kind": "example",
+      "title": "Полуинтервалы",
+      "statement": "Пусть $T=\\{[a,b)\\subseteq[A,B)\\}$. Тогда $T$ — полукольцо: \n1) $[A,A)=\\emptyset$;\n2) пересечение полуинтервалов — либо пусто, либо полуинтервал;\n3) разбиение разностного полуинтервала на несколько полуинтервалов."
+    },
+    {
+      "id": "D3",
+      "kind": "definition",
+      "title": "Кольцо",
+      "statement": "Система $R$ — кольцо, если:\n1) $R\\neq\\emptyset$;\n2) $A,B\\in R\\Rightarrow A\\cap B,\\;A\\triangle B\\in R$."
+    },
+    {
+      "id": "T4",
+      "kind": "theorem",
+      "statement": "Если $R$ — кольцо, то:\n1) $R$ — полукольцо;\n2) $A,B\\in R\\Rightarrow A\\cup B,\\;A\\setminus B\\in R$.",
+      "proof": "1) $\\emptyset=A\\triangle A$; 2) $A\\setminus B=A\\triangle(A\\cap B)$; 3) $A\\cup B=(A\\setminus B)\\triangle B$."
+    },
+    {
+      "id": "P1",
+      "kind": "proposition",
+      "statement": "Пересечение любого числа колец — кольцо.",
+      "proof": "Пересечение сохраняет $\\emptyset$ и замкнутость по $\\cap$ и $\\triangle$."
+    },
+    {
+      "id": "N3",
+      "kind": "note",
+      "statement": "\"Любого\" означает произвольную мощность индекса."
+    },
+    {
+      "id": "D4",
+      "kind": "definition",
+      "title": "Алгебра",
+      "statement": "Алгебра — кольцо $\\cA$ с единицей: $\\exists E\\in\\cA$ такое, что $\\forall A\\in\\cA\\;A\\subseteq E$."
+    },
+    {
+      "id": "P2",
+      "kind": "proposition",
+      "statement": "Пересечение любого числа алгебр с общей единицей — алгебра.",
+      "proof": "Единица остаётся, пересечение колец — кольцо."
+    },
+    {
+      "id": "D5",
+      "kind": "definition",
+      "title": "Минимальное кольцо",
+      "statement": "Минимальное кольцо, содержащие $X$, — кольцо $R(X)$, где $X\\subseteq R(X)$ и $R(X)$ содержится в любом кольце, содержащем $X$."
+    },
+    {
+      "id": "T5",
+      "kind": "theorem",
+      "statement": "Для любой системы $X$ существует $R(X)$.",
+      "proof": "Пусть $\\{R_\\beta\\}$ — все кольца, содержащие $X$. Тогда $R=\\bigcap_\\beta R_\\beta$ — кольцо, содержащее $X$, и минимально."
+    },
+    {
+      "id": "N4",
+      "kind": "note",
+      "statement": "Теорема не даёт явного описания $R(X)$, только гарантирует существование."
+    },
+    {
+      "id": "A1",
+      "kind": "anote",
+      "statement": "Упущен вопрос о существовании множества всех колец, содержащих $X$."
+    }
+  ]
+}

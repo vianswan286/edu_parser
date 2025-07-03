@@ -1,0 +1,45 @@
+{
+  "units": [
+    {
+      "id": "T1",
+      "kind": "theorem",
+      "statement": "$\\mu^*$ — аддитивная мера на $M$.",
+      "proof": "Так как мы уже доказали, что $M$ является алгеброй, то нам достаточно показать следующий факт:\n\n$$\n\\forall A, B, C \\in M,\\ A = B \\sqcup C \\Ra \\mu^*(A) = \\mu^*(B) + \\mu^*(C)\n$$\n\nАналогичное неравенство в одну сторону уже есть, остаётся в другую.\n\nЗафиксируем $\\varepsilon > 0$. Поскольку $B, C \\in M$, то $\\exists B_\\varepsilon, C_\\varepsilon \\in R(S)$ — приближения по определению лебеговой измеримости. Увидим следующее включение:\n\n$$\nA \\triangle (B_\\varepsilon \\cup C_\\varepsilon) \\subseteq (B \\triangle B_\\varepsilon) \\cup (C \\triangle C_\\varepsilon) \\Ra \\mu^*(A \\triangle (B_\\varepsilon \\cup C_\\varepsilon)) \\le 2\\varepsilon\n$$\n\nДополнительно воспользуемся следствием из полуаддитивности для оценки снизу $\\mu^*(A)$:\n\n$$\n\\mu^*(A) \\ge \\mu^*(B_\\varepsilon \\cup C_\\varepsilon) - \\mu^*(A \\triangle (B_\\varepsilon \\cup C_\\varepsilon)) \\ge \\mu^*(B_\\varepsilon \\cup C_\\varepsilon) - 2\\varepsilon\n$$\n\nТут заметим, что $B_\\varepsilon, C_\\varepsilon \\in R(S)$, стало быть и $B_\\varepsilon \\cup C_\\varepsilon \\in R(S)$. Иначе говоря, для этих множеств $\\mu^* = \\nu$ — индуцированная мера (реальная!). Значит, мы можем воспользоваться формулой включений и исключений:\n\n$$\n\\mu^*(A) \\ge \\underbrace{\\mu^*(B_\\varepsilon) + \\mu^*(C_\\varepsilon) - \\mu^*(B_\\varepsilon \\cap C_\\varepsilon)}_{\\mu^*(B_\\varepsilon \\cup C_\\varepsilon)} - 2\\varepsilon\n$$\n\nАналогичной оценкой через следствие полуаддитивности мы пользуемся для $\\mu^*(B_\\varepsilon), \\mu^*(C_\\varepsilon)$:\n\n\\begin{multline*}\n  \\mu^*(A) \\ge \\mu^*(B) - \\mu^*(B \\triangle B_\\varepsilon) + \\mu^*(C) - \\mu^*(C \\triangle C_\\varepsilon) - \\mu^*(B_\\varepsilon \\cap C_\\varepsilon) - 2\\varepsilon \\ge \\\\\n  \\mu^*(B) + \\mu^*(C) - \\mu^*(B_\\varepsilon \\cap C_\\varepsilon) - 4\\varepsilon\n\\end{multline*}\n\nОсталось показать, что $\\mu^*(B_\\varepsilon \\cap C_\\varepsilon)$ достаточно малая величина. Для этого снова заметим вложение:\n\n$$\nB_\\varepsilon \\cap C_\\varepsilon \\subseteq (B_\\varepsilon \\setminus B) \\cup (C_\\varepsilon \\setminus C) \\subseteq (B \\triangle B_\\varepsilon) \\cup (C \\triangle C_\\varepsilon) \\Ra \\mu^*(B_\\varepsilon \\cap C_\\varepsilon) \\le 2\\varepsilon\n$$\n\nИтого $\\mu^*(A) \\ge \\mu^*(B) + \\mu^*(C) - 6\\varepsilon$ для $\\forall \\varepsilon > 0$, что и требовалось."
+    },
+    {
+      "id": "D1",
+      "kind": "definition",
+      "title": "мерой Лебега",
+      "statement": "$\\mu^*$ на $M$ называется \\textit{мерой Лебега} и обозначается $\\mu$."
+    },
+    {
+      "id": "T2",
+      "kind": "theorem",
+      "statement": "$M$ является $\\sigma$-алгеброй.",
+      "proof": "Пусть $\\{\\mathcal A_i\\}_{i = 1}^\\infty \\subseteq M$ и $\\mathcal A := \\bigcup_{i = 1}^\\infty \\mathcal A_i$. В силу того, что $M$ уже алгебра, мы можем заменить $\\mathcal A_i$ на $B_i \\in M$ так, что $\\mathcal A = \\bigsqcup_{i = 1}^\\infty B_i$.\n\n1. $\\forall n \\in \\mathbb N\\quad \\bigsqcup_{i = 1}^n B_i \\subseteq \\mathcal A$. Тогда между мерами есть соотношение:\n\n$$\n\\sum_{i = 1}^n \\mu(B_i) = \\mu\\bigl(\\bigsqcup_{i = 1}^n B_i\\bigr) = \\mu^*\\bigl(\\bigsqcup_{i = 1}^n B_i\\bigr) \\le \\mu^*(\\mathcal A)\n$$\n\nОтсюда следует, что $\\sum_{i = 1}^\\infty \\mu(B_i) \\le \\mu^*(\\mathcal A) < \\infty$. Ряд сходится.\n\n2. В частности,\n\n$$\n\\forall \\varepsilon > 0\\ \\exists N \\in \\mathbb N\\quad \\sum_{i = N + 1}^\\infty \\mu(B_i) < \\tfrac{\\varepsilon}{2}.\n$$\n\nДля основной части воспользуемся определением измеримости:\n\n$$\n\\forall \\varepsilon > 0\\ \\exists C_{\\varepsilon/2} \\in M:\\quad \\mu\\bigl(C_{\\varepsilon/2} \\triangle \\bigsqcup_{i = 1}^N B_i\\bigr) < \\tfrac{\\varepsilon}{2}.\n$$\n\nКандидатом на приближение является $C_{\\varepsilon/2}$, и\n\n$$\n\\mathcal A \\triangle C_{\\varepsilon/2} \\subseteq \\bigl(C_{\\varepsilon/2} \\triangle \\bigsqcup_{i = 1}^N B_i\\bigr) \\cup \\bigsqcup_{i = N + 1}^\\infty B_i \\Ra\n\\mu^*(\\mathcal A \\triangle C_{\\varepsilon/2}) < \\tfrac{\\varepsilon}{2} + \\tfrac{\\varepsilon}{2} = \\varepsilon.\n$$"
+    },
+    {
+      "id": "T3",
+      "kind": "theorem",
+      "statement": "$\\mu$ — $\\sigma$-аддитивная мера на $M$.",
+      "proof": "Пусть $\\mathcal A \\in M, \\{\\mathcal A_i\\}_{i = 1}^\\infty \\subseteq M$, причём $\\mathcal A = \\bigsqcup_{i = 1}^\\infty \\mathcal A_i$. Тогда нужно доказать $\\mu(\\mathcal A) \\ge \\sum_{i = 1}^\\infty \\mu(\\mathcal A_i)$. Заметим: поскольку $M$ теперь $\\sigma$-алгебра,\n\n$$\n\\forall n \\in \\mathbb N:\\quad \\mathcal A = A_1 \\sqcup \\dots \\sqcup A_n \\sqcup \\Bigl(\\bigsqcup_{i = n+1}^\\infty A_i\\Bigr),\\quad \\bigsqcup_{i = n+1}^\\infty A_i \\in M.\n$$\n\nПо аддитивности:\n\n$$\n\\forall n:\\quad \\mu(\\mathcal A) = \\sum_{i = 1}^n \\mu(\\mathcal A_i) + \\mu\\Bigl(\\bigsqcup_{i = n+1}^\\infty A_i\\Bigr) \\ge \\sum_{i = 1}^n \\mu(\\mathcal A_i).\n$$\n\nУстремляя $n \\to \\infty$, получаем требуемое."
+    },
+    {
+      "id": "N1",
+      "kind": "note",
+      "statement": "Подведём итоги проделанной работы:\n\n\\begin{align*}\n  &\\text{$S$ с единицей $E$} \\to R(S) \\to M \\text{ — $\\sigma$-алгебра} \\\\\n  &\\text{$m$ — $\\sigma$-аддативная мера} \\to \\nu \\to \\mu \\text{ — $\\sigma$-аддативная мера}\n\\end{align*}\n\nМы смогли продолжить $m$ на $\\sigma(S)$. Почему? Потому что $\\sigma(S) \\subseteq M$ по определению. Возникает вопрос: «А единственна ли мера, определённая на $\\sigma(S)$?» Окажется, что да."
+    },
+    {
+      "id": "E1",
+      "kind": "example",
+      "title": "мера Бореля",
+      "statement": "Борелевской $\\sigma$-алгеброй на отрезке $[a; b]$ будет наименьшая $\\sigma$-алгебра, содержащая все открытые множества из $[a; b]$:\n\n$$\n\\mathcal B_{[a; b]} = \\sigma(\\{A \\subset [a;b] \\mid A\\text{ — открытое}\\}) = \\sigma(\\{[c; d] \\mid a \\le c \\le d \\le b\\}).\n$$\n\nМы уже показывали, что последняя система множеств является полукольцом с единицей $E = [a; b]$, а $m([c; d]) = d - c$ задаёт $\\sigma$-аддитивную меру на этом полукольце, поэтому построенная нами $\\mu$ будет $\\sigma$-адативной мерой на $\\mathcal B_{[a; b]}$ — \"мерой Бореля\"."
+    },
+    {
+      "id": "E2",
+      "kind": "example",
+      "title": "мера Лебега-Стильтеса",
+      "statement": "Рассмотрим $\\mathbb R = (-\\infty; +\\infty)$ и функцию $\\phi(x)$, удовлетворяющую:\n\n1. $\\phi(x)$ неубывающая,  \n2. $\\phi(x)$ непрерывна справа (в любой точке и в $+\\infty$),  \n3. $\\phi(x)$ ограничена.\n\nПоложим за полукольцо $S$:\n\n$$\nS = \\{0\\} \\cup \\{(a; b] \\mid a \\in \\mathbb R \\cup \\{-\\infty\\}, b \\in \\mathbb R\\} \\cup \\{(a; +\\infty) \\mid a \\in \\mathbb R \\cup \\{-\\infty\\}\\}.\n$$\n\nЗададим меру на $S$:\n\n$$\n\\begin{aligned}\n&m(\\{0\\}) = 0,\\\\\n&m((a; b]) = \\phi(b) - \\phi(a),\\\\\n&m((a; +\\infty)) = \\phi(+\\infty) - \\phi(a).\n\\end{aligned}\n$$"
+    }
+  ]
+}

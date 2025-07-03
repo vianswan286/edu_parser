@@ -1,0 +1,73 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "LectureKnowledgeBase",
+  "description": "Единая плоская коллекция атомарных знаний из лекции или конспекта",
+  "type": "object",
+  "properties": {
+    "units": {
+      "type": "array",
+      "description": "Мини-фрагменты знания в неизменном LaTeX-виде",
+      "items": { "$ref": "#/definitions/Unit" },
+      "minItems": 1
+    }
+  },
+  "required": ["units"],
+  "additionalProperties": false,
+
+  "definitions": {
+    "Unit": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Идентификатор из исходника (если был) или сгенерированный агентом, напр. D1, T3, A2"
+        },
+        "kind": {
+          "type": "string",
+          "description": "Тип единицы знания",
+          "enum": [
+            "definition",    /* Определение математического понятия */
+            "axiom",         /* Аксиома или исходное предположение */
+            "theorem",       /* Теорема с доказательством */
+            "lemma",         /* Лемма — вспомогательное утверждение */
+            "proposition",   /* Утверждение, требующее доказательства */
+            "corollary",     /* Следствие из теоремы или леммы */
+            "fact",          /* Факт или известное свойство без доказательства */
+            "example",       /* Пример иллюстрации понятия или результата */
+            "exercise",      /* Упражнение или задача для самостоятельного решения */
+            "note",          /* Замечание или комментарий */
+            "remark",        /* Ремарка или уточнение */
+            "idea",          /* Идея или концептуальное пояснение */
+            "notation",      /* Обозначение или соглашение по символам */
+            "designation"   /* Определение обозначений и терминов */
+          ]
+        },
+        "title": {
+          "type": "string",
+          "description": "Название (термин / заголовок) ровно как в тексте"
+        },
+        "statement": {
+          "type": "string",
+          "description": "Формулировка (чистый LaTeX без купюр)"
+        },
+        "proof": {
+          "type": "string",
+          "description": "Доказательство (LaTeX) — включать, только если оно реально присутствует"
+        },
+        "tags": {
+          "type": "array",
+          "description": "Необязательные текстовые метки для быстрой фильтрации и поиска",
+          "items": { "type": "string" },
+          "uniqueItems": true
+        },
+        "source": {
+          "type": "string",
+          "description": "Ссылка, страница или файл, откуда взят фрагмент (для обратной трассировки)"
+        }
+      },
+      "required": ["id", "kind", "statement"],
+      "additionalProperties": false
+    }
+  }
+}
+

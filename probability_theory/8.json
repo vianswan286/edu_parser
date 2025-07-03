@@ -1,0 +1,89 @@
+{
+  "units": [
+    {
+      "id": "L1",
+      "kind": "lemma",
+      "title": "Полуаддитивность меры",
+      "statement": "Если $m$ — мера на полукольце $S$ и $A,A_1,\\dots,A_n\\in S$, причём $A\\subseteq\\bigcup_{i=1}^nA_i$, то\n\\[m(A)\\le\\sum_{i=1}^nm(A_i).\\]",
+      "proof": "По лемме disruption_lemma существуют $B_1,\\dots,B_q\\in S$ такие, что каждый $A_i=\\bigsqcup_{j\\in\\Lambda_i}B_j$ и $\\bigcup_{i=1}^nA_i=\\bigsqcup_{j=1}^qB_j$. Тогда\n$\\sum_{i=1}^nm(A_i)\\ge\\sum_{j=1}^qm(B_j)\\ge m(A)$."
+    },
+    {
+      "id": "T1",
+      "kind": "theorem",
+      "statement": "Пусть $m$ — мера на полукольце $S$. Тогда функция $\\nu$ на $R(S)$, определённая как\n\\[\\nu(\\mathcal A)=\\sum_{i=1}^nm(A_i),\\quad\\mathcal A=\\bigsqcup_{i=1}^nA_i,\\;A_i\\in S\\]\nявляется мерой на $R(S)$.",
+      "proof": "Корректность: для двух разбиений введите общее через пересечения $C_{i,k}=A_i\\cap B_k$ и переставьте суммы. Неотрицательность тривиальна. Конечная аддитивность: если $\\mathcal A=\\bigsqcup_{i=1}^n\\mathcal A_i$ и каждое $\\mathcal A_i=\\bigsqcup_{j=1}^{p_i}A_{i,j}$, то суммы по двухуровневому разбиению дают нужное."
+    },
+    {
+      "id": "N1",
+      "kind": "note",
+      "statement": "Единственность $\\nu$ очевидна, поскольку каждое $\\mathcal A\\in R(S)$ имеет представление через фрагменты $S$ и мера задаётся точечно."
+    },
+    {
+      "id": "T2",
+      "kind": "theorem",
+      "statement": "Если $m$ — σ-аддитивная мера на полукольце $S$, то индуцированная ею мера $\\nu$ на $R(S)$ тоже σ-аддитивна.",
+      "proof": "Пусть $\\mathcal A=\\bigsqcup_{i=1}^\\infty\\mathcal A_i$, каждое $\\mathcal A_i=\\bigsqcup_{l=1}^{l_i}B_{i,l}$. Разбейте порождающие фрагменты $B_j$ и $B_{i,l}$ через пересечения $C_{j,i,l}$, получите двойной неотрицательный ряд, меняйте порядок суммирования и применяйте σ-аддитивность $m$."
+    },
+    {
+      "id": "T3",
+      "kind": "theorem",
+      "title": "σ-полуаддитивность на кольце",
+      "statement": "Если $\\nu$ — σ-аддитивная мера на кольце $R$, то для любого $\\mathcal A\\in R$ и покрытия $\\mathcal A\\subseteq\\bigcup_{i=1}^\\infty\\mathcal A_i$, $\\mathcal A_i\\in R$, выполняется\n\\[\\nu(\\mathcal A)\\le\\sum_{i=1}^\\infty\\nu(\\mathcal A_i).\\]",
+      "proof": "Разложите $\\bigcup_i\\mathcal A_i$ в дизъюнктное объединение $B_1=\\mathcal A_1$, $B_i=\\mathcal A_i\\setminus\\bigcup_{j<i}\\mathcal A_j$, затем $\\mathcal A=\\bigsqcup_j(\\mathcal A\\cap B_j)$ и используйте неотрицательность и σ-аддитивность."
+    },
+    {
+      "id": "D1",
+      "kind": "definition",
+      "title": "Внешняя мера Лебега",
+      "statement": "Для произвольного $A\\subseteq E$ (необязательно $\\in S$) внешняя мера Лебега определяется как\n\\[\\mu^*(A)=\\inf_{A\\subseteq\\bigcup_{i=1}^\\infty A_i,\\;A_i\\in S}\\sum_{i=1}^\\infty m(A_i).\\]"
+    },
+    {
+      "id": "N2",
+      "kind": "note",
+      "statement": "Внешняя мера Лебега не обязательно аддитивна на произвольных подмножествах."
+    },
+    {
+      "id": "P1",
+      "kind": "proposition",
+      "statement": "На $R(S)$ внешняя мера Лебега совпадает с индуцированной мерой $\\nu$."
+    },
+    {
+      "id": "P2",
+      "kind": "proposition",
+      "statement": "Если при определении $\\mu^*$ допускать только покрытия непересекающимися фрагментами, то получится эквивалентная величина."
+    },
+    {
+      "id": "T4",
+      "kind": "theorem",
+      "statement": "$\\mu^*$ обладает σ-полуаддитивностью: для любых $B_i\\subseteq E$ выполняется\n\\[\\mu^*(\\bigcup_iB_i)\\le\\sum_i\\mu^*(B_i).\\]",
+      "proof": "Для каждого $B_i$ возьмите покрытие $A_{i,j}$ с суммой менее $\\mu^*(B_i)+\\eps/2^i$. Тогда объединение даёт покрытие $\\bigcup_{i,j}A_{i,j}$ и суммарная мера меньше $\\sum_i\\mu^*(B_i)+\\eps$."
+    },
+    {
+      "id": "C1",
+      "kind": "corollary",
+      "statement": "Для любых $A,B\\subseteq E$ справедливо\n\\[|\\mu^*(A)-\\mu^*(B)|\\le\\mu^*(A\\triangle B).\\]"
+    },
+    {
+      "id": "D2",
+      "kind": "definition",
+      "title": "Измеримость по Лебегу",
+      "statement": "Множество $A\\subseteq E$ называется измеримым по Лебегу, если\n\\[\\forall\\eps>0\\ \\exists A_\\eps\\in R(S):\\ \\mu^*(A\\triangle A_\\eps)<\\eps.\\]"
+    },
+    {
+      "id": "N3",
+      "kind": "note",
+      "statement": "Все фрагменты $R(S)$ измеримы, так как $\\mu^*(A\\triangle A)=0$."
+    },
+    {
+      "id": "N4",
+      "kind": "note",
+      "statement": "Обозначим через $M$ множество всех измеримых по Лебегу подмножеств."
+    },
+    {
+      "id": "T5",
+      "kind": "theorem",
+      "statement": "Множество $M$ измеримых по Лебегу подмножеств является алгеброй.",
+      "proof": "Единица и пустое множество лежат в $R(S)\\subseteq M$. Если $A,B\\in M$, выберите приближения $A_{\\eps/2},B_{\\eps/2}\\in R(S)$; тогда симметрические разности\n$(A\\cap B)\\triangle(A_{\\eps/2}\\cap B_{\\eps/2})$ и $(A\\triangle B)\\triangle(A_{\\eps/2}\\triangle B_{\\eps/2})$\nменьше суммы $\\mu^*(A\\triangle A_{\\eps/2})+\\mu^*(B\\triangle B_{\\eps/2})<\\eps$."
+    }
+  ]
+}

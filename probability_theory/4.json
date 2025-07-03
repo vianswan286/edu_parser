@@ -1,0 +1,123 @@
+{
+  "units": [
+    {
+      "id": "D1",
+      "kind": "definition",
+      "title": "Дискретное распределение",
+      "statement": "\\textit{Дискретным распределением} называется соответствие $(x_k\\colon P_k)_k$, где $P_k\\ge0$, $\\sum_kP_k=1$ и $x_k\\in\\R$."
+    },
+    {
+      "id": "E1",
+      "kind": "example",
+      "title": "Бернуллиевское распределение",
+      "statement": "k\\in\\{0,1\\},\\;x_k=k,\\;P_0=1-p,\\;P_1=p\\in(0,1)."
+    },
+    {
+      "id": "E2",
+      "kind": "example",
+      "title": "Биномиальное распределение",
+      "statement": "k\\in\\{0,\\dots,n\\},\\;x_k=k,\\;P_k=C_n^k p^k(1-p)^{n-k}. Обозначается $Bin(n;p)$. "
+    },
+    {
+      "id": "E3",
+      "kind": "example",
+      "title": "Геометрическое распределение",
+      "statement": "k\\in\\N,\\;x_k=k,\\;P_k=(1-p)^{k-1}p. Обозначается $Geom(p)$. "
+    },
+    {
+      "id": "E4",
+      "kind": "example",
+      "title": "Пуассоновское распределение",
+      "statement": "k\\in\\N_0,\\;x_k=k,\\;P_k=\\frac{\\lambda^k}{k!}e^{-\\lambda},\\;\\lambda>0. Обозначается $Poiss(\\lambda)$. "
+    },
+    {
+      "id": "DS1",
+      "kind": "designation",
+      "statement": "Если случайная величина $\\xi:\\Omega\\to\\R$ имеет распределение $\\mathcal D$, то обозначают $\\xi\\sim\\mathcal D$."
+    },
+    {
+      "id": "T1",
+      "kind": "theorem",
+      "title": "Теорема Пуассона",
+      "statement": "Пусть $\\xi_n\\sim Bin(n;p_n)$ и $n p_n\\to\\lambda>0$ при $n\\to\\infty$. Тогда $\\forall k\\in\\N_0:\\;P\\{\\xi_n=k\\}\\to\\frac{\\lambda^k}{k!}e^{-\\lambda}$.",
+      "proof": "Распишем $P_k=C_n^k p_n^k(1-p_n)^{n-k}=\\frac{1}{k!}\\frac{n(n-1)\\dots(n-k+1)}{n^k}(p_n n)^k\\frac{(1-p_n)^n}{(1-p_n)^k}\\to\\frac{\\lambda^k}{k!}e^{-\\lambda}$."
+    },
+    {
+      "id": "N1",
+      "kind": "note",
+      "statement": "Ценность теоремы: биномиальные суммы громоздки, пуассоновская аппроксимация проще."
+    },
+    {
+      "id": "E5",
+      "kind": "example",
+      "title": "Приближение биномиального пуассоновским",
+      "statement": "Для $n=1000$, $p=1/200$ имеем $\\xi\\sim Bin(1000;1/200)$, $\\lambda=5$, поэтому\n$P\\{\\xi\\le3\\}\\approx\\sum_{k=0}^3\\frac{5^k}{k!}e^{-5}$."
+    },
+    {
+      "id": "P1",
+      "kind": "proposition",
+      "title": "Оценка ошибки аппроксимации Пуассона",
+      "statement": "Если $\\xi\\sim Bin(n;p)$, $\\eta\\sim Poiss(\\lambda)$, $\\lambda=np$, то\n$\\sum_{k=0}^\\infty|P\\{\\xi=k\\}-P\\{\\eta=k\\}|\\le\\frac{2\\lambda}{n}\\min\\{2,\\lambda\\}$."
+    },
+    {
+      "id": "N2",
+      "kind": "note",
+      "statement": "В предыдущем примере погрешность не превышает $1/50$."
+    },
+    {
+      "id": "N3",
+      "kind": "note",
+      "statement": "Пуассоновское распределение возникает также в пуассоновском процессе."
+    },
+    {
+      "id": "N4",
+      "kind": "note",
+      "statement": "Далее — только дискретные вероятностные пространства."
+    },
+    {
+      "id": "D2",
+      "kind": "definition",
+      "title": "Независимость случайных величин",
+      "statement": "Случайные величины $\\xi,\\eta$ независимы, если $\\forall x\\in\\chi_\\xi,\\forall y\\in\\chi_\\eta:\\{\\xi=x\\}\\indep\\{\\eta=y\\}$. "
+    },
+    {
+      "id": "P2",
+      "kind": "proposition",
+      "title": "Сумма независимых пуассоновских",
+      "statement": "Если $\\xi\\sim Poiss(\\lambda_1)$, $\\eta\\sim Poiss(\\lambda_2)$ и $\\xi\\indep\\eta$, то $\\xi+\\eta\\sim Poiss(\\lambda_1+\\lambda_2)$.",
+      "proof": "Пусть $P\\{\\xi+\\eta=k\\}=\\sum_{i=0}^kP\\{\\xi=i\\}P\\{\\eta=k-i\\}=\\sum_{i=0}^k\\frac{\\lambda_1^i}{i!}e^{-\\lambda_1}\\frac{\\lambda_2^{k-i}}{(k-i)!}e^{-\\lambda_2}=\\frac{(\\lambda_1+\\lambda_2)^k}{k!}e^{-\\lambda_1-\\lambda_2}$."
+    },
+    {
+      "id": "N5",
+      "kind": "note",
+      "statement": "Не работает для $\\xi+\\xi=2\\xi$, т.к. новые значения только чётные."
+    },
+    {
+      "id": "N6",
+      "kind": "note",
+      "statement": "Интуиция матожидания: среднее взвешенное при большом числе испытаний."
+    },
+    {
+      "id": "D3",
+      "kind": "definition",
+      "title": "Математическое ожидание",
+      "statement": "Для дискретного $(\\Omega,F,P)$\n$\\E\\xi=\\sum_{w\\in\\Omega}P(\\{w\\})\\xi(w)$, при этом ряд сходится абсолютно."
+    },
+    {
+      "id": "A1",
+      "kind": "anote",
+      "statement": "В дискретном случае \\(\\E\\xi\\) — среднее взвешенное значений $\\xi$ с весами-вероятностями."
+    },
+    {
+      "id": "T2",
+      "kind": "theorem",
+      "title": "Свойства математического ожидания",
+      "statement": "В дискретном пространстве:\\n1) $\\E\\xi=\\sum_k x_kP_k$.\\n2) $\\E\\phi(\\xi)=\\sum_k\\phi(x_k)P_k$.\\n3) Линейность.\\n4) $\\xi\\ge0\\Rightarrow\\E\\xi\\ge0$.\\n5) $\\xi\\ge\\eta\\Rightarrow\\E\\xi\\ge\\E\\eta$.\\n6) $\\xi\\indep\\eta\\Rightarrow\\E(\\xi\\eta)=\\E\\xi\\E\\eta$.\\n7) $(\\E|\\xi\\eta|)^2\\le\\E\\xi^2\\E\\eta^2$."
+    },
+    {
+      "id": "N7",
+      "kind": "note",
+      "statement": "Из (5) следует $|\\E\\xi|\\le\\E|\\xi|$."
+    }
+  ]
+}
