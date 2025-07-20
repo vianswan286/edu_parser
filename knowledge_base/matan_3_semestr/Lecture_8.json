@@ -1,0 +1,31 @@
+{
+  "units": [
+    {
+      "id": "T1",
+      "kind": "theorem",
+      "title": "Счётная аддитивность интеграла Лебега",
+      "statement": "Пусть $\\{E_i\\}_{i = 1}^\\infty \\subset \\MM$ и $E_i \\cap E_j = \\emptyset$ при $i \\neq j$. Тогда для любой неотрицательной функции $f$, измеримой на $E = \\bigsqcup\\limits_{i = 1}^\\infty E_i$ верно следующее равенство: \\[\\int\\limits_{E} fd\\mu = \\sum\\limits_{i = 1}^\\infty \\int\\limits_{E_i} fd\\mu.\\]",
+      "proof": "",
+      "tags": [],
+      "source": "matan_3_semestr/Lecture_8.tex"
+    },
+    {
+      "id": "T2",
+      "kind": "theorem",
+      "title": "Абсолютная непрерывность интеграла Лебега",
+      "statement": "Пусть $f \\in \\widetilde{L_1}(X, \\mu)$. Тогда $\\forall \\epsilon > 0 \\ \\exists \\delta(\\epsilon)$ т.ч. $\\forall E \\in \\MM : \\mu(E) < \\delta \\hookrightarrow$ \\[\\int\\limits_{E} |f|d\\mu < \\epsilon.\\]",
+      "proof": "",
+      "tags": [],
+      "source": "matan_3_semestr/Lecture_8.tex"
+    },
+    {
+      "id": "T3",
+      "kind": "theorem",
+      "title": "Теорема Лебега (о мажорируемой сходимости)",
+      "statement": "Пусть дана $\\{f_n\\}$~---~последовательность измеримых на X функций, п.в. сходящаяся к $f$. Пусть $\\exists g$~---~неотрицательная измеримая функция т.ч. \\begin{itemize} \\item $g \\in \\widetilde{L_1}(X, \\mu)$ \\item $g$~---~мажоранта последовательности $\\{f_n\\}_{n=1}^{\\infty}$, т.е. $\\forall n \\in \\N \\hookrightarrow |f_n| \\leq g$ почти всюду на X. \\end{itemize} Тогда \\begin{itemize} \\item $f \\in \\widetilde{\\LL_1}(X, \\mu)$ \\item \\[ \\int\\limits_X f d \\mu = \\int\\limits_X \\lim\\limits_{n \\to \\infty} f_n d \\mu = \\lim\\limits_{n \\to \\infty} \\int\\limits_X f_n d \\mu \\] \\end{itemize}",
+      "proof": "",
+      "tags": [],
+      "source": "matan_3_semestr/Lecture_8.tex"
+    }
+  ]
+}

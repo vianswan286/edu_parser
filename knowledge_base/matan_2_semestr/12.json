@@ -1,0 +1,76 @@
+{
+  "units": [
+    {
+      "id": "D1",
+      "kind": "definition",
+      "title": "",
+      "statement": "\\textit{Разбиением невырожденного отрезка} $[a, b]$ будем называть любой конечный набор точек $$T := \\{x_i\\}_{i = 0}^N, N \\in \\N : \\ a = x_0 < x_i < x_N = b, \\forall i \\in \\{ 1, 2, \\ldots, N\\}.$$",
+      "proof": "",
+      "tags": [],
+      "source": "matan_2_semestr/12.tex"
+    },
+    {
+      "id": "D2",
+      "kind": "definition",
+      "title": "",
+      "statement": "\\textit{Мелкость разбиения} $l(T) := \\max\\limits_{i \\in \\{1, \\dots, N\\}} |x_i - x_{i - 1}|$.",
+      "proof": "",
+      "tags": [],
+      "source": "matan_2_semestr/12.tex"
+    },
+    {
+      "id": "D3",
+      "kind": "definition",
+      "title": "",
+      "statement": "Будем говорить, что $T_1 \\succcurlyeq T_2$, если $T_2 \\subset T_1$ в теоретико-множественном смысле.",
+      "proof": "",
+      "tags": [],
+      "source": "matan_2_semestr/12.tex"
+    },
+    {
+      "id": "D4",
+      "kind": "definition",
+      "title": "",
+      "statement": "Пусть $f$: $[a, b] \\rightarrow \\R$. Пусть $T$~---~разбиение отрезка $[a, b]$. \\textit{Нижней суммой Дарбу} будем называть $s(f, T) := \\sum \\limits_{i = 1}^N m_i(x_i - x_{i - 1})$, где $m_i := \\inf \\limits_{x \\in [x_{i - 1}, x_i]} f(x)$.",
+      "proof": "",
+      "tags": [],
+      "source": "matan_2_semestr/12.tex"
+    },
+    {
+      "id": "D5",
+      "kind": "definition",
+      "title": "",
+      "statement": "Пусть $f$: $[a, b] \\rightarrow \\R$. Пусть $T$~---~разбиение отрезка $[a, b]$. \\textit{Верхней суммой Дарбу} будем называть $S(f, T) := \\sum \\limits_{i = 1}^N M_i(x_i - x_{i - 1})$, где $M_i := \\sup \\limits_{x \\in [x_{i - 1}, x_i]} f(x)$.",
+      "proof": "",
+      "tags": [],
+      "source": "matan_2_semestr/12.tex"
+    },
+    {
+      "id": "D6",
+      "kind": "definition",
+      "title": "",
+      "statement": "\\textit{Нижним интегралом Дарбу} функции $f$: $[a, b] \\rightarrow \\R$ будем называть $J_{*} (f) := \\sup\\limits_{\\underset{[a, b]}{T\\text{~---~разбиение}}} s (f, T)$. \\textit{Верхним интегралом Дарбу} функции $f$: $[a, b] \\rightarrow \\R$ будем называть $J^{*} (f) := \\inf\\limits_{\\underset{[a, b]}{T\\text{~---~разбиение}}} S (f, T)$.",
+      "proof": "",
+      "tags": [],
+      "source": "matan_2_semestr/12.tex"
+    },
+    {
+      "id": "D7",
+      "kind": "definition",
+      "title": "Определение интеграла Римана в терминах сумм Дарбу",
+      "statement": "Будем говорить, что $f$: $[a, b] \\rightarrow \\R$~---~\\textit{интегрируема по Риману} на отрезке $[a, b]$ и писать $f \\in \\Rim([a, b])$, если $\\exists J \\in \\R$: $\\forall \\epsilon > 0$ $\\exists \\delta(\\epsilon) > 0$: $\\forall \\text{ разбиения } T \\text{ отрезка } [a, b]$ мелкости $l(T) < \\delta(\\epsilon) \\ \\hookrightarrow$ \\begin{equation*} \\begin{cases} |s(f, T) - J| < \\epsilon; \\\\ |S(f, T) - J| < \\epsilon. \\end{cases} \\end{equation*}",
+      "proof": "",
+      "tags": [],
+      "source": "matan_2_semestr/12.tex"
+    },
+    {
+      "id": "T8",
+      "kind": "theorem",
+      "title": "Необходимые условия интегрируемости по Риману",
+      "statement": "Пусть $f \\in \\Rim([a, b])$. Тогда $f$~---~ограничена на $[a, b]$.",
+      "proof": "",
+      "tags": [],
+      "source": "matan_2_semestr/12.tex"
+    }
+  ]
+}

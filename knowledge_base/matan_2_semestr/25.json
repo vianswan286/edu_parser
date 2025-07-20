@@ -1,0 +1,58 @@
+{
+  "units": [
+    {
+      "id": "D1",
+      "kind": "definition",
+      "title": "",
+      "statement": "Будем говорить, что $f$ бесконечно дифференцируема на интервале $(a, b)$ и писать $f \\in \\mathcal{C}^{\\infty}((a, b))$, если $\\forall n \\in \\N, \\ \\forall x \\in (a, b) \\ \\exists f^{(n)}(x) \\in \\R$",
+      "proof": "",
+      "tags": [],
+      "source": "matan_2_semestr/25.tex"
+    },
+    {
+      "id": "D2",
+      "kind": "definition",
+      "title": "",
+      "statement": "Пусть $x_0 \\in \\R$ и $\\forall n \\in \\N \\exists f^{(n)}(x_0) \\in \\R$ ряд $\\sum\\limits_{k = 0}^\\infty \\frac{f^{(k)}}{k!}(x - x_0)^k$ ~---~ ряд Тейлора функции $f$ c центром в точке $x_0$.",
+      "proof": "",
+      "tags": [],
+      "source": "matan_2_semestr/25.tex"
+    },
+    {
+      "id": "D3",
+      "kind": "definition",
+      "title": "",
+      "statement": "Будем говорить, что $f : \\mathbb{C} \\rightarrow \\mathbb{C}$ ~---~ регулярна $\\Rightarrow$ аналитична $\\Rightarrow$ голоморфна в точке $z_0 \\in \\mathbb{C}$, если $\\exists \\delta > 0 : \\forall z \\in B_{\\delta}(z_0) \\hookrightarrow f(z) = \\sum\\limits_{n = 0}^\\infty \\frac{f^{(n)}(z_0)}{n!}(z - z_0)^n$",
+      "proof": "",
+      "tags": [],
+      "source": "matan_2_semestr/25.tex"
+    },
+    {
+      "id": "D4",
+      "kind": "definition",
+      "title": "",
+      "statement": "Будем говорить, что $f$ ~---~ аналитична (регулярна, голоморфна) в открытом множестве $\\Omega \\subset \\mathbb{C}$, если она аналитична в $\\forall z \\in \\Omega$.",
+      "proof": "",
+      "tags": [],
+      "source": "matan_2_semestr/25.tex"
+    },
+    {
+      "id": "T5",
+      "kind": "theorem",
+      "title": "",
+      "statement": "[о почленном интегрировании и дифференцировании степенного ряда] Пусть $\\{a_k\\} \\subset \\R $ и $x_0 \\in \\R$. Тогда степенной ряд $\\sum\\limits_{k = 0}^\\infty a_k (x - x_0)^k$ \\noindent 1) Можно почленно интегрировать внутри интервала сходимости, т.е. если $f(x) = \\sum\\limits_{k = 0}^\\infty a_k (x - x_0)^k$, то $\\forall x \\in (x_0 - R_{\\text{сх}}, x_0 + R_{\\text{сх}}) \\hookrightarrow \\int\\limits_{x_0}^{x} f(t) dt = \\sum\\limits_{k = 0}^\\infty \\frac{a_k}{k + 1} (x - x_0)^{k + 1}$ \\noindent 2) Можно почленно дифференцировать внутри интервала сходимости, т.е. если $f(x) = \\sum\\limits_{k = 0}^\\infty a_k(x - x_0)^k$, то $\\forall n \\in \\N$ и $\\forall x \\in (x_0 - R_{\\text{сх}}, x_0 + R_{\\text{сх}}) \\hookrightarrow $ $\\Rightarrow \\ f^{(n)}(x) = \\sum\\limits_{k = n}^\\infty a_k(x - x_0)^{k - n}\\cdot k(k - 1)\\dots (k - n + 1)$ \\noindent 3) Если $f(x) = \\sum\\limits_{k = 0}^\\infty a_k (x - x_0)^k$, то $a_k = \\frac{f^{k}(x_0)}{k!}$",
+      "proof": "",
+      "tags": [],
+      "source": "matan_2_semestr/25.tex"
+    },
+    {
+      "id": "T6",
+      "kind": "theorem",
+      "title": "Достаточные условия аналитичности функции в точке",
+      "statement": "Пусть $f \\in \\mathcal{C}^{\\infty}((x_0 - \\delta, x_0 + \\delta)), \\delta > 0$. Пусть $\\exists M > 0 \\sup\\limits_{x \\in (x_0 - \\delta, x_0 + \\delta)} |f^{(n)}(x)| \\le M^n, \\forall n \\in \\N \\ (\\star)$. \\noindent Тогда $\\forall x \\in (x_0 - \\delta, x_0 + \\delta) f(x) = \\sum\\limits_{k = 0}^{\\infty} \\frac{f^{(k)}(x_0)}{k!}(x - x_0)^k$, в частности $f \\in \\mathcal{A}(x_0)$",
+      "proof": "",
+      "tags": [],
+      "source": "matan_2_semestr/25.tex"
+    }
+  ]
+}

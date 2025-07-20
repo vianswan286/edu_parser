@@ -1,0 +1,67 @@
+{
+  "units": [
+    {
+      "id": "D1",
+      "kind": "definition",
+      "title": "",
+      "statement": "Ф-ия $f \\in R([a, b]) \\Longleftrightarrow$ $\\exists J \\in \\R:\\; \\forall \\epsilon > 0\\; \\exists \\delta(\\epsilon):\\; \\forall T: \\; l(T) < \\delta \\hookrightarrow |s(f, T) - J| < \\epsilon,\\; |S(f, T) - J| < \\epsilon$",
+      "proof": "",
+      "tags": [],
+      "source": "matan_2_semestr/15.tex"
+    },
+    {
+      "id": "D2",
+      "kind": "definition",
+      "title": "",
+      "statement": "Будем говорить, что $F$ -- первообразная ф-ии $f$ на о-ке $[a, b]$ $-\\infty < a < b < +\\infty$, если \\begin{equation*} \\begin{cases} F'(x) = f(x) \\quad \\forall x \\in (a, b) \\\\ F'_+(a) = f(a) \\\\ F'_-(b) = f(b) \\end{cases} \\end{equation*}",
+      "proof": "",
+      "tags": [],
+      "source": "matan_2_semestr/15.tex"
+    },
+    {
+      "id": "T3",
+      "kind": "theorem",
+      "title": "",
+      "statement": "Пусть $f, g \\in R([a, b])$. Тогда $\\forall \\alpha, \\beta$ $\\alpha f + \\beta g \\in R([a, b])$ и, кроме того, $\\int_a^b (\\alpha f(x) + \\beta g(x)) dx = \\alpha \\int_a^b f(x)dx + \\beta \\int_a^b g(x)dx$",
+      "proof": "",
+      "tags": [],
+      "source": "matan_2_semestr/15.tex"
+    },
+    {
+      "id": "T4",
+      "kind": "theorem",
+      "title": "",
+      "statement": "\\textbf{Интегрирование неравенств.} Пусть $f, g \\in R([a, b])$ и $f(x) \\leqslant g(x)\\quad \\forall x \\in [a, b]$. Тогда $\\int_a^b f(x)dx \\leqslant \\int_a^b g(x)dx$",
+      "proof": "",
+      "tags": [],
+      "source": "matan_2_semestr/15.tex"
+    },
+    {
+      "id": "T5",
+      "kind": "theorem",
+      "title": "",
+      "statement": "\\textbf{Интегрируемость модуля.} Если $f \\in R([a, b])$, то $|f| \\in R([a, b])$ и справедливо неравенство \\begin{equation} \\left|\\int_a^b f(x)dx\\right| \\leqslant \\int_a^b |f(x)|dx \\label{eq:int_of_abs} \\end{equation}",
+      "proof": "",
+      "tags": [],
+      "source": "matan_2_semestr/15.tex"
+    },
+    {
+      "id": "T6",
+      "kind": "theorem",
+      "title": "",
+      "statement": "\\textbf{Аддитивность интеграла по отрезкам.} Пусть $f\\in \\Rim([a, b])$ и $f \\in \\Rim([b, c])$, где $a \\leqslant b \\leqslant c$. Тогда $f \\in R([a, c])$ и справедливо равенство $\\int_a^c f(x)dx = \\int_a^b f(x)dx + \\int_b^c f(x)dx$",
+      "proof": "",
+      "tags": [],
+      "source": "matan_2_semestr/15.tex"
+    },
+    {
+      "id": "T7",
+      "kind": "theorem",
+      "title": "",
+      "statement": "Пусть $f \\in C([a, b])$. Тогда $F(x) = \\int_a^x f(t) dt$ непрерывно дифференцируема на $[a, b]$ и справедливо равенство $F'(x) = f(x)\\quad \\forall x \\in [a, b]$. (с соответствующим соглашением в точках $a$ и $b$)",
+      "proof": "",
+      "tags": [],
+      "source": "matan_2_semestr/15.tex"
+    }
+  ]
+}

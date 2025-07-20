@@ -1,0 +1,175 @@
+{
+  "units": [
+    {
+      "id": "D1",
+      "kind": "definition",
+      "title": "",
+      "statement": "(Почти равномерная сходимость) Будем говорить что последовательность $\\{f_n\\} \\subset \\LL_0(X, \\MM)$ сходится почти равномерно к $f \\in \\LL_0(X, \\MM)$, если $\\forall \\varepsilon > 0 \\ \\exists E_\\epsilon \\in \\MM$ такое, что $\\mu(E_\\epsilon) < \\epsilon$ и $f_n \\underset{X \\setminus E_\\epsilon}{\\rr} f$ и обозначать это как $f_n \\overset{\\text{п.р.}}{\\underset{X}{\\rr}}f, n \\ra \\infty.$",
+      "proof": "",
+      "tags": [],
+      "source": "matan_3_semestr/Lecture_6.tex"
+    },
+    {
+      "id": "D2",
+      "kind": "definition",
+      "title": "",
+      "statement": "\\textit{$C$-свойством Лузина} будем называть следующее условие на функцию: \\[\\forall \\epsilon > 0 \\ \\exists E_\\epsilon: \\LL^n(E_\\epsilon) < \\epsilon \\wedge \\exists f_\\epsilon \\in C(\\R^n \\setminus E_{\\epsilon}) \\ \\forall x \\in \\R^n \\setminus E_\\epsilon \\hookrightarrow f(x) = f_\\epsilon(x).\\]",
+      "proof": "",
+      "tags": [],
+      "source": "matan_3_semestr/Lecture_6.tex"
+    },
+    {
+      "id": "D3",
+      "kind": "definition",
+      "title": "Интеграл Лебега Toy version 1",
+      "statement": "Пусть $f$~---~простая неотрицательная функция. Тогда интегралом Лебега на множестве $E$ от неё будем называть \\[\\int\\limits_E fd\\mu = \\sum\\limits_{k = 1}^N a_k\\mu(E_k \\cap E) \\in [0, +\\infty]\\]",
+      "proof": "",
+      "tags": [],
+      "source": "matan_3_semestr/Lecture_6.tex"
+    },
+    {
+      "id": "D4",
+      "kind": "definition",
+      "title": "",
+      "statement": "Простую неотрицательную функцию $f$ будем называть \\textit{интегрируемой по Лебегу}, если интеграл от неё конечен.",
+      "proof": "",
+      "tags": [],
+      "source": "matan_3_semestr/Lecture_6.tex"
+    },
+    {
+      "id": "D5",
+      "kind": "definition",
+      "title": "Интеграл Лебега Toy version 2",
+      "statement": "Пусть $f$~---~неотрицательная измеримая функция. Тогда \\[\\int\\limits_E fd\\mu = \\sup\\limits_{0 \\leq \\psi \\leq f} \\int\\limits_E \\psi d\\mu,\\] где супремум берётся по всем таким простым функциям $\\psi$.",
+      "proof": "",
+      "tags": [],
+      "source": "matan_3_semestr/Lecture_6.tex"
+    },
+    {
+      "id": "D6",
+      "kind": "definition",
+      "title": "Интеграл Лебега",
+      "statement": "Пусть $f$~---~произвольная измеримая на $E$ функция. Тогда $f = f_+ - f_-$, где $f_+ = \\max(f, 0), f_- = \\max(-f, 0)$. Определим \\textit{интеграл Лебега} от неё как \\[\\int\\limits_E fd\\mu = \\int\\limits_E f_+d\\mu - \\int\\limits_E f_-d\\mu,\\] в случае конечности интегралов от неотрицательных частей. Иначе будем говорить что функция $f$ \\underline{не интегрируема} по Лебегу.",
+      "proof": "",
+      "tags": [],
+      "source": "matan_3_semestr/Lecture_6.tex"
+    },
+    {
+      "id": "D7",
+      "kind": "definition",
+      "title": "",
+      "statement": "Произвольную измеримую функцию $f$ будем называть \\textit{интегрируемой по Лебегу}, если $\\int\\limits_E f_+d\\mu < +\\infty$ и $\\int\\limits_E f_-d\\mu < +\\infty$.",
+      "proof": "",
+      "tags": [],
+      "source": "matan_3_semestr/Lecture_6.tex"
+    },
+    {
+      "id": "D8",
+      "kind": "definition",
+      "title": "",
+      "statement": "Пусть $p \\in [1, +\\infty), E \\in \\MM$. Тогда положим:\\[\\widetilde{L_p}(E, \\mu) = \\{f \\in \\LL_0(E, \\mu) \\Big | \\ \\int\\limits_E |f|^pd\\mu < +\\infty\\}\\]",
+      "proof": "",
+      "tags": [],
+      "source": "matan_3_semestr/Lecture_6.tex"
+    },
+    {
+      "id": "D9",
+      "kind": "definition",
+      "title": "",
+      "statement": "Будем называть \\textit{\\underline{существенным супремумом}} для измеримой функции $f$ на пространстве с мерой $(X, \\MM, \\mu)$ следующее: \\[\\esssup\\limits_{x \\in X}|f(x)| = \\inf\\{L > 0 \\mid \\mu(|f| > L) = 0\\}\\]",
+      "proof": "",
+      "tags": [],
+      "source": "matan_3_semestr/Lecture_6.tex"
+    },
+    {
+      "id": "D10",
+      "kind": "definition",
+      "title": "",
+      "statement": "Пусть $(X, \\MM, \\mu)$~---~пространство с мерой. Будем говорить что $f: X \\rightarrow \\overline{\\R}$~---~существенно ограничена, если $\\esssup\\limits_{x \\in X} |f(x)| < +\\infty$.",
+      "proof": "",
+      "tags": [],
+      "source": "matan_3_semestr/Lecture_6.tex"
+    },
+    {
+      "id": "D11",
+      "kind": "definition",
+      "title": "",
+      "statement": "Определим $L_\\infty$ как ЛНП классов эквивалентности существенно ограниченных на $X$ функций с нормой $\\esssup$, то есть $\\|f\\|_\\infty = \\esssup\\limits_X |f|$.",
+      "proof": "",
+      "tags": [],
+      "source": "matan_3_semestr/Lecture_6.tex"
+    },
+    {
+      "id": "T12",
+      "kind": "theorem",
+      "title": "Рисс",
+      "statement": "Пусть дана последовательность $\\{f_n\\} \\subset \\LL_0(X, \\mu)$, сходящаяся по мере к некоторой $f \\in \\LL_0(X, \\mu)$. Тогда у неё существует подпоследовательность $f_{n_k} \\xrightarrow[X]{\\text{п.в.}} f, k \\rightarrow +\\infty$",
+      "proof": "",
+      "tags": [],
+      "source": "matan_3_semestr/Lecture_6.tex"
+    },
+    {
+      "id": "T13",
+      "kind": "theorem",
+      "title": "Егоров",
+      "statement": "Пусть даны $E \\in \\MM$: $\\mu(E) < +\\infty$ и последовательность $\\{f_n\\} \\subset \\LL_0(E, \\mu)$. Тогда если последовательность сходится п.в. к $f \\in \\LL_0(E, \\mu)$, то она сходится п.р.",
+      "proof": "",
+      "tags": [],
+      "source": "matan_3_semestr/Lecture_6.tex"
+    },
+    {
+      "id": "T14",
+      "kind": "theorem",
+      "title": "о диагональной последовательности",
+      "statement": "Пусть $X$~---~пространство с $\\sigma$-конечной мерой. Тогда если есть $\\{g_n\\} \\subset \\LL_0(X, \\mu)$, сходящаяся п.в. к $h \\in \\LL_0(X, \\mu)$ и $\\forall n \\in \\N$ есть $\\{f_{n,k}\\} \\subset \\LL_0(X, \\mu)$ сходящаяся п.в. к $g_n$, то $\\forall n \\in \\N \\ \\exists k(n) \\in \\N$ такая, что $f_{n, k(n)} \\xrightarrow[X]{\\text{п.в.}} h, n \\rightarrow +\\infty$.",
+      "proof": "",
+      "tags": [],
+      "source": "matan_3_semestr/Lecture_6.tex"
+    },
+    {
+      "id": "T15",
+      "kind": "theorem",
+      "title": "",
+      "statement": "Пусть $K \\subset \\R^n$~---~компакт. Тогда существует $\\{f_n\\}$~---~последовательность непрерывных функций, сходящаяся почти всюду к $\\chi_K$.",
+      "proof": "",
+      "tags": [],
+      "source": "matan_3_semestr/Lecture_6.tex"
+    },
+    {
+      "id": "T16",
+      "kind": "theorem",
+      "title": "Теорема Фреше/2 теорема Рисса",
+      "statement": "Пусть $h$~---~произвольная измеримая функция на $X$. Тогда существует последовательность $\\{f_n\\} \\subset C(\\R^n)$: $f_n \\xrightarrow[\\R^n]{\\text{п.в.}} h, n \\rightarrow +\\infty$",
+      "proof": "",
+      "tags": [],
+      "source": "matan_3_semestr/Lecture_6.tex"
+    },
+    {
+      "id": "T17",
+      "kind": "theorem",
+      "title": "Лузина",
+      "statement": "Произвольная измеримая п.в. конечная функция $f$ в $\\R^n$ удовлетворяет $C$-свойству Лузина.",
+      "proof": "",
+      "tags": [],
+      "source": "matan_3_semestr/Lecture_6.tex"
+    },
+    {
+      "id": "T18",
+      "kind": "theorem",
+      "title": "Неравенство Гёльдера",
+      "statement": "Пусть $f \\in \\widetilde{L_p}(E, \\mu), g \\in \\widetilde{L_{p'}}(E, \\mu)$, где $p, p' \\in (1, +\\infty)$: $\\frac{1}{p} + \\frac{1}{p'} = 1$. Тогда $(f\\cdot g) \\in \\widetilde{L_1}$ и \\[\\int\\limits_E |fg|d\\mu \\leq \\Bigg(\\int\\limits_E |f|^p d\\mu\\Bigg)^{1/p}\\Bigg(\\int\\limits_E |g|^{p'}d\\mu \\Bigg)^{1/{p'}}\\]",
+      "proof": "",
+      "tags": [],
+      "source": "matan_3_semestr/Lecture_6.tex"
+    },
+    {
+      "id": "T19",
+      "kind": "theorem",
+      "title": "Неравенство Чебышева",
+      "statement": "Пусть даны положительные $p$ и $t$ и заданная на $X$ функция $f$. Тогда если $E_t = \\{x \\in X \\mid |f| \\geq t\\}$, то \\[\\mu(E_t) \\leq \\frac{1}{t^p}\\int\\limits_X |f|^pd\\mu.\\]",
+      "proof": "",
+      "tags": [],
+      "source": "matan_3_semestr/Lecture_6.tex"
+    }
+  ]
+}

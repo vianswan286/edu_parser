@@ -1,0 +1,85 @@
+{
+  "units": [
+    {
+      "id": "D1",
+      "kind": "definition",
+      "title": "",
+      "statement": "Пусть $\\displaystyle P_{n} (z) = \\sum_{k = 0}^{n} a_{k} z^{k}$, $a_{k} \\in \\R \\ \\forall k \\in \\{0, 1, \\ldots, n \\}$. Тогда $\\displaystyle \\overline{P_{n} (z)} = \\overline{\\sum_{k = 0}^{n} a_{k} z^{k}} = \\sum_{k = 0}^{n} \\overline{a_{k} z^{k}} = \\sum_{k = 0}^{n} a_{k} \\overline{z^{k}} = \\sum_{k = 0}^{n} a_{k} (\\overline{z})^{k} = P_{n} (\\overline{z})$.",
+      "proof": "",
+      "tags": [],
+      "source": "matan_1_semester/23 lecture.tex"
+    },
+    {
+      "id": "D2",
+      "kind": "definition",
+      "title": "",
+      "statement": "Будем говорить, что $z_{0}$~---~\\textit{корень кратности $k$} ($k \\leq n$) полинома $P_{n} (z)$, если $P_{n} (z) = (z - z_{0})^{k} \\cdot Q (z)$, где $Q (z)$ не имеет в качестве корня $z_{0}$.",
+      "proof": "",
+      "tags": [],
+      "source": "matan_1_semester/23 lecture.tex"
+    },
+    {
+      "id": "D3",
+      "kind": "definition",
+      "title": "",
+      "statement": "$\\R^n$, $n \\in \\N$~---~пространство строк длины $n$ из вещественных чисел, то есть $x \\in \\R^n$, $x = (x_{1}, \\ldots, x_{n})$.",
+      "proof": "",
+      "tags": [],
+      "source": "matan_1_semester/23 lecture.tex"
+    },
+    {
+      "id": "D4",
+      "kind": "definition",
+      "title": "",
+      "statement": "Пусть $E$~---~множество, на котором введены операции (отображения): $\\begin{gathered} \\text{<<+>>}: \\E \\times \\E \\mapsto \\E \\\\ \\text{<<}\\cdot\\text{>>: }\\ \\R \\times \\E \\mapsto \\E \\end{gathered} \\quad$ удовлетворяющее следующим условиям: \\begin{tabular}{lll} 1. & $a + b = b + a$ & $\\forall a, b \\in \\E$ \\\\ 2. & $(a + b) + c = a + (b + c)$ & $\\forall a, b, c \\in \\E$ \\\\ 3. & $\\exists \\overline{0} \\in E$: $a + \\overline{0} = a$ & $\\forall a \\in \\E$ \\\\ 4. & $\\exists -a \\in E$: $a + (-a) = \\overline{0}$ & $\\forall a \\in \\E$ \\\\ 5. & $(\\alpha \\beta) \\cdot a = \\alpha \\cdot (\\beta \\cdot a)$ & $\\forall \\alpha, \\beta \\in \\R$, $\\forall a \\in \\E$ \\\\ 6. & $1 \\cdot a = a$ & $1 \\in \\R$, $\\forall a \\in \\E$ \\\\ 7. & $(\\alpha + \\beta) \\cdot a = \\alpha \\cdot a + \\beta \\cdot a$ & $\\forall \\alpha, \\beta \\in \\R$, $\\forall a \\in \\E$ \\\\ 8. & $\\alpha \\cdot (a + b) = \\alpha \\cdot a + \\alpha \\cdot b$ & $\\forall \\alpha \\in \\R$, $\\forall a, b \\in \\E$ \\end{tabular} то $(\\E, +, \\cdot)$ называется \\textit{вещественным векторным пространством} или \\textit{вещественным линейным пространством} или \\textit{линейным пространством над полем вещественных чисел} ($\\R$).",
+      "proof": "",
+      "tags": [],
+      "source": "matan_1_semester/23 lecture.tex"
+    },
+    {
+      "id": "D5",
+      "kind": "definition",
+      "title": "",
+      "statement": "\\textit{Линейное нормированное пространство (ЛНП)}~---~это пара $(\\E, \\| \\|)$, где $\\E$~---~вещественное линейное пространство, а $\\| \\|$: $\\E \\mapsto [0; +\\infty)$~---~отображение, удовлетворяющее свойствам (назовём это нормой): \\begin{tabular}{lll} 1. & $\\| x\\| \\geq 0$ & $\\forall x \\in \\E$; $\\| x\\| = 0 \\Leftrightarrow x = \\overline{0}$\\\\ 2. & $\\| \\alpha x \\| = |\\alpha| \\| x\\|$ & $\\forall \\alpha \\in \\R$, $\\forall x \\in \\E$ \\\\ 3. & $\\| x + y \\| \\leq \\| x \\| + \\| y\\|$ & $\\forall x, y \\in \\E$ \\end{tabular}",
+      "proof": "",
+      "tags": [],
+      "source": "matan_1_semester/23 lecture.tex"
+    },
+    {
+      "id": "T6",
+      "kind": "theorem",
+      "title": "",
+      "statement": "Пусть $\\displaystyle P_{n} (z) = \\sum_{k = 0}^{n} a_{k} z^{k}$, $a_{k} \\in \\R \\ \\forall k \\in \\{0, 1, \\ldots, n \\}$ и $z_{0}$~---~корень кратности $k \\leq n$. Тогда $\\overline{z}_{0}$~---~корень кратности $k$.",
+      "proof": "",
+      "tags": [],
+      "source": "matan_1_semester/23 lecture.tex"
+    },
+    {
+      "id": "T7",
+      "kind": "theorem",
+      "title": "",
+      "statement": "\\hypertarget{thm6.8}{Пусть $P (x)$, $Q (x)$~---~полиномы с вещественными коэффициентами, $\\displaystyle R (x) = \\frac{P (x)}{Q (x)}$~---~правильная дробь и $x_{0}$~---~корень кратности $k$ знаменателя, то есть $Q (x) = (x - x_{0})^{k} \\cdot \\Tilde{Q} (x)$, где $\\Tilde{Q} (x_{0}) \\neq 0$. Тогда $\\exists! A \\in \\R$, $F (x)$: $\\displaystyle \\frac{P (x)}{Q (x)} = \\frac{A}{(x - x_{0})^{k}} + \\frac{F (x)}{(x - x_{0})^{k - 1} \\cdot \\Tilde{Q} (x)}$, где $\\deg{F (x)} < \\deg{\\Tilde{Q (x)}} + k - 1$.}",
+      "proof": "",
+      "tags": [],
+      "source": "matan_1_semester/23 lecture.tex"
+    },
+    {
+      "id": "T8",
+      "kind": "theorem",
+      "title": "",
+      "statement": "Пусть $P$ и $Q$~---~полиномы с вещественными коэффициентами, $\\cfrac{P}{Q}$~---~правильная дробь и $z_{0} \\in \\Cm$ ($\\text{Im}z_{0} \\neq 0$)~---~корень кратности $k$. Тогда $\\exists! B, C \\in \\R$ и полином $F$: $\\cfrac{P (x)}{Q (x)} = \\cfrac{Bx + C}{(x^{2} + p_{0} x +q_{0})^{k}} + \\cfrac{F (x)}{(x^{2} + p_{0} x +q_{0})^{k - 1} \\cdot \\Tilde{Q} (x)}$, где $\\Tilde{Q} (x)$ определяется из $Q (x) = (x^{2} + p_{0} x +q_{0})^{k} \\cdot \\Tilde{Q} (x)$, при этом второе слагаемое~---~правильная дробь.",
+      "proof": "",
+      "tags": [],
+      "source": "matan_1_semester/23 lecture.tex"
+    },
+    {
+      "id": "T9",
+      "kind": "theorem",
+      "title": "",
+      "statement": "",
+      "proof": "",
+      "tags": [],
+      "source": "matan_1_semester/23 lecture.tex"
+    }
+  ]
+}

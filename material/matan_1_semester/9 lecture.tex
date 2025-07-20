@@ -1,0 +1,324 @@
+\begin{note} 
+    По умолчанию $x_0 \in \Hat{\R},\  \delta_{0} > 0.$
+\end{note}
+\definition
+ Пусть $f$: $\mathring{U}_{\delta_0} (x_0)  \mapsto \R.$ \textit{Условием Коши для $f$ в точке} $x_0$ назовём:
+ \[ 
+ \forall \epsilon>0 \ \exists \delta(\epsilon) \in (0, \delta_{0}]: \ \  
+ \forall x_{1}, x_{2} \in \mathring{U}_{\delta (\epsilon)} (x_0) \hookrightarrow | f(x_1) - f(x_2)| < \epsilon
+ \]
+
+ \begin{theorem}
+     \hypertarget{thm4.3}{(Критерий Коши)} Пусть $f$: $\mathring{U}_{\delta_0} (x_0)  \mapsto \R.$ Следующие условия эквивалентны:
+     \begin{enumerate}
+         \item $f$ удовлетворяет условию Коши в точке $x_0$;
+         \item $\exists \lim\limits_{x\to x_{0}} f (x) = a,$ $a \in \R$.
+     \end{enumerate}
+ \end{theorem}
+\begin{note}
+    Коши даёт критерий именно конечного предела.
+\end{note}
+\begin{proof}
+    Докажем сначала  $(2) \to (1)$. Пусть $\exists \lim\limits_{x\to x_{0}} f (x) = a,$ $a \in \R.$
+
+    $$ \forall \epsilon > 0 \ \exists \delta(\epsilon) \in [0, \delta_0] 
+        \ \ \forall x \in  \mathring{U}_{\delta_0} (x_0) \hookrightarrow | f(x) - a| < \frac{\epsilon}{2} \Rightarrow 
+    $$
+    $$
+    \Rightarrow
+        \forall \epsilon > 0 \ \exists \delta(\epsilon) \in [0, \delta_0] 
+        \ \ \forall x_{1}, x_{2} \in  \mathring{U}_{\delta_0} (x_0) \hookrightarrow
+        \begin{cases}
+            | f(x_1) - a| < \frac{\epsilon}{2}, \\
+            | f(x_2) - a| < \frac{\epsilon}{2}
+        \end{cases}
+    $$
+    \underline{Важное примечание.} $\delta (\epsilon)$ в следствии тот же самый.
+    
+    По теореме о неравенстве треугольника имеем:
+    $$
+    |f(x_1) - f(x_2)| \leq | f(x_1) - a| + | f(x_2) - a| < \frac{\epsilon}{2} + \frac{\epsilon}{2} < \epsilon
+    $$
+    
+    Итого,
+    $$
+        \forall \epsilon>0 \ \exists \delta(\epsilon) \in (0, \delta_{0}]: \ \  
+ \forall x_{1}, x_{2} \in \mathring{U}_{\delta_0} (x_0) \hookrightarrow | f(x_1) - f(x_2)| < \epsilon,
+    $$
+    
+    Следовательно, выполнено условие Коши.
+
+    Теперь докажем $(1) \to (2)$. Поскольку определение предела по Коши и по Гейне эквивалентны, нам достаточно доказать, что из условия Коши следует существование конечного предела по Гейне.
+
+    Зафиксируем произвольную последовательность Гейне в точке $x_0$:
+
+    $$
+        \{x_n\}:
+        \begin{cases}
+            x_n \to x_0,\  n \to \infty\\
+            x_n \neq x_0
+        \end{cases}
+ $$
+
+ $$
+        \text{Тогда }\ \forall \delta > 0 \ \exists N(\delta) \in \N: \ 
+        \forall n \geq N(\delta) \hookrightarrow  x_n \in \mathring{U}_{\delta} (x_0) \Rightarrow
+    $$
+    $$
+        \Rightarrow
+        \forall \epsilon > 0  \ \exists N(\delta(\epsilon)): \  \ \forall n,\  m > N(\delta(\epsilon)) \hookrightarrow |f(x_n) - f(x_m)| < \epsilon.
+    $$
+
+    Следовательно, получилось условие Коши для $\{f(x_n)\}$, значит
+
+    $$
+        \exists  \lim\limits_{n\to \infty} f (x_n) = A (\{ x_{n} \}), \ A (\{ x_{n}\}) \in \R.
+    $$
+
+    В итоге, для любой $\{ x_n \}$~---~ произвольной последовательности Гейне в точке $x_0$:
+    $$
+        \exists  \lim\limits_{n\to \infty} f (x_n) = A (\{ x_{n} \}), \ A (\{ x_{n} \} \in \R.
+    $$
+
+    В силу \hyperlink{lemm4.3}{леммы 4.3} $A (\{ x_{n} \})$ не зависит от выбора $\{ x_{n} \}$, то есть $\exists A\in \R$: $\forall \{x_n\}$ - последовательности Гейне в точке $x_0$ $ \hookrightarrow \lim\limits_{n\to \infty} f(x_n) = A \in \R$. 
+    
+    Значит, $\exists \lim\limits_{x\to x_0} f (x) = A. $
+\end{proof}
+
+\begin{note}
+    Критерий Коши работает и для пределов по множеству. Доказательство точно такое же. 
+    
+    То есть, пусть $f$: $ X \mapsto \R$, $x_0$ ~---~ предельная точка для $X$. Тогда следующие условия эквивалентны:
+
+   \begin{enumerate}
+       \item $\forall \epsilon>0 \ \exists \delta(\epsilon) > 0: \ \ \forall x_1, x_2 \in \mathring{U}_{\delta_0} \cap X \hookrightarrow |f(x_1) - f(x_2)| < \epsilon$;
+        \item $\exists \lim\limits_{\underset{x \in X}{x\to x_0}} f (x) \in \R$.
+   \end{enumerate}
+      
+\end{note}
+
+ \begin{theorem}
+     \hypertarget{thm4.4}{(Принцип локализации)} Пусть $\exists \overline{\delta} \in (0, +\infty)$: $f(x) = g(x) \ \forall x\in \mathring{U}_{\overline{\delta}} (x_0)$. Тогда 
+     $\exists \lim\limits_{x\to x_0} f (x) \Leftrightarrow \exists \lim\limits_{x\to x_0} g (x).$ И если они существуют, то равны.
+\end{theorem}
+\begin{proof}
+    Очевидно расписывается по определению предела.
+\end{proof}
+\begin{note}
+    Тоже самое можно сформулировать по множеству.
+\end{note}
+
+\subsection{Односторонние пределы и теорема Вейерштрасса}
+
+В данном параграфе, если не сказано обратного, $x_{0} \in \R$.
+
+\begin{definition}
+    Пусть $f$: $\mathring{U}^{+}_{\delta_{0}} (x_{0})  \mapsto \R$, где $\mathring{U}^{+}_{\delta_{0}} (x_{0}) = (x_{0}, x_{0} + \delta_{0})$.
+    Будем говорить, что $A\in \Hat{\R}$ является \textit{правосторонним пределом $f$ в точке $x_{0}$}, если $ \lim\limits_{\underset{x \in \mathring{U}^+_{\delta_0} (x_0) }{x\to x_0}} f (x) = A$, и записывать $\lim\limits_{x \to x_{0} +0} f(x) = A$. Аналогично определяется определяется \textit{левосторонний предел}.
+\end{definition}
+\begin{note}
+    Для $-\infty$ по определению предел только левосторонний, для $+\infty$~---~правосторонний.
+\end{note}
+\begin{definition}
+    Функция называется \textit{нестрого возрастающей (нестрого убывающей) на $X \subset \R,\  X \neq \varnothing$}, если 
+    $$\forall x_{1}, x_{2} \in X: x_{1} < x_{2} \Rightarrow f(x_{1}) \leq f(x_{2}) \ \bigg(f(x_{1}) \geq f(x_{2}) \bigg)$$
+\end{definition}
+
+\begin{definition}
+    Функция $f$: $X \mapsto \R$ называется \textit{монотонной на $X$}, если либо нестрого возрастает, либо нестрого убывает.    
+\end{definition}
+
+\begin{definition}
+    Аналогично можно ввести понятия \textit{строгого убывания на $X$, строгого возрастания на $X$, строгой монотонности на $X$}.
+\end{definition}
+
+\begin{definition}
+    $$\underset{x \in X}{\sup} f(x) := \sup\{ f(x): \ x \in X\}$$
+    $$\underset{x \in X}{\inf} f(x) := \inf \{ f(x): \ x \in X\}$$
+    $$\underset{x \in X}{max} f(x) := max \{ f(x): \ x \in X\}, \text{ если он существует}$$
+    $$\underset{x \in X}{min} f(x) := min \{ f(x):\  x \in X\}, \text{ если он существует}$$
+
+   Запишем в кванторах: 
+    $$\underset{x \in X}{\sup} f(x) = M \in \overline{\R} \Leftrightarrow 
+    \begin{cases}
+        f(x) \leq M \ \ \forall x\in X\\
+        \forall M' < M \ \exists x' \in X: \ f(x') > M'
+    \end{cases}$$
+
+    Аналогично для инфимума.
+
+\end{definition}
+
+\begin{note}
+    Максимум и минимум могут быть только из $\R$, в отличие от супремума и инфимума, которые могут быть из $\overline{\R}$.
+\end{note}
+\hypertarget{prop4.2}{}\begin{proposition} Можно переформулировать определение в терминах окрестностей (вместо $M^{'}$ берём $M - \epsilon$ или $\frac{1}{\epsilon}$, в случае $M = +\infty$).
+    $$
+    M = \underset{x \in X}{\sup} f(x) \Leftrightarrow 
+    \begin{cases}
+        f(x) \leq M \ \forall x\in X \\
+        \forall \epsilon > 0 \ \exists x_\epsilon \in X: f(x_\epsilon) \in U_{\epsilon} (M)
+    \end{cases}
+    $$    
+\end{proposition}
+
+\begin{theorem}
+    \hypertarget{thm4.5}{(Теорема Вейерштрасса)} Пусть $-\infty < a < b < +\infty$.
+    Пусть $f$ нестрого возрастает на $(a, b)$. \hypertarget{prop4.1-2}{Тогда} 
+$$
+      \exists  \lim\limits_{x\to b -0} f (x) = \underset{x \in (a, b)}{\sup} f(x)  \ \quad (1)
+$$
+$$
+        \exists \lim\limits_{x\to a +0} f (x) = \underset{x \in (a, b)}{\inf} f(x) \ \quad (2)
+$$
+
+\begin{note} \label{(2)}
+    $f \uparrow \text{на } (a, b)$~---~нестрогое возрастание
+
+    $f \downarrow \text{на } (a, b)$~---~нестрогое убывание
+\end{note} 
+
+\begin{note}
+    Для односторонних пределов доказательство аналогично. Интервал $(a, b)$ заменяется на $(x_{0},\  x_{0} \pm \delta)$.
+\end{note}
+\end{theorem}
+
+\begin{proof}
+    Докажем \hyperlink{prop4.1-2}{(1)}, так как \hyperlink{prop4.1-2}{(2)} аналогично. Пусть
+    $$
+    E = \{f(x): x\in (a, b)\}.
+    $$
+    $$
+    \text{Поскольку } \exists \sup E = M \Rightarrow \forall \epsilon > 0 \ \exists x_{\epsilon} \in (a, b): \ f(x_{\epsilon}) \in U_{\epsilon}(M),
+    $$
+
+    но $f$ нестрого возрастает на $(a,  b) \Rightarrow f(x)\in U_{\epsilon}(M) \ \ \forall x\in [x_{\epsilon}, b).$
+
+    Действительно, если М~---~число, $M - \epsilon < f(x_\epsilon) \leq f(x) \leq M$.
+
+    Если $M = +\infty$, $\frac{1}{\epsilon} < f(x) \  \forall x \in [x_{\epsilon}, b) \Rightarrow f(x) \in U_\epsilon(+\infty)$.
+    
+    Но тогда $\forall \epsilon > 0 \ \exists \delta(\epsilon) = b- x_{\epsilon}$: $\ \forall x \in \mathring{U}^{-}_{\delta(\epsilon)} (b) \hookrightarrow f(x)\in U_{\epsilon}(M) \Rightarrow \lim\limits_{x\to b - 0} f (x) = M.$
+\end{proof}
+
+\subsection{Арифметические операции с пределами функций}
+
+\begin{theorem}
+    Пусть $X \neq \varnothing$, $x_{0}$~---~предельная точка. Пусть $\begin{cases}
+        \exists \lim\limits_{\underset{x \in X}{x\to x_0}} f_{1} (x) = a_{1} \in \R, \\
+        \exists \lim\limits_{\underset{x \in X}{x\to x_0}} f_{2} (x) = a_{2} \in \R, \\
+    \end{cases}$ Тогда
+        1. $\lim\limits_{\underset{x \in X}{x\to x_0}} \left(f_{1} (x) \pm  f_{2} (x)\right) = a_{1} \pm a_{2}$; \  
+        2. $\lim\limits_{\underset{x \in X}{x\to x_0}} \left(f_{1} (x) \cdot f_{2} (x) \right) = a_{1} \cdot a_{2}$.
+\end{theorem}
+\begin{proof}
+    Для доказательства достаточно проверить условие определения предела по Гейне. То есть возьмём проивольную $\{x_{n}\}$~---~последовательность Гейне в точке $x_{0}$. Тогда
+    $$
+    \exists \lim\limits_{n\to \infty} \big(f_{1}(x_{n}) \pm f_{2}(x_{n})\big) = a_{1} \pm a_{2}
+    $$
+    $$
+    \exists \lim\limits_{n\to \infty} \big(f_{1}(x_{n}) \cdot f_{2}(x_{n})\big) = a_{1} \cdot a_{2}
+    $$
+
+    Так как последовательность Гейне выбиралась произвольно, то в силу эквивалентности определения по Коши и по Гейне получили утверждение теоремы.
+\end{proof}
+
+\begin{lemma}
+    \hypertarget{lemm4.4}{(О сохранении знака)} Пусть $f: X \mapsto \R,$ $x_{0}$~---~предельная точка $X$. Пусть $\exists \lim\limits_{\underset{x \in X}{x\to x_0}} f(x) = a \neq 0$. $a \in \R$ (для удобства).
+
+    Тогда $ \exists \overllimitsine{\delta} > 0: \ \ \forall x\in  \mathring{U}_{\overline{\delta}}(x_{0}) \cap X \hookrightarrow 
+    \begin{cases}
+        f(x) \neq 0, \\
+        \text{sign}( f(x)) = \text{sign} (a).
+        \end{cases}$
+\end{lemma}
+\begin{proof}
+    Запишем определение предела:
+    $$\forall\epsilon > 0: \ \exists\delta(\epsilon) > 0: \forall x \in \mathring{U}_{\overline{\delta}}(x_{0}) \cap X \hookrightarrow |f(x) - a| < \epsilon
+    $$
+    Поскольку $\forall \epsilon$, то возьмём $\epsilon = \frac{|a|}{2}$. Тогда
+    $$
+    \overline{\delta} = \delta\Bigr(\cfrac{|a|}{2}\Bigl) > 0 \Rightarrow \forall x \in \mathring{U}_{\overline{\delta}}(x_{0}) \cap X \hookrightarrow |f(x) - a| < \cfrac{|a|}{2} \Leftrightarrow a - \cfrac{|a|}{2} < f(x) < \cfrac{|a|}{2} + a.
+    $$
+    То есть знак сохраняется.
+\end{proof}
+
+\begin{corollary}
+    Пусть $f$, $g$: $X\mapsto \R, X\neq \varnothing$, $x_{0}$~---~предельная точка $X$. Пусть $\exists \lim\limits_{\underset{x \in X}{x\to x_0}} f(x) = B\neq 0 \ \ \exists \lim\limits_{\underset{x \in X}{x\to x_0}} g(x) = A\neq 0.$ Тогда $\exists \overline{\delta} > 0$: $g(x) \neq 0\ \forall x\in \mathring{U}_{\overline{\delta}}(x_{0}) \cap X$ и $\exists \lim\limits_{\underset{x \in X}{x\to x_0}} \cfrac{f(x)}{g(x)} = \cfrac{A}{B}$
+\end{corollary}
+
+\begin{proof}
+        Следует из \hyperlink{lemm4.4}{леммы о сохранении знака}, \hyperlink{corollemm2.6}{леммы о пределе частного для последовательности} и \hyperlink{thm4.3}{эквивалентности по Коши и по Гейне}
+\end{proof}
+
+\subsection{Предельные переходы в неравенствах}
+\begin{theorem}
+    \hypertarget{thm4.7}{(О трёх функциях или о двух милиционерах)} Пусть $f, g, h: X \mapsto \R, x_{0}$~---~предельная точка для $X$. Пусть $\exists \lim\limits_{\underset{x \in X}{x\to x_0}} f(x) = \lim\limits_{\underset{x \in X}{x\to x_0}} g(x) = A, \ A \in \overline{\R}.$ Пусть $f(x) \leq h(x) \leq g(x) \ \ \forall x\in X.$ Тогда $\exists \lim\limits_{\underset{x \in X}{x\to x_0}} h(x) = A.$
+\end{theorem}
+
+\begin{proof}
+    Достаточно \hyperlink{thm2.4}{теоремы о трёх последовательностях} и \hyperlink{thm4.3}{эквивалентности по Коши и по Гейне}.
+\end{proof}
+
+\begin{theorem}
+    \hypertarget{thm4.8}{(О предельном переходе в неравестве)} Пусть $f, g: X \mapsto \R, x_{0}$~---~предельная точка для $X$.
+    Пусть $ \begin{cases}   
+        \exists \lim\limits_{\underset{x \in X}{x\to x_0}} f(x) = A \in \overline{\R};\\
+        \exists \lim\limits_{\underset{x \in X}{x\to x_0}} g(x) = B \in \overline{\R}.
+    \end{cases}$
+    Тогда, если $ f(x) \leq g(x) \ \ \forall x\in X \Rightarrow \ A \leq B.$
+\end{theorem}
+
+\begin{proof}
+    Достаточно \hyperlink{thm2.3}{теоремы о предельном переходе в неравенство} и \hyperlink{thm4.3}{эквивалентности по Коши и по Гейне}.
+\end{proof}
+
+\begin{note}
+    Строгое неравенство может не сохраниться при предельном переходе.
+\end{note}
+\begin{example}
+    $$f(x) = \cfrac{1}{x} \to 0, x\to +\infty, \quad g(x) = -\cfrac{1}{x} \to 0, x\to +\infty.$$
+\end{example}
+
+\subsection{Верхние и нижние пределы для функции}
+
+\begin{definition}
+    Пусть  $f: X \mapsto \R,\  x_{0}$~---~предельная точка для $X$. 
+   
+    $$ \lim\limits_{\overline{\underset{x \in X}{x\to x_0}}} f(x) := \underset{\delta > 0}{\sup}\left\{ \underset{x\in \mathring{U}_{\delta} (x_{0}) \cap X}{\inf} f(x)\right\} \in \overline{\R} $$
+    $$ \overline{\lim\limits_{\underset{x \in X}{x\to x_0}}} f(x) := \underset{\delta > 0}{\inf}\left\{ \underset{x\in \mathring{U}_{\delta} (x_{0}) \cap X}{\sup} f(x)\right\} \in \overline{\R}$$
+
+    Также введём обозначения: $\underline{g_{x_{0}}} (\delta) = \underset{x\in \mathring{U}_{\delta} (x_{0}) \cap X}{\inf} f (x)$ и $\overline{g_{x_{0}}} (\delta) = \underset{x\in \mathring{U}_{\delta} (x_{0}) \cap X}{\sup} f (x).$
+    
+\end{definition}
+
+\begin{lemma}
+     Пусть $f: X \mapsto \R, $ $x_{0}$~---~ предельная точка. Тогда для любых чисел $0 < \delta_{1} <\delta_{2} < \infty$ справедливо: 
+     
+     $$\begin{gathered}
+     	\underset{x\in \mathring{U}_{\delta_{1}} (x_{0}) \cap X}{\sup} f (x) \leq \underset{x\in \mathring{U}_{\delta_{2}} (x_{0}) \cap X}{\sup} f (x) \\
+     	\underset{x\in \mathring{U}_{\delta_{1}} (x_{0}) \cap X}{\inf} f (x)) \geq \underset{x\in \mathring{U}_{\delta_{2}} (x_{0}) \cap X}{\inf} f (x)
+     \end{gathered}$$
+\end{lemma}
+
+\begin{proof}
+    Доказательство очевидно из определений \hyperlink{def1.23}{супремума} и \hyperlink{def1.25}{инфимума} (так как супремум по меньшему множеству не может стать больше).
+\end{proof}
+
+\begin{lemma}
+    \hypertarget{lemm4.6}{} Пусть $f: X \mapsto \R, $ $x_{0}$~---~ предельная точка. Тогда для $ \forall \overline{\delta} > 0 $ выполняется
+    
+    $$\underset{\delta > 0}{\inf} \underset{x\in \mathring{U}_{\delta} (x_{0}) \cap X}{\sup} f (x) = \underset{\delta \in (0, \overline{\delta}) }{\inf} \underset{x\in \mathring{U}_{\delta} (x_{0}) \cap X}{\sup} f (x)$$
+
+    $$\underset{\delta > 0}{\sup}\  \underset{x\in \mathring{U}_{\delta} (x_{0}) \cap X}{\inf} f (x) = \underset{\delta \in (0, \overline{\delta}) }{\sup} \underset{x\in \mathring{U}_{\delta} (x_{0}) \cap X}{\inf} f (x)$$
+\end{lemma}
+
+\begin{proof}
+    Докажем первое равенство, так как второе аналогично.
+\begin{center}
+    Из предыдущей леммы: $ \underset{x\in \mathring{U}_{\delta'} (x_{0}) \cap X}{\sup} f (x) \leq  \underset{x\in \mathring{U}_{\delta''} (x_{0}) \cap X}{\sup} f (x),$ если $\delta' \in (0, \overline{\delta)},\  \delta'' \in (\overline{\delta}, +\infty)$
+\end{center}
+% Картиночка будет завтра, так как в гробу я ее видела.
+    $$\underset{\delta > 0}{\inf} \underset{x\in \mathring{U}_{\delta} (x_{0}) \cap X}{\sup} f (x) = \underset{\delta \in (0, \overline{\delta}) }{\inf} \underset{x\in \mathring{U}_{\delta} (x_{0}) \cap X}{\sup} f (x)$$
+\end{proof}
+

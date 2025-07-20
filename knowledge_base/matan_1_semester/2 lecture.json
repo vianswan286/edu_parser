@@ -1,0 +1,121 @@
+{
+  "units": [
+    {
+      "id": "D1",
+      "kind": "definition",
+      "title": "",
+      "statement": "Число $M (m)$ называется \\textit{верхней (нижней) гранью} числового непустого множества $A \\subset \\R,$ если $x \\leq M$ ($x \\geq m$) $\\quad \\forall x \\in A.$",
+      "proof": "",
+      "tags": [],
+      "source": "matan_1_semester/2 lecture.tex"
+    },
+    {
+      "id": "D2",
+      "kind": "definition",
+      "title": "",
+      "statement": "\\hypertarget{def1.23}{} Пусть $A$~---~ограниченное сверху множество. Число $M \\in \\R$ называется супремумом $A$ и записывается $M = sup A$, если выполняется: \\begin{enumerate} \\item $M$ является верхней гранью, то есть $\\forall x \\in A \\hookrightarrow x \\leq M$. \\item $\\forall M^{'} < M \\quad \\exists a(M^{'}) \\in A$: $M^{'} < a(M^{'}) \\leq M.$ То есть никакое другое число не является верхней гранью. \\end{enumerate}",
+      "proof": "",
+      "tags": [],
+      "source": "matan_1_semester/2 lecture.tex"
+    },
+    {
+      "id": "D3",
+      "kind": "definition",
+      "title": "",
+      "statement": "Если $A$~---~неограниченное сверху множество, то $sup A := +\\infty .$",
+      "proof": "",
+      "tags": [],
+      "source": "matan_1_semester/2 lecture.tex"
+    },
+    {
+      "id": "D4",
+      "kind": "definition",
+      "title": "",
+      "statement": "\\hypertarget{def1.25}{} $m \\in \\R$ называется \\textit{инфимумом ограниченного снизу множества} $A$, если \\begin{equation*} m = \\inf{A} \\Longleftrightarrow \\begin{cases} a \\geq m \\quad \\forall a \\in A\\\\ \\forall m^{'} > m, \\ \\exists a(m^{'}) \\in A: m^{'} > a(m^{'}) \\geq m& \\end{cases} \\end{equation*}",
+      "proof": "",
+      "tags": [],
+      "source": "matan_1_semester/2 lecture.tex"
+    },
+    {
+      "id": "D5",
+      "kind": "definition",
+      "title": "",
+      "statement": "Если $A$~---~неограниченное снизу множество, то $\\inf{A} := -\\infty .$",
+      "proof": "",
+      "tags": [],
+      "source": "matan_1_semester/2 lecture.tex"
+    },
+    {
+      "id": "D6",
+      "kind": "definition",
+      "title": "",
+      "statement": "Число $M$ называется \\textit{максимумом (максимальным элементом)} множества $E \\subset \\R \\Leftrightarrow M = max E$, если \\begin{enumerate} \\item $M \\in E$; \\item $M \\geq x \\ \\forall x \\in E.$ \\end{enumerate} Аналогично определяется минимум.",
+      "proof": "",
+      "tags": [],
+      "source": "matan_1_semester/2 lecture.tex"
+    },
+    {
+      "id": "D7",
+      "kind": "definition",
+      "title": "",
+      "statement": "Отображение из $\\N$ в множество всех отрезков на числовой прямой $\\R$ назовём \\textit{последовательностью отрезков} и обозначим $\\{ [a_{n}, b_{n}] \\}^{\\infty}_{n = 1}$",
+      "proof": "",
+      "tags": [],
+      "source": "matan_1_semester/2 lecture.tex"
+    },
+    {
+      "id": "D8",
+      "kind": "definition",
+      "title": "",
+      "statement": "Будем говорить, что $\\{ [a_{n}, b_{n}] \\}^{\\infty}_{n = 1}$~---~последовательность \\textit{вложенных отрезков}, если $\\{ [a_{n+1}, b_{n+1}] \\} \\subset \\{ [a_{n}, b_{n}] \\} \\quad \\forall n \\in \\N$",
+      "proof": "",
+      "tags": [],
+      "source": "matan_1_semester/2 lecture.tex"
+    },
+    {
+      "id": "D9",
+      "kind": "definition",
+      "title": "",
+      "statement": "Последовательность вложенных отрезков $\\displaystyle \\bigcap_{n = 1}^{\\infty} [a_{n}, b_{n}]$ называется \\newline \\textit{стягивающейся}, если $\\forall n \\in \\N \\ \\exists [a_{m(n)}, b_{m(n)}]$: $l \\displaystyle < \\frac{1}{n}$, где $l = (b_{i} - a_{i})$. $l$~---~длина.",
+      "proof": "",
+      "tags": [],
+      "source": "matan_1_semester/2 lecture.tex"
+    },
+    {
+      "id": "T10",
+      "kind": "theorem",
+      "title": "",
+      "statement": "{(о существовании и единственности супремума)} Супремум существует и единственен. $$\\forall A \\subset \\R: A \\neq \\varnothing \\hookrightarrow \\exists! \\sup{A}.$$",
+      "proof": "",
+      "tags": [],
+      "source": "matan_1_semester/2 lecture.tex"
+    },
+    {
+      "id": "T11",
+      "kind": "theorem",
+      "title": "",
+      "statement": "{(о существовании и единственности инфимума)} Инфимум существует и единственнен. $$\\forall A \\subset \\R: A \\neq \\varnothing \\hookrightarrow \\exists! \\inf{A}.$$",
+      "proof": "",
+      "tags": [],
+      "source": "matan_1_semester/2 lecture.tex"
+    },
+    {
+      "id": "T12",
+      "kind": "theorem",
+      "title": "",
+      "statement": "Стягивающаяся последовательность вложенных отрезков $\\{ [a_{n}, b_{n}] \\}^{\\infty}_{n = 1}$ имеет единственную общую точку, то есть $$ \\exists ! x \\in \\bigcap_{n = 1}^{\\infty} [a_{n}, b_{n}]$$",
+      "proof": "",
+      "tags": [],
+      "source": "matan_1_semester/2 lecture.tex"
+    },
+    {
+      "id": "T13",
+      "kind": "theorem",
+      "title": "",
+      "statement": "(3 принципа непрерывности числовой прямой) Следующие утверждения эквивалентны: \\begin{enumerate} \\item Аксиома непрерывности. \\item Существование $\\inf$ и $\\sup$ у любого непустого множества. \\item Лемма Кантора о непустоте пересечения вложенной системы и лемма Архимеда. \\end{enumerate}",
+      "proof": "",
+      "tags": [],
+      "source": "matan_1_semester/2 lecture.tex"
+    }
+  ]
+}

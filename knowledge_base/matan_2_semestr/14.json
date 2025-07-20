@@ -1,0 +1,40 @@
+{
+  "units": [
+    {
+      "id": "D1",
+      "kind": "definition",
+      "title": "",
+      "statement": "Пусть $T = \\{x_i\\}^{N_T}_{i = 0}$ ~--- разбиение отрезка $[a, b]$. Выборкой, соответствующей разбиению $T$, назовём конечный набор точек $\\{\\xi\\}_{i = 1}^{N_T}:$ \\[ \\forall \\thinspace i \\in \\{1, \\ldots, N_{T}\\} \\hookrightarrow \\xi_{i} \\in [x_{i - 1}, x_{i}]. \\]",
+      "proof": "",
+      "tags": [],
+      "source": "matan_2_semestr/14.tex"
+    },
+    {
+      "id": "D2",
+      "kind": "definition",
+      "title": "",
+      "statement": "Суммой Римана для $f$ по разбиению $T$ и выборке $\\xi_T$ называется \\[ \\sum(f, T, \\xi_T) := \\sum_{i = 1}^{N}f(\\xi_{i})(x_i - x_{i - 1}) \\]",
+      "proof": "",
+      "tags": [],
+      "source": "matan_2_semestr/14.tex"
+    },
+    {
+      "id": "T3",
+      "kind": "theorem",
+      "title": "Критерий Лебега",
+      "statement": "Пусть $f: [a, b] \\mapsto \\R.$ Функция $f \\in \\Rim ([a, b]) \\LongLeftrightarrow f \\in \\B ([a, b])$ и $\\D[f]$ имеет лебегову меру нуль.",
+      "proof": "",
+      "tags": [],
+      "source": "matan_2_semestr/14.tex"
+    },
+    {
+      "id": "T4",
+      "kind": "theorem",
+      "title": "Критерий интегрируемости в терминах интегральных сумм Римана.",
+      "statement": "$f \\in R([a, b]) \\Leftrightarrow (\\ast) \\thinspace \\exists J \\in \\R:\\thinspace \\forall\\thinspace \\varepsilon > 0 \\thinspace \\exists \\delta(\\varepsilon) > 0: \\forall\\thinspace T$ ~--- разбиения отрезка $[a, b] \\thinspace l(T) < \\delta(\\varepsilon)$ и $\\forall$ выборки $\\xi_T$, соответствующей разбиению $T \\hookrightarrow \\left| J - \\sum(f, T, \\xi_T)\\right| < \\varepsilon $. При этом в случае интегрируемости $J$ то же самое, что и в определении интеграла Римана, причём \\[ J:= \\int^{b}_{a} f(x)dx. \\]",
+      "proof": "",
+      "tags": [],
+      "source": "matan_2_semestr/14.tex"
+    }
+  ]
+}

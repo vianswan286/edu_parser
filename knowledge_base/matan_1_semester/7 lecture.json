@@ -1,0 +1,139 @@
+{
+  "units": [
+    {
+      "id": "D1",
+      "kind": "definition",
+      "title": "",
+      "statement": "Пусть $E$~---~непустое множество. Тогда $x \\in \\R$ называется \\textit{точкой прикосновения} множества $E$, если $$ \\forall \\epsilon > 0 \\ \\ U_{\\epsilon} (x) \\cap E \\neq \\varnothing.$$",
+      "proof": "",
+      "tags": [],
+      "source": "matan_1_semester/7 lecture.tex"
+    },
+    {
+      "id": "D2",
+      "kind": "definition",
+      "title": "",
+      "statement": "\\textit{Замыканием множества} $E$ называется множество всех точек прикосновения $E$ и обозначается $\\text{cl}E$ (также можно встретить обозначение $\\overline{E}$).",
+      "proof": "",
+      "tags": [],
+      "source": "matan_1_semester/7 lecture.tex"
+    },
+    {
+      "id": "D3",
+      "kind": "definition",
+      "title": "",
+      "statement": "Множество называется \\textit{замкнутым}, если оно совпадает со своим замыканием.",
+      "proof": "",
+      "tags": [],
+      "source": "matan_1_semester/7 lecture.tex"
+    },
+    {
+      "id": "D4",
+      "kind": "definition",
+      "title": "",
+      "statement": "Пусть $G$~---~непустое множество. Будем говорить, что $x$~---~\\textit{внутренняя точка} $G$, если $$\\exists \\epsilon > 0: \\ U_{\\epsilon} (x) \\subset G.$$",
+      "proof": "",
+      "tags": [],
+      "source": "matan_1_semester/7 lecture.tex"
+    },
+    {
+      "id": "D5",
+      "kind": "definition",
+      "title": "",
+      "statement": "\\textit{Внутренностью} множества $G$ называется множество всех его внутренних точек и обозначается $\\text{int}G$.",
+      "proof": "",
+      "tags": [],
+      "source": "matan_1_semester/7 lecture.tex"
+    },
+    {
+      "id": "D6",
+      "kind": "definition",
+      "title": "",
+      "statement": "Множество $G \\subset \\R$ называется \\textit{открытым}, если оно совпадает со своей внутренностью.",
+      "proof": "",
+      "tags": [],
+      "source": "matan_1_semester/7 lecture.tex"
+    },
+    {
+      "id": "D7",
+      "kind": "definition",
+      "title": "",
+      "statement": "$x \\in \\R$ называется \\textit{изолированной точкой} множества $E$, если $$\\exists \\epsilon > 0: \\ U_{\\epsilon} (x) \\cap E = \\{ x \\}.$$",
+      "proof": "",
+      "tags": [],
+      "source": "matan_1_semester/7 lecture.tex"
+    },
+    {
+      "id": "D8",
+      "kind": "definition",
+      "title": "",
+      "statement": "$x \\in \\R$ называется \\textit{предельной точкой} множества $E$, если $$\\forall \\epsilon > 0 \\ \\big(U_{\\epsilon} (x) \\backslash \\{ x \\}\\big) \\cap E \\neq \\varnothing.$$",
+      "proof": "",
+      "tags": [],
+      "source": "matan_1_semester/7 lecture.tex"
+    },
+    {
+      "id": "D9",
+      "kind": "definition",
+      "title": "",
+      "statement": "Множество $K \\subset \\R$ называется \\textit{компактом}, если из любой последовательности значений точек $\\{ x_{n} \\} \\subset K$ можно выделить сходящуюся в $K$ подпоследовательность. То есть $$ \\exists \\{ x_{n_{k}} \\}: \\ \\exists \\lim\\limits_{k\\to \\infty} x_{n_{k}} = x,\\ x \\in K.$$",
+      "proof": "",
+      "tags": [],
+      "source": "matan_1_semester/7 lecture.tex"
+    },
+    {
+      "id": "D10",
+      "kind": "definition",
+      "title": "",
+      "statement": "Система множеств $\\{ V_{\\alpha} \\}_{\\alpha \\in I}$ называется \\textit{покрытием} множества $E$, если $\\bigcup\\limits_{\\alpha \\in I} V_{\\alpha} \\supset E.$",
+      "proof": "",
+      "tags": [],
+      "source": "matan_1_semester/7 lecture.tex"
+    },
+    {
+      "id": "D11",
+      "kind": "definition",
+      "title": "",
+      "statement": "Система $\\{ V_{\\beta} \\}_{\\beta\\in J}$ называется \\textit{подпокрытием} покрытия $\\{ V_{\\alpha} \\}_{\\alpha \\in I}$, если $J \\subset I$ и $\\bigcup\\limits_{\\beta \\in J} V_{\\beta} \\supset E$.",
+      "proof": "",
+      "tags": [],
+      "source": "matan_1_semester/7 lecture.tex"
+    },
+    {
+      "id": "D12",
+      "kind": "definition",
+      "title": "",
+      "statement": "Покрытие называется \\textit{открытым}, если все $V_{\\alpha}$ открыты.",
+      "proof": "",
+      "tags": [],
+      "source": "matan_1_semester/7 lecture.tex"
+    },
+    {
+      "id": "D13",
+      "kind": "definition",
+      "title": "",
+      "statement": "Подпокрытие называется \\textit{открытым}, если все $V_{\\beta}$ открыты.",
+      "proof": "",
+      "tags": [],
+      "source": "matan_1_semester/7 lecture.tex"
+    },
+    {
+      "id": "T14",
+      "kind": "theorem",
+      "title": "",
+      "statement": "\\hypertarget{thm3.1}{(Критерий точки прикосновения)} Пусть $E$~---~множество, $E \\neq \\varnothing$. Точка $x$ является точкой прикосновения $E \\Leftrightarrow \\exists \\{ x_{n} \\} \\subset E$: $\\lim\\limits_{n\\to \\infty} x_{n} = x$.",
+      "proof": "",
+      "tags": [],
+      "source": "matan_1_semester/7 lecture.tex"
+    },
+    {
+      "id": "T15",
+      "kind": "theorem",
+      "title": "",
+      "statement": "\\hypertarget{thm3.2}{(Критерий компактности в $\\R$)} Множество $K \\subset \\R$~---~компактно $\\Leftrightarrow$ оно ограниченно и замкнуто.",
+      "proof": "",
+      "tags": [],
+      "source": "matan_1_semester/7 lecture.tex"
+    }
+  ]
+}

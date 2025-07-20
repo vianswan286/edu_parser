@@ -1,0 +1,40 @@
+{
+  "units": [
+    {
+      "id": "D1",
+      "kind": "definition",
+      "title": "",
+      "statement": "\\textit{Перестановкой} в множестве натуральных чисел назовем \\\\ биекцию $m = m(j), \\hspace{0.2cm} j \\in \\N$ \\[m: \\N \\rightarrow \\N\\]",
+      "proof": "",
+      "tags": [],
+      "source": "matan_2_semestr/19.tex"
+    },
+    {
+      "id": "T2",
+      "kind": "theorem",
+      "title": "",
+      "statement": "Признак Д'Аламбера. Пусть дан ряд $\\sum_{k = 1}^{\\infty} a_k$. Пусть $\\exists k_0 \\in \\N$: $\\forall k \\geq k_0 \\hookrightarrow a_k > 0$ и $\\frac{a_{k+1}}{a_k} \\leq q$. Тогда если \\begin{enumerate} \\item $\\frac{a_{k+1}}{a_k} \\leq q$, где $q \\in (0, 1)$, то $\\sum_{k = 1}^{\\infty}a_k$~---~сходится; \\item $\\frac{a_{k+1}}{a_k} \\geq q$, где $q \\geq 1$, то $\\sum_{k = 1}^{\\infty}a_k$~---~расходится. \\end{enumerate}",
+      "proof": "",
+      "tags": [],
+      "source": "matan_2_semestr/19.tex"
+    },
+    {
+      "id": "T3",
+      "kind": "theorem",
+      "title": "",
+      "statement": "[Признак Коши] \\text{}\\\\ Пусть $\\exists k_0 \\in \\N$, такое что $\\forall k \\geq k_0 \\hookrightarrow a_k > 0 \\text{ и } \\sqrt[k]{a_k} \\leq q \\in (0, 1) $\\\\ Тогда $\\sum_{k = 1}^{\\infty} a_k$~---~сходится. \\\\ Пусть $\\exists k_0 \\in \\N$, такое что $\\forall k \\geq k_0 \\hookrightarrow a_k > 0 \\text{ и } \\sqrt[k]{a_k} \\geq 1 $\\\\ Тогда $\\sum_{k = 1}^{\\infty} a_k$~---~расходится.",
+      "proof": "",
+      "tags": [],
+      "source": "matan_2_semestr/19.tex"
+    },
+    {
+      "id": "T4",
+      "kind": "theorem",
+      "title": "Признак Дирихле",
+      "statement": "\\text{} Пусть $\\{a_k\\}$ и $\\{b_k\\}$ таковы что \\begin{enumerate} \\item $A_n = \\sum_{n = 1}^{N} a_n$~---~ограничена. \\item Пусть $b_n \\rightarrow 0, \\hspace{0.2cm} n \\rightarrow \\infty$ \\item $\\{b_n\\}$~---~монотонная. \\end{enumerate} Тогда ряд $\\sum_{k=1}^{\\infty}a_k\\cdot b_k$~---~сходится.",
+      "proof": "",
+      "tags": [],
+      "source": "matan_2_semestr/19.tex"
+    }
+  ]
+}

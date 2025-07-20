@@ -1,0 +1,67 @@
+{
+  "units": [
+    {
+      "id": "D1",
+      "kind": "definition",
+      "title": "",
+      "statement": "Пусть $E \\subset \\R ^ m$~---~непустое множество, $x^0 \\in E$, $f$: $E \\mapsto \\R$. \\\\ Будем говорить, что $x^0$~---~\\textit{точка локального экстремума} функции $f$ на множестве $E$, если $\\exists \\ \\delta_0 > 0$, такая что $\\forall \\ x \\in U_{\\delta_0}(x^0) \\cap E \\hookrightarrow$ \\\\ $ f(x) \\le f(x^0)$ (точка локального минимума $f$ на $E$); \\\\ $ f(x) \\ge f(x^0)$ (точка локального максимума $f$ на $E$); \\\\ в случае строгих неравенств говорят о точках \\textit{строгого локального минимума/максимума}.",
+      "proof": "",
+      "tags": [],
+      "source": "matan_2_semestr/9.tex"
+    },
+    {
+      "id": "D2",
+      "kind": "definition",
+      "title": "",
+      "statement": "\\textit{Квадратичной формой} в $R^m$ назовём функцию $$K(h) := \\sum\\limits_{i=1}^m \\sum\\limits_{j=1}^m a_{ij} h_i h_j, \\ a_{ij} = a_{ji}.$$",
+      "proof": "",
+      "tags": [],
+      "source": "matan_2_semestr/9.tex"
+    },
+    {
+      "id": "D3",
+      "kind": "definition",
+      "title": "",
+      "statement": "$K(h)$ называется \\textit{положительно определённой}, если $\\forall h \\neq 0 \\hookrightarrow K(h) > 0$, \\\\ отрицательно определённой, если $\\forall h \\neq 0 \\hookrightarrow\\ K(h) < 0$, \\\\ знаконеопределённой, если $\\exists h_1 \\neq 0 K(h_1) > 0$ и $\\exists h_2 \\neq 0 K(h_1) < 0$.",
+      "proof": "",
+      "tags": [],
+      "source": "matan_2_semestr/9.tex"
+    },
+    {
+      "id": "D4",
+      "kind": "definition",
+      "title": "",
+      "statement": "\\textit{Матрица Гессе (гессиан)} $$H_f(x^0) := \\begin{pmatrix} \\dfrac{\\partial^2 f}{\\partial x_1 \\partial x_1} (x^0) & \\dots & \\dfrac{\\partial^2 f}{\\partial x_1 \\partial x_m} (x^0) \\\\ \\vdots & & \\vdots \\\\ \\dfrac{\\partial^2 f}{\\partial x_m \\partial x_j} (x^0) & \\dots & \\dfrac{\\partial^2 f}{\\partial x_m \\partial x_m} (x^0) \\end{pmatrix}$$",
+      "proof": "",
+      "tags": [],
+      "source": "matan_2_semestr/9.tex"
+    },
+    {
+      "id": "T5",
+      "kind": "theorem",
+      "title": "",
+      "statement": "Пусть $E \\neq \\varnothing$, $E \\in \\R^m$~---~открытое. Пусть $f: \\ E \\mapsto \\R$. \\\\ Пусть $\\forall i \\in \\left\\{ 1, \\dots, m\\right\\} \\ \\exists \\dfrac{\\partial f}{\\partial x_i} (x^0) \\in \\R$. Тогда если $x^0$~---~точка локального экстремума функции $f$ на $E$, то $$\\dfrac{\\partial f}{\\partial x_i}(x^0) = 0 \\ \\forall i \\in \\left\\{1, \\ldots, m \\right\\}.$$",
+      "proof": "",
+      "tags": [],
+      "source": "matan_2_semestr/9.tex"
+    },
+    {
+      "id": "T6",
+      "kind": "theorem",
+      "title": "",
+      "statement": "(Критерий Сильвестра) Квадратичная форма положительно определена $\\Longleftrightarrow$ все главные миноры матрицы квадратичной формы $A$ положительны. \\\\ Квадратичная форма отрицательно определена $\\Longleftrightarrow$ знаки главных миноров чередуются, начиная с отрицательного. (Доказательство в курсе линейной алгебры)",
+      "proof": "",
+      "tags": [],
+      "source": "matan_2_semestr/9.tex"
+    },
+    {
+      "id": "T7",
+      "kind": "theorem",
+      "title": "",
+      "statement": "Пусть $f \\in C^2\\left( B_{\\delta^0}(x^0)\\right)$, $\\delta > 0$. Пусть в точке $x^0$ все частные производные первого порядка обращаются в ноль (то есть $x^0$~---~\\underline{стационарная} точка функции $f$). \\\\ Тогда \\begin{enumerate} \\item Если квадратичная форма второго дифференциала $d^2_{x^0} f(dx)$ в точке $x^0$ положительно определена, то $x^0$~---~локальный минимум функции $f$. \\item Если $d^2_{x^0} f(dx)$ отрицательно определена, то $x^0$~---~точка локального максимума функции $f$. \\item Если $d^2_{x^0} f(dx)$ знаконеопределена, то экстремума нет. \\item В остальных случаях ничего сказать нельзя. \\end{enumerate}",
+      "proof": "",
+      "tags": [],
+      "source": "matan_2_semestr/9.tex"
+    }
+  ]
+}

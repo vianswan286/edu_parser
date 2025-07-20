@@ -1,0 +1,308 @@
+\begin{note}
+    $\overline{B}_{r} (x)$ не всегда совпадает с замыканием открытого шара. Также стоит отметить, что происходит такая коллизия обозначений.
+\end{note}
+\begin{example}
+    Пусть $X = [0; 1] \cap \{ 2\}, \rho(x, y) = |x - y|$. Возьмём $B_{1} (1) = (0; 1]$. $\text{cl}B_{1} (1) = [0; 1]$, но $\overline{B}_{1} (1) = X$, то есть замкнутый шар может быть <<шире>>, чем замыкание открытого шара.
+\end{example}
+\begin{lemma}
+    \hypertarget{lemm7.2}{Пусть $(X, \rho)$~---~метрическое пространство. Тогда $\forall \E \subset X \hookrightarrow$
+    \begin{enumerate}
+        \item $X \backslash \text{cl}\E = \text{int}(X \backslash \E)$;
+        \item $X \backslash \text{int}\E = \text{cl}(X \backslash \E)$.
+    \end{enumerate}}
+\end{lemma}
+\begin{proof}
+    Покажем (2), так как (1) аналогично.
+    
+    Пусть $x^{*} \in (X \backslash \text{int}\E)$. Тогда 
+    $\begin{cases}
+        x^{*} \in X \\
+        !(x^{*} \in \text{int}\E)
+    \end{cases}
+    \Leftrightarrow \begin{cases}
+        x^{*} \in X \\
+        \forall \epsilon > 0 \ B_{\epsilon} (x^{*}) \not\subset \E
+    \end{cases}
+    \Leftrightarrow$ 
+    
+    $$\Leftrightarrow \forall \epsilon > 0 \ B_{\epsilon} (x^{*}) \cap (X \backslash \E) \neq \varnothing \Leftrightarrow x^{*}\text{~---~точка прикосновения }X\backslash\E \Leftrightarrow x^{*} \in \text{cl}(X \backslash \E).$$
+\end{proof}
+\begin{corollary}
+    Пусть $(X, \rho)$~---~метрическое пространство. Тогда множество $\E$ замкнуто $\Leftrightarrow (X\backslash\E)$ открыто.
+\end{corollary}
+\begin{proof}
+    Так как $\E$ замкнуто, то оно совпадает со своим замыканием. В силу \hyperlink{lemm7.2}{предыдущей леммы} $X \backslash \E = X \backslash \text{cl}\E = \text{int}(X\backslash\E)$~---~$X\backslash\E$ открыто.
+\end{proof}
+\begin{definition}
+    Пусть $\E$~---~множество в метрическом пространстве. Тогда \textit{границей множества} назовём $\text{cl}\E \backslash \text{int}\E$ и будем обозначать $\partial \E$.
+\end{definition}
+\begin{lemma}
+    Пусть $(X, \rho)$~---~метрическое пространство, $\E \subset X$. Тогда $x_{0} \in \partial \E \Leftrightarrow \newline \Leftrightarrow \forall \epsilon > 0 \hookrightarrow
+    \begin{cases}
+        B_{\epsilon} (x_{0}) \cap \E \neq \varnothing \\
+        B_{\epsilon} (x_{0}) \cap (X \backslash \E) \neq \varnothing
+    \end{cases}$
+\end{lemma}
+\begin{proof}
+    Так как $x_{0} \in \partial \E$, то по определению $\begin{cases}
+        \forall \epsilon > 0 \ B_{\epsilon} (x_0) \cap \E \neq \varnothing \\
+        !(\exists \epsilon > 0: B_{\epsilon} (x_{0}) \subset \E)
+    \end{cases} \Leftrightarrow \newline \Leftrightarrow \begin{cases}
+        \forall \epsilon > 0 \ B_{\epsilon} (x_0) \cap \E \neq \varnothing \\
+        \forall \epsilon > 0 \ B_{\epsilon} (x_0) \cap (X \backslash \E) \neq \varnothing
+    \end{cases}$, что нам и нужно было.
+\end{proof}
+\begin{theorem}
+    (Критерий точки прикосновения) $x_{0}$~---~точка прикосновения множества $\E \Leftrightarrow \exists \{ x_{n}\} \subset \E$: $\rho(x_{n}, x_{0})\to 0$, $n\to \infty$.
+\end{theorem}
+\begin{proof}
+    Ровно \hyperlink{thm3.1}{такое же}, как и на числовой прямой.
+\end{proof}
+\begin{theorem}
+    (Критерий предельной точки) $x_{0}$~---~предельная точка множества $\E \Leftrightarrow 
+    \begin{cases}
+        x_{n} \neq x_{0} \ \forall n \in \N \\
+        \rho(x_{n}, x_{0})\to 0, n\to \infty
+    \end{cases}$
+\end{theorem}
+\begin{proof}
+    Точно такое же, как и на числовой прямой.
+
+    \textbf{Я не смог его найти.}
+\end{proof}
+\begin{problem}
+    Пусть $(X, \rho)$~---~метрическое пространство. Доказать, что $\forall \E \subset X \hookrightarrow \E \cup \partial \E = \text{cl}\E$, $\E \backslash \partial \E = \text{int}\E$.
+\end{problem}
+\begin{problem}
+    Верны ли следующие включения?
+    \begin{enumerate}
+        \item $\text{int}(\E_{1} \cup \E_{2}) \subset (\text{int}\E_{1} \cup \text{int}E_{2})$;
+        \item $(\text{int}\E_{1} \cup \text{int}E_{2}) \subset \text{int}(\E_{1} \cup \E_{2})$;
+        \item $\text{cl}(\E_{1} \cup \E_{2}) \subset (\text{cl}\E_{1} \cup \text{cl}E_{2})$;
+        \item $(\text{cl}\E_{1} \cup \text{cl}E_{2}) \subset \text{cl}(\E_{1} \cup \E_{2})$;
+        \item $\partial(\E_{1} \cup \E_{2}) \subset (\partial\E_{1} \cup \partial\E_{2})$;
+        \item $(\partial\E_{1} \cup \partial\E_{2}) \subset \partial(\E_{1} \cup \E_{2})$.
+    \end{enumerate}
+\end{problem}
+\begin{example}
+    Может быть так, что $\partial \E = \R$, а $\text{int}\E = \varnothing$. К примеру, $\E = \Q$.
+\end{example}
+\begin{definition}
+    Пусть $(X, \rho)$~---~метрическое пространство, $\E \subset X$. Множество $\E$ называется \textit{ограниченным}, если $\exists B_{R} (x_{0})$: $\E \subset B_{R} (x_{0})$.
+\end{definition}
+\begin{definition}
+    Пусть $(X, \rho)$~---~метрическое пространство, $\E \subset X$. Множество $\E$ \textit{вполне ограничено}, если
+    $$ \forall \epsilon > 0 \ \exists \text{конечное число точек } \{ x_{1}, \ldots, x_{N (\epsilon)}\}: \E \subset \bigcup_{i = 1}^{N (\epsilon)} B_{\epsilon} (x_{i}).$$
+\end{definition}
+\begin{note}
+    И эти точки называются $\epsilon$-сетью для $\E$.
+\end{note}
+\begin{lemma}
+    Если множество $\E$~---~вполне ограничено, то $\E$ ограничено.
+\end{lemma}
+\begin{proof}
+    Так как $\E$ вполне ограничено, то $\forall \epsilon > 0 \ \exists$ конечная $\epsilon$-сеть. Значит и для $\epsilon = 1 \ \exists$ конечная $1$-сеть $\{ x_{1}, \ldots, x_{N} \}$. Мы можем взять, к примеру, $M = N + \max\limits_{i \in \{1, \ldots, N\}} \rho(x_{1}, x_{i})$, тогда $\E \subset B_{M} (x_{1})$ по неравенству треугольника $\Rightarrow \E$ ограничено.
+\end{proof}
+\begin{lemma}
+    Пусть $(X, \rho)$~---~метрическое пространство, а $\{ x_{n} \} \subset X$ сходится к $x^{*} \in X$. Тогда $\{ x_{n} \}$ фундаментальна.
+\end{lemma}
+\begin{proof}
+    Пусть $\{ x_{n} \} \to x^{*}$, $n \to \infty$, запишем это:
+    $$ \forall \epsilon > 0 \ \ \exists N (\epsilon) \in \N: \forall n \geq N (\epsilon) \hookrightarrow \rho(x_{n}, x^{*}) < \epsilon.$$
+    Тогда $\forall \epsilon > 0$ $\exists \Tilde{N} (\epsilon) = N (\frac{\epsilon}{2})$: $\forall n, m \geq \Tilde{N} (\epsilon) \hookrightarrow \rho(x_n, x_m) \leq \rho(x_n, x^*) + \rho(x^*, x_m) < \frac{\epsilon}{2} + \frac{\epsilon}{2} = \epsilon$.
+\end{proof}
+\begin{lemma}
+    \hypertarget{lemm7.6}{Пусть $(X, \rho)$~---~метрическое пространство, $K \subset X$. Если множество $K$~---~компакт, то $K$~---~вполне ограниченное множество.}
+\end{lemma}
+\begin{proof}
+    Предположим противное. Будем считать, что $K \neq \varnothing$, так как пустое множество по определению компакт. Запишем отрицание к определению вполне ограниченного множества:
+    $$ \exists \epsilon > 0: \forall \text{ конечное набора точек } \{ x_{1}, \ldots, x_{N (\epsilon)}\}: \E \not\subset \bigcup_{i = 1}^{N (\epsilon)} B_{\epsilon} (x_{i}).$$
+
+    Пусть $x_{1}\in K$. Возьмём $B_{\epsilon} (x_{1})$, он не покрывает $K \Rightarrow \exists x_{2}$: $x_{2} \in (K \backslash B_{\epsilon} (x_{1}))$, но $\{ x_{1}, x_{2} \}$ тоже не $\epsilon$-сеть $\Rightarrow \exists x_{3} \in \left(K \backslash (B_{\epsilon} (x_{1}) \cup B_{\epsilon} (x_{2}))\right)$. Так продолжим по индукции. Пусть таким образом мы построили точки $x_{1}, \ldots, x_{n}$: $K \backslash \bigcup\limits_{i = 1}^{n} B_{\epsilon} (x_{i}) \neq \varnothing$, тогда возьмём $x_{n + 1} \in \left( K \backslash \bigcup\limits_{i = 1}^{n} B_{\epsilon} (x_{i})\right)$, а $\{ x_{1}, \ldots, x_{n + 1}\}$ снова не $\epsilon$-сеть. То есть мы построили последовательность $\{ x_{n} \} \subset K$: $\rho(x_{i}, x_{j}) \geq \epsilon \ \forall i \neq j \Rightarrow$ любая её подпоследовательность не является фундаментальной, а значит сходящейся, а значит $K$~---~не компакт. Противоречие.
+\end{proof}
+\begin{definition}
+    Метрическое пространство $(X, \rho)$ называется \textit{полным}, если любая его фундаментальная последовательность сходится к некоторой точке этого пространства, в противном случае пространство называется \textit{неполным}.
+\end{definition}
+\begin{examples}$\ $
+
+    $X = \R$, $\rho(x, y) = |x - y|$~---~полное (критерий Коши мы доказывали ранее).
+
+    $X = \Q$, $\rho(x, y) = |x - y|$~---~неполное.
+\end{examples}
+\begin{proposition}
+    В любом метрическом пространстве любая сфера~---~замкнутое множество.
+\end{proposition}
+\begin{example}
+    Множество, которое ограничено и замкнуто, но не является компактом:
+
+    $X = \{ x = (x_{1}, \ldots, x_{n}, \ldots)$: $\exists \lim\limits_{n\to \infty} x_{n} = 0\}$, $\rho(x, y) = \sup\limits_{i \in \N}|x_{i} - y_{i}|$.
+
+    Рвссмотрим $S_{1} (0) := \{ x \in X$: $\sup\limits_{i \in \N} |x_{i}| = 1\}$, то есть единичную сферу. Оно является ограниченным и замкнутым множеством, но не вполне ограниченным, а значит, не компактом.
+
+    \underline{Замечание.} Для доказательства того, что множество не является вполне ограниченным рассмотрим $e_n = (0, \ldots, 0, 1, 0, \ldots)$, то есть все $0$, кроме $1$ на $n$-ом месте. Тогда $\rho(e_n, e_m) = 1$, то есть мы получили бесконечную систему, между которыми попарные расстояния равны $1 \Rightarrow$ нет вполне ограниченности.
+\end{example}
+\begin{theorem}
+    (Гейне-Борель 2.0) Пусть $(X, \rho)$~---~метрическое пространство, $K \subset X$~---~компакт. Тогда для любого открытого покрытия $\{ U_{\alpha}\}_{\alpha \in A}$ компакта существует конечное подпокрытие $\{ U_{\alpha_{i}}\}_{i = 1}^{N}$.
+\end{theorem}
+\begin{proof}
+    Так как из компактности следует вполне ограниченность, то $\forall n \in \N$ $\exists$ конечная $\frac{1}{n}$-сеть, которую обозначим как $\{ z_{n} (1), \ldots, z_{n} (N)\}$.
+
+    Предположим, что существует открытое покрытие $\{ U_{\alpha}\}_{\alpha \in A}$ из которого нельзя извлечь конечное подпокрытие. Тогда существует шар радиуса $\frac{1}{n}$ в центром в какой-то точке $\frac{1}{n}$-сети, то есть $\exists i \in \{ 1, \ldots, N\}$: $B_{\frac{1}{n}} (z_{n} (i))$ нельзя покрыть конечным набором множеств из системы $\{ U_{\alpha}\}_{\alpha \in A}$, так как в противном случае каждый шар $B_{\frac{1}{n}} (z_{n} (i))$ покрывался бы конечным числом элементом из покрытия $\{U_{\alpha}\}_{\alpha \in A}$, а так как шаров конечное число и они покрывают $K$, то получили бы конечное подпокрытие $K$, а мы предположили, что его нет.
+
+    Получается, $\forall n \in \Z$ $\exists z_{n} \in K$: $B_{\frac{1}{n}} (z_{n})$ не может быть покрыт конечным числом элементов из $\{ U_{\alpha}\}_{\alpha \in A}$, получаем последовательность $\{ z_{n}\}$, из неё, так как $K$ компакт, можно извлечь сходящуюся подпоследовательность $\{ z_{n_{m}}\} \Rightarrow \exists z^{*} \in K$: $\rho(z_{n_{m}}, z^{*})\to 0$, $m\to \infty$. Так как $z^{*} \in K$, а $\{ U_{\alpha}\}_{\alpha \in A}$~---~покрытие, то $\exists \alpha^{*} \in A$: $z^{*} \in U_{\alpha^{*}}$, но $U_{\alpha^{*}}$ открытое множество $\Rightarrow \epsilon^{*} > 0$: $B_{\epsilon^{*}} (z^{*}) \subset U_{\alpha^{*}}$. 
+    
+    Так как $\{ z_{n_{m}}\}$ сходится к $z^{*}$, то начиная с некоторого номера $\rho(z_{n_m}, z^{*})$ можно сделать меньше, чем $\frac{\epsilon^*}{4}$. Запишем более формально: $\exists M \in \N$: $\forall m \geq M \hookrightarrow \rho(z_{n_m}, z^*) < \frac{\epsilon^{*}}{4}$ и $\frac{1}{n_m} < \frac{\epsilon^{*}}{4}$ по построению. Рассмотрим $\displaystyle B_{\frac{1}{n_m}} (z_{n_m})$. Заметим, что $\displaystyle B_{\frac{1}{n_m}} (z_{n_m}) \subset B_{\epsilon^{*}} (z^{*}) \subset U_{\alpha^{*}} \Rightarrow \forall m \geq M \hookrightarrow B_{\frac{1}{n_m}} (z_{n_m}) \subset U_{\alpha^{*}}$~---~противоречие с построением.
+
+    \underline{Замечание.} Включение $\displaystyle B_{\frac{1}{n_m}} (z_{n_m}) \subset B_{\epsilon^{*}} (z^{*})$ верно по неравенству треугольника, то есть возьмём $\displaystyle y \in B_{\frac{1}{n_m}} (z_{n_m})$, тогда $\rho(z^{*}, y) \leq \rho(z^{*}, z_{n_m}) + \rho(z_{n_m}, y) < \frac{\epsilon^{*}}{4} + \frac{1}{n_m} < \frac{\epsilon^{*}}{4} + \frac{\epsilon^{*}}{4} < \frac{\epsilon^{*}}{2}$
+\end{proof}
+\begin{theorem}
+    Пусть $(X, \rho)$~---~метрическое пространство. Если $K$~---~компакт, то он ограничен и замкнут.
+\end{theorem}
+\begin{proof}
+    Ограниченность уже была доказана ранее. Докажем замкнутость. Будем доказывать от противного.
+
+    Предположим противное, то есть $\exists x^{*} \not\in K$ являющаяся его точкой прикосновения. Тогда по критерию точки прикосновения $\exists \{ x_{n} \} \subset K$: $\rho(x^{*}, x_n)\to 0$, $n\to \infty \Rightarrow \forall \{ x_{n_{j}}\}$ подпоследовательности последовательности $\{ x_{n}\}$ тоже сходится к $x^{*} \not\in K$~---~противоречие с компактностью.
+\end{proof}
+\begin{reminder} На пространство $\R^{n}$ можно смотреть по-разному.
+
+    $\R^{n} := \left\{ x = (x_{1}, \ldots, x_{n})\text{: }x_{i} \in \R \ \forall i \in \{ 1, \ldots, n\}\right\}$.
+    
+    $\displaystyle \rho(x, y) := \sqrt{\sum_{i = 1}^{n} (x_{i} - y_{i})^{2}}$. $\quad \displaystyle \| x \| = \sqrt{\sum_{i = 1}^{n} x_{i}^{2}}$.$\quad$ <$x$, $y$>$\displaystyle = \sum_{i = 1}^{n} x_{i} y_{i}$.
+\end{reminder}
+\begin{lemma}
+    Последовательность $\{ x^m \} \subset \R^n$ сходится к $x^{*} \Leftrightarrow \forall i \in \{ 1, \ldots, n\}$ $x_{i}^{m}\to x^{*}_{i}$, $m\to \infty$.
+\end{lemma}
+\begin{proof}
+    \underline{Шаг 1.} Заметим, что $\forall i \in \{ 1, \ldots, n\}$ справедливо неравенство
+
+    $$\displaystyle |x_{i}^{*} - x_{i}^{m}| \leq \sqrt{|x_{i}^{*} - x_{i}^{m}|^{2}} \leq \sqrt{\sum_{i = 1}^{n}|x_{i}^{*} - x_{i}^{m}|^{2}} = \rho(x^{*}, x^{m}).$$
+
+    \underline{Шаг 2.} Пусть $\forall i \in \{1, \ldots, n\} \hookrightarrow x^{m}_{i}\to x^{*}_{i},$ $m\to \infty$. Тогда $\displaystyle \sum_{i = 1}^{n} |x^{*}_{i} - x^{m}_{i}|^{2}\to 0$, $m\to \infty$. Извлекая корень, получаем
+
+    $$\displaystyle \sqrt{\sum_{i = 1}^{n}|x_{i}^{*} - x_{i}^{m}|^{2}} \to 0, m\to \infty.$$
+\end{proof}
+\begin{theorem}
+    \hypertarget{thm7.10}{(Теорема Больцано-Вейерштрасса в $\R^{n}$) Из любой ограниченной последовательности $\{ x^m \}_{m = 1}^{\infty}$ можно выделить сходящуюся подпоследовательность $\{ x^{m_{j}} \}_{j = 1}^{\infty}$.}
+\end{theorem}
+\begin{proof}
+    Доказательство будем проводить по индукции (по размерности пространства).
+    
+    База: при $n = 1$ мы её \hyperlink{thm2.8}{уже доказали}.
+
+    Предположим, что доказано при $n_{0} \in \N$, докажем для $n_{0} + 1$. Возьмём последовательность $x^{m} = (x^{m}_{1}, \ldots, x^{m}_{n_{0} + 1}) \subset \R^{n_{0} + 1}$~---~она ограничена. Спроектируем теперь точки $x^{m}$ на $\R^{n_{0}} \times \{0\}$, получим последовательность $\{\overline{x}^{m}\} \subset \R^{n_{0}}$, но эта последовательность тоже ограничена, так как $\displaystyle \| \overline{x}^{m}\| = \sqrt{\sum_{i = 1}^{n_{0}} \left(\overline{x}^{m}_{i}\right)^{2}} \leq \sqrt{\sum_{i = 1}^{n_{0} + 1} \left(\overline{x}^{m}_{i}\right)^{2}} \leq C$ $\forall m \in \N$.
+
+    По предположению индукции Больцано-Вейерштрасс работает для размерности $n_{0}$, тогда $\exists \{\overline{x}^{m_{k}}\}$ сходящаяся к $\overline{x}^{*} \in \R^{n_{0}}$.
+
+    Последовательность $\left\{ x^{m_{k}}_{n_{0} + 1}\right\}$ ограничена в $\R \Rightarrow$ по теореме Больцано-Вейерштрасса $\exists \left\{x^{m_{k_{j}}}_{n_{0} + 1}\right\}$: $\left\{x^{m_{k_{j}}}_{n_{0} + 1}\right\}\to x^{*}_{n_{0} + 1}$, $\j\to \infty$. Рассмотрим вектор $x^{*} = (\overline{x}^{*}, x^{*}_{n_{0} + 1})$. В итоге так как $\left\{ \overline{x}^{m_{k_j}}\right\}\to \overline{x}^{*}$, $j\to \infty$, получается, что $x^{m_{k_j}}\to x^{*}$, $j\to \infty$, то есть мы сделали шаг индукции.
+\end{proof}
+\begin{theorem}
+    (Критерий компактности в $\R^n$) Множество $K \subset \R^n$~---~компакт $\Leftrightarrow$ оно ограничено и замкнуто.
+\end{theorem}
+\begin{proof}
+    \underline{Шаг 1.} В одну сторону мы \hyperlink{lemm7.6}{уже доказали} в случае общих метрических пространств.
+
+    \underline{Шаг 2.} Пусть $K$~---~ограничено и замкнуто. Возьмём произвольную последовательность $\{ x^{m} \} \subset K$. Поскольку $K$ ограничено, то по \hyperlink{thm7.10}{теореме Больцано-Вейерштрасса в $\R^{n}$} $\exists \{x^{m_{j}}\} \subset K$: она сходится к некоторой точке $x^{*} \in \R^n \Rightarrow$ в силу критерия точки прикосновения $x^{*}$~---~точка прикосновения для $K$, но в силу замкнутости $K$ получаем $x^{*} \in K$.
+\end{proof}
+\begin{theorem}
+    (Критерий Коши в $\R^n$) Последовательность $\{ x^{m}\} \subset \R^{n}$ сходится $\Leftrightarrow$ когда выполнено условие Коши, то есть $\displaystyle \forall \epsilon > 0 \ \exists N (\epsilon)$: $\displaystyle \forall m, l \geq N (\epsilon) \hookrightarrow \sqrt{\sum_{i = 1}^{n} (x^{m}_{i} - x^{l}_{i})^{2}} \leq \epsilon$.
+\end{theorem}
+\begin{proof}
+    Точно такое же, как и в одномерном случае с учётом теоремы Больцано-Вейерштрасса.
+\end{proof}
+
+\section{Кривые}
+\subsection{Вектор-функции}
+\begin{definition}
+    Пусть $\E \subset \R$. \textit{Вектор-функцией} будем называть $\overline{a} (t)$: $\E \mapsto \R^n$.
+\end{definition}
+\begin{note}
+    Задать вектор-функцию $\overline{a}$: $\E \mapsto \R^n \Leftrightarrow $ задать набор скалярных функций $(\overline{a}_{1}, \ldots, \overline{a}_{n})$, где $\forall i \in \{1, \ldots, n\} \ \overline{a}_{i}$: $\E \mapsto \R$.
+\end{note}
+\begin{lemma}
+    Пусть $\E \subset \R$ непустое множество и $t_{0}$~---~предельная точка $\E$. Тогда $\overline{A} \in \R^n$, $\lim\limits_{\underset{t \in \E}{t\to t_0}} \overline{a}(t) = \overline{A} \Leftrightarrow \forall i \in \{1, \ldots, n\} \hookrightarrow \lim\limits_{\underset{t \in \E}{t\to t_0}} \overline{a}_{i}(t) = \overline{A}_{i}$
+\end{lemma}
+\begin{proof}
+    Это следует из того, что предел по Коши и по Гейне равносильны и $x^m \to x^*$, $m\to \infty \Leftrightarrow \forall i \in \{1, \ldots, n\} x^{m}_{i} \to x^{*}_{i}$, $m\to \infty$.
+\end{proof}
+\begin{lemma}
+    Пусть $\E \subset \R$, $t_{0}$~---~предельная точка $\E$, $\alpha, \beta \in \R$ и заданы $\overline{a}^{1}, \overline{a}^{2}$: $\E \mapsto \R$. Тогда если $\displaystyle \exists \lim\limits_{\underset{t \in \E}{t\to t_0}} \overline{a}^{i} (t) = \overline{A}^{i}$, $i \in \{1, 2\}$, то 
+    \begin{enumerate}
+        \item $\displaystyle \exists \lim\limits_{\underset{t \in \E}{t\to t_0}} (\alpha \overline{a}^{1}(t) \pm \beta \overline{a}^{2} (t)) = \alpha \overline{A}^{1} \pm \beta \overline{A}^{2}$;
+        \item $\displaystyle \exists \lim\limits_{\underset{t \in \E}{t\to t_0}} \left(\overline{a}^{1}(t), \overline{a}^{2} (t)\right) = \left(\overline{A}^{1}, \overline{A}^{2}\right)$.
+    \end{enumerate}
+\end{lemma}
+\begin{proof} $\ $
+\begin{enumerate}
+    \item следует из соответствующих теорем для скалярных функцих и предыдущей леммы;
+    \item заметим, что $\left( \overline{a}^{1} (t), \overline{a}^{2} (t) \right) - \left(\overline{A}^{1}, \overline{A}^{2} \right) = \left( \overline{a}^{1} (t), \overline{a}^{2} (t) - \overline{A}^{2}\right) + \left(\overline{a}^{1} (t) - \overline{A}^{1}, \overline{A}^{2} \right)$. Тогда $\left|\left( \overline{a}^{1} (t), \overline{a}^{2} (t) \right)\right| - \left|\left(\overline{A}^{1}, \overline{A}^{2} \right)\right| \leq \left|\left( \overline{a}^{1} (t), \overline{a}^{2} (t) - \overline{A}^{2}\right)\right| + \left|\left(\overline{a}^{1} (t) - \overline{A}^{1}, \overline{A}^{2} \right)\right| \leq \| \overline{a}^{2} (t) - \overline{A}^{2} \| \|\overline{a}^{1} (t) \| + \| \overline{A}^{2} \| \| \overline{a}^{1} (t) - \overline{A}^{1} \|$.
+
+    Так как $\| \overline{a}^{i} (t) - \overline{A}^{i} \|\to 0$, $\underset{t \in \E}{t\to t_{0}}$, то второе слагаемое стремится к $0$;
+
+    В свою же очередь $\|\overline{a}^{1} (t)\| \| \overline{a}^{2} (t) - \overline{A}^{2} \| \to 0$, $\underset{t \in \E}{t\to t_{0}}$, так как $\|\overline{a}^{1} (t)\|\to \|\overline{A}^{1}\|$ (потому что $| \| \overline{a}^{1} (t) -\|\overline{A}^{1} \| | \leq \|\overline{a}^{1} (t) - \overline{A}^{1} \| \to 0$), а $\| \overline{a}^{2} (t) - \overline{A}^{2} \| \to 0$.
+\end{enumerate}
+\end{proof}
+\begin{lemma}
+    Пусть $\overline{a}$: $\E \to \R^n$, $\phi$: $\E \mapsto \R$, $\exists \lim\limits_{\underset{t \in \E}{t\to t_{0}}} \phi (t) = \phi_{0}$ и $\exists \lim\limits_{\underset{t \in \E}{t\to t_{0}}} \overline{a} (t) = \overline{A}$. Тогда $\exists \lim\limits_{\underset{t\in \E}{t\to t_{0}}} \phi (t) \overline{a} (t) = \phi_{0} \overline{A}$.
+\end{lemma}
+\begin{proof}
+    В силу леммы $\exists \lim\limits_{\underset{t\in \E}{t\to t_{0}}} \phi (t) \overline{a} (t) \Leftrightarrow \forall i \in \{1, \ldots, n\} \ \exists \lim\limits_{\underset{t\in\E}{t\to t_{0}}} \phi (t) \overline{a}_{i} (t) = \phi_{0} \overline{A}_{i}$. Отсюда всё и следует.
+\end{proof}
+\begin{reminder}
+    Векторное произведение в $\R^3$. Пусть $\overline{a}, \overline{b} \in \R^3$. Тогда
+    $$ [\overline{a}, \overline{b}] = \begin{vmatrix}
+\overline{i} & \overline{j} & \overline{k}\\
+a_1 & a_2 & a_3\\
+b_1 & b_2 & b_3
+\end{vmatrix}
+= \overline{i} (a_2 b_3 - a_3 b_2) - \overline{j} (a_1 b_3 - a_3 b_1) + \overline{k} (a_1 b_2 - a_2 b_1).$$
+
+Свойства векторного произведения:
+\begin{enumerate}
+    \item $[\overline{a}, \overline{b}] = - [\overline{b}, \overline{a}] \ \ \forall \overline{a}, \overline{b} \in \R^3$;
+    \item $[\alpha \overline{a} + \beta \overline{b}, \overline{c}] = \alpha [\overline{a}, \overline{c}] + \beta [\overline{b}, \overline{c}] \ \ \forall \alpha, \beta \in \R$, $\forall \overline{a}, \overline{b}, \overline{c} \in \R^3$;
+    \item $| [\overline{a}, \overline{b}]| \leq |\overline{a}| \cdot |\overline{b}| \ \ \forall \overline{a}, \overline{b} \in \R^3$.
+\end{enumerate}
+\end{reminder}
+\begin{lemma}
+    Пусть $\overline{a}$, $\overline{b}$: $\E \mapsto \R^3$, $t_0$~---~предельная точка $\E$. Тогда если $\exists \lim\limits_{\underset{t \in\E}{t\to t_{0}}} \overline{a} (t) = \overline{A}$, $\exists \lim\limits_{\underset{t \in\E}{t\to t_{0}}} \overline{b} (t) = \overline{B}$, то $\exists \lim\limits_{\underset{t \in\E}{t\to t_{0}}} [\overline{a} (t), \overline{b} (t)] = [\overline{A}, \overline{B}]$.
+\end{lemma}
+\begin{proof}
+    Точно такое же, как со скалярным произведением.
+
+    $$\left| [\overline{a} (t), \overline{b} (t)] - [\overline{A}, \overline{B}] \right| \leq \left| [\overline{a} (t) - \overline{A}, \overline{B}] \right| + \left| [\overline{a} (t), \overline{B} - \overline{b} (t) ]\right| \leq |\overline{a} (t) - \overline{A}| |\overline{b} (t)| + |\overline{a} (t)| |\overline{B} - \overline{b} (t)| \to 0\text{, }\underset{t\in \E}{t\to t_{0}}.$$
+\end{proof}
+\begin{definition}
+    Пусть $\overline{a}$: $U_{\delta_0} (t_0) \mapsto \R^n$. Будем говорить, что существует производная вектор-функции в точке $t_{0}$, если $\displaystyle \exists \lim\limits_{t\to t_{0}} \frac{\overline{a} (t) - \overline{a} (t_0)}{t - t_{0}} \in \R^n$ и этот предел обозначается $\overline{a}' (t_{0})$.
+\end{definition}
+\begin{definition}
+    Пусть $\phi$: $U_{\delta} (t_0) \mapsto \R$, $\overline{a}$: $U_{\delta} (t_0) \mapsto \R^n$. Будем говорить, что $\overline{a} = \overline{o}(\phi(t))$, $t\to t_{0}$, если $\exists \overline{\epsilon}$: $U_{\delta} (t_{0}) \mapsto \R^n$: $\lim\limits_{t\to t_{0}} \overline{\epsilon} (t) = \overline{0}$ и $\overline{a} (t) = \phi (t) \overline{a} (t) \ \ \forall t \in U_{\delta} (t_0)$.
+\end{definition}
+\begin{definition}
+    Будем говорить, что вектор-функция $\overline{a} (t)$: $U_{\delta} (t_{0}) \mapsto \R^n$ дифференцируема в точке $t_{0}$, если $\exists \overline{A} \in \R^n$: $\overline{a} (t) = \overline{a} (t_{0}) + \overline{A} (t - t_{0}) + \overline{o} ((t - t_{0}))$, $t\to t_{0}$.
+\end{definition}
+\begin{theorem}
+    Вектор функция $\overline{a}$: $U_{\delta} (t_{0}) \mapsto \R^n$ дифференцируема в точке $t_{0} \Leftrightarrow \exists \overline{a}' (t_{0}) \in \R^n \Leftrightarrow \exists \overline{a}_{i}' (t_{0}) \ \ \forall i \in \{1, \ldots, n\}$.
+\end{theorem}
+\begin{proof}
+    Очевидно расписывается через лемму про предел компонент.
+\end{proof}
+\begin{theorem}
+    Пусть $\overline{a}$: $U_{\delta} (t_{0}) \mapsto \R^n$, $\overline{b}$: $U_{\delta} (t_{0}) \mapsto \R^n$, $\phi$: $U_{\delta} (t_{0}) \mapsto \R$:
+    \begin{enumerate}
+        \item если $\overline{a}$ дифференцируема в точке $t_{0}$ и $\phi$ дифференцируема в точке $t_{0}$, то $\phi \overline{a}$ дифференцируема в точке $t_{0}$ и $(\phi \overline{a})' (t_{0}) = \phi' (t_{0}) \overline{a} (t_{0}) + \phi (t_{0}) \overline{a}' (t_{0})$;
+        \item если $\overline{a}$, $\overline{b}$ дифференцируемы в точке $t_{0}$, тогда $(\overline{a}, \overline{b})$ дифференцируемо в точке $t_{0}$ и $(\overline{a}, \overline{b})' (t_{0}) = \overline{a}' (t_{0}) \overline{b} (t_{0}) + \overline{a} (t_{0}) \overline{b}' (t_{0})$;
+        \item если $n = 3$ и $\overline{a}$, $\overline{b}$ дифференцируемы в точке $t_{0}$, то $[\overline{a}, \overline{b}]$ дифференцируемо в точке $t_{0}$ и $[\overline{a}, \overline{b}]' (t_{0}) = [\overline{a}' (t_{0}), \overline{b} (t_{0})] + [\overline{a} (t_{0}), \overline{b}' (t_{0})]$.
+    \end{enumerate}
+\end{theorem}
+\begin{proof}
+    Докажем второе, так как остальное доказывается аналогично. Пусть $\Delta t = t - t_{0}$, $\Delta \overline{a} = \overline{a} (t) - \overline{a} (t_{0})$, $\Delta \overline{b} = \overline{b} (t) - \overline{b} (t_{0})$.
+
+    $$\frac{\left(\overline{a} (t), \overline{b} (t)\right) - \left( \overline{a} (t_{0}), \overline{b} (t_{0}))\right)}{t - t_{0}} = \frac{(\overline{a} (t) - \overline{a} (t_{0}), \overline{b} (t)) + (\overline{a} (t_{0}), \overline{b} (t) - \overline{b} (t_{0}))}{\Delta t} = \left( \frac{\Delta \overline{a}}{\Delta t}, \overline{b} (t)\right) + \left( \overline{a} (t_{0}), \frac{\Delta \overline{b}}{\Delta t}\right).$$
+
+    Заметим, что $\left( \overline{a} (t_{0}), \frac{\Delta \overline{b}}{\Delta t}\right) \to (\overline{a} (t_{0}), \overline{b}' (t_{0}))$, $t\to t_{0}$.
+
+    Также
+\end{proof}
+
+
+\textbf{COMING ONE DAY.......}

@@ -1,0 +1,121 @@
+{
+  "units": [
+    {
+      "id": "D1",
+      "kind": "definition",
+      "title": "",
+      "statement": "Отображение $f$: $X \\mapsto Y$ называется \\textit{биекцией} $X$ на $Y$, если оно и инъекция, и сюръекция $\\Leftrightarrow$ оно обратимо.",
+      "proof": "",
+      "tags": [],
+      "source": "matan_1_semester/3 lecture.tex"
+    },
+    {
+      "id": "D2",
+      "kind": "definition",
+      "title": "",
+      "statement": "Множество $X$ называется \\textit{конечным}, если $\\exists N \\in \\N$ и биекция $X$ на $\\{1, \\dots, N \\}.$ В противном случае множество называется \\textit{бесконечным}.",
+      "proof": "",
+      "tags": [],
+      "source": "matan_1_semester/3 lecture.tex"
+    },
+    {
+      "id": "D3",
+      "kind": "definition",
+      "title": "",
+      "statement": "Будем говорить, что \\textit{множества $X \\text{и } Y$ равномощны}, если существует биекция $X$ на $Y.$",
+      "proof": "",
+      "tags": [],
+      "source": "matan_1_semester/3 lecture.tex"
+    },
+    {
+      "id": "D4",
+      "kind": "definition",
+      "title": "",
+      "statement": "Будем говорить, что \\textit{мощность множества $Y$ не меньше мощности множества $X$}, если существует множество $Y^{'} \\subset Y$ такое, что $X$ и $Y^{'}$ равномощны.",
+      "proof": "",
+      "tags": [],
+      "source": "matan_1_semester/3 lecture.tex"
+    },
+    {
+      "id": "D5",
+      "kind": "definition",
+      "title": "",
+      "statement": "Множество $X$ называется \\textit{счётным}, если $X$ равномощно $\\N.$",
+      "proof": "",
+      "tags": [],
+      "source": "matan_1_semester/3 lecture.tex"
+    },
+    {
+      "id": "D6",
+      "kind": "definition",
+      "title": "",
+      "statement": "Множество $X$ называется \\textit{несчётным}, если $X$ бесконечно и неравномощно $\\N.$",
+      "proof": "",
+      "tags": [],
+      "source": "matan_1_semester/3 lecture.tex"
+    },
+    {
+      "id": "D7",
+      "kind": "definition",
+      "title": "",
+      "statement": "\\textit{Последовательностью} будет называть отображение $x$: $\\N \\mapsto \\R.$",
+      "proof": "",
+      "tags": [],
+      "source": "matan_1_semester/3 lecture.tex"
+    },
+    {
+      "id": "D8",
+      "kind": "definition",
+      "title": "",
+      "statement": "$\\Hat{\\R} := \\overline{\\R} \\cup \\{ \\infty \\} = \\R \\cup \\{ -\\infty \\} \\cup \\{ +\\infty \\} \\cup \\{ \\infty \\}$~---~\\textit{расширенная числовая прямая}.",
+      "proof": "",
+      "tags": [],
+      "source": "matan_1_semester/3 lecture.tex"
+    },
+    {
+      "id": "D9",
+      "kind": "definition",
+      "title": "",
+      "statement": "(\\textit{Эпсилон окрестность из} $\\Hat{\\R}$) пусть $\\epsilon > 0$, тогда $$\\text{если } a \\in \\R, \\text{то } U_{\\epsilon}(a) = (a - \\epsilon, \\ a + \\epsilon)$$ $$\\text{если } a = +\\infty, \\text{то } U_{\\epsilon}(a) = \\bigg( \\frac{1}{\\epsilon}, \\ + \\infty \\bigg)$$ $$\\text{если } a = -\\infty, \\text{то } U_{\\epsilon}(a) = \\bigg( -\\infty, \\ \\frac{1}{\\epsilon} \\bigg)$$ $$\\text{если } a = \\infty, \\text{то } U_{\\epsilon}(a) = U_{\\epsilon}(-\\infty) \\cup U_{\\epsilon}(+\\infty)$$",
+      "proof": "",
+      "tags": [],
+      "source": "matan_1_semester/3 lecture.tex"
+    },
+    {
+      "id": "D10",
+      "kind": "definition",
+      "title": "",
+      "statement": "Пусть $\\{ x_{n} \\}$~---~числовая последовательность. Будем говорить, что элемент $a \\in \\Hat{\\R}$ является \\textit{пределом последовательности} $\\{ x_{n} \\}$ и писать $\\lim\\limits_{n\\to \\infty} x_{n}=a \\Leftrightarrow \\newline x_{n} \\rightarrow a, n \\rightarrow \\infty$, если выполнено следующее: $$ \\forall \\epsilon > 0 \\ \\exists N(\\epsilon) \\in \\N: \\ \\forall n \\geq N (\\epsilon) \\hookrightarrow x_{n} \\in U_{\\epsilon}(a)$$",
+      "proof": "",
+      "tags": [],
+      "source": "matan_1_semester/3 lecture.tex"
+    },
+    {
+      "id": "T11",
+      "kind": "theorem",
+      "title": "",
+      "statement": "Из леммы Кантора и леммы Архимеда следует аксиома непрерывности.",
+      "proof": "",
+      "tags": [],
+      "source": "matan_1_semester/3 lecture.tex"
+    },
+    {
+      "id": "T12",
+      "kind": "theorem",
+      "title": "",
+      "statement": "$\\Q$~---~счётно.",
+      "proof": "",
+      "tags": [],
+      "source": "matan_1_semester/3 lecture.tex"
+    },
+    {
+      "id": "T13",
+      "kind": "theorem",
+      "title": "",
+      "statement": "$\\R$~---~\\textit{несчётно}.",
+      "proof": "",
+      "tags": [],
+      "source": "matan_1_semester/3 lecture.tex"
+    }
+  ]
+}

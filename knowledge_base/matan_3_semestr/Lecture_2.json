@@ -1,0 +1,112 @@
+{
+  "units": [
+    {
+      "id": "D1",
+      "kind": "definition",
+      "title": "",
+      "statement": "Если $\\PP$~---~полукольцо множеств, то будем говорить, что конечно-аддитивная мера $\\mu$ на $\\PP$ является счётно-аддитивной, если: \\[\\forall \\ A \\in \\PP: A = A_1 \\sqcup \\ldots \\sqcup A_n \\sqcup \\ldots\\] где $\\{A_i\\} \\subset \\PP$ выполняется \\[\\mu(A) = \\sum\\limits_{i = 1}^{\\infty} \\mu(A_i)\\]",
+      "proof": "",
+      "tags": [],
+      "source": "matan_3_semestr/Lecture_2.tex"
+    },
+    {
+      "id": "D2",
+      "kind": "definition",
+      "title": "",
+      "statement": "Назовём одномерной ячейкой множество $[a, b), -\\infty < a \\leq b < +\\infty$. Эту конструкцию можно обобщить на $\\R^n$, и $n$-мерной ячейкой $[a, b)$, где $a = (a_1, \\ldots, a_n), b = (b_1, \\ldots, b_n)$ назвать множество $[a, b) = \\prod\\limits_{i = 1}^n [a_i, b_i)$.",
+      "proof": "",
+      "tags": [],
+      "source": "matan_3_semestr/Lecture_2.tex"
+    },
+    {
+      "id": "D3",
+      "kind": "definition",
+      "title": "",
+      "statement": "Введём одномерную меру Лебега на полукольце ячеек равенством $\\lambda_1([a, b)) = |b - a|$. Тогда $n$-мерную Лебега на полукольце ячеек получим равенством $\\lambda_n([a, b)) = \\prod\\limits_{i = 1}^n \\lambda_1([a_i, b_i))$, т.е. как тензорное произведение мер на тензорном произведении $n$ одномерных полуколец.",
+      "proof": "",
+      "tags": [],
+      "source": "matan_3_semestr/Lecture_2.tex"
+    },
+    {
+      "id": "D4",
+      "kind": "definition",
+      "title": "",
+      "statement": "Будем говорить, что мера на полукольце является счётно-полуаддитивной, если $\\forall A \\in \\PP$ и $\\forall \\{A_i\\} \\subset \\PP$ такой что $A \\subset \\bigcup\\limits_{i = 1}^{\\infty} A_i$ выполняется $\\mu(A) \\leq \\sum\\limits_{i = 1}^{\\infty} \\mu(A_i)$.",
+      "proof": "",
+      "tags": [],
+      "source": "matan_3_semestr/Lecture_2.tex"
+    },
+    {
+      "id": "D5",
+      "kind": "definition",
+      "title": "",
+      "statement": "Пусть $X$~---~абстрактное множество, а $2^X$~---~система всех его подмножеств. Функцию $\\tau$: $2^X \\rightarrow [0, +\\infty]$ будем называть внешней мерой (по Каратеодори), если выполнены следующие условия: \\begin{enumerate} \\item $\\tau(\\emptyset) = 0;$ \\item Если $A \\subset \\bigcup\\limits_i^\\infty A_i$, то $\\tau(A) \\leq \\sum\\limits_{i = 1}^\\infty \\tau(A_i)$. \\end{enumerate}",
+      "proof": "",
+      "tags": [],
+      "source": "matan_3_semestr/Lecture_2.tex"
+    },
+    {
+      "id": "D6",
+      "kind": "definition",
+      "title": "",
+      "statement": "Множество $A \\subset X$ называется $\\tau$-измеримым, если \\[\\forall E \\subset X \\ \\text{верно, что}\\ \\tau(E) = \\tau(E \\cap A) + \\tau(E \\setminus A)\\] Далее будем обозначать это условие как $(*)$. Прим. ред именно для любого множества $E$, мы как будто выбираем \"пробное\" множество, которое множество А аддитивно разбивает",
+      "proof": "",
+      "tags": [],
+      "source": "matan_3_semestr/Lecture_2.tex"
+    },
+    {
+      "id": "D7",
+      "kind": "definition",
+      "title": "",
+      "statement": "Обозначим $\\MM_\\tau$ семейство всех $\\tau$-измеримых подмножеств множества $X$. \\\\ Очевидно, что $\\emptyset, X \\in \\MM_\\tau$.",
+      "proof": "",
+      "tags": [],
+      "source": "matan_3_semestr/Lecture_2.tex"
+    },
+    {
+      "id": "T8",
+      "kind": "theorem",
+      "title": "",
+      "statement": "Пусть $\\PP^1$ и $\\PP^2$~---~полукольца, а $\\mu$ и $\\nu$~---~конечно-аддитивные меры на $\\PP^1$ и $\\PP^2$ соответственно. Тогда $\\forall P \\in \\PP^1, Q \\in \\PP^2$ определим $(\\mu \\otimes \\nu)(P \\times Q) = \\mu(P)\\cdot \\nu(Q)$ (причём считаем, что $+\\infty \\cdot +\\infty = +\\infty$). Докажем, что $\\mu \\otimes \\nu$~---~конечно-аддитивная мера на $\\PP^1 \\otimes \\PP^2$.",
+      "proof": "",
+      "tags": [],
+      "source": "matan_3_semestr/Lecture_2.tex"
+    },
+    {
+      "id": "T9",
+      "kind": "theorem",
+      "title": "",
+      "statement": "Для меры $\\mu$ на полукольце множеств $\\PP$ условия счётной аддитивности и счётной полуаддитивности равносильны.",
+      "proof": "",
+      "tags": [],
+      "source": "matan_3_semestr/Lecture_2.tex"
+    },
+    {
+      "id": "T10",
+      "kind": "theorem",
+      "title": "",
+      "statement": "Пусть $\\PP$~---~полукольцо одномерных ячеек и дана строго возрастающая функция $g: \\R \\rightarrow \\R$ непрерывная слева. Определим $\\nu_g([a, b)) = |g(b) - g(a)|$. Тогда $\\nu_g$~---~счётно-аддитивная мера на полукольце ячеек.",
+      "proof": "",
+      "tags": [],
+      "source": "matan_3_semestr/Lecture_2.tex"
+    },
+    {
+      "id": "T11",
+      "kind": "theorem",
+      "title": "",
+      "statement": "Система $\\MM_\\tau$~---~$\\sigma$-алгебра, при этом сужение $\\tau$ на $\\MM_\\tau$, обозначается $\\tau|_{\\MM_\\tau}$, и является счётно-аддитивной мерой на ней.",
+      "proof": "",
+      "tags": [],
+      "source": "matan_3_semestr/Lecture_2.tex"
+    },
+    {
+      "id": "T12",
+      "kind": "theorem",
+      "title": "",
+      "statement": "Конечно-аддитивная мера $\\mu$ на $\\sigma$-алгебре $\\MM$ является счётно-аддитивной $\\Longleftrightarrow$ $\\mu$ непрерывна снизу, то есть для последовательности $\\{ A_i\\} \\subset \\MM$: $A_i \\subset A_{i + 1}$ и $A = \\bigcup\\limits_{i = 1}^{+\\infty} A_i \\hookrightarrow \\mu(A) = \\lim\\limits_{k \\rightarrow \\infty} \\mu(A_k)$.",
+      "proof": "",
+      "tags": [],
+      "source": "matan_3_semestr/Lecture_2.tex"
+    }
+  ]
+}

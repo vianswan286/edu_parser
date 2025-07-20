@@ -1,0 +1,58 @@
+{
+  "units": [
+    {
+      "id": "D1",
+      "kind": "definition",
+      "title": "",
+      "statement": "Функция \\[ T_n(x) = a_0 + \\sum_{k=1}^{n}\\bigl(a_k\\cos(kx) + b_k\\sin(kx)\\bigr) \\] называется тригонометрическим полиномом степени \\(n\\), если $|a_n| + |b_n| \\neq 0.$",
+      "proof": "",
+      "tags": [],
+      "source": "matan_4_semestr/Lecture_5.tex"
+    },
+    {
+      "id": "T2",
+      "kind": "theorem",
+      "title": "",
+      "statement": "Пусть $f \\in C([-\\pi, \\pi])$ и $f$ ~---~ $2\\pi$ - периодична. Тогда $\\sigma_n[f] \\underset{\\R}{\\rightrightarrows} f, \\ n \\rightarrow \\infty.$",
+      "proof": "",
+      "tags": [],
+      "source": "matan_4_semestr/Lecture_5.tex"
+    },
+    {
+      "id": "T3",
+      "kind": "theorem",
+      "title": "б/д",
+      "statement": "Пусть $F \\in AC([a, b])$. Тогда $F$ почти всюду имеет классическую производную и, более того, восстанавливается через свою производную по формуле Ньютона - Лейбница.",
+      "proof": "",
+      "tags": [],
+      "source": "matan_4_semestr/Lecture_5.tex"
+    },
+    {
+      "id": "T4",
+      "kind": "theorem",
+      "title": "Интегрирование по частям, б/д",
+      "statement": "Пусть $F \\in AC([a, b]), g \\in L_1([a, b])$. Тогда верна формула интегрирования по частям: $\\int\\limits_{a}^{b} F(x)g(x) dx = F(x)G(x)\\big|_{a}^{b} - \\int\\limits_{a}^{b} F'(x)G(x) dx$, \\newline где $G(x) = \\int\\limits_a^{x} g(t)dt $",
+      "proof": "",
+      "tags": [],
+      "source": "matan_4_semestr/Lecture_5.tex"
+    },
+    {
+      "id": "T5",
+      "kind": "theorem",
+      "title": "",
+      "statement": "Пусть $f$ -- непрерывная $2\\pi$-периодическая кусочно непрерывно-дифференцируемая функция на $[0, 2\\pi]$. Тогда её ряд Фурье сходится к ней равномерно.",
+      "proof": "",
+      "tags": [],
+      "source": "matan_4_semestr/Lecture_5.tex"
+    },
+    {
+      "id": "T6",
+      "kind": "theorem",
+      "title": "",
+      "statement": "Пусть $f: \\R \\to \\mathbb{C}$ является $2\\pi$-периодичной кусочно непрерывной функцией и ей сопоставлен ряд Фурье: \\[ f(x) \\sim \\sum\\limits_{k \\in \\Z} c_k(f) e^{ikx}. \\] Тогда $\\forall y \\in \\R$ \\[ \\int_0^{y}f(x)dx = \\sum\\limits_{k \\in \\Z} \\int_0^{y} c_k e^{ikx}dx. \\] и ряд сходится равномерно на всей числовой прямой.",
+      "proof": "",
+      "tags": [],
+      "source": "matan_4_semestr/Lecture_5.tex"
+    }
+  ]
+}

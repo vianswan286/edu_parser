@@ -1,0 +1,150 @@
+\section{Топология числовой прямой}
+\begin{definition}
+    Пусть $E$~---~непустое множество. Тогда $x \in \R$ называется \textit{точкой прикосновения} множества $E$, если
+    $$ \forall \epsilon > 0 \ \ U_{\epsilon} (x) \cap E \neq \varnothing.$$
+\end{definition}
+\begin{definition}
+    \textit{Замыканием множества} $E$ называется множество всех точек прикосновения $E$ и обозначается $\text{cl}E$ (также можно встретить обозначение $\overline{E}$).
+\end{definition}
+\begin{definition}
+    Множество называется \textit{замкнутым}, если оно совпадает со своим замыканием.
+\end{definition}
+\begin{note}
+    Множество $E$ всегда содержится в своём замыкании ($E \subset \text{cl}E$).
+\end{note}
+\begin{note}
+    По определению пустое множество и всё пространство $\R$ считаются замкнутыми.
+\end{note}
+\begin{example}
+    Возьмём два числа $a, b \in \R$: $a < b$. $[ a, b ]$~---~замкнутое множество.
+
+    Покажем, что $\forall c \notin [ a, b ]$ не является точкой прикосновения.
+
+    Действительно, возьмём $\epsilon^{*} = min \{\frac{|c - b|}{2}, \frac{|a - c|}{2} \}$. Тогда $U_{\epsilon^{*}} (c) \cap [ a, b ] = \varnothing \Rightarrow$ она не является точкой прикосновения $\Rightarrow \text{cl}[ a, b ] \subset [ a, b ],$ а поскольку обратное включение ($[ a, b ] \subset \text{cl} [ a, b ]$) выполнено автоматически, то получаем, что отрезок замкнут.
+\end{example}
+\begin{definition}
+    Пусть $G$~---~непустое множество. Будем говорить, что $x$~---~\textit{внутренняя точка} $G$, если $$\exists \epsilon > 0: \  U_{\epsilon} (x) \subset G.$$
+\end{definition}
+\begin{definition}
+    \textit{Внутренностью} множества $G$ называется множество всех его внутренних точек и обозначается $\text{int}G$.
+\end{definition}
+\begin{definition}
+    Множество $G \subset \R$ называется \textit{открытым}, если оно совпадает со своей внутренностью.
+\end{definition}
+\begin{note}
+    По определению $\{ \varnothing \}$ и $\R$ открыты.
+\end{note}
+\begin{note}
+    Внутренность всегда содержится в своём множестве ($\text{int}G \subset G$).
+\end{note}
+\begin{example}
+    Возьмём два числа $a, b \in \R$: $a < b$. $( a, b )$~---~открытое множество.
+
+    Действительно, пусть $x \in (a, b)$. Возьмём $\epsilon = \min \{ |x - a|, |b - x| \}$. Раскрыв модульные неравенства, получим $U_{\epsilon} (x) \subset (a, b)$, то есть $\text{int}(a, b) \subset (a, b)$, а так как $\forall c \notin (a, b) \hookrightarrow c$~---~не внутренняя точка, то $(a, b) \subset \text{int}(a, b) \Rightarrow (a, b) = \text{int}(a, b) \Rightarrow (a, b)$~---~открытое множество.
+\end{example}
+\begin{problem}
+    Может ли множество быть и не открытым, и не замкнутым?
+\end{problem}
+\begin{solution}
+    Может. К примеру, полуинтервал. Возьмём $(a , b ],$ $a < b$. Заметим, что $a$~---~точка прикосновения по определению, она принадлежит замыканию, но не принадлежит множеству $\Rightarrow$ оно не является замкнутым. А $b \notin \text{int}(a, b]$, так как $\forall \epsilon > 0$ $U_{\epsilon} (b) \not\subset (a, b]$ $\Rightarrow$ оно не является открытым. Итого получаем, что это и не открытое, и не замкнутое множество.
+\end{solution}
+\begin{example}
+    Возьмём множество $\Q$. $\text{cl}\Q = \R$, $\text{int}\Q = \varnothing \Rightarrow$ оно и не открыто, и не замкнуто.
+
+    $\text{int}\Q = \varnothing$ очевидно, так как в любом интервале найдётся иррациональная точка.
+
+    $\text{cl}\Q = \R$ потому, что в любом интервале найдётся рациональная точка.
+
+    Пусть дано $\epsilon > 0$. Покажем, что любой интервал длины не более $\epsilon$ содержит как рациональную, так и иррациональную точку. Возьмём $k \geq [\frac{1}{\epsilon}] + 1 \Rightarrow \frac{1}{k} < \epsilon$. Разобьём всю числовую прямую на равные отрезки длины $\frac{1}{2k}$. Концы этих отрезков, очевидно, рациональны. А иррациональное число в каждом отрезке содержится потому, что мы можем прогомотетировать (домножением на рациональное и прибавлением рационального) отрезок $[ 0, 2 ]$ в любой такой отрезок, а в отрезке $[ 0, 2 ]$ содержится как минимум $\sqrt{2}$, являющийся иррациональным числом.
+
+    А поскольку длина каждого отрезка $\frac{1}{2k}$, а $\epsilon > \frac{1}{k}$, то этот отрезок содержится в эпсилон окрестности $\Rightarrow$ для любого интервала найдётся как рациональная, так иррациональная точка внутри.
+\end{example}
+\begin{definition}
+    $x \in \R$ называется \textit{изолированной точкой} множества $E$, если $$\exists \epsilon > 0: \  U_{\epsilon} (x) \cap E = \{ x \}.$$
+\end{definition}
+\begin{definition}
+    $x \in \R$ называется \textit{предельной точкой} множества $E$, если $$\forall \epsilon > 0 \  \big(U_{\epsilon} (x) \backslash \{ x \}\big) \cap E \neq \varnothing.$$
+\end{definition}
+\begin{proposition}
+    $x$~---~точка прикосновения (1) $\Leftrightarrow
+    \left[
+    \begin{gathered}
+    x \text{~---~изолированная точка} \\
+    x \text{~---~предельная точка} \hfill
+    \end{gathered}
+    \right.
+    $
+\end{proposition}
+\begin{proof}
+    Из совокупности в (1) очевидно (просто по определениям).
+
+    Докажем из (1) в совокупность. 
+    
+    Пусть $x$~---~точка прикосновения $\Rightarrow \forall \epsilon > 0 \  U_{\epsilon} (x) \cap E \neq \varnothing.$ Возможны два случая: если $\exists \epsilon > 0$: $U_{\epsilon} (x) \cap E = \{ x \} \Rightarrow$ она изолированная, либо $\forall \epsilon > 0 \  U_{\epsilon} (x) \cap E$ содержит не только $x$, но тогда она предельная.
+\end{proof}
+\begin{problem}
+    Пусть $\{ x_{n} \}$~---~числовая последовательность. Доказать, что замыкание множества значений последовательности~---~это объединение множества всех значений последовательности и его частичных пределов, то есть $\text{cl} \{ x_{n} \} = \{ x_{n} \} \cup PL (\{ x_{n} \}).$
+\end{problem}
+\begin{theorem}
+    \hypertarget{thm3.1}{(Критерий точки прикосновения)} Пусть $E$~---~множество, $E \neq \varnothing$. Точка $x$ является точкой прикосновения $E \Leftrightarrow \exists \{ x_{n} \} \subset E$: $\lim\limits_{n\to \infty} x_{n} = x$.
+\end{theorem}
+\begin{proof}
+    Пусть $\exists \{ x_{n} \} \subset E$: $\lim\limits_{n\to \infty} x_{n} = x \Rightarrow \forall \epsilon > 0 \  \exists N (\epsilon) \in \N$: $\forall n \geq N (\epsilon) \hookrightarrow \newline \hookrightarrow x_{n} \in U_{\epsilon} (x) \Rightarrow \forall \epsilon > 0 \  \exists x = x_{N (\epsilon)}$: $x \in \big(U_{\epsilon} (x) \cap E\big).$
+
+    Пусть обратно, $x$~---~точка прикосновения множества $E$. Построим последовательность, сходящуюся к $x$.
+
+    $\forall k \in \N$ в силу определения точки прикосновения $U_{\frac{1}{k}} (x) \cap E \neq \varnothing \Rightarrow \exists x_{k} \in \big(E \cap U_{\frac{1}{k}} (x)\big).$ Тогда рассмотрим неравенство $0 \leq |x - x_{k}| \leq \frac{1}{k} \  \forall k \in \N$ по построению. Но $\lim\limits_{k\to \infty} \frac{1}{k} = 0 \Rightarrow$ по теореме о двух миллиционерах $\exists \lim\limits_{k\to \infty} |x - x_{k}| = 0 \Rightarrow \lim\limits_{k\to \infty} x_{k} - x = 0 \Rightarrow \lim\limits_{k\to \infty} x_{k} = x$.
+\end{proof}
+\begin{definition}
+    Множество $K \subset \R$ называется \textit{компактом}, если из любой последовательности значений точек $\{ x_{n} \} \subset K$ можно выделить сходящуюся в $K$ подпоследовательность. То есть
+    $$ \exists \{ x_{n_{k}} \}: \ \exists \lim\limits_{k\to \infty} x_{n_{k}} = x,\  x \in K.$$
+\end{definition}
+\begin{theorem}
+    \hypertarget{thm3.2}{(Критерий компактности в $\R$)} Множество $K \subset \R$~---~компактно $\Leftrightarrow$ оно ограниченно и замкнуто. 
+\end{theorem}
+\begin{proof}
+    \underline{Шаг 1.} Пусть $K$~---~ограничено и замкнуто. Докажем, что $K$~---~компакт. Возьмём произвольную последовательность $\{ x_{n} \} \subset K$. Покажем, что из неё можно выделить сходящуюся в $K$ подпоследовательность.
+
+    Так как $\{ x_{n} \}$ является последовательностью в $K$, а $K$ ограничено, то $\{ x_{n} \}$~---~ограничено, тогда \hyperlink{thm2.8}{по теореме Больцано-Вейерштрасса} существует подпоследовательность $x_{n_{j}}$, которая сходится "куда-то".
+
+    Пусть $x^{*} = \lim\limits_{j\to \infty} x_{n_{j}}$. Тогда в силу \hyperlink{thm3.1}{критерия точки прикосновения} $x^{*}$~---~точка прикосновения $K$, а $K$ замкнуто $\Rightarrow x^{*} \in K.$
+
+    \underline{Шаг 2.} Докажем в обратную сторону. Пусть $K$~---~компакт. Докажем, что $K$~---~ограничено и замкнуто. Будем доказывать от противного. 
+    
+    Предположим, что $K$~---~неограничено. Тогда $\forall j \in \N \  \exists x_{j} \in K$: $|x_{j}| > j \Rightarrow \exists \{ x_{j} \} \subset K \  \lim\limits_{j\to \infty} |x_{j}| = +\infty \Rightarrow$ не существует сходящейся подпоследовательности $\{ x_{j} \}$. Получили противоречие с компактностью $\Rightarrow K$~---~ограничено.
+
+    Предположим, что $K$~---~не замкнуто. Тогда $\exists x^{*}$~---~точка прикосновения $K$: $x^{*} \notin K$. Тогда в силу \hyperlink{thm3.1}{критерия точки прикосновения} $\exists \{ x_{n} \} \subset K$: $\lim\limits_{n\to \infty} x_{n} = x^{*} \Rightarrow$ любая подпоследовательность $\{ x_{n_{j}} \}$ последовательности $\{ x_{n} \}$ тоже сходится к $x^{*} \notin K.$ Получили последовательность $\{ x_{n} \}$ из которой нельзя выделить сходящейся в $K$ подпоследовательность. Противоречие. Получаем, что $K$~---~замкнуто.
+\end{proof}
+\begin{definition}
+    Система множеств $\{ V_{\alpha} \}_{\alpha \in I}$ называется \textit{покрытием} множества $E$, если $\bigcup\limits_{\alpha \in I} V_{\alpha} \supset E.$
+\end{definition}
+\begin{definition}
+    Система $\{ V_{\beta} \}_{\beta\in J}$ называется \textit{подпокрытием} покрытия $\{ V_{\alpha} \}_{\alpha \in I}$, если $J \subset I$ и $\bigcup\limits_{\beta \in J} V_{\beta} \supset E$.
+\end{definition}
+\begin{definition}
+    Покрытие называется \textit{открытым}, если все $V_{\alpha}$ открыты.
+\end{definition}
+\begin{definition}
+    Подпокрытие называется \textit{открытым}, если все $V_{\beta}$ открыты.
+\end{definition}
+\newpage
+\begin{lemma}
+    (Лемма Гейне-Бореля) Из любого открытого покрытия компакта $K$ можно выделить конечное подпокрытие (открытое).
+\end{lemma}
+\begin{proof}
+    Будем доказывать от противного. Пусть $\{ V_{\alpha}\}_{\alpha \in I}$~---~открытое покрытие компакта $K$, из которого нельзя выделить конечного подпокрытия. Так как $K$ компакт, то $K$ ограничен (\hyperlink{thm3.2}{по критерию компактности}), то есть $\exists [a, b] \subset \R$: $K \subset [a, b].$ 
+    
+    Для удобства $I^{0} := [a, b]$, разделим его пополам: получаем $I^{0}_{1}$ и $I^{0}_{2}$. Заметим, что $I^{0}_{1} \cap K$ покрывается $\{ V_{\alpha}\}_{\alpha \in I}$ и $I^{0}_{2} \cap K$ покрывается $\{ V_{\alpha}\}_{\alpha \in I}$. Хотя бы для одного одного из них из $\{ V_{\alpha}\}_{\alpha \in I}$ невозможно выделить конечное подпокрытие, потому что иначе можно было бы выделить конечное подпокрытие $\{ V_{\alpha} \}_{\alpha \in I}$.
+
+    \textit{Примечание.} Если из обеих частей невозможно выделить конечное подпокрытие, то берём любую.
+
+    Пусть $I^{1}$~---~та половинка отрезка $I^{0}$, что из покрытия $\{ V_{\alpha}\}_{\alpha \in I}$ нельзя выделить конечное подпокрытие $I^{1} \cap K.$
+
+    Предположим, что мы построили отрезки $I^{0} \supset \ldots \supset I^{m}$: $|I^{j}| = \frac{1}{2}|I^{j - 1}|$ и в то же время из $\{ V_{\alpha}\}_{\alpha \in I}$ нельзя выделить конечного подпокрытия множества $K \cap I^{j} \ \forall j \in \{ 0, 1, \ldots, m\}.$ На $m + 1$ шаге поделим отрезок $I^{m}$ пополам и выберем ту половину, пересечение которой с $K$ не может быть покрыто конечным поднабором $\{ V_{\alpha}\}_{\alpha \in I}.$ Получили стягивающуюся последовательность вложенных отрезков $\{ I^{m} \}$. Тогда по лемме Кантора $\displaystyle \exists x = \bigcap_{m = 1}^{\infty} I^{m}.$ 
+    
+    Поскольку $\displaystyle x \in K$ (так как $K$ замкнут и $\forall m \in \N \ x_{m} \in (I_{m} \cap K)$, тогда $\lim\limits_{m \to \infty} x_{m} = x$), а значит $\exists \alpha (x) \in I$: $x \in V_{\alpha (x)}$, но $V_{\alpha (x)}$~---~открытое, то есть $\exists \epsilon > 0$: $U_{\epsilon} (x) \subset U_{\alpha (x)}$. Так как $|I^{m}| \to 0$, $m \to \infty$ и $x \in I^{m} \ \forall m \in \N$, то $\exists m (\epsilon) \in \N$: $I^{m (\epsilon)} \subset U_{\epsilon} (x) \subset V_{\alpha (x)} \Rightarrow I^{m (\epsilon)} \cap K$ покрывается одним $U_{\alpha (x)}$, что противоречит построению, то есть исходное предположение было неверно.
+
+\end{proof}
+\begin{problem}
+    Доказать, что если из любого открытого покрытия множества можно выделить конечное подпокрытие, то это множество компакт.
+\end{problem}

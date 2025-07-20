@@ -51,6 +51,12 @@ class Neo4jExporter:
                 FOR (n:KnowledgeUnit) REQUIRE n.id IS UNIQUE
             """)
             
+            # Create tag constraint
+            session.run("""
+                CREATE CONSTRAINT tag_name IF NOT EXISTS 
+                FOR (t:Tag) REQUIRE t.name IS UNIQUE
+            """)
+            
             # Create vector index if it doesn't exist
             session.run("""
                 CREATE VECTOR INDEX knowledge_unit_embedding IF NOT EXISTS
@@ -60,6 +66,12 @@ class Neo4jExporter:
                     `vector.similarity_function`: 'cosine'
                 }}
             """)
+    
+    def _extract_source_tag(self, source: str) -> str:
+        """Extract tag from source by taking text before the first '/'"""
+        if not source:
+            return "unknown"
+        return source.split('/')[0].strip()
             
     def export_units(self):
         """Export all knowledge units from SQLite to Neo4j"""
@@ -67,7 +79,8 @@ class Neo4jExporter:
         
         # Get all knowledge units
         cursor.execute("""
-            SELECT id, title, statement, proof, tags, embedding 
+            SELECT id, title, statement, proof, tags, embedding, 
+                   COALESCE(source, '') as source 
             FROM knowledge_units
         """)
         
@@ -85,6 +98,14 @@ class Neo4jExporter:
                         except json.JSONDecodeError:
                             tags = [tags] if tags else []
                     
+                    # Extract source tag
+                    source = unit['source'] if 'source' in unit else ''
+                    source_tag = self._extract_source_tag(source)
+                    
+                    # Add source tag to tags if not already present
+                    if source_tag and source_tag not in tags:
+                        tags.append(source_tag)
+                    
                     # Convert embedding from bytes to list if needed
                     embedding = unit['embedding']
                     if isinstance(embedding, bytes):
@@ -94,21 +115,7 @@ class Neo4jExporter:
                             embedding = None
                     
                     # Create or update the node in Neo4j
-                    session.run("""
-                        MERGE (u:KnowledgeUnit {id: $id})
-                        SET u.title = $title,
-                            u.statement = $statement,
-                            u.proof = $proof,
-                            u.tags = $tags,
-                            u.embedding = $embedding
-                    """, {
-                        'id': str(unit['id']),
-                        'title': unit['title'] or '',
-                        'statement': unit['statement'] or '',
-                        'proof': unit['proof'] or '',
-                        'tags': tags,
-                        'embedding': embedding
-                    })
+                    session.execute_write(self._create_unit_node, unit, tags, embedding, source_tag)
                     
                     logger.debug(f"Exported unit {unit['id']}: {unit['title']}")
                     
@@ -116,6 +123,39 @@ class Neo4jExporter:
                     logger.error(f"Error exporting unit {unit.get('id')}: {e}")
                     
             logger.info(f"Successfully exported {len(units)} knowledge units")
+    
+    def _create_unit_node(self, tx, unit, tags, embedding, source_tag):
+        """Helper method to create a unit node with its relationships"""
+        # Create or update the knowledge unit
+        tx.run("""
+            MERGE (u:KnowledgeUnit {id: $id})
+            SET u.title = $title,
+                u.statement = $statement,
+                u.proof = $proof,
+                u.tags = $tags,
+                u.embedding = $embedding,
+                u.source = $source
+        """, {
+            'id': str(unit['id']),
+            'title': unit['title'] or '',
+            'statement': unit['statement'] or '',
+            'proof': unit['proof'] or '',
+            'tags': tags,
+            'embedding': embedding,
+            'source': unit['source'] if 'source' in unit else ''
+        })
+        
+        # Create or update the tag node and create relationship
+        if source_tag:
+            tx.run("""
+                MERGE (t:Tag {name: $tag_name})
+                WITH t
+                MATCH (u:KnowledgeUnit {id: $unit_id})
+                MERGE (u)-[:TAGGED_WITH]->(t)
+            """, {
+                'tag_name': source_tag,
+                'unit_id': str(unit['id'])
+            })
             
     def export_connections(self):
         """Export all connections from SQLite to Neo4j"""
@@ -134,8 +174,8 @@ class Neo4jExporter:
             for conn in connections:
                 try:
                     session.run("""
-                        MATCH (source:KnowledgeUnit {id: $target_id})
-                        MATCH (target:KnowledgeUnit {id: $source_id})
+                        MATCH (source:KnowledgeUnit {id: $source_id})
+                        MATCH (target:KnowledgeUnit {id: $target_id})
                         MERGE (source)-[r:PREREQUISITE]->(target)
                         SET r.relationship_type = $rel_type
                     """, {

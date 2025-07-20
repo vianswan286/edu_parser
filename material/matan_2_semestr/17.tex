@@ -1,0 +1,166 @@
+\begin{remark}
+    (по поводу линейности несобственного интеграла)
+    $$\int \limits_a^b \left[ f(x) + g(x)\right] dx$$
+    Если $\int \limits_a^b f(x) dx$ сходится и при этом $\int \limits_a^b g(x) dx$ расходится, \\ то $\int \limits_a^b \left[ f(x) + g(x)\right] dx$ расходится.
+\end{remark}
+
+\begin{proof}
+    Действительно, предположим, что $\int \limits_a^b \left[ f(x) + g(x)\right] dx$ сходится. \\
+    $ g(x) = \left[ f(x) + g(x) \right] - f(x),$
+    но тогда в силу линейности несобственного интеграла \\ $\int \limits_a^b g(x) dx$ сходится и более того $\int \limits_a^b g(x) dx = \int \limits_a^b \left[ f(x) + g(x)\right] dx - \int \limits_a^b f(x) dx.$
+\end{proof}
+
+\begin{theorem}
+    Пусть $ -\infty < a < b \leq + \infty$ и $f \in \Rim\left( [a, b']\right) \: \forall b' \in (a, b)$. \\
+    Пусть $\int \limits_a^b f(x) dx$ сходится абсолютно, тогда он сходится.
+\end{theorem}
+
+\begin{proof}
+    Из $f \in R\left( [a, b']\right) \Longrightarrow |f| \in R([a, b']) \ \forall b' \in (a, b).$ 
+    Так как $\int \limits_a^b f(x) dx$ — сходится абсолютно $\Longrightarrow \ \int \limits_a^b |f(x)| dx$ сходится \\
+    $\Longrightarrow $ в силу критерия Коши $\forall \epsilon > 0 \ \exists b(\epsilon): \forall b', b'' \in (b(\epsilon, b)) \hookrightarrow \int \limits_{b'}^{b''} |f(x)| dx < \epsilon.$ \\
+    Заметим, что $\left| \int \limits_{b'}^{b''} f(x) dx \right| \leq \int \limits_{b'}^{b''} |f(x)| dx \ \Longrightarrow \forall \epsilon \ \exists b(\epsilon) : \forall b', b'' \in (b(\epsilon), b) \hookrightarrow \left| \int \limits_{b'}^{b''} f(x) dx \right| < \epsilon$. \\
+    Значит в силу критерия Коши $\int \limits_a^b f(x) dx$ сходится.
+\end{proof}
+
+\begin{theorem} (замена переменной в несобственном интеграле) \\
+    Пусть $f \in C\left([a, b]\right)$ и $x = x(t) \in C^1\left([\alpha, \beta]\right)$ и $x$ строго монотонно переводит $[\alpha, \beta)$ в $[a, b)$. \\
+    Тогда, либо интегралы $\int \limits_a^b f(x)dx$ и $\int \limits_{\alpha}^{\beta} f(x(t))x'(t)dt$ сходятся или расходятся одновременно.\\
+    В случае их сходимости они равны. $$\int \limits_a^b f(x)dx = \int \limits_{\alpha}^{\beta} f(x(t))x'(t)dt$$
+\end{theorem}
+
+\begin{proof}
+    Если $x$: $[\alpha, \beta) \ \mapsto \ [a, b)$ - непрерывная строго возрастающая биекция, \\ то $\exists t = t(x): \ [a, b) \mapsto [\alpha, \beta)$ - непрерывная строго возрастающая биекция. \\
+    $x(\beta') \to b - 0$, $t(b') \to \beta - 0$ \\
+    $\beta' \to \beta - 0$, $b' \to b - 0$ \\
+    В силу теоремы о замене переменной в обычном интегралы Римана \\
+    $$\int \limits_a^{b'} f(x)dx = \int \limits_{\alpha}^{\beta'} f(x(t))x'(t)dt$$
+    $$b' = x(\beta')$$
+    $$\beta' = t(b')$$
+    Если $\int \limits_a^b f(x)dx$ сходится, то $\exists \lim_{b' \to b - 0} \int \limits_a^{b'} f(x) dx$ \\
+    $\Longrightarrow \exists \lim_{\beta' \to \beta - 0} \int \limits_{\alpha}^{\beta'} f(x(t))x'(t)dt = \lim_{\beta' \to \beta - 0} \int \limits_a^{\beta'} f(x)dx =$ [по теореме о замене переменной при вычислении предела] $= \lim_{b' \to b - 0} \int \limits_a^{b'} f(x)dx.$ \\
+    Аналогично из сходимости $\int \limits_{\alpha}^{\beta} f(x(t))x'(t)dt$ следует сходимость $\int \limits_a^b f(x)dx$.
+\end{proof}
+
+\subsection{Несобственный интеграл от знакопостоянной функции}
+
+\begin{theorem} (признак сравнения)
+    Пусть $f, \ g \in \Rim([a, b'])$ и пусть $0 \leq f(x) \leq g(x) \ \forall x \in [a, b)$ $(\star)$ \\
+    Тогда если $\int \limits_a^b g(x)dx$ сходится, то $\int \limits_a^b f(x) dx$ сходится.
+    Если $\int \limits_a^b f(x)dx$ расходится, то $\int \limits_a^b g(x) dx$ расходится.
+\end{theorem}
+
+\begin{proof}
+    Заметим, что в силу неотрицательности $f$ и $g$ \\
+    $\int \limits_a^b f(x)dx$ сход $\Longleftrightarrow$ $\exists \lim_{b' \to b - 0} \int \limits_a^{b'} f(x) dx \in [0, +\infty)$ $\Longleftrightarrow$ $\sup \limits_{b' \in (a, b)} \int \limits_a^{b'} f(x) dx \in [0, +\infty).$\\
+    (так как $\int \limits_a^{b'} f(x) dx$ нестрого возрастает на $[a, b)$), \\
+    аналогично $\int \limits_a^b g(x) dx$ сходится $\Longleftrightarrow$ $\sup \limits_{b' \in (a, b)} \int \limits_a^{b'} g(x) dx \in [0, +\infty).$ \\
+    Из $(\star)$ и свойств интеграла Римана получаем \\
+    $\forall b' \in [a, b) \hookrightarrow 0 \leq \int \limits_a^{b'} f(x)dx \leq \int \limits_a^{b'} g(x) dx$~---~ если супремум этого интеграла конечен $\Longrightarrow \sup \limits_{b' \in (a, b)} \int \limits_a^{b'} f(x)dx < +\infty$ . \\
+    Наоборот, если $\sup \limits_{b' \in (a, b)} \int \limits_a^{b'} f(x) dx = +\infty \ \Longrightarrow \sup \limits_{b' \in (a, b)} \int \limits_a^{b'} g(x)dx = +\infty.$
+\end{proof}
+
+На множестве \underline{неотрицательных} на $[a, b)$ функций введём отношение эквивалентности \\
+$$f(x) \overset{\text{сх.}}{\sim} g(x), \ x \to b - 0$$ \\
+по определению это означает 
+$\exists \widetilde{b} \in (a, b)$ и $\exists m, M > 0$ такие что \\
+$mf(x) \leq g(x) \leq Mf(x)$ $\forall x \in (\widetilde{b}, b)$ \\
+Проверим, что это действительно отношение эквивалентности. \\
+\begin{enumerate}
+    \item рефлексивно — очевидно
+    \item симметрично - $\dfrac{1}{M} g(x) \leq f(x) \leq \dfrac{1}{m} g(x) $
+    \item $f \sim g$ $\Longleftrightarrow$ $\exists \widetilde{b_1} \in (a, b)$ $\exists m_1, M_1 > 0:$ $m_1 f(x) \leq g(x) \leq M_1 f(x) \ \forall x \in (\widetilde{b_1}, b)$ \\
+    $g \sim h$ $\Longleftrightarrow$ $\exists \widetilde{b_2} \in (a, b)$ $\exists m_2, M_2 > 0:$ $m_2 f(x) \leq h(x) \leq M_2 f(x) \ \forall x \in (\widetilde{b_2}, b)$ \\
+    $\widetilde{b} = \max\{\widetilde{b_1}, \widetilde{b_2}\}$ \\
+    $\forall x \in (\widetilde{b}, b) \hookrightarrow m_1 f(x) \leq g(x) \leq \dfrac{h(x)}{m_2}$ \\
+    $m_1 m_2 f(x) \leq h(x)$, $m = m_1 m_2$ \\
+    $h(x) \leq M_2 g(x) \leq M_2 M_1 f(x)$, $M = M_1 M_2$ \\
+    $\Longrightarrow \forall x \in (\widetilde{b}, b) \hookrightarrow mf(x) \leq h(x) \leq Mf(x)$
+\end{enumerate}
+
+\begin{lemma}
+    Пусть $f_1(x) \overset{\text{сх.}}{\sim} f_2(x)$, $x \to b - 0,$ \\
+    $g_1(x) \overset{\text{сх.}}{\sim} g_2(x)$, $x \to b - 0,$ \\
+    $h_1(x) \overset{\text{сх.}}{\sim} h_2(x)$, $x \to b - 0$. \\
+    Пусть \begin{equation*}
+            \begin{cases}
+                h_1(x) > 0, \\
+                h_2(x) > 0
+            \end{cases}
+            \forall x \in [a, b)
+           \end{equation*}
+    Тогда $\dfrac{f_1(x) g_1(x)}{h_1(x)} \overset{\text{сх.}}{\sim} \dfrac{f_2(x) g_2(x)}{h_2(x)}, \ x \to b - 0$
+\end{lemma}
+
+\begin{proof}
+    $\exists m_1, M_1 > 0$ $\exists \widetilde{b_1} \in (a, b)$ :
+    $m_1 f_1(x) \leq f_2(x) \leq M_1 f_1(x)$ $\forall x \in (\widetilde{b_1}, b)$ \\
+    $\exists m_2, M_2 > 0$ $\exists \widetilde{b_2} \in (a, b)$ :
+    $m_2 g_1(x) \leq g_2(x) \leq M_2 g_1(x)$ $\forall x \in (\widetilde{b_2}, b)$ \\
+    $\exists m_3, M_3 > 0$ $\exists \widetilde{b_3} \in (a, b)$ :
+    $m_3 h_1(x) \leq h_2(x) \leq M_3 h_1(x)$ $\forall x \in (\widetilde{b_3}, b)$ \\
+    $\dfrac{m_1 m_2}{M_3} \cdot \dfrac{f_1(x) g_1(x)}{h_1(x)} \leq \dfrac{f_2(x) g_2(x)}{h_2(x)} \leq \dfrac{M_1 M_2}{m_3} \cdot \dfrac{f_1(x) g_1(x)}{h_1(x)} \ \forall x \in (\widetilde{b}, b)$, где $\widetilde{b} = \max\{\widetilde{b_1}, \widetilde{b_2}, \widetilde{b_3}\}$ \\
+    $m = \dfrac{m_1 m_2}{M_3}$, $M = \dfrac{M_1 M_2}{m_3}$
+\end{proof}
+
+\begin{theorem} (замена на эквивалентную) \\
+    Пусть $-\infty < a < b < +\infty$, $f, g \in R([a, b']) \ \forall b' \in (a, b).$ \\
+    Пусть $f, g \geq 0$ на $[a, b)$.
+    Пусть $f(x) \overset{\text{сх.}}{\sim} g(x)$, $x \to b - 0$.
+    Тогда $\int \limits_a^b f(x) dx$ и $\int \limits_a^b g(x) dx $ сходятся или расходятся одновременно.
+\end{theorem}
+
+\begin{proof}
+    Так как $f, g > 0$ и $f(x) \overset{\text{сх.}}{\sim} g(x)$, $x \to b - 0$, то $\exists \widetilde{b} \in (a, b) \ \exists  m > 0, \ M > 0$, такие что $m f(x) \leq g(x) \leq M f(x)$ $\forall x \in (\widetilde{b}, b)$ $(\star)$ \\
+    В силу принципа локализации 
+    $ \int \limits_a^b f(x) dx$ - сходится $\Longleftrightarrow$ $ \int \limits_{\widetilde{b}}^b f(x) dx$ - сходится. \\
+    Аналогично $ \int \limits_a^b g(x) dx$ - сходится $\Longleftrightarrow$ $ \int \limits_{\widetilde{b}}^b g(x) dx$ - сходится. \\
+    В силу уже доказанного признака сравнения и в силу ($\star$) получаем \\ $\int \limits_a^{\widetilde{b}} f(x) dx$ $\Longrightarrow$ $\int \limits_a^{\widetilde{b}} g(x) dx$ сходится. И в то же время, если $\int \limits_a^{\widetilde{b}} f(x) dx$ расходится $\overset{(\star) + \text{признак сравнения}}{\Longrightarrow}$ $\int \limits_a^{\widetilde{b}} g(x) dx$ расходится.
+\end{proof}
+
+\begin{remark}
+    Если $f(x) \geq 0$ $\forall g(x) > 0$ $\forall x \in (a, b)$ и $\exists \lim \limits_{x \to b - 0} \dfrac{f(x)}{g(x)} = \alpha > 0$. \\
+    Тогда $f(x) \overset{\text{сх.}}{\sim} g(x), \ x \to b - 0.$
+\end{remark}
+
+\subsection{Признаки Дирихле и Абеля}
+
+\begin{theorem} (признак Дирихле) \\
+Пусть $- \infty < a < b \leq + \infty $. Пусть $f \in C([a, b])$, $g \in C^1([a, b))$. \\
+\begin{enumerate}
+    \item Первообразная $F$ функции $f$ ограничена на $[a, b).$ \\
+    $\Longleftrightarrow$ $\exists C > 0$: $\left| \int \limits_a^x  f(x) dx \right| \leq C \ \forall x \in [a, b).$
+    \item $\exists \lim \limits_{x \to b - 0} g(x) = 0.$
+    \item $g'(x) \leq 0$ $\forall x \in [a, b)$ $\Longleftrightarrow$ $g$ нестрого убывает на $[a, b)$.
+\end{enumerate}
+Тогда $\int \limits_a^b f(x) g(x) dx$ сходится.
+    
+\end{theorem}
+
+\begin{proof}
+    Так как $f \in C([a, b])$ и $g \in C^1([a, b))$, то $\forall b' \in (a, b) \hookrightarrow$  \\ $ fg \in R([a, b']),$ \\ $F g' \in R([a, b']).$ \\
+    $\int \limits_a^{b'} f(x) g(x) dx = F(x)g(x) \bigg|_a^{b'} - \int \limits_a^{b'} F(x) g'(x) dx$. \\
+    Заметим, что $\int \limits_a^{b'} g'(x) dx =$ [формула Ньютона-Лейбница] $= g(b') - g(a) \to -g(a)$, $b' \to b - 0.$ \\
+    $\Longrightarrow \int \limits_a^b g'(x) dx$ сходится и, более того, $g'(x) \leq 0 \ \forall x \in [a, b).$ \\
+    $\Longrightarrow \int \limits_a^b g'(x) dx$ сходится абсолютно. \\
+    Так как $\left| F(x) g'(x)\right| \leq C|g'(x)| = -C g'(x)$, то по признаку сравнения $\int \limits_a^b \left| F(x)g'(x)dx \right|$ сходится $\Longrightarrow $ $\int \limits_a^b F(x)g'(x)dx$ сходится, такк как из абсолютной сходимости вытекает сходимость $\Longrightarrow \ \exists \lim \limits_{b' \to b - 0} \left( - \int \limits_a^{b'} F(x)g'(x) dx \right) = \alpha \in \R$. \\
+    $$F(x) g(x) \bigg|_a^{b'} = F(b')g(b') - F(a)g(a) \to -F(a)g(a), \ b' \to b - 0.$$
+    $$\Longrightarrow \ \exists \lim \limits_{b' \to b - 0} \int \limits_a^{b'} f(x) g(x) dx = \alpha - F(a)g(a).$$
+    $$\Longrightarrow \int \limits_a^b f(x) g(x) dx \text{ сходится}.$$
+\end{proof}
+
+\begin{theorem} (признак Абеля) \\
+    Пусть $f \in C([a, b]), \ g \in C^1([a, b])$. \\
+    \begin{enumerate}
+    \item $\int \limits_a^b f(x) dx$ сходится. \\
+    \item $g$~---~ограничена на $[a, b).$
+    \item $g$~---~нестрого монотонна на $[a, b)$.
+    \end{enumerate}
+    Тогда $\int \limits_a^b f(x) g(x) dx$ сходится.
+\end{theorem}
+
+\begin{proof}
+     Так как $g$ ограничена и нестрого монотонна, $\exists \lim \limits_{x \to b - 0} g(x) = \alpha \in \R$.
+     Рассмотрим $\widetilde{g}(x) = g(x) - \alpha$, тогда $\exists \lim \limits_{x \to b - 0} \widetilde{g}(x) = 0$ и $\widetilde{g}$ нестрого монотонна \\
+     $\Longrightarrow$ по признаку Дирихле $\int \limits_a^b f(x) \widetilde g(x) dx$ сходится и $\int \limits_a^b \alpha f(x) dx$ сходится $\Longrightarrow$ в силу линейности несобственного интеграла получаем, что $\int \limits_a^b f(x) g(x) dx$ сходится.
+\end{proof}

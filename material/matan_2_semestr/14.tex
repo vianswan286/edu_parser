@@ -1,0 +1,117 @@
+% лебесг критерион
+% 25.04 надеемся получить тех версию файла по критерию лебега, самостоятельно тут затехано только то, чего нет в упомянутом файле
+\begin{comment}
+\begin{theorem}[Критерий Лебега]
+    Пусть $f: [a, b] \mapsto \R.$
+    Функция $f \in \Rim ([a, b]) \LongLeftrightarrow f \in \B ([a, b])$ и $\D[f]$ имеет лебегову меру нуль.
+\end{theorem}
+\begin{proof}
+    $$(1) D[f] = \bigcup_{n = 1}^{\infty} D_n[f]$$
+    С прошлой лекции,
+    \[
+    \Delta_{T} f = \sum_{i = 1}^{N_T} \omega[x_{i - 1}, x_{i}] f(x_i - x_{i - 1}).
+    \]
+    Теперь к доказательству. Пусть $f: [a, b] \mapsto \R.$, $f \in \B ([a, b])$ и $\D[f]$ имеет лебегову меру нуль. Тогда 
+    $\exists M \geq 0: |f(x) \leq M \forall\thinspace x \in [a, b]$. Будем считать, что $M > 0$, т.к. если $M = 0$, то доказывать нечего.
+    \\
+    Т.к. $D[f]$ имеет лебегову меру ноль, то $\exists$ счётная система интервалов
+    \[
+    {(a_i, b_i)}^{\infty}_{i = 1}: D[f] \subset \bigcup_{i = 1}^{\infty}(a_i, b_i).
+    \]
+    С другой стороны
+    \[
+    \sum_{i = 1}^{\infty} |b_i - a_i| < \dfrac{\varepsilon}{2M}.
+    \]
+    $\forall x \in C[f] \exists\thinspace \delta(x) > 0$ т. ч.:
+    \[
+    \omega_{(x - 3\delta(x), x + 3\delta(x) \cap [a, b]}f < \dfrac{\varepsilon}{b - a}.
+    \]
+    $I(x) := (x - \delta(x), x + \delta(x))$. $[a, b] = C[f] \cup D[f]$. Тогда
+    \[
+    [a, b] \in \bigcup_{i = 1}^{\infty} (a_i, b_i) \cup \bigcup_{x \in C[f]}I(x)
+    \] - получили покрытие $[a, b]$ интервалами. По лемме Гейне-Бореля $\exists$ конечное подпокрытие - обозначим его как ${(c_j, d_j)}^{L}_{j = 1}$, $L \in \N$. Тогда 
+    [a, b]
+    
+\end{proof}
+\end{comment}
+\begin{fact}
+    Критерий Лебега интегрируемости по Риману расписан в файлике от самого Александра Ивановича. Пока нам не был предоставлен сырой тех этого документа, так что можно воспользоваться pdf-версией данного файла: $\href{https://drive.google.com/file/d/1bSfWrYXWkM-RkD_T94pajzVb8ITlv6s2/view?usp=sharing}{\text{ссылка на google drive}}.$
+    \end{fact}
+\begin{corollary}
+    Пусть $f \in R([a, b])$, а $\Tilde{f}$ совпадает с $f$ всюду, кроме, быть может, конечного числа точек. Тогда $\Tilde{f} \in R([a, b])$.
+\end{corollary}
+\begin{remark}
+    Если $f \in R([a, b])$, а $\Tilde{f}$ отличается от $f$ на счётном множестве точек, то $\Tilde{f}$ может оказаться неинтегрируемой на $[a, b]$.
+\end{remark}
+\begin{example}
+    \[f \equiv 0 \text{ на } [0, 1],\]
+    
+    \[
+    \Tilde{f} = \left \{
+    \begin{array}{l}
+         1,\space x \in \Q \cap [0, 1]\\
+         0, \space x \in [0, 1] \cap (\R \backslash \Q) 
+    \end{array}\right.
+    \]
+    Тогда $f \in R([a, b])$, а $\Tilde{f} \notin R([a, b])$.
+\end{example}
+Докажем следствие:
+\begin{proof}
+    $D[f]$ - множество точек разрыва функции $f$, $D[\Tilde{f}]$ - множество точек разрыва функции $\Tilde{f}$. Пусть $\{x_i\}^{N}_{i = 1} \subset [a, b]$ такие точки, в которых $f \neq \Tilde{f}$.
+    \[
+    D[\Tilde{f}] \subset D[f] \cup \{x_i\}_{i = 1}^{N}. \eqno(\ast)
+    \]
+    Если $f$ ~--- ограничена, то $\Tilde{f}$ ~--- ограничена. Если $D[f]$ имеет лебегову меру ноль, то в силу $(\ast)$ $D[\Tilde{f}]$ тоже имеет лебегову меру ноль. Следовательно, в силу критерия Лебега $\Tilde{f} \in R([a, b])$.
+\end{proof}
+
+\begin{definition}
+    Пусть $T = \{x_i\}^{N_T}_{i = 0}$ ~--- разбиение отрезка $[a, b]$. Выборкой, соответствующей разбиению $T$, назовём конечный набор точек $\{\xi\}_{i = 1}^{N_T}:$
+    \[
+    \forall \thinspace i \in  \{1, \ldots, N_{T}\} \hookrightarrow \xi_{i} \in [x_{i - 1}, x_{i}].
+    \]
+\end{definition}
+\begin{definition}
+    Суммой Римана для $f$ по разбиению $T$ и выборке $\xi_T$ называется
+    \[
+    \sum(f, T, \xi_T) := \sum_{i = 1}^{N}f(\xi_{i})(x_i - x_{i - 1})
+    \]
+\end{definition}
+
+\begin{theorem}[Критерий интегрируемости в терминах интегральных сумм Римана.]
+$f \in R([a, b]) \Leftrightarrow (\ast) \thinspace \exists J \in \R:\thinspace \forall\thinspace \varepsilon > 0 \thinspace \exists \delta(\varepsilon) > 0: \forall\thinspace T$ ~--- разбиения отрезка $[a, b] \thinspace l(T) < \delta(\varepsilon)$ и   $\forall$ выборки $\xi_T$, соответствующей разбиению $T \hookrightarrow \left| J - \sum(f, T, \xi_T)\right| < \varepsilon $. При этом в случае интегрируемости $J$ то же самое, что и в определении интеграла Римана, причём
+\[
+J:= \int^{b}_{a} f(x)dx.
+\]
+\end{theorem}
+\begin{proof}
+    Рассмотрим условие:
+    \[
+    \left| J - \sum(f, T, \xi_T) \right| \leq \varepsilon \Leftrightarrow J - \varepsilon \leq \sum(f, T, \xi_T) \leq J + \varepsilon, \eqno(\ast\ast)
+    \]
+    что выполнено $\forall\thinspace T$ ~--- разбиения $l(T) < \delta(\varepsilon)$ $\forall \xi_T$ ~--- выборки. Фиксируем разбиение $T$ отрезка $[a, b]$ и покажем, что
+    \[
+    \inf_{\xi_T} \sum(f, T, \xi_T) = s(f, T).
+    \]
+    Действительно:
+    \[
+    \inf_{\xi_T} \sum(f, T, \xi_T) = \inf_{\xi_1, \ldots, \xi_{N_T}} \sum_{i = 1}^{N_{T}} f(\xi_i)(x_i - x_{i - 1}) = \sum_{i = 1}^{N_T} m_i (x_i - x_{i - 1}) = s(f, T).
+    \]
+    Аналогично
+    \[
+    \sup_{\xi_T} \sum(f, T, \xi_T) = S(f, T).
+    \]
+    Тогда \[
+    (\ast\ast) \Leftrightarrow J - \varepsilon \leq s(f, T) \leq S(f, T) \leq J + \varepsilon. 
+    \]
+    В итоге 
+    \[
+    (\ast) \Leftrightarrow \forall\thinspace\varepsilon > 0 \thinspace\thinspace \exists \delta(\varepsilon) > 0: \forall\thinspace T \textit{~--- разбиения } [a, b]\thinspace l(T) < \delta(\varepsilon) \hookrightarrow J - \varepsilon \leq s(f, T) \leq S(f, T) \leq J + \varepsilon \Leftrightarrow
+    \]
+    \[
+    \Leftrightarrow \left \{
+    \begin{array}{rcl}
+        \left|J - s(f, T) \right| \leq \varepsilon\\
+        \left|J - S(f, T) \right| \leq \varepsilon
+    \end{array}\right \Leftrightarrow f \in R([a, b]).
+    \]
+\end{proof}

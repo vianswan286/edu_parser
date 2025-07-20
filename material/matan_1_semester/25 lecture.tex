@@ -1,0 +1,157 @@
+\textbf{Далее будем работать с вещественными евклидовыми пространствами.}
+\begin{theorem}
+    (Неравенство Коши-Буняковского-Шварца) Пусть ($\E$, <$\cdot$, $\cdot$>)~---~евклидово пространство. Тогда справедливо
+    $$ |\text{<}x\text{, }y\text{>}| \leq \sqrt{\text{<}x\text{, }x\text{>}} \cdot \sqrt{\text{<}y\text{, }y\text{>}} \quad \forall x, y \in \E.$$
+\end{theorem}
+\begin{proof}
+    Фиксируем $x, y$ и рассмотрим <$x + ty$, $x + ty$> $\geq 0$ (по аксиомам скалярного произведения). Оно раскрывается как <$x$, $x$>$ + 2t$<$x$, $y$>$ + t^2$<$y$, $y$>$ \geq 0 \ \ \forall t \in \R$. Рассмотрим это как квадратный трехчлен относительно $t$, тогда дискриминант должен быть $\leq 0$, то есть $4$ <$x$, $y\text{>}^2 - 4$<$x$, $x$>$\cdot$<$y$, $y$>$\leq 0 \Rightarrow$<$x$, $y\text{>}^2 \leq $<$x$, $x$>$\cdot$<$y$, $y$>$\Rightarrow  |\text{<}x\text{, }y\text{>}| \leq \sqrt{\text{<}x\text{, }x\text{>}} \cdot \sqrt{\text{<}y\text{, }y\text{>}}$.
+\end{proof}
+\begin{example}
+    $\R^n$ становится евклидовым пространством, если ввести скалярное произведение следующим способом~---~<$x$, $y$> := $\displaystyle \sum_{k = 1}^{n} x_{k} y_{k}$. По определению проверяются все аксиомы.
+\end{example}
+Итого получаем следующее неравенство:
+$$ \left|\sum_{i = 1}^{n} x_{i} y_{i}\right| = \sqrt{\sum_{i = 1}^{n} x_{i}^2} \sqrt{\sum_{i = 1}^{n} y_{i}^2}$$
+\begin{definition}
+    \hypertarget{def7.16}{Определим \textit{евклидову норму}, как $\|x\|_{e} := \sqrt{\text{<}x, x\text{>}}$.}
+\end{definition}
+\begin{theorem}
+    \hypertarget{def7.16}{Объект}, который мы только что определили, действительно задает норму.
+\end{theorem}
+\begin{proof}
+    Просто проверим аксиомы нормы:
+    \begin{enumerate}
+        \item $\|x\|_{e} \geq 0 \ \forall x \in \E$~---~верно;
+        \item $\|x\|_{e} = 0 \Leftrightarrow$<$x$, $x$>$= 0 \Leftrightarrow x = 0$~---~верно;
+        \item $\|\alpha x\|_{e} = \sqrt{\text{<}\alpha x\text{, }\alpha x\text{>}} = \sqrt{\alpha^2 \text{<}x, x\text{>}} = |\alpha|\text{<}x, x\text{>}$~---~верно;
+        \item $\|x + y\|_{e}^2 =$<$x$, $x$>$ + 2$<$x$, $y$> + <$y$, $y$>$ \leq$<$x$, $x$>$ + 2 \sqrt{\text{<}x, x\text{><}y, y\text{>}} + $<$y$, $y$>$ = \left( \text{<}x, x\text{>} + \text{<}y, y\text{>}\right)^2$, то есть $\|x + y\|_{e}^2 \leq \left( \|x\|_{e} + \|y\|_{e}\right)^2$~---~верно.
+    \end{enumerate}
+    Итого получаем, что введённая нами норма удовлетворяет всем аксиомам нормы.
+\end{proof}
+\textbf{Тут нужна картиночка}
+\begin{definition}
+    Под $\| x\|_2$ будем обозначать $\displaystyle \sqrt{\sum_{k = 1}^{n} x_{k}^2}$.
+\end{definition}
+\begin{problem}
+    Пусть $(\E, \| \|)$~---~линейное нормированное пространство. Можно ли в $\E$ ввести скалярное произведение так, чтобы $\| \|$ порождалось через скалярное произведение?
+\end{problem}
+\begin{theorem}
+    (Критерий евклидовости) Пусть $\E = (\E, \| \|)$. Норма $\| \|$ является евклидовой $\Leftrightarrow$ выполнено тождество параллелограмма, то есть
+    $$ \| x + y\|^2 + \| x - y\|^2 = 2\| x\|^2 + 2\| y\|^2,\quad \forall x, y \in \E.$$
+\end{theorem}
+\begin{proof}
+    \underline{Шаг 1.} Пусть $\| \|$~---~евклидова норма. Тогда
+    $$ \| x + y\|^2 + \| x - y\|^2 = \text{<}x + y, x + y\text{>} + \text{<}x - y, x - y\text{>} = $$    
+    $$ = \text{<}x, x\text{>} + 2\text{<}x, y\text{>} + \text{<}y, y\text{>} + \text{<}x, x\text{>} - 2\text{<}x, y\text{>} + \text{<}y, y\text{>} = 2 \text{<}x, x\text{>} + 2 \text{<}y, y\text{>} = 2 \| x\|^2 + 2 \| y\|^2.$$
+    \underline{Шаг 2.} Пусть выполнено тождество параллелограмма. Предъявим скалярное произведение. Рассмотрим <$x$, $y$>$ = \cfrac{1}{4} \left( \| x + y\|^2 - \| x - y\|^2\right)$, проверим, что выполнены аксиомы скалярного произведения. Покажем, что <$x + y$, $z$> = <$x$, $z$> + <$y$, $z$>:
+
+    $$\text{<}x, z\text{>} = \cfrac{1}{4} \left( \| x + z\|^2 - \| x - z\|^2\right)$$
+    $$\text{<}y, z\text{>} = \cfrac{1}{4} \left( \| y + z\|^2 - \| y - z\|^2\right)$$
+
+    Сложив, получим $\text{<}x, z\text{>} + \text{<}y, z\text{>} = \cfrac{1}{4} \left( \| x + z\|^2 - \| x - z\|^2 + \| y + z\|^2 - \| y - z\|^2\right)$ (1). Применим тождество параллелограмма:
+    
+    $$ \| x + z\|^2 + \| y + z\|^2 = \cfrac{1}{2} \left( \|x + y + 2z\|^2 + \| x - y\|^2\right)$$
+    $$ \| x - z\|^2 + \| y - z\|^2 = \cfrac{1}{2} \left( \|x + y - 2z\|^2 + \| x - y\|^2\right)$$
+
+    Вычтем одно из другого и получим
+    $$(1) = \cfrac{1}{8} \left( \|x + y + 2z\|^2 - \| x + y - 2z\|^2\right) = $$
+    $$ =\cfrac{1}{8} \left( 4 \left\| \frac{x + y}{2} + z\right\|^2 - 4 \left\| \frac{x + y}{2} - z\right\|^2\right) = 2 \cdot \cfrac{1}{4} \left( \left\|\cfrac{x + y}{2} + z \right\|^2 - \left\|\cfrac{x + y}{2} - z\right\|^2\right) = $$
+    $$ = 2 \text{<}\frac{x + y}{2} + z\text{>}.$$
+    Пока мы доказали, что <$x$, $z$> + <$y$, $z$> = 2 <$\frac{x + y}{2}$, $z$>. Подставим $y = 0$. С учетом <$0$, $z$>$ = 0$ получим <$x$, $z$> = 2 <$\frac{x}{2}$, $z$> $\forall x, z \in \E$. Подставляя это в ранее доказанное нами тождество, получим то, что требовалось, то есть <$x$, $z$>$ + $<$y$, $z$> = <$x + y$, $z$>.
+
+    Имеем:
+    \begin{enumerate}
+        \item <$x$, $y$> = <$y$, $x$> $\forall x, y \in \E$~---~очевидно;
+        \item <$x + y$, $z$> = <$x$, $z$> + <$y$, $z$> $\forall x, y, z \in \E$~---~проверили только что;
+        \item <$\frac{x}{2}$, $z$> = $\frac{1}{2}$<$x$, $z$>$ \Leftrightarrow$<$\frac{m}{2^n} x$, $z$>$ = \frac{m}{2^n}$<$x$, $z$> $\forall n \in \N$, $\forall m \in \Z$;
+        \item <$x$, $x$>$ \geq 0$ и <$x$, $x$>$ = 0 \Leftrightarrow x = 0$ $\forall x \in \E$~---~очевидно по тому, как мы ввели скалярное произведение.
+    \end{enumerate}
+    Так как $f (\alpha) = \|\alpha x + y\|$~---~непрерывна как функция от $\alpha$ (так как $|f (\alpha) - f (\beta)| = \left\| |\alpha x + y| - |\beta x + y| \right\| \leq |\alpha - \beta| \| x\|\to 0, \beta \to \alpha$), а так как любое иррациональное число является пределом последовательности двоично рациональных чисел, то $(3)$ с помощью предела преобразуется в <$\alpha x$, $z$>$ = \alpha$<$x$, $z$> $\forall \alpha \in \R$, $\forall x, z \in \E$.
+
+    Итого теорема полностью доказана.
+\end{proof}
+\begin{proposition}
+    Вспомним про \hyperlink{examp7.1}{линейное пространство непрерывных на отрезке функций}. Его норма $\| f\|_{\text{C}}$ является неевклидовой, то есть не может быть порождена каким-либо скалярным произведением.
+\end{proposition}
+\begin{proof}
+    Без ограничения общности будем считать, что $a = 0$, $b = 1$, так как его всегда можно отмасштабировать к любому другому отрезку.
+    
+    \textbf{Нужна картиночка}
+
+    Проверим тождество параллелограмма. Возьмём $f_{1}(x) = x$, а $f_{2}(x) = 1 - x$. $2 \| f_{1} \|^2 = 2$, $2 \| f_{2} \|^2 = 2$, $\| f_{1} + f_{2}\|^2 = 1$, $\| f_{1} - f_{2}\|^{2} = 1$, но так как $4 \neq 2$ (подставляя значения в тождество параллелограмма) получаем, что норма не является евклидовой.
+\end{proof}
+
+\subsection{Топология метрического пространства}
+\begin{definition}
+    Пусть $(X, \rho)$~---~метрическое пространство, $E \subset X$~---~множество. Точка $x_{0} \in \E$ называется \textit{внутренней}, если
+    $$ \exists \epsilon > 0: B_{\epsilon} (x_{0}) \subset \E.$$
+\end{definition}
+\begin{definition}
+    Пусть $(X, \rho)$~---~метрическое пространство, $\E \subset X$~---~множество. \textit{Внутренностью} $\E$ будем называть множество всех внутренних точек $\E$ и обозначать $\text{int}\E$.
+\end{definition}
+\begin{note}
+    Определения \hyperlink{def7.6}{точки прикосновения} и \hyperlink{def7.7}{предельной точки уже были даны}.
+\end{note}
+\begin{definition}
+    Пусть $(X, \rho)$~---~метрическое пространство, $\E \subset X$~---~множество. \textit{Замыканием} $\E$ будем называть множество всех точек прикосновения и обозначать $\text{cl}\E$ или $\overline{\E}$.
+\end{definition}
+\begin{proposition}
+    $\text{int}\E \subset \E \subset \text{cl}\E$.
+\end{proposition}
+\begin{definition}
+    Множество $\E$~---~открыто, если $\E \subset \text{int}\E \Leftrightarrow \E = \text{int}\E$.
+\end{definition}
+\begin{definition}
+    Множество $\E$~---~замкнуто, если $\text{cl}\E \subset \E \Leftrightarrow \E = \text{cl}\E$.
+\end{definition}
+\begin{note}
+    Множества бывают и не открытые и не замкнутые, к примеру, $\Q$ или $(a; b]$ (полуинтервал).
+\end{note}
+\begin{definition}
+    Пустое множество $\varnothing$ и $X$ считаются и открытыми, и замкнутыми.
+\end{definition}
+\begin{example}
+    Бывают нетривиальные множества, которые и открыты, и замкнуты. Пусть $X = [0; 1] \cap [2; 3], \rho = |x - y|$. Тогда $[0; 1]$ и $[2; 3]$~---~и открыты, и замкнуты.
+
+    \textbf{Нужна картинка}.
+\end{example}
+\begin{definition}
+    Метрическое пространство $(X, \rho)$ называется \textit{топологически связным}, если его нельзя представить в виде непересекающегося (дизъюнктного) объединения двух и более множеств, которые одновременно и открыты, и замкнуты.
+\end{definition}
+\begin{lemma}
+    \hypertarget{lemm7.1}{Пусть $(X, \rho)$~---~метрическое пространство. Тогда $\forall x \in X$, $\forall r > 0 \hookrightarrow B_{r} (x)$~---~открытое множество.}
+\end{lemma}
+\begin{proof}
+    По определению $B_{r} (x) = \{ y \in X$: $\rho(x, y) < r \}$.
+
+    \textbf{Нужна картинка}
+
+    Пусть $y \in B_{r} (x) \in B_{r} (x)$. Тогда $\rho(x, y) < r$. Пусть $\delta = r - \rho(x, y)2$. Докажем, что $B_{\delta} (y) \subset B_{r} (x)$:
+
+    Пусть $z \in B_{\delta} (y)$ $\rho(y, z) < \delta$. Тогда $\rho(x, z) \leq \rho(x, y) + \rho(y, z) < \rho(x, y) + \delta = \rho(x, y) + r - \rho(x, y) = r \Leftrightarrow \rho(x, z) < r \Rightarrow z \in B_{r} (x)$, что и требовалось.
+\end{proof}
+\begin{proposition}
+    $\E_{1} \subset \E_{2} \Rightarrow \text{int}\E_{1} \subset \text{int}\E_{2}$.
+\end{proposition}
+\begin{theorem}
+    Пусть $(X, \rho)$~---~метрическое пространство, $\E \subset X$. Тогда
+    \begin{enumerate}
+        \item $\text{int}\E$~---~открытое множество $\Leftrightarrow \text{int}\text{int}\E = \text{int}\E$;
+        \item $\text{cl}\E$~---~замкнутое множество $\Leftrightarrow\text{cl}\text{cl}\E$.
+    \end{enumerate}
+\end{theorem}
+\begin{proof}
+    \underline{Шаг 1.} Пусть $x_{0} \in \text{int}\E \Rightarrow \exists B_{r} (x_{0}) \subset \E \Rightarrow \text{int}B_{r} (x_{0}) \subset \text{int}\E$, а $\text{int}B_{r} (x_{0}) = B_{r} (x_{0})$ по только что доказанной \hyperlink{lemm7.1}{лемме}$\Rightarrow \text{int}\E$~---~открытое множество.
+
+    \underline{Шаг 2.} Пусть $x_{0}$~---~точка прикосновения $\text{cl}\E$. Покажем, что $x_{0} \in \text{cl}\E$. Так как $x_{0}$~---~точка прикосновения, то
+    $$ \forall \epsilon > 0 \ \ B_{\frac{\epsilon}{2}} (x_{0}) \cap \text{cl}\E \neq \varnothing \Rightarrow \forall \epsilon > 0 \ \ \exists y \in \text{cl}\E: y \in (B_{\frac{\epsilon}{2}} \cap \text{cl}\E).$$
+
+    Так как $y$~---~точка прикосновения $\E$, то $\forall \epsilon > 0 \ \ B_{\frac{\epsilon}{2}} \cap \E \neq \varnothing \Rightarrow \forall \epsilon > 0 \ \ \exists z \in \E$, $y \in \text{cl}\E$: 
+    $\begin{cases}
+        \rho(x_{0}, y) < \frac{\epsilon}{2} \\
+        \rho(y, z) < \frac{\epsilon}{2}
+    \end{cases} \Rightarrow \rho(x_{0}, z) \leq \rho_{x_{0}, y} + \rho(y, z) < \epsilon$.
+
+    Таким образом $\forall \epsilon > 0 \ \ \exists z \in \E$: $\rho_{x_{0}, z} < \epsilon \Rightarrow \forall \epsilon > 0 \ B_{\epsilon} (x_{0}) \cap \E \neq \varnothing \Rightarrow x_{0} \in \text{cl}\E$, то есть любая прикосновения принадлежит этому же множеству $\Rightarrow$ оно ($\text{cl}\E$) замкнуто.
+
+    \textbf{Нужна картинка}.
+\end{proof}

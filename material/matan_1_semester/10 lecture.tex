@@ -1,0 +1,323 @@
+\begin{theorem}
+    Пусть $f$: $X \mapsto \R$. Тогда 
+\begin{center}
+    $ \overline{\lim\limits_{\underset{x \in X}{x\to x_0}}} f(x) = \sup \{ \overline{\lim\limits_{n\to \infty}} f(x_{n}): \{x_{n}\} \subset X$, $\{{x_n}\}$ ~---~последовательность  Гейне в точке $x_{0}\}$
+\end{center}    
+
+ \begin{center}
+    $ \lim\limits_{\overline{\underset{x \in X}{x\to x_0}}} f(x) = \inf \{ \lim\limits_{\overline{n\to \infty}} f(x_{n}): \{x_{n}\} \subset X$, $\{{x_n}\}$ ~---~последовательность  Гейне в точке $x_{0}\}$
+\end{center}    
+\end{theorem}
+\begin{proof}
+    Докажем теорему для верхнего предела, так как для нижнего доказательство аналогично.
+
+    Обозначим $ \sup \{ \overline{\lim\limits_{n\to \infty}} f(x_{n}): \{x_{n}\} \subset X, \{x_{n}\} \textrm{ ~---~ последовательность  Гейне в точке}\  x_{0}\}$ как $J$, а также $E \equiv    \mathring{U}_{\delta} (x_{0}) \cap X$.
+
+    Чтобы доказать утверждение нужно проверить два неравенства: 
+    $\begin{cases}
+         \overline{\lim\limits_{\underset{x \in X}{x\to x_0}}} f(x) \leq J, \\
+          \overline{\lim\limits_{\underset{x \in X}{x\to x_0}}} f(x) \geq J.
+    \end{cases} $
+
+    Докажем второе неравенство. Возьмём произвольную $\delta > 0$ и произвольную последовательность Гейне $\{x_{n}\} \subset X$ в точке $x_{0}$.
+
+    Так как $\{x_{n}\}$~---~последовательность Гейне, то
+    $$ \exists N(\delta) \in \N: \ \forall n \geq N(\delta) \hookrightarrow x_{n} \in E$$
+    $$ \overline{\lim\limits_{n \to \infty}} f(x_{n}) = \underset{N \in \N}{\inf} \underset{n \geq N}{\sup} f(x_{n}) \leq \underset{n \geq N(\delta)}{\sup} f(x_{n})
+    $$
+    $$ \underset{E}{\sup} f(x) \geq \underset{n \geq N(\delta)}{\sup} f(x_{n}) = \overline{\lim\limits_{n \to \infty}} f(x_{n}) $$
+
+    <<Заморозим>> $x_{n}$ и будем менять $\delta > 0$. Можно взять $\inf$ от обеих частей:
+
+    $$ \underset{\delta > 0}{\inf} \underset{E}{\sup} f(x) \geq \overline{\lim\limits_{n \to \infty}} f(x_{n})
+    $$
+
+    Левая часть не зависит от выбора $x_{n}$, следовательно, беря супремум по всем $\{x_{n}\}$, получим нужное неравенство:
+    $$
+    \overline{\lim\limits_{\underset{x \in X}{x\to x_0}}} f(x) \geq J,
+    $$
+
+    Покажем теперь, что:
+    $$  \overline{\lim\limits_{\underset{x \in X}{x\to x_0}}} f(x) \leq J.
+    $$
+
+    Найдём последовательность Гейне в точке $x_{0}$, которая <<в точности даст левую часть>>. В силу \hyperlink{lemm4.6}{леммы 4.6}: \hypertarget{prop4.9}
+    {}
+    $$
+    \forall n \in \N  \ \underset{\delta \in (0, \frac{1}{n})}{\inf} \underset{E}{\sup} f(x) = \overline{\lim\limits_{\underset{x \in X}{x\to x_0}}} f(x) \  \quad (1)
+    $$
+
+
+
+    По определению инфимума  $\forall n \in \N$ в силу \hyperlink{prop4.9}{равенства (1)}: 
+    
+    $$\exists \delta \in ( 0, \frac{1}{n}): \underset{E}{\sup} f(x) \in U_{\frac{1}{n}} \Bigl( \overline{\lim\limits_{\underset{x \in X}{x\to x_0}}} f(x) \Bigr)$$
+
+    Но по определению супремума
+    $$ \exists x_{n}\in E: \ \ f(x_{n}) \in  U_{\frac{1}{2n}} \Bigl( \overline{\lim\limits_{\underset{x \in X}{x\to x_0}}} f(x) \Bigr).$$
+
+    Получается, мы построили последовательность $\{\overline{x_{n}}\} \subset X$, которая является последовательностью Гейне в точке $x_{0}$, и при этом $\lim\limits_{n \to \infty} f(\overline{x_{n}}) = \overline{\lim\limits_{\underset{x \in X}{x\to x_0}}} f(x)$, значит,
+     $$\exists \overline{\lim\limits_{n \to \infty}} f(\overline{x_{n}}) = \lim\limits_{n \to \infty} f(\overline{x_{n}}) = \overline{\lim\limits_{\underset{x \in X}{x\to x_0}}} f(x).
+    $$
+\end{proof}
+
+\begin{theorem}
+    \hypertarget{thrm4.10}{(О верхнем и нижнем пределе для функции) }Пусть $f$: $X \mapsto \R$, $A \in \Hat{\R}$. Следующие условия эквивалентны:
+
+\begin{enumerate}
+    \item $ \exists \lim\limits_{\underset{x \in X}{x\to x_0}} f(x) = A;$
+    \item $\overline{\lim\limits_{\underset{x \in X}{x\to x_0}}} f(x) = \lim\limits_{\underset{x \in X}{\overline{x\to x_0}}} f(x) = A.$
+\end{enumerate}    
+\end{theorem}
+
+\begin{proof}
+    $(1) \Leftrightarrow \forall \ \textrm{последовательности Гейне} \ \{x_{n}\} \subset X \  \textrm{в точке}\  x_{0}$
+
+    $$
+    \lim\limits_{n \to \infty} f(x_{n}) = A  \Leftrightarrow 
+    \begin{cases}
+        \overline{\lim\limits_{n \to \infty}} f(x_{n}) = A, \\
+        \lim\limits_{\overline{n \to \infty}} f(x_{n}) = A,
+    \end{cases}
+    \Leftrightarrow 
+    \begin{cases}
+        \overline{\lim\limits_{\underset{x \in X}{x\to x_0}}} f(x) = A, \\
+        \lim\limits_{\overline{\underset{x \in X}{x\to x_0}}} f(x) = A.
+    \end{cases}
+    \Leftrightarrow (2)$$
+\end{proof}
+
+\subsection{Непрерывность функции в точке и на множестве}
+
+\begin{definition}
+    Пусть $f: U_{\delta_{0}}(x_{0}) \mapsto \R$.
+
+    Функция $f$ называется \textit{непрерывной в точке $x_{0}$}, если $\exists \lim\limits_{x \to x_{0}} f(x) = f(x_{0}) \Leftrightarrow$
+
+    $$\Leftrightarrow
+     \forall \epsilon > 0 \ \exists \delta(\epsilon) \in (0, \delta_{0}]: \ \forall x\in U_{\delta(\epsilon)}(x_{0}) \hookrightarrow |f(x) - f(x_{0})| < \epsilon.
+    $$
+\end{definition}
+
+\begin{definition}
+    Функция $f: U_{\delta_{0}}(x_{0}) \mapsto \R$, не являющаяся непрерывной в точке $x_0$, называется \textit{разрывной в точке $x_0$}.
+\end{definition}
+
+\textbf{Классификация точек разрыва}
+\begin{definition}
+     Точка $x_0$ называется \textit{точкой устранимого разрыва}, если:
+    $$ \begin{cases}
+            \exists \lim\limits_{x \to x_{0}} f(x) \in \R,\\
+            \lim\limits_{x \to x_{0}} f(x) \neq f(x_{0}).
+    \end{cases}$$
+\end{definition}
+\begin{definition}
+    Точка $x_0$ называется \textit{точкой разрыва первого рода}, если:
+    $$
+    \begin{cases}
+        \exists \lim\limits_{x \to x_{0} +0} f(x) \in \R,\\
+        \exists \lim\limits_{x \to x_{0} -0} f(x) \in \R,\\
+        \lim\limits_{x \to x_{0} +0} f(x) \neq \lim\limits_{x \to x_{0} -0} f(x).
+    \end{cases}
+    $$
+\end{definition}
+\begin{definition}
+    Точка $x_0$ называется \textit{точкой разрыва второго рода}, если хотя бы один из односторонних пределов не существует, либо бесконечен.
+\end{definition}
+
+\begin{center}
+    \textbf{Примеры точек разрыва}
+    
+    \centering
+    \begin{tabular}{ccс}
+    \begin{tikzpicture}[scale = 1]
+    % Рисуем сетку
+    \draw[help lines, step=0.25, dotted]
+    (-2,-2) grid (2,2);
+    % Начало координат
+    \draw[->, thin] (-2.05,0) -- (2.05,0)
+    node[below] {$x$}; % Ox
+    \draw[->, thin] (0,-2.05) -- (0,2.05)
+    node[left] {$y$}; % Oy
+    
+    \draw[->, blue] (-2, 0) -- (-0.03,0);
+    \draw[<-, blue] (0.03, 0) -- (2,0);
+
+    \node[] at (0.5, -1) {$f(x) = \begin{cases}
+        1, x= 0,\\
+        0, x\neq 0.
+    \end{cases}$};
+    
+    \draw[fill = blue] (0, 1) circle (1.5 pt);
+    \node[below left] at (0,0) {$O$};
+    \node[left] at (0,1) {$1$};
+    \node[below] at (0, -2) {Устранимый разрыв};
+    \end{tikzpicture}
+    &
+    \begin{tikzpicture}[scale = 1]
+    % Рисуем сетку
+    \draw[help lines, step=0.25, dotted]
+    (-2,-2) grid (2,2);
+    % Начало координат
+    \draw[->, thin] (-2.05,0) -- (2.05,0)
+    node[below] {$x$}; % Ox
+    \draw[->, thin] (0,-2.05) -- (0,2.05)
+    node[left] {$y$}; % Oy
+    
+    \draw[->, blue] (-2, -1) -- (-0.03,-1);
+    \draw[<-, blue] (0.03, 1) -- (2,1);
+
+    \node[] at (0.5, -1.5) {$f(x) = sign(x)$};
+
+    \draw[fill = blue] (0, 0) circle (1.5 pt);
+    \node[below left] at (0,0) {$O$};
+    \node[left] at (0,1) {$1$};
+    \node[below] at (0, -2) {Разрыв первого рода};
+    \end{tikzpicture}
+    &
+    \begin{tikzpicture}[scale=1] 
+    
+    \draw[blue] (-0.2, -2.2) arc (0:90:0.8 and 2.1) -- cycle;
+    \draw[white, line width = .05 cm] (-0.2,-2.2) -- (-1, -0.1);
+    \draw[fill = white, white] (0, -2.05) rectangle (-0.3, -2.3);
+    \draw[blue] (0.2, 2.2) arc (180:270:0.8 and 2.1) -- cycle;
+    \draw[white, line width = .05 cm] (0.2,2.2) -- (1, 0.1);
+    \draw[fill = white, white] (0, 2.05) rectangle (0.3, 2.3);
+        
+    % Рисуем сетку
+    \draw[help lines, step=0.25, dotted]
+    (-2,-2) grid (2,2);
+    % Начало координат
+    \draw[->, thin] (-2.05,0) -- (2.05,0)
+    node[below] {$x$}; % Ox
+    \draw[->, thin] (0,-2.05) -- (0,2.05)
+    node[left] {$y$}; % Oy
+
+    \draw[->, blue] (0.2, 1.9) -- (0.2, 2);
+    \draw[->, blue] (-0.2, -1.9) -- (-0.2, -2);
+
+    \node[] at (1, -1) {$f(x) = \frac{1}{x}$};
+    \node[below] at (0, -2) {Разрыв второго рода};
+    \end{tikzpicture}
+\end{tabular}
+\end{center}
+
+\begin{definition}
+    Пусть $X \subset \R, X \neq \varnothing.$
+
+    Будем говорить, что $f$: $X\mapsto \R$ \textit{непрерывна в точке $x_{0} \in X$ по множеству $X$}, если
+    $$\left[
+        \begin{gathered}
+            x_{0} \textrm{~---~ изолированная точка} \ X, \\
+            \exists \lim\limits_{\underset{x \in X}{x\to x_{0}}}f(x) = f(x_{0}). \hfill
+        \end{gathered}
+    \right.
+    $$
+\end{definition}
+
+\begin{definition}
+    Функция $f$: $X\in \R$ называется \textit{непрерывной на $X$}, если она непрерывна в каждой точке $x_{0} \in X$ по множеству $X$.
+\end{definition}
+
+\begin{lemma}
+    Пусть $X \subset \R, X \neq \varnothing, x_n \in X$. Следующие условия эквивалентны:
+    \begin{enumerate}
+        \item $f$ непрерывна в точке $x_{0}$ по множеству $X$;
+        \item $\forall \epsilon > 0 \ \exists \delta(\epsilon) > 0: \ \forall x\in U_{\delta}(x_0) \cap X \hookrightarrow |f(x) - f(x_{0})| <\epsilon.$
+        \item $\forall \{x_{n}\} \subset X: \lim\limits_{n \to \infty} x_{n} = x_{0} \hookrightarrow \exists \lim\limits_{n \to \infty} f(x_{n}) = f(x_{0}).$
+    \end{enumerate}
+\end{lemma}
+
+\begin{proof}
+    $(1) \Leftrightarrow (2)$ следует из определения $\lim\limits_{x\to x_{0}} f(x) = f(x_0)$ по Коши; в данном случае условие $x \neq x_0$ можно не писать, так как при $x = x_0$ выполняется $|f (x) - f (x_0)| = 0 < \epsilon$;
+
+    $(2) \Leftrightarrow (2)$ следует из определения $\lim\limits_{x\to x_{0}} f(x) = f(x_0)$ по Гейне;  в данном случае условие $x_n \neq x_0$ можно не писать, так как при $x_n = x_0$ выполняется $f (x_{n}) = f (x_{0})$.
+\end{proof}
+
+\begin{theorem}
+    Пусть $K \subset \R$~---~компакт, $K \neq \varnothing.$
+
+    Пусть $f$ непрерывна на $K.$ Тогда $f(K) := \{ f(x) : x \in K$\} ~---~ компакт.
+\end{theorem}
+
+\begin{proof}
+    Пусть $y_{n} \subset \{f(K)\} \Rightarrow \exists \{x_{n}\} \subset K\text{: }f(x_{n}) = y_{n} \ \forall n \in \N \Rightarrow $
+
+    $$\Rightarrow
+    \exists \{x_{n_j}\} \subset K (\{x_{nj}\} \textrm{~---~подпоследовательность } \{x_n\})\ \textrm{и}\ \exists \ x^{*} \in K : x_{n_j} \to x^{*}, j \to \infty.
+    $$
+
+    Тогда так как $f$ непрерывна в точке $x^{*}$, то $\lim\limits_{j \to \infty} f(x_{n_j}) = f(x^{*}) \in f(K).$
+
+    $$f(x_{n_j}) = y_{n_j} \ \  \forall j \in \N
+    $$
+    $$ y_{n_j} \to f(x^{*}) \in f(K), j \to \infty.
+    $$
+
+    Поскольку $\{y_{n}\} \subset f(K)$ выбрана произвольно, то $f(K)$~---~компакт.
+\end{proof}
+\begin{note}
+    Здесь использовалась непрерывность в терминах Гейне.
+\end{note}
+
+\begin{definition}
+    Пусть $X \subset \R$, $X \neq \varnothing$, $x_{0} \in X$. Функция $f$: $X \mapsto \R$ называется \textit{полунепрерывной сверху в точке $x_{0}$ по множеству $X$}, если 
+    $$
+    \left[ 
+    \begin{gathered}
+        x_{0} \textrm{~---~ изолирована,} \\
+        \overline{\lim\limits_{\underset{x \in X}{x \to x_{0}}}} f(x) \leq f(x_{0}).
+    \end{gathered}
+    \right.$$
+\end{definition}
+\begin{definition}
+    Пусть $X \subset \R$, $X \neq \varnothing$, $x_{0} \in X$. Функция $f$: $X \mapsto \R$ называется \textit{полунепрерывной снизу в точке $x_{0}$ по множеству $X$}, если 
+    $$
+    \left[ 
+    \begin{gathered}
+        x_{0} \textrm{~---~ изолирована,} \\
+        \lim\limits_{\overline{\underset{x \in X}{x \to x_{0}}}} f(x) \geq f(x_{0}).
+    \end{gathered}
+    \right.$$
+\end{definition}
+
+\begin{definition}
+    \textit{Характеристическая функция множества (индикатор)}. 
+    $$
+     \chi_{E} (x) = \begin{cases}
+         1, x\in E, \\
+         0, x\notin E,
+     \end{cases}
+     \text{где } E \subset \R \text{~---~множество.}
+    $$
+\end{definition}
+
+\begin{example}
+    Пусть $ G \subset R$~---~непустое открытое множество. Тогда $\chi_{G}$~---~полунепрерывна снизу в каждой точке.
+
+    Если $x_{0} \in G,$ то $\exists U_{\delta} (x_{0}) \subset G$ в ней очевидно.
+
+    Если $x_{0} \notin G$, то $f(x_{0}) = 0$ и $f(x) \geq 0,$ так как она является характеристической функцией.
+\end{example}
+
+\begin{example}
+    Пусть $ F \subset \R$ ~---~ непустое замкнутое множество. $\chi_{F}$ ~---~ полунепрерывна сверху в каждой точке.
+\end{example}
+
+\begin{theorem}
+    Пусть $f$: $X \mapsto \R, x_{0} \in X$. Тогда $f$  непрерывна в точке $x_{0}$ по множеству $X \Leftrightarrow$ она полунепрерывна снизу в точке $x_{0}$ по множеству $X$ и полунепрерывна сверху в точке $x_{0}$ по множеству $X$.
+\end{theorem}
+
+\begin{proof}
+    Если $x_{0}$~---~изолированнная точка, то доказательство очевидно.
+
+    Если $x_{0}$~---~предельная точка, то непрерывность в ней по множеству $X$ $\Leftrightarrow$
+    $$\Leftrightarrow \exists \lim\limits_{\underset{x \subset X}{x \to x_{0}}} f(x) = f(x_{0}) \Leftrightarrow \begin{cases}
+        \overline{\lim\limits_{\underset{x \in X}{x\to x_0}}} f(x) =  f(x_{0}), \\
+        \lim\limits_{\overline{\underset{x \in X}{x\to x_0}}} f(x) =  f(x_{0}).
+    \end{cases} \quad (*)$$
+    По \hyperlink{thrm4.10}{теореме о верхнем и нижнем пределе для функции}.
+
+    Заметим, что:
+    $$f(x_{0}) \leq\lim\limits_{\overline{\underset{x \in X}{x\to x_0}}} f(x) \leq \overline{\lim\limits_{\underset{x \in X}{x\to x_0}}} f(x) \leq f(x_{0}) \Leftrightarrow (*)$$
+\end{proof}

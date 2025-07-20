@@ -1,0 +1,171 @@
+\begin{lemma}
+    \hypertarget{lemm2.8}{Если последовательность} $\{ x_{n} \}$~---~неограничена сверху, то $+ \infty$ является её частичным пределом. Если $\{ x_{n} \}$ неограничена снизу, то $- \infty$ является её частичным пределом.
+\end{lemma}
+\begin{proof}
+    Докажем для случая неограниченности сверху, так как случай неограниченности снизу рассматривается аналогично.
+
+    Заметим, что если $\{ x_{n} \}$ неограничена сверху, то $\forall N \in \N$ отбросим первые $N$ элементов и снова получим последовательность, неограниченную сверху. Рассмотрим последовательность $\{ y_{n} \} = \{ x_{n + N}\} \Rightarrow \forall \epsilon > 0 \  n \in \N$: $y_{n} > \frac{1}{\epsilon} \Rightarrow \forall N \in \N \  \forall \epsilon > 0 \  \exists k > N$: $x_{k} > \frac{1}{\epsilon} \Rightarrow$ по критерию частичного предела $+ \infty$ является частичным пределом последовательности $\{ x_{n} \}$.
+\end{proof}
+\begin{definition}
+    $PL (\{ x_{n} \}) := \{ L \in \R$: $L$~---~частичный предел $\{ x_{n} \} \}$~---~\textit{множество всех частичных пределов}.
+\end{definition}
+\begin{theorem}
+    (Обобщённая теорема Больцано-Вейерштрасса) Любая числовая последовательность имеет хотя бы один частичный предел в $\overline{\R}$.
+\end{theorem}
+\begin{proof}
+    Доказательство состоит в применении критерия частичного предела и \hyperlink{lemm2.8}{леммы 2.8}.
+\end{proof}
+\begin{definition}
+    Пусть $A \subset \overline{\R}$. $M \in \overline{\R}$~---~супремум $A$.
+    $$M = \sup A \Leftrightarrow \begin{cases}
+        a \leq M, \  \forall a \in A; \\
+        \forall M^{'} < M \  \exists a \in A: M^{'} < a.
+    \end{cases}$$
+\end{definition}
+\begin{definition}
+    Пусть $A \subset \overline{\R}$. $m \in \overline{\R}$~---~инфимум $A$. 
+    $$m = \inf A \Leftrightarrow \begin{cases}
+        a \geq m, \  \forall a \in A; \\
+        \forall m^{'} > m \  \exists a \in A: m^{'} > a.
+    \end{cases}$$
+\end{definition}
+\begin{definition}
+    \textit{Верхним и нижним пределом} последовательности $\{ x_{n} \}$ называются соответственно
+    $$ \overline{\lim\limits_{n\to \infty}} x_{n} = \sup PL (\{ x_{n} \});$$
+    $$ \lim\limits_{\overline{n\to \infty}} x_{n} = \inf PL (\{ x_{n} \}).$$
+\end{definition}
+\begin{lemma}
+    \hypertarget{lemm2.9}{Пусть} последовательность $\{ x_{n} \}$ имеет предел равный $A$, $A \in \overline{\R}$. Тогда $PL (\{ x_{n} \}) = \{A \}$.
+\end{lemma}
+\begin{proof}
+    Запишем определение предела:
+    $$ \forall \epsilon > 0 \  \exists N (\epsilon) \in \N: \forall n \geq N \hookrightarrow x_{n} \in U_{\epsilon} (A).$$
+
+    Возьмём произвольную подпоследовательность $x_{n_{k}}$ последовательности $\{ x_{n} \}$ и покажем, что $\lim\limits_{k\to \infty} x_{n_{k}} = A$.
+
+    Из того, что $\{n_{k}\}$ строго возрастает, то по индукции легко доказать, что $\forall k \in \N \ \ n_{k} \geq k \Rightarrow \forall \epsilon > 0 \  \exists K (\epsilon) = N (\epsilon)$: $\forall k \geq K (\epsilon) (\Rightarrow n_{k} \geq N (\epsilon)) \hookrightarrow x_{n_{k}} \in U_{\epsilon} (A)$.
+\end{proof}
+\begin{theorem}
+    \hypertarget{thm2.10}{Пусть дана числовая последовательность} $\{ x_{n} \}$. Тогда $\overline{\lim\limits_{n\to \infty}} x_{n} \in PL (\{ x_{n}\})$ и $\lim\limits_{\overline{n\to \infty}} x_{n} \in PL (\{ x_{n} \})$.
+\end{theorem}
+\begin{proof}
+    Докажем для верхнего предела, а для нижнего аналогично.
+
+    Обозначим $M = \sup PL (\{ x_{n} \})$. Из определения супремума следует, что $\forall \epsilon > 0 \hookrightarrow U_{\epsilon / 2} (M) \cap PL (\{ x_{n} \}) \neq \varnothing.$ Следовательно, $\exists c \in PL (\{ x_{n} \})$: $c \in U_{\epsilon / 2} (M) \Rightarrow$ по критерию частичного предела в $U_{\epsilon / 2} (c)$ содержатся значения бесконечного количества элементов последовательности $\{ x_{n} \}$.
+
+    $U_{\epsilon / 2} (c) \subset U_{\epsilon / 2} (M)$, так как $c \in U_{\epsilon} (M)$. Тогда в $U_{\epsilon} (M)$ содержатся значения бесконечного количества элементов последовательности $\{ x_{n} \}$, но $\epsilon$ был выбран произвольно $\Rightarrow \forall \epsilon > 0$ в $U_{\epsilon} (M)$ содержатся значения бесконечного количества элементов последовательности $\{ x_{n} \} \Rightarrow$ по критерию частичного предела $M$~---~частичный предел.
+\end{proof}
+\begin{theorem}
+    \hypertarget{thm2.11}{Пусть} $\{ x_{n} \}$~---~числовая последовательность. Тогда для верхнего предела справедливо равенство
+    $$ \overline{\lim\limits_{n\to \infty}} x_{n} = \underset{n \in \N}{\inf} ({\sup\limits_{k \geq n}} \  x_{k}),$$
+    а для нижнего предела
+    $$ \lim\limits_{\overline{n\to \infty}} x_{n} = \underset{n \in \N}{\sup} ({\inf\limits_{k\geq n}} \  x_{k}).$$
+\end{theorem}
+\begin{proof}
+    Докажем для верхнего предела, а для нижнего аналогично. 
+
+    \underline{Шаг 0.} При каждом $n \in \N$ положим
+    $$ y_{n} := \sup\limits_{k \geq n} x_{k} := \sup \{ x_{k}: k \geq n\}.$$
+    Заметим, что $y_{n^{*}} = + \infty$ при каком-то $n^{*} \in \N \Leftrightarrow y_{n} = + \infty \  \forall n \in \N$. Действительно, это легко следует из того, что хвосты $\{ x_{k}$: $k \geq n_{1}\}$ и $\{ x_{k}$: $k \geq n_{2}\}$ отличаются не более, чем на конечное число элементов. Если $y_{n} = + \infty$ при всех $n \in \N$, то, очевидно, $\overline{\lim\limits_{n\to \infty}} x_{n} = + \infty.$ С другой стороны, из определения супремума и равенства $y_{n} = + \infty$ при всех $n \in \N$ вытекает, что $\forall \epsilon > 0 \  \forall n \in \N \  \exists k \geq n$ такой, что $x_{k} > \frac{1}{\epsilon}$. По критерию частичного предела это означает, что $+\infty$ является частичным пределом последовательности $\{ x_{n} \}$, а значит $\overline{\lim\limits_{n\to \infty}} x_{n} = + \infty.$ Резюмируя, получаем, что, если $\exists n \in \N$: $y_{n} = + \infty$, то требуемое равенство выполнено.
+
+    \underline{\hypertarget{\hypertarget{step1}}{Шаг 1.}} Заметим, что $y_{n} \geq x_{n} > -\infty \  \forall n \in \N$. Так как случай $y_{n} = +\infty$ уже рассмотрен выше, \textit{до конца доказательства предполагаем, что} $\{ y_{n} \} \subset \R$. Ключевым же для нас наблюдением будет монотонность последовательности $\{ y_{n} \}$. Действительно, из включения
+    $$ \{ k \in \N: k \geq n + 1 \} \subset \{ k \in \N: k \geq n \}$$
+    вытекает неравенство
+    $$ y_{n + 1} \leq y_{n} \  \forall n \in \N. \qquad (1)$$
+
+    \underline{\hypertarget{step2}{Шаг 2.}} Установим неравенство
+    $$ \overline{\lim\limits_{n\to \infty}} x_{n} \leq \underset{n \in \N}{\inf} ({\sup\limits_{k \geq n}} \  x_{k}).$$
+
+    \hyperlink{thm2.10}{По теореме 2.10} верхний предел сам является частичным пределом. Фиксируем произвольную подпоследовательность $\{ x_{n_{j}} \}$ последовательности $\{ x_{n} \}$, для которой
+    $$ \overline{\lim\limits_{n\to \infty}} x_{n} = \lim\limits_{j\to \infty} x_{n_{j}}. \qquad (2)$$
+
+    Из положенного нами определения $y_{n}$ (в шаге 0) очевидно, что
+    $$ x_{n_{j}} \leq y_{n_{j}}.$$
+
+    Поскольку в силу неравенства (1) последовательность $\{ y_{n} \}$ монотонно убывает (нестрого), она имеет предел. А значит имеет предел и подпоследовательность $\{ y_{n_{j}}\}$. Более того,
+    $$ \lim\limits_{j\to \infty} y_{n_{j}} = \lim\limits_{n\to \infty} y_{n}. \quad (3)$$
+
+    Переходя к пределу в неравенстве $x_{n_{j}} \leq y_{n_{j}}$ и используя (2) и (3), получим
+    $$ \overline{\lim\limits_{n\to \infty}} x_{n} \leq \lim\limits_{j\to \infty} y_{n_{j}} = \lim\limits_{n\to \infty} y_{n} = \inf\limits_{n \in \N} y_{n}. $$
+
+    Из положенного нами определения $y_{n}$ и неравенства выше и вытекает требуемое в начале шага 2 неравенство.
+
+    \underline{Шаг 3.} Установим неравенство
+    $$ \overline{\lim\limits_{n\to \infty}} x_{n} \geq \underset{n \in \N}{\inf} ({\sup\limits_{k \geq n}} \  x_{k}).$$
+
+    Покажем, что правая часть этого неравенства является частичным пределом. Тогда, учитывая, что верхний предел - это наибольший (в смысле $\overline{\R}$) частичный предел, получаем требуемое неравенство.
+
+    Обозначим правую часть неравенства за $M$. Тогда в силу монотонности $\{ y_{n} \}$ и теоремы Вейерштрасса получим
+    $$ \forall \epsilon > 0 \  \exists N (\epsilon) \in \N: \forall n \geq N (\epsilon) \hookrightarrow y_{n} \in U_{\epsilon / 2} (M). \quad (4)$$
+
+    Используя определение супремума и наше определение $y_{n}$, получим, что
+    $$ \forall \epsilon > 0 \  \forall n \geq N (\epsilon) \  \exists k \geq n: x_{k} \in U_{\epsilon / 2} (y_{n}). \quad (5)$$
+
+    Заметим, что, если $y_{n} \in U_{\epsilon / 2} (M)$ и $x_{k} \in U_{\epsilon / 2} (y_{n})$, то $x_{k} \in U_{\epsilon} (M)$. Следовательно, учитывая (4) и (5), получаем, что $\forall \epsilon > 0 \  U_{\epsilon} (M)$ содержит значения бесконечного числа элементов последовательности $\{ x_{n} \}$. По критерию частичного предела это означает, что $M$~---~частичный предел. Тогда требуемое неравенство доказано.
+
+    \underline{Шаг 4.} Объединяя доказанные в шагах 2 и 3 неравенства, получаем требуемое равенство.
+\end{proof}
+
+
+\input{рисунок для лиминфов}
+
+\newpage
+
+\begin{theorem}
+    Пусть $\{ x_{n} \}$~---~числовая последовательность. Пусть $A \in \overline{\R}$. Следующие условия эквивалентны:
+    \begin{enumerate}
+        \item $\exists \lim\limits_{n\to \infty} x_{n} = A;$
+        \item $PL (\{ x_{n} \}) = \{ A \};$
+        \item $ \lim\limits_{\overline{n\to \infty}} x_{n} = \overline{\lim\limits_{n\to \infty}} x_{n} = A.$
+    \end{enumerate}
+\end{theorem}
+\begin{proof}
+    Заметим, что $(2) \Leftrightarrow (3)$ просто из определений. Покажем $(3) \to (2)$. Пусть $c \in PL (\{ x_{n} \})$.
+    $$ \lim\limits_{\overline{n\to \infty}} x_{n} \leq c \leq \overline{\lim\limits_{n\to \infty}} x_{n}, \  \text{но они равны по (3)} \Rightarrow c = A. $$ Переход $(2) \to (3)$ очевиден. Множество $PL$ состоит всего из одного элемента, то есть крайне легко взять его супремум и инфимум (и они равны).
+
+    Переход $(1) \to (2)$ доказали ранее (\hyperlink{lemm2.9}{лемма 2.9}).
+
+    Покажем $(3) \to (1)$, тогда мы докажем равносительность всех условий.
+
+    Сначала рассмотрим случай $A \in \R$. Тогда, используя рассуждения \hyperlink{step1}{шага 1} теоремы 2.11, легко видеть, что $z_{n} := \inf \{ x_{k}$: $k \geq n\} \in \R$ и $y_{n} := \sup \{ x_{k}$: $k \geq n\} \in \R$ при всех $n \in \N$. Используя монотонность последовательностей $\{ z_{n} \}$, $\{ y_{n} \}$ и учитывая \hyperlink{thm2.10}{теорему 2.10}, получаем, что
+    $$ \lim\limits_{\overline{n\to \infty}} x_{n} = \lim\limits_{n\to \infty} z_{n} = \overline{\lim\limits_{n\to \infty}} x_{n} = \lim\limits_{n\to \infty} y_{n} = A.$$
+    Тогда, используя очевидное неравенство $z_{n} \leq x_{n} \leq y_{n}$, справедливое при всех $n \in \N$, и \hyperlink{thm2.4}{теорему о трёх последовательностях}, получаем, что $\exists \lim\limits_{n\to \infty} x_{n} = A$.
+    
+    Рассмотрим случай $A = +\infty$, так как случай $A = -\infty$ рассматривается аналогично. Если $\lim\limits_{\overline{n\to \infty}} x_{n} = +\infty$, то \hyperlink{thm2.11}{по теореме 2.11} в силу определения инфимума получаем, что $\forall \epsilon > 0 \  \exists N (\epsilon) \in \N$: $z_{N (\epsilon)} \in U_{\epsilon} (+ \infty)$. По построению последовательности $z_{n}$ получаем, что $\forall \epsilon > 0 \  \exists N (\epsilon) \in \N$: $\forall n \geq N (\epsilon) \hookrightarrow x_{n} \in U_{\epsilon} (+ \infty)$, а значит $\exists \lim\limits_{n\to \infty} x_{n} = +\infty$.
+\end{proof}
+
+\subsection{Критерий Коши}
+\begin{definition}
+    Последовательность $\{ x_{n} \}$ называется \textit{фундаментальной}, если выполнено \textit{условие Коши}:
+    $$ \forall \epsilon > 0 \  \exists N (\epsilon) \in \N: \forall n \geq N, \forall m \geq N \hookrightarrow |x_{n} - x_{m}| < \epsilon. $$
+\end{definition}
+\begin{lemma}
+    \hypertarget{lemm2.10}{Пусть} $\{ x_{n} \}$~---~сходящаяся последовательность. Тогда она фундаментальна.
+\end{lemma}
+\begin{proof}
+    Пусть $\{ x_{n} \}$~---~ сходится к числу $c$. Тогда
+    $$ \forall \epsilon > 0 \  \exists N (\epsilon) \in \N: \forall n \geq N (\epsilon) \hookrightarrow |x_{n} - c| < \epsilon / 2$$
+    $$ \text{следовательно, }\  \forall \epsilon > 0  \  \exists N (\epsilon): \forall n \geq N \  \forall m \geq N \hookrightarrow |x_{n} - x_{m}| \leq |x_{n} - c| + |x_{m} - c| < \frac{\epsilon}{2} + \frac{\epsilon}{2} = \epsilon.$$
+\end{proof}
+\begin{lemma}
+    \hypertarget{lemm2.11}{Если последовательность} $\{ x_{n} \}$ фундаментальна, то она ограничена.
+\end{lemma}
+\begin{proof}
+    Поскольку условие фундаментальности сформулировано для любого $\epsilon$, то возьмём $\epsilon = 1$.
+    $$ \exists N (1): \forall n, m \geq N (1) \hookrightarrow |x_{n} - x_{m}| < 1, \text{ возьмём $m = N (1)$} \Rightarrow$$
+    $$ \Rightarrow |x_{n} - x_{N (1)}| < 1 \  \forall n \geq N (1) \Rightarrow |x_{n}| < 1 + |x_{N (1)}| \  \forall n \geq N (1)$$
+
+    Положим $M := max \{ x_{1}, x_{2}, \ldots, |x_{N (1)}|, 1 + |x_{N (1)}|\} \Rightarrow |x_{n}| \leq M \   \forall n \in \N \Rightarrow \{ x_{n} \}$~---~ограниченная последовательность.
+\end{proof}
+\begin{theorem}
+    (Критерий Коши) Последовательность сходится тогда и только тогда, когда она фундаментальна.
+\end{theorem}
+\begin{proof}
+    В одну сторону мы уже доказали (\hyperlink{lemm2.10}{лемма 2.10}). Докажем в другую сторону.
+
+    Пусть последовательность $\{ x_{n} \}$ фундаментальна $\Rightarrow$ она ограничена \hyperlink{lemm2.11}{по лемме 2.11}, а тогда у $\{ x_{n} \}$ есть конечный частичный предел \hyperlink{thm2.8}{по теореме Больцано-Вейерштрасса} $\Rightarrow \exists c \in \R$ и $\exists \{ x_{n_{k}} \}$: $\lim\limits_{k\to \infty} x_{n_{k}} = c \Rightarrow \exists k \in \N$: $n_{k} \geq N (\epsilon)$ и $|x_{n_{k}} - c| < \epsilon / 2$.
+    $$ \forall \epsilon > 0 \  \exists N (\epsilon) \in \N: \forall n, m \geq N (\epsilon) \hookrightarrow |x_{n} - x_{m}| < \epsilon / 2 \Rightarrow$$
+    $$ \Rightarrow \forall \epsilon > 0 \  \exists N (\epsilon) \in \N: \forall n \geq N (\epsilon) \hookrightarrow |x_{n} - c| \leq |x_{n} - x_{n_{k}}| + |x_{n_{k}} - c| \Rightarrow |x_{n} - c| < \epsilon.$$
+
+    Теперь мы доказали утверждение в обе стороны.
+\end{proof}

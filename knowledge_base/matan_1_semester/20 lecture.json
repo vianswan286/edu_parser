@@ -1,0 +1,58 @@
+{
+  "units": [
+    {
+      "id": "T1",
+      "kind": "theorem",
+      "title": "",
+      "statement": "\\hypertarget{thrm5.19}{(Раскрытие неопределенности вида $\\frac{0}{0}$)} Пусть $-\\infty < a< b< +\\infty$. Пусть $f$ и $g$ дифференцируемы на $(a,b)$, а также $\\exists \\lim\\limits_{x\\to a+0} f(x) = 0, \\ \\exists \\lim\\limits_{x\\to a+0} g(x) = 0$ и $g'(x) \\neq 0 \\quad \\forall x \\in (a,b)$. Тогда, если $\\exists \\lim\\limits_{x\\to a+0} \\dfrac{f'(x)}{g'(x)} = C\\in \\overline{\\R},$ то $\\exists \\lim\\limits_{x\\to a+0} \\dfrac{f(x)}{g(x)} =\\dfrac{f'(x)}{g'(x)} =C$",
+      "proof": "",
+      "tags": [],
+      "source": "matan_1_semester/20 lecture.tex"
+    },
+    {
+      "id": "T2",
+      "kind": "theorem",
+      "title": "",
+      "statement": "\\hypertarget{thrm5.20}{} Пусть $f$ и $g$ дифференцируемы на луче $(A, +\\infty),$ ($A > 0$) и $\\exists \\lim\\limits_{x\\to \\infty} f(x) = \\lim\\limits_{x \\to +\\infty} g(x) = 0.$ Пусть $g'(x) \\neq 0 \\quad \\forall x \\in (A, \\infty).$ Тогда если $\\exists \\lim\\limits_{x\\to+\\infty} \\dfrac{f'(x)}{g'(x)}= C \\in \\overline{\\R}$, то $\\exists \\lim\\limits_{x\\to +\\infty} \\dfrac{f(x)}{g(x)} = C.$",
+      "proof": "",
+      "tags": [],
+      "source": "matan_1_semester/20 lecture.tex"
+    },
+    {
+      "id": "T3",
+      "kind": "theorem",
+      "title": "",
+      "statement": "\\hypertarget{thrm5.21}{(неопределенность $\\frac{\\infty}{\\infty}$)} Пусть $-\\infty< a< b< +\\infty$ и $ \\exists \\lim\\limits_{x\\to a+0} |f(x)| = + \\infty,$ $\\exists \\lim\\limits_{x\\to +0} |g(x)| = +\\infty$ Пусть $f$ и $g$ дифференцируемы на $(a, b)$ и $g'(x) \\neq 0 \\ \\forall x \\in (a, b)$ Тогда если $\\exists \\lim\\limits_{x\\to a+0} \\dfrac{f'(x)}{g'(x)} = C\\in \\overline{\\R},$ то $\\exists \\lim\\limits_{x\\to a+0} \\dfrac{f(x)}{g(x)} = C.$ % $\\exists \\lim\\limits_{x\\to a+0} |f(x)| = + \\infty, \\quad \\exists \\lim\\limits_{x\\to +0} |g(x)| = +\\infty$",
+      "proof": "",
+      "tags": [],
+      "source": "matan_1_semester/20 lecture.tex"
+    },
+    {
+      "id": "T4",
+      "kind": "theorem",
+      "title": "",
+      "statement": "Пусть $f$ дифференцируема на $(a, b).$ Тогда: \\begin{enumerate} \\item $f'(x) \\geq 0 \\quad \\forall x\\in (a, b) \\Leftrightarrow$ $f$ нестрого возрастает на $(a, b)$. \\item $f'(x) \\leq 0 \\quad \\forall x\\in (a, b) \\Leftrightarrow$$f$ нестрого убывает на $(a, b)$. \\item Если $f'(x) > 0 \\quad \\forall x\\in (a, b),$ то $f$ строго возрастает на $(a, b)$ \\item Если $f'(x) < 0 \\quad \\forall x\\in (a, b)$, то $f$ строго убывает на $(a, b)$. \\end{enumerate}",
+      "proof": "",
+      "tags": [],
+      "source": "matan_1_semester/20 lecture.tex"
+    },
+    {
+      "id": "T5",
+      "kind": "theorem",
+      "title": "",
+      "statement": "\\hypertarget{thrm5.22}{(Достаточное условие экстремума)} Пусть $f \\in C(U_{\\delta}(x_{0}))$ и дифференцируема в $\\mathring{U}_{\\delta}(x_{0})$. Тогда если производная меняет знак при переходе через точку $x_{0},$ то $x_{0}$~---~ точка локального экстремума (если знак меняется с <<$-$>> на <<$+$>>, то локальный минумум, если с <<$+$>> на <<$-$>>, то локальный максимум).",
+      "proof": "",
+      "tags": [],
+      "source": "matan_1_semester/20 lecture.tex"
+    },
+    {
+      "id": "T6",
+      "kind": "theorem",
+      "title": "",
+      "statement": "\\hypertarget{thrm5.23}{(Достаточное условие экстремума в терминах высших производных)} Пусть $\\exists f^{(n)}(x_{0}), \\ n \\in \\N$. При этом $f^{(i)} (x_{0}) = 0 \\ \\forall i \\in \\{1, 2, \\ldots, n-1\\}, \\ f^{(n)} (x_{0}) \\neq 0.$ Тогда если $n$ нечетно, то $x_{0}$ не является точкой экстремума, если $n$ четно и $f^{(n)}(x_{0}) > 0$, то $x_{0}$~---~ строгий локальный минимум, если $n$ четно и $f^{(n)}(x_{0}) < 0$, то $x_{0}$~---~ строгий локальный максимум.",
+      "proof": "",
+      "tags": [],
+      "source": "matan_1_semester/20 lecture.tex"
+    }
+  ]
+}

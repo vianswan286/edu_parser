@@ -1,0 +1,121 @@
+{
+  "units": [
+    {
+      "id": "D1",
+      "kind": "definition",
+      "title": "",
+      "statement": "\\textit{Рядом} будем называть пару последовательностей $\\{a_n\\}_{n = 1}^{\\infty} \\subset \\R$~---~члены ряда и $\\{ S_n\\}_{n = 1}^{\\infty} \\subset \\R$~---~частичные суммы ряда, где $S_n = \\sum_{k = 1}^{n} a_k$. Обозначать \\textit{ряд} будем $\\sum_{k = 1}^{\\infty}a_n$.",
+      "proof": "",
+      "tags": [],
+      "source": "matan_2_semestr/18.tex"
+    },
+    {
+      "id": "D2",
+      "kind": "definition",
+      "title": "",
+      "statement": "Ряд $\\sum_{n = 1}^{\\infty} a_n$ называется \\textit{сходящимся}, если $\\exists \\ \\lim\\limits_{n\\to \\infty} S_n \\in \\R$. В противном случае ряд называется \\textit{расходящимся}.",
+      "proof": "",
+      "tags": [],
+      "source": "matan_2_semestr/18.tex"
+    },
+    {
+      "id": "D3",
+      "kind": "definition",
+      "title": "",
+      "statement": "Ряд \\textit{сходится абсолютно}, если $\\sum_{n = 1}^{\\infty}|a_n|$~---~сходится",
+      "proof": "",
+      "tags": [],
+      "source": "matan_2_semestr/18.tex"
+    },
+    {
+      "id": "D4",
+      "kind": "definition",
+      "title": "",
+      "statement": "Ряд $\\sum_{n = 1}^{\\infty} a_n$ называется \\textit{условно сходящимся}, если $\\sum_{n = 1}^{\\infty} a_n$ сходится, но не абсолютно.",
+      "proof": "",
+      "tags": [],
+      "source": "matan_2_semestr/18.tex"
+    },
+    {
+      "id": "D5",
+      "kind": "definition",
+      "title": "",
+      "statement": "$\\lim \\limits_{n\\rightarrow \\infty}S_n$ называется суммой ряда.",
+      "proof": "",
+      "tags": [],
+      "source": "matan_2_semestr/18.tex"
+    },
+    {
+      "id": "D6",
+      "kind": "definition",
+      "title": "",
+      "statement": "Пусть $\\{a_n\\}_{n = 1}^{\\infty}$, $\\{b_n\\}_{n = 1}^{\\infty}$~---~две неотрицательных последовательности. Будем говорить, что $a_n \\overset{\\text{сх.}}{\\sim} b_n, n \\rightarrow +\\infty$, если $\\exists n_0 \\in \\N$ и $\\exists m > 0, M > 0$: $$ma_n \\le b_n \\le Ma_n, \\ \\forall n \\ge n_0.$$",
+      "proof": "",
+      "tags": [],
+      "source": "matan_2_semestr/18.tex"
+    },
+    {
+      "id": "T7",
+      "kind": "theorem",
+      "title": "Необходимые условия сходимости числового ряда",
+      "statement": "Если ряд сходится, то $a_n \\rightarrow 0$, $n \\rightarrow +\\infty$.",
+      "proof": "",
+      "tags": [],
+      "source": "matan_2_semestr/18.tex"
+    },
+    {
+      "id": "T8",
+      "kind": "theorem",
+      "title": "Критерий Коши для числового ряда",
+      "statement": "$\\sum_{n = 1}^{\\infty} a_n$ сходится $\\Leftrightarrow$ выполнено условие Коши для ряда: $\\forall \\epsilon > 0 \\ \\exists \\ N(\\epsilon) : \\forall \\ n, m \\ge N(\\epsilon) \\hookrightarrow \\left | \\sum_{k = n}^{m} a_k \\right | < \\epsilon$.",
+      "proof": "",
+      "tags": [],
+      "source": "matan_2_semestr/18.tex"
+    },
+    {
+      "id": "T9",
+      "kind": "theorem",
+      "title": "",
+      "statement": "Пусть $\\sum_{n = 1}^{\\infty} a_n$~---~сходится, $\\sum_{n = 1}^{\\infty} b_n$~---~сходится, $\\alpha \\in \\R$, $\\beta \\in \\R$. Тогда $\\sum_{n = 1}^{\\infty} (\\alpha a_n + \\beta b_n) $~---~тоже сходится, при этом $\\sum_{n = 1}^{\\infty} (\\alpha a_n + \\beta b_n) = \\alpha \\sum_{n = 1}^{\\infty} a_n + \\beta \\sum_{n = 1}^{\\infty} b_n$.",
+      "proof": "",
+      "tags": [],
+      "source": "matan_2_semestr/18.tex"
+    },
+    {
+      "id": "T10",
+      "kind": "theorem",
+      "title": "",
+      "statement": "[Принцип локализации] $\\forall n_0 \\in \\N \\hookrightarrow \\sum_{n = 1}^{\\infty} a_n$ ~---~ сходится $\\Leftrightarrow \\sum_{n = n_0}^{\\infty} a_n$ сходится.",
+      "proof": "",
+      "tags": [],
+      "source": "matan_2_semestr/18.tex"
+    },
+    {
+      "id": "T11",
+      "kind": "theorem",
+      "title": "Признак сравнения",
+      "statement": "Пусть $0 \\le a_n \\le b_n \\ \\forall n \\in \\N$. Тогда если $\\sum_{n = 1}^{\\infty} b_n$~---~сходится, то $\\sum_{n = 1}^{\\infty} a_n$~---~сходится. И наоборот: если $\\sum_{n = 1}^{\\infty} a_n$~---~расходится, то $\\sum_{n = 1}^{\\infty} b_n$~---~расходится.",
+      "proof": "",
+      "tags": [],
+      "source": "matan_2_semestr/18.tex"
+    },
+    {
+      "id": "T12",
+      "kind": "theorem",
+      "title": "Второй признак сравнения",
+      "statement": "Пусть $\\sum_{n = 1}^{\\infty} a_n$ и $\\sum_{n = 1}^{\\infty} b_n$~---~ряды с неотрицательными членами. Пусть $a_n \\overset{\\text{сх.}}{\\sim} b_n$. Тогда ряды $\\sum_{n = 1}^{\\infty} a_n$ и $\\sum_{n = 1}^{\\infty} b_n$~---~сходятся или расходятся одновременно.",
+      "proof": "",
+      "tags": [],
+      "source": "matan_2_semestr/18.tex"
+    },
+    {
+      "id": "T13",
+      "kind": "theorem",
+      "title": "Интегральный признак",
+      "statement": "Пусть $f(x)$~---~нестрого монотонна на луче $[1, +\\infty)$. Тогда $\\sum_{n = 1}^{\\infty} f(n)$~---~сходится $\\Leftrightarrow \\int\\limits_{1}^{+\\infty}f(x)dx $~---~сходится.",
+      "proof": "",
+      "tags": [],
+      "source": "matan_2_semestr/18.tex"
+    }
+  ]
+}

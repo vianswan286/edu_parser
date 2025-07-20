@@ -1,0 +1,162 @@
+\begin{example}
+    \hypertarget{examp7.1}{$\text{C}\left( [a, b] \right)$~---~линейное пространство всех непрерывных на $[a, b]$ функций, будем рассматривать его как вещественное линейное пространство ($a, b \in \R$).}
+
+    Пусть $f_1 \in \text{C}\left([a, b]\right)$, $f_2 \in \left([a, b]\right)$. Тогда 
+    $\begin{cases}
+        (f_1 + f_2) (x) := f_1 (x) + f_2 (x) \  \forall x \in [a, b]\\
+        (\alpha f_1) (x) := \alpha \cdot f_1 (x) \  \forall \alpha \in \R, \forall x \in [a, b]
+    \end{cases}$
+    ~---~определение операций над функциями из $\text{C}\left( [a, b]\right)$. Заметим, что данные операции корректно введены, так как сумма двух непрерывных функций~---~непрерывная функция и произведение числа на непрерывную функцию~---~непрерывная функция.
+
+    Таким образом мы наделяем множество непрерывных на $[a, b]$ функций структурой линейного пространства.
+
+    Также введём норму в $\text{C}\left( [a, b]\right)$: $\| f \|_{\text{C}\left( [a, b]\right)} := \max\limits_{x \in [a, b]} |f (x)|$. Заметим, что $\max$ непрерывной на отрезке функции достигается. Проверим аксиомы нормы:
+    \begin{enumerate}
+        \item $\| f \|_{\text{C}\left( [a, b]\right)} \geq 0$ очевидно;  $\| f \|_{\text{C}\left( [a, b]\right)} = 0 \Leftrightarrow \max\limits_{x \in [a, b]} |f (x)| = 0 \Rightarrow f (x) \equiv 0$ на $[a, b]$;
+        \item $\| \alpha f \|_{\text{C}\left( [a, b]\right)} = \max\limits_{x \in [a, b]} |\alpha f(x)| = |\alpha| \max\limits_{x \in [a, b]} |f (x)| = |\alpha| \| f \|_{\text{C}\left( [a, b]\right)}$;
+        \item $\| f_{1} + f_{2} \|_{\text{C}\left( [a, b]\right)} = \max\limits_{x \in [a, b]} |f_{1} (x) + f_{2} (x)| = |f_{1} (x^{*}) + f_{2} (x^{*})| \leq |f_{1} (x^{*})| + |f_{2} (x^{*})| \leq \max\limits_{x \in [a, b]} |f_{1} (x)| + \max\limits_{x \in [a, b]} |f_{2} (x)| = \| f_{1}\|_{\text{C}\left( [a, b]\right)} + \| f_{2}\|_{\text{C}\left( [a, b]\right)}$.
+    \end{enumerate}
+    Замечание: $x^{*}$~---~точка отрезка в которой достигается максимум (в силу непрерывности на отрезке).
+\end{example}
+
+\subsection{Метрическое пространство}
+
+\begin{definition}
+    Пара $(X, \rho)$~---~\textit{метрическое пространство (МП)}, где $X$~---~абстрактное множество, $X \neq \varnothing$, a $\rho$: $X \times X \mapsto [0; +\infty)$, удовлетворяющее следующим аксиомам:
+\end{definition}
+\begin{tabular}{lll}
+    1. & $\rho(x, y) \geq 0$ & $\forall x, y \in X$\\
+    2. & $\rho(x, y) = 0 \Leftrightarrow x = y$ & $\forall x, y \in X$ \\
+    3. & $\rho(x, y) = \rho(y, x)$ & $\forall x, y \in X$ \\
+    4. & $\rho(x, z) \leq \rho(x, y) + \rho(y, z)$& $\forall x, y, z \in X$ 
+    \end{tabular}
+
+\begin{definition}
+    Пусть $(X, \rho)$ метрическое пространство. \textit{Открытым шаром} с центром в точке $x \in X$ и радиуса $r \geq 0$ называется множество $B_r (x) := \{ y \in X$: $\rho(x, y) < r\}$, $\overline{B}_r (x) := \{ y \in X$: $\rho(x, y) \leq r\}$~---~<<замкнутый>> шар, а $\mathring{B}_{r} (x) = B_{r} (x) \backslash \{x\}$~---~проколотый шар.
+\end{definition}
+\begin{examples}$\ $
+    \begin{enumerate}
+        \item $X = \R$, $\rho(x, y) = |x - y|$;
+        \item $X = \Q$, $\rho(x, y) = |x - y|$;
+        \item $X = [0; 1]$, $\rho(x, y) = |x - y|$;
+        \item $X = [0; 1] \cap Q$, $\rho(x, y) = |x - y|$;
+        \item $X = \R$, $\rho(x, y) = |e^x - e^y|$;
+        \item Любое линейно нормированное пространство $(E, \| \|)$ становится метрическим пространством, если $\rho(x, y) := \| x - y\|$.
+    \end{enumerate}
+\end{examples}
+\begin{note}
+    Если $(X, \rho)$~---~метрическое пространство, тогда $X' \subset X$~---~непустое множество, $X'$ само становится метрическим пространством если сузить метрику $\rho$ на него.
+\end{note}
+\begin{problem}
+    Может ли в метрическом пространстве шар меньшего радиуса внутри себя строго содержать шар большего радиуса?
+\end{problem}
+\begin{solution}
+    Да, может. Возьмём $X = [0; 1]$, $\rho(x, y) = |x - y|$, а $B_{\frac{3}{4}} \left(\frac{1}{2}\right)$ = [0; 1], $B_{\frac{7}{8}} (1) = \left(\frac{1}{8}; 1\right]$~---~все условия выполнены.
+\end{solution}
+\begin{note}
+    Шар в метрическом пространстве не однозначно определяет центр и радиус: так в $X = [0; 1]$, $\rho(x, y) = |x - y|$ получается $B_{\frac{3}{4}} \left( 1\right) = B_{2} (1) = [0; 1]$.
+\end{note}
+\begin{definition}
+    \hypertarget{def7.6}{Пусть $(X, \rho)$~---[метрическое пространство, $\E \subset X$. $x_{0} \in X$~---~\textit{точка прикосновения} $\E$, если $\forall \epsilon > 0 \hookrightarrow B_{\epsilon} (x_{0}) \cap \E \neq \varnothing$.}
+\end{definition}
+\begin{definition}
+    \hypertarget{def7.7}{Пусть $(X, \rho)$ метрическое пространство, $\E \subset X$. $x_{0} \in X$~---~\textit{предельная точка} $\E$, если $\forall \epsilon > 0 \hookrightarrow \mathring{B}_{\epsilon} (x_{0}) \cap \E \neq \varnothing$.}
+\end{definition}
+\begin{definition}
+    Пусть $(X_1, \rho_1)$, $(X_2, \rho_2)$ метрические пространства, $\E \subset X_1$, $f$: $\E \mapsto X_2$, $x_0 \in X_1$~---~предельная точка $E$. Будем говорить, что $\exists \lim\limits_{\underset{{x \in \E}}{x\to x_0}} f(x) = y_0 \in X_2$ по Коши, если
+    $$ \forall \epsilon > 0 \  \exists \delta (\epsilon) > 0: \forall x \in (\mathring{B}_{\delta (\epsilon)} (x_0) \cap \E) \hookrightarrow f(x) \in B_{\epsilon} (y_0).$$
+\end{definition}
+\begin{definition}
+    Пусть $(X_1, \rho_1)$, $(X_2, \rho_2)$ метрические пространства, $\E \subset X_1$, $f$: $\E$: $X_2$, $x_0 \in X_1$~---~предельная точка $\E$. Будем говорить, что $\exists \lim\limits_{x\to x_0} f(x) = y_0 \in X_2$ по Гейне, если
+    $$ \forall \text{ последовательности Гейне } \{x_n\} \subset \E \text{ в точке } x_0 \hookrightarrow \exists \lim\limits_{n\to \infty} f(x_n) = y_0.$$
+\end{definition}
+\begin{note}
+    Определение последовательности Гейне в точке $x_0$ остается тем же, за тем исключением, что $\exists \lim\limits_{n\to \infty} x_n = x_0 \Leftrightarrow \forall \epsilon > 0 \ \exists N (\epsilon) \in \N$: $\forall n \geq N (\epsilon) \hookrightarrow x_{n} \in B_{\epsilon} (x_0) \Leftrightarrow \exists \lim\limits_{n\to \infty} \rho(x_{n}, x_{0}) = 0$.
+\end{note}
+\begin{definition}
+    Пусть $(X_1, \rho_1)$, $(X_2, \rho_2)$ метрические пространства, $\E \subset X_1$, $\E \neq \varnothing$, $f$: $\E \mapsto X_2$, $x_0 \in E$. Будем говорить, что $f$ непрерывно в точке $x_0$, если:
+    \begin{enumerate}
+        \item $x_0$~---~изолированная точка $\E$, то есть $\exists \epsilon > 0$: $B_{\epsilon} (x_0) \cap \E = \varnothing$;
+        \item $x_0$~---~предельная точка $\E$, то есть $\exists \lim\limits_{\underset{{x \in \E}}{x\to x_0}} f(x) = f(x_0)$.
+    \end{enumerate}
+\end{definition}
+\begin{definition}
+    Пусть $(X_1, \rho_1)$, $(X_2, \rho_2)$ метрические пространства, $\E \subset X_1$, $\E \neq \varnothing$. Отображение $f$: $\E \mapsto X_2$ называется непрерывным на $\E$, если оно непрерывно в каждой точке множества $\E$.
+\end{definition}
+
+\subsection{Равномерная непрерывность}
+\begin{definition}
+    Пусть $(X_1, \rho_1)$, $(X_2, \rho_2)$ метрические пространства, $\E \subset X_1$, $\E \neq \varnothing$. Будем говорить, что отображение $f$: $\E \mapsto X_2$ \textit{равномерно непрерывно} на $\E$, если
+    $$ \forall \epsilon > 0 \ \exists \delta (\epsilon) > 0: \forall x', x'' \in E \ \ \rho_{1}(x', x'') < \delta (\epsilon) \hookrightarrow \rho_{2}(f(x'), f(x'')) < \epsilon.$$
+\end{definition}
+\begin{problem}
+    Как связаны условия?
+    \begin{enumerate}
+        \item $f \in \text{C}\left(\E\right)$;
+        \item $f$ равномерно непрерывна на $\E$.
+    \end{enumerate}
+\end{problem}
+\begin{solution}
+    Запишем в кванторах первое утверждение:
+    $$\forall x' \in \E, \forall \epsilon > 0 \ \exists \delta (x', \epsilon) > 0: \forall x'' \in \E \ \rho_{1}(x', x'') < \delta(\epsilon, x') \hookrightarrow \rho_{2}(f(x'), f(x'')) < \epsilon.$$
+    Отсюда видно, что из $(2) \Rightarrow (1)$, так как $\forall x' \in \E$ возьмём $\delta(x', \epsilon) = \delta(\epsilon)$ из равномерной непрерывности, но из $(1) \not\Rightarrow (2)$. В качестве примера возьмём $X_1 = \R$, $X_2 = \R$, $\rho_1 = |x_1 - y_1|$, $\rho_2 = |x_2 - y_2|$, где $x_1, y_1 \in X_{1}$, $x_2, y_2 \in X_{2}$ (обычные расстояния на $\R$). Отображение $f (x) = x^2$~---~непрерывно в каждой точке числовой прямой, но равномерно непрерывно оно не будет.
+    \textbf{Нужна КартинОчка}
+    
+    Сформулируем отрицание к равномерной непрерывности:
+    $$ \exists \epsilon > 0: \forall \delta > 0 \ \exists x', x'' \in \R: |x' - x''| < \delta, \ \ |f(x') - f(x'')| \geq \epsilon, \text{ то есть } |(x')^2 - (x'')^2| \geq \epsilon,$$
+    $$ (x')^2 - (x'')^2 = (x' - x'')(x' + x'').$$
+    $$ \exists \epsilon = 1: \forall \delta > 0 \ \exists x' = \cfrac{2}{\delta}, x'' = \cfrac{\delta}{2} + \cfrac{2}{\delta}: |x' - x''| < \delta,\ \ |(x')^2 - (x'')^2| \geq 1.$$
+    Значит равномерной непрерывности нет.
+\end{solution}
+\begin{definition}
+    Пусть $(X, \rho)$~---~метрическое пространство. Множество $K \subset X$ называется \textit{компактом}, если $\forall \{ x_n \} \subset K \  \exists \{ x_{n_j} \}$~---~подпоследовательность, сходящаяся к некоторой точке $x^{*} \in K$.
+\end{definition}
+\begin{note}
+    Критерий компактности, который мы ввели ранее, здесь не работает (компактность не эквивалетна ограниченности и замкнутости, но из компактности следует ограниченность и замкнутость).
+\end{note}
+\begin{definition}
+    Пустое множество $\varnothing$ по определению считаем компактом.
+\end{definition}
+\begin{theorem}
+    (Теорема Кантора) Пусть $(X_1, \rho_1)$, $(X_2, \rho_2)$~---~метрические пространства, $K \subset X_1$~---~компакт и $f$: $K \mapsto X_2$. Если $f$ непрерывно на $K$, то оно равномерно непрерывно на $K$.
+\end{theorem}
+\begin{proof}
+    Будем доказывать от противного. Пусть $f \in \text{C}\left(K\right)$, но не равномерно непрерывно на $K$. Сформулируем отрицание к равномерной непрерывности, то есть
+    $$ \exists \epsilon^{*} > 0: \forall \delta > 0 \  \exists x', x'' \in K: \rho_{1}(x', x'') < \delta, \ \  \rho_{2}(f(x'), f(x'') \geq \epsilon^{*}.$$
+    Раз $\forall \delta$, то возьмём $\delta$ вида $\frac{1}{n}$, где $n \in N$. Тогда $\forall n \in \N\ $ $\exists x_{n}', x_{n}'' \in K$:  $\begin{cases}
+    \rho_1 (x_{n}', x_{n}'') < \frac{1}{n} \\
+    \rho_2 (f(x_{n}'), f(x_{n}'')) \geq \epsilon^{*}
+    \end{cases}$
+
+    Последовательность $\{ x_{n}' \} \subset K$. Тогда по определению компактности $\exists \{ x_{n_{j}}' \} \subset K$~---~подпоследовательность и $\exists x^{*} \in K$: $\rho_{1}({x_{n_{j}}}', x^{*})\to 0$, $j\to \infty$ (1), то есть сходится к $x^{*}$. Но $f$ непрерывна к $x^{*}$ по условию, тогда:
+    $$ \forall \epsilon > 0 \  \exists \delta (\epsilon) > 0: \forall x \in \left(B_{\delta (\epsilon)} (x^{*}) \cap K\right) \hookrightarrow \rho_{2}(f(x^{*}), f(x)) < \frac{\epsilon}{2} \Rightarrow$$
+    $$\Rightarrow \forall x', x'' \in \left(B_{\delta (\epsilon)} \cap K \right) \hookrightarrow \rho_{2}(f(x'), f(x'')) \leq \rho_{2}(f(x^{*}), f(x')) + \rho_{2}(f(x^{*}), f(x'')) < \epsilon \quad (2).$$
+    Из (1) и с учетом того, что $\rho_{2}(x_{n_{j}}'', x^{*})\to 0$, $j\to \infty$ получается, что $\exists N \in \N$: $\forall j \geq N \hookrightarrow x_{n_{j}}', x_{n_{j}}'' \in B_{\delta (\epsilon^{*})} (x^{*}) \Rightarrow \rho_{2}(f(x_{n_{j}}'), f(x_{n_{j}}'')) \geq \epsilon^{*}, \  \forall j \geq N$.
+
+    C другой стороны из (2) $\forall j \geq N \hookrightarrow \rho_{2}(f(x'), f(x'')) < \epsilon^{*}$. Противоречие. То есть исходное предположение было неверно.
+    \textbf{Нужна картиночка.}
+\end{proof}
+\textbf{Нужна картиночка.}
+\subsection{Евклидово пространство}
+\begin{definition}
+    (\textit{Вещественное евклидово пространство}) Пусть $\E$~---~линейное пространство, а <$\cdot$, $\cdot$>: $\E \times \E \mapsto \R$ удовлетворяющее следующим условиям:
+    
+\begin{tabular}{lll}
+1. & <$x$, $x$> $\in [0; +\infty)$ & $\forall x \in \E$ \\
+2. & <$x$, $x$> $= 0 \Leftrightarrow x = 0$ &  \\
+3. & <$x$, $y$> = <$y$, $x$> & $\forall x, y \in \E$ \\
+4. & <$\alpha x + \beta y$, $z$> = $\alpha$ <$x$, $z$> $+ \beta$ <$y$, $z$> & $\forall \alpha, \beta \in \R$, $\forall x, y, z \in \E$
+\end{tabular}
+
+тогда ($\E$, <$\cdot$, $\cdot$>) называется \textit{евклидовым пространством} со скалярным произведением <$\cdot$, $\cdot$>.
+\end{definition}
+\begin{definition}
+    \textit{Комплексное евклидово пространство}~---~пара ($\E$, <$\cdot$, $\cdot$>), где $\E$~---~линейное пространство, а <$\cdot$, $\cdot$>: $\E \times \E \mapsto \Cm$, удовлетворяющее следующим условиям:
+
+\begin{tabular}{lll}
+1. & <$x$, $x$> $\in [0; +\infty)$ & $\forall x \in \E$ \\
+2. & <$x$, $x$> $= 0 \Leftrightarrow x = 0$ &  \\
+3. & <$x$, $y$> = $\overline{\text{<}y\text{, }x\text{>}}$ & $\forall x, y \in \E$ \\
+4. & <$\alpha x + \beta y$, $z$> = $\alpha$ <$x$, $z$> $+ \beta$ <$y$, $z$> & $\forall \alpha, \beta \in \Cm$, $\forall x, y, z \in \E$
+\end{tabular}
+\end{definition}

@@ -1,0 +1,85 @@
+{
+  "units": [
+    {
+      "id": "D1",
+      "kind": "definition",
+      "title": "",
+      "statement": "Пусть есть пространство с $\\sigma$-конечной мерой $(X, \\MM, \\mu)$ и измеримое пространство $(Y, \\NN)$. Будем называть отображение $\\Phi: X \\rightarrow Y$ измеримым, если прообраз всякого измеримого в $Y$ множества измерим в $X$, т.е. $\\forall C \\in \\NN \\hookrightarrow \\Phi^{-1}(C) \\in \\MM$.",
+      "proof": "",
+      "tags": [],
+      "source": "matan_3_semestr/Lecture_11.tex"
+    },
+    {
+      "id": "D2",
+      "kind": "definition",
+      "title": "",
+      "statement": "Определим push-forward меры $\\mu$: \\[\\forall C \\in \\NN: \\ \\Phi_{\\# \\mu}(C) = \\mu(\\Phi^{-1}(C)) \\] \\begin{minipage}{0.3\\textwidth}\\raggedleft Идея довольна геометрична. Мы берем множество из образа и смотрим сколько \"Массы\" в него перетекло из прообраза \\end{minipage} \\begin{minipage}{0.7\\textwidth} \\includegraphics[width=0.99\\textwidth]{images/Screenshot_14.png} \\end{minipage} \\hfill push-forward меры действительно является мерой: \\[ \\Phi_{\\#\\mu}\\biggl(\\bigsqcup\\limits_{j = 1}^\\infty C_j\\biggr) = \\mu\\biggl(\\Phi^{-1}\\biggl(\\bigsqcup\\limits_{i = 1}^\\infty C_i\\biggr)\\biggr) = \\mu\\biggl(\\bigsqcup\\limits_{i = 1}^\\infty \\Phi^{-1}(C_i)\\biggr) = \\sum\\limits_{i = 1}^\\infty \\mu(\\Phi^{-1}(C_i)) = \\sum\\limits_{i = 1}^\\infty \\Phi_{\\#\\mu}(C_i)\\]",
+      "proof": "",
+      "tags": [],
+      "source": "matan_3_semestr/Lecture_11.tex"
+    },
+    {
+      "id": "D3",
+      "kind": "definition",
+      "title": "",
+      "statement": "Пусть есть $(X, \\MM, \\mu)$ и дано измеримое $\\omega: X \\rightarrow [0, +\\infty]$. Тогда мерой $\\mu$ с весом $\\omega$($\\omega$-взвешенной мерой $\\mu$) будем называть меру $\\omega\\mu$ т.ч. \\[\\omega\\mu(E) = \\int\\limits_E \\omega(x) d\\mu(x )\\] Взвешенную меру можно аналогичным способом толкнуть на $Y:$ \\[\\Phi_{\\omega\\mu}(C) = \\omega\\mu(\\Phi^{-1}(C))\\]",
+      "proof": "",
+      "tags": [],
+      "source": "matan_3_semestr/Lecture_11.tex"
+    },
+    {
+      "id": "D4",
+      "kind": "definition",
+      "title": "",
+      "statement": "Пусть $(X, \\MM)$~---~измеримое пространство и $\\mu, \\nu$~---~2 меры на $\\MM$. Будем говорить, что $\\nu$ имеет плотность $\\omega$ относительно $\\mu$, если есть неотрицательная измеримая $\\omega: X \\rightarrow [0, +\\infty]$ т.ч. $\\nu = \\omega\\mu$. Иногда обозначается $\\frac{d \\nu}{d \\nu}(x) = \\omega(x)$",
+      "proof": "",
+      "tags": [],
+      "source": "matan_3_semestr/Lecture_11.tex"
+    },
+    {
+      "id": "T5",
+      "kind": "theorem",
+      "title": "",
+      "statement": "Пусть дано обратимое л.о. $V: \\R^m \\rightarrow \\R^m$ и измеримое $E$. Тогда $V(E) \\in \\MM^m$ и \\[\\LL^m(V(E)) = |\\det V| \\LL^m(E)\\]",
+      "proof": "",
+      "tags": [],
+      "source": "matan_3_semestr/Lecture_11.tex"
+    },
+    {
+      "id": "T6",
+      "kind": "theorem",
+      "title": "Абстрактная замена переменной в интеграле Лебега",
+      "statement": "Пусть $\\nu := \\Phi_{\\#}(\\omega \\mu)$, те $\\nu$~---~push-forward $\\omega$-взвешенной меры $\\mu$ на $(Y, \\NN)$. Тогда для всякой неотрицательной измеримой на $Y$ функции $f$ (или произвольной интегрируемой на $Y$) верно следующее: \\[\\int\\limits_{Y} f(y)d\\nu(y) = \\int\\limits_X f\\circ\\Phi(x)\\cdot\\omega(x) d\\mu(x)\\]",
+      "proof": "",
+      "tags": [],
+      "source": "matan_3_semestr/Lecture_11.tex"
+    },
+    {
+      "id": "T7",
+      "kind": "theorem",
+      "title": "Критерий плотности, б/д",
+      "statement": "Пусть $\\mu, \\nu$~---~2 меры на $\\sigma$-алгебре $\\MM$ измеримого пространства $(X, \\MM)$, а $\\mu$~---~измеримая неотрицательная функция на $X$. Тогда следующие утверждения эквивалентны: \\begin{itemize} \\item $\\nu$ имеет плотность $\\omega$ относительно $\\mu$ \\item $\\forall A \\in \\MM \\hookrightarrow \\mu(A)\\inf\\limits_{x \\in A} \\omega \\leq \\nu(A) \\leq \\mu(A)\\sup\\limits_{x \\in A} \\omega$ \\end{itemize}",
+      "proof": "",
+      "tags": [],
+      "source": "matan_3_semestr/Lecture_11.tex"
+    },
+    {
+      "id": "T8",
+      "kind": "theorem",
+      "title": "",
+      "statement": "Для всякого измеримого $E \\subset G$ справедливо следующее равенство: \\[\\Phi_\\#\\LL^m(E) = \\LL^m(\\Phi(E)) = \\int\\limits_E|\\det \\D\\Phi(x)|dx\\]",
+      "proof": "",
+      "tags": [],
+      "source": "matan_3_semestr/Lecture_11.tex"
+    },
+    {
+      "id": "T9",
+      "kind": "theorem",
+      "title": "",
+      "statement": "Пусть $\\Phi$~---~диффеоморфизм $G$ на $G'$. Тогда для любой измеримой неотрицательной функции $f$ на $G'$ верно следующее: \\[\\int\\limits_{G'} fdy = \\int\\limits_G f \\circ \\Phi \\cdot |J_\\Phi|dx\\]",
+      "proof": "",
+      "tags": [],
+      "source": "matan_3_semestr/Lecture_11.tex"
+    }
+  ]
+}

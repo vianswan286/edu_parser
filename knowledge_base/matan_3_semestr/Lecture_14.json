@@ -1,0 +1,112 @@
+{
+  "units": [
+    {
+      "id": "D1",
+      "kind": "definition",
+      "title": "",
+      "statement": "Пусть $S = \\overline{r}(\\overline{G})$~---~кусочно-гладкая поверхность. Пусть $f \\in C(S, \\R)$. Тогда если $S = \\bigcup\\limits_{i = 1}^N S_i$, то по определению \\[\\iint\\limits_S fds = \\sum\\limits_{i = 1}^N \\iint\\limits_{S_i} fds.\\]",
+      "proof": "",
+      "tags": [],
+      "source": "matan_3_semestr/Lecture_14.tex"
+    },
+    {
+      "id": "D2",
+      "kind": "definition",
+      "title": "",
+      "statement": "Пусть $S = \\overline{r}(\\overline{G})$~---~кусочно-гладкая поверхность, ориентированная полем единичных нормалей $\\overline{n}$. Пусть $\\overline{F} \\in C(S, \\R^3)$ и \\[ \\overline{F} = \\begin{pmatrix} P \\\\ Q \\\\ R \\end{pmatrix} \\] Тогда определим интеграл второго рода как \\[ \\iint\\limits_S (\\overline{F}, \\overline{ds}) = \\iint\\limits_S Pdydz + Qdzdx + Rdxdy := \\iint\\limits_S (\\overline{F}, \\overline{n})ds. \\]",
+      "proof": "",
+      "tags": [],
+      "source": "matan_3_semestr/Lecture_14.tex"
+    },
+    {
+      "id": "D3",
+      "kind": "definition",
+      "title": "",
+      "statement": "Будем называть наблой формальный дифференциальный оператор $\\nabla$: \\[ \\nabla = \\begin{pmatrix} \\dfrac{\\partial}{\\partial x} \\\\ \\dfrac{\\partial}{\\partial y} \\\\ \\dfrac{\\partial}{\\partial z} \\end{pmatrix} \\] Он действует следующим образом: \\[ \\nabla\\left(\\sum\\limits_i \\alpha_i p_i\\right) = \\sum\\limits_i \\alpha_i \\nabla p_i \\] (Если $\\alpha_i$~---~константы) \\\\ Набла удовлетворяет правилу Лейбница: \\[ \\nabla(pq) = \\nabla(\\overset{\\downarrow}{p}, q) + \\nabla(p, \\overset{\\downarrow}{q}) = (\\nabla p, q) + (p, \\nabla q) \\]",
+      "proof": "",
+      "tags": [],
+      "source": "matan_3_semestr/Lecture_14.tex"
+    },
+    {
+      "id": "D4",
+      "kind": "definition",
+      "title": "",
+      "statement": "Определим операцию взятия градиента как \\[\\grad a = \\nabla a = \\begin{pmatrix} \\frac{\\partial a}{\\partial x} \\\\ \\frac{\\partial a}{\\partial y} \\\\ \\frac{\\partial a}{\\partial z} \\end{pmatrix}. \\]",
+      "proof": "",
+      "tags": [],
+      "source": "matan_3_semestr/Lecture_14.tex"
+    },
+    {
+      "id": "D5",
+      "kind": "definition",
+      "title": "",
+      "statement": "Определим дивергенцию векторного поля как \\[\\div \\overline{F} = \\nabla \\cdot \\overline{F} = \\frac{\\partial F_x}{\\partial x} + \\frac{\\partial F_y}{\\partial y} + \\frac{\\partial F_z}{\\partial z}. \\]",
+      "proof": "",
+      "tags": [],
+      "source": "matan_3_semestr/Lecture_14.tex"
+    },
+    {
+      "id": "D6",
+      "kind": "definition",
+      "title": "",
+      "statement": "Определим операцию взятия ротора как \\[\\rot \\overline{F} = \\nabla \\times \\overline{F} = \\begin{pmatrix} \\frac{\\partial F_z}{\\partial y} - \\frac{\\partial F_y}{\\partial z} \\\\ \\frac{\\partial F_x}{\\partial z} - \\frac{\\partial F_z}{\\partial x} \\\\ \\frac{\\partial F_y}{\\partial x} - \\frac{\\partial F_x}{\\partial y} \\end{pmatrix}. \\]",
+      "proof": "",
+      "tags": [],
+      "source": "matan_3_semestr/Lecture_14.tex"
+    },
+    {
+      "id": "D7",
+      "kind": "definition",
+      "title": "",
+      "statement": "Область $G$ называют сильно элементарной область в $\\R^3_{xyz}$, если она элементарна относительно каждой из осей.",
+      "proof": "",
+      "tags": [],
+      "source": "matan_3_semestr/Lecture_14.tex"
+    },
+    {
+      "id": "D8",
+      "kind": "definition",
+      "title": "",
+      "statement": "Будем говорить, что обалсть $G$ элементарна относительно $Oz$, т.е. $\\exists E \\in \\R^2_{xy}$ такая, что $G = \\{(x, y, z) \\mid (x, y) \\in E, z \\in (\\phi(x, y), \\psi(x, y))\\}$ где $\\phi(x, y)$ и $\\psi(x, y)$~---~гладкие в $\\overline{E}$",
+      "proof": "",
+      "tags": [],
+      "source": "matan_3_semestr/Lecture_14.tex"
+    },
+    {
+      "id": "T9",
+      "kind": "theorem",
+      "title": "",
+      "statement": "ПИПР не зависит от параметризации поверхности.",
+      "proof": "",
+      "tags": [],
+      "source": "matan_3_semestr/Lecture_14.tex"
+    },
+    {
+      "id": "T10",
+      "kind": "theorem",
+      "title": "",
+      "statement": "Пусть $G \\subset \\R^2_{xy}$~---~область с границей, являющейся простым гладким кусочно гладким контуром и $z \\in C^1(\\overline{G})$ и $S = \\graph z$. Пусть $S^+$~---~поверхность $S$, ориентированная полем нормалей $\\overline{n} = (n_x \\ n_y \\ n_z)^T$ таким, что $n_z \\geq 0$. Тогда \\[ \\iint\\limits_{S^+} f(x, y, z)dxdy = \\iint\\limits_G f(x, y, z(x, y))dxdy. \\]",
+      "proof": "",
+      "tags": [],
+      "source": "matan_3_semestr/Lecture_14.tex"
+    },
+    {
+      "id": "T11",
+      "kind": "theorem",
+      "title": "",
+      "statement": "Пусть $G$~---~ сильно элементарная область в $\\R^3_{xyz}$. Пусть $\\partial G$~---~кусочно-гладкая поверхность, ориентированная полем внешних нормалей. Пусть $\\overline{F} \\in C^1(\\overline{G}, \\R^3)$. Тогда \\[\\iiint\\limits_{G} \\div \\overline{F} dxdydz = \\iint\\limits_{\\partial G^+} (\\overline{F}, \\overline{ds})\\]",
+      "proof": "",
+      "tags": [],
+      "source": "matan_3_semestr/Lecture_14.tex"
+    },
+    {
+      "id": "T12",
+      "kind": "theorem",
+      "title": "Остроградский, Гаусс",
+      "statement": "Пусть есть область $G$, т.ч. $G = \\bigcup\\limits_{i = 1}^N \\cup E$ где $G_i$~---~элементарные области, а $E = \\bigcup\\limits_{j = 1}^N S_j$, где $S_j$~---~кусочно-гладкие поверхности, лежащие на границах областей $G_i$. Пусть $\\partial G^+$~---~кусочно-гладкая поверхность, ориентированная полем внешних нормалей. И пусть задано $\\overline{F} \\in C^1(G, \\R^3)$. Тогда \\[\\iiint\\limits_{G} \\div \\overline{F} dxdydz = \\iint\\limits_{\\partial G^+} (\\overline{F}, \\overline{ds})\\]",
+      "proof": "",
+      "tags": [],
+      "source": "matan_3_semestr/Lecture_14.tex"
+    }
+  ]
+}

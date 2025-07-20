@@ -1,0 +1,156 @@
+\section{Равномерная сходимость функциональных рядов}
+
+\begin{fact}
+    Пусть $\sum_{k = 1}^{\infty} f_k$ поточечно сходится на $X$. Тогда
+    \[
+    \sum_{k = 1}^{\infty} f_k \textit{ ~--- равномерно сходится на } X \Leftrightarrow r_{n} = \sum_{k = n + 1}^{\infty} f_k \underset{X}{\rr} 0,\thinspace n \rightarrow \infty.
+    \]
+\end{fact}
+
+\begin{theorem}[Критерий Коши равномерной сходимости функционального ряда]
+    Пусть $X \neq \varnothing$. Ряд $\sum_{k = 1}^{\infty}f_k$ равномерно сходится на $X \Leftrightarrow$
+    \[
+        \forall\thinspace \varepsilon > 0 \thinspace \exists N(\varepsilon): \forall\thinspace n \geq N(\varepsilon)\thinspace\forall\thinspace x \in X \hookrightarrow \left| \sum_{k = n + 1}^{n + p}f_{k}(x)\right| < \varepsilon.
+    \]
+\end{theorem}
+\begin{proof}
+    Был доказан критерий Коши для функциональных последовательностей. Применим его к последовательности частичных сумм $S_n = \sum_{k = 1}^{n}f_{k}$.
+\end{proof}
+
+\begin{corollary}[Необходимое условие равномерной сходимости функционального ряда]
+    Если функциональный ряд $\sum_{k = 1}^{\infty} f_k$ равномерно сходится на $X$, то $f_n \underset{X}{\rr} 0,\thinspace n \rightarrow \infty$.
+\end{corollary}
+\begin{proof}
+    Так как функциональный ряд равномерно сходится на $X$, то в силу критерия Коши выполняется условие Коши. В частности
+    \[
+    \forall\thinspace \varepsilon > 0 \thinspace \exists N(\varepsilon) \in \N: \forall\thinspace n \geq N(\varepsilon) \hookrightarrow \left|f_{n + 1}(x)\right| < \varepsilon\thinspace \forall\thinspace x \in X.
+    \]
+    Следовательно, $f_n \underset{X}{\rr} 0,\thinspace n \rightarrow \infty$.
+\end{proof}
+
+\begin{reminder}
+    \[
+    f_n \underset{X}{\nrr} \thinspace 0,\thinspace\thinspace n \rightarrow \infty \Lra \exists\{x_n\} \subset X: \left| f(x_n) - f_{n}(x_n) \right| \nrightarrow 0, \thinspace n \ra \infty.
+    \]
+\end{reminder}
+
+\begin{question}
+    Как связаны условия:\\
+    a) $\sum_{k = 1}^{\infty}U_k$ не сходится равномерно на $X$\\
+    б) Ряд сходится поточечно, и $\exists$ последовательность $\{x_n\} \subset X: \sum_{k = 1}^{\infty}U_{k}(x_k)$ расходится.
+\end{question}
+\begin{answer}
+    б) $\nRightarrow$ a), контрпример:\\
+    $U_{n}(x) = \dfrac{1}{n}$ определена на $(\dfrac{1}{n+1}, \dfrac{1}{n})$. Значит, $\forall\thinspace x \in (0, 1]$ существует единственная $U_j$, в область определения которой попадает данный $x$. Тогда ряд $\sum_{n = 1}^{\infty}$ сходится поточечно на $(0, 1]$ к функции "лесенка".
+    \[
+    \underset{x \in (0, 1]}{\sup} \left| S(x) - S_n(x) \right| \leq \dfrac{1}{n + 1} \ra 0, \thinspace n \ra \infty \Ra S_n \underset{(0, 1]}{\rr} S, \thinspace n \ra \infty.
+    \]
+    Но
+    \[
+    \exists \{x_n\}_{n = 1}^{\infty} = \{\dfrac{1}{n}\}_{n = 1}^{\infty} \text{ и } \sum_{n = 1}^{\infty} U_n(\dfrac{1}{n}) = \sum_{n = 1}^{\infty} \dfrac{1}{n} = +\infty. 
+    \]
+\end{answer}
+
+\begin{theorem}[Обобщённый признак сравнения]
+    Пусть $\sum_{k = 1}^{\infty}V_k$ сходится равномерно на $X$ и $V_k \geq 0$ на $X$ $\forall\thinspace k \in \N$. Пусть $0 \leq \left|U_k(x) \right| \leq V_k(x)$ $\forall\thinspace k \in \N$ $(\ast)$ и $\forall\thinspace x \in X$. Тогда ряд $\sum_{k = 1}^{\infty} U_k$ равномерно сходится на $X$.
+\end{theorem}
+\begin{proof}
+    Так как $\sum_{k = 1}^{\infty} V_k$ равномерно сходится на $X$, то выполнено условие Коши:
+    \[
+    \forall\thinspace \varepsilon > 0 \thinspace N(\varepsilon) \in \N: \forall\thinspace n \geq N(\varepsilon) \thinspace \thinspace \forall\thinspace p \in \N_{0} \hookrightarrow \left| \sum_{k = n}^{n + p} V_k(x) \right| < \varepsilon \thinspace \thinspace \forall\thinspace x \in X.
+    \]
+    Из $(\ast)$ получаем:
+    \[
+    \forall\thinspace n \in \N \text{ и } \forall\thinspace p \in \N_{0} \hookrightarrow \left| \sum_{k = n}^{n + p}U_{k}(x) \right| \leq \sum_{k = n}^{n + p} \left|U_{k}(x) \right| \leq \sum_{k = n}^{n + p}V_{k}(x) \thinspace\thinspace\forall\thinspace x \in X.
+    \]
+    В итоге:
+    \[
+    \forall\thinspace \varepsilon > 0 \thinspace \exists N(\varepsilon) \in \N: \forall\thinspace n \geq N(\varepsilon) \thinspace\thinspace \forall\thinspace p \in \N_{0} \hookrightarrow \left|\sum_{k = n}^{n + p}(U_{k}(x) \right| < \varepsilon \thinspace\thinspace \forall\thinspace x \in X.
+    \]
+    Но это равносильно выполнению условия Коши для функционального ряда $\sum_{k = 1}^{\infty}U_{k}(x)$ $\Ra$ в силу критерия Коши функциональный ряд $\sum_{k = 1}^{\infty}U_{k}$ равномерно сходится на $X$. 
+\end{proof}
+
+\begin{corollary}[признак Вейерштрасса]
+    Пусть $\sum_{n = 1}^{\infty} a_{n}$ ~--- сходящийся числовой ряд из неотрицательных членов, то есть $a_{n} \geq 0 \thinspace\thinspace \forall\thinspace n \in \N$. Пусть $\sum_{k = 1}^{\infty}U_{k}$ ~--- функциональный ряд на $X$ ~--- таков, что $\left| U_{n}(x) \right| \leq a_{n}$ $\forall\thinspace n \in \N$ и $\forall\thinspace x \in X$. Тогда функциональный ряд $\sum_{k = 1}^{\infty}U_k$ равномерно сходится на $X$.
+\end{corollary}
+
+\begin{proof}
+    Положим $V_k(x) \equiv a_k$ $\forall\thinspace k \in \N \Ra \sum_{n = 1}^{\infty} V_n$ сходится равномерно на $X \Ra$ по предыдущей теореме $\sum_{k = 1}^{\infty} U_k$ сходится равномерно на $X$.
+\end{proof}
+
+\begin{theorem}[признак Дирихле для функциональных рядов]
+    Пусть $\{U_k\}$ и $\{V_k\}$ ~--- функциональные последовательности на $X$, удовлетворяющие следующим условиям:
+    \begin{enumerate}
+        \item Последовательность $\left\{\sum_{k = 1}^{n} U_k \right\}$ равномерно ограничена на $X$, то есть 
+        \[
+        \exists c > 0: \left| \sum_{k = 1}^{n} U_k(x) \right| < c \thinspace\thinspace \forall\thinspace n \in N \thinspace\thinspace \forall\thinspace x \in X. 
+        \]
+        \item $V_k \xrr 0, \thinspace k \ra \infty$
+        \item $V_{k + 1}(x) \leq V_k(x)$ $\forall\thinspace k \in \N$ и $\forall\thinspace x \in X$.
+    \end{enumerate}
+    Тогда $\sum_{k = 1}^{\infty} U_k V_k$ сходится равномерно на $X$.
+\end{theorem}
+\begin{proof}
+    Пусть
+    \[
+    S_0 \equiv 0; \quad S_n = \sum_{k = 1}^{n} U_k.
+    \]
+    Выполним преобразование Абеля в каждой точке $x \in X$. 
+    \[
+    \sum_{k = 1}^{n} U_k(x) V_k(x) = \sum_{k = 1}^{n} \left[ S_k(x) - S_{k - 1}(x) \right] V_k(x) = \sum_{k = 1}^{n} S_k(x) V_k(x) - \sum_{k = 1}^{n} S_{k - 1}(x) V_k(x) =\]
+    \[
+    = \sum_{k = 1}^{n} S_k(x) V_k(x) - \sum_{k = 0}^{n - 1} S_k(x) V_{k + 1}(x) \overset{S_0 = 0}{=} S_n(x) V_n(x) + \sum_{k = 1}^{n - 1} S_k(x) \left[V_k(x) - V_{k + 1}(x) \right].
+    \]
+    По теореме с прошлой лекции $S_n V_n \xrr 0, \thinspace n \ra \infty$.\\
+    Из $(3)$ следует $V_k(x) - V_{k + 1}(x) \geq 0$ $\forall\thinspace k \in \n$ и $\forall \thinspace x \in X$.
+    \[
+    \sum_{k = 1}^{n - 1}(V_k(x) - V_{k + 1}(x)) = V_{1}(x) - V_{n}(x) \Ra
+    \]
+    $\Ra \sum_{k = 1}^{\infty}(V_k - V_{k + 1})$ ~--- равномерно сходится. Так как $S_k$ равномерно ограничено на $X$, то 
+    \[
+        \left|S_k(x) \cdot \left( V_k(x) - V_{k + 1} \right) \right| \leq C(V_{k}(x) - V_{k + 1}(x)) \thinspace\thinspace \forall\thinspace x \in X \thinspace\text{и}\thinspace \forall\thinspace k \in \N \Ra
+    \]
+    $\Ra$ в силу обобщенного признака сравнения ряд $\sum_{k = 1}^{\infty} S_k(V_k - V_{k + 1})$ сходится равномерно на $X \Ra$
+    \[
+    \Ra \exists S: X \mapsto R\thinspace \text{ т.ч.}\thinspace \left| \sum_{k = 1}^{n} [S_k(V_k - V_{k + 1})] - S\right| \xrr 0, \thinspace n \ra \infty.
+    \]
+    \[
+    \sum_{k = 1}^{n} U_k V_k = S_n V_n + \sum_{k = 1}^{n - 1} S_k(V_k - V_{k + 1}) \Ra \left| S - \sum_{ k = 1}^{n} U_k V_k \right| \xrr 0, \thinspace n \ra \infty \Ra 
+    \]
+    $\Ra \sum_{k = 1}^{\infty} U_k V_k$ равномерно сходится на $X$.
+\end{proof}
+
+\begin{example}
+    $\sum_{k = 1}^{\infty} \dfrac{sin(kx)}{k^{\alpha}}$ ~--- исследовать на сходимость и равномерную сходимость на $E_1 = \left[0; \dfrac{\pi}{2}\right]$, $E_2 = \left[ \delta; \dfrac{\pi}{2} \right]$, $\delta \in (0, \dfrac{\pi}{2})$.
+\end{example}
+\begin{solution}
+    \begin{enumerate}
+        \item $\alpha < 0$, $x = \dfrac{\pi}{2}$\\
+        $k^{|\alpha|} \sin{\dfrac{k\pi}{2}} \nrightarrow 0, \thinspace k \ra \infty \Ra$ отсутствует поточечная сходимость ряда.
+        \item $\alpha > 1$\\
+        $\dfrac{\sin{kx}}{k^{\alpha}} \leq \dfrac{1}{k^{\alpha}}$, а $\sum_{k = 1}^{\infty} \dfrac{1}{k^{\alpha}}$ - сходится $\Ra$ по признаку Вейерштрасса $\sum_{k = 1}^{\infty} \dfrac{\sin{kx}}{k^{\alpha}}$ сходится равномерно на $\R$.
+        \item $\alpha \in (0, 1]$ \\
+        $\sin{kx} = U_k$\\
+        $\dfrac{1}{k^{\alpha}} = V_k(x) \downarrow 0, \thinspace k \ra \infty$ $\forall\thinspace k \in \N$ $\forall\thinspace x \in \R$, 
+        $V_{k} \underset{\R}{\rr} 0,\thinspace k \ra \infty$.\\
+        Рассмотрим $\sum_{k = 1}^{n} \dfrac{\sin{kx} \cdot \sin{\dfrac{x}{2}}}{\sin{\dfrac{x}{2}}} = \sum_{k = 1}^{n} \dfrac{\cos{(k - \dfrac{1}{2})x} - \cos{(k + \dfrac{1}{2})x}    }{2\sin{\dfrac{x}{2}}    } = \dfrac{\cos{\dfrac{x}{2}} - \cos{(n + \dfrac{1}{2})x}    }{2 \sin{\dfrac{x}{2}}   }$.
+        \[
+        \dfrac{2}{\pi}x \leq \sin{x} \leq x \thinspace\thinspace \forall\thinspace x \in [0; \dfrac{\pi}{2}].
+        \]
+        Тогда на $E_2$ $\left| \sum_{k = 1}^{n} \sin{kx} \right| \leq \dfrac{2}{\left(\dfrac{2\delta}{\pi} \right)} = \dfrac{\pi}{\delta}. \quad (\ast\ast)$
+        \\В силу $(\ast\ast)$ и по признаку Дирихле $\sum_{k = 1}^{\infty} \dfrac{\sin{kx}}{k^{\alpha}}$ равномерно сходится на $E_2$.
+        \item Используя критерий Коши, покажем, что на $E_1$ нет равномерной сходимости при $\alpha \in (0, 1]$. Поточечная сходимость есть в силу $(\ast\ast)$ и признака Дирихле.\\
+        Запишем отрицание к условию Коши:
+        \[
+        \exists \varepsilon > 0: \forall\thinspace N \in \N: \exists n \geq N \text{ и } \exists x \in X,\thinspace \exists p\in \N: \left| \sum_{k = n}^{n + p} \dfrac{\sin{kx}}{k^{\alpha}} \right| \geq \varepsilon.
+        \]
+        \[
+        \exists \varepsilon = \dfrac{1}{2^{\alpha}\sqrt{2}}: \forall\thinspace N \in \N: \exists n = N \text{ и } \exists x = \dfrac{\pi}{4N},\thinspace \exists p = N: \left| \sum_{k = n}^{n + p} \dfrac{\sin{kx}}{k^{\alpha}} \right| = \sum_{k = N}^{2N} \dfrac{\sin{\dfrac{k\pi}{4N}}}{k^{\alpha}} \geq \]
+        \[
+        \geq
+        \dfrac{\sqrt{2}}{2} \sum_{k = N}^{2N} \dfrac{1}{k^{\alpha}} \geq
+        \dfrac{\sqrt{2}}{2} \dfrac{N}{2^{\alpha}N^{\alpha}} \geq \dfrac{1}{2^{\alpha}\sqrt{2}} =  \varepsilon.
+        \]
+        Значит, в силу критерия Коши функциональный ряд $\sum_{k = 1}^{\infty} \dfrac{\sin{kx}}{k^{\alpha}}$ не сходится равномерно на $E_1$.
+    \end{enumerate}
+\end{solution}

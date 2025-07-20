@@ -1,0 +1,121 @@
+{
+  "units": [
+    {
+      "id": "D1",
+      "kind": "definition",
+      "title": "",
+      "statement": "Пару $(X, \\MM)$ из абстрактного множества $X$ и $\\sigma$-алгебры его подмножеств $\\MM$ будем называть измеримым пространством.",
+      "proof": "",
+      "tags": [],
+      "source": "matan_3_semestr/Lecture_5.tex"
+    },
+    {
+      "id": "D2",
+      "kind": "definition",
+      "title": "",
+      "statement": "Пусть $(X, \\MM)$~---~измеримое пространство и задана функция $f: X \\rightarrow \\overline{\\R}$. Её будем называть $\\MM$-измеримой, если \\[\\forall c \\in \\R \\hookrightarrow f^{-1}((c, +\\infty]) \\in \\MM\\]",
+      "proof": "",
+      "tags": [],
+      "source": "matan_3_semestr/Lecture_5.tex"
+    },
+    {
+      "id": "D3",
+      "kind": "definition",
+      "title": "",
+      "statement": "Будем называть $\\MM$-измеримую функцию борелевской, если $\\MM = \\mathfrak{B}(\\R^n)$.",
+      "proof": "",
+      "tags": [],
+      "source": "matan_3_semestr/Lecture_5.tex"
+    },
+    {
+      "id": "D4",
+      "kind": "definition",
+      "title": "",
+      "statement": "Пусть дано измеримое пространство $(X, \\MM)$. Пусть дана функция $f: X \\rightarrow \\R$. Тогда, если существуют $\\{a_1, \\ldots, a_n\\} \\subset \\R$ и дизъюнктные множества $E_1, \\ldots E_n \\in \\MM$ такие, что \\[ f = \\sum\\limits_{i = 1}^n a_i\\chi_{E_i} \\] то функция $f$ называется простой. То есть простая функция --- такая у которой множество значений конечно.",
+      "proof": "",
+      "tags": [],
+      "source": "matan_3_semestr/Lecture_5.tex"
+    },
+    {
+      "id": "D5",
+      "kind": "definition",
+      "title": "",
+      "statement": "Для простой функции \\( f \\) существует состоящее из измеримых множеств конечное разбиение множества \\( X \\) (мы будем называть его допустимым для \\( f \\)), на элементах которого \\( f \\) постоянна. Такое разбиение можно получить, например, следующим образом. Пусть \\( a_1, \\dots, a_N \\) — всевозможные попарно различные значения \\( f \\). Положим \\( E_k = f^{-1}(\\{a_k\\}) \\). Очевидно, что эти множества измеримы и образуют разбиение множества \\( X \\), которое допустимо для \\( f \\).",
+      "proof": "",
+      "tags": [],
+      "source": "matan_3_semestr/Lecture_5.tex"
+    },
+    {
+      "id": "D6",
+      "kind": "definition",
+      "title": "",
+      "statement": "$\\LL_0(X, \\mu)$~---~линейное пространство измеримых \\underline{почти всюду конечных} функций над $X$.",
+      "proof": "",
+      "tags": [],
+      "source": "matan_3_semestr/Lecture_5.tex"
+    },
+    {
+      "id": "D7",
+      "kind": "definition",
+      "title": "",
+      "statement": "(Сходимость почти всюду) Пусть $\\{f_n\\}_{n = 1}^\\infty$~---~последовательность измеримых на $E$ функций, где $E \\in \\MM$. Будем говорить что $f_n$ сходится почти всюду (далее -- п.в.) к измеримой функции $f$, если $$\\mu\\Big(\\{x \\in E \\mid f_n(x) \\not\\rightarrow f(x), \\ n \\rightarrow +\\infty\\}\\Big) = 0.$$ Будем обозначать как $f_n \\xrightarrow[E]{\\text{п.в.}} f, n \\rightarrow +\\infty$.",
+      "proof": "",
+      "tags": [],
+      "source": "matan_3_semestr/Lecture_5.tex"
+    },
+    {
+      "id": "D8",
+      "kind": "definition",
+      "title": "",
+      "statement": "(Сходимость по мере) Пусть есть последовательность функций $\\{f_n\\}_{n = 1}^\\infty \\subset \\LL_0(E, \\mu)$, где $E \\in \\MM$. Будем говорить, что $f_n$ сходится по мере к $f \\in \\LL_0(E, \\mu)$, если $$\\forall \\epsilon > 0 \\ \\mu\\Big(\\{x \\in E \\mid \\ | f(x) - f_n(x)| \\geq \\epsilon \\}\\Big) \\xrightarrow{} 0, n \\rightarrow \\infty.$$ Данная сходимость обозначается как $f_n \\xrightarrow[E]{\\mu} f, n \\rightarrow +\\infty$. \\\\ Таким образом, $f_n \\xrightarrow[E]{\\mu} f, n \\rightarrow +\\infty$, если для достаточно больших $n$ каждая из функций равномерно близка к $f$ на множестве, получаемым удалением из $E$ множества сколь угодно малой меры. Стоит заметить, что поскольку для каждой из функций это удаляемое множество своё, и в общем случае нельзя удалить одно множество, вне которого все функции $f_n$ с достаточно большими номерами были бы равномерно близки к предельной.",
+      "proof": "",
+      "tags": [],
+      "source": "matan_3_semestr/Lecture_5.tex"
+    },
+    {
+      "id": "T9",
+      "kind": "theorem",
+      "title": "",
+      "statement": "Пусть дано измеримое пространство $(X, \\MM)$ и последовательность измеримых на нём функций $\\{f_n\\}$. Тогда верно следующее: \\begin{enumerate} \\item $\\overline{f} = \\sup\\limits_{n \\in \\N} f_n$ и $\\underline{f} = \\inf\\limits_{n \\in \\N} f_n$~---~измеримы на $X$; \\item $\\overline{F} = \\limsup\\limits_{n \\rightarrow +\\infty} f_n$ и $\\underline{F} = \\liminf\\limits_{n \\rightarrow +\\infty} f_n$~---~измеримы на $X$. \\end{enumerate}",
+      "proof": "",
+      "tags": [],
+      "source": "matan_3_semestr/Lecture_5.tex"
+    },
+    {
+      "id": "T10",
+      "kind": "theorem",
+      "title": "",
+      "statement": "Пусть дана непустое множество $G \\subset \\R^n$, функция $\\phi \\in C(G)$. Пусть $f_1, \\ldots, f_n$~---~измеримые функции, такие, что $f = (f_1, \\ldots, f_n) \\in G \\ \\forall x \\in X$ (стандартно, $(X, \\MM)$~---~измеримое пространство, каждая из функций задана на нём). Тогда $\\phi \\circ f$~---~измерима на $X$.",
+      "proof": "",
+      "tags": [],
+      "source": "matan_3_semestr/Lecture_5.tex"
+    },
+    {
+      "id": "T11",
+      "kind": "theorem",
+      "title": "",
+      "statement": "Пусть $f$ и $g$~---~измеримые функции. Тогда верны следующие утверждения: \\begin{enumerate} \\item $f \\cdot g$~---~измеримая; \\item $f + g$~---~измеримая; \\item $\\alpha f$~---~измеримая, $\\alpha \\in \\R$; \\item $f^p$~---~измеримая, если $p > 0$ и $f \\geq 0$; \\item $\\frac{1}{f}$~---~измеримая на множестве, на котором $f \\neq 0$. \\end{enumerate}",
+      "proof": "",
+      "tags": [],
+      "source": "matan_3_semestr/Lecture_5.tex"
+    },
+    {
+      "id": "T12",
+      "kind": "theorem",
+      "title": "",
+      "statement": "Пусть дано измеримое пространство $(X, \\MM)$, и на нём задана измеримая функция $f$: $X \\rightarrow \\overline{\\R}$. Тогда $\\exists \\ \\{f_n\\}_{n = 1}^\\infty$~---~последовательность простых функций: $f_n \\xrightarrow{X} f, n \\rightarrow +\\infty$.",
+      "proof": "",
+      "tags": [],
+      "source": "matan_3_semestr/Lecture_5.tex"
+    },
+    {
+      "id": "T13",
+      "kind": "theorem",
+      "title": "Лебега",
+      "statement": "Пусть мера пространства конечна $\\left(\\mu (X) < +\\infty\\right)$. Тогда из сходимости почти всюду следует сходимость по мере.",
+      "proof": "",
+      "tags": [],
+      "source": "matan_3_semestr/Lecture_5.tex"
+    }
+  ]
+}

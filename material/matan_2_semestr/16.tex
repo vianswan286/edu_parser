@@ -1,0 +1,121 @@
+\begin{corollary}
+    Любая первообразная непрерывной на отрезке $[a, b]$ функции $f$ имеет вид $F(x) + c, $ где $c \in \R$
+\end{corollary}
+
+\begin{proof}
+    Следует из теоремы о структуре первообразных.
+\end{proof}
+
+\begin{corollary}
+    \textit{(Формула Ньютона-Лейбница)} Пусть $f \in C([a, b]).$ Тогда 
+    $$\int \limits_a^b f(x) dx = F(b) - F(a).$$
+\end{corollary}
+
+\begin{proof}
+    Если $F$ -- первообразная $f$ на $[a, b],$ то $F = \int \limits _a^x f(x) dx + C.$ Тогда
+    $$\int \limits_a^b f(x) dx = \left(\int \limits_a^b f(x) dx + C \right) - \left(\int \limits_a^a f(x) dx + C\right).$$
+\end{proof}
+
+ЗДЕСЬ НУЖНА КАРТИНКА.
+
+Приведем пример функции, которая разрывна, но при этом интегрируема по Риману и имеет первообразную.
+
+\begin{example}
+        \normalsize
+        Положим $ f(x) =
+        \begin{cases}
+            x^2 \sin\frac{1}{x}, x \neq 0\\
+            0, \text{иначе}&
+        \end{cases}  
+        $
+    Тогда производная этой функции и будет искомым примером.
+\end{example}
+
+\subsection{Замена переменной в интеграле Римана.}
+
+\begin{theorem}
+    Пусть $x = \varphi(t), \varphi \in C^1([a, b])$, $f \in C(\varphi([a, b])).$ Тогда 
+    $$\int \limits_a^b f(\varphi(t)) dt = \int \limits_{\varphi(a)}^{\varphi(b)} f(x) dx.$$
+\end{theorem}
+
+\begin{proof}
+    Так как $f \in C(\varphi([a, b])),$ то существует ее первообразная $F.$ По формуле Ньютона-Лейбница:
+    $$\int \limits_{\varphi(a)}^{\varphi(b)} f(x) dx = F(\varphi(b)) - F(\varphi(a)).$$
+    С другой стороны, так как $\varphi \in C^1([a, b]),$ то $(f \circ \varphi) \varphi' \in C([a, b]).$ Значит, существует ее первообразная $G(t).$ Тогда
+    $$\int \limits_a^b f(\varphi(t)) \phi'(t) dt = G(b) - G(a).$$
+    Заметим, что из правил дифференцирования следует $F(\varphi(t)) + C = G(t).$ Сравнивая полученное, имеем искомое равенство.
+\end{proof}
+
+\begin{theorem}
+    \textit{(Интегрирование по частям)} Пусть $u$, $v \in C^1([a, b]).$ Тогда 
+    $$\int \limits_a^b u(x) v'(x) dx = u(b) v(b) - u(a) v(a) - \int \limits_{a}^{b}u'(x) v(x) dx$$
+\end{theorem}
+
+\begin{proof}
+    Заметим, что $u \cdot v$ является первообразной функции $u(x) v'(x) + u'(x) v(x).$ По формуле Ньютона-Лейбница:
+    $$\int \limits_a^b (u(x) v'(x) + u'(x) v(x)) dx = u(b) v(b) - u(a) v(a).$$
+    В силу линейности интеграла Римана, получим требуемое.
+\end{proof}
+
+\begin{theorem}
+    \textit{(Интегральная теорема о среднем)} Пусть $f$, $g \in C([a, b])$, $\forall x \in [a, b]$: $g(x) \neq 0$. Тогда $\exists \psi \in (a, b)$:
+    $$\int \limits_a^b f(x) g(x) dx = f(\psi) \int \limits_a^b g(x) dx.$$
+\end{theorem}
+
+\begin{proof}
+    Так как $f, g \in C([a, b]),$ то $f \cdot g \in C([a, b]),$ а значит есть функция $H \in C^1([a, b]): H' = f(x) g(x) \forall x \in [a, b] \text{(с модификацией в концевых точках}.$ Так как $g \in C([a, b]),$ то есть функция $G(x) \in C^1([a, b]): \ G'(x) = g(x) \ \forall x \in [a, b].$ Из условия следует, что $G'(x) \neq 0 \forall x \in [a, b].$ Значит, по теореме Коши:
+    $$\frac{H(b) - H(a)}{G(b) - G(a)} = \frac{H'(\psi)}{G'(\psi)} = f(\psi).$$
+    Используя формулу Ньютона-Лейбница, получаем требуемое.
+\end{proof}
+
+\subsection{Несобственный интеграл.}
+
+\begin{theorem}
+    Пусть $f \in B([a, b))$ и $f \in \Rim([a, b']) \  \forall b' \in (a, b).$ Тогда $f \in R([a, b])$ при любом доопределении функции $f$ в точке $b.$ Кроме того, справедливо равенство:
+    $$\int \limits_a^b f(x) dx = \lim_{b' \to b-0} \int \limits_a^{b'} f(x) dx$$
+\end{theorem}
+
+\begin{proof}
+    Доопределим $f(b) = C \in \R.$ Значит, $f \in R([a, b]).$ Заметим, что $\forall n \in \N \ D_n[f]$~---~множество точек разрыва функции $f$ на $[a, b - \frac{1}{n}]$ имеет Лебегову меру $0$ по критерию Лебега. Пусть $D[f]$~---~множество точек разрыва на $[a, b].$ Заметим, что $D[f] \subset \bigcup_{n = 1}^{\infty} D_n[f] \cup \{b\}.$ Значит, получим $f \in R([a, b])$. Осталось доказать равенство.
+    $$\left|\int \limits_a^b f(x) dx - \int \limits_a^{b'} f(x) dx\right| = \left|\int \limits_{b'}^b f(x) dx\right| \leq \int \limits_{b'}^b \left|f(x)\right| dx \leq M \int \limits_{b'}^b dx = M(b - b').$$
+\end{proof}
+
+\begin{definition}
+    Пусть $-\infty < a < b \leq +\infty$, $f$: $[a, b) \rightarrow \R$, причем $f \in \Rim([a, b'])$ $\forall b' \in (a, b).$ Несобственным интегралом Римана функции $f$ на $[a, b]$ называется $\left \{ \int \limits_a^{b'} f(x) dx \ | \ b' \in (a, b) \right \}.$ И обозначается $\int \limits_a^b f(t) dt.$ Будем говорить, что такой интеграл сходится, если существует конечный предел $\lim_{b' \to b-0} \int \limits_a^{b'} f(x) dx.$
+\end{definition}
+
+Аналогично определяется несобственный интеграл функции $f,$ определенной на $(a, b].$
+
+\begin{definition}
+    Пусть $-\infty \leq a < b \leq +\infty.$ Пусть $f: \ (a, b) \rightarrow \R,$ а также пусть она не определена в конечном числе упорядоченных точек $\{x_i\}_{i = 1}^{N}.$ Пусть $f \in R([c, d]) \forall [c, d] \subset (a, b),$ не содержащего точек $\{x_i\}_{i = 1}^{N}.$ На любом интервале $(x_i, x_{i + 1})$ выберем произвольно $\psi_i.$ Несобственным интегралом по интервалу $(a, b)$ функции $f$ назовем конечный набор несобственных интегралов
+    $$\int \limits_{x_{i -1}}^{\psi_i} f(t) dt, \int \limits_{\psi_i}^{x_i} f(t) dt$$
+    Говорят, что такой интеграл сходится, если сходятся все интегралы из этого набора. Если в окрестности точек $\{x_i\}$ функция $f$ не ограничена, то $x_i$ называется особой точкой несобственного интеграла или особенностью. По определению символы $-\infty, +\infty$ являются особыми точками.
+\end{definition}
+
+\begin{note}
+    Определение корректно, то есть не зависит от выбора точек $\psi_i.$
+\end{note}
+
+\begin{definition}
+Пусть $-\infty < a < b \leq +\infty.$ Пусть $f: \ [a, b) \rightarrow \R,$ причем $f \in \Rim([a, b']) \ \forall b' \  \in (a, b).$ Будем говорить, что $f$ абсолютно интегрируема на $[a, b),$ если $\int \limits_a^b |f(x)| dx$ сходится. Будем говорить, что $\int \limits_a^b f(t) dt$ сходится условно, если $\int \limits_a^b f(t) dt$ сходится, а  $\int \limits_a^b |f(x)| dx$ расходится.
+\end{definition}
+
+\begin{theorem}
+    \textit{(Критерий Коши для несобственного интеграла)} Пусть $-\infty < a < b \leq +\infty.$ Пусть $f: \ [a, b) \rightarrow \R,$ причем $f \in \Rim([a, b']) \ \forall b' \  \in (a, b).$ Тогда $\int \limits_a^b f(x) dx$ сходится тогда и только тогда, когда 
+    $$\forall \epsilon > 0 \ \exists \delta > 0: \forall b', b'' \in U_{\delta}(b): \ |\int \limits_{b'}^{b''} f(t) dt| < \epsilon$$
+\end{theorem}
+
+\begin{proof}
+    Это верно в силу критерия Коши для функции $\int \limits_a^{b'} f(x) dx.$
+\end{proof}
+
+\begin{theorem}
+    \textit{(Принцип локализации)} Пусть $-\infty < a < b \leq +\infty.$ Пусть $f: \ [a, b) \rightarrow \R,$ причем $f \in R([a, b']) \ \forall b' \  \in (a, b).$ Тогда $\int \limits_a^b f(x) dx$ сходится тогда и только тогда, когда 
+    $$\forall c \in (a, b) \text{ сходится несобственный} \int \limits_c^b f(x) dx $$
+\end{theorem}
+
+\begin{proof}
+    Фиксируем $c \in (a, b).$ Тогда получим:
+    $$\int \limits_a^{b'} f(x) dx = \int \limits_a^c f(x) dx + \int \limits_c^{b'} f(x) dx.$$
+    Откуда имеем требуемое.
+\end{proof}

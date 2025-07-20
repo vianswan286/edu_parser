@@ -1,0 +1,67 @@
+{
+  "units": [
+    {
+      "id": "D1",
+      "kind": "definition",
+      "title": "",
+      "statement": "$J_F(x^0) := \\det \\D F(x^0)$, называется \\textit{Якобиан}.",
+      "proof": "",
+      "tags": [],
+      "source": "matan_2_semestr/7.tex"
+    },
+    {
+      "id": "D2",
+      "kind": "definition",
+      "title": "",
+      "statement": "Пусть $F$: $E \\mapsto \\R^n, \\text{ где } E \\neq \\varnothing, E \\subset \\R^{n+m}$. Будем говорить, что отображение $f$: $X \\mapsto \\R^n$ явл. неявным отображением, заданным уравнением \\eqref{eq:for_implicit}, если $\\begin{cases} (x, f(x)) \\in E \\quad \\forall x \\in X \\\\ F(x, f(x)) \\equiv 0 \\text{ на } X \\end{cases}$",
+      "proof": "",
+      "tags": [],
+      "source": "matan_2_semestr/7.tex"
+    },
+    {
+      "id": "D3",
+      "kind": "definition",
+      "title": "",
+      "statement": "Множеством уровня функции, будем называть множество тех точек, где её значение постоянно",
+      "proof": "",
+      "tags": [],
+      "source": "matan_2_semestr/7.tex"
+    },
+    {
+      "id": "T4",
+      "kind": "theorem",
+      "title": "",
+      "statement": "(Теорема Лагранжа о среднем). Пусть отображение $F \\in \\DIF(B_\\delta (x^0) {\\scriptstyle \\subset \\R^m},\\ \\R^n)$. Тогда $\\forall y, z \\in B_\\delta (x^0)\\; \\exists \\theta \\in (0, 1)$: $$\\|F(y) - F(z)\\| \\leqslant \\|\\D F(y + \\theta(z - y)\\| \\|y - z\\|$$",
+      "proof": "",
+      "tags": [],
+      "source": "matan_2_semestr/7.tex"
+    },
+    {
+      "id": "T5",
+      "kind": "theorem",
+      "title": "о локальной обратимости отображений/диффеоморфизме",
+      "statement": "Пусть $F \\in C^1(\\Omega, \\R^m)$, $\\Omega \\subset \\R^m$, $J_F(x^0) \\neq 0$, где $x^0 \\in \\Omega$. Тогда $\\exists U \\subset \\Omega$: $U \\ni x^0$, F осуществляет диффеоморфизм $U$ на $F(U)$.",
+      "proof": "",
+      "tags": [],
+      "source": "matan_2_semestr/7.tex"
+    },
+    {
+      "id": "T6",
+      "kind": "theorem",
+      "title": "",
+      "statement": "Пусть выполнены следующие условия: \\begin{itemize} \\item $F \\in C^1(\\Omega {\\scriptstyle \\subset \\R^m}, \\R^n)$ \\item $n > m$. Пусть $\\rank \\D F(x^0) = m$, $x^0 \\in \\Omega$. \\end{itemize} Тогда $\\exists n-\\text{мерная окрестность } V \\text{ точки } (x^0, 0) \\in \\R^n$ и отображение $\\Fover$ является диффеоморфизмом $V$ на $\\Fover(V), \\text{где } \\Fover|_{V \\cap \\R^m} := F$.",
+      "proof": "",
+      "tags": [],
+      "source": "matan_2_semestr/7.tex"
+    },
+    {
+      "id": "T7",
+      "kind": "theorem",
+      "title": "",
+      "statement": "(о неявном отображении) Пусть $F \\in C^1 (G{\\scriptstyle \\subset \\R^{n + m}}, \\R^n)$ Если выполены следующие условия: \\begin{enumerate} \\item $F(x^0, y^0) = 0$ \\item $\\det \\D_y F(x^0, y^0) \\neq 0$ \\end{enumerate} \\[ \\D F = \\begin{pmatrix} \\frac{\\partial F_1}{\\partial x_1} & \\cdots & \\frac{\\partial F_1}{\\partial x_m} & \\frac{\\partial F_1}{\\partial y_1} & \\cdots & \\frac{\\partial F_1}{\\partial y_n} \\\\ \\vdots \\\\ \\frac{\\partial F_n}{\\partial x_1} & \\cdots & \\frac{\\partial F_n}{\\partial x_m} & \\frac{\\partial F_n}{\\partial y_1} & \\cdots & \\frac{\\partial F_n}{\\partial y_n} \\\\ \\end{pmatrix} = (\\D _x F , \\ \\D _y F) \\] (Правую часть этой матрицы и назовём $\\D_y F$) \\[ \\text{Тогда } \\begin{cases} \\exists U(x^0) \\subset \\R^m \\\\ \\exists V(y^0) \\subset \\R^n \\\\ \\end{cases} \\text{такие, что } \\forall x^* \\in U(x^0)\\; \\exists! y^*\\in V(y^0): F(x^*, y^*) = 0 \\] $\\Longleftrightarrow$ м-во нулей отображения $F$, пересечённое с $U\\times V$ имеет вид графика некоторого отображения $f: U \\mapsto V$ При этом, $f \\in C^1(U, V)$ и $\\D_x f(x^0) = -(\\D_y F(x^0, y^0))^{-1} (\\D_x F(x^0, y^0))$",
+      "proof": "",
+      "tags": [],
+      "source": "matan_2_semestr/7.tex"
+    }
+  ]
+}

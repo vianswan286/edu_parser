@@ -1,0 +1,49 @@
+{
+  "units": [
+    {
+      "id": "D1",
+      "kind": "definition",
+      "title": "",
+      "statement": "Путем сдвига \\hyperlink{def5.13}{формулы Тейлора с центром в точке $x_{0}$} может быть редуцирована к формуле Тейлора с центром в нуле. Тогда такая формула называется \\textit{формулой Маклорена.} То есть если $\\exists f^{(n) }(0) \\in \\R,$ то $$f(x) = \\sum\\limits_{k = 0}^{n} \\cfrac{f^{(k)}(0)}{k!} \\cdot x^{k} + o(x^{n}), x \\to 0$$",
+      "proof": "",
+      "tags": [],
+      "source": "matan_1_semester/19 lecture.tex"
+    },
+    {
+      "id": "T2",
+      "kind": "theorem",
+      "title": "",
+      "statement": "\\hypertarget{thrm5.15}{(Формула Тейлора с остаточным членом в форме Лагранжа)} Пусть $\\exists f^{(n+1)}$ в некоторой $U_{\\delta}(x_{0})$. Тогда $\\forall x\\in \\mathring{U}_{\\delta}(x_{0})$ справедливо равенство $$f(x) = \\sum\\limits_{k = 0}^n \\cfrac{f^{(k)}}{k!}(x-x_{0})^{k} + \\cfrac{f^{(n+1)}(\\xi)}{(n+1)!}(x-x_{0})^{(n+1)}, \\ \\textrm{где} \\ \\xi \\in (x_{0}, x).$$",
+      "proof": "",
+      "tags": [],
+      "source": "matan_1_semester/19 lecture.tex"
+    },
+    {
+      "id": "T3",
+      "kind": "theorem",
+      "title": "",
+      "statement": "\\hypertarget{thrm5.16}{(Теорема о единственности)} Пусть $\\exists f^{(n)}(x_{0}) \\in \\R.$ Тогда, если $f(x) = \\sum\\limits_{k =0}^{n} a_{k}(x-x_{0})^{k} + o\\Big((x-x_{0})^{n}\\Big), x \\to x_{0},$ то $a_{k} = \\cfrac{f^{(k)}(x_{0})}{k!}$",
+      "proof": "",
+      "tags": [],
+      "source": "matan_1_semester/19 lecture.tex"
+    },
+    {
+      "id": "T4",
+      "kind": "theorem",
+      "title": "",
+      "statement": "\\hypertarget{thrm5.17}{(Почленное дифференцрование формулы Тейлора)} Пусть $n\\in \\N$ и $\\exists f^{(n)}(x_{0}).$ Тогда если $f(x) = \\sum\\limits_{k =0}^{n} a_{k}(x-x_{0})^{k} + o\\Big((x-x_{0})^{n}\\Big), x \\to x_{0},$ то $$f'(x) = \\sum\\limits_{k = 1}^{n} a_{k} \\cdot k \\cdot (x-x_{0})^{k-1} + o\\Big((x-x_{0})^{n-1}\\Big), x \\to x_{0}.$$",
+      "proof": "",
+      "tags": [],
+      "source": "matan_1_semester/19 lecture.tex"
+    },
+    {
+      "id": "T5",
+      "kind": "theorem",
+      "title": "",
+      "statement": "\\hypertarget{thrm5.17}{(Почленное интегрирование формулы Тейлора)} Пусть $\\exists f^{(n+1)}(x_{0})$ и $f'(x) = \\sum\\limits_{k = 0}^{n} b_{k}(x-x_{0})^{k} + o \\Big((x-x_{0})^{n}\\Big)$. Тогда $$f(x) = f(x_{0}) + \\sum\\limits_{k=0}^{n} \\cfrac{b_{k}}{k+1} \\cdot (x-x_{0})^{k+1} + o\\Big((x-x_{0})^{n+1}\\Big), x\\to x_{0}$$",
+      "proof": "",
+      "tags": [],
+      "source": "matan_1_semester/19 lecture.tex"
+    }
+  ]
+}

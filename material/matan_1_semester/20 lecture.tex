@@ -1,0 +1,154 @@
+\subsection{Правило Лопиталя}
+\begin{theorem}
+	\hypertarget{thrm5.19}{(Раскрытие неопределенности вида $\frac{0}{0}$)}
+	Пусть $-\infty < a< b< +\infty$. Пусть $f$ и $g$ дифференцируемы на $(a,b)$, а также $\exists \lim\limits_{x\to a+0} f(x) = 0, \ \exists \lim\limits_{x\to a+0} g(x) = 0$ и $g'(x) \neq 0 \quad \forall x \in (a,b)$. Тогда, если $\exists \lim\limits_{x\to a+0} \dfrac{f'(x)}{g'(x)} = C\in \overline{\R},$ то $\exists \lim\limits_{x\to a+0} \dfrac{f(x)}{g(x)} =\dfrac{f'(x)}{g'(x)} =C$
+\end{theorem}
+\begin{proof}Доопределим функции $f$ и $g$ нулем в точке $a$. Тогда $f$ и $g$ станут непрерывными справа в точке $a.$ Значит, $\forall x \in (a, b)$ можно воспользоваться \hyperlink{thrm6.3}{теоремой Коши о среднем}: 	$\dfrac{f(x)}{g(x)} = \dfrac{f(x) - f(a)}{g(x) - g(a)} = \dfrac{f'(\xi(x))}{g'(\xi(x))},$ где $\xi(x) \in (a, x).$
+	
+	Так как $\lim\limits_{x\to a+0}\xi (x) = a, \ \xi(x) \neq a \quad \forall x \in (a, b)$, можно воспользоваться \hyperlink{thrm4.18}{теоремой о замене переменной при вычислении предела}, то есть $\lim\limits_{x\to a+0}\dfrac{f'(\xi(x))}{g'(\xi(x))} = \lim\limits_{\xi\to a+0} \dfrac{f'(\xi)}{g'(\xi)} = C.$
+	
+	Следовательно, переходя к пределу равенства, получаем $\exists \lim\limits_{x\to a+0} \dfrac{f(x)}{g(x)} = C$.
+\end{proof}
+
+\begin{theorem}
+	\hypertarget{thrm5.20}{} Пусть $f$ и $g$ дифференцируемы на луче $(A, +\infty),$ ($A > 0$) и $\exists \lim\limits_{x\to \infty} f(x) = \lim\limits_{x \to +\infty} g(x) = 0.$ Пусть $g'(x) \neq 0 \quad \forall x \in (A, \infty).$ Тогда если $\exists \lim\limits_{x\to+\infty} \dfrac{f'(x)}{g'(x)}= C \in \overline{\R}$, то $\exists \lim\limits_{x\to +\infty} \dfrac{f(x)}{g(x)} = C.$
+\end{theorem}
+\begin{proof}
+	Сделаем замену: $t = t(x) = \dfrac{1}{x}, \quad x(t) = \dfrac{1}{t}.$ Получаем: $(A, +\infty) \rightarrow \Big(0, \dfrac{1}{A}\Big).$ Рассмотрим функции $f_{1}(t) = f\Big(\dfrac{1}{t}\Big), \quad g_{1}(t) = g\Big(\dfrac{1}{t}\Big).$
+	
+	Теперь заметим, что $\lim\limits_{t\to+0} f_{1}(t)= \lim\limits_{t\to+0} f\Big(\dfrac{1}{t}\Big) = \lim\limits_{x\to+\infty} f(x) = 0.$
+	
+	Аналогично $\lim\limits_{t\to+0} g_{1}(t) = 0.$
+	
+	$f_{1}$ и $g_{1}$ дифференцируемы на отрезке $\Big(0, \dfrac{1}{A}\Big)$ и $g_{1}'(t) = g'\Big(\dfrac{1}{t}\Big) \cdot \left(\dfrac{-1}{t^{2}}\right) \neq 0 \quad \forall t \in \Big(0, \dfrac{1}{A}\Big)$. Следовательно, можем воспользоваться предыдущей теоремой:
+	
+	$$\lim\limits_{x\to+\infty} \dfrac{f(x)}{g(x)}=\lim\limits_{t\to+0} \dfrac{f_{1}(t)}{g_{1}(t)}= \lim\limits_{t\to+0} \dfrac{f_{1}'(t)}{g_{1}'(t)} = \lim\limits_{t\to +0}\dfrac{\frac{-1}{t^{2}}f'\left(\frac{1}{t}\right) }{\frac{-1}{t^{2}}g'\left(\frac{1}{t}\right) } = \lim\limits_{x\to +\infty} \dfrac{f'(x)}{g'(t)}$$
+	
+\end{proof}
+
+\begin{theorem}
+	\hypertarget{thrm5.21}{(неопределенность $\frac{\infty}{\infty}$)} Пусть $-\infty< a< b< +\infty$ и  $
+		\exists \lim\limits_{x\to a+0} |f(x)| = + \infty,$
+		$\exists \lim\limits_{x\to +0} |g(x)| = +\infty$ Пусть $f$ и $g$ дифференцируемы на $(a, b)$ и $g'(x) \neq 0 \ \forall x \in (a, b)$
+		Тогда если $\exists \lim\limits_{x\to a+0} \dfrac{f'(x)}{g'(x)} = C\in \overline{\R},$ то $\exists \lim\limits_{x\to a+0} \dfrac{f(x)}{g(x)} = C.$
+	%	$\exists \lim\limits_{x\to a+0} |f(x)| = + \infty, \quad \exists \lim\limits_{x\to +0} |g(x)| = +\infty$
+\end{theorem}
+\begin{note}
+	Правило Лопиталя справедливо не только для интервала $(a, b),$ но также для лучей. 
+\end{note}
+\begin{proof}
+	\hyperlink{def4.3}{По определению предела} $\forall \epsilon > 0 \ \exists a_{\epsilon} \in (a, b): \ \dfrac{f'(x)}{g'(x)} \in U_{\epsilon}(C) \ \forall (a, a_{\epsilon}).$
+	
+	Зафиксируем $\epsilon \in (0, 1)$ и $a_{\epsilon}.$ Заметим, что если $x\in (a, a_{\epsilon}),$ то \hyperlink{5.11}{ по теореме Коши о среднем}: 
+	
+	$$\dfrac{f(x)-f(a_{\epsilon})}{g(x) - g(a_{\epsilon})} = \dfrac{f'(\xi(x))}{g'(\xi(x))}, \textrm{где} \ \xi (x) \in (x, a_{\epsilon})  \quad (*)$$
+	
+	Из-за того, что  $\lim\limits_{x\to a+0} |f(x)| = + \infty$ и $\exists \lim\limits_{x\to +0} |g(x)| = +\infty$, в окрестности $a$ эти функции не равны нулю. Более того, $\exists \delta(\epsilon) \in (a, a_{\epsilon}): \forall x \in (a, \delta(\epsilon)) \hookrightarrow \begin{cases}
+		\dfrac{|f(a_{\epsilon})|}{|f(x)|} < \dfrac{\epsilon}{3} \\
+		\dfrac{|g(a_{\epsilon})|}{|g(x)|} < \dfrac{\epsilon}{3}
+	\end{cases}$
+	
+	Из $(*)$ следует: 
+	$\dfrac{f(x)}{g(x)} = \dfrac{1-\frac{g(a_{\epsilon})}{g(x)}}{1-\frac{f(a_{\epsilon})}{f(x)}} \cdot \dfrac{f'(\xi(x))}{g'(\xi(x))},\ \textrm{где} \ \dfrac{f'(\xi(x))}{g'(\xi(x))} \in U_{\epsilon}(C)$ и 
+	
+	$$1-\epsilon < \dfrac{1-\epsilon/_3}{1+\epsilon/_3} < \dfrac{1-\frac{g(a_{\epsilon})}{g(x)}}{1-\frac{f(a_{\epsilon})}{f(x)}} < \dfrac{1+ \epsilon/_3}{1-\epsilon/_3} < 1+\epsilon$$
+	
+	Значит, $\forall x \in (a, \delta_{\epsilon}) \hookrightarrow \dfrac{f(x)}{g(x)} \in$ \footnotesize$ \left[\begin{gathered}
+	\Big((c-\epsilon)(1-\epsilon), (c+\epsilon)(1+\epsilon)\Big), \ C \in \R \\
+	\left(\frac{1-\epsilon}{\epsilon}, + \infty\right), \ C = +\infty  \hfill \\
+	\left(- \infty, \frac{1+\epsilon}{\epsilon}\right), \ C = -\infty \hfill
+	\end{gathered}\right. $\normalsize$ \Rightarrow\lim\limits_{x\to a+0} \dfrac{f(x)}{g(x)} = C$ 
+\end{proof}
+
+\begin{example}
+	$\begin{gathered}
+		f(x) = x^{n}, n\in \N \\
+		g(x) = a^{x}, a > 1. \hfill
+	\end{gathered} $ $\quad \quad  \lim\limits_{x\to +\infty} \dfrac{f(x)}{g(x)} - ?$
+\end{example}
+\begin{solution}
+	$\lim\limits_{x\to +\infty} \dfrac{f(x)}{g(x)} = \lim\limits_{x\to +\infty} \dfrac{n \cdot x^{n-1}}{\ln a\cdot a^{x}} = \ldots = \lim\limits_{x\to +\infty} \dfrac{n!}{\left(\ln a\right)^{n} \cdot a^{x}} = 0$
+\end{solution}
+
+\begin{example}
+	$f(x) = \ln x, \quad g(x) = x^{\epsilon}, \ \epsilon > 0$. $\quad \quad \lim\limits_{x\to +\infty} \dfrac{f(x)}{g(x)} - ?$
+\end{example} 
+\begin{solution}
+	$\lim\limits_{x\to +\infty} \dfrac{f(x)}{g(x)} = \lim\limits_{x\to +\infty} \dfrac{^{1}/_{x}}{\epsilon \cdot x^{\epsilon-1}} = \lim\limits_{x\to\infty}\dfrac{1}{\epsilon \cdot x^{\epsilon}}=0$
+\end{solution}
+
+\begin{example}
+	$\lim\limits_{x\to+0} x\cdot \ln x - ?$
+\end{example}
+\begin{solution}
+	$\lim\limits_{x\to+0} x\cdot \ln x = \lim\limits_{x\to +0} \dfrac{\ln x}{^{1}/_{x}} = \lim\limits_{x\to +0} \dfrac{^1/_x}{^{-1}/_{x^{2}}} = 0$
+\end{solution}
+
+\subsection{Исследование функций}
+
+\begin{theorem}
+	Пусть $f$ дифференцируема на $(a, b).$ Тогда:
+	\begin{enumerate}
+		\item $f'(x) \geq 0 \quad \forall x\in (a, b) \Leftrightarrow$ $f$ нестрого возрастает на $(a, b)$.
+		\item $f'(x) \leq 0 \quad \forall x\in (a, b) \Leftrightarrow$$f$ нестрого убывает на $(a, b)$.
+		\item Если $f'(x) > 0 \quad \forall x\in (a, b),$ то $f$ строго возрастает на $(a, b)$
+		\item Если $f'(x) < 0 \quad \forall x\in (a, b)$, то $f$ строго убывает на $(a, b)$.
+	\end{enumerate}
+\end{theorem}
+\begin{proof}
+	Докажем $1.$, $2$~---~ аналогично.
+	
+	$\underline{\textrm{Шаг 1}}$. Пусть $f'(x) \geq 0 \forall x\in (a, b).$ Рассмотрим две точки $x, y \in (a, b).$  \hyperlink{thrm5.11cor}{По теореме Лагранжа о среднем}: $f(y) - f(x) = f'(\xi)(y-x),$ где $f'(\xi) \geq 0, (y-x) > 0 \Rightarrow f(y) \geq f(x) \ (*)$
+	
+	$\underline{\textrm{Шаг 2.}}$Пусть $f$ нестрого возрастает на $(a, b)$. Фиксируем точку $x, x_{0} \in (a, b).$ 
+	
+	$\dfrac{f(x)-f(x_{0})}{x-x_{0}} \geq 0,$ так как если $x > x_{0},$ то числитель неотрицательный, а знаменатель положительный, а если $x < x_{0},$ то числитель неположительный, а знаменатель отрицательный.
+	
+	Так как по условию $f$о условию дифференцируема в точке $x_{0},$ \hyperlink{thrm4.8}{переходя к пределу в неравенстве} получим $f'(x_{0}) \geq 0$. Но $x_{0}$ можно выбрать произвольно.
+	
+	Пункты $3.$ и $4.$ доказываются применением $(*)$
+\end{proof}
+\begin{example}
+	$f(x) = x^{3}.$
+	
+	$f$ строго возрастает на $\R.$ $f'(0) = 0.$ Поэтому из строгого возрастания не вытекает положительность производной
+\end{example}
+
+
+\begin{theorem}
+	\hypertarget{thrm5.22}{(Достаточное условие экстремума)} Пусть $f \in C(U_{\delta}(x_{0}))$ и дифференцируема в $\mathring{U}_{\delta}(x_{0})$. Тогда если производная меняет знак при переходе через точку $x_{0},$ то $x_{0}$~---~ точка локального экстремума (если знак меняется с <<$-$>> на <<$+$>>, то локальный минумум, если с <<$+$>> на <<$-$>>, то локальный максимум). 
+\end{theorem}
+\begin{proof}
+	Если $x\in \mathring{U}_{\delta}(x_{0}),$ то \hyperlink{thrm5.11cor}{по теореме Лагранжа о среднем}: $f(x) - f(x_{0}) = f'(\xi(x))(x-x_{0}).$ Если $\begin{gathered}
+		f'(x) \geq 0 \ \forall x\in (x_{0}-\delta, x_{0}), \\
+		 \ f'(x) \leq 0 \ \forall x\in (x_{0}, x_{0} + \delta) 
+	\end{gathered} \Rightarrow 
+	\begin{gathered}
+		 f(x) \leq f(x_{0}) \ \forall x\in (x_{0} -\delta, x_{0}), \\
+		 f(x) \leq f(x_{0}) \ \forall x \in (x_{0}, x_{0} + \delta).
+	\end{gathered}$
+	Значит, $x_{0}$~---~ нестрогий локальный максимум.
+	
+	Аналогично доказываются остальные случаи.
+\end{proof}
+
+\begin{theorem}
+	\hypertarget{thrm5.23}{(Достаточное условие экстремума в терминах высших производных)} Пусть $\exists f^{(n)}(x_{0}), \ n \in \N$. При этом $f^{(i)} (x_{0}) = 0 \ \forall i \in \{1, 2, \ldots, n-1\}, \
+         f^{(n)} (x_{0}) \neq 0.$ Тогда если $n$ нечетно, то $x_{0}$ не является точкой экстремума, если $n$ четно и $f^{(n)}(x_{0}) > 0$, то $x_{0}$~---~ строгий локальный минимум, если $n$ четно и $f^{(n)}(x_{0}) < 0$, то $x_{0}$~---~ строгий локальный максимум.
+\end{theorem}
+\begin{proof}
+	Так как $\exists f^{(n)}(x_{0}),$ то \hyperlink{thrm5.14}{по теореме Тейлора с остаточным членом в форме Пеано} $f(x) = f(x_{0}) + \sum\limits_{k = 1}^{n -1} \dfrac{f^{(k)}(x_{0})}{k!}(x-x_{0})^{k} + \dfrac{f^{(n)}(x_{0})}{n!}(x-x_{0})^{n} + o\Big((x-x_{0})^{n}\Big).$
+	
+	$$\dfrac{f(x)-f(x_{0})}{(x-x_{0})^{n}} = \dfrac{f^{(n)}(x_{0})}{n!} + \epsilon(x), \textrm{где} \ \epsilon(x) \to 0, x\to x_{0}.$$
+	
+	Если $n$ четно и $f^{(n)}(x_{0}) > 0,$ то $\exists \delta > 0: \forall  x\in \mathring{U}_{\delta}(x_{0}) \hookrightarrow \dfrac{f^{(n)}(x_{0})}{n!} + \epsilon(x) > 0 $ и $(x-x_{0})^{n} > 0 $ Следовательно, $f(x) - f(x_{0}) > 0\  \forall  x\in \mathring{U}_{\delta}(x_{0})$. Значит, $x_{0}$~---~ строгий локальный минимум.
+	
+	Аналогично рассматривается случай $f^{(n)}(x_{0}) < 0.$
+	
+	Если $n$ нечетно, то знак правой части сохраниться в некоторой $U_{\delta}(x_{0}),$ но знак $(x-x_{0})^{n}$ меняется при переходе через $x_{0}.$ Тогда и знак числителя тоже меняется при переходе через $x_{0}.$ Значит, $x_{0}$ не является точкой локального экстремума.
+\end{proof}
+
+\begin{note}
+	В теореме выше изложено лишь достаточное условие.
+\end{note}
+

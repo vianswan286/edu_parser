@@ -1,0 +1,31 @@
+{
+  "units": [
+    {
+      "id": "T1",
+      "kind": "theorem",
+      "title": "",
+      "statement": "Пусть $f \\in C^{n+1}\\left((x_0 - R, x_0 + R)\\right)$ при некотором $R > 0$, $n \\in \\N_0$. \\\\ Тогда $\\forall x \\in (x_0 - R, x_0 + R)$ $$r_{x_0}^n[f](x) = \\dfrac{1}{n!} \\int \\limits_{x_0}^{x}(x - t)^n f^{(n+1)} (t) dt \\quad (\\star)$$",
+      "proof": "",
+      "tags": [],
+      "source": "matan_2_semestr/26.tex"
+    },
+    {
+      "id": "T2",
+      "kind": "theorem",
+      "title": "",
+      "statement": "Пусть $\\alpha \\in \\R$. Тогда $\\forall x \\in (-1, 1)$ \\\\ $(\\star) \\quad (1+x)^{\\alpha} = \\sum \\limits_{k=0}^{\\infty} C_{\\alpha}^k x^k, \\quad C_{\\alpha}^k = \\dfrac{\\alpha(\\alpha - 1) \\cdot \\dots \\cdot (\\alpha - k + 1)}{k!}$.",
+      "proof": "",
+      "tags": [],
+      "source": "matan_2_semestr/26.tex"
+    },
+    {
+      "id": "T3",
+      "kind": "theorem",
+      "title": "",
+      "statement": "$\\forall z \\in \\mathbb{C}$ справедливо равенство $$ e^z = \\sum \\limits_{k=0}^\\infty \\dfrac{z^k}{k!} $$",
+      "proof": "",
+      "tags": [],
+      "source": "matan_2_semestr/26.tex"
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "units": [
+    {
+      "id": "T1",
+      "kind": "theorem",
+      "title": "Критерий Коши равномерной сходимости функционального ряда",
+      "statement": "Пусть $X \\neq \\varnothing$. Ряд $\\sum_{k = 1}^{\\infty}f_k$ равномерно сходится на $X \\Leftrightarrow$ \\[ \\forall\\thinspace \\varepsilon > 0 \\thinspace \\exists N(\\varepsilon): \\forall\\thinspace n \\geq N(\\varepsilon)\\thinspace\\forall\\thinspace x \\in X \\hookrightarrow \\left| \\sum_{k = n + 1}^{n + p}f_{k}(x)\\right| < \\varepsilon. \\]",
+      "proof": "",
+      "tags": [],
+      "source": "matan_2_semestr/22.tex"
+    },
+    {
+      "id": "T2",
+      "kind": "theorem",
+      "title": "Обобщённый признак сравнения",
+      "statement": "Пусть $\\sum_{k = 1}^{\\infty}V_k$ сходится равномерно на $X$ и $V_k \\geq 0$ на $X$ $\\forall\\thinspace k \\in \\N$. Пусть $0 \\leq \\left|U_k(x) \\right| \\leq V_k(x)$ $\\forall\\thinspace k \\in \\N$ $(\\ast)$ и $\\forall\\thinspace x \\in X$. Тогда ряд $\\sum_{k = 1}^{\\infty} U_k$ равномерно сходится на $X$.",
+      "proof": "",
+      "tags": [],
+      "source": "matan_2_semestr/22.tex"
+    },
+    {
+      "id": "T3",
+      "kind": "theorem",
+      "title": "признак Дирихле для функциональных рядов",
+      "statement": "Пусть $\\{U_k\\}$ и $\\{V_k\\}$ ~--- функциональные последовательности на $X$, удовлетворяющие следующим условиям: \\begin{enumerate} \\item Последовательность $\\left\\{\\sum_{k = 1}^{n} U_k \\right\\}$ равномерно ограничена на $X$, то есть \\[ \\exists c > 0: \\left| \\sum_{k = 1}^{n} U_k(x) \\right| < c \\thinspace\\thinspace \\forall\\thinspace n \\in N \\thinspace\\thinspace \\forall\\thinspace x \\in X. \\] \\item $V_k \\xrr 0, \\thinspace k \\ra \\infty$ \\item $V_{k + 1}(x) \\leq V_k(x)$ $\\forall\\thinspace k \\in \\N$ и $\\forall\\thinspace x \\in X$. \\end{enumerate} Тогда $\\sum_{k = 1}^{\\infty} U_k V_k$ сходится равномерно на $X$.",
+      "proof": "",
+      "tags": [],
+      "source": "matan_2_semestr/22.tex"
+    }
+  ]
+}

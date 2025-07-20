@@ -1,0 +1,76 @@
+{
+  "units": [
+    {
+      "id": "D1",
+      "kind": "definition",
+      "title": "",
+      "statement": "Будем говорить, что $f: [a, b] \\rightarrow \\R^n$ кусочно непрерывно-дифференцируема (кусочно 1-гладкая), если $f \\in C([a, b], \\R^n)$ и существует некоторое конечное разбиение \\[T = \\{t_i\\}_{i = 0}^N, a = t_0 < t_1 < \\ldots < t_N = b\\] для которого верно следующее: \\[\\forall i \\in \\overline{0, N - 1} \\hookrightarrow f|_{[t_{i}, t_{i + 1}]} \\in C^1([t_i, t_{i + 1}], \\R^n)\\] А в самих точках существую односторонние производные.",
+      "proof": "",
+      "tags": [],
+      "source": "matan_3_semestr/Lecture_12.tex"
+    },
+    {
+      "id": "D2",
+      "kind": "definition",
+      "title": "",
+      "statement": "Пусть $\\Gamma = \\{r(t) \\mid t \\in [a, b]\\}$~---~кривая в $\\R^n$, параметризованная кусочно 1-гладкой функцией $r$. Пусть $f \\in C(\\Gamma, \\R)$. Тогда будем называть \\textit{криволинейным интегралом I-го рода} $f$ по $\\Gamma$: \\[\\int\\limits_\\Gamma f(r)ds := \\int\\limits_a^b f(r(t))\\|r'(t)\\|dt\\]",
+      "proof": "",
+      "tags": [],
+      "source": "matan_3_semestr/Lecture_12.tex"
+    },
+    {
+      "id": "D3",
+      "kind": "definition",
+      "title": "",
+      "statement": "Пусть $\\Gamma = \\{\\overline{r}(t) \\mid t \\in [a, b]\\} \\subset \\R^n$~---~ориентированная кривая, параметризованная кусочно-гладкой $r: [a, b] \\rightarrow \\R^n$. Пусть $ \\overline{F} \\in C(\\Gamma, \\R^n)$. Тогда \\textit{криволинейным интегралом II-го рода} $f$ по $\\Gamma$ будем называть \\[\\int\\limits_\\Gamma (\\overline{F}, \\overline{dr}) := \\int\\limits_a^b \\langle \\overline{F}(r(t)), \\overline{r}'(t) \\rangle dt\\]",
+      "proof": "",
+      "tags": [],
+      "source": "matan_3_semestr/Lecture_12.tex"
+    },
+    {
+      "id": "D4",
+      "kind": "definition",
+      "title": "",
+      "statement": "Будем говорить, что $\\Gamma$~---~\\textit{простой кусочно-гладкий контур}, если $\\Gamma = \\{r(t) \\mid t \\in [a, b]\\}$: \\begin{enumerate} \\item $r(a) = r(b)$; \\item $r((a, b))$~---~инъекция; \\item $\\Gamma = \\bigcup\\limits_{i = 1}^N \\Gamma_i$, где $\\Gamma_i \\cap \\Gamma_j$ только, быть может, в концах, и $\\forall i \\in \\overline{1, \\ldots, N} \\hookrightarrow \\Gamma_i$~---~гладкая кривая. \\end{enumerate}",
+      "proof": "",
+      "tags": [],
+      "source": "matan_3_semestr/Lecture_12.tex"
+    },
+    {
+      "id": "D5",
+      "kind": "definition",
+      "title": "",
+      "statement": "Пусть $\\Gamma = \\{r(t) \\mid t \\in [a, b]\\}$~---~гладкая кривая: $\\Gamma = \\partial G$, где $G$~---~некоторая область в $\\R^2$. Будем говорить, что $\\Gamma$ \\textit{ориентирована положительно} относительно $G$, если $\\forall t \\in [a, b]$ векторы $r'(t)$ и $n(t)$~---~правая двойка векторов. Неформально: при обходе границы, наша область должная оставаться слева.",
+      "proof": "",
+      "tags": [],
+      "source": "matan_3_semestr/Lecture_12.tex"
+    },
+    {
+      "id": "D6",
+      "kind": "definition",
+      "title": "",
+      "statement": "Область $G \\subset \\R^2$ называется элементарной относительно $Oy$, если $\\exists$ кусочно непрерывно-дифференцируемые $\\phi$ и $\\psi$ на $[a, b]$: $\\phi \\leq \\psi$ и $G = \\{(x, y) \\mid x \\in (a, b), y \\in (\\phi(x), \\psi(x))\\}$. Аналогично определяется элементарность относительно $Ox$.",
+      "proof": "",
+      "tags": [],
+      "source": "matan_3_semestr/Lecture_12.tex"
+    },
+    {
+      "id": "D7",
+      "kind": "definition",
+      "title": "",
+      "statement": "Область в $\\R^2$ называется \\textit{элементарной}, если она элементарна относительно одной из осей.",
+      "proof": "",
+      "tags": [],
+      "source": "matan_3_semestr/Lecture_12.tex"
+    },
+    {
+      "id": "T8",
+      "kind": "theorem",
+      "title": "Формула Грина",
+      "statement": "Пусть $G \\subset \\R^2$~---~область: $\\partial G$ состоит из дизъюнктивного объединения простых кусочно-гладких контуров $\\{\\Gamma_i\\}_{i = 1}^N$. Пусть $\\forall i \\in \\overline{1, \\ldots, N}$ $\\Gamma_i^+$ положительно ориентирована относительно $G$, $\\displaystyle \\partial G^+ := \\bigsqcup_{i = 1}^{N} \\Gamma_i^+$. Пусть $F \\in C^1(\\overline{G}, \\R^2)$. Тогда, если $F = (P \\ Q)^T$, то \\[\\int\\limits_{\\partial G^+} (F, dr) = \\int\\limits_{\\partial G^+} Pdx + Qdy = \\iint\\limits_G \\left(\\dfrac{\\partial Q}{\\partial x} - \\dfrac{\\partial P}{\\partial y}\\right) dxdy\\]",
+      "proof": "",
+      "tags": [],
+      "source": "matan_3_semestr/Lecture_12.tex"
+    }
+  ]
+}

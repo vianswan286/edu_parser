@@ -1,0 +1,158 @@
+\newpage
+\subsection{Предельный переход в неравенствах}
+\begin{lemma}
+    Пусть есть два элемента $A, B \in \overline{\R}$ и две числовые последовательности $\{ x_{n} \}$, $\{ y_{n} \}$ такие, что:
+    $$\exists \lim\limits_{n\to \infty} x_{n} = A, \quad \exists \lim\limits_{n\to \infty} y_{n} = B, \quad A < B.$$
+
+    Тогда $\exists N \in \N$: $\forall n \geq N \hookrightarrow x_{n} < y_{n}.$
+\end{lemma}
+\begin{proof}
+    По лемме о непересекающихся окрестностях 
+    $$\exists \epsilon^{*} > 0: U_{\epsilon^{*}} (A) \cap U_{\epsilon^{*}} (B) = \varnothing.$$
+
+    А так как $A < B$, то $\forall x \in U_{\epsilon^{*}} (A)$ и $\forall y \in U_{\epsilon^{*}} (B) \hookrightarrow x < y.$
+
+    Запишем определение предела:
+    $$\forall \epsilon > 0 \  \exists N_{1} (\epsilon) \in \N: \forall n \geq N_{1} (\epsilon) \hookrightarrow x_{n} \in U_{\epsilon} (A);$$
+    $$\forall \epsilon > 0 \  \exists N_{2} (\epsilon) \in \N: \forall n \geq N_{2} (\epsilon) \hookrightarrow y_{n} \in U_{\epsilon} (B).$$
+
+    Возьмём $N := max \{ N_{1} (\epsilon^{*}), N_{2} (\epsilon^{*})\} \Rightarrow \forall n \geq N \hookrightarrow x_{n} \in U_{\epsilon^{*}} (A)$ и $y_{n} \in U_{\epsilon^{*}} (B) \Rightarrow x_{n} < y_{n},$ что нам и надо было.
+\end{proof}
+\begin{theorem}
+    \hypertarget{thm2.3}{(Теорема о предельном переходе в неравенстве)} Пусть $\exists \lim\limits_{n\to \infty} x_{n} = A, \  A \in \overline{\R}$ и $\exists \lim\limits_{n\to \infty} y_{n} = B, \  B \in \overline{\R}$. Пусть $\exists N \in \N$: $x_{n} \leq y_{n} \  \forall n \geq N$. Тогда $A \leq B$.
+\end{theorem}
+\begin{proof}
+    Предположим $A$ > $B$. Тогда по только что доказанной выше лемме $\exists N^{*}$: $\forall n \geq N^{*} \hookrightarrow x_{n} > y_{n}$.
+
+    Положим $\Tilde{N} := max \{ N, N^{*} \}$. Тогда $\forall n \geq \Tilde{N} \hookrightarrow x_{n} \leq y_{n}$ (по условию) и $x_{n} > y_{n}$ (по предположению), а такого быть не может, то есть предположение было неверно.
+\end{proof}
+\begin{problem}
+    Пусть $\exists N \in \N$: $x_{n} < y_{n} \  \forall n \geq N.$ При этом $x_{n} \to A$, $n\to \infty$ и $y_{n} \to B$, $n\to \infty$. Верно ли, что $A$ < $B$?
+\end{problem}
+\begin{solution}
+    Нет. Контрпример: $\displaystyle x_{n} = -\frac{1}{n}$, $\displaystyle y_{n} = \frac{1}{n}.$
+
+    $x_{n} \to 0$, $n\to \infty$ и $y_{n} \to 0$, $n\to \infty$, но $y_{n}$ > $x_{n} \  \forall n \in \N.$
+\end{solution}
+
+\begin{note} Предельный переход может портить строгие неравенства и превращать их в нестрогие.
+\end{note}
+
+\begin{corollary}
+    Если $\forall n \in \N \hookrightarrow x_{n} \geq a$, $a \in \R$ и $\exists \lim\limits_{n\to \infty} x_{n} = A, \  A \in \overline{\R}$, то $A \geq a.$
+\end{corollary}
+\begin{proof}
+    Положим $y := a \  \forall n \in \N$ и применим предыдущее утверждение.
+\end{proof}
+\begin{theorem}
+    \hypertarget{thm2.4}{(Теорема о трёх последовательностях или о двух миллиционерах)} Пусть $\{ a_{n} \}$, $\{ b_{n} \}$, $\{ c_{n} \}$~---~числовые последовательности. Пусть $\exists \lim\limits_{n\to \infty} a_{n} = \lim\limits_{n\to \infty} b_{n} = c, \  c \in \R$. Пусть $\exists N \in \N$: $\forall n \geq N \hookrightarrow a_{n} \leq c_{n} \leq b_{n}.$ Тогда $\exists \lim\limits_{n\to \infty} c_{n} = c$.
+\end{theorem}
+\begin{proof}
+    Распишем определение предела:
+    $$ \lim\limits_{n\to \infty} a_{n} = c \Leftrightarrow \forall \epsilon > 0 \  \exists N_{1} (\epsilon) \in \N: \forall n \geq N_{1} (\epsilon) \hookrightarrow a_{n} \in (c - \epsilon, c + \epsilon);$$
+    $$ \lim\limits_{n\to \infty} b_{n} = c \Leftrightarrow \forall \epsilon > 0 \  \exists N_{2} (\epsilon) \in \N: \forall n \geq N_{2} (\epsilon) \hookrightarrow b_{n} \in (c - \epsilon, c + \epsilon);$$
+    $$\forall \epsilon > 0 \  \exists \Tilde{N} (\epsilon) := max \{ N_{1} (\epsilon), N_{2} (\epsilon), N \} \in \N: \forall n \geq \Tilde{N} (\epsilon) \hookrightarrow \begin{cases}
+        a_{n} \in (c - \epsilon, c + \epsilon); \\
+        b_{n} \in (c - \epsilon, c + \epsilon);
+    \end{cases} \Rightarrow $$
+    $$\Rightarrow c_{n} \in (c - \epsilon, c + \epsilon) \Leftrightarrow \exists \lim\limits_{n\to \infty} c_{n} = c. $$
+\end{proof}
+\begin{theorem}
+    Пусть $\exists \lim\limits_{n\to \infty} x_{n} = + \infty$ и $\exists N \in \N$: $\forall n \geq N \hookrightarrow y_{n} \geq x_{n}$. Тогда $\exists \lim\limits_{n\to \infty} y_{n} = + \infty$. Аналогично для $- \infty$.
+\end{theorem}
+\begin{proof}
+    Вновь распишем определение предела:
+    $$ \forall \epsilon > 0 \  \exists N (\epsilon) \in \N: \forall n \geq N (\epsilon) \hookrightarrow x_{n} > \frac{1}{\epsilon}.$$
+    $$ \text{Но тогда } \forall \epsilon > 0 \  \exists \Tilde{N} := max \{ N (\epsilon), N \}: \forall n \geq \Tilde{N} (\epsilon) \hookrightarrow y_{n} \geq x_{n} > \frac{1}{\epsilon} \Rightarrow \lim\limits_{n\to \infty} y_{n} = + \infty.$$
+\end{proof}
+
+\subsection{Пределы монотонных последовательностей}
+
+\begin{definition}
+    Последовательность $\{ x_{n} \}$ называется \textit{нестрого возрастающей (нестрого убывающей)}, если $\forall n \in \N \hookrightarrow x_{n + 1} \geq x_{n} \  (x_{n + 1} \leq x_{n})$. Соответственно, если поставить строгое неравенство, то получим определения \textit{строго возрастающей (строго убывающей)} последовательности.
+\end{definition}
+\begin{definition}
+    Последовательность $\{ x_{n} \}$ называется \textit{монотонной}, если она нестрого возрастает или нестрого убывает. Соответственно она называется \textit{строго монотонной}, если она строго возрастает или строго убывает.
+\end{definition}
+\begin{theorem}
+    \hypertarget{thm2.6}{(Теорема Вейерштрасса)} Любая монотонная последовательность $\{ x_{n} \}$ имеет предел в $\overline{\R}$. При этом если $\{ x_{n} \}$ нестрого возрастает, то $\exists \lim\limits_{n\to \infty} x_{n} = \sup \{ x_{n} \}$. Соответственно, если $\{ x_{n} \}$ нестрого убывает, то $\exists \lim\limits_{n\to \infty} x_{n} = \inf \{ x_{n} \}$.
+\end{theorem}
+\begin{proof}
+    Докажем для нестрого возрастающей последовательности. Для нестрого убывающей аналогично.
+
+    Сначала рассмотрим случай ограниченной сверху последовательности. По теореме о существовании супремума $\exists M = \sup \{ x_{n} \}$. Покажем, что $\lim\limits_{n\to \infty} x_{n} = M$. В силу второго пункта определения супремума $\forall \epsilon > 0 \  \exists N \in \N$: $x_{N} > M - \epsilon$. Отсюда в силу возрастания последовательности $\{ x_{n} \}$ имеем $\forall \epsilon > 0 \  \exists N \in \N$: $\forall n \geq N \hookrightarrow x_{n} \geq x_{N} > M - \epsilon$. В силу первого пункта определения супремума $\forall n \in \N \hookrightarrow x_{n} \leq M$. Поэтому $\forall \epsilon > 0  \  \exists N \in \N$: $\forall n \geq N \hookrightarrow x_{n} \in U_{\epsilon} (M)$, то есть $\lim\limits_{n\to \infty } x_{n} = M$.
+
+    Теперь рассмотрим теперь случай, когда последовательность $\{ x_{n} \}$ неограничена сверху. Тогда $\forall \epsilon > 0 \  \exists N$: $x_{N} > \frac{1}{\epsilon}$. Отсюда в силу возрастания последовательности $\{ x_{n} \}$ имеем $\forall \epsilon > 0 \  \exists N$: $\forall n \geq N \hookrightarrow x_{n} \geq x_{N} > \frac{1}{\epsilon}$, то есть $x_{n} \in U_{\epsilon} (+ \infty)$, а значит $\lim\limits_{n\to \infty} x_{n} = +\infty.$
+\end{proof}
+
+\begin{note}
+    Здесь мы переписали второй пункт определения супремума в виде $\forall \epsilon > 0 \ \exists a (\epsilon)$: $a \in \left( U_{\epsilon} (M) \cap A\right)$, что равносильно <<оригинальному>> определению.
+\end{note}
+
+\subsection{Подпоследовательности и частичные пределы}
+\begin{definition}
+    Пусть дана числовая последовательность $\{ x_{n} \}^{\infty}_{n = 1}.$ Последовательность $\{ y_{k} \}^{\infty}_{k = 1}$ называется \textit{подпоследовательностью} последовательности $\{ x_{n} \}$, если существует строго возрастающая последовательность чисел $\{ n_{k} \}^{\infty}_{k = 1} \subset \N$: $y_{k} = x_{n_{k}} \ \forall k \in \N.$
+\end{definition}
+\begin{definition}
+    Будем говорить, что элемент $A \in \overline{\R}$~---~\textit{частичный предел последовательности} $\{ x_{n} \}^{\infty}_{n = 1}$, если $\exists \{ x_{n_{k}} \}$~---~подпоследовательность последовательности $\{ x_{n} \}$: $\lim\limits_{k\to \infty} x_{n_{k}} = A .$
+\end{definition}
+\begin{example}
+    $\{ x_{n} \} = \{ (-1)^{n} \}.$ Её частичными пределами являются $\{ -1 \}$, $\{ 1 \}$.
+\end{example}
+\begin{theorem}
+    (Критерий частичного предела) Пусть $\{ x_{n} \}$~---~числовая последовательность. Пусть $A \in \overline{\R}$. Следующие условия эквивалентны:
+    \begin{enumerate}
+        \item $A$ является частичным пределом последовательности $\{ x_{n} \}$;
+        \item $\forall \epsilon > 0$ в $U_{\epsilon} (A)$ содержатся значения бесконечного количества элементов последовательности $\{ x_{n} \}$;
+        \item  $\forall \epsilon > 0 \  \forall N \in \N \  \exists n (\epsilon, N) \geq N$: $x_{n} \in U_{\epsilon} (A).$
+    \end{enumerate}
+\end{theorem}
+\begin{proof}
+    Доказывать будем в следующем порядке: $(1) \to (2)$, $(2) \to (3)$, \newline $(3) \to (1)$.
+
+    \underline{Шаг 1.} Пусть $A$~---~частичный предел $\Rightarrow$ существует строго возрастающая последовательность $\{ n_{k} \}^{\infty}_{k = 1} \subset \N$: $\lim\limits_{k\to \infty} x_{n_{k}} = A.$
+
+    Это равносильно тому, что $\forall \epsilon > 0 \  \exists K (\epsilon) \in \N$: $\forall k \geq K (\epsilon) \hookrightarrow x_{n_{k}} \in U_{\epsilon} (A)$. Но так как $\forall \epsilon > 0$ в силу леммы Архимеда существует бесконечно много чисел $k \in \N$ удовлетворяющих неравенству $k \geq K (\epsilon)$, то, получается, в $U_{\epsilon} (A)$ содержатся значения бесконечного количества элементов последовательности $\{ x_{n} \}$.
+
+    \underline{Шаг 2.} Пусть выполнено (2). Фиксируем произвольное $\epsilon > 0$, следовательно в $U_{\epsilon} (A)$ содержатся значения бесконечного количества элементов последовательности $\{ x_{n} \}$.
+
+    Пусть $I (\epsilon)$~---~это такие натуральные индексы, что $\{ x_{n} \in U_{\epsilon} (A) \  \forall n \in I (\epsilon) \}$. А так как $I (\epsilon)$ бесконечно по условию (2), то $\forall N \in \N \  \exists n \in I (\epsilon)$: $n \geq N$. Можно доказать, предположив противное и получив противоречие с тем, что $I (\epsilon)$ бесконечно.
+
+    А так как $\epsilon > 0$ было выбрано произвольно, получаем, что $\forall \epsilon > 0 \  \forall N \in \N \  \exists n \geq N$: $x_{n} \in U_{\epsilon} (A).$
+
+    \underline{Шаг 3.} Пусть выполнено (3). Покажем, что выполнено (1). Построим подпоследовательность $\{ x_{n_{k}} \}$ такую, что $\exists \lim\limits_{k\to \infty} x_{n_{k}} = A$. Cтроить будем индуктивно.
+
+    Определим $n_{1} = n(1, 1)$. При $\epsilon = \frac{1}{2} \ N = 1 + n_{1} \ \ \exists n \geq 1 + n_{1}$: $x_{n} \in U_{1/2} (A)$. Если построены $n_{1} (= 1) \leq \ldots \leq n_{k}$: $x_{n_{i}} \in U_{1/i} (A)$, то выберем $n_{k + 1} \left(\frac{1}{k + 1}, n_{k} + 1\right) \Rightarrow x_{n_{k + 1}} \in U_{\frac{1}{k + 1}} (A)$.
+
+    В итоге $\forall k \in \N \ \exists n_{k} = n \left( \frac{1}{k}, n_{k - 1} + 1\right)$: $x_{n_{k}} \in U_{1 / k} (A) \Rightarrow \forall k \in \N \ \exists n_{k} \in \N$: $\forall j \geq k \hookrightarrow x_{n_{j}} \in U_{1/k} (A)$.
+
+    Получаем, что $\forall \epsilon > 0 \ \exists K (\epsilon) = \left[ \frac{1}{\epsilon} \right] + 1$: $\forall k \geq K (\epsilon) \hookrightarrow x_{n_{k}} \in U_{\epsilon} (A)$.
+\end{proof}
+\newpage
+\begin{theorem}
+    \hypertarget{thm2.8}{(Теорема Больцано-Вейерштрасса)} Пусть $\{ x_{n} \}$~---~ограниченная числовая последовательность. Тогда она имеет хотя бы один конечный частичный предел.
+\end{theorem}
+\begin{note}
+    Иначе можно сформулировать как: из любой ограниченной числовой последовательности можно выделить сходящуюся подпоследовательность.
+\end{note}
+\begin{proof}
+    Поскольку $\{ x_{n} \}$~---~ограниченная числовая последовательность, то найдётся такое $M \geq 0$, что
+    $$ |x_{n}| \leq M \  \forall n \in \N.$$
+
+    Считаем далее, что $M \neq 0$, так как в данном случае доказательно тривиально (получается стационарная последовательность, предел которой равен 0). 
+
+    Разделим отрезок $I^{1} := [-M, M]$ пополам и через $I^{2}$ обозначим ту половину, в которой находятся значения бесконечного количества элементов последовательности. Такая обязательно найдётся, потому что в противном случае в обеих половинах содержались бы значения лишь конечного числа элементов последовательности $\{ x_{n} \}$, но тогда и на всём отрезке $I^{1}$ содержались бы значения лишь конечного числа элементов, а такого быть не может, так как $\{ x_{n} \} \subset I^{1}$.
+
+    Небольшое замечание: если в обеих половинах оказалось бесконечное число элементов последовательности, то берём любую.
+
+    Далее рассуждаем по индукции. Базу мы уже сделали, теперь сделаем шаг. Предположим при некотором $k \in \N$, $k \geq 2$ мы методом половинного деления построили последовательность отрезков $I^{1} \supset I^{2} \supset \ldots \supset I^{k}$: $\forall j \in \{ 1, \ldots, k \}$ отрезок $I^{j}$ содержит значения бесконечного количества элементов последовательности $\{ x_{n} \}$.
+
+    Теперь разделим $I^{k + 1}$ на два конгруэнтных отрезка и выберем ту половинку, в которой содержатся значения бесконечного значения элементов последовательности $\{ x_{n} \}$. Такая найдётся, потому что в противном случае получится, что и весь отрезок $I^{k}$ содержит лишь конечное число элементов последовательности, что не так по построению.
+
+    Получаем бесконечную последовательность вложенных отрезков $I^{1} \supset \ldots \supset I^{k} \supset \ldots$, которая является стягивающейся, поскольку
+    $$ l (I^{k}) = \frac{l (I^{1})}{2^{k - 1}}, \quad 2^{k} > k \  \forall k \in \N.$$
+
+    Следовательно, $\displaystyle \exists x^{*} = \bigcap_{k = 1}^{\infty} I^{k}$. Покажем, что $x^{*}$~---~частичный предел. В силу критерия частичного предела достаточно доказать, что $\forall \epsilon > 0$ в $U_{\epsilon} (x^{*})$ содержатся значения бесконечного количества элементов последовательности $\{ x_{n} \}$.
+
+    Действительно, из определения предела и того, что $x^{*} \in I^{k} \  \forall k \in \N \Rightarrow \exists k (\epsilon)$: $x^{*} \in I^{k (\epsilon)} \subset U_{\epsilon} (x^{*})$. Следовательно, по построению получаем, что $I^{k (\epsilon)}$ содержатся бесконечно много значений элементов последовательности, а значит и в $U_{\epsilon} (x^{*}).$ Получаем, что хотя бы один частичный предел существует.
+\end{proof}

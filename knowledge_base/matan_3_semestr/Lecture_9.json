@@ -1,0 +1,49 @@
+{
+  "units": [
+    {
+      "id": "D1",
+      "kind": "definition",
+      "title": "",
+      "statement": "Систему подмножеств $\\M$ множества $X$ называют \\textit{монотонным классом}, если: \\begin{itemize} \\item $\\forall \\{A_i\\} \\subset \\M$: $A_1 \\subset \\ldots \\subset A_i \\subset A_{i + 1} \\subset \\ldots \\hookrightarrow \\bigcup\\limits_{i = 1}^\\infty A_i \\in \\M$ (Расширяющаяся последовательность); \\item $\\forall \\{B_j\\} \\subset \\M$: $B_1 \\subset \\ldots \\supset B_j \\supset B_{j + 1} \\supset \\ldots \\hookrightarrow \\bigcap\\limits_{j = 1}^\\infty B_j \\in \\M$ (Сужающаяся последовательность). \\end{itemize}",
+      "proof": "",
+      "tags": [],
+      "source": "matan_3_semestr/Lecture_9.tex"
+    },
+    {
+      "id": "D2",
+      "kind": "definition",
+      "title": "",
+      "statement": "Мера, полученная стандартным продолжением $\\mu \\otimes \\nu$ с $\\PP$ на $\\MM \\otimes \\NN$, называется \\textit{произведением мер} $\\mu$ и $\\nu$, а полученное пространство $(X \\times Y, \\ \\MM \\otimes \\NN, \\ \\mu \\otimes \\nu)$~---~\\textit{произведением пространств с мерой}.",
+      "proof": "",
+      "tags": [],
+      "source": "matan_3_semestr/Lecture_9.tex"
+    },
+    {
+      "id": "D3",
+      "kind": "definition",
+      "title": "",
+      "statement": "Пусть $C \\in \\MM \\otimes \\NN$. Тогда \\begin{itemize} \\item $C_x = \\{y \\in Y \\mid (x, y) \\in C\\}$~---~\\textit{сечение первого рода}; \\item $C^y = \\{x \\in X \\mid (x, y) \\in C\\}$~---~\\textit{сечение второго рода}. \\end{itemize}",
+      "proof": "",
+      "tags": [],
+      "source": "matan_3_semestr/Lecture_9.tex"
+    },
+    {
+      "id": "T4",
+      "kind": "theorem",
+      "title": "О монотонном классе",
+      "statement": "Пусть есть $\\A$~---~алгебра подмножеств $X$, вложенная в некоторый монотонный класс $\\M$. Тогда $\\MM(\\A) \\subset \\M$.",
+      "proof": "",
+      "tags": [],
+      "source": "matan_3_semestr/Lecture_9.tex"
+    },
+    {
+      "id": "T5",
+      "kind": "theorem",
+      "title": "Принцип Кавальери",
+      "statement": "Пусть $(X, \\MM, \\mu)$ и $(Y, \\NN, \\nu)$~---~пространства с полными $\\sigma$-конечными мерами, а $(X \\times Y, \\ \\MM \\otimes \\NN, \\ \\mu \\otimes \\nu)$~---~их тензорное произведение. Тогда $\\forall C \\in \\MM \\otimes \\NN \\hookrightarrow$ \\begin{enumerate} \\item $C_x \\in \\NN$ для $\\mu$-почти всех $x \\in X$; \\item $x \\mapsto \\nu(C_x)$ измерима в широком смысле(на множестве 0 меры м.б. не определена); \\item $\\mu\\otimes\\nu(C) = \\int\\limits_X \\nu(C_x)d\\mu(x)$. \\end{enumerate} \\begin{minipage}{0.5\\textwidth} \\includegraphics[width=0.85\\textwidth]{images/Cavalery.jpg} \\end{minipage} \\hfill \\begin{minipage}{0.5\\textwidth}\\RaggedRight Геометрическая идея: если взять две фигуры и на каждом сечении их площади совпадают, то совпадают и объемы. Например из любого <<косого>> треугольника можно сделать прямоугольный треугольник и получить $S = \\frac{1}{2}ah$, поэтому у пирамид и конусов формула объема $V = \\frac{1}{3}Sh$. \\end{minipage}",
+      "proof": "",
+      "tags": [],
+      "source": "matan_3_semestr/Lecture_9.tex"
+    }
+  ]
+}

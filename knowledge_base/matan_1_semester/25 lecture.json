@@ -1,0 +1,121 @@
+{
+  "units": [
+    {
+      "id": "D1",
+      "kind": "definition",
+      "title": "",
+      "statement": "\\hypertarget{def7.16}{Определим \\textit{евклидову норму}, как $\\|x\\|_{e} := \\sqrt{\\text{<}x, x\\text{>}}$.}",
+      "proof": "",
+      "tags": [],
+      "source": "matan_1_semester/25 lecture.tex"
+    },
+    {
+      "id": "D2",
+      "kind": "definition",
+      "title": "",
+      "statement": "Под $\\| x\\|_2$ будем обозначать $\\displaystyle \\sqrt{\\sum_{k = 1}^{n} x_{k}^2}$.",
+      "proof": "",
+      "tags": [],
+      "source": "matan_1_semester/25 lecture.tex"
+    },
+    {
+      "id": "D3",
+      "kind": "definition",
+      "title": "",
+      "statement": "Пусть $(X, \\rho)$~---~метрическое пространство, $E \\subset X$~---~множество. Точка $x_{0} \\in \\E$ называется \\textit{внутренней}, если $$ \\exists \\epsilon > 0: B_{\\epsilon} (x_{0}) \\subset \\E.$$",
+      "proof": "",
+      "tags": [],
+      "source": "matan_1_semester/25 lecture.tex"
+    },
+    {
+      "id": "D4",
+      "kind": "definition",
+      "title": "",
+      "statement": "Пусть $(X, \\rho)$~---~метрическое пространство, $\\E \\subset X$~---~множество. \\textit{Внутренностью} $\\E$ будем называть множество всех внутренних точек $\\E$ и обозначать $\\text{int}\\E$.",
+      "proof": "",
+      "tags": [],
+      "source": "matan_1_semester/25 lecture.tex"
+    },
+    {
+      "id": "D5",
+      "kind": "definition",
+      "title": "",
+      "statement": "Пусть $(X, \\rho)$~---~метрическое пространство, $\\E \\subset X$~---~множество. \\textit{Замыканием} $\\E$ будем называть множество всех точек прикосновения и обозначать $\\text{cl}\\E$ или $\\overline{\\E}$.",
+      "proof": "",
+      "tags": [],
+      "source": "matan_1_semester/25 lecture.tex"
+    },
+    {
+      "id": "D6",
+      "kind": "definition",
+      "title": "",
+      "statement": "Множество $\\E$~---~открыто, если $\\E \\subset \\text{int}\\E \\Leftrightarrow \\E = \\text{int}\\E$.",
+      "proof": "",
+      "tags": [],
+      "source": "matan_1_semester/25 lecture.tex"
+    },
+    {
+      "id": "D7",
+      "kind": "definition",
+      "title": "",
+      "statement": "Множество $\\E$~---~замкнуто, если $\\text{cl}\\E \\subset \\E \\Leftrightarrow \\E = \\text{cl}\\E$.",
+      "proof": "",
+      "tags": [],
+      "source": "matan_1_semester/25 lecture.tex"
+    },
+    {
+      "id": "D8",
+      "kind": "definition",
+      "title": "",
+      "statement": "Пустое множество $\\varnothing$ и $X$ считаются и открытыми, и замкнутыми.",
+      "proof": "",
+      "tags": [],
+      "source": "matan_1_semester/25 lecture.tex"
+    },
+    {
+      "id": "D9",
+      "kind": "definition",
+      "title": "",
+      "statement": "Метрическое пространство $(X, \\rho)$ называется \\textit{топологически связным}, если его нельзя представить в виде непересекающегося (дизъюнктного) объединения двух и более множеств, которые одновременно и открыты, и замкнуты.",
+      "proof": "",
+      "tags": [],
+      "source": "matan_1_semester/25 lecture.tex"
+    },
+    {
+      "id": "T10",
+      "kind": "theorem",
+      "title": "",
+      "statement": "(Неравенство Коши-Буняковского-Шварца) Пусть ($\\E$, <$\\cdot$, $\\cdot$>)~---~евклидово пространство. Тогда справедливо $$ |\\text{<}x\\text{, }y\\text{>}| \\leq \\sqrt{\\text{<}x\\text{, }x\\text{>}} \\cdot \\sqrt{\\text{<}y\\text{, }y\\text{>}} \\quad \\forall x, y \\in \\E.$$",
+      "proof": "",
+      "tags": [],
+      "source": "matan_1_semester/25 lecture.tex"
+    },
+    {
+      "id": "T11",
+      "kind": "theorem",
+      "title": "",
+      "statement": "\\hypertarget{def7.16}{Объект}, который мы только что определили, действительно задает норму.",
+      "proof": "",
+      "tags": [],
+      "source": "matan_1_semester/25 lecture.tex"
+    },
+    {
+      "id": "T12",
+      "kind": "theorem",
+      "title": "",
+      "statement": "(Критерий евклидовости) Пусть $\\E = (\\E, \\| \\|)$. Норма $\\| \\|$ является евклидовой $\\Leftrightarrow$ выполнено тождество параллелограмма, то есть $$ \\| x + y\\|^2 + \\| x - y\\|^2 = 2\\| x\\|^2 + 2\\| y\\|^2,\\quad \\forall x, y \\in \\E.$$",
+      "proof": "",
+      "tags": [],
+      "source": "matan_1_semester/25 lecture.tex"
+    },
+    {
+      "id": "T13",
+      "kind": "theorem",
+      "title": "",
+      "statement": "Пусть $(X, \\rho)$~---~метрическое пространство, $\\E \\subset X$. Тогда \\begin{enumerate} \\item $\\text{int}\\E$~---~открытое множество $\\Leftrightarrow \\text{int}\\text{int}\\E = \\text{int}\\E$; \\item $\\text{cl}\\E$~---~замкнутое множество $\\Leftrightarrow\\text{cl}\\text{cl}\\E$. \\end{enumerate}",
+      "proof": "",
+      "tags": [],
+      "source": "matan_1_semester/25 lecture.tex"
+    }
+  ]
+}

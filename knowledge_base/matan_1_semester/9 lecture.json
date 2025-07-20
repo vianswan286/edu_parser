@@ -1,0 +1,112 @@
+{
+  "units": [
+    {
+      "id": "D1",
+      "kind": "definition",
+      "title": "",
+      "statement": "Пусть $f$: $\\mathring{U}^{+}_{\\delta_{0}} (x_{0}) \\mapsto \\R$, где $\\mathring{U}^{+}_{\\delta_{0}} (x_{0}) = (x_{0}, x_{0} + \\delta_{0})$. Будем говорить, что $A\\in \\Hat{\\R}$ является \\textit{правосторонним пределом $f$ в точке $x_{0}$}, если $ \\lim\\limits_{\\underset{x \\in \\mathring{U}^+_{\\delta_0} (x_0) }{x\\to x_0}} f (x) = A$, и записывать $\\lim\\limits_{x \\to x_{0} +0} f(x) = A$. Аналогично определяется определяется \\textit{левосторонний предел}.",
+      "proof": "",
+      "tags": [],
+      "source": "matan_1_semester/9 lecture.tex"
+    },
+    {
+      "id": "D2",
+      "kind": "definition",
+      "title": "",
+      "statement": "Функция называется \\textit{нестрого возрастающей (нестрого убывающей) на $X \\subset \\R,\\ X \\neq \\varnothing$}, если $$\\forall x_{1}, x_{2} \\in X: x_{1} < x_{2} \\Rightarrow f(x_{1}) \\leq f(x_{2}) \\ \\bigg(f(x_{1}) \\geq f(x_{2}) \\bigg)$$",
+      "proof": "",
+      "tags": [],
+      "source": "matan_1_semester/9 lecture.tex"
+    },
+    {
+      "id": "D3",
+      "kind": "definition",
+      "title": "",
+      "statement": "Функция $f$: $X \\mapsto \\R$ называется \\textit{монотонной на $X$}, если либо нестрого возрастает, либо нестрого убывает.",
+      "proof": "",
+      "tags": [],
+      "source": "matan_1_semester/9 lecture.tex"
+    },
+    {
+      "id": "D4",
+      "kind": "definition",
+      "title": "",
+      "statement": "Аналогично можно ввести понятия \\textit{строгого убывания на $X$, строгого возрастания на $X$, строгой монотонности на $X$}.",
+      "proof": "",
+      "tags": [],
+      "source": "matan_1_semester/9 lecture.tex"
+    },
+    {
+      "id": "D5",
+      "kind": "definition",
+      "title": "",
+      "statement": "$$\\underset{x \\in X}{\\sup} f(x) := \\sup\\{ f(x): \\ x \\in X\\}$$ $$\\underset{x \\in X}{\\inf} f(x) := \\inf \\{ f(x): \\ x \\in X\\}$$ $$\\underset{x \\in X}{max} f(x) := max \\{ f(x): \\ x \\in X\\}, \\text{ если он существует}$$ $$\\underset{x \\in X}{min} f(x) := min \\{ f(x):\\ x \\in X\\}, \\text{ если он существует}$$ Запишем в кванторах: $$\\underset{x \\in X}{\\sup} f(x) = M \\in \\overline{\\R} \\Leftrightarrow \\begin{cases} f(x) \\leq M \\ \\ \\forall x\\in X\\\\ \\forall M' < M \\ \\exists x' \\in X: \\ f(x') > M' \\end{cases}$$ Аналогично для инфимума.",
+      "proof": "",
+      "tags": [],
+      "source": "matan_1_semester/9 lecture.tex"
+    },
+    {
+      "id": "D6",
+      "kind": "definition",
+      "title": "",
+      "statement": "Пусть $f: X \\mapsto \\R,\\ x_{0}$~---~предельная точка для $X$. $$ \\lim\\limits_{\\overline{\\underset{x \\in X}{x\\to x_0}}} f(x) := \\underset{\\delta > 0}{\\sup}\\left\\{ \\underset{x\\in \\mathring{U}_{\\delta} (x_{0}) \\cap X}{\\inf} f(x)\\right\\} \\in \\overline{\\R} $$ $$ \\overline{\\lim\\limits_{\\underset{x \\in X}{x\\to x_0}}} f(x) := \\underset{\\delta > 0}{\\inf}\\left\\{ \\underset{x\\in \\mathring{U}_{\\delta} (x_{0}) \\cap X}{\\sup} f(x)\\right\\} \\in \\overline{\\R}$$ Также введём обозначения: $\\underline{g_{x_{0}}} (\\delta) = \\underset{x\\in \\mathring{U}_{\\delta} (x_{0}) \\cap X}{\\inf} f (x)$ и $\\overline{g_{x_{0}}} (\\delta) = \\underset{x\\in \\mathring{U}_{\\delta} (x_{0}) \\cap X}{\\sup} f (x).$",
+      "proof": "",
+      "tags": [],
+      "source": "matan_1_semester/9 lecture.tex"
+    },
+    {
+      "id": "T7",
+      "kind": "theorem",
+      "title": "",
+      "statement": "\\hypertarget{thm4.3}{(Критерий Коши)} Пусть $f$: $\\mathring{U}_{\\delta_0} (x_0) \\mapsto \\R.$ Следующие условия эквивалентны: \\begin{enumerate} \\item $f$ удовлетворяет условию Коши в точке $x_0$; \\item $\\exists \\lim\\limits_{x\\to x_{0}} f (x) = a,$ $a \\in \\R$. \\end{enumerate}",
+      "proof": "",
+      "tags": [],
+      "source": "matan_1_semester/9 lecture.tex"
+    },
+    {
+      "id": "T8",
+      "kind": "theorem",
+      "title": "",
+      "statement": "\\hypertarget{thm4.4}{(Принцип локализации)} Пусть $\\exists \\overline{\\delta} \\in (0, +\\infty)$: $f(x) = g(x) \\ \\forall x\\in \\mathring{U}_{\\overline{\\delta}} (x_0)$. Тогда $\\exists \\lim\\limits_{x\\to x_0} f (x) \\Leftrightarrow \\exists \\lim\\limits_{x\\to x_0} g (x).$ И если они существуют, то равны.",
+      "proof": "",
+      "tags": [],
+      "source": "matan_1_semester/9 lecture.tex"
+    },
+    {
+      "id": "T9",
+      "kind": "theorem",
+      "title": "",
+      "statement": "\\hypertarget{thm4.5}{(Теорема Вейерштрасса)} Пусть $-\\infty < a < b < +\\infty$. Пусть $f$ нестрого возрастает на $(a, b)$. \\hypertarget{prop4.1-2}{Тогда} $$ \\exists \\lim\\limits_{x\\to b -0} f (x) = \\underset{x \\in (a, b)}{\\sup} f(x) \\ \\quad (1) $$ $$ \\exists \\lim\\limits_{x\\to a +0} f (x) = \\underset{x \\in (a, b)}{\\inf} f(x) \\ \\quad (2) $$ \\begin{note} \\label{(2)} $f \\uparrow \\text{на } (a, b)$~---~нестрогое возрастание $f \\downarrow \\text{на } (a, b)$~---~нестрогое убывание \\end{note} \\begin{note} Для односторонних пределов доказательство аналогично. Интервал $(a, b)$ заменяется на $(x_{0},\\ x_{0} \\pm \\delta)$. \\end{note}",
+      "proof": "",
+      "tags": [],
+      "source": "matan_1_semester/9 lecture.tex"
+    },
+    {
+      "id": "T10",
+      "kind": "theorem",
+      "title": "",
+      "statement": "Пусть $X \\neq \\varnothing$, $x_{0}$~---~предельная точка. Пусть $\\begin{cases} \\exists \\lim\\limits_{\\underset{x \\in X}{x\\to x_0}} f_{1} (x) = a_{1} \\in \\R, \\\\ \\exists \\lim\\limits_{\\underset{x \\in X}{x\\to x_0}} f_{2} (x) = a_{2} \\in \\R, \\\\ \\end{cases}$ Тогда 1. $\\lim\\limits_{\\underset{x \\in X}{x\\to x_0}} \\left(f_{1} (x) \\pm f_{2} (x)\\right) = a_{1} \\pm a_{2}$; \\ 2. $\\lim\\limits_{\\underset{x \\in X}{x\\to x_0}} \\left(f_{1} (x) \\cdot f_{2} (x) \\right) = a_{1} \\cdot a_{2}$.",
+      "proof": "",
+      "tags": [],
+      "source": "matan_1_semester/9 lecture.tex"
+    },
+    {
+      "id": "T11",
+      "kind": "theorem",
+      "title": "",
+      "statement": "\\hypertarget{thm4.7}{(О трёх функциях или о двух милиционерах)} Пусть $f, g, h: X \\mapsto \\R, x_{0}$~---~предельная точка для $X$. Пусть $\\exists \\lim\\limits_{\\underset{x \\in X}{x\\to x_0}} f(x) = \\lim\\limits_{\\underset{x \\in X}{x\\to x_0}} g(x) = A, \\ A \\in \\overline{\\R}.$ Пусть $f(x) \\leq h(x) \\leq g(x) \\ \\ \\forall x\\in X.$ Тогда $\\exists \\lim\\limits_{\\underset{x \\in X}{x\\to x_0}} h(x) = A.$",
+      "proof": "",
+      "tags": [],
+      "source": "matan_1_semester/9 lecture.tex"
+    },
+    {
+      "id": "T12",
+      "kind": "theorem",
+      "title": "",
+      "statement": "\\hypertarget{thm4.8}{(О предельном переходе в неравестве)} Пусть $f, g: X \\mapsto \\R, x_{0}$~---~предельная точка для $X$. Пусть $ \\begin{cases} \\exists \\lim\\limits_{\\underset{x \\in X}{x\\to x_0}} f(x) = A \\in \\overline{\\R};\\\\ \\exists \\lim\\limits_{\\underset{x \\in X}{x\\to x_0}} g(x) = B \\in \\overline{\\R}. \\end{cases}$ Тогда, если $ f(x) \\leq g(x) \\ \\ \\forall x\\in X \\Rightarrow \\ A \\leq B.$",
+      "proof": "",
+      "tags": [],
+      "source": "matan_1_semester/9 lecture.tex"
+    }
+  ]
+}

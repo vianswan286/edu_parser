@@ -1,0 +1,122 @@
+\section{Степенные ряды}
+
+\begin{lemma}
+    Пусть $\{c_k\} \subset \mathbb{C} \setminus \{0\}$. Пусть $\exists \lim\limits_{k \rightarrow +\infty} \dfrac{|c_{k + 1}|}{|c_k|} \in [0, +\infty]$. Тогда если $m, n \in \N$, то радиус сходимости ряда $\sum\limits_{k = 1}^{\infty}c_kz^{km + n}$ можно вычислять по формуле $\dfrac{1}{R_{\text{сх}}} = \lim\limits_{k \rightarrow +\infty} \left(\dfrac{|c_{k + 1}|}{|c_k|} \right)^{\frac{1}{m}}$
+\end{lemma}
+\begin{proof}
+    Зафиксируем $z \neq 0$. 
+    $$
+    \dfrac{|c_{k + 1} z^{(k + 1)m + n}|}{|c_kz^{km + n}|} = \dfrac{|c_{k + 1}|}{|c_k|} \cdot |z^m| \ \forall k \in \N
+    $$
+    Пусть $\frac{1}{R_1} = \left( \lim\limits_{k \rightarrow +\infty } \frac{|c_{k + 1}|}{|c_k|}\right) ^ {\frac{1}{m}}$ и покажем, что $R_1 = R_{\text{сх}}$
+
+    \noindent Если $\lim\limits_{k \rightarrow +\infty } \frac{|c_{k + 1}|}{|c_k|} |z|^m = q < 1$, то ряд сходится в силу признака Даламбера в предельной форме. 
+
+    \noindent Если $\lim\limits_{k \rightarrow +\infty } \frac{|c_{k + 1}|}{|c_k|} = Q > 1$, то $|c_k z^{km + n}| \nrightarrow 0, k \rightarrow +\infty \Rightarrow \sum\limits_{k = 1}^{\infty} c_kz^{km + n}$
+
+    \noindent Посмотрим на второй случай: $|z|^m| = \dfrac{q}{\lim\limits_{k \rightarrow +\infty } \frac{|c_{k + 1}|}{|c_k}|} \Rightarrow |z| = \left( \dfrac{q}{\lim\limits_{k \rightarrow +\infty } \frac{|c_{k + 1}|}{|c_k}|} \right)^{\frac{1}{m}} \Rightarrow |z| < R_1$ ~---~ ряд сходится. $|z| > R_1$ ~---~ ряд расходится.
+
+    \noindent По теореме о круге сходимости, если $|z| < R_{\text{сх}}$, то ряд $\sum\limits_{k = 1}^{\infty} c_kz^{k}$ ~---~ сходится (и даже абсолютно). Если $|z| > R_{\text{сх}}$, то $\sum\limits_{k = 1}^{\infty} c_kz^{k}$ -- расходится. Тогда $R_{\text{сх}} = R_1$ 
+\end{proof}
+
+\subsection{Почленное интегрирование и дифференцирование степенных рядов}
+
+\begin{lemma}
+    Радиус сходимости $\sum\limits_{k = 0}^{\infty} c_kz^{k}$ совпадает с радиусом сходимости ряда $\sum\limits_{k = 1}^{\infty} kc_kz^{k - 1}$ и совпадает с радиусом сходимости ряда $\sum\limits_{k = 0}^{\infty} \dfrac{c_kz^{k + 1}}{k + 1}$
+\end{lemma}
+
+\begin{proof}
+    1) Рассмотрим два ряда: $\sum\limits_{k = 0}^{\infty} c_kz^{k}$ и $\sum\limits_{k = 1}^{\infty} kc_kz^{k}$. Покажем, что у них одинаковый радиус сходимости. 
+
+    \noindent $\overline{\lim\limits_{k \rightarrow \infty}} \sqrt[k]{|kc_k|} = \overline{\lim\limits_{k \rightarrow \infty}} \sqrt[k]{|k|} \cdot \overline{\lim\limits_{k \rightarrow \infty}} \sqrt[k]{|c_k|} = \frac{1}{R_{\text{сх}}}$
+
+    \noindent Мы можем так писать, так как $\exists \ \overline{\lim\limits_{k \rightarrow \infty}} \sqrt[k]{|c_k|} = \frac{1}{R_{\text{сх}}}$ и $\lim\limits_{k \rightarrow \infty} \sqrt[k]{|k|} = \lim\limits_{k \rightarrow \infty} e^{\frac{\ln k}{k}} = 1$
+
+    \noindent 2) Так как случай $z = 0$ ~---~ тривиальный, рассмотрим случай $z \neq 0$. Рассмотрим частичные суммы: $S_n = \sum\limits_{k = 1}^\infty kc_kz^{k - 1}$ и $\widetilde{S_n} = \sum\limits_{k = 1}^\infty kc_kz^{k}$. Заметим, что $\widetilde{S_n} = S_n \cdot z$ и наоборот $S_n = \frac{\widetilde{S_n}}{z}$.
+
+    \noindent $\exists \lim\limits_{n\rightarrow \infty }S_n \Leftrightarrow \exists \lim\limits_{n \rightarrow \infty }\widetilde{S_n} \in \mathbb{C} \Rightarrow$ из теоремы о круге сходимости получаем, что $R_{\text{сх}}$ ряда $\sum\limits_{k = 1}^\infty kc_kz^{k - 1}$ совпадает с радиусом сходимости исходного ряда $\sum\limits_{k = 1}^\infty c_kz^{k}$
+
+    \noindent 3) Заметим, что исходный ряд $\sum\limits_{k = 0}^\infty c_kz^{k}$ получается 
+    "формальным"  дифференцированием из ряда $\sum\limits_{k = 0}^\infty \frac{c_kz^{k + 1}}{k + 1}$. В силу только что доказанного, получаем, что радиусы сходимости рядов $\sum\limits_{k = 0}^\infty c_kz^{k}$ и $\sum\limits_{k = 0} ^\infty \frac{c_k z^{k + 1}}{k + 1}$ совпадают
+\end{proof}
+
+Теперь будем работать с вещественными степенными рядами. 
+
+\begin{theorem} [о почленном интегрировании и дифференцировании степенного ряда]
+    Пусть $\{a_k\} \subset \R $ и $x_0 \in \R$. Тогда степенной ряд $\sum\limits_{k = 0}^\infty a_k (x - x_0)^k$
+    
+    \noindent 1) Можно почленно интегрировать внутри интервала сходимости, т.е. если $f(x) = \sum\limits_{k = 0}^\infty a_k (x - x_0)^k$, то $\forall  x \in (x_0 - R_{\text{сх}}, x_0 + R_{\text{сх}}) \hookrightarrow \int\limits_{x_0}^{x} f(t) dt = \sum\limits_{k = 0}^\infty \frac{a_k}{k + 1} (x - x_0)^{k + 1}$
+
+    \noindent 2) Можно почленно дифференцировать внутри интервала сходимости, т.е. если $f(x) = \sum\limits_{k = 0}^\infty a_k(x - x_0)^k$, то $\forall n \in \N$ и $\forall  x \in (x_0 - R_{\text{сх}}, x_0 + R_{\text{сх}}) \hookrightarrow $ $\Rightarrow \ f^{(n)}(x) = \sum\limits_{k = n}^\infty a_k(x - x_0)^{k - n}\cdot k(k - 1)\dots (k - n + 1)$
+
+    \noindent 3) Если $f(x) = \sum\limits_{k = 0}^\infty a_k (x - x_0)^k$, то $a_k = \frac{f^{k}(x_0)}{k!}$
+\end{theorem}
+
+\begin{proof}
+    1) $a_k(x - x_0)^k$ -- непрерывная функция аргумента $x, \ \forall k \in \N$
+
+    \noindent Из теоремы о круге сходимости следует $\forall  r \in (0, R_{\text{сх}}$ на $[x_0 - r, x_0 + r]$ ряд $\sum\limits_{k = 0}^\infty a_k(x -x_0)^k$ равномерно сходится $\Rightarrow \forall  x \in [x_0 - r, x_0 + r]$ можно почленно проинтегрировать ряд (в силу свойств равномерно сходящихся рядов)
+
+    $\noindent \int\limits_{x_0}^{x}f(t)dx = \sum\limits_{k = 0}^\infty a_k \int_{x_0}^{x} (t - x_0)^k dt = \sum\limits_{k = 0}^\infty \frac{a_k}{k + 1}(t - x_0)^{k + 1} \bigg|_{x_0}^x = \sum\limits_{k = 0}^\infty \frac{a_k}{k + 1}(x - x_0)^{k + 1}$
+
+    \noindent 2) Зафиксируем $\forall  r \in (0, R_{\text{сх}}$. По предыдущей лемме ряд $\sum\limits_{k = 0}^\infty ka_k(x - x_0)^{k - 1}$ имеет тот же радиус сходимости, что и исходный ряд. Тогда ряд равномерно сходится на отрезке $[x_0 - r, x_0 + r]$. По теореме о дифференцировании ряда $\forall  x \in (x_0 - r, x_0 + r) \ \exists f'(x) = \sum\limits_{k = 0}^\infty ka_k(x - x_0)^k$. Далее по индукции получаем искомое.  Получается, что $f(x) = \sum\limits_{k = 0}^\infty a_k(x - x_0)^k$ бесконечно дифференцируема на интервале $(x_0 - R_{\text{сх}}, x_0 + R_{\text{сх}})$
+
+    \noindent 3) Пусть $f(x) = \sum\limits_{k = 0}^\infty a_k(x - x_0)^k \ \forall  x \in (x_0 - R_{\text{сх}}, x_0 + R_{\text{сх}})$. Покажем, что $a_k = \frac{f^{(k)}(x_0)}{k!}$. При $k = 0$ ~---~ выполняется. 
+
+    \noindent Пусть $n \neq 0. \ \ \forall x \in (x_0 - R_{\text{сх}}, x_0 + R_{\text{сх}}) \hookrightarrow f^{(n)}(x) = \sum\limits_{k = 0}^\infty a_k \cdot k(k - 1)\dots(k - n + 1)(x - x_0)^{k - n}$. Подставим $x = x_0$. Если $k > n$, то $(x - x_0)^{k - n} = 0$. Иначе $f^{(n)}(x) = a_k \cdot n(n - 1)\dots(n - n + 1) = a_nn! \Rightarrow a_k = \frac{f^{n}(x_0)}{n!}$
+\end{proof}
+
+\subsection{Ряды Тейлора}
+\begin{reminder}
+    Если $\exists f^{(n)}(x_0) \in \R$: 
+
+    \noindent $T_{x_0}^n[f](x) = \sum\limits_{k = 0}^n \frac{f^{(k)(x_0)}}{k!}(x - x_0)^k$ ~---~ полином Тейлора. 
+
+    \noindent $r^n_{x_0}[f](x) = f(x) - T_{x_0}^n[f](x)$ ~---~ формальный Тейлоровский остаток. 
+\end{reminder}
+
+\noindent В ряде Тейлора $n \rightarrow \infty$, а $x$ ~---~ заморожен. В формуле Тейлора $n$ ~---~ заморожен, а $x \rightarrow x_0$ 
+
+\begin{definition}
+    Будем говорить, что $f$ бесконечно дифференцируема на интервале $(a, b)$ и писать $f \in \mathcal{C}^{\infty}((a, b))$, если $\forall n \in \N, \ \forall x \in (a, b) \ \exists  f^{(n)}(x) \in \R$
+\end{definition}
+
+\begin{definition}
+    Пусть $x_0 \in \R$ и $\forall n \in \N \exists f^{(n)}(x_0) \in \R$ ряд $\sum\limits_{k = 0}^\infty \frac{f^{(k)}}{k!}(x - x_0)^k$ ~---~ ряд Тейлора функции $f$ c центром в точке $x_0$.
+\end{definition}
+
+\begin{definition}
+    Будем говорить, что $f : \mathbb{C} \rightarrow \mathbb{C}$ ~---~ регулярна $\Rightarrow$ аналитична $\Rightarrow$ голоморфна в точке $z_0 \in \mathbb{C}$, если $\exists \delta > 0 : \forall z \in B_{\delta}(z_0) \hookrightarrow f(z) = \sum\limits_{n = 0}^\infty \frac{f^{(n)}(z_0)}{n!}(z - z_0)^n$
+\end{definition}
+
+\begin{definition}
+    Будем говорить, что $f$ ~---~ аналитична (регулярна, голоморфна) в открытом множестве $\Omega \subset \mathbb{C}$, если она аналитична в $\forall z \in \Omega$.
+\end{definition}
+
+\noindent $\mathcal{A}(\Omega)$ ~---~ множество аналитичных в $\Omega$ функций. 
+
+\begin{example}[Бесконечно дифференцируемая, но не аналитичная функция]
+\begin{equation*} f(x) = 
+    \begin{cases}
+    e^{-\frac{1}{x^2}}, x \neq 0 \\ 
+    0, x = 0
+    \end{cases}  
+\end{equation*} 
+$f'(0) = \lim\limits_{x \rightarrow 0} \frac{e^{-\frac{1}{x^2}}}{x} = (t = \frac{1}{x}) = \lim\limits_{t \rightarrow \infty} t \cdot e^{-t^2} = \lim\limits_{t \rightarrow \infty} \frac{t}{e^{t^2}} = (\text{Правило Лопиталя}) = \lim\limits_{t \rightarrow \infty} = \lim\limits_{t \rightarrow \infty} \frac{1}{2te^{t^2}} = 0$
+
+\noindent Если $x \neq 0: f'(x) = \frac{2e^{-\frac{1}{x^2}}}{x^3}$. Получаем производную: 
+
+\begin{equation*} f'(x) = 
+    \begin{cases}
+    \frac{2}{x^3}e^{-\frac{1}{x^2}}, x \neq 0 \\ 
+    0, x = 0
+    \end{cases}  
+\end{equation*} 
+Далее по индукции $f^{(n)}(x) = P_{3n}(\frac{1}{x}) e^{-\frac{1}{x^2}} \forall x \in \R \setminus {0}, f^{(n)}(0) = 0, \forall n \in \N$. Ряд Тейлора с центром в точке 0 есть тождественный 0. Но функция не есть тождественный ноль. При этом $f(x) = o(x^n), x \rightarrow 0 \forall n \in \N$
+\end{example}
+
+\begin{theorem}[Достаточные условия аналитичности функции в точке]
+    Пусть $f \in \mathcal{C}^{\infty}((x_0 - \delta, x_0 + \delta)), \delta > 0$. Пусть $\exists M > 0 \sup\limits_{x \in (x_0 - \delta, x_0 + \delta)} |f^{(n)}(x)| \le M^n, \forall n \in \N \ (\star)$. 
+    
+    \noindent Тогда $\forall x \in (x_0 - \delta, x_0 + \delta) f(x) = \sum\limits_{k = 0}^{\infty} \frac{f^{(k)}(x_0)}{k!}(x - x_0)^k$, в частности $f \in \mathcal{A}(x_0)$
+\end{theorem}

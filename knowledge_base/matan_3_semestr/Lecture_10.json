@@ -1,0 +1,67 @@
+{
+  "units": [
+    {
+      "id": "D1",
+      "kind": "definition",
+      "title": "",
+      "statement": "Пусть $f$: $X \\times Y \\rightarrow \\overline{\\R}$. Зафиксируем одну из переменных и оставим вторую переменную. Это буквально значение функции на сечении. Определим следующие функции: \\begin{minipage}{0.5\\textwidth}\\raggedleft \\[\\forall x \\in X:\\quad f_x (\\cdot): Y \\rightarrow \\overline{\\R}, \\ y \\mapsto f(x, y);\\] \\[\\forall y \\in Y: \\quad f^y(\\cdot): X \\rightarrow \\overline{\\R}, \\ x \\mapsto f(x, y).\\] \\end{minipage} \\begin{minipage}{0.5\\textwidth} \\includegraphics[width=0.4\\textwidth]{images/Slice.png} \\end{minipage} \\hfill%",
+      "proof": "",
+      "tags": [],
+      "source": "matan_3_semestr/Lecture_10.tex"
+    },
+    {
+      "id": "T2",
+      "kind": "theorem",
+      "title": "Тонелли",
+      "statement": "Пусть $f$~---~неотрицательная $\\MM\\otimes\\NN$-измеримая функция на $X \\times Y$. Тогда верны следующие утверждения:\\\\ (!) Важно, что функция неотрицательная. \\begin{enumerate} \\item[1а)] Для $\\mu$-п.в. $x \\in X \\hookrightarrow f_x$~---~измерима на $Y$; \\item[1б)] Для $\\nu$-п.в. $y \\in Y \\hookrightarrow f^y$~---~измерима на $X$. \\item[2а)] $\\phi: x \\mapsto \\int\\limits_Y f_xd\\nu$~---~измеримая в широком смысле функция на $X$; \\item[2б)] $\\psi: y \\mapsto \\int\\limits_X f^yd\\mu$~---~измеримая в широком смысле функция на $Y$. \\item[3)] Справедливо равенство: \\[\\int\\limits_{X \\times Y}f(x, y)d(\\mu\\otimes\\nu)(x, y) = \\int\\limits_X\\biggl(\\int\\limits_Y f_x (y) d\\nu (y) \\biggr)d\\mu(x) = \\int\\limits_Y\\biggl(\\int\\limits_X f^y(x)d\\mu(x)\\biggr)d\\nu(y).\\] \\end{enumerate}",
+      "proof": "",
+      "tags": [],
+      "source": "matan_3_semestr/Lecture_10.tex"
+    },
+    {
+      "id": "T3",
+      "kind": "theorem",
+      "title": "Фубини",
+      "statement": "Пусть $f$~---~интегрируемая на $X \\times Y$ по $\\mu \\otimes \\nu$ функция $f \\in \\widetilde{L_1}(X \\times Y, \\mu \\otimes \\nu)$. То есть $\\int\\limits_{X\\times Y} f d(\\mu \\otimes \\nu) < +\\infty$. Тогда справедливо следующее: \\begin{enumerate} \\item[1а)] Для $\\mu$-п.в. $x \\in X \\hookrightarrow f_x$~---~интегрируема на $Y$; \\item[1б)] Для $\\nu$-п.в. $y \\in Y \\hookrightarrow f^y$~---~интегрируема на $X$. \\item[2а)] $\\phi: x \\mapsto \\int\\limits_Y f_xd\\nu$~---~интегрируема по $\\mu$; \\item[2б)] $\\psi: y \\mapsto \\int\\limits_X f^yd\\mu$~---~интегрируема по $\\nu$. \\item[3)] Верно следующее равенство: \\[\\int\\limits_{X \\times Y}fd\\mu\\otimes\\nu = \\int\\limits_X \\phi d\\mu = \\int\\limits_Y \\psi d\\nu.\\] \\end{enumerate}",
+      "proof": "",
+      "tags": [],
+      "source": "matan_3_semestr/Lecture_10.tex"
+    },
+    {
+      "id": "T4",
+      "kind": "theorem",
+      "title": "",
+      "statement": "Пусть $m, n \\in \\N$. Тогда $\\LL^n \\otimes \\LL^m = \\LL^m \\otimes \\LL^n = \\LL^{m + n}$ и $\\MM^n \\otimes \\MM^m = \\MM^m \\otimes \\MM^n = \\MM^{m + n}$.",
+      "proof": "",
+      "tags": [],
+      "source": "matan_3_semestr/Lecture_10.tex"
+    },
+    {
+      "id": "T5",
+      "kind": "theorem",
+      "title": "",
+      "statement": "Пусть $\\mathcal{O}$ это открытое в $\\R^n$ множество. Пусть $F \\in \\mathcal{C}^1(\\mathcal{O}, \\R^n)$. Пусть $E \\subset \\mathcal{O}$~---~$\\LL^n$-измеримо. Тогда $F(E)$~---~измеримо по Лебегу.",
+      "proof": "",
+      "tags": [],
+      "source": "matan_3_semestr/Lecture_10.tex"
+    },
+    {
+      "id": "T6",
+      "kind": "theorem",
+      "title": "",
+      "statement": "Пусть $E$~---~измеримое по Лебегу в $\\R^n$. Тогда $\\forall v \\in \\R^n$ верно следующее: $v + E$~---~измеримо и $\\LL^n(v + E) = \\LL^n(E)$.",
+      "proof": "",
+      "tags": [],
+      "source": "matan_3_semestr/Lecture_10.tex"
+    },
+    {
+      "id": "T7",
+      "kind": "theorem",
+      "title": "",
+      "statement": "Любая трансляционно инвариантная мера в $\\R^n$ совпадает с мерой Лебега с точностью до константы. Пусть $\\mu$~---~трансляционно инвариантная мера, определённая на $\\MM^n$ и конечная на компактах. Тогда \\[\\forall E \\in \\MM^n \\hookrightarrow \\mu(E) = \\mu \\big([0, 1)^n \\big)\\cdot\\LL^n(E) = k \\cdot \\LL^n(E) \\]",
+      "proof": "",
+      "tags": [],
+      "source": "matan_3_semestr/Lecture_10.tex"
+    }
+  ]
+}

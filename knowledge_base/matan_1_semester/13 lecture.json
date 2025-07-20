@@ -1,0 +1,49 @@
+{
+  "units": [
+    {
+      "id": "D1",
+      "kind": "definition",
+      "title": "",
+      "statement": "Корень n-ой степени:$ \\ f^{-1}(x^{n}) := \\sqrt[n]{x}$.",
+      "proof": "",
+      "tags": [],
+      "source": "matan_1_semester/13 lecture.tex"
+    },
+    {
+      "id": "D2",
+      "kind": "definition",
+      "title": "",
+      "statement": "\\hypertarget{def4.33}{Пусть $m \\in \\N$, $n \\in \\N$, $\\cfrac{m}{n}$~---~ несократимая дробь}. $$f(x) = x^{\\frac{m}{n}} := \\big(\\sqrt[n]{x}\\big)^{m}, \\quad x\\in [0,+\\infty).$$",
+      "proof": "",
+      "tags": [],
+      "source": "matan_1_semester/13 lecture.tex"
+    },
+    {
+      "id": "D3",
+      "kind": "definition",
+      "title": "",
+      "statement": "$x^{-\\frac{m}{n}} := \\cfrac{1}{\\big(\\sqrt[n]{x}\\big)^{m}}, \\quad x\\in (0,+\\infty).$",
+      "proof": "",
+      "tags": [],
+      "source": "matan_1_semester/13 lecture.tex"
+    },
+    {
+      "id": "T4",
+      "kind": "theorem",
+      "title": "",
+      "statement": "Последовательность: $$ x_{n} = \\left( 1 + \\cfrac{1}{n}\\right)^{n+1} \\quad n \\in \\N $$ ограничена снизу и монотонно не возрастает.",
+      "proof": "",
+      "tags": [],
+      "source": "matan_1_semester/13 lecture.tex"
+    },
+    {
+      "id": "T5",
+      "kind": "theorem",
+      "title": "",
+      "statement": "Пусть $a > 0$. Функция $f(x) = a^{x}$ непрерывна в каждой точке числовой прямой.",
+      "proof": "",
+      "tags": [],
+      "source": "matan_1_semester/13 lecture.tex"
+    }
+  ]
+}

@@ -1,0 +1,130 @@
+{
+  "units": [
+    {
+      "id": "D1",
+      "kind": "definition",
+      "title": "",
+      "statement": "Конечно-аддитивной мера $\\mu$ на полукольце $\\PP$ подмножеств множества $X$ называется \\underline{$\\sigma$-конечной}, если \\[ X = \\bigcup_{n = 1}^{\\infty}{P_n} \\in \\PP~~\\forall \\ \\text{и} \\ \\mu(P_n) < +\\infty~~\\forall n \\in \\mathbb{N}. \\] Если же $\\mu(X) < +\\infty$, то мера называется \\underline{конечной}.",
+      "proof": "",
+      "tags": [],
+      "source": "matan_3_semestr/Lecture_3.tex"
+    },
+    {
+      "id": "D2",
+      "kind": "definition",
+      "title": "",
+      "statement": "Тройка $(X, {\\MM}, \\mu)$ называется \\underline{\\textit{измеримым пространством}}, если: \\begin{itemize} \\item $X$~---~абстрактное множество. \\item $\\MM$~---~$\\sigma$-алгебра подмножеств множества $X$. \\item $\\mu$~---~счетно-аддитивная неотрицательная функция на этой $\\sigma$-алгебре, то есть $\\mu : \\MM \\longrightarrow [0, +\\infty]$. \\end{itemize} Функция $\\mu$ называется мерой на этой $\\sigma$-алгебре, а сама $\\MM$ называется $\\sigma$-алгеброй измеримых подмножеств.",
+      "proof": "",
+      "tags": [],
+      "source": "matan_3_semestr/Lecture_3.tex"
+    },
+    {
+      "id": "D3",
+      "kind": "definition",
+      "title": "",
+      "statement": "Пусть $(X, {\\MM}, \\mu)$ --- измеримое пространство. Мера $\\mu$ называется \\underline{полной}, если \\[\\forall E \\in \\MM \\ \\text{из того, что} \\ \\mu(E) = 0 \\Longrightarrow \\ E' \\in \\MM \\quad \\forall E' \\subset E. \\]",
+      "proof": "",
+      "tags": [],
+      "source": "matan_3_semestr/Lecture_3.tex"
+    },
+    {
+      "id": "D4",
+      "kind": "definition",
+      "title": "",
+      "statement": "Пусть $\\PP$ --- полукольцо подмножеств множества $X$. Пусть $\\mu$ --- счетно-аддитивная мера на $\\PP$. Для всякого множества $E \\subset X$ определим его \\textit{верхнюю меру} по Каратеодори равенством: \\[ \\mu^*(E) := \\inf_{E \\subset \\bigcup\\limits_{j = 1}^{\\infty}{P_j}} \\Bigg\\{\\sum\\limits_{j = 1}^{\\infty}{\\mu(P_j)},~~~~{\\{P_j\\} \\subset \\PP} \\Bigg\\}. \\label{def:mu} \\] \\remark Если ни одного такого покрытия Е не существует, то формально считаем $\\mu^*(E) = +\\infty$.",
+      "proof": "",
+      "tags": [],
+      "source": "matan_3_semestr/Lecture_3.tex"
+    },
+    {
+      "id": "D5",
+      "kind": "definition",
+      "title": "",
+      "statement": "Применим к $\\PP_n$ конструкцию продолжения по Каратеодори и получим верхнюю меру: \\[ \\mu^*_n(E) := \\inf \\Bigg\\{\\sum\\limits_{j = 1}^{\\infty}{\\mu(P_j)}:{\\{P_j\\} \\subset \\PP,\\ E \\subset \\bigcup\\limits_{j = 1}^{\\infty}{P_j}} \\Bigg\\} \\text{--- верхняя мера Лебега в } \\R^n. \\label{def:mu} \\]",
+      "proof": "",
+      "tags": [],
+      "source": "matan_3_semestr/Lecture_3.tex"
+    },
+    {
+      "id": "D6",
+      "kind": "definition",
+      "title": "",
+      "statement": "Минимальная $\\sigma$-алгебра, порожденная полукольцом ячеек $\\PP_n$, называется борелевской сигма алгеброй $\\B(\\R^n)$ в $\\R^n$",
+      "proof": "",
+      "tags": [],
+      "source": "matan_3_semestr/Lecture_3.tex"
+    },
+    {
+      "id": "D7",
+      "kind": "definition",
+      "title": "",
+      "statement": "Примерим рассуждения предыдущего параграфа к мере $\\mu$ на полукольце $\\PP_n$ ячеек. Мы получим верхнюю меру $\\mu^*$, которая породит $\\MM_n$ --- класс всех измеримых множеств в $\\R^n$. Мы доказывали, что продолжение по Каратеодори на борелевской сигма алгебре единственно. Минимальная сигма алгебра содержится в сигма алгебре измеримых $\\Longrightarrow \\B(\\R^n) \\subset \\MM_n$",
+      "proof": "",
+      "tags": [],
+      "source": "matan_3_semestr/Lecture_3.tex"
+    },
+    {
+      "id": "D8",
+      "kind": "definition",
+      "title": "",
+      "statement": "Сужение $\\mu^*$ на $\\MM_n$ мы будем обозначать $\\LL^n$",
+      "proof": "",
+      "tags": [],
+      "source": "matan_3_semestr/Lecture_3.tex"
+    },
+    {
+      "id": "T9",
+      "kind": "theorem",
+      "title": "",
+      "statement": "Пусть $\\mu$~---~\\underline{конечная} конечно-аддитивная мера на некоторой $\\sigma$-алгебре $\\MM$. Следующие условия эквивалентны: \\begin{enumerate} \\item Мера $\\mu$ счетно-аддитивна на $\\MM$. \\item Мера $\\mu$ непрерывна сверху, то есть если $\\{A_n\\}_{n = 1}^\\infty \\subset \\MM$ ($A_{n + 1} \\subset A_n \\forall n \\in \\mathbb{N}$) и $A = \\bigcap\\limits_{n = 1}^{\\infty}{A_n}$, то $\\mu(A) = \\lim\\limits_{n \\longrightarrow \\infty}{\\mu(A_n)}$. \\item Мера $\\mu$ непрерывна сверху в нуле, то есть если $\\{A_n\\} \\subset \\MM$ ($A_{n + 1} \\subset A_n \\forall n \\in \\mathbb{N}$) и $\\bigcap\\limits_{n = 1}^{\\infty} A_n= \\emptyset$, то $\\lim\\limits_{n \\longrightarrow \\infty}{\\mu(A_n)} = 0$. \\end{enumerate}",
+      "proof": "",
+      "tags": [],
+      "source": "matan_3_semestr/Lecture_3.tex"
+    },
+    {
+      "id": "T10",
+      "kind": "theorem",
+      "title": "",
+      "statement": "\\label{theorem10} Пусть $\\PP$~---~полукольцо подмножеств множества $X$. Пусть $\\mu$~---~счетно-аддитивная мера на $\\PP$. Тогда $\\mu^*$ является \\hyperlink{outmeasure}{внешней мерой} и $\\mu^*|_{\\PP} = \\mu$.",
+      "proof": "",
+      "tags": [],
+      "source": "matan_3_semestr/Lecture_3.tex"
+    },
+    {
+      "id": "T11",
+      "kind": "theorem",
+      "title": "",
+      "statement": "Пусть $\\PP$~---~полукольцо подмножеств множества $X$. Пусть $\\mu$~---~счетно-аддитивная мера на $\\PP$. Пусть $\\mu^*$~---~внешняя мера, построенная по \\hyperref[def:mu]{формуле}. Тогда любое множество из $\\PP$ измеримо по Каратеодори, то есть $\\PP \\subset \\MM_{\\mu^*}$.",
+      "proof": "",
+      "tags": [],
+      "source": "matan_3_semestr/Lecture_3.tex"
+    },
+    {
+      "id": "T12",
+      "kind": "theorem",
+      "title": "",
+      "statement": "(Единственность продолжения) Пусть $\\PP$~---~полукольцо подмножеств множества $X$. Пусть $\\mu$ --- счетно-аддитивная мера на $\\PP$. Пусть $\\mu^*$~---~продолжение $\\mu$ на $\\sigma$-алгебру $\\MM_{\\mu^*}$, $\\PP \\subset \\MM_{\\mu^*}$, а $\\nu$ --- продолжение $\\mu$ на какую-то другую $\\sigma$-алгебру $\\MM_{\\nu}$, $\\PP \\subset \\MM_{\\nu}$. Тогда верно следующее: \\begin{enumerate} \\item $\\nu(A) \\leq \\mu^*(A)~~\\forall A \\in \\MM_{\\mu^*} \\cap \\MM_{\\nu}$. Если $\\mu^*(A) < +\\infty$, то $\\mu^*(A) = \\nu(A)$. \\item Если $\\mu$ --- $\\sigma$-конечна, то $\\mu^*(A) = \\nu(A)~~\\forall A \\in \\MM_{\\mu^*} \\cap \\MM_{\\nu}$. \\end{enumerate}",
+      "proof": "",
+      "tags": [],
+      "source": "matan_3_semestr/Lecture_3.tex"
+    },
+    {
+      "id": "T13",
+      "kind": "theorem",
+      "title": "",
+      "statement": "Пусть $E \\in \\MM_{\\mu^*}$ и $\\mu^*(E) < +\\infty$. Тогда $\\exists B,\\ C \\in \\MM(\\PP)$ т.ч. $B \\subset E \\subset C$ и $\\mu^*(C \\backslash B) = 0$.",
+      "proof": "",
+      "tags": [],
+      "source": "matan_3_semestr/Lecture_3.tex"
+    },
+    {
+      "id": "T14",
+      "kind": "theorem",
+      "title": "",
+      "statement": "Пусть $\\mu$ --- счетно-аддитивная $\\sigma$-конечная мера на полукольце $\\PP$ подмножеств множества $ X$. Пусть $\\nu$ --- полная мера на $\\sigma$-алгебре $\\MM_{\\nu}$, являющаяся продолжением $\\mu$. Тогда $\\MM_{\\mu^*} \\subset \\MM_{\\nu}$.",
+      "proof": "",
+      "tags": [],
+      "source": "matan_3_semestr/Lecture_3.tex"
+    }
+  ]
+}

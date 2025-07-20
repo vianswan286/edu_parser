@@ -1,0 +1,130 @@
+{
+  "units": [
+    {
+      "id": "D1",
+      "kind": "definition",
+      "title": "",
+      "statement": "Пара $(X, \\rho)$~---~\\textit{метрическое пространство (МП)}, где $X$~---~абстрактное множество, $X \\neq \\varnothing$, a $\\rho$: $X \\times X \\mapsto [0; +\\infty)$, удовлетворяющее следующим аксиомам:",
+      "proof": "",
+      "tags": [],
+      "source": "matan_1_semester/24 lecture.tex"
+    },
+    {
+      "id": "D2",
+      "kind": "definition",
+      "title": "",
+      "statement": "Пусть $(X, \\rho)$ метрическое пространство. \\textit{Открытым шаром} с центром в точке $x \\in X$ и радиуса $r \\geq 0$ называется множество $B_r (x) := \\{ y \\in X$: $\\rho(x, y) < r\\}$, $\\overline{B}_r (x) := \\{ y \\in X$: $\\rho(x, y) \\leq r\\}$~---~<<замкнутый>> шар, а $\\mathring{B}_{r} (x) = B_{r} (x) \\backslash \\{x\\}$~---~проколотый шар.",
+      "proof": "",
+      "tags": [],
+      "source": "matan_1_semester/24 lecture.tex"
+    },
+    {
+      "id": "D3",
+      "kind": "definition",
+      "title": "",
+      "statement": "\\hypertarget{def7.6}{Пусть $(X, \\rho)$~---[метрическое пространство, $\\E \\subset X$. $x_{0} \\in X$~---~\\textit{точка прикосновения} $\\E$, если $\\forall \\epsilon > 0 \\hookrightarrow B_{\\epsilon} (x_{0}) \\cap \\E \\neq \\varnothing$.}",
+      "proof": "",
+      "tags": [],
+      "source": "matan_1_semester/24 lecture.tex"
+    },
+    {
+      "id": "D4",
+      "kind": "definition",
+      "title": "",
+      "statement": "\\hypertarget{def7.7}{Пусть $(X, \\rho)$ метрическое пространство, $\\E \\subset X$. $x_{0} \\in X$~---~\\textit{предельная точка} $\\E$, если $\\forall \\epsilon > 0 \\hookrightarrow \\mathring{B}_{\\epsilon} (x_{0}) \\cap \\E \\neq \\varnothing$.}",
+      "proof": "",
+      "tags": [],
+      "source": "matan_1_semester/24 lecture.tex"
+    },
+    {
+      "id": "D5",
+      "kind": "definition",
+      "title": "",
+      "statement": "Пусть $(X_1, \\rho_1)$, $(X_2, \\rho_2)$ метрические пространства, $\\E \\subset X_1$, $f$: $\\E \\mapsto X_2$, $x_0 \\in X_1$~---~предельная точка $E$. Будем говорить, что $\\exists \\lim\\limits_{\\underset{{x \\in \\E}}{x\\to x_0}} f(x) = y_0 \\in X_2$ по Коши, если $$ \\forall \\epsilon > 0 \\ \\exists \\delta (\\epsilon) > 0: \\forall x \\in (\\mathring{B}_{\\delta (\\epsilon)} (x_0) \\cap \\E) \\hookrightarrow f(x) \\in B_{\\epsilon} (y_0).$$",
+      "proof": "",
+      "tags": [],
+      "source": "matan_1_semester/24 lecture.tex"
+    },
+    {
+      "id": "D6",
+      "kind": "definition",
+      "title": "",
+      "statement": "Пусть $(X_1, \\rho_1)$, $(X_2, \\rho_2)$ метрические пространства, $\\E \\subset X_1$, $f$: $\\E$: $X_2$, $x_0 \\in X_1$~---~предельная точка $\\E$. Будем говорить, что $\\exists \\lim\\limits_{x\\to x_0} f(x) = y_0 \\in X_2$ по Гейне, если $$ \\forall \\text{ последовательности Гейне } \\{x_n\\} \\subset \\E \\text{ в точке } x_0 \\hookrightarrow \\exists \\lim\\limits_{n\\to \\infty} f(x_n) = y_0.$$",
+      "proof": "",
+      "tags": [],
+      "source": "matan_1_semester/24 lecture.tex"
+    },
+    {
+      "id": "D7",
+      "kind": "definition",
+      "title": "",
+      "statement": "Пусть $(X_1, \\rho_1)$, $(X_2, \\rho_2)$ метрические пространства, $\\E \\subset X_1$, $\\E \\neq \\varnothing$, $f$: $\\E \\mapsto X_2$, $x_0 \\in E$. Будем говорить, что $f$ непрерывно в точке $x_0$, если: \\begin{enumerate} \\item $x_0$~---~изолированная точка $\\E$, то есть $\\exists \\epsilon > 0$: $B_{\\epsilon} (x_0) \\cap \\E = \\varnothing$; \\item $x_0$~---~предельная точка $\\E$, то есть $\\exists \\lim\\limits_{\\underset{{x \\in \\E}}{x\\to x_0}} f(x) = f(x_0)$. \\end{enumerate}",
+      "proof": "",
+      "tags": [],
+      "source": "matan_1_semester/24 lecture.tex"
+    },
+    {
+      "id": "D8",
+      "kind": "definition",
+      "title": "",
+      "statement": "Пусть $(X_1, \\rho_1)$, $(X_2, \\rho_2)$ метрические пространства, $\\E \\subset X_1$, $\\E \\neq \\varnothing$. Отображение $f$: $\\E \\mapsto X_2$ называется непрерывным на $\\E$, если оно непрерывно в каждой точке множества $\\E$.",
+      "proof": "",
+      "tags": [],
+      "source": "matan_1_semester/24 lecture.tex"
+    },
+    {
+      "id": "D9",
+      "kind": "definition",
+      "title": "",
+      "statement": "Пусть $(X_1, \\rho_1)$, $(X_2, \\rho_2)$ метрические пространства, $\\E \\subset X_1$, $\\E \\neq \\varnothing$. Будем говорить, что отображение $f$: $\\E \\mapsto X_2$ \\textit{равномерно непрерывно} на $\\E$, если $$ \\forall \\epsilon > 0 \\ \\exists \\delta (\\epsilon) > 0: \\forall x', x'' \\in E \\ \\ \\rho_{1}(x', x'') < \\delta (\\epsilon) \\hookrightarrow \\rho_{2}(f(x'), f(x'')) < \\epsilon.$$",
+      "proof": "",
+      "tags": [],
+      "source": "matan_1_semester/24 lecture.tex"
+    },
+    {
+      "id": "D10",
+      "kind": "definition",
+      "title": "",
+      "statement": "Пусть $(X, \\rho)$~---~метрическое пространство. Множество $K \\subset X$ называется \\textit{компактом}, если $\\forall \\{ x_n \\} \\subset K \\ \\exists \\{ x_{n_j} \\}$~---~подпоследовательность, сходящаяся к некоторой точке $x^{*} \\in K$.",
+      "proof": "",
+      "tags": [],
+      "source": "matan_1_semester/24 lecture.tex"
+    },
+    {
+      "id": "D11",
+      "kind": "definition",
+      "title": "",
+      "statement": "Пустое множество $\\varnothing$ по определению считаем компактом.",
+      "proof": "",
+      "tags": [],
+      "source": "matan_1_semester/24 lecture.tex"
+    },
+    {
+      "id": "D12",
+      "kind": "definition",
+      "title": "",
+      "statement": "(\\textit{Вещественное евклидово пространство}) Пусть $\\E$~---~линейное пространство, а <$\\cdot$, $\\cdot$>: $\\E \\times \\E \\mapsto \\R$ удовлетворяющее следующим условиям: \\begin{tabular}{lll} 1. & <$x$, $x$> $\\in [0; +\\infty)$ & $\\forall x \\in \\E$ \\\\ 2. & <$x$, $x$> $= 0 \\Leftrightarrow x = 0$ & \\\\ 3. & <$x$, $y$> = <$y$, $x$> & $\\forall x, y \\in \\E$ \\\\ 4. & <$\\alpha x + \\beta y$, $z$> = $\\alpha$ <$x$, $z$> $+ \\beta$ <$y$, $z$> & $\\forall \\alpha, \\beta \\in \\R$, $\\forall x, y, z \\in \\E$ \\end{tabular} тогда ($\\E$, <$\\cdot$, $\\cdot$>) называется \\textit{евклидовым пространством} со скалярным произведением <$\\cdot$, $\\cdot$>.",
+      "proof": "",
+      "tags": [],
+      "source": "matan_1_semester/24 lecture.tex"
+    },
+    {
+      "id": "D13",
+      "kind": "definition",
+      "title": "",
+      "statement": "\\textit{Комплексное евклидово пространство}~---~пара ($\\E$, <$\\cdot$, $\\cdot$>), где $\\E$~---~линейное пространство, а <$\\cdot$, $\\cdot$>: $\\E \\times \\E \\mapsto \\Cm$, удовлетворяющее следующим условиям: \\begin{tabular}{lll} 1. & <$x$, $x$> $\\in [0; +\\infty)$ & $\\forall x \\in \\E$ \\\\ 2. & <$x$, $x$> $= 0 \\Leftrightarrow x = 0$ & \\\\ 3. & <$x$, $y$> = $\\overline{\\text{<}y\\text{, }x\\text{>}}$ & $\\forall x, y \\in \\E$ \\\\ 4. & <$\\alpha x + \\beta y$, $z$> = $\\alpha$ <$x$, $z$> $+ \\beta$ <$y$, $z$> & $\\forall \\alpha, \\beta \\in \\Cm$, $\\forall x, y, z \\in \\E$ \\end{tabular}",
+      "proof": "",
+      "tags": [],
+      "source": "matan_1_semester/24 lecture.tex"
+    },
+    {
+      "id": "T14",
+      "kind": "theorem",
+      "title": "",
+      "statement": "(Теорема Кантора) Пусть $(X_1, \\rho_1)$, $(X_2, \\rho_2)$~---~метрические пространства, $K \\subset X_1$~---~компакт и $f$: $K \\mapsto X_2$. Если $f$ непрерывно на $K$, то оно равномерно непрерывно на $K$.",
+      "proof": "",
+      "tags": [],
+      "source": "matan_1_semester/24 lecture.tex"
+    }
+  ]
+}

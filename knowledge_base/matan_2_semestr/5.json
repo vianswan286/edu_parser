@@ -1,0 +1,40 @@
+{
+  "units": [
+    {
+      "id": "T1",
+      "kind": "theorem",
+      "title": "Формула Тейлора с остаточным членом в форме Лагранжа",
+      "statement": "$\\newline$ Пусть $m \\in \\N_0$, $\\Omega \\subset \\R^n$, $\\Omega \\neq \\varnothing$~---~открыто, $f$: $\\Omega \\rightarrow \\R$ и $f \\in \\DIF^{m + 1}(B_{\\delta}(x^{0}))$ при каком-то $\\delta > 0$. Тогда $\\forall x \\in B_{\\delta}(x^{0})$ $\\exists \\theta \\in (0, 1)$: справедлива следующая формула \\[f(x) = f(x^0) + \\sum\\limits_{k = 1}^{m}\\frac{d^k_{x^0}(dx)}{k!} + \\frac{d^{m + 1}_{x^{\\theta}}(dx)}{(m + 1)!}, \\text{ где }dx = x - x^0, x^{\\theta} = x^0 + \\theta(x - x^0).\\]",
+      "proof": "",
+      "tags": [],
+      "source": "matan_2_semestr/5.tex"
+    },
+    {
+      "id": "T2",
+      "kind": "theorem",
+      "title": "Формула Тейлора с остаточным членом в форме Пеано",
+      "statement": "Пусть $f$: $\\Omega \\rightarrow \\R, m \\in \\N$ и $\\exists \\delta > 0$: $f \\in C^m(B_\\delta(x^0))$ (f~---~$m$-гладкая). Тогда $\\forall x \\in B_{\\delta}(x^0)$: \\[f(x) = f(x^0) + \\sum\\limits_{i = 1}^n \\frac{1}{i!}d^k_{x^0} f(dx) + o(||x - x^0||^m), x \\rightarrow x^0\\]",
+      "proof": "",
+      "tags": [],
+      "source": "matan_2_semestr/5.tex"
+    },
+    {
+      "id": "T3",
+      "kind": "theorem",
+      "title": "",
+      "statement": "\\hypertarget{lecture_6_geom_theorem} \\ Пусть $F$: $\\Omega \\rightarrow \\R^m$, $\\Omega \\subset \\R^m$~---~дифференцируемо в точке $x^0 \\in \\Omega$ и матрица Якоби отображения, $DF(x^0)$,~---~обратима. Тогда $\\exists \\delta > 0$ и $\\exists c > 0$: $\\forall x \\in \\overline{B}_\\delta(x^0) \\hookrightarrow \\|F(x) - F(x^0)\\| \\geq c \\|x - x^{0}\\|$.",
+      "proof": "",
+      "tags": [],
+      "source": "matan_2_semestr/5.tex"
+    },
+    {
+      "id": "T4",
+      "kind": "theorem",
+      "title": "Теорема об открытом отображении",
+      "statement": "\\ \\newline Пусть $F: \\Omega \\rightarrow \\R^m$$, \\Omega \\text{~---~непустое и открытое множество},$ $ F \\in \\DIF(\\Omega, \\R^m)$ и пусть $\\forall x^0 \\in \\Omega \\hookrightarrow DF(x^0)$~---~обратима (Якобиан не обращается в 0) Тогда $F(\\Omega)$~---~открыто в $\\R^m$",
+      "proof": "",
+      "tags": [],
+      "source": "matan_2_semestr/5.tex"
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "units": [
+    {
+      "id": "D1",
+      "kind": "definition",
+      "title": "",
+      "statement": "Перестановкой $m$ будем называть биекцию $\\N \\rightarrow \\N$",
+      "proof": "",
+      "tags": [],
+      "source": "matan_2_semestr/20.tex"
+    },
+    {
+      "id": "T2",
+      "kind": "theorem",
+      "title": "Теорема о перестановках",
+      "statement": "Пусть $\\sum\\limits_{j}^{+\\infty} a_j$~---~абсолютно сходящийся ряд, а $m: \\N \\rightarrow \\N$~---~перестановка множества $\\N$. Тогда, ряд $\\sum\\limits_{j}^{+\\infty} a_{m(j)}$~---~тоже абсолютно сходится, и его сумма совпадает с суммой исходного ряда.",
+      "proof": "",
+      "tags": [],
+      "source": "matan_2_semestr/20.tex"
+    },
+    {
+      "id": "T3",
+      "kind": "theorem",
+      "title": "Теорема Римана о перестановке членов условно сходящегося ряда",
+      "statement": "Если ряд $\\sum\\limits_{j = 1}^{+\\infty} a_j$ сходится условно, тогда $\\forall x \\in \\bar{\\R} \\exists$ перестановка $m_x: \\N \\rightarrow \\N$, т.ч. ряд $\\sum\\limits_{j = 1}^{+\\infty} a_{m_x(j)}$ сходится к $x \\in \\R$, а если $x \\in \\{\\pm\\infty\\}$~---~расходится.",
+      "proof": "",
+      "tags": [],
+      "source": "matan_2_semestr/20.tex"
+    },
+    {
+      "id": "T4",
+      "kind": "theorem",
+      "title": "",
+      "statement": "Пусть $\\sum\\limits_{j = 1}^{+\\infty} a_j = S_1$ и $\\sum\\limits_{j = 1}^{+\\infty} b_j = S_2$~---~2 абсолютно сходящихся ряда. Тогда, для любой биекции $(m, n)$ ряд $\\sum\\limits_{j = 1}^{+\\infty} a_{m(j)}b_{n(j)}$ абсолютно сходящийся ряд, и его сумма $S = S_1 \\cdot S_2$.",
+      "proof": "",
+      "tags": [],
+      "source": "matan_2_semestr/20.tex"
+    }
+  ]
+}

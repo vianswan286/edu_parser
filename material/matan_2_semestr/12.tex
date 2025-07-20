@@ -1,0 +1,159 @@
+
+\noindent 3) Форма знаконеопределена. 
+
+\noindent Хотим доказать, что если $Q$ -- знаконеопределена на $T_{p^0} \M$, то экстремума нет. Это равносильно тому, что из существования условного экстремума $f$ в точке $p^0$ следует отсутствие знаконеопределенности формы $Q$ на $T_{p^0} \M$. Предположив, что экстремум есть, докажем, что знаконеопределенности формы быть не может. 
+
+\noindent Пусть $f$ имеет в точке $p^0$ условный локальный минимум. Т.е. $f(x) \ge f(p^0) \ \forall x \in B_{\delta}(p^0) \cap \M$, где $\delta > 0$ -- некоторое фиксированное число. Покажем, что $Q(h) \ge 0, h \in T_{p^0} \M$. Фиксируем $h \in T_{p^0} \M, h \neq 0 \Rightarrow$ существует кривая $\gamma \in C^1(-\sigma, \sigma), \M), \gamma(0) = p^0, \gamma'(0) = h$. Тогда $\gamma(t) = \gamma(0) + \gamma'(0)t + o(t), t \rightarrow 0 \Rightarrow \gamma(t) - \gamma(0) = ht + o(t), t \rightarrow 0$. 
+
+\noindent По формуле Тейлора: $f(x) - f(p^0) = L(x, \lambda^0) - L(p^0, \lambda^0) = 0 + \frac{1}{2}d^2_{p^0}L(x - p^0) + o(||x - p^0||^2), x \rightarrow p^0$. Подставим $x = \gamma(t): $  $f(\gamma(t)) - f(\gamma(0)) = d^2_{p^0}L(ht + o(t)) + o(||ht + o(t)||^2) = d^2_{p^0}L(ht + o(t)) + o(t^2), t \rightarrow 0$. 
+
+$$|d^2_{p^0}L(ht + o(t)) - d^2_{p^0}L(ht)| \le C \cdot ||ht|| \ ||t|| \ ||o(t)|| = o(t^2), t \rightarrow 0$$
+Итого: $f(\gamma(t)) - f(\gamma(0)) = \frac{1}{2}d_{p^0}(ht) + o(t^2), t \rightarrow 0 \Rightarrow \frac{t^2}{2}d^2_{p^0} L(h) + t^2o(1) \ge 0, \forall t$ из достаточно малой окрестности нуля. Сократим последнее выражение на $t^2$. Получаем: 
+$$
+\dfrac{d^2_{p^0}L(h)}{2} + o(1) \ge 0 \Rightarrow \text{переходя к пределу в неравенстве при } t \rightarrow 0: \dfrac{1}{2}d^2_{p^0}L(h) \ge 0 
+$$
+Так как $h \in T_{p^0} \M $ было выбрано произвольно, получаем необходимое
+
+%СМОТРЕЛ ОТСЮДА
+
+\newpage
+\section{Определенный интеграл Римана}
+
+\subsection {Сумма Дарбу}
+\begin{definition}
+    \textit{Разбиением невырожденного отрезка} $[a, b]$ будем называть любой конечный набор точек $$T := \{x_i\}_{i = 0}^N, N \in \N : \ a = x_0 < x_i < x_N = b, \forall i \in \{ 1, 2, \ldots, N\}.$$
+\end{definition}
+
+\begin{definition}
+    \textit{Мелкость разбиения} $l(T) := \max\limits_{i \in \{1, \dots, N\}} |x_i - x_{i - 1}|$.
+\end{definition}
+
+\noindent На множестве всех разбиений отрезка $[a, b]$ введем частичный порядок. 
+
+\begin{definition}
+Будем говорить, что $T_1 \succcurlyeq T_2$, если $T_2 \subset T_1$ в теоретико-множественном смысле.
+\end{definition}
+
+\begin{definition}
+    Пусть $f$: $[a, b] \rightarrow \R$. Пусть $T$~---~разбиение отрезка $[a, b]$. \textit{Нижней суммой Дарбу} будем называть $s(f, T) := \sum \limits_{i = 1}^N m_i(x_i - x_{i - 1})$, где $m_i := \inf \limits_{x \in [x_{i - 1}, x_i]} f(x)$.
+\end{definition}
+
+\begin{definition}
+     Пусть $f$: $[a, b] \rightarrow \R$. Пусть $T$~---~разбиение отрезка $[a, b]$. \textit{Верхней суммой Дарбу} будем называть $S(f, T) := \sum \limits_{i = 1}^N M_i(x_i - x_{i - 1})$, где $M_i := \sup \limits_{x \in [x_{i - 1}, x_i]} f(x)$.
+\end{definition}
+\noindent Так как супремумы и инфимумы могут принимать значения $+ \infty$ и  $-\infty$, примем соглашения: 
+\begin{enumerate}
+    \item $(\pm \infty) + (\pm \infty) = (\pm \infty)$;
+    \item $ \lambda \cdot (\pm \infty) = \pm \infty, \ \lambda > 0$;
+    \item $ \lambda \cdot (\pm \infty) = \mp \infty, \ \lambda < 0$.
+\end{enumerate}
+
+\begin{lemma}\hypertarget{lemma12.1}{}
+    Функция $f$: $[a, b] \rightarrow \R$ ограничена снизу на отрезке $[a, b] \Leftrightarrow s(f, T) > -\infty$  $ \forall T$~---~разбиения $[a, b]$.
+
+    Аналогично функция $f$: $[a, b] \rightarrow \R$ ограничена сверху на отрезке $[a, b] \Leftrightarrow S(f, T) < + \infty$ $\forall T$~---~разбиения $[a, b]$.
+\end{lemma}
+\begin{proof}
+    Докажем для верхней суммы Дарбу. Для нижней аналогично.
+    
+    \noindent $\Rightarrow$ Пусть $T$~---~произвольное разбиение и $f$~---~ограничено сверху, тогда $M_i < + \infty$ $\forall i \in \{1, \ldots, N\}$. Значит $S(f, T) < +\infty$.
+
+    \noindent $\Leftarrow$ Пусть $S (f, T) < + \infty$. Тогда $M_i < + \infty$ $\forall i \in \{1, \ldots, N\}$. Следовательно, $\forall i \in \{1, \dots, N\}$ $\sup_{x \in [x_{i - 1}, x_i]} f(x) < + \infty$. 
+
+    \noindent Так как $\bigcup\limits_{i = 1}^{N}[x_{i - 1}, x_i] \supset [a, b]$, то $\sup \limits_{x \in [a, b]} f(x) \leq \max \limits_{1 \leq i \leq N} M_i < + \infty$.
+
+    \textbf{Возможно тут нужна картинка, типа показать верхнюю и нижнюю сумму Дарбу}
+\end{proof}
+
+
+\begin{definition}
+\textit{Нижним интегралом Дарбу} функции $f$: $[a, b] \rightarrow \R$ будем называть $J_{*} (f) := \sup\limits_{\underset{[a, b]}{T\text{~---~разбиение}}} s (f, T)$.
+
+\textit{Верхним интегралом Дарбу} функции $f$: $[a, b] \rightarrow \R$ будем называть $J^{*} (f) := \inf\limits_{\underset{[a, b]}{T\text{~---~разбиение}}} S (f, T)$.
+\end{definition}
+
+\begin{definition}[Определение интеграла Римана в терминах сумм Дарбу]
+
+    Будем говорить, что $f$: $[a, b] \rightarrow \R$~---~\textit{интегрируема по Риману} на отрезке $[a, b]$ и писать $f \in \Rim([a, b])$, если $\exists J \in \R$: $\forall \epsilon > 0$ $\exists \delta(\epsilon) > 0$: $\forall \text{ разбиения } T \text{ отрезка } [a, b]$ мелкости $l(T) < \delta(\epsilon) \ \hookrightarrow$
+    \begin{equation*}
+        \begin{cases}
+            |s(f, T) - J| < \epsilon; \\ 
+            |S(f, T) - J| < \epsilon.
+        \end{cases}
+    \end{equation*}
+\end{definition}
+
+\begin{example}%[Неинтегрируемая функция по Риману]
+    Пример функции неинтегрируемой по Риману. Рассмотрим 
+    $$
+    f(x) = 
+    \begin{cases}
+        1, x \in \Q \cap [0, 1] \\ 
+        0, x \in \left(\R \setminus \Q \right)\cap [0, 1]
+    \end{cases}
+    $$
+    Заметим, что $f(x) \notin \Rim([0, 1])$, так как нижняя сумма Дарбу $s (f, T) = 0$, а верхняя сумма Дарбу $S (f, T) = 1$ $\forall T$~---~разбиения $[0, 1] \Rightarrow \exists \epsilon = 1$: $\forall \delta(\epsilon) \geq 0$, $\forall T$~---~разбиения отрезка $[0, 1] \hookrightarrow |s(f, T) - S(f, T)| \geq 1 \Rightarrow \nexists J \in \R$, для которого выполнено определение интегрируемости по Риману при $\epsilon = \frac{1}{2}.$
+\end{example}
+
+\begin{theorem}[Необходимые условия интегрируемости по Риману]
+    Пусть $f \in \Rim([a, b])$. Тогда $f$~---~ограничена на $[a, b]$.
+\end{theorem}
+
+\begin{proof}
+    По определению интегрируемости получаем, что $\exists T$~---~разбиение отрезка $[a, b]$: $s(f, T) \in \R$ и $S(f, T) \in \R \Rightarrow$ по ранее \hyperlink{lemma12.1}{доказанной лемме} $f$~---~ограничена снизу и сверху $\Rightarrow$ $f$~---~ограничена на $[a, b]$.
+\end{proof}
+
+\begin{lemma}
+    Пусть $f$: $[a, b] \rightarrow \R$. Тогда $\forall T$~---~разбиения отрезка $[a, b] \hookrightarrow s(f, T) \leq S(f, T)$.
+\end{lemma}
+
+\begin{proof}
+    Считаем доказательство очевидным из определения нижней и верхней сумм Дарбу (инфимум и супремум).
+\end{proof}
+
+\begin{lemma}
+    \hypertarget{lemma12.2}{Пусть $f$: $[a, b] \rightarrow \R$, $T_1 , T_2$~---~разбиения отрезка $[a, b]$: $T_2 \succcurlyeq T_1$. Тогда $s(f, T_2) \geq s(f, T_1)$, а $S(f, T_2) \leq S(f, T_1)$.}
+\end{lemma}
+\begin{proof}
+    $T_2 \succcurlyeq T_1 \Rightarrow T_2$ содержит все точки $T_1$ (и возможно еще какие-то точки).
+
+    \noindent Рассмотрим сначала нижние суммы Дарбу. Считаем сначала, что разбиения отличаются лишь на одну точку, то есть $\exists! c \in [x_{i - 1}, x_i], c \neq x_{i - 1}, c \neq x_{i}$. Рассмотрим
+    $$
+    \inf \limits_{x \in [x_{i - 1}, c]} f(x)\cdot (c - x_{i - 1}) + \inf \limits_{x \in [c, x_i]}f(x)\cdot (x_i - c) - \inf \limits_{x \in [x_{i - 1}, x_i]} f(x) \cdot (x_i - x_{i - 1}) \quad (*)
+    $$
+    Заметим, что $\inf$ подмножества не может быть меньше $\inf$ самого множества. То есть $\inf \limits_{x \in [x_{i - 1}, c]} f(x) \geq \inf \limits_{x \in [x_{i - 1}, x_i]} f(x)$  и $\inf \limits_{x \in [c, x_i]} f(x) \geq \inf \limits_{x \in [x_{i - 1}, x_i]} f(x)$. Используя этот факт, продолжим неравество $(*)$: 
+    $$
+    (*) \geq \inf \limits_{x \in [x_{i - 1}, x_i]} f(x) (c - x_{i - 1}) + \inf \limits_{x \in [x_{i - 1}, x_i]} f(x) (x_{i} - c) - \inf \limits_{x \in [x_{i - 1}, x_i]} f(x) (x_i - x_{i - 1}) = 0.
+    $$
+    Если $T_2 \succcurlyeq T_1$, то существует такой набор упорядоченных разбиений при $k \in \N$: $T^k \succcurlyeq T^{k - 1} \succcurlyeq \ldots \succcurlyeq T^0$, где $T^k = T_2$, $T^0 = T_1$. При этом разбиение $T^j$ отличается от $T^{j - 1}$ отличается добавлением одной точки на интервал. Тогда $s (f, T_2) = s(f, T^k) \geq s(f, T^{k - 1}) \geq \ldots \geq s(f, T^0) = s(f, T_1)$.
+
+    \noindent Для верхних сумм Дарбу доказательство аналогично. 
+\end{proof}
+
+\begin{note}
+    По сути $(*) = s(f, T_2) - s(f, T_1)$.
+\end{note}
+
+\begin{corollary}
+    Пусть $f$: $[a, b] \rightarrow \R$, $T_1, T_2$~---~произвольные разбиения отрезка $[a, b]$. Тогда $s(f, T_1) \leq S(f, T_2)$.
+\end{corollary}
+
+\begin{proof}
+    Рассмотрим разбиение $T := T_1 \cup T_2$, $T \succcurlyeq T_1$ и $T \succcurlyeq T_2$. 
+    
+    По \hyperlink{lemma12.2}{предыдущей лемме}: 
+    $$
+    \begin{cases}
+        s(f, T) \geq s(f, T_1) \\ 
+        S(f, T) \leq S(f, T_2) \\ 
+        s(f, T) \leq S(f, T) 
+    \end{cases}
+    $$
+    Отсюда следует $s(f, T_1) \leq S(f, T_2)$.
+\end{proof}
+\begin{note}
+    Объединение в теоретико-множественном смысле (то есть рассматриваем разбиение как упорядоченный набор точек и <<перенумеровываем>>).
+\end{note}
+\begin{reminder}
+    Пусть $E \subset \R$, $E \neq \varnothing, f$: $E \rightarrow \R$. Колебанием функции $f$ на множестве $E$ называется $\omega_{E}f := \sup \limits_{x', x'' \in E} |f(x') - f(x'')|$.
+\end{reminder}

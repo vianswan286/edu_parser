@@ -1,0 +1,49 @@
+{
+  "units": [
+    {
+      "id": "D1",
+      "kind": "definition",
+      "title": "",
+      "statement": "Будем говорить, что точка $x_0$ функции $f: \\R \\to \\R$ является регулярной, если в ней $\\exists f(x_0 \\pm 0)$ и $\\exists f'_\\pm(x_0)$.",
+      "proof": "",
+      "tags": [],
+      "source": "matan_4_semestr/Lecture_4.tex"
+    },
+    {
+      "id": "D2",
+      "kind": "definition",
+      "title": "",
+      "statement": "Пусть дана $2\\pi$-периодическая $f \\in L_1([-\\pi, \\pi])$. Суммой Фейера для $f$ будем называть \\[ \\sigma_n[f] = \\dfrac{1}{n}\\sum\\limits_{i = 0}^{n - 1} S_i[f]. \\]",
+      "proof": "",
+      "tags": [],
+      "source": "matan_4_semestr/Lecture_4.tex"
+    },
+    {
+      "id": "D3",
+      "kind": "definition",
+      "title": "",
+      "statement": "Ядром Фейера будем называть \\[ \\Phi_n = \\dfrac{1}{n}\\sum\\limits_{k = 0}^{n - 1}D_k = \\dfrac{\\sin^2 nu/2}{2\\pi n \\sin^2 u/2}. \\]",
+      "proof": "",
+      "tags": [],
+      "source": "matan_4_semestr/Lecture_4.tex"
+    },
+    {
+      "id": "D4",
+      "kind": "definition",
+      "title": "",
+      "statement": "Будем говорить, что для $\\alpha \\in (0, 1)$ функция лежит в $H^\\alpha(\\R)$ (т.е. удовлетворяет условию Гёльдера с показателем $\\alpha$) если \\[ \\exists C > 0 \\forall x', x'' \\in \\R \\hookrightarrow |f(x') - f(x'')| \\leq C|x' - x''|^\\alpha. \\] При $\\alpha = 1$ это условие Липшица.",
+      "proof": "",
+      "tags": [],
+      "source": "matan_4_semestr/Lecture_4.tex"
+    },
+    {
+      "id": "T5",
+      "kind": "theorem",
+      "title": "",
+      "statement": "Пусть дана $2\\pi$-периодическая $f \\in H^\\alpha(\\R), \\alpha \\in (0, 1)$. Тогда ряд Фурье $f$ сходится к ней равномерно на $\\R$. Более того, \\[ \\biggr|S_n[f](x) - f(x)\\biggr| \\leq C \\cdot \\dfrac{\\ln n}{n^\\alpha} \\quad \\forall n \\in \\N, \\forall x \\in \\R. \\]",
+      "proof": "",
+      "tags": [],
+      "source": "matan_4_semestr/Lecture_4.tex"
+    }
+  ]
+}

@@ -1,0 +1,58 @@
+{
+  "units": [
+    {
+      "id": "D1",
+      "kind": "definition",
+      "title": "",
+      "statement": "Пусть $f \\in L_1^{loc}(\\R)$. Преобразованием Фурье функции $f$ будем называть функцию $\\mathcal{F}[f]$, которая $\\forall x \\in \\R$ определяется как \\[ \\mathcal{F}[f](x) := \\dfrac{1}{\\sqrt {2\\pi}}\\vpint_{\\R} f(y)e^{-ixy}dy. \\]",
+      "proof": "",
+      "tags": [],
+      "source": "matan_4_semestr/Lecture_10.tex"
+    },
+    {
+      "id": "D2",
+      "kind": "definition",
+      "title": "",
+      "statement": "Обратное преобразование Фурье определим как \\[ \\mathcal{F}^{-1}[f](x) := \\dfrac{1}{\\sqrt {2\\pi}}\\vpint_{\\R} f(y)e^{ixy}dy. \\]",
+      "proof": "",
+      "tags": [],
+      "source": "matan_4_semestr/Lecture_10.tex"
+    },
+    {
+      "id": "D3",
+      "kind": "definition",
+      "title": "",
+      "statement": "введём следующее обозначение $\\forall A > 0$: \\[ I_A[f](x) = \\dfrac{1}{\\sqrt {2\\pi}} \\int_{-A}^{A} \\mathcal{F}[f](y)e^{ixy}dy. \\]",
+      "proof": "",
+      "tags": [],
+      "source": "matan_4_semestr/Lecture_10.tex"
+    },
+    {
+      "id": "D4",
+      "kind": "definition",
+      "title": "",
+      "statement": "Пусть $f \\in L_1^{loc}(\\mathbb{R})$. \\[ \\text{Если } \\exists \\lim_{A \\to +\\infty} I_A[f](x) \\text{ при } x \\in \\mathbb{R}, \\text{ то говорят, что $\\exists$ интеграл Фурье функции } f. \\] \\begin{remark} По сути интеграл Фурье совпадает с $F^{-1}[F[f]].$ \\end{remark}",
+      "proof": "",
+      "tags": [],
+      "source": "matan_4_semestr/Lecture_10.tex"
+    },
+    {
+      "id": "T5",
+      "kind": "theorem",
+      "title": "",
+      "statement": "\\[ \\int\\limits_0^{+\\infty} \\frac{\\sin x}{x} \\, dx = \\frac{\\pi}{2} \\]",
+      "proof": "",
+      "tags": [],
+      "source": "matan_4_semestr/Lecture_10.tex"
+    },
+    {
+      "id": "T6",
+      "kind": "theorem",
+      "title": "Принцип локализации.",
+      "statement": "Пусть \\( \\widetilde{f} \\in L_1([-\\pi, \\pi]) \\) и \\(2\\pi\\)-периодична. Пусть \\( f \\in L_1(\\mathbb{R}) \\) и совпадает с \\( \\widetilde{f} \\) в некоторой окрестности точки \\( \\underline{x} \\in \\mathbb{R} \\). Тогда следующие утверждения эквивалентны: \\begin{enumerate} \\item[$\\bullet$] Интеграл Фурье функции $f$ в точке \\(\\underline{x}\\) сходится; \\item[$\\bullet$] Ряд Фурье функции \\(\\widetilde{f}\\) сходится в точке \\(\\underline{x}\\). \\end{enumerate} Более того, в случае наличия сходимости справедливо равенство: \\[ \\frac{1}{\\sqrt{2\\pi}}\\,\\vpint _{-\\infty}^{+\\infty} \\mathcal{F}[f](y)\\,e^{\\,i x\\,y}\\,dy \\;=\\; \\sum_{n\\in\\mathbb{Z}} c_{n}\\bigl(\\widetilde{f}\\bigr)\\,e^{\\,i n x}. \\]",
+      "proof": "",
+      "tags": [],
+      "source": "matan_4_semestr/Lecture_10.tex"
+    }
+  ]
+}

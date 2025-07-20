@@ -1,0 +1,103 @@
+{
+  "units": [
+    {
+      "id": "D1",
+      "kind": "definition",
+      "title": "",
+      "statement": "Функция $f : \\R^{n} \\rightarrow \\R$ называется ступенчатой, если она является линейной комбинацией индикаторов ячеек. Ячейкой называют $P = \\sqcap_{i=1}^n[a_i, b_i)$.",
+      "proof": "",
+      "tags": [],
+      "source": "matan_4_semestr/Lecture_7.tex"
+    },
+    {
+      "id": "D2",
+      "kind": "definition",
+      "title": "",
+      "statement": "Пусть $f: \\R^n \\rightarrow \\R$. Носителем функции будем называть множество $\\supp \\ f = cl{\\{x \\in \\R^n : f(x) \\neq 0 \\}}$ (замыкание множества точек где функция не нулевая)",
+      "proof": "",
+      "tags": [],
+      "source": "matan_4_semestr/Lecture_7.tex"
+    },
+    {
+      "id": "D3",
+      "kind": "definition",
+      "title": "",
+      "statement": "Семейство функций $\\{\\omega_t\\}_{t \\in (0, +\\infty)}$ называется аппроксимативной единицей, если $\\forall t > 0$ выполнено следующее: \\begin{enumerate} \\item $\\omega_t(x) \\ge 0 \\ \\forall x \\in \\R^n$. \\item $\\int\\limits_{\\R^n} \\omega_t(x) dx = 1$. \\item Выполнено фокусирующее свойство: \\[\\forall \\delta > 0 \\ \\exists \\lim\\limits_{t \\ra +0} \\int\\limits_{\\R^n \\setminus B_\\delta(0)} \\omega_{t}(x)dx = 0.\\] \\end{enumerate}",
+      "proof": "",
+      "tags": [],
+      "source": "matan_4_semestr/Lecture_7.tex"
+    },
+    {
+      "id": "D4",
+      "kind": "definition",
+      "title": "",
+      "statement": "Нижний индекс $0$ у пространства $C_0^n(\\Omega)$ означает, что рассматриваются функции из $C^n(\\Omega)$, имеющие компактный носитель в области $\\Omega$.",
+      "proof": "",
+      "tags": [],
+      "source": "matan_4_semestr/Lecture_7.tex"
+    },
+    {
+      "id": "D5",
+      "kind": "definition",
+      "title": "",
+      "statement": "Пусть $f \\in L_p(\\R^n)$. Усреднением $f$ по Соболеву будем называть функцию $f_\\epsilon = f * \\omega_\\epsilon$. По предыдущей теореме, $f_\\epsilon$ -- всюду корректно определённая непрерывная функция.",
+      "proof": "",
+      "tags": [],
+      "source": "matan_4_semestr/Lecture_7.tex"
+    },
+    {
+      "id": "T6",
+      "kind": "theorem",
+      "title": "",
+      "statement": "Пусть множество $E \\subseteq \\R^n$ измеримо, $f \\in L_p(E), $ где $p \\in [1, +\\infty)$. Тогда верно следующее: $$\\forall \\varepsilon > 0 \\ \\exists \\ \\text{ступенчатая функция } h_{\\varepsilon} : ||f - h_{\\varepsilon}||_{L_p(E)} < \\varepsilon.$$",
+      "proof": "",
+      "tags": [],
+      "source": "matan_4_semestr/Lecture_7.tex"
+    },
+    {
+      "id": "T7",
+      "kind": "theorem",
+      "title": "Непрерывность по сдвигу",
+      "statement": "Пусть $f \\in L_p(\\R^n), $ где $p \\in [1, +\\infty).$ Тогда верно следующее: $$||f(x) - f(x - h)||_{L_p} \\rightarrow 0, h \\rightarrow 0$$",
+      "proof": "",
+      "tags": [],
+      "source": "matan_4_semestr/Lecture_7.tex"
+    },
+    {
+      "id": "T8",
+      "kind": "theorem",
+      "title": "",
+      "statement": "Пусть $p \\in [1, +\\infty), \\ f \\in L_p(\\R^n), \\ g \\in L_{p'}(\\R^n), $ где $\\frac{1}{p} + \\frac{1}{p'} = 1.$ Тогда: \\begin{enumerate} \\item $f * g(x)$ корректно определена для всех $x \\in \\R^n.$ \\item $f * g(x)$ равномерно непрерывна на $R^n.$ \\end{enumerate}",
+      "proof": "",
+      "tags": [],
+      "source": "matan_4_semestr/Lecture_7.tex"
+    },
+    {
+      "id": "T9",
+      "kind": "theorem",
+      "title": "",
+      "statement": "Если $f \\in L_1^{loc}(\\R^n)$ и $w_t$ -- аппроксимативная единица (произвольная в смысле нашего определения), то их свёртка является корректно определённой непрерывной функцией.",
+      "proof": "",
+      "tags": [],
+      "source": "matan_4_semestr/Lecture_7.tex"
+    },
+    {
+      "id": "T10",
+      "kind": "theorem",
+      "title": "",
+      "statement": "Пусть $p \\in [1, +\\infty)$ и $f \\in L_p(\\R^n)$. Тогда \\[ \\forall \\epsilon > 0 \\ \\exists h \\in C^{\\infty}_0(\\R^n) \\hookrightarrow \\|f - h\\|_p \\leq \\epsilon. \\]",
+      "proof": "",
+      "tags": [],
+      "source": "matan_4_semestr/Lecture_7.tex"
+    },
+    {
+      "id": "T11",
+      "kind": "theorem",
+      "title": "",
+      "statement": "Система тригонометрических полиномов $\\{1, \\sin nx, \\cos nx\\}_{n = 1}^{+\\infty}$ полна в пространстве $L_2([-\\pi, \\pi])$.",
+      "proof": "",
+      "tags": [],
+      "source": "matan_4_semestr/Lecture_7.tex"
+    }
+  ]
+}

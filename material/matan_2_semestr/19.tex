@@ -1,0 +1,161 @@
+\begin{theorem} Признак Д'Аламбера.
+    Пусть дан ряд $\sum_{k = 1}^{\infty} a_k$. Пусть $\exists k_0 \in \N$: $\forall k \geq k_0 \hookrightarrow a_k > 0$ и $\frac{a_{k+1}}{a_k} \leq q$. Тогда если
+    \begin{enumerate}
+        \item $\frac{a_{k+1}}{a_k} \leq q$, где $q \in (0, 1)$, то $\sum_{k = 1}^{\infty}a_k$~---~сходится;
+        \item $\frac{a_{k+1}}{a_k} \geq q$, где $q \geq 1$, то  $\sum_{k = 1}^{\infty}a_k$~---~расходится.
+    \end{enumerate} 
+\end{theorem}
+\begin{proof}
+    Начнем с доказательства $(2)$:
+
+    Если $q \geq 1 \hspace{0.2cm} \Rightarrow \hspace{0.2cm} \forall k \geq k_0 \hookrightarrow \hspace{0.2cm} a_{k+1} \geq a_k \geq \dots \geq a_{k_0} > 0$ 
+
+    $\Rightarrow a_k \not \rightarrow 0, \hspace{0.1cm} k \rightarrow \infty \hspace{0.2cm} \Rightarrow $ не выполняются необходимые условия сходимости ряда $\Rightarrow$ ряд расходится.
+
+    Если $q \in (0; 1)$, то верно, что $a_{k+1} \leq q \cdot a_{k_0}, \hspace{0.2cm} \forall k \geq k_0 \hspace{0.3cm} \Longrightarrow a_k \leq q^{k - k_0} \cdot a_{k_0}$ 
+
+    А это означает, что $\sum_{k = k_0}^{\infty}a_{k_0}\cdot q^{k - k_0}$~---~сходится $\Rightarrow$ \\ $\Rightarrow$ в силу признака сравнения $\sum_{k=k_0}^{\infty} a_k$~---~сходится $\Rightarrow$ \\ $\Rightarrow$ в силу принципа локализации $\sum_{k=1}^{\infty} a_k$~---~сходится
+\end{proof}
+
+\begin{corollary} [Признак Д'Аламбера в предельной форме] 
+    \text{}\\
+    Пусть $\exists k_0 \in \N$, т. ч.  $a_k \geq 0 \hspace{0.2cm} \forall k \geq k_0$. \\
+    Пусть $\exists \lim_{k\rightarrow\infty}{\frac{a_{k + 1}}{a_k}} = q$
+
+    Тогда, если
+    \begin{enumerate}
+        \item $q \in (0, 1),$ то $\sum_{k = 1}^{\infty} a_k$~---~\textit{сходится}.
+        \item $q > 1,$ то $\sum_{k = 1}^{\infty} a_k$~---~\textit{расходится}.
+        \item $q = 1$ в этом случае ничего сказать \textit{нельзя}.
+    \end{enumerate}
+\end{corollary}
+\begin{proof}
+    \text{}
+    \begin{enumerate}
+        \item По определению предела $\exists K \in \N$, такое что $\forall k \geq K \hookrightarrow \frac{a_{k+1}}{a_k} \leq \frac{1 + q}{2} < 1$ $\Rightarrow$ по исходному признаку Д'Аламбера данный ряд сходится.
+        \item Если $q > 1$, то $\exists N \in \N$, такое что $\forall k \geq N \hookleftarrow \frac{a_{k + 1}}{a_K} \geq \frac{1 + q}{2} \geq 1 \Rightarrow$ по исходному признаку Д'Аламбера данный ряд расходится.
+        \item Чтобы показать это можно взять: \\ Ряд $\sum_{k = 1}^{\infty} \frac{1}{k}$, как известно, расходится. Но $\frac{a_{k+1}}{a_k}=\frac{k}{k+1} \rightarrow 1, \hspace{0.2cm} k \rightarrow \infty$ \\
+        В то же время ряд $\sum_{k = 1}^{\infty}\frac{1}{k^2}$ сходится. Но $\frac{a_{k+1}}{a_k} = \frac{k^2}{(k+1)^2}\rightarrow 1, \hspace{0.2cm} k\rightarrow \infty$ \\
+        Отсюда видно, что Признак Д'Аламбера не отличает данные ряды.
+    \end{enumerate}
+\end{proof}
+
+\begin{theorem} [Признак Коши]
+    \text{}\\ Пусть $\exists k_0 \in \N$, такое что $\forall k \geq k_0 \hookrightarrow a_k > 0 \text{ и } \sqrt[k]{a_k} \leq q \in (0, 1) $\\ 
+    Тогда $\sum_{k = 1}^{\infty} a_k$~---~сходится. \\
+    Пусть $\exists k_0 \in \N$, такое что $\forall k \geq k_0 \hookrightarrow a_k > 0 \text{ и } \sqrt[k]{a_k} \geq 1 $\\ 
+    Тогда $\sum_{k = 1}^{\infty} a_k$~---~расходится.
+\end{theorem}
+\begin{proof}
+    В первой части $a_k \leq q^k, \hspace{0.2cm} \forall k \geq k_0$ \\ $\Rightarrow \sum_{k = k_0}^\infty a_k$~---~сходится по признаку сравнения $\Rightarrow$ по принципу локализации $\sum_{k = 1}^{\infty} a_k$~---~сходится \\ 
+    
+    Вторая часть теоремы очевидна, так как не выполнено необходимое условие сходимости ряда. $a_k \geq 1$
+\end{proof}
+
+\begin{corollary}[Признак Коши в предельной форме]
+    \text{}
+    
+    Пусть $\exists k_0 \in \N$, такое что $\forall k \geq k_0 \hookrightarrow a_k > 0$ \\ 
+    Тогда, если:
+    \begin{enumerate}
+        \item $\exists \lim_{k\rightarrow \infty}{\sqrt[k]{a_k}} = q \in (0, 1)$, то $\sum_{k = 1}^{\infty} a_k$~---~сходится.
+        \item $\exists \lim_{k\rightarrow \infty}{\sqrt[k]{a_k}} = Q \in (1, \infty)$, то $\sum_{k = 1}^{\infty} a_k$~---~расходится.
+        \item $\exists \lim_{k\rightarrow \infty}{\sqrt[k]{a_k}} = 1$, то $\sum_{k = 1}^{\infty} a_k$, то ничего сказать нельзя.
+    \end{enumerate}
+\end{corollary}
+\begin{proof}
+    Аналогично доказательству признака Д'Аламбера..\\Примеры для третьей части такие же.
+\end{proof}
+
+\subsection{Ряды со знакопеременными членами}
+
+\begin{lemma}
+    Пусть $\sum_{k = 1}^{\infty} a_k$~---~абсолютно сходится, то $\sum_{k = 1}^{\infty} a_k$~---~сходится.
+\end{lemma}
+\begin{proof}
+    Воспользуемся критерием Коши. \\
+    $\sum_{k = 1}^{\infty} a_k$~---~абсолютно сходится $\Leftrightarrow$ $\forall \epsilon > 0 \hspace{0.3cm} \exists N(\epsilon) \in \N: \forall m, n \geq N(\epsilon) \hookrightarrow \sum_{k = m}^n |a_k| < \epsilon$ \\
+    В силу неравенства треугольника $\Big|\sum_{k = m}^n a_k\Big| \leq \sum_{k = m}^n |a_k|$ \\
+    Поэтому $\forall \epsilon > 0: \exists N(\epsilon) \in \N: \forall n, m \geq \N(\epsilon) \hookrightarrow \Big|\sum_{k = m}^n a_k \Big| < \epsilon \Rightarrow$ \\ $\Rightarrow$ в силу критерия Коши $\sum_{k = 1}^{\infty}a_k$~---~сходится.
+\end{proof}
+
+\begin{theorem}[Признак Дирихле]
+    \text{}
+    
+    Пусть $\{a_k\}$ и $\{b_k\}$ таковы что 
+    \begin{enumerate}
+        \item $A_n = \sum_{n = 1}^{N} a_n$~---~ограничена.
+        \item Пусть $b_n \rightarrow 0, \hspace{0.2cm} n \rightarrow \infty$
+        \item $\{b_n\}$~---~монотонная.
+    \end{enumerate}
+    Тогда ряд $\sum_{k=1}^{\infty}a_k\cdot b_k$~---~сходится.
+\end{theorem}
+\begin{proof}
+    \text{}\\
+    Прием, которым мы воспользуемся, называется \textbf{преобразованием Абеля}. \\ Обозначим за $A_0 := 0$, тогда можно выразить $a_k = A_k - A_{k - 1}$. Получаем, что 
+    \[\sum_{k=1}^{N}a_k\cdot b_k = \sum_{k = 1}^{N} (A_k - A_{k - 1}) \cdot b_k = \sum_{k = 1}^{N}A_k \cdot b_k - \sum_{k = 1}^{N} A_{k - 1} \cdot b_k = \sum_{k = 1}^{N}A_k \cdot b_k - \sum_{k = 1}^{N - 1} A_k \cdot b_{k + 1} = \]
+    \[= A_N \cdot b_N + \sum_{k = 1}^{N - 1} A_k \cdot (b_k - b_{k - 1})\]
+    Так как $\{A_N\}$~---~ограниченная, а $\{b_N\}$~---~бесконечно малая $\Rightarrow$ $A_N \cdot b_N\rightarrow 0, \hspace{0.2cm} N \rightarrow \infty \hspace{0.3cm} (\star)$ \\ 
+    $\sum_{k = 1}^{\infty} (b_k - b_{k + 1})$~---~сходится, так как $\sum_{k = 1}^{N}(b_k - b_{k+1}) = (b_1 - b_{N + 1}) \rightarrow b_1, \hspace{0.2cm} N \rightarrow \infty$ \\
+    Так как $\{ b_k \}$~---~монотонна, то для нее верно, что $(b_{k} - b_{k + 1})$ имеет один знак $\forall k \in \N \Rightarrow$ \\
+    $\Rightarrow \sum_{k = 1}^{\infty} |b_k - b_{k + 1}|$~---~сходится
+    
+    Так как $\exists C > 0: |A_n| \leq C \hspace{0.3cm} \forall n \in \N \Rightarrow$ \\ 
+    $\Rightarrow$ по признаку сравнения $\sum_{k = 1}^{\infty} |A_k| \cdot |b_k - b_{k + 1}|$~---~сходится.\\
+    Значит сходится и ряд $\sum_{k = 1}^{\infty}A_k\cdot (b_k - b_{k + 1}) \Rightarrow \exists \lim_{N\rightarrow\infty}{\sum_{k = 1}^{N}{A_k \cdot (b_k - b_{k + 1})}} \hspace{0.3cm} (\star \star)$ 
+
+    Значит, исходя из $(\star)$ и $(\star \star)$ получаем, что существует предел и $\lim_{N\rightarrow\infty} \sum_{k = 1}^{N} a_k \cdot b_k \Rightarrow$\\
+    $\Rightarrow$ сходится и $\sum_{k = 1}^{\infty} a_k \cdot b_k$
+\end{proof}
+
+\begin{corollary}[Признак Лейбница]
+    \text{}
+    
+    Пусть $b_k$~---~монотонно стремится к нулю при $k \rightarrow \infty$, тогда $\sum_{k=1}^{\infty}(-1)^k \cdot b_k$~---~сходится.
+\end{corollary}
+\begin{proof}
+    $\Big|\sum_{k = 1}^{N}(-1)^k\Big| \leq 1 \hspace{0.3cm} \forall N \in \N \Rightarrow$ по признаку Дирихле ряд сходится.
+\end{proof}
+
+\begin{corollary}[Признак Абеля]
+    \text{}
+
+    Пусть $\{a_k\}$ и $\{b_k\}$ таковы что 
+    \begin{enumerate}
+        \item $\sum_{k=1}^{\infty}a_k$~---~сходится.
+        \item $\{b_k\}$~---~ограниченна.
+        \item $\{b_k\}$~---~монотонна
+    \end{enumerate}
+    Тогда $\sum_{k = 1}^{\infty}a_k\cdot b_k$~---~сходится.
+\end{corollary}
+\begin{proof}
+    \text{} 
+    
+    Из 2) и 3) $\Rightarrow \exists \lim_{k\rightarrow\infty}b_k = C \in \R$. \\ 
+    Пусть $\widetilde{b_k} = (b_k - C), \hspace{0.2cm} k \in \N$ $\Rightarrow \widetilde{b_k}$ монотонно стремится к 0 при $k\rightarrow\infty$.\\
+    $\Rightarrow$ по признаку Дирихле $\sum_{k = 1}^{\infty}a_k\cdot \widetilde{b_k}$~---~сходится.
+    Также $\sum_{k = 1}^{\infty}a_k\cdot C$~---~сходится. \\
+    Но исходный ряд является суммой двух сходящихся рядов $\Rightarrow$ сходится.
+\end{proof}
+
+\subsection{Перестановки членов ряда}
+\begin{definition}
+    \textit{Перестановкой} в множестве натуральных чисел назовем \\ биекцию $m = m(j), \hspace{0.2cm} j \in \N$
+    \[m: \N \rightarrow \N\]
+\end{definition}
+
+\begin{lemma}
+    Пусть $m: \N \rightarrow \N$~---~перестановка.\\
+    Тогда $m(j) \rightarrow +\infty, j \rightarrow +\infty$ \\
+    \[k_n = \inf_{j > n} m(j) \rightarrow +\infty, \hspace{0.2cm} n \rightarrow +\infty\]
+    \[K_n = \max_{1 \leq j \leq n} m(j) \rightarrow +\infty, \hspace{0.2cm} n \rightarrow +\infty\]
+\end{lemma}
+\begin{proof} 
+    Так как $m: \N \rightarrow \N$~---~биекция. \\
+    $\Rightarrow \exists$ обратное отображение $j = j(m): \N \rightarrow \N$~---~биекция. \\
+    Пусть $J(m) = max\{j(1), \dots, j(m) \}$. \\
+    Если $j > J(m), $ то $m(j) > m$, то так как $m \in \N$ произвольное получаем, что:
+    \[\forall m \in \N: \exists J(m) \in N, \text{ такой что } \forall j > J(m) \Longrightarrow m(j) > m \Rightarrow \lim\limits_{\overline{j \rightarrow \infty}} m(j) = +\infty\]
+
+    \[K_n \geq m(n) \rightarrow +\infty, n \rightarrow \infty\]
+\end{proof}

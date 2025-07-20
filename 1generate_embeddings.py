@@ -4,7 +4,7 @@ import time
 import logging
 import requests
 from pathlib import Path
-from datetime import datetime
+from typing import List, Dict, Any, Optional
 from dotenv import load_dotenv
 from tqdm import tqdm
 
@@ -28,8 +28,8 @@ if not EDENAI_API_KEY:
     raise ValueError("Please set the EDENAI_API_KEY in your .env file")
 
 # Constants
-INPUT_DIR = Path("lectures")
-OUTPUT_DIR = Path("embeddings")
+KNOWLEDGE_BASE_DIR = Path("knowledge_base")
+EMBEDDINGS_DIR = Path("embeddings")
 API_URL = "https://api.edenai.run/v2/text/embeddings"
 HEADERS = {
     "Authorization": f"Bearer {EDENAI_API_KEY}",
@@ -84,165 +84,183 @@ def get_embeddings(texts, attempt=1, max_attempts=3):
         logger.error(f"Unexpected error: {str(e)}")
         return [None] * len(texts)
 
-def process_lecture_file(file_path, pbar=None):
-    """Process a single lecture file and return units with embeddings"""
+def process_knowledge_file(file_path, pbar=None):
+    """Process a single knowledge base file and return units with embeddings"""
     global processed_units, failed_units
     
     try:
-        logger.info(f"Processing file: {file_path}")
+        logger.info(f"Processing knowledge file: {file_path}")
         with open(file_path, 'r', encoding='utf-8') as f:
             data = json.load(f)
         
-        lecture_id = file_path.stem
+        # Get relative path for logging and source tracking
+        rel_path = file_path.relative_to(KNOWLEDGE_BASE_DIR)
         units = data.get('units', [])
         
         if not units:
-            logger.warning(f"No units found in {file_path}")
+            logger.warning(f"No knowledge units found in {rel_path}")
             return None
             
-        logger.info(f"Found {len(units)} units in lecture {lecture_id}")
+        logger.info(f"Found {len(units)} units in {rel_path}")
         
         # Process units in batches
-        batch_num = 0
-        total_batches = (len(units) + BATCH_SIZE - 1) // BATCH_SIZE
+        batch = []
+        batch_indices = []
         
-        for i in range(0, len(units), BATCH_SIZE):
-            batch_num += 1
-            batch = units[i:i+BATCH_SIZE]
-            
-            # Create text for each unit in the batch
-            texts = []
-            for unit in batch:
-                text = f"{unit.get('title', '')} {unit.get('statement', '')} {unit.get('comment', '')}"
-                texts.append(text.strip())
-            
-            # Get embeddings for the batch
-            logger.debug(f"Processing batch {batch_num}/{total_batches} for {lecture_id} with {len(batch)} units")
-            embeddings = get_embeddings(texts)
-            
-            # Process embeddings
-            for j, (unit, embedding) in enumerate(zip(batch, embeddings)):
-                if embedding and 'embedding' in embedding:
-                    unit['embedding'] = embedding['embedding']
-                    processed_units += 1
-                else:
-                    failed_units += 1
-                    logger.warning(f"Failed to get embedding for unit {unit.get('id', 'unknown')} in {lecture_id}")
+        for i, unit in enumerate(units):
+            # Skip if already processed
+            if 'embedding' in unit:
+                continue
                 
-                # Update progress bar if provided
-                if pbar:
-                    pbar.update(1)
-            
-            # Add delay between API calls
-            if i + BATCH_SIZE < len(units):  # Don't sleep after the last batch
-                time.sleep(DELAY_BETWEEN_REQUESTS)
+            # Create a text representation of the unit
+            text_parts = []
+            if unit.get('title'):
+                text_parts.append(unit['title'])
+            if unit.get('statement'):
+                text_parts.append(unit['statement'])
+            if unit.get('proof'):
+                text_parts.append(unit['proof'])
+                
+            text = '\n'.join(text_parts).strip()
+                
+            if text:
+                batch.append(text)
+                batch_indices.append(i)
+                
+                # Process batch when it reaches BATCH_SIZE
+                if len(batch) >= BATCH_SIZE:
+                    embeddings = get_embeddings(batch)
+                    for idx, emb in zip(batch_indices, embeddings):
+                        if emb and 'embedding' in emb:
+                            units[idx]['embedding'] = emb['embedding']
+                            units[idx]['source'] = str(rel_path)
+                            units[idx]['processed_at'] = time.strftime("%Y-%m-%d %H:%M:%S")
+                            processed_units += 1
+                            if pbar:
+                                pbar.update(1)
+                    
+                    batch = []
+                    batch_indices = []
+                    
+                    # Respect rate limiting
+                    time.sleep(DELAY_BETWEEN_REQUESTS)
         
-        logger.info(f"Successfully processed {len(units)} units from {lecture_id}")
-        return {
-            'lecture_id': lecture_id,
-            'units': units,
-            'processed_at': datetime.now().isoformat()
-        }
+        # Process any remaining units in the last batch
+        if batch:
+            embeddings = get_embeddings(batch)
+            for idx, emb in zip(batch_indices, embeddings):
+                if emb and 'embedding' in emb:
+                    units[idx]['embedding'] = emb['embedding']
+                    units[idx]['source'] = str(rel_path)
+                    units[idx]['processed_at'] = time.strftime("%Y-%m-%d %H:%M:%S")
+                    processed_units += 1
+                    if pbar:
+                        pbar.update(1)
+        
+        logger.info(f"Successfully processed {len(units)} units from {rel_path}")
+        return units
         
     except Exception as e:
         logger.error(f"Error processing {file_path}: {str(e)}", exc_info=True)
         return None
 
-def save_embeddings(lecture_data, output_dir):
-    """Save embeddings to individual JSON files"""
-    if not lecture_data:
-        return None
-        
-    try:
-        lecture_id = lecture_data['lecture_id']
-        output_file = output_dir / f"{lecture_id}_with_embeddings.json"
-        
-        # Create output directory if it doesn't exist
-        output_dir.mkdir(parents=True, exist_ok=True)
+def save_knowledge_embeddings(knowledge_data, output_dir):
+    """Save knowledge units with embeddings to JSON files, preserving directory structure"""
+    if not knowledge_data:
+        return
+    
+    # Save each knowledge base file's embeddings
+    for rel_path, data in knowledge_data.items():
+        # Create output path preserving the directory structure
+        output_file = output_dir / rel_path
+        output_file.parent.mkdir(parents=True, exist_ok=True)
         
         with open(output_file, 'w', encoding='utf-8') as f:
-            json.dump(lecture_data, f, ensure_ascii=False, indent=2)
+            json.dump({"units": data}, f, ensure_ascii=False, indent=2)
         
         logger.info(f"Saved embeddings to {output_file}")
-        return output_file
-        
-    except Exception as e:
-        logger.error(f"Error saving embeddings for {lecture_data.get('lecture_id', 'unknown')}: {str(e)}")
-        return None
-
-def print_summary():
-    """Print summary of the embedding generation process"""
-    global total_units, processed_units, failed_units, api_calls, start_time
     
-    end_time = time.time()
-    duration = end_time - start_time if start_time else 0
-    success_rate = (processed_units / total_units * 100) if total_units > 0 else 0
+    # Save a combined file with all embeddings
+    combined_file = output_dir / "all_knowledge_embeddings.json"
+    all_units = []
+    for units in knowledge_data.values():
+        all_units.extend(units)
     
-    logger.info("\n" + "="*50)
-    logger.info("EMBEDDING GENERATION SUMMARY")
-    logger.info("="*50)
-    logger.info(f"Total lecture files processed: {len(json_files)}")
-    logger.info(f"Total units processed: {total_units}")
-    logger.info(f"Successfully embedded units: {processed_units} ({success_rate:.2f}%)")
-    logger.info(f"Failed units: {failed_units}")
-    logger.info(f"Total API calls made: {api_calls}")
-    logger.info(f"Time taken: {duration:.2f} seconds")
-    logger.info(f"Average time per unit: {(duration/total_units):.2f}s" if total_units > 0 else "No units processed")
-    logger.info("="*50 + "\n")
+    with open(combined_file, 'w', encoding='utf-8') as f:
+        json.dump({"units": all_units}, f, ensure_ascii=False, indent=2)
+    
+    logger.info(f"Saved combined knowledge embeddings to {combined_file}")
+    return len(all_units)
 
 def main():
-    global total_units, json_files, start_time
+    global total_units, start_time, processed_units, failed_units, api_calls
     
+    # Reset counters
+    total_units = 0
+    processed_units = 0
+    failed_units = 0
+    api_calls = 0
     start_time = time.time()
-    logger.info("Starting embedding generation process")
     
-    try:
-        # Create output directory if it doesn't exist
-        OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
-        
-        # Get all JSON files in the probability_theory directory
-        json_files = sorted([f for f in INPUT_DIR.glob("*.json") if f.name != "schema.json"])
-        
-        if not json_files:
-            logger.error(f"No JSON files found in {INPUT_DIR}")
-            return
-        
-        # First pass: count total units for progress tracking
-        total_units = 0
-        for json_file in json_files:
+    # Create output directory if it doesn't exist
+    EMBEDDINGS_DIR.mkdir(parents=True, exist_ok=True)
+    
+    # Find all JSON files in the knowledge base directory
+    json_files = list(KNOWLEDGE_BASE_DIR.glob('**/*.json'))
+    
+    if not json_files:
+        logger.error(f"No JSON files found in {KNOWLEDGE_BASE_DIR}")
+        return
+    
+    logger.info(f"Found {len(json_files)} knowledge base files to process")
+    
+    # First pass: count total units for progress tracking
+    total_units = 0
+    for file_path in json_files:
+        try:
+            with open(file_path, 'r', encoding='utf-8') as f:
+                data = json.load(f)
+                total_units += len(data.get('units', []))
+        except Exception as e:
+            logger.error(f"Error counting units in {file_path}: {str(e)}")
+    
+    logger.info(f"Found {total_units} knowledge units to process")
+    
+    # Process each file and collect embeddings
+    knowledge_data = {}
+    
+    # Initialize progress bar
+    with tqdm(total=total_units, desc="Processing knowledge units") as pbar:
+        for file_path in json_files:
+            rel_path = file_path.relative_to(KNOWLEDGE_BASE_DIR)
             try:
-                with open(json_file, 'r', encoding='utf-8') as f:
+                with open(file_path, 'r', encoding='utf-8') as f:
                     data = json.load(f)
-                    total_units += len(data.get('units', []))
+                
+                # Process the knowledge units
+                units = process_knowledge_file(file_path, pbar)
+                if units:
+                    knowledge_data[str(rel_path)] = units
+                    
             except Exception as e:
-                logger.error(f"Error counting units in {json_file}: {str(e)}")
-        
-        logger.info(f"Found {len(json_files)} lecture files with {total_units} total units to process")
-        
-        if total_units == 0:
-            logger.error("No units found to process")
-            return
-        
-        # Process files with a progress bar
-        with tqdm(total=total_units, desc="Processing units", unit="unit") as pbar:
-            for json_file in json_files:
-                # Process the lecture file
-                lecture_data = process_lecture_file(json_file, pbar)
-                
-                # Save the results
-                save_embeddings(lecture_data, OUTPUT_DIR)
-                
-        # Print summary
-        print_summary()
-        
-    except KeyboardInterrupt:
-        logger.warning("\nProcess interrupted by user")
-        print_summary()
-    except Exception as e:
-        logger.error(f"Unexpected error: {str(e)}", exc_info=True)
-        print_summary()
-    finally:
-        logger.info("Embedding generation process completed")
+                logger.error(f"Error processing {rel_path}: {str(e)}")
+                failed_units += len(data.get('units', []))
+    
+    # Save embeddings to files
+    total_saved = save_knowledge_embeddings(knowledge_data, EMBEDDINGS_DIR)
+    
+    # Print summary
+    elapsed_time = time.time() - start_time
+    logger.info("\n=== Knowledge Embedding Generation Complete ===")
+    logger.info(f"Total files processed: {len(json_files)}")
+    logger.info(f"Total knowledge units: {total_units}")
+    logger.info(f"Successfully processed: {processed_units}")
+    logger.info(f"Failed to process: {failed_units}")
+    logger.info(f"Total API calls made: {api_calls}")
+    logger.info(f"Time taken: {elapsed_time:.2f} seconds")
+    logger.info(f"Average time per unit: {elapsed_time/max(1, processed_units):.2f} seconds")
+    logger.info(f"Total units saved: {total_saved}")
+    logger.info("Embedding generation process completed")
 
 if __name__ == "__main__":
     main()

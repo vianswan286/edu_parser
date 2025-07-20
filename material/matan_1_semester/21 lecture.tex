@@ -1,0 +1,374 @@
+\begin{theorem}
+	\hypertarget{thrm5.25}{(Необходимое условие экстремума в терминах второй производной)} Пусть $\exists f''(x_{0})$. Тогда если $x_{0}$~---~ точка локального экстремума, то $f'(x_{0}) = 0$ и, если $x_{0}$ ~---~ локальный максимум, $f''(x_{0}) \leq 0$, а если локальный минимум, то $f''(x_{0}) \geq 0$ .
+\end{theorem}
+\begin{proof}
+	То, что $f'(x_{0}) = 0$, следует из \hyperlink{thrm5.9}{теоремы Ферма}. 
+	
+	Докажем утверждение для локального минимума. Предположим противное: пусть если $x_{0}$~---~ локальный минимум, то $f''(x_{0}) < 0$. Но из этого условия по предыдущей теореме при производной порядка $n = 2$ получаем, что $x_{0}$~---~ строгий локальный максимум. Получили противоречие. Значит, наше предположение неверно и если $x_{0}$~---~ локальный минимум, то $f''(x_{0}) \geq 0$.
+	
+	Доказательство для локального максимума аналогично.  
+\end{proof}
+
+\paragraph{Выпуклости и точки перегиба.}
+
+
+\sidefig(11 cm)(6 cm)	
+{\begin{flushleft}
+	\normalsize{
+		\begin{definition}
+			Функция $f: (a, b) \mapsto \R$ называется \textit{нестрого выпуклой вниз (вверх) на $(a, b)$}, если $\forall x_{1}, x_{2} \in (a, b) \hookrightarrow f(t\cdot x_{1} + (1-t)\cdot x_{2}) \underset{\geq}{(\leq)} t\cdot f(x_{1}) + (1- t)\cdot f(x_{2}) \quad \forall t\in [0, 1]$
+		\end{definition}
+		\begin{definition}
+				Функция $f: (a, b) \mapsto \R$ называется \textit{строго выпуклой вниз (вверх) на $(a, b)$}, если $\ \forall x_{1}, x_{2} \in (a, b) \hookrightarrow f(t\cdot x_{1} + (1-t)\cdot x_{2}) \underset{(>)}{(<)} t\cdot f(x_{1}) + (1- t)\cdot f(x_{2}) \quad \forall t\in (0, 1)$
+		\end{definition}}
+\end{flushleft}}
+{
+	\begin{tikzpicture}
+	% Рисуем сетку
+	\draw[help lines, step=0.25, dotted]
+	(0,0) grid (4.5,4);
+	% Начало координат
+	\draw[->, thin] (0,0) -- (4.55,0)
+	node[below] {$x$}; % Ox
+	\draw[->, thin] (0,0) -- (0, 4.05)
+	node[left] {$y$}; % Oy
+	
+	\draw[line width =.05cm](0.25, 3.5) parabola bend (2.5, 1.5)(4, 2.5);
+	
+	\draw[line width =.03cm, blue] (1, 2.4) -- (3.5, 1.95);
+	
+	\draw[dotted, line width =.03cm] (2.5, 0) -- (2.5, 2.2);
+	\draw[dotted, line width =.03cm] (0.25, 0) -- (0.25, 3.5);
+	\draw[dotted, line width =.03cm] (1, 0) -- (1, 2.4);
+	\draw[dotted, line width =.03cm] (3.5, 0) -- (3.5, 2);
+	\draw[dotted, line width =.03cm] (4, 0) -- (4, 2.5);
+	\draw[dotted, line width =.03cm] (1, 2.4) -- (0, 2.4);
+	\draw[dotted, line width =.03cm] (0, 1.9) -- (3.5, 1.9);
+	
+	\draw[fill=blue, blue] (3.5, 1.95) circle(1.5 pt);
+	\draw[fill=blue, blue] (1, 2.4) circle(1.5 pt);
+	\draw[fill=blue, blue] (2.5, 2.12) circle(1.5 pt);	
+	
+	\node[below] at (0.25, 0) {$a$};
+	\node[below] at (1, 0) {\small$x_{1}$};
+	\node[below] at (3.5, 0) {$x_{2}$\normalsize};
+	\node[below] at (2.2, 0) {\tiny $x_{2} + t\cdot(x_{2}-x_{1})$\normalsize};
+	\node[below] at (4, 0) {$b$};
+	\node[left] at (0, 2.4) {\tiny$f(x_{1})$\normalsize};
+	\node[left] at (0, 1.9) {\tiny$f(x_{2})$\normalsize};
+	
+	\node at (2.7, 3.5) {\tiny$\begin{gathered}
+			x(t) = x_{2} + t \cdot (x_{1} - x_{2})\hfill \\ 
+			y(t) = f(x_{2}) + t\cdot (f(x_{1}) - f(x_{2}))
+			\end{gathered}$\normalsize};
+	
+	\draw[->, line width=.03cm] (3, 2.1) arc(0:9.3:6);
+	
+	\draw[thin] (0.25, -0.1) -- (0.25, 0.1);
+	\draw[thin] (4, -0.1) -- (4, 0.1);
+\end{tikzpicture}
+}
+
+\begin{note}
+	Выпуклые вверх функции иногда называют \textit{вогнутыми}
+\end{note}
+
+\begin{problem}
+	Доказать, что если $f$ выпукла вверх (вниз) на $(a, b),$ то она непрерывна на $(a, b)$ 
+\end{problem}
+
+\begin{theorem}
+	Пусть $f:(a, b) \mapsto \R$ дважды дифференцируема на $(a,b)$. Тогда
+	\begin{enumerate}
+		\item $f$ выпукла вниз на $(a, b) \Leftrightarrow f''(x) \geq 0 \ \forall x\in (a, b)$
+		\item $f$ выпукла вверх на $(a, b) \Leftrightarrow f''(x) \leq 0 \ \forall x\in (a, b)$
+	\end{enumerate}
+\end{theorem}
+\begin{proof}
+	Докажем пункт $1.$, так как пункт $2.$ аналогичен.
+	
+	$\underline{\textrm{Шаг 1.}}$ Пусть $f$ выпукла вниз. Фиксируем $x_{0} \in (a, b)$. Введем $u \in (0,\min\{x_{0} - a, b-x_{0}\}),$
+	
+	$$\begin{gathered}
+		x_{1} = x_{0} - u \\
+		x_{2} = x_{0} - u
+	\end{gathered} \Rightarrow x_{0} = \dfrac{x_{1} + x_{2}}{2}$$ 
+	
+	Разложим функцию $f$ \hyperlink{thrm5.14}{по формуле Тейлора с остаточным членом в форме Пеано}:
+	
+	$$f(x_{1}) = f(x_{0}) + f'(x_{0})(-u) + \dfrac{f''(x_{0})\cdot u^{2}}{2} + o(u^{2}), u\to0$$
+	$$f(x_{2}) = f(x_{0}) + f'(x_{0})(u) + \dfrac{f''(x_{0})\cdot u^{2}}{2} + o(u^{2}), u\to0$$
+	
+	Используем условие выпуклости при $t = \dfrac{1}{2}$:
+	$$f(x_{0}) \leq \dfrac{f(x_{1}) + f(x_{2})}{2} = \dfrac{2f(x_{0}) + f''(x_{0}) + o(u^{2})}{2} = f(x_{0}) + f''(x_{0})\dfrac{u^{2}}{2} + o(u^{2})$$
+	$$f(x_{0}) \leq f(x_{0}) + f''(x_{0})\dfrac{u^{2}}{2} + o(u^{2}) \Rightarrow f''(x_{0})\dfrac{u^{2}}{2} + o(u^{2}) \geq 0 \Rightarrow \dfrac{f''(x_{0})}{2} + 0(1)$$
+	
+	\hyperlink{thrm4.8}{Переходя к пределу в неравенстве} получим $f''(x_{0}) \geq 0$
+	
+	$\underline{\textrm{Шаг 2.}}$ Пусть наоборот $f''(x) \geq 0 \ \forall x\in (a, b)$. Покажем, что $f$ выпукла вниз на $(a, b).$
+	
+	Фиксируем произвольные точки $x_{1}, x_{2} \in (a, b)$ и $t \in (0, 1).$ Покажем, что выполняется $$f(\underbrace{t\cdot x_{1} (1-t) \cdot x_{2}}_{x_{0}}) \leq t\cdot f(x_{1}) + (1-t) \cdot f(x_{2})$$
+	
+	Воспользуемся \hyperlink{thrm5.15}{формулой Тейлора с остаточным членом в форме Лагранжа}:
+	
+	$$f(x_{1}) = f(x_{0}) + f'(x_{0})(x_{1}-x_{0}) + \dfrac{f''(\xi_{1})}{2!} (x_{1}-x_{0})^{2}, \ \xi_{1} \in (x_{1}, x_{0}) $$
+	$$f(x_{2}) = f(x_{0}) + f'(x_{0})(x_{2}-x_{0}) + \dfrac{f''(\xi_{2})}{2!} (x_{2}-x_{0})^{2}, \ \xi_{2} \in (x_{0}, x_{2}) $$
+	
+	Так как $\dfrac{f''(\xi_{1})}{2!}  \geq 0$ и $\dfrac{f''(\xi_{2})}{2!} \geq 0,$ то $\begin{gathered}
+		f(x_{1}) \geq f(x_{0}) + f'(x_{0}) (x_{1}-x_{0}) \\
+		f(x_{2}) \geq f(x_{0}) + f'(x_{0}) (x_{2}-x_{0}). 
+	\end{gathered}$  Следовательно,
+	$$t\cdot f(x_{1}) + (1-t) \cdot f(x_{2}) \geq t \cdot f(x_{0}) +(1-t) \cdot f(x_{0}) + t\cdot f'(x_{0})(x_{1}-x_{0}) + (1-t) \cdot f'(x_{0})(x_{2} - x_{0}) $$
+	$$t\cdot f(x_{1}) + (1-t) \cdot f(x_{2}) \geq f(x_{0}) + f'(x_{0}) \underbrace{\Big(t\cdot (x_{1} - x_{0}) + (1-t)\cdot (x_{2}-x_{0})\Big)}_{0} = f(x_{0})$$
+	
+	Так как $t \in (0, 1)$ и точки $x_{1}, x_{2}$  выбраны произвольно, то теорема доказана.
+\end{proof}
+
+\sidefig(10 cm)(6 cm)	
+{\begin{flushleft}
+\normalsize{		
+\begin{definition}
+	 Пусть $f\in C\Big((a, b)\Big)$ и $\exists f'(x_{0}) \in \overline{\R}.$ Пусть выполняется одно их двух условий: \begin{enumerate}
+		\item $f$ выпукла вниз на $U_{\delta}^{-}(x_{0})$ и выпукла вверх на $U_{\delta}^{+}(x_{0})$
+		\item $f$ выпукла вверх на $U_{\delta}^{-}(x_{0})$ и выпукла вниз на  $U_{\delta}^{+}(x_{0})$
+	\end{enumerate}
+	
+	Тогда $x_{0}$ называется \textit{точкой перегиба графика функции $f$}
+\end{definition}}
+\end{flushleft}}
+{
+\begin{tikzpicture}[scale = 1.1]
+	% Рисуем сетку
+	\draw[help lines, step=0.25, dotted]
+	(-2,-2) grid (2,2);
+	% Начало координат
+	\draw[->, thin] (-2.05,0) -- (2.05,0)
+	node[below] {$x$}; % Ox
+	\draw[->, thin] (0,-2.05) -- (0,2.05)
+	node[left] {$y$}; % Oy
+	
+	\draw[blue, line width=.03cm] (0.0) parabola bend (2, 1.4) |-(0,0);
+	\draw[blue, line width=.03cm] (0.0) parabola bend (-2, -1.4) |-(0,0);
+	
+	\draw[->] (0.5, -0.5) arc(40:60:1);
+	
+	\node at (1,-0.7) {\tiny Точка перегиба}
+	
+	\draw[fill = blue] (0, 0) circle (1.5 pt);
+	\node[above left] at (0,0) {$O$};
+	\node[below] at (0, -2) {$sign x\cdot \sqrt{|x|}$};
+\end{tikzpicture}
+}
+
+\begin{theorem}
+	\hypertarget{thrm5.27}{(Критерий точки перегиба)} Пусть $f \in C\Big(U_{\delta}(x_{0})\Big)$ и $\exists f'(x_{0}) \in \overline{\R}$, $f$ дважды дифференцируема в $\mathring{U}_{\delta}(x_{0}).$ Тогда $x_{0}$~---~ точка перегиба графика функции $f\Leftrightarrow$ $$\Leftrightarrow \left[\begin{gathered}
+	f''(x) \geq 0\ \forall x\in (x_{0} - \delta, x_{0}) \ \textrm{и} \ f''(x) \leq 0 \ \forall (x_{0}, x_{0} + \delta) \\
+	f''(x) \leq 0\ \forall x\in (x_{0} - \delta, x_{0}) \ \textrm{и} \ f''(x) \geq 0 \ \forall (x_{0}, x_{0} + \delta) 
+	\end{gathered}\right.$$
+\end{theorem}
+\begin{proof}
+	Доказательство состоит в применении определения и критерия выпуклости.
+\end{proof}
+
+\sidefig(10 cm)(6 cm)	
+{\begin{flushleft}
+\normalsize
+\begin{definition}
+	Пусть $f$ дифференцируема в точке $x_{0}$. Будем говорить что, график функции $f$ \textit{переходит с одной стороны касательной на другую при переходе через точку $x_{0}$}, если \footnotesize $\exists \delta > 0: \left[\begin{gathered}
+	y_{\textrm{кас.}}(x) \leq f(x) \ \forall x\in (x_{0} - \delta, x_{0}) \ \textrm{и} \ y_{\textrm{кас.}}(x) \geq f(x) \ \forall x\in(x_{0}, x_{0} + \delta) \\
+	y_{\textrm{кас.}}(x) \geq f(x) \ \forall x\in (x_{0} - \delta, x_{0}) \ \textrm{и} \ y_{\textrm{кас.}}(x) \leq f(x) \ \forall x\in(x_{0}, x_{0} + \delta)
+	\end{gathered}\right.$
+\end{definition}
+\end{flushleft}}
+{
+\begin{tikzpicture}[scale = 1]
+	% Рисуем сетку
+	\draw[help lines, step=0.25, dotted]
+	(-2,-2) grid (2,2);
+	% Начало координат
+	\draw[->, thin] (-2.05,-2) -- (2.05,-2)
+	node[below] {$x$}; % Ox
+	\draw[->, thin] (-2,-2.05) -- (-2,2.05)
+	node[left] {$y$}; % Oy
+	
+	\draw[blue, line width=.03cm] (0.0) parabola bend (2, 1.4) |-(0,0);
+	\draw[blue, line width=.03cm] (0.0) parabola bend (-2, -1.4) |-(0,0);
+	
+	\draw[line width =.03cm] (-1.5,-2) -- (1.5,2);
+	\node[above, left] at (1, 1.5) {$y_{\textrm{кас.}(x)}$};
+	
+	\draw[fill = blue] (0, 0) circle (1.5 pt);
+	\draw[dotted, line width=.03cm] (0,0) -- (0, -2);
+	\node[below] at (0,-2) {$x_{0}$};
+\end{tikzpicture}
+}
+
+\begin{theorem}
+	Пусть $f$ дважды дифференцируема в $\mathring{U}_{\delta}(x_{0})$ и дифференцируема в точке $x_{0}$. Тогда если $x_{0}$~---~ точка перегиба графика функции $f,$ то график переходит с одной стороны касательной на другую. 
+	
+	Обратное неверно.
+\end{theorem}
+\begin{proof}
+	Пусть $x_{0}$~---~ точка перегиба графика. Тогда в силу \hyperlink{thrm5.27}{критерия точки перегиба} $\exists \delta > 0: f''(x) \leq 0 \ \forall (x_{0} - \delta, x_{0})$ и $f''(x) \geq 0 \ \forall x\in (x_{0, x_{0} + \delta})$ (второй случай рассматривается аналогично).
+	
+	\hyperlink{thrm5.15}{По формуле Тейлора с остаточным членом в форме Лагранжа} имеем:
+	$$\forall x\in (x_{0} - \delta, x_{0}) \hookrightarrow f(x) = \underbrace{f(x_{0}) + f'(x_{0})(x-x_{0})}_{y_{\textrm{кас.}}} + \dfrac{f''(\xi)(x-x_{0})^{2}}{2}, \ \dfrac{f''(\xi)(x-x_{0})^{2}}{2} \leq 0 \Rightarrow$$
+	
+	$$ \Rightarrow f(x) \leq y_{\textrm{кас.}}(x) \ \forall x\in (x_{0}-\delta, x_{0})$$
+	
+	$$\forall x\in (x_{0}, x_{0} + \delta) \hookrightarrow f(x) = \underbrace{f(x_{0}) + f'(x_{0})(x-x_{0})}_{y_{\textrm{кас.}}} + \dfrac{f''(\xi)(x-x_{0})^{2}}{2}, \ \dfrac{f''(\xi)(x-x_{0})^{2}}{2} \geq 0 \Rightarrow$$
+	
+	$$ \Rightarrow f(x) \geq y_{\textrm{кас.}}(x) \ \forall x\in (x_{0}, x_{0} + \delta)$$
+	
+	Следовательно, график перешел с одной стороны касательной на другую.
+	
+	\textit{Почему обратное неверно?}
+
+	\sidefig(7.5 cm)(8.5 cm)	
+	{\begin{flushleft}
+			\normalsize{
+	\begin{example}
+		$f(x) = \begin{cases}
+			x^{3}\Big(2+\sin\dfrac{1}{x}\Big), \ x\neq 0, \\
+			0, \ x=0
+		\end{cases}$
+		
+		$$f'(0) = 0$$
+		
+		Горизонтальная касательная в точке $0$: $y_{\textrm{кас.}}  = 0$
+			
+		$$\begin{cases}
+			f(x) > 0, \ x> 0 \\
+			f(x) < 0, x< 0
+		\end{cases}$$
+		
+		Но точка $0$ не является точкой перегиба графика $f$, так как $f$ не обладает какой-либо выпуклостью в левой или правой полуокрестности точки $0$.
+	\end{example}}
+	\end{flushleft}
+	}
+	{
+	\input{inflection.tex}
+	}
+\end{proof}
+
+\begin{center}
+	\textbf{Асимптоты}
+	
+	    \centering
+	\begin{tabular}{cс}
+	\begin{tikzpicture}[scale=0.25]
+		% Рисуем сетку
+		\draw[help lines, step=1.25, dotted]
+		(-10,-10) grid (10,10);
+		% Начало координат
+		\draw[->, thin] (-10.05,0) -- (10.05,0)
+		node[below] {$x$}; % Ox
+		\draw[->, thin] (-1.25,-10.05) -- (-1.25,10.05)
+		node[left] {$y$}; % Oy
+		
+		\draw[blue, line width=.03cm] plot[domain=0.61:10, samples = 200]  (\x, {1/(\x - 0.5) + 0.5});
+		\draw[blue, line width=.03cm] plot[domain=-10:-0.61, samples = 200]  (\x, {1/(\x + 0.5) - 0.5});
+		
+		\draw[line width=.03cm, dotted] (0, -10) -- (0, 10);
+		
+		
+		\node[above left] at (-1.25,0) {$O$};
+		\node[below] at  (0,0) {$x_{0}$};
+		\node[below] at (0, -10.5) {\textrm{Вертикальная асимптота}}
+	\end{tikzpicture}
+		&
+	\begin{tikzpicture}[scale=0.25]
+		% Рисуем сетку
+		\draw[help lines, step=1.25, dotted]
+		(-10,-10) grid (10,10);
+		% Начало координат
+		\draw[->, thin] (-10.05,0) -- (10.05,0)
+		node[below] {$x$}; % Ox
+		\draw[->, thin] (-1.25,-10.05) -- (-1.25,10.05)
+		node[left] {$y$}; % Oy
+		
+		\draw[blue, line width=.03cm] plot[domain=2.55:10, samples = 200]  (\x, {((\x)^2+1)/(\x - 2)-5});
+		\draw[blue, line width=.03cm] plot[domain=-6:1.4, samples = 200]  (\x, {((\x)^2+1)/(\x- 2)-5});
+		
+		\draw[line width=.03cm, dotted] (-7, -10) -- (10, 7);
+		
+		
+		\node[above left] at (-1.25,0) {$O$};
+		\node[below] at  (0,0) {$x_{0}$};
+		\node[below] at (0, -10.5) {\textrm{Наклонная асимптота}}
+	\end{tikzpicture}
+	\end{tabular}
+\end{center}
+
+\begin{definition}
+	Будем говорить, что график функции $f$ имеет \textit{вертикальную асимптоту в точке $x_{0}$}, если $\begin{cases}
+		\lim\limits_{x\to x_{0}+0} f(x)= \pm \infty \\
+		\lim\limits_{x\to x_{0}-0} f(x)= \pm \infty
+	\end{cases}$
+\end{definition}
+\begin{definition}
+	Прямая $y = k \cdot x + b, \ b, k \in \R$ называется \textit{наклонной асимптотой графика функции} $f$: $(A, \infty)$, если $\exists \lim\limits_{x\to +\infty}(f(x) - kx - b) = 0$.
+	
+	Аналогично определяется \textit{наклонная асимптота на $-\infty$} 
+\end{definition}}
+
+\begin{theorem}
+	\hypertarget{thrm5.29}{(Критерий асимптоты)} 
+	
+	Прямая $y = kx + b$~---~ асимптота функции $f$: $(A, +\infty) \ \Leftrightarrow (*)\ \begin{cases}
+		\exists \lim\limits_{x \to +\infty} \dfrac{f(x)}{x} = k \\
+		\exists \lim\limits_{x\to +\infty} (f(x) - kx) = b
+		\end{cases}$
+\end{theorem}
+\begin{proof}
+	$\underline{\textrm{Шаг 1.}}$ Пусть $y = kx + b$~---~ асимптота. Следовательно, 
+	
+	$$\exists \lim\limits_{x\to +\infty} (f(x) - kx) -b = 0 \Rightarrow \exists \lim\limits_{x\to +\infty} (f(x) - kx) = b \Rightarrow f(x) -kx = b + o(1), x\to +\infty$$
+	
+	Разделив все на $x,$ получаем 
+	$$\dfrac{f(x)}{x} = k + \dfrac{b}{x} + \dfrac{1}{x}o(1), x\to \infty.$$ 
+	
+	Следовательно, $\lim\limits_{x \to +\infty} \dfrac{f(x)}{x} = k$.
+	
+	 $\underline{\textrm{Шаг 2.}}$ Пусть обратно выполнена $(*)$. Тогда $\lim\limits_{x\to +\infty} (f(x) - kx) = b.$
+\end{proof}
+
+\paragraph{План построения графика}
+\begin{enumerate}
+	\item Найти область определения.
+	\item Найти точки пересечения с осями координат.
+	\item Построить асимптоты, если они есть.
+	\item Нарисовать эскиз графика.
+	\item Найти $f'(x),$ точки экстремума, интервалы возрастания и убывания функции.
+	\item Найти $f''(x)$, интервалы выгнутости и вогнутости, точки перегиба.
+	\item Строим уточненный график.
+\end{enumerate}
+
+
+\section{Первообразная, неопределенный интеграл, полиномы, комплексные числа}
+\begin{definition}
+	Будем говорить, что $f$: $(a, b) \mapsto \R$ имеет \textit{первообразную} $F$ на $(a, b)$, если $F$~---~дифференцируема на $(a, b)$ и $\forall x \in (a, b)$ $F'(x) = f (x)$.
+\end{definition}
+\begin{note}
+	Бессмысленно считать первообазную в точке, мы всегда рассматриваем интервалы.
+\end{note}
+\begin{note}
+	Если $f$: $(a, b) \mapsto \R$ имеет устранимый разрыв или разрыв первого рода, то она не имеет на $(a, b)$ первообразной (следствие из теоремы Лагранжа о среднем).
+\end{note}
+\begin{definition}
+	\textit{Неопределенным интегралом} функции $f$ на $(a, b)$ будем называть множество всех первообразных на $(a, b)$ и записывать $\displaystyle \int f(x) \,dx$.
+\end{definition}
+\begin{lemma}
+	Пусть $f$ дифференцируема на $(a, b)$. Тогда $f' (x) = 0 \  \forall x \in (a, b) \Leftrightarrow f (x) \equiv const$.
+\end{lemma}
+\begin{proof}
+	1. Eсли $f (x) = t \ \forall x \in (a, b),$ то $f'(x) = 0 \ \forall x \in (a, b).$
+	
+	2. Пусть $f'(x) = 0 \ \forall x \in (a, b).$ Рассмотрим произвольные $x_{1}, x_{2} \in (a, b)$, тогда по теореме Лагранжа $\exists \xi \in (a, b)$: $f (x_{1}) - f (x_{2}) = f' (\xi) (x_{1} - x_{2}) = 0 \Rightarrow f (x_{1}) = f (x_{2}).$ А так как $x_{1}$ и $x_{2}$ были выбраны из $(a, b)$ произвольно, то $f (x) = const$ на $(a, b)$.
+\end{proof}
+\begin{corollary}
+	\hypertarget{coll6.1}{Пусть $F$~---~первообразная $f$ на $(a, b)$. Тогда $\displaystyle \int f (x) \, dx = \{ F (x) + C: C \in \R \}$}.
+\end{corollary}
+\begin{proof}
+	Пусть $F_{1}$ и $F_{2}$~---~две различные первообразные $f$. Тогда $F'_{1}(x) - F'_{2}(x) = f (x) - f (x) = 0 \Rightarrow$ по лемме $2.1$ $F_{1} - F_{2} = const \Rightarrow$ первообразные отличаются только на $C \in \R$.
+\end{proof}

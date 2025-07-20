@@ -1,0 +1,76 @@
+{
+  "units": [
+    {
+      "id": "D1",
+      "kind": "definition",
+      "title": "",
+      "statement": "Пусть $E \\subset \\R^n$ произвольное множество(даже неизмеримое). Будем говорить, что семейство непустых открытых шаров $\\mathcal{B}$ образуют покрытие Витали(fine covering) множества $E,$ если $$\\forall x \\in E \\ \\forall r > 0 \\ \\exists B \\in \\mathcal{B} \\text{ с центром в } x, \\text{ таких, что } r(B) < r.$$ То есть это покрытие множества шарами сколь угодно малого радиуса в каждой точке множества.",
+      "proof": "",
+      "tags": [],
+      "source": "matan_3_semestr/Lecture_4.tex"
+    },
+    {
+      "id": "D2",
+      "kind": "definition",
+      "title": "",
+      "statement": "Для точки $x \\in E$ определим нижняя плотность равенством $$\\underline{D}_{E}(x) = \\lowlim_{r \\to +0}{\\frac{\\mu^{*}(E \\cap B(x, r))}{\\LL^n(B(x, r))}},$$ Кроме того определим верхнюю плотность равенством: $$\\overline{D}_{E}(x) =\\uplim_{r \\to +0}{\\frac{\\mu^{*}(E \\cap B(x, r))}{\\LL^n(B(x, r))}}$$",
+      "proof": "",
+      "tags": [],
+      "source": "matan_3_semestr/Lecture_4.tex"
+    },
+    {
+      "id": "D3",
+      "kind": "definition",
+      "title": "",
+      "statement": "Если $\\underline{D}_{E}(x) = \\overline{D}_{E}(x) = D_{E}(x)$, то это число называется плотностью точки $x$ относительно множества $E$",
+      "proof": "",
+      "tags": [],
+      "source": "matan_3_semestr/Lecture_4.tex"
+    },
+    {
+      "id": "D4",
+      "kind": "definition",
+      "title": "",
+      "statement": "Если $D_{E}(x) = 1$, то $x$ называется точкой плотности множества $E$, то есть: $$ \\exists \\lim\\limits_{r\\ra +0}\\frac{\\mu^{*}(E \\cap B(x, r))}{\\LL^n(B(x, r))} = 1.$$",
+      "proof": "",
+      "tags": [],
+      "source": "matan_3_semestr/Lecture_4.tex"
+    },
+    {
+      "id": "T5",
+      "kind": "theorem",
+      "title": "",
+      "statement": "Для любого измеримого по Лебегу множества $A \\subset \\R^n$ положительной меры существует его неизмеримое подмножество $E.$",
+      "proof": "",
+      "tags": [],
+      "source": "matan_3_semestr/Lecture_4.tex"
+    },
+    {
+      "id": "T6",
+      "kind": "theorem",
+      "title": "",
+      "statement": "(Верхняя регулярность меры Лебега) Пусть $E \\subset \\R^{n}$ измеримо по Лебегу. Тогда: $$\\forall \\varepsilon > 0 \\ \\exists \\text{ открытое множество }G_{\\varepsilon} \\text{ такое что } E \\subset G_{\\varepsilon} : \\ \\LL^n(G_{\\varepsilon} \\setminus E) < \\varepsilon$$",
+      "proof": "",
+      "tags": [],
+      "source": "matan_3_semestr/Lecture_4.tex"
+    },
+    {
+      "id": "T7",
+      "kind": "theorem",
+      "title": "",
+      "statement": "(Витали о тонком покрытии) Пусть $E \\subset \\R^n$ произвольное ограниченное множество. Пусть $\\mathcal{B} = \\{B_{\\alpha}\\}_{\\alpha \\in I}$ его покрытие Витали. Тогда существует не более чем счетное \\underline{дизъюнктное} подсемейство $\\{B_n\\}_{n = 1}^N$, где $N \\in \\N \\cup \\{+\\infty\\}$, для которого верно равенство: $$\\LL^n\\Bigg(E \\setminus \\bigcup_{n = 1}^{N} B_n \\Bigg) = 0.$$",
+      "proof": "",
+      "tags": [],
+      "source": "matan_3_semestr/Lecture_4.tex"
+    },
+    {
+      "id": "T8",
+      "kind": "theorem",
+      "title": "",
+      "statement": "Пусть $E \\subset \\R^n$ --- измеримое по Лебегу множество. Тогда $\\LL^n-$ почти всякая точка $x \\in E$ является точкой его плотности, то есть:$$\\forall \\LL^n-\\text{почти любая } x \\in E \\hookrightarrow \\exists \\lim_{r\\rightarrow+0}\\frac{\\LL^{n}(E \\cap B(x, r))}{\\LL^n(B(x, r))} = 1.$$",
+      "proof": "",
+      "tags": [],
+      "source": "matan_3_semestr/Lecture_4.tex"
+    }
+  ]
+}

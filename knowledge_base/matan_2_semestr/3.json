@@ -1,0 +1,40 @@
+{
+  "units": [
+    {
+      "id": "D1",
+      "kind": "definition",
+      "title": "",
+      "statement": "Пусть $G \\subset \\R^n$~---~открыто и непусто, $F$: $G \\rightarrow R$. Пусть $\\frac{\\partial f}{\\partial x_i}(x)$~---~существуют для $\\forall x \\in G$. Тогда если в точке $x^0 \\in G$ существует частная производная по $j$-ой координате от функции $\\frac{\\partial f}{\\partial x_i}$, то она обозначается $\\frac{\\partial^2f}{\\partial x_j \\partial x_i}(x^0)$. Пусть теперь при некотором $m \\in \\N$ определена в $G$ функция $\\frac{\\partial^{m -1}f}{\\partial x_{i_2} \\dots \\partial x_{i_m}}, \\ i_2, \\dots, i_m \\in \\{1, \\dots n\\}$, тогда если $i_1 \\in \\{1, \\dots, n\\}$, то $\\frac{\\partial^mf}{\\partial x_{i_1}\\dots\\partial x_{i_m}}(x^0) := \\frac{\\partial}{\\partial x_{i_1}}\\left(\\frac{\\partial^{m - 1}f}{\\partial x_{i_2}\\dots \\partial x_{i_m}}\\right)$.",
+      "proof": "",
+      "tags": [],
+      "source": "matan_2_semestr/3.tex"
+    },
+    {
+      "id": "D2",
+      "kind": "definition",
+      "title": "",
+      "statement": "Пусть $G \\subset \\R^n$~---~непусто и открыто. Пусть фиксировано $k \\in \\N$. Будем говорить, что $f \\ k$ \\textit{раз дифференцируема в точке} $x^0 \\in G $, если все частные производные порядка $k - 1$ существуют в открытом множестве $G$ и являются дифференцируемыми функциями в точке $x^0$.",
+      "proof": "",
+      "tags": [],
+      "source": "matan_2_semestr/3.tex"
+    },
+    {
+      "id": "T3",
+      "kind": "theorem",
+      "title": "",
+      "statement": "\\hypertarget{thrm2.1}{(Дифференцируемость сложной функции)} Пусть $G \\subset \\R^n$~---~открыто и непусто, $\\Omega \\subset \\R^m$~---~открыто и непусто. $F: G \\rightarrow \\Omega$ дифференцируемо в точке $x^0 \\in G, H: \\Omega \\rightarrow \\R^d$ дифференцируемо в точке $y^0 = F(x^0) \\in \\Omega$. Тогда для композиции $\\phi = H \\circ F$, якобиан будет равен: $J_\\phi(x^0) = \\D(H \\circ F)(x^0) = \\D H(F(x^0)) \\D F(x^0)$, а $\\frac{\\partial \\phi_i}{\\partial x_j} = \\sum \\limits_{k = 1}^m \\frac{\\partial H_i}{\\partial y_k} \\cdot \\frac{\\partial F_k}{\\partial x_j}, i \\in \\{1, \\dots, d\\}, j \\in \\{1, \\dots, n\\}$",
+      "proof": "",
+      "tags": [],
+      "source": "matan_2_semestr/3.tex"
+    },
+    {
+      "id": "T4",
+      "kind": "theorem",
+      "title": "",
+      "statement": "\\hypertarget{thrm2.2}{} Пусть $G \\subset \\R^2$~---~открыто и непусто. Пусть для $\\forall x, y \\in G \\begin{cases} \\exists \\frac{\\partial^2 f}{\\partial x \\partial y}(x, y) \\in \\R \\\\ \\exists \\frac{\\partial^2 f}{\\partial y \\partial x}(x, y) \\in \\R \\end{cases}$. Тогда если $\\frac{\\partial^2 f}{\\partial x \\partial y}$ и $\\frac{\\partial^2 f}{\\partial y \\partial x}$ непрерывны в точке $(x^0, y^0) \\in G$, то они равны в этой точке.",
+      "proof": "",
+      "tags": [],
+      "source": "matan_2_semestr/3.tex"
+    }
+  ]
+}

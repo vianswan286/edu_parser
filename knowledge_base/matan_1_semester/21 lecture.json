@@ -1,0 +1,121 @@
+{
+  "units": [
+    {
+      "id": "D1",
+      "kind": "definition",
+      "title": "",
+      "statement": "Функция $f: (a, b) \\mapsto \\R$ называется \\textit{нестрого выпуклой вниз (вверх) на $(a, b)$}, если $\\forall x_{1}, x_{2} \\in (a, b) \\hookrightarrow f(t\\cdot x_{1} + (1-t)\\cdot x_{2}) \\underset{\\geq}{(\\leq)} t\\cdot f(x_{1}) + (1- t)\\cdot f(x_{2}) \\quad \\forall t\\in [0, 1]$",
+      "proof": "",
+      "tags": [],
+      "source": "matan_1_semester/21 lecture.tex"
+    },
+    {
+      "id": "D2",
+      "kind": "definition",
+      "title": "",
+      "statement": "Функция $f: (a, b) \\mapsto \\R$ называется \\textit{строго выпуклой вниз (вверх) на $(a, b)$}, если $\\ \\forall x_{1}, x_{2} \\in (a, b) \\hookrightarrow f(t\\cdot x_{1} + (1-t)\\cdot x_{2}) \\underset{(>)}{(<)} t\\cdot f(x_{1}) + (1- t)\\cdot f(x_{2}) \\quad \\forall t\\in (0, 1)$",
+      "proof": "",
+      "tags": [],
+      "source": "matan_1_semester/21 lecture.tex"
+    },
+    {
+      "id": "D3",
+      "kind": "definition",
+      "title": "",
+      "statement": "Пусть $f\\in C\\Big((a, b)\\Big)$ и $\\exists f'(x_{0}) \\in \\overline{\\R}.$ Пусть выполняется одно их двух условий: \\begin{enumerate} \\item $f$ выпукла вниз на $U_{\\delta}^{-}(x_{0})$ и выпукла вверх на $U_{\\delta}^{+}(x_{0})$ \\item $f$ выпукла вверх на $U_{\\delta}^{-}(x_{0})$ и выпукла вниз на $U_{\\delta}^{+}(x_{0})$ \\end{enumerate} Тогда $x_{0}$ называется \\textit{точкой перегиба графика функции $f$}",
+      "proof": "",
+      "tags": [],
+      "source": "matan_1_semester/21 lecture.tex"
+    },
+    {
+      "id": "D4",
+      "kind": "definition",
+      "title": "",
+      "statement": "Пусть $f$ дифференцируема в точке $x_{0}$. Будем говорить что, график функции $f$ \\textit{переходит с одной стороны касательной на другую при переходе через точку $x_{0}$}, если \\footnotesize $\\exists \\delta > 0: \\left[\\begin{gathered} y_{\\textrm{кас.}}(x) \\leq f(x) \\ \\forall x\\in (x_{0} - \\delta, x_{0}) \\ \\textrm{и} \\ y_{\\textrm{кас.}}(x) \\geq f(x) \\ \\forall x\\in(x_{0}, x_{0} + \\delta) \\\\ y_{\\textrm{кас.}}(x) \\geq f(x) \\ \\forall x\\in (x_{0} - \\delta, x_{0}) \\ \\textrm{и} \\ y_{\\textrm{кас.}}(x) \\leq f(x) \\ \\forall x\\in(x_{0}, x_{0} + \\delta) \\end{gathered}\\right.$",
+      "proof": "",
+      "tags": [],
+      "source": "matan_1_semester/21 lecture.tex"
+    },
+    {
+      "id": "D5",
+      "kind": "definition",
+      "title": "",
+      "statement": "Будем говорить, что график функции $f$ имеет \\textit{вертикальную асимптоту в точке $x_{0}$}, если $\\begin{cases} \\lim\\limits_{x\\to x_{0}+0} f(x)= \\pm \\infty \\\\ \\lim\\limits_{x\\to x_{0}-0} f(x)= \\pm \\infty \\end{cases}$",
+      "proof": "",
+      "tags": [],
+      "source": "matan_1_semester/21 lecture.tex"
+    },
+    {
+      "id": "D6",
+      "kind": "definition",
+      "title": "",
+      "statement": "Прямая $y = k \\cdot x + b, \\ b, k \\in \\R$ называется \\textit{наклонной асимптотой графика функции} $f$: $(A, \\infty)$, если $\\exists \\lim\\limits_{x\\to +\\infty}(f(x) - kx - b) = 0$. Аналогично определяется \\textit{наклонная асимптота на $-\\infty$}",
+      "proof": "",
+      "tags": [],
+      "source": "matan_1_semester/21 lecture.tex"
+    },
+    {
+      "id": "D7",
+      "kind": "definition",
+      "title": "",
+      "statement": "Будем говорить, что $f$: $(a, b) \\mapsto \\R$ имеет \\textit{первообразную} $F$ на $(a, b)$, если $F$~---~дифференцируема на $(a, b)$ и $\\forall x \\in (a, b)$ $F'(x) = f (x)$.",
+      "proof": "",
+      "tags": [],
+      "source": "matan_1_semester/21 lecture.tex"
+    },
+    {
+      "id": "D8",
+      "kind": "definition",
+      "title": "",
+      "statement": "\\textit{Неопределенным интегралом} функции $f$ на $(a, b)$ будем называть множество всех первообразных на $(a, b)$ и записывать $\\displaystyle \\int f(x) \\,dx$.",
+      "proof": "",
+      "tags": [],
+      "source": "matan_1_semester/21 lecture.tex"
+    },
+    {
+      "id": "T9",
+      "kind": "theorem",
+      "title": "",
+      "statement": "\\hypertarget{thrm5.25}{(Необходимое условие экстремума в терминах второй производной)} Пусть $\\exists f''(x_{0})$. Тогда если $x_{0}$~---~ точка локального экстремума, то $f'(x_{0}) = 0$ и, если $x_{0}$ ~---~ локальный максимум, $f''(x_{0}) \\leq 0$, а если локальный минимум, то $f''(x_{0}) \\geq 0$ .",
+      "proof": "",
+      "tags": [],
+      "source": "matan_1_semester/21 lecture.tex"
+    },
+    {
+      "id": "T10",
+      "kind": "theorem",
+      "title": "",
+      "statement": "Пусть $f:(a, b) \\mapsto \\R$ дважды дифференцируема на $(a,b)$. Тогда \\begin{enumerate} \\item $f$ выпукла вниз на $(a, b) \\Leftrightarrow f''(x) \\geq 0 \\ \\forall x\\in (a, b)$ \\item $f$ выпукла вверх на $(a, b) \\Leftrightarrow f''(x) \\leq 0 \\ \\forall x\\in (a, b)$ \\end{enumerate}",
+      "proof": "",
+      "tags": [],
+      "source": "matan_1_semester/21 lecture.tex"
+    },
+    {
+      "id": "T11",
+      "kind": "theorem",
+      "title": "",
+      "statement": "\\hypertarget{thrm5.27}{(Критерий точки перегиба)} Пусть $f \\in C\\Big(U_{\\delta}(x_{0})\\Big)$ и $\\exists f'(x_{0}) \\in \\overline{\\R}$, $f$ дважды дифференцируема в $\\mathring{U}_{\\delta}(x_{0}).$ Тогда $x_{0}$~---~ точка перегиба графика функции $f\\Leftrightarrow$ $$\\Leftrightarrow \\left[\\begin{gathered} f''(x) \\geq 0\\ \\forall x\\in (x_{0} - \\delta, x_{0}) \\ \\textrm{и} \\ f''(x) \\leq 0 \\ \\forall (x_{0}, x_{0} + \\delta) \\\\ f''(x) \\leq 0\\ \\forall x\\in (x_{0} - \\delta, x_{0}) \\ \\textrm{и} \\ f''(x) \\geq 0 \\ \\forall (x_{0}, x_{0} + \\delta) \\end{gathered}\\right.$$",
+      "proof": "",
+      "tags": [],
+      "source": "matan_1_semester/21 lecture.tex"
+    },
+    {
+      "id": "T12",
+      "kind": "theorem",
+      "title": "",
+      "statement": "Пусть $f$ дважды дифференцируема в $\\mathring{U}_{\\delta}(x_{0})$ и дифференцируема в точке $x_{0}$. Тогда если $x_{0}$~---~ точка перегиба графика функции $f,$ то график переходит с одной стороны касательной на другую. Обратное неверно.",
+      "proof": "",
+      "tags": [],
+      "source": "matan_1_semester/21 lecture.tex"
+    },
+    {
+      "id": "T13",
+      "kind": "theorem",
+      "title": "",
+      "statement": "\\hypertarget{thrm5.29}{(Критерий асимптоты)} Прямая $y = kx + b$~---~ асимптота функции $f$: $(A, +\\infty) \\ \\Leftrightarrow (*)\\ \\begin{cases} \\exists \\lim\\limits_{x \\to +\\infty} \\dfrac{f(x)}{x} = k \\\\ \\exists \\lim\\limits_{x\\to +\\infty} (f(x) - kx) = b \\end{cases}$",
+      "proof": "",
+      "tags": [],
+      "source": "matan_1_semester/21 lecture.tex"
+    }
+  ]
+}

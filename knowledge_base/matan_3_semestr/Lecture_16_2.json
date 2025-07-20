@@ -1,0 +1,31 @@
+{
+  "units": [
+    {
+      "id": "D1",
+      "kind": "definition",
+      "title": "",
+      "statement": "Пусть $G \\subset \\R^3$~---~непустая область. Поле $\\overline{a} \\in C(G, \\R^3)$ называется \\textit{соленоидальным} в области $G$, если \\[\\iint\\limits_\\Sigma (\\overline{a}, \\overline{ds}) = 0.\\] Для всякой замкнутой кусочно-гладкой $\\Sigma$, лежащей в $G$, то есть такой поверхности, что существует $\\Omega \\subset \\R^3$~---~ограниченная область такая, что $\\partial \\Omega = \\Sigma$",
+      "proof": "",
+      "tags": [],
+      "source": "matan_3_semestr/Lecture_16_2.tex"
+    },
+    {
+      "id": "D2",
+      "kind": "definition",
+      "title": "",
+      "statement": "Будем называть область $G \\subset \\R^3$ объёмно односвязной, если всякая замкнутая кусочно-гладкая поверхность $\\Sigma \\subset G$ ограничивает область $\\Omega$ такую, что $\\Sigma = \\partial \\Omega$ и $\\Omega \\subset G$.",
+      "proof": "",
+      "tags": [],
+      "source": "matan_3_semestr/Lecture_16_2.tex"
+    },
+    {
+      "id": "T3",
+      "kind": "theorem",
+      "title": "",
+      "statement": "Пусть дано гладкое поле $\\overline{a} \\in C^1(G, \\R^3)$, где $G$~---~непустое открытое множество. Тогда для произвольного $x \\in G$ верно следующее: \\[\\div \\overline{a}(x) = \\lim\\limits_{r \\rightarrow +0} \\dfrac{1}{4/3\\pi r^3} \\iint\\limits_{S_r(x)}(\\overline{a}, \\overline{ds})\\]",
+      "proof": "",
+      "tags": [],
+      "source": "matan_3_semestr/Lecture_16_2.tex"
+    }
+  ]
+}

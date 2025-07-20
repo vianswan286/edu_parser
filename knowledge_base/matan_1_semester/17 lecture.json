@@ -1,0 +1,121 @@
+{
+  "units": [
+    {
+      "id": "D1",
+      "kind": "definition",
+      "title": "",
+      "statement": "Будем говорить, что функция $y: X \\mapsto \\R$ \\textit{неявно задана уравнением} $F(x, y) = 0$, если $F(x, y(x)) = 0 \\quad \\forall x \\in X$.",
+      "proof": "",
+      "tags": [],
+      "source": "matan_1_semester/17 lecture.tex"
+    },
+    {
+      "id": "D2",
+      "kind": "definition",
+      "title": "",
+      "statement": "Пусть $f : X \\mapsto \\R, X \\subset \\R$. Будем говорить, что точка $x_{0}$~---~ \\textrm{точка локального максимума (локального минимума) функции $f$, то есть, точка локального экстремума,} если $$\\exists \\delta = \\delta (x_{0}) > 0: \\begin{gathered} f(x) \\leq f(x_{0}) \\ \\forall x \\in U_{\\delta}(x_{0}) \\cap X\\\\ \\Bigl( f(x) \\geq f(x_{0}) \\ \\forall x \\in U_{\\delta}(x_{0}) \\cap X\\Bigr) \\end{gathered}$$",
+      "proof": "",
+      "tags": [],
+      "source": "matan_1_semester/17 lecture.tex"
+    },
+    {
+      "id": "D3",
+      "kind": "definition",
+      "title": "",
+      "statement": "Пусть $f : X \\mapsto \\R, X \\subset \\R$. Будем говорить, что точка $x_{0}$~---~ \\textrm{точка строгого локального максимума (строгого локального минимума), то есть строгого экстремума функции $f$,} если $$\\exists \\delta = \\delta (x_{0}) > 0: \\begin{gathered} f(x) < f(x_{0}) \\ \\forall x \\in \\mathring{U}_{\\delta}(x_{0}) \\cap X\\\\ \\left( f(x) > f(x_{0}) \\ \\forall x \\in \\mathring{U}_{\\delta}(x_{0}) \\cap X\\right) \\end{gathered}$$",
+      "proof": "",
+      "tags": [],
+      "source": "matan_1_semester/17 lecture.tex"
+    },
+    {
+      "id": "D4",
+      "kind": "definition",
+      "title": "",
+      "statement": "Пусть $n \\in \\N_{0},$ $f: U_{\\delta}(x_{0})\\mapsto \\R$ имеет n-ую (конечную) производную в точке $x_{0}$. Тогда \\hypertarget{def5.13}{полиномом (многочленом) Тейлора функции $f$ с центром в точке $x_{0}$} называется $$T_{x_{0}}^{n} [f](x) := \\sum\\limits_{k = 0}^n \\cfrac{f^{(k)}(x_{0})}{k!}(x-x_{0})^{k}.$$",
+      "proof": "",
+      "tags": [],
+      "source": "matan_1_semester/17 lecture.tex"
+    },
+    {
+      "id": "D5",
+      "kind": "definition",
+      "title": "",
+      "statement": "\\textit{Формальным n-ым остаточным членом формулы Тейлора функции $f$ с центром в точке $x_{0}$} называется $$r_{x_{0}}^{n} [f](x):= f(x) -T_{x_{0}}^{n} [f](x),\\ x\\in U_{\\delta_{0}}(x_{0}) $$",
+      "proof": "",
+      "tags": [],
+      "source": "matan_1_semester/17 lecture.tex"
+    },
+    {
+      "id": "T6",
+      "kind": "theorem",
+      "title": "",
+      "statement": "\\hypertarget{thrm5.7}{(Инвариантность формы первого дифференциала и неинвариантность формы высших дифференциалов)} Пусть функция $y = y(x)$ дифференцируема в точке $x_{0},$ а функция $z = z(y)$ дифференцируема в точке $y_{0} = y(x_{0})$. Тогда дифференциал $z,$ рассматриваемый как функция лишь от $y$ в точке $y_{0},$ и дифференциал функции $z= z(y(x)) = f(x)$ в точке $x_{0}$ записываются одинаково, а именно $dz = z'(y_{0}) \\ dy$. При этом в первом случае (когда $z=z(y)$) $dy = y-y_{0}$, а во втором $dy$~---~ дифференциал функции $y(x)$ в точке $x_{0}$.",
+      "proof": "",
+      "tags": [],
+      "source": "matan_1_semester/17 lecture.tex"
+    },
+    {
+      "id": "T7",
+      "kind": "theorem",
+      "title": "",
+      "statement": "\\hypertarget{thrm5.8}{Формула Лейбница} Пусть $\\exists u^{(n)}(x_{0}) \\in \\R $ и $\\exists v^{(n)}(x_{0}) \\in \\R$. Тогда $\\exists (u\\cdot v)^{n} = \\sum\\limits_{k=0}^{n} \\relax C_{n}^{k} u^{(k)}(x_{0}) \\cdot v^{(n-k)}(x_{0})$",
+      "proof": "",
+      "tags": [],
+      "source": "matan_1_semester/17 lecture.tex"
+    },
+    {
+      "id": "T8",
+      "kind": "theorem",
+      "title": "",
+      "statement": "\\hypertarget{thrm5.9}{(Теорема Ферма)} Пусть $f$: $U_{\\delta}(x_{0}) \\mapsto \\R$ дифференцируема в точке $x_{0}$. Тогда если $x_{0}$~---~локальный экстремум $f$, $f'(x_{0}) = 0$.",
+      "proof": "",
+      "tags": [],
+      "source": "matan_1_semester/17 lecture.tex"
+    },
+    {
+      "id": "T9",
+      "kind": "theorem",
+      "title": "",
+      "statement": "\\hypertarget{thrm5.10}{Ролля (о среднем)} Пусть $f \\in C([a,b])$, дифференцируема на интервале и $f (a) = f (b)$. Тогда $\\exists \\xi \\in (a, b)$: $f'(\\xi) = 0$.",
+      "proof": "",
+      "tags": [],
+      "source": "matan_1_semester/17 lecture.tex"
+    },
+    {
+      "id": "T10",
+      "kind": "theorem",
+      "title": "",
+      "statement": "\\hypertarget{thrm5.11}{(Коши о среднем)} Пусть $f, g \\in C([a, b])$ и дифференцируема на интервале $(a, b)$. Пусть $g'(x) \\neq 0 \\quad \\forall x \\in (a, b)$. Тогда $\\exists \\xi \\in (a, b): \\ \\cfrac{f(b)-f(a)}{g(b)-g(a)}= \\cfrac{f'(\\xi)}{g'(\\xi)}$.",
+      "proof": "",
+      "tags": [],
+      "source": "matan_1_semester/17 lecture.tex"
+    },
+    {
+      "id": "T11",
+      "kind": "theorem",
+      "title": "",
+      "statement": "\\hypertarget{thm5.12}{Пусть $f \\in C(U_{\\delta}(x_{0}))$, $f$ дифференцируема в $\\mathring{U}_{\\delta}(x_{0})$:} Если $\\exists \\lim\\limits_{x \\to x_{0}+0} f'(x_{0}),$ то $\\exists f'_{+}(x_{0}) = \\lim\\limits_{x\\to x_{0}+0} f'(x)$; Если $\\exists \\lim\\limits_{x \\to x_{0}-0} f'(x_{0}),$ то $\\exists f'_{-}(x_{0}) = \\lim\\limits_{x\\to x_{0}-0} f'(x)$.",
+      "proof": "",
+      "tags": [],
+      "source": "matan_1_semester/17 lecture.tex"
+    },
+    {
+      "id": "T12",
+      "kind": "theorem",
+      "title": "",
+      "statement": "\\hypertarget{thrm6.5}{(Теорема Дарбу)} Пусть $f$ дифференцируема на интервале $(a, b)$. Тогда если $f'$ принимает какие-либо два значения, то она принимает все значения между ними.",
+      "proof": "",
+      "tags": [],
+      "source": "matan_1_semester/17 lecture.tex"
+    },
+    {
+      "id": "T13",
+      "kind": "theorem",
+      "title": "",
+      "statement": "\\hypertarget{thrm5.14}{(Формула Тейлора с остаточным членом в форме Пеано)} Путь $f$ дифференцируемо в точке $x_{0} \\ n$ раз, $n \\in \\N_{0.}$ Тогда $$f(x) = \\sum\\limits_{k = 0}^n \\cfrac{f^{(k)(x_{0})}}{k!}(x-x_{0})^{k} + o\\Bigl( (x-x_{0})^{n} \\Bigr), x \\to x_{0}$$ \\begin{note} Запись $x\\to x_{0}$ означает, что равенство справедливо в некоторой окрестности $U_{\\delta}(x_{0})$ $o\\Bigl( (x-x_{0})^{n} \\Bigr)$~---~ это <<функция>>, предстваимая в виде $$\\epsilon_{x_{0}}[f](x)(x-x_{0})^{n}, \\ \\textrm{где} \\ \\epsilon_{x_{0}}[f](x) \\to 0, x\\to x_{0}.$$ \\end{note}",
+      "proof": "",
+      "tags": [],
+      "source": "matan_1_semester/17 lecture.tex"
+    }
+  ]
+}

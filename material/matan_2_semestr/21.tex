@@ -1,0 +1,140 @@
+\section{Равномерно сходящиеся последовательности}
+
+\begin{definition}
+    Пусть есть множество $X, \ X \neq \emptyset.$ Пусть также $\forall \ n \in \N$ определена функция $f_n : X \rightarrow \R.$ Тогда будем говорить, что на $X$ задана функциональная последовательность $\{f_n\}_{n = 1}^\infty$
+\end{definition}
+
+\begin{definition}
+    Будем говорить, что последовательность  $\{f_n\}_{n = 1}^\infty$ поточечно сходится к функциии $f : X \rightarrow \R,$ если
+    $$\forall \ x \in X: \lim_{n \rightarrow \infty} f_n(x) = f(x).$$
+    При этом записывают это так:
+    $$f_n \underset{X}{\rightarrow} f, \ n\rightarrow \infty$$
+\end{definition}
+
+\begin{definition}
+    Будем говорить, что последовательность  $\{f_n\}_{n = 1}^\infty$ равномерно сходится к $f : X \rightarrow \R,$ если
+    $$\forall \epsilon > 0 \ \exists N \in \N: \ \forall n \geq N, \ \forall x \in X: \ |f_n(x) - f(x)| < \epsilon$$
+\end{definition}
+
+\begin{note}
+    Из равномерной сходимости следует поточечная, но обратное неверно.
+\end{note}
+
+\begin{example}
+    Пусть $X = (0, 1), \ f_n(x) = \frac{1}{nx}.$ Тогда
+    $$\forall x \in (0, 1): \ \lim_{n \rightarrow \infty} f_n(x) = 0$$
+    Значит, $$f_n \underset{(0, 1)}{\rightarrow} 0, \ n\rightarrow \infty$$
+    Но $$\epsilon = \frac{1}{2}: \forall N \in \N \ \exists \ n = N + 1, x_n = \frac{1}{n}: \ |f_n(x_n)| > \frac{1}{2}$$
+\end{example}
+
+\begin{note}
+    Неявно использовался следующий факт. Если последовательность  $\{f_n\}_{n = 1}^\infty$ не равномерно сходится к $f : X \rightarrow \R,$ а поточечно тогда не существует $g: X \rightarrow \R,$ для которой $$f_n \underset{X}{\rr} g.$$ Действительно, если бы такая функция существовала, то последовательность к ней сходилась бы также поточечно. Откуда имеем противоречие.
+\end{note}
+
+\begin{lemma}
+    Пусть $X \neq \emptyset,$ последовательность $\{f_n\}_{n = 1}^\infty$ на $X$ и $f: X \rightarrow \R.$ Тогда
+    $$f_n \underset{X}{\rr} f, \ n\rightarrow \infty \Longleftrightarrow \sup\limits_{x \in X} |f_n(x) - f(x)| \rightarrow 0, \ n \rightarrow \infty$$
+\end{lemma}
+
+\begin{proof}
+    Пусть есть равномерная сходимость, тогда заметим, что
+    $$\forall x \in X: |f_n(x) - f(x)| < \epsilon \Longleftrightarrow \sup\limits_{x \in X} |f_n(x) - f(x)| \leq \epsilon.$$
+    Поэтому отсюда вытекает требуемое. Теперь докажем обратное. Тогда:
+    $$\forall \epsilon > 0 \ \exists N(\epsilon): \ \forall n \geq N(\epsilon) \ \sup\limits_{x \in X} |f_n(x) - f(x)| < \epsilon $$
+    Откуда и следует требуемое.
+\end{proof}
+
+\begin{theorem}
+    (Критерий равномерной сходимости) $X \neq \emptyset$
+    $$f_n \underset{X}{\rr} f, \ n\rightarrow \infty \Longleftrightarrow \exists \ \{a_n\} \subset [0; +\infty): \ a_n \rightarrow 0, n \rightarrow \infty; \ |f_n(x) - f(x)| \leq a_n \ \forall n \in \N, \forall x \in X$$
+\end{theorem}
+
+\begin{proof}
+    Пусть существует последовательность $\{a_n\}$ с указанными свойствами. Тогда 
+    $$0 \leq \sup\limits_{x \in X} |f_n(x) - f(x)| \leq a_n$$
+    По теореме о трех милиционерах:
+    $$\sup\limits_{x \in X} |f_n(x) - f(x)| \rightarrow 0, \ n \rightarrow \infty$$
+    Из леммы получаем требуемое.
+    Теперь докажем в обратную сторону. По лемме $$\sup\limits_{x \in X} |f_n(x) - f(x)| \rightarrow 0, \ n \rightarrow \infty$$
+    Тогда $a_n := \sup\limits_{x \in X} |f_n(x) - f(x)|,$ которая удовлетворяет этим свойствами.
+\end{proof}
+
+\begin{theorem}
+    (Критерий отсутствия равномерной сходимости) Отсутствие равномерной сходимости $f_n$ к $f$ эквивалентно существованию последовательности $\{x_n\} \subset X,$ такой что  $|f_n(x_n) - f(x_n)|$ не стремится к $0, n \rightarrow \infty.$
+\end{theorem}
+
+\begin{proof}
+    Пусть такая последовательность существует, тогда получается, что $\sup\limits_{x \in X} |f_n(x) - f(x)| \geq |f(x_n) - f_n(x_n),$ не стремится к $0.$ Применяя лемму, получим требуемое. Докажем теперь в обратную сторону. Тогда:
+    $$\exists \ \epsilon > 0: \forall k \in \N: \ \exists \ n\geq k, x_n \in X: \ |f(x_n) - f_n(x_n)| \geq \epsilon.$$
+    Таким образом, построена последовательность $\{n(k)\}_{k = 1}^{\infty} \subset N.$ Если $n \notin \{n(k)\}_{k = 1}^{\infty},$ то в качестве $x_n$ возьмем произвольный элемент $X.$ Теперь построили последовательность $\{x_n\},$ удовлетворяющую требуемому условию.
+\end{proof}
+
+\begin{theorem}
+    (Критерий Коши) Пусть $X \neq \emptyset$ и $\{f_n\}$ функциональная последовательность на $X.$ Тогда 
+    $$\exists f: \ f_n \underset{X}{\rr} f, \ n\rightarrow \infty \Longleftrightarrow 
+    \forall \epsilon > 0 \ \exists \ N(\epsilon) \in \N: \forall m \geq N(\epsilon) \forall n \geq N(\epsilon), \ \forall x \in X: |f_n(x) - f_m(x)| < \epsilon.$$
+\end{theorem}
+
+\begin{proof}
+    Пусть такая функция $f$ существует. Тогда 
+    $$\forall \epsilon > 0 \ \exists N(\epsilon): \forall n \geq N(\epsilon), \forall x \in X: |f(x) - f_n(x)| < \frac{\epsilon}{2}$$
+    $$\forall \epsilon > 0 \exists N(\epsilon): \ \forall n, m \geq N(\epsilon) \ |f_n(x) - f_m(x)| \leq |f_n(x) - f(x)| + |f(x) - f_m(x)| < \epsilon$$
+    Докажем теперь в обратную сторону. В частности, для любого фиксированного $x \in X$ последовательность $\{f_n(x)\}_{n = 1}^{\infty}$ удовлетворяет условию Коши, значит $\exists \ f(x) := \lim_{n \rightarrow \infty} f_n(x).$ То есть получили функцию, к которой мы сходимся поточечно. Покажем теперь, что к $f$ сходимся равномерно. Тогда зафиксируем произвольное $n \geq N(\epsilon):$
+    $$|f_n(x) - f_m(x)| < \epsilon \ \forall x \in X, \ \forall m \geq N(\epsilon).$$
+    По теореме о предельном переходе в неравенствах:
+    $$|f_n(x) - f(x)| \leq \epsilon \ \forall x \in X.$$
+    Таким образом, выполнено определение равномерной сходимости.
+\end{proof}
+
+\begin{definition}
+    Последовательность $\{f_n\}$ на $X$ называется равномерно ограниченной на $X,$ если $\exists \ C > 0:$
+    $$|f_n(x)| \leq C \ \forall n \in N, \ \forall x \in X.$$
+\end{definition}
+
+\begin{definition}
+    Последовательность $\{f_n\}$ на $X$ называется поточечно ограниченной на $X,$ если 
+    $$\forall x \in X \ \exists \  C > 0: |f_n(x)| \leq C(x) \ \forall n \in N$$
+\end{definition}
+
+\begin{lemma}
+    $X \neq \emptyset.$ Пусть $\{f_n\}$ равномерно сходится к $0$ и $\{g_n\}$ равномерно ограничена на $X.$ Тогда $\{f_n g_n\}$ равномерно сходится к $0.$
+\end{lemma}
+
+\begin{proof}
+    $$\sup\limits_{x\in X} |f_n g_n| \leq C \cdot \sup\limits_{x\in X}|f_n(x)|$$
+    Тогда применяя теорему о двух милиционерах и лемму, получаем требуемое.
+\end{proof}
+
+\begin{note}
+    Условие равномерной ограниченности нельзя заменить на условие поточечной ограниченности. 
+\end{note}
+
+\begin{example}
+    $$g_n(x) = \frac{1}{x} \ \forall n \in \N, \forall x \in (0, 1)$$
+    $$f_n(x) = \frac{1}{n} \forall n \in \N, \forall x \in (0, 1)$$
+    При этом $f_n$ равномерно сходится к $0,$ а отсутствие равномерной сходимости произведения было показано ранее.
+\end{example}
+
+\begin{note}
+    Пусть $f_n$ равномерно сходится к $f$ на $X.$ Пусть также $f_n(x) \sim g_n(x) \quad \forall x \in X$. Неверно, что $g_n$ также равномерно сходится к $f.$
+\end{note}
+
+\begin{example}
+    $$X = (0, 1) \ f_n(x) = \frac{1}{n}$$
+    $$g_n(x) = \frac{1}{n} + \frac{1}{xn^2}$$
+    Тогда 
+    $$\frac{g_n}{f_n} = 1 + \frac{1}{xn} \rightarrow 1, n \rightarrow \infty$$
+    Но $f_n$ равномерно сходится к $0.$ А вот $g_n$ -- нет, ведь $g(\frac{1}{n^2})$ не сходится к $0.$
+\end{example}
+
+\begin{definition}
+    Пусть $X \neq \emptyset.$ Функциональным рядом на $X$ будем называть пару функциональных последовательностей $\{f_n\}$ и $\{S_n\},$ где $\{f_n\}$ -- член функционального ряда, $\{S_n\}$ -- частичная сумма функционального ряда, $S_n := \sum_{k = 1}^{n} f_k.$ Обозначается $\sum_{k = 1}^{\infty} f_k.$
+\end{definition}
+
+\begin{definition}
+    Говорят, что функциональный ряд $\sum_{k = 1}^{\infty} f_k$ поточечно сходится на $X,$ если существует функция $S: X \rightarrow \R,$ такая что $S_n$ поточечно сходится к $S.$ При этом говорят, что $S$ -- сумма ряда.
+\end{definition}
+
+\begin{definition}
+    Говорят, что функциональный ряд $\sum_{k = 1}^{\infty} f_k$ равномерно сходится на $X,$ если существует функция $S: X \rightarrow \R,$ такая что $S_n$ равномерно сходится к $S.$ 
+\end{definition}

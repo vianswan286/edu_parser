@@ -1,0 +1,58 @@
+{
+  "units": [
+    {
+      "id": "D1",
+      "kind": "definition",
+      "title": "",
+      "statement": "\\hypertarget{homeomorphism_definition}{} Будем говорить, что $F \\in C(\\Omega, \\R^m)$, где $\\Omega \\subset \\R^m$, является гомеоморфизмом, если $\\exists F^{-1}$: $F(\\Omega) \\mapsto \\Omega$, такое что $F^{-1} \\in C(F(\\Omega), \\Omega)$.",
+      "proof": "",
+      "tags": [],
+      "source": "matan_2_semestr/6.tex"
+    },
+    {
+      "id": "D2",
+      "kind": "definition",
+      "title": "",
+      "statement": "Пусть $U \\subset \\R^n, V \\subset \\R^m$~---~ открытые множества. Будем говорить, что $U$ и $V$ диффеоморфны, если существует диффеоморфизм $F$: $U \\mapsto V$, то есть $F$~---~взаимооднозначное отображение $U$ на $V$, такое что $F \\in C^1(U, V)$ и $F^{-1} \\in C^1(V, U)$. Если требовать именно непрерывную дифференцируемость, то такой диффеоморфизм называется гладким",
+      "proof": "",
+      "tags": [],
+      "source": "matan_2_semestr/6.tex"
+    },
+    {
+      "id": "T3",
+      "kind": "theorem",
+      "title": "",
+      "statement": "(об открытом отображении версия 2) Пусть $n, m \\in \\N, m \\geq n$; $F \\in C^{1}(\\Omega, \\R^n)$; В каждой точке $x^0 \\in \\Omega \\hookrightarrow \\rank\\D F(x^0) = n$. Тогда $F(\\Omega)$~---~ открыто в $\\R^n$.",
+      "proof": "",
+      "tags": [],
+      "source": "matan_2_semestr/6.tex"
+    },
+    {
+      "id": "T4",
+      "kind": "theorem",
+      "title": "",
+      "statement": "(производная обратного отображения) Пусть $F$: $\\Omega \\mapsto \\R^m$, где $\\Omega \\subset \\R^m$~---~непустое открытое множество. Пусть $x^0 \\in \\Omega$ и выполнены следующие условия: \\begin{enumerate} \\item $y^0 = F(x^0)$~---~внутренняя точка для $F(\\Omega)$ \\item Пусть $\\exists F^{-1}$: $F(\\Omega) \\mapsto \\Omega$ \\item Пусть $F^{-1}$ непрерывно в точке $y^0$ \\item Отображение $F$ дифференцируемо в точке $x^0$ и $\\det \\D F(x^0) \\neq 0$ (матрица Якоби обратима) \\end{enumerate} Тогда $F^{-1}$ дифференцируемо в точке $y^0$, и, кроме того, \\[ \\D F^{-1}(y^0) = (\\D F(x^0))^{-1}. \\]",
+      "proof": "",
+      "tags": [],
+      "source": "matan_2_semestr/6.tex"
+    },
+    {
+      "id": "T5",
+      "kind": "theorem",
+      "title": "",
+      "statement": "(теорема о диффеоморфизме) Пусть $F \\in C^{1}(\\Omega, \\R^m)$, где $\\Omega \\subset \\R^m$~---~непустое открытое множество. Пусть: \\begin{enumerate} \\item $\\D F(x^0)$ обратима $\\forall x^0 \\in \\Omega$. \\item $\\exists$ обратное отображение $F^{-1}$: $F(\\Omega) \\mapsto \\Omega$ (Мы требуем существование) \\end{enumerate} Тогда $F$ является диффеоморфизмом $\\Omega$ на $F(\\Omega)$.",
+      "proof": "",
+      "tags": [],
+      "source": "matan_2_semestr/6.tex"
+    },
+    {
+      "id": "T6",
+      "kind": "theorem",
+      "title": "",
+      "statement": "(теорема о локальной обратимости отображения) Пусть $F \\in C^{1}(\\Omega, \\R^m)$, где $\\Omega \\subset \\R^m$~---~непустое открытое множество. Если $\\D F(x^0) \\neq 0$, то $\\exists$ открытое $U \\in \\Omega$ и $\\exists$ открытое $V \\in F(\\Omega)$ такие, что $F$ осуществляет диффеоморфизм $U$ на $V$. %",
+      "proof": "",
+      "tags": [],
+      "source": "matan_2_semestr/6.tex"
+    }
+  ]
+}

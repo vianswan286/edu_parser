@@ -1,0 +1,67 @@
+{
+  "units": [
+    {
+      "id": "D1",
+      "kind": "definition",
+      "title": "",
+      "statement": "Пусть $T$~---~разбиение отрезка $[a, b]$, и задана функция $f: [a, b] \\rightarrow \\R$. Тогда $\\Delta_T f:= \\sum\\limits_{i = 1}^N \\omega_{[x_{i - 1}, x_i]} (x_i - x_{i - 1})$.",
+      "proof": "",
+      "tags": [],
+      "source": "matan_2_semestr/13.tex"
+    },
+    {
+      "id": "D2",
+      "kind": "definition",
+      "title": "",
+      "statement": "Если $\\{a_k\\}$~---~числовая последовательность из неотрицательных $a_k$, то символом $\\sum\\limits_{1}^{\\infty}a_k := \\sup\\limits_{N \\in \\N} \\sum\\limits_{k = 1}^N a_k = \\lim\\limits_{N \\rightarrow \\infty} \\sum\\limits_{k = 1}^N a_k$.",
+      "proof": "",
+      "tags": [],
+      "source": "matan_2_semestr/13.tex"
+    },
+    {
+      "id": "D3",
+      "kind": "definition",
+      "title": "",
+      "statement": "Будем говорить, что множество $E \\subset \\R^n$ имеет \\textit{лебегову меру нуль}, если для любого $\\epsilon > 0$ существует не более чем счётное множество открытых шаров (некоторые могут быть пусты) $\\{B_i\\}_{i = 1}^{N}, N \\in \\N \\cup \\{+\\infty\\}$, обладающее следующими свойствами: \\begin{enumerate} \\item $E \\subset \\bigcup\\limits_{i = 1}^{N} B_i$; \\item $\\sum\\limits_{i = 1}^{N} r(B_i) < \\epsilon$ (в случае $N = \\infty$ под суммой ряда мы понимаем супремум/предел множества частичных сумм). \\end{enumerate}",
+      "proof": "",
+      "tags": [],
+      "source": "matan_2_semestr/13.tex"
+    },
+    {
+      "id": "D4",
+      "kind": "definition",
+      "title": "",
+      "statement": "$\\B ([a, b])$ (от английского bounded)~---~\\textit{множество всех ограниченных на $[a, b]$ функций}.",
+      "proof": "",
+      "tags": [],
+      "source": "matan_2_semestr/13.tex"
+    },
+    {
+      "id": "D5",
+      "kind": "definition",
+      "title": "",
+      "statement": "$\\D[f]$ (от английского discontinuous)~---~\\textit{множество всех точек разрыва функции}.",
+      "proof": "",
+      "tags": [],
+      "source": "matan_2_semestr/13.tex"
+    },
+    {
+      "id": "T6",
+      "kind": "theorem",
+      "title": "Критерий интегрируемости 1",
+      "statement": "Пусть $f$: $[a, b] \\rightarrow \\R \\hookrightarrow f \\in \\Rim([a, b]) \\Longleftrightarrow \\forall \\epsilon > 0 $ $\\exists \\delta(\\epsilon)$: $ \\forall T$~---~разбиения $[a, b]$ мелкости $l(T) < \\delta \\hookrightarrow \\Delta_T f < \\epsilon$.",
+      "proof": "",
+      "tags": [],
+      "source": "matan_2_semestr/13.tex"
+    },
+    {
+      "id": "T7",
+      "kind": "theorem",
+      "title": "Критерий Лебега",
+      "statement": "Функция $f \\in \\Rim ([a, b]) \\Longleftrightarrow f \\in \\B ([a, b])$ и $\\D[f]$ имеет лебегову меру нуль.",
+      "proof": "",
+      "tags": [],
+      "source": "matan_2_semestr/13.tex"
+    }
+  ]
+}

@@ -1,0 +1,143 @@
+\begin{proof}
+    Фиксируем $x \in (x_0 - \delta, x_0 + \delta)$. \\
+    $r_{x_0}^n [f](x) = f(x) - \sum\limits_{k = 0}^n \dfrac{f^{(k)} (x^0)}{k!} (x-x_0)^k$ \\
+    покажем, что $r_{x_0}^n [f](x) \rightarrow 0, \ n \rightarrow \infty$. \\
+    По формуле Тейлора с остаточным членом в форме Лагранжа \\
+    $$\exists \xi \in (x, x_0) \quad r_{x_0}^n [f](x) = \dfrac{f^{(n+1)} (\xi)}{(n+1)!} (x-x_0)^{n+1}$$
+    $$(\star) \Longrightarrow \left|r_{x_0}^n[f](x)\right| \leq \dfrac{M^{n+1} |x-x_0|^{n + 1}}{(n+1)!} \leq \dfrac{(M \delta)^{n+1}}{(n+1)!} \to 0, n \to\infty$$
+
+    \begin{reminder}
+        $Q > 0$ \\
+        $$\dfrac{Q^n}{n!} \to 0, \ n \to \infty $$ \\
+        $$ \exists  n_0 \in \N \ \forall n \geq n_0 \hookrightarrow n > 2Q $$
+        $$ \dfrac{Q^{n_0}}{n_0 !} \dfrac{Q^{n-n_0}}{n(n-1) \dots (n_0 + 1)} \leq \dfrac{Q^{n_0}}{n_0!} \left(\dfrac{1}{2}\right) ^ {n-n_0} \to 0, n \to \infty$$
+    \end{reminder}
+\end{proof}
+
+Ряд Тейлора в нуле $\equiv$ ряд Маклорена.
+\begin{corollary}
+$e^x$, $\cos{x}$, $\sin{x}$, $\cosh{x}$, $\sinh{x}$ представимы рядами Маклорена $\forall x \in \R$
+\end{corollary}
+
+Докажем следствие для $e^x$. \\
+\begin{proof}
+    $(e^x)^{(n)} = e^x$. Фиксируем $\forall \delta > 0$. \\
+    $\sup \limits_{x \in (-\delta, \delta)} \leq e^{\delta} = M \ \Longrightarrow \ \forall x \in (-\delta, \delta) \hookrightarrow e^x = \sum \limits_{k=0}^{\infty} \dfrac{1}{k!} x^k$. \\
+    Так как $\delta > 0$ было выбрано произвольно, то \\
+    $$ e^x = \sum \limits_{n=0}^{\infty} \dfrac{x^k}{k!} \quad \forall x \in \R$$
+\end{proof}
+
+Для $\cos{x}$, $\sin{x}$, $\cosh{x}$, $\sinh{x}$ доказательство аналогично. \\
+
+\begin{theorem}
+    Пусть $f \in C^{n+1}\left((x_0 - R, x_0 + R)\right)$ при некотором $R > 0$, $n \in \N_0$. \\
+    Тогда $\forall x \in (x_0 - R, x_0 + R)$
+    $$r_{x_0}^n[f](x) = \dfrac{1}{n!} \int \limits_{x_0}^{x}(x - t)^n f^{(n+1)} (t) dt \quad (\star)$$
+\end{theorem}
+
+\begin{proof}
+    Докажем по индукции. \\
+    При $n = 0$ верно: \\
+    $f(x) - f(x_0) = \int \limits_{x_0}^x f'(t) dt$~---~ формула Ньютона-Лейбница. \\
+    Предположим, что равенство $(\star)$ доказано при $n = s \in \N_0$, и докажем его при $n = s+1$. \\
+        $r_{x_0}^s[f](x) = \dfrac{1}{s!} \int \limits_{x_0}^x (x-t)^s f^{(s+1)} (t) dt = [\text{проинтегрируем по частям}] =$ \\
+        \begin{flushright} 
+         $ = - \dfrac{(x-t)^{s+1}}{(s+1)!} \bigg|_{x_0}^x + \dfrac{1}{(s+1)!} \int \limits_{x_0}^x (x - t)^{s+1} f^{(s+2)} (t) dt = $ \\
+         $ = \dfrac{(x - x_0) ^ {s+1}}{(s+1)!} + \dfrac{1}{(s+1)!} \int \limits_{x_0}^x (x-t)^{s+1} f^{(s+2)} (t) dt. $
+        \end{flushright} 
+        $$r_{x_0}^s[f](x) - \dfrac{(x-x_0)^{s+1}}{(s+1)!} = r_{x_0}^{s+1} [f] (x) $$ \\
+        $$ \Longrightarrow r_{x_0}^{s+1} [f] (x) = \dfrac{1}{(s+1)!} \int \limits_{x_0}^x (x-t)^{s+1} f^{(s+2)} (t) dt. $$
+    
+    Доказали переход. Значит, по индукции, формула верна $\forall n \in \N$.
+\end{proof}
+
+\begin{theorem}
+    Пусть $\alpha \in \R$. Тогда $\forall x \in (-1, 1)$ \\
+    $(\star) \quad (1+x)^{\alpha} = \sum \limits_{k=0}^{\infty} C_{\alpha}^k x^k, \quad C_{\alpha}^k = \dfrac{\alpha(\alpha - 1) \cdot \dots \cdot (\alpha - k + 1)}{k!}$.
+
+\end{theorem}
+
+\begin{remark}
+        Если $\alpha \notin \N_0$, то $(\star)$ надо понимать, как бином Ньютона.
+\end{remark}
+
+\begin{proof}
+    Предположим, что $\alpha \notin \N_0$, так как иначе тривиально. \\
+    $f(x) = (1+x)^{\alpha}$. Покажем, что $\forall x \in (-1, 1)$ $r_0^n[f](x) \to 0, \ n \to \infty$ \\
+    Воспользуемся формулой Тейлора с остаточным членом в интегральной форме. \\
+    $f^{(n)}(0) = \alpha (\alpha - 1) \dots (\alpha - n + 1) (1+x)^{\alpha - n} |_{x=t} = \alpha (\alpha - 1) \dots (\alpha - n + 1)(1+t)^{\alpha - n}$
+    $\left| r_0^n [f](x)\right| = \left| \dfrac{1}{n!} \int \limits_0^x (x-t)^n f^{(n+1)} (t)dt \right| = \left|\dfrac{\alpha(\alpha - 1)\dots(\alpha - n)}{n!} \int \limits_0^x (x-t)^n (1+t)^{\alpha - n - 1} dt \right| = \\ $ 
+    $$= [t = \tau x] = $$
+    $$= \dfrac{\alpha(\alpha - 1)\dots(\alpha - n)}{n!} \left| x^{n+1} \cdot \int \limits_0^1 (1-\tau)^n (1+x\tau)^{\alpha - n - 1} d\tau \right| = $$ 
+    $$ =\dfrac{\alpha(\alpha - 1)\dots(\alpha - n)}{n!} \left| x^{n+1} \cdot \int \limits_0^1 \dfrac{(1-\tau)^n}{(1+x\tau)^n} (1+x\tau)^{\alpha - 1} d\tau \right| = (\star)$$
+    $1+x\tau \geq 1 - \tau \quad \forall x \in (-1, 1) \ \Longrightarrow \ 0 \leq \dfrac{(1-\tau)^n}{(1+x\tau)^n} \leq 1.$ \\
+    $$ (\star) \leq \dfrac{\alpha(\alpha - 1)\dots(\alpha - n)}{n!} |x|^{n+1} \int \limits_0^1 (1+x\tau)^{\alpha - 1} d\tau.$$
+    $\int \limits_0^1 (1+x\tau)^{\alpha - 1} d\tau =: C(\alpha, x)$~---~ не зависит от $n \in \N$. \\
+    $c_n = \dfrac{\alpha(\alpha - 1)\dots(\alpha - n)}{n!}  |x|^{n+1}$, считаем $x \neq 0$. \\
+    $\dfrac{|c_{n+1}|}{|c_n|} = \left| \dfrac{\alpha - n - 1}{n + 1}\right| |x| \to |x|, \quad n \to \infty$, а $|x| \leq 1$. \\
+    $\Longrightarrow$ по определению предела $\exists n_0 \in \N: \ \forall n \geq n_0 \hookrightarrow \dfrac{c_{n+1}}{c_n} \leq \dfrac{1 + |x|}{2} = q \in (0, 1)$~---~ геометрическая прогрессия. \\
+    $\Longrightarrow$ $\forall \geq n_0 \hookrightarrow |c_n| \leq q^{n-n_0} |c_{n_0}|$ \\
+    $\Longrightarrow$ $c_n \to 0, \ n \to \infty \quad \Longrightarrow \quad (\star) \leq c_n \cdot C(\alpha, x) \to 0, \ n \to \infty$. \\
+    А $x$ был выбран произвольно, \textit{чтд}.
+\end{proof}
+
+\begin{remark}
+    Радиус сходимости степенного ряда. \\
+    $$\sum \limits_{k=0}^\infty C_\alpha^k x^k$$ \\
+    $\lim \limits_{k \to \infty} \dfrac{|c_{k+1}|}{|c_k|} = \lim \limits_{k \to \infty} \dfrac{|C_\alpha^{k+1}|}{|c_\alpha^k|} = \lim \limits_{k \to \infty} \left| \dfrac{\alpha - k - 1}{\alpha - k} \right| = 1 \quad \Longrightarrow R_{\text{сх}} = 1$. \\
+
+    \underline{\textit{Вывод.}} Интервал сходимости ряда Маклорена для $(1+x)^\alpha$, $\alpha \in \N_0$ это интервал $(-1, 1)$, при этом ряд Маклорена сходится к самой функции $(1+x)^\alpha \quad \forall x \in (-1, 1)$.
+\end{remark}
+
+\textbf{Разложение основных элементарных функций.}
+\begin{enumerate}
+    \item $(1+x)^{-1} = \sum \limits_{k=0}^\infty (-1)^k x^k \quad \forall x \in (-1, 1)$, \\
+    Внутри интервала сходимости можем почленно проинтегрировать. \\
+    $\ln(1+x) = \sum \limits_{n=1}^\infty (-1)^{n-1} \dfrac{x^n}{n} \quad \forall x \in (-1, 1)$.
+    % Маш прости, что я опечатки в онлайне исправляю, просто билет пишу этот 
+    \item $(1+x^2)^{-1} = \sum \limits_{k=0}^\infty (-1)^k x^{2k} \quad \forall x \in (-1, 1)$, \\
+    $\arctg{x} = \sum \limits_{k=0}^\infty (-1)^{k} \dfrac{x^{2k+1}}{2k+1} \quad \forall x \in (-1, 1)$.
+
+    \item $\dfrac{1}{\sqrt{1-x^2}} = \sum \limits_{k=0}^\infty \dfrac{(-1)^k (2k-1)!!}{2^k k!} x^{2k} \quad \forall x \in (-1, 1)$, \\
+    $\arcsin{x} = \sum \limits_{k=0}^\infty \dfrac{(2k-1)!!}{2^k k!} \dfrac{x^{2k+1}}{2k+1} \quad \forall x \in (-1, 1)$.
+\end{enumerate}
+
+\subsection{Комплексная функция $e^x$}
+Ранее комплексная экспонента была определена по формуле
+$$z = x + iy$$
+$$e^z = e^x (\cos{y} + i \sin{y})$$
+
+\begin{theorem}
+    $\forall z \in \mathbb{C}$ справедливо равенство $$ e^z = \sum \limits_{k=0}^\infty \dfrac{z^k}{k!} $$
+\end{theorem}
+
+\begin{proof}
+    Было доказано, что $R_{\text{сх}}$ ряда $\sum \limits_{k=0}^\infty \dfrac{x^k}{k!}$ равен $+\infty$ и $\forall x \in \R$ он сходится к $e^x$. \\
+    $\Longrightarrow$  по теореме о круге сходимости ряд $ f(z) := \sum \limits_{k=0}^\infty \dfrac{z^k}{k!}$  имеет $R_{\text{сх}} = +\infty$.
+    \begin{enumerate}
+        \item Сначала докажем, что $f(z_1 + z_2) = f(z_1)f(z_2) \quad \forall z_1, z_2 \in \mathbb{C}$. \\
+        Внутри круга сходимостри ряды сходятся абсолютно. \\
+        $\sum \limits_{k=0}^{\infty} \dfrac{z_1^k}{k!} \sum \limits_{j =0}^\infty \dfrac{z_2^j}{j!} = \sum \limits_{s=1}^\infty \dfrac{z_1^{k(s)} z_2^{j(s)}}{k(s)! j(s)!}$, где $(k, j) :  \N \mapsto \N^2$~---~ произвольная нумерация пар. \\
+        Выберем диагональную нумерацию. Сумма $k + j$ на диагонали~---~константа. \\
+        $$ \sum \limits_{m=0}^\infty \dfrac{1}{m!} \sum \limits_{k+j=m} m! \dfrac{z_1^k z_2^j}{k!j!} = \sum \limits_{m=0}^\infty \dfrac{1}{m!} (z_1+z_2)^m = f(z_1 + z_2) $$
+
+        \item $y \in \R$ \\
+        $f(iy) = \sum \limits_{k=0}^\infty \dfrac{(iy)^k}{k!} = \sum \limits_{j=0}^\infty (i)^{2j} \dfrac{y^{2j}}{(2j)!} + i \sum \limits_{l=0}^\infty \dfrac{(i)^{2l}}{(2l+1)!} y^{2l+1}$, \\
+        $f(iy) = \cos{y} + i \sin{y}$, \\
+        $f(x + iy) = f(x) f(iy) = e^x (\cos{y} + i \sin{y}) = e^z$.
+    \end{enumerate}
+\end{proof}
+
+$\forall z \in \mathbb{C}$ положим по определению: \\
+\begin{itemize}
+    \item $\cos{z} = \sum \limits_{k=0}^\infty \dfrac{(-1)^k z^{2k}}{(2k)!}$
+    \item $\sin{z} = \sum \limits_{k=0}^\infty \dfrac{(-1)^k z^{2k + 1}}{(2k + 1)!}$
+    \item $\cosh{z} = \sum \limits_{k=0}^\infty \dfrac{z^{2k}}{(2k)!}$
+    \item $\sinh{z} = \sum \limits_{k=0}^\infty \dfrac{z^{2k + 1}}{(2k + 1)!}$
+\end{itemize}
+
+\begin{corollary} (формулы Эйлера) \\
+$e^z = \cos{z} + i \sin{z} \quad \forall z \in \mathbb{C}$, \\
+$\sin{z} = \dfrac{e^{iz} - e^{-iz}}{2i} \quad \forall z \in \mathbb{C}$, \\
+$\cos{z} = \dfrac{e^{iz} + e^{-iz}}{2} \quad \forall z \in \mathbb{C}$
+\end{corollary}

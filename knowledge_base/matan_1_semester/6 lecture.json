@@ -1,0 +1,94 @@
+{
+  "units": [
+    {
+      "id": "D1",
+      "kind": "definition",
+      "title": "",
+      "statement": "$PL (\\{ x_{n} \\}) := \\{ L \\in \\R$: $L$~---~частичный предел $\\{ x_{n} \\} \\}$~---~\\textit{множество всех частичных пределов}.",
+      "proof": "",
+      "tags": [],
+      "source": "matan_1_semester/6 lecture.tex"
+    },
+    {
+      "id": "D2",
+      "kind": "definition",
+      "title": "",
+      "statement": "Пусть $A \\subset \\overline{\\R}$. $M \\in \\overline{\\R}$~---~супремум $A$. $$M = \\sup A \\Leftrightarrow \\begin{cases} a \\leq M, \\ \\forall a \\in A; \\\\ \\forall M^{'} < M \\ \\exists a \\in A: M^{'} < a. \\end{cases}$$",
+      "proof": "",
+      "tags": [],
+      "source": "matan_1_semester/6 lecture.tex"
+    },
+    {
+      "id": "D3",
+      "kind": "definition",
+      "title": "",
+      "statement": "Пусть $A \\subset \\overline{\\R}$. $m \\in \\overline{\\R}$~---~инфимум $A$. $$m = \\inf A \\Leftrightarrow \\begin{cases} a \\geq m, \\ \\forall a \\in A; \\\\ \\forall m^{'} > m \\ \\exists a \\in A: m^{'} > a. \\end{cases}$$",
+      "proof": "",
+      "tags": [],
+      "source": "matan_1_semester/6 lecture.tex"
+    },
+    {
+      "id": "D4",
+      "kind": "definition",
+      "title": "",
+      "statement": "\\textit{Верхним и нижним пределом} последовательности $\\{ x_{n} \\}$ называются соответственно $$ \\overline{\\lim\\limits_{n\\to \\infty}} x_{n} = \\sup PL (\\{ x_{n} \\});$$ $$ \\lim\\limits_{\\overline{n\\to \\infty}} x_{n} = \\inf PL (\\{ x_{n} \\}).$$",
+      "proof": "",
+      "tags": [],
+      "source": "matan_1_semester/6 lecture.tex"
+    },
+    {
+      "id": "D5",
+      "kind": "definition",
+      "title": "",
+      "statement": "Последовательность $\\{ x_{n} \\}$ называется \\textit{фундаментальной}, если выполнено \\textit{условие Коши}: $$ \\forall \\epsilon > 0 \\ \\exists N (\\epsilon) \\in \\N: \\forall n \\geq N, \\forall m \\geq N \\hookrightarrow |x_{n} - x_{m}| < \\epsilon. $$",
+      "proof": "",
+      "tags": [],
+      "source": "matan_1_semester/6 lecture.tex"
+    },
+    {
+      "id": "T6",
+      "kind": "theorem",
+      "title": "",
+      "statement": "(Обобщённая теорема Больцано-Вейерштрасса) Любая числовая последовательность имеет хотя бы один частичный предел в $\\overline{\\R}$.",
+      "proof": "",
+      "tags": [],
+      "source": "matan_1_semester/6 lecture.tex"
+    },
+    {
+      "id": "T7",
+      "kind": "theorem",
+      "title": "",
+      "statement": "\\hypertarget{thm2.10}{Пусть дана числовая последовательность} $\\{ x_{n} \\}$. Тогда $\\overline{\\lim\\limits_{n\\to \\infty}} x_{n} \\in PL (\\{ x_{n}\\})$ и $\\lim\\limits_{\\overline{n\\to \\infty}} x_{n} \\in PL (\\{ x_{n} \\})$.",
+      "proof": "",
+      "tags": [],
+      "source": "matan_1_semester/6 lecture.tex"
+    },
+    {
+      "id": "T8",
+      "kind": "theorem",
+      "title": "",
+      "statement": "\\hypertarget{thm2.11}{Пусть} $\\{ x_{n} \\}$~---~числовая последовательность. Тогда для верхнего предела справедливо равенство $$ \\overline{\\lim\\limits_{n\\to \\infty}} x_{n} = \\underset{n \\in \\N}{\\inf} ({\\sup\\limits_{k \\geq n}} \\ x_{k}),$$ а для нижнего предела $$ \\lim\\limits_{\\overline{n\\to \\infty}} x_{n} = \\underset{n \\in \\N}{\\sup} ({\\inf\\limits_{k\\geq n}} \\ x_{k}).$$",
+      "proof": "",
+      "tags": [],
+      "source": "matan_1_semester/6 lecture.tex"
+    },
+    {
+      "id": "T9",
+      "kind": "theorem",
+      "title": "",
+      "statement": "Пусть $\\{ x_{n} \\}$~---~числовая последовательность. Пусть $A \\in \\overline{\\R}$. Следующие условия эквивалентны: \\begin{enumerate} \\item $\\exists \\lim\\limits_{n\\to \\infty} x_{n} = A;$ \\item $PL (\\{ x_{n} \\}) = \\{ A \\};$ \\item $ \\lim\\limits_{\\overline{n\\to \\infty}} x_{n} = \\overline{\\lim\\limits_{n\\to \\infty}} x_{n} = A.$ \\end{enumerate}",
+      "proof": "",
+      "tags": [],
+      "source": "matan_1_semester/6 lecture.tex"
+    },
+    {
+      "id": "T10",
+      "kind": "theorem",
+      "title": "",
+      "statement": "(Критерий Коши) Последовательность сходится тогда и только тогда, когда она фундаментальна.",
+      "proof": "",
+      "tags": [],
+      "source": "matan_1_semester/6 lecture.tex"
+    }
+  ]
+}

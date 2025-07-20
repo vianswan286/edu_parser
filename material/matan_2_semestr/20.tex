@@ -1,0 +1,73 @@
+\subsection{Перестановки рядов}
+\begin{definition}
+    Перестановкой $m$ будем называть биекцию $\N \rightarrow \N$
+\end{definition}
+\begin{note}
+    Обозначим за $K_n = \max\limits_{1 \leq j \leq n} m(j)$, а за $k_n = \inf\limits_{j > n} m(j)$. На прошлой лекции было доказано, что $K_n \xrightarrow{n \rightarrow +\infty} +\infty, k_n \xrightarrow{n \rightarrow +\infty} +\infty$.
+\end{note}
+
+\begin{theorem}[Теорема о перестановках]
+    Пусть $\sum\limits_{j}^{+\infty} a_j$~---~абсолютно сходящийся ряд, а $m: \N \rightarrow \N$~---~перестановка множества $\N$. Тогда, ряд $\sum\limits_{j}^{+\infty} a_{m(j)}$~---~тоже абсолютно сходится, и его сумма совпадает с суммой исходного ряда.
+\end{theorem}
+\begin{proof}
+    Для начала, покажем что ряд $\sum\limits_{j = 1}^{+\infty} a_{m(j)}$~---~абсолютно сходящийся: 
+    \[\sum\limits_{j = 1}^{n}|a_{m(j)}| \leq \sum\limits_{j = 1}^{K_n}|a_j| \leq \sup\limits_{k \in \N} \sum\limits_{j = 1}^k |a_j| < +\infty\]
+    Теперь, возьмём супремум по всем $n \in \N$:
+    \[\sup\limits_{n \in \N} \sum\limits_{j = 1}^n |a_{m(j)}| \leq \sup\limits_{k \in \N} \sum\limits_{j = 1}^k |a_j| < +\infty\]
+    А значит, супремум частичных сумм переставленного ряда конечен, из чего следует существование $\lim\limits_{n \rightarrow +\infty} \tilde{S}_n = \sup\limits_{n \in \N} \tilde{S}_n < +\infty$ и это означает абсолютную сходимость этого ряда.
+    Обозначим $\forall j \in \N \tilde{a}_j = a_{m(j)}$.
+    Тогда, 
+    \[\sum\limits_{j = 1}^n a_j = S_n \xrightarrow{n \rightarrow + \infty} S \in \R, \sum\limits_{j = 1}^n \tilde{a}_j = \tilde{S}_n \xrightarrow{n \rightarrow + \infty} \tilde{S} \in \R\] Обозначим за $\sigma_n = \sum\limits_{j = 1}^n |a_j|$. По определению, $1 \leq m(j) \leq K_n \forall 1 \leq j < n$.
+    \[\forall n \in \N |S_{K_n} - \tilde{S}_n| = |\sum\limits_{j = 1}^n a_{m(j)} - \sum\limits_{j = 1}^{K_n} a_j| \leq \sum\limits_{j = k_n}^{K_n}|a_j| \xrightarrow{n \rightarrow +\infty} 0\]
+    Значит, $S = \lim\limits_{n \rightarrow +\infty} S_{K_n} = \lim\limits_{n \rightarrow +\infty} \tilde{S}_n = \tilde{S}$
+\end{proof}
+
+\begin{note}
+$\sum\limits_{j = 1}^{+\infty} a_j$~---~сходится $\Longleftrightarrow \sum\limits_{j = n}^{+\infty} a_j \xrightarrow{n \rightarrow +\infty} 0$.
+\end{note}
+\begin{theorem}[Теорема Римана о перестановке членов условно сходящегося ряда]
+    Если ряд $\sum\limits_{j = 1}^{+\infty} a_j$ сходится условно, тогда $\forall x \in \bar{\R} \exists$ перестановка $m_x: \N \rightarrow \N$, т.ч. ряд $\sum\limits_{j = 1}^{+\infty} a_{m_x(j)}$ сходится к $x \in \R$, а если $x \in \{\pm\infty\}$~---~расходится.
+\end{theorem}
+\begin{proof}
+    Обозначим за $\{b_k\}$ последовательность всех неотрицательных членов $a_j$, а за $\{c_k\}$~---~последовательность всех отрицательных $a_j$.
+    \begin{enumerate}
+        \item Покажем, что ряды $\sum\limits_{k = 1}^{+\infty} b_k$ и $\sum\limits_{k = 1}^{+\infty}$~---~расходятся. Предположим противное: пусть $\sum\limits_{k = 1}^{+\infty} b_k$ и $\sum\limits_{k = 1}^{+\infty}$~---~сходятся. Заметим, что
+        \[ \sum\limits_{k = 1}^n |a_k| \leq \sum\limits_{k = 1}^n b_k - \sum\limits_{k = 1}^n c_k \Rightarrow \sup\limits_{n \in \N} |a_n| \leq \sup\limits_{k \in \N} \sum\limits_{k = 1}^n b_k + \sup\limits_{k \in \N} \sum\limits_{k = 1}^n -c_k < +\infty,\]
+        из чего следует абсолютная сходимость ряда $a_k$. Значит, хотя бы один из этих рядов расходится.
+        \item Без ограничения общности будем считать $\sum\limits_{k = 1}^{+\infty} c_k$ расходящимся. По условию, ряд $\sum\limits_{j = 1}^{+\infty} a_k$~---~сходится, следовательно,
+        \[\exists \lim\limits_{N \rightarrow +\infty} \sum\limits_{j = 1}^N a_j \in \R, \exists \lim\limits_{K \rightarrow +\infty} \sum\limits_{k = 1}^K b_k \in \R \Rightarrow \exists \lim\limits_{N \rightarrow +\infty} \sum\limits_{j = 1}^N c_j \in \R\]
+        Из чего следует сходимость ряда $c_j$. Значит, оба ряда расходятся.
+        \item Будем конструктивно строить требуемый ряд для фиксированного $x \in \R$. \\
+        Далее будем обозначать $p(n)$~---~количество неотрицательных чисел среди первых $n$ членов ряда $\tilde{a}$. \\
+        \begin{itemize}
+            \item $\tilde{a}_1 = b_1$, если $x \geq 0$
+            \item $\tilde{a}_1 = c_1$, если $x < 0$
+        \end{itemize}
+        Далее индуктивно: пусть построены первые $n$ членов ряда $\tilde{a}$
+        \begin{itemize}
+            \item $\tilde{S}_n \leq x \Rightarrow \tilde{a}_{n + 1} = b_{p(n) + 1}$
+            \item $\tilde{S}_n > x \Rightarrow \tilde{a}_{n + 1} = c_{n - p(n) + 1}$.
+        \end{itemize}
+        Покажем корректность алгоритма построения ряда. Для этого достаточно доказать, что $p(n) \xrightarrow{n \rightarrow +\infty} +\infty, n - p(n) \xrightarrow{n \rightarrow +\infty} +\infty$. Предположим противное:
+        $p(n) \nrightarrow +\infty, n \rightarrow +\infty$. Значит, эта последовательность ограничена и $\exists N \in \N$ т.ч. $p(n) \leq N \forall n \in \N$. Но если это так, то получается, что $\sum\limits_{j = 1}^N \tilde{a}_j \xrightarrow{n \rightarrow +\infty} -\infty \Rightarrow$ для любого достаточно большого $N \hookrightarrow \tilde{S}_n < x$~---~что противоречит алгоритму построения.
+        \item Покажем, что мы сойдёмся именно к $x$. В силу предыдущего шага, $p(n) > 0, n - p(n) > 0$ для всех достаточно больших $n$. Тогда $|x - \tilde{S}_n| \leq \max \{b_{p(n)}, -c_{n - p(n)}\}$. Но $b_{p(n)}$ и $-c_{n - p(n)}$ элементы последовательности модулей $|a_j|$. При этом, по необходимому условию сходимости ряда, $|a_j| \xrightarrow{j \rightarrow +\infty} 0 \Rightarrow$ при $p(n) \rightarrow +\infty, n - p(n) \rightarrow +\infty \Rightarrow \max \{b_{p(n)}, -c_{n - p(n)}\} \rightarrow 0, n \rightarrow +\infty \Rightarrow \tilde{S}_n \xrightarrow{n \rightarrow \infty} x$.
+        \item Случай $+\infty$ ($-\infty$ рассматривается аналогично).
+        Теперь мы кидаем неотрицательные элементы, пока не достигнем единицы, потом отрицательных, пока не упадём ниже 1/2, положительные пока сумма не станет $\geq 2$, отрицательные пока сумма не станет $< 1$, положительные пока $\tilde{S}_n$ не станет $\geq 4$, и так далее... Более аккуратно Александр Иванович обещал в pdf-ке прислать.
+    \end{enumerate}
+\end{proof}
+
+\subsection{Перемножение рядов}
+\begin{note}
+    Обозначим за $\{m(j), n(j)\}_{j = 1}^{+\infty}$ биекцию с $\N$: $(m, n): \N^2 \rightarrow \N$.
+\end{note}
+\begin{theorem}
+    Пусть $\sum\limits_{j = 1}^{+\infty} a_j = S_1$ и $\sum\limits_{j = 1}^{+\infty} b_j = S_2$~---~2 абсолютно сходящихся ряда. Тогда, для любой биекции $(m, n)$ ряд $\sum\limits_{j = 1}^{+\infty} a_{m(j)}b_{n(j)}$ абсолютно сходящийся ряд, и его сумма $S = S_1 \cdot S_2$.
+\end{theorem}
+\begin{proof}
+    Покажем абсолютную сходимость $\sum\limits_{j = 1}^{+\infty} a_{m(j)}b_{n(j)}$. Возьмём достаточно большое число $J \in \N$ и обозначим $N(J) = \max_{1 \leq j \leq J} n(j), M(J) = \max_{1 \leq j \leq J} m(j)$:
+    \[ \sum\limits_{j = 1}^J|a_{m(j)}||b_{n(j)}| \leq (\sum\limits_{n = 1}^{M(J)} |a_n|)(\sum\limits_{m = 1}^{N(J)} |b_m|) \Rightarrow\]
+    \[ \sup\limits_{J \in \N} \sum\limits_{j = 1}^J |a_{m(j)}||b_{n(j)}| \leq \sup\limits_{J \in \N} \sum\limits_{j = 1}^{M(J)} |a_{m(j)}| \sup\limits_{J \in \N} \sum\limits_{j = 1}^{N(J)} |b_{m(j)}| < +\infty, \]
+    значит ряд сходится абсолютно. Поскольку ряд сходится абсолютно, то можно сделать любую его перестановку, и его сумма при этом не изменится. Значит, можно сделать и перестановку "змейкой"/буквами "Г", как в доказательстве счётности $\Q$. Тогда среди первых $N^2$ будут все пары $a_ib_j$ при $i, j \in \overline{1, N}$.
+    \[ \sum\limits_{n = 1}^{N^2} a_{\tilde{n}(j)}b_{\tilde{m}(j)} = (\sum\limits_{n = 1}^N a_n)(\sum\limits_{m = 1}^{N} b_m) \xrightarrow{N \rightarrow + \infty} S_1S_2 \Rightarrow S = S_1S_2\]
+    Поскольку ряд произведений абсолютно сходится, а значит $\sup\limits_{N \in \N} \sum\limits_{j = 1}^N a_{n(j)}b_{m(j)} = \sup\limits_{N \in \N} \sum\limits_{j = 1}^{N^2} a_{n(j)}b_{m(j)} = S_1S_2$, что и требовалось доказать.
+\end{proof}

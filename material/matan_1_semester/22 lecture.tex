@@ -1,0 +1,184 @@
+\subsection{Cвойства неопределенного интеграла}
+\textbf{1. Линейность}
+\begin{theorem}
+    Пусть $a, b \in \R$: $a < b$ и существуют первообразные для $f_{1}$ на $(a, b)$ и $f_{2}$ на $(a, b)$. Тогда если $\alpha_{1}, \alpha_{2} \in \R$: $|\alpha_{1}| + |\alpha_{2}| > 0$, то существует первообразная для $\alpha_{1} f_{1} + \alpha_{2} f_{2}$ и более того $\displaystyle \int \bigg( \alpha_{1} f_{1} (x) + \alpha_{2} f_{2} (x) \bigg) \, dx = \alpha_{1} \int f_{1} (x) \, dx + \alpha_{2} \int f_{2} (x) \, dx$.
+\end{theorem}
+\begin{proof}
+    Пусть $F_{1}$~---~первообразная для $f_{1}$, а $F_{2}$~---~первообразная для $f_{2}$. Тогда $\alpha_{1} F_{1} + \alpha_{2} F_{2}$~---~первообразная для $\alpha_{1} f_{1} + \alpha_{2} f_{2}$ (так как производные обладают свойством линейности), можно убедиться в этом, взяв производную $\displaystyle \Rightarrow \int \bigg( \alpha_{1} f_{1} (x) + \alpha_{2} f_{2} (x) \bigg) \, dx = \alpha_{1} F_{1} + \alpha_{2} F_{2} + C$. C другой стороны $\displaystyle \alpha_{1} \int f_{1} (x) \, dx = \alpha_{1} F_{1} (x) + C_{1}$ и $\displaystyle \alpha_{2} \int f_{2} (x) \, dx = \alpha_{2} F_{2} (x) + C_{2}$, сложив это, получим $\alpha_{1} F_{1} (x) + C_{1} + \alpha_{2} F_{2} (x) + C_{2}$, что равно $\alpha_{1} F_{1} + \alpha_{2} F_{2} + C$, так как что $C_{1} + C_{2}$, что $C$ <<пробегают>> все вещественные числа.
+    
+    \textbf{Примечание.} Равенство надо понимать, как равенство семейств функций, то есть семейства совпадают.
+\end{proof}
+\begin{note} $\ $
+\begin{flushleft}
+    $\displaystyle \int \frac{1}{\sqrt{1 - x^{2}}} \, dx = \arcsin{x} + C$ \\
+    $\displaystyle \int -\frac{1}{\sqrt{1 - x^{2}}} \, dx = -\arcsin{x} + C$ или же $\displaystyle \arccos{x} + C$
+\end{flushleft}
+но это не значит, что $-\arcsin{x} = \arccos{x}$. Это значит, что данные семейства равны (константы не равны).
+\end{note}
+\textbf{2. Интегрирование подстановкой (замена переменной)}
+\begin{theorem}
+    Пусть $a, b \in \R$: $a < b$ и $f$ имеет первообразную $F$ на $(a, b)$. Пусть $x$: $(\alpha, \beta) \mapsto (a, b)$ дифференцируема на $(\alpha, \beta)$. Тогда $\displaystyle \int f \big( x (t) \big) x' (t) \, dt = \int f \big( x (t) \big) \, dx(t) = F \big( x(t) \big) + C$.
+\end{theorem}
+\begin{proof}
+    По теореме о дифференцировании композиции функций получается $\newline F \big( x (t) \big)' = F' \big( x (t) \big) x' (t) \ \forall t \in (\alpha, \beta)$. Тогда отсюда и из \hyperlink{coll6.1}{структуры множества первообразных} получаем искомое.
+\end{proof}
+\textbf{3. Интегрирование по частям}
+\begin{theorem}
+    Пусть $a, b \in \R$: $a < b$ и $U, V$ дифференцируемы на $(a, b)$. Тогда выполняется $\displaystyle \int U (x) \, dV(x) = U(x) \cdot V(x) - \int V (x) \, dU(x)$, где $dV(x) = V' (x) dx$, $dU(x) = U' (x) dx$.
+\end{theorem}
+\begin{proof}
+    Так как $U, V$ дифференцируемы на $(a, b)$, то $\exists (U V)' (x) = U' (x) V (x) + V' (x) U (x)$ по формуле Лейбница, откуда в силу линейности интеграла $\displaystyle \int (U V)' \, dx = \newline \int U' (x) V (x) \, dx + \int V' (x) U (x) \, dx \Rightarrow \int U (x) V' (x) \, dx = U (x) V(x) + C - \int U' (x) V (x) \,dx = U (x) V(x) - \int U' (x) V (x) \,dx$, где равенство понимается с точки зрения семейства функций.
+\end{proof}
+\textbf{Cтандартные интегралы}
+\begin{table}[h]
+\begin{tabular}{ll}
+$\displaystyle \int x^{\alpha} \, dx = \frac{1}{\alpha + 1} x^{\alpha + 1} + C, \  \alpha \neq -1$ & $\displaystyle \int \frac{1}{x + a} \, dx = \ln{|x + a|} + C$ \\
+$\displaystyle \int \sin{x} \, dx = -\cos{x} + C$ & $\displaystyle \int \cos{x} \, dx = \sin{x} + C$ \\
+$\displaystyle \int \frac{1}{\cos^2 {x} } \, dx = \text{tg}x + C, \  x \neq \frac{\pi}{2} + \pi k, k \in \Z$ & $\displaystyle \int \frac{1}{\sin^2 {x} } \, dx = \text{ctg}x + C, \  x \neq \pi k, k \in \Z$ \\
+$\displaystyle \int \text{sh}x = \text{ch}x + C$ & $\displaystyle \int \text{ch}x = \text{sh}x + C$ \\
+$\displaystyle \int \frac{1}{\text{ch}^2 x } \, dx = \text{th}x + C$ & $\displaystyle \int \frac{1}{\text{sh}^2 x } \, dx = -\text{cth}x + C, \  x \neq 0$  \\
+$\displaystyle \int \frac{1}{1 + x^2} \, dx = \text{arctg} x + C$ &  $\displaystyle \int -\frac{1}{1 + x^2} \, dx = \text{arcctg} x + C$\\
+$\displaystyle \int \frac{1}{\sqrt{1 - x^2}} \, dx = \arcsin{x} + C, \  |x| < 1$ &  $\displaystyle \int -\frac{1}{\sqrt{1 - x^2}} \, dx = \arccos{x} + C, \  |x| < 1$\\
+$\displaystyle \int a^{x} \, dx = \frac{a^{x}}{\ln{a}} + C, \  a > 0, a \neq 1$ & $\displaystyle \int \frac{1}{x^{2} - a^{2}} \, dx = \ln{|\frac{x - a}{x + a}|} + C, \  a \neq \pm a$ \\
+$\displaystyle \int \frac{1}{\sqrt{x^{2} + a}} \, dx = \ln{|x + \sqrt{x^{2} + a}|} + C, \  x^{2} + a > 0$ & 
+\end{tabular}
+\end{table}
+
+\subsection{Комплексные числа}
+\begin{definition}
+$\Cm$~---~множество пар вещественных чисел $(x_{1}, x_{2})$ с введёнными следующим образом операциями:
+\begin{enumerate}
+    \item $(x_{1}, x_{2}) \pm (y_{1}, y_{2}) = (x_{1} \pm y_{1}, x_{2} \pm y_{2})$, $\forall (x_{1}, x_{2}), (y_{1}, y_{2}) \in \Cm$;
+    \item $\alpha (x_{1}, x_{2}) = (\alpha x_{1}, \alpha x_{2})$, $\forall (x_{1}, x_{2}) \in \Cm, \alpha \in \R$;
+    \item $(x_{1}, x_{2}) \cdot (y_{1}, y_{2}) = (x_{1} y_{1} - x_{2} y_{2}, x_{2} y_{1} + x_{1} y_{2})$, $\forall (x_{1}, x_{2}), (y_{1}, y_{2}) \in \Cm$;
+    \item $\forall z \neq 0 \ \exists! \frac{1}{z}$: $z \cdot \frac{1}{z} = 1$.
+\end{enumerate}
+\end{definition}
+\begin{center}
+\sidefig(10 cm)(6 cm)	
+{\begin{flushleft}
+\normalsize
+Также $(1, 0) \equiv 1$, $i := (0, 1)$. \textit{Действительной} частью назовём $x_{1}$ и будем обозначать $\text{Re}z$, \textit{мнимой}~---~$x_{2}$ и будем обозначать $\text{Im}z$.
+\end{flushleft}}
+{
+\begin{center}
+\begin{tikzpicture}[>=stealth, scale = 1.3]
+% Рисуем сетку
+\draw[help lines, step=0.25, dotted]
+(-0.5,-0.5) grid (2.,2.55);
+% Начало координат
+\draw[->, thin] (-0.5,0) -- (2.05,0)
+node[below] {$x$}; % Ox
+\draw[->, thin] (0,-0.5) -- (0, 2.55)
+node[left] {$y$}; % Oy
+
+\draw[->, blue,  line width =.03cm] (0, 0) -- (0,0.5);
+\draw[->, red,  line width =.03cm] (0, 0) -- (0.5, 0);
+
+\draw[dotted, line width =.03cm] (1.3, 1.8) -- (0, 1.8);
+\draw[dotted, line width =.03cm] (1.3, 0) -- (1.3, 1.8);
+
+\draw [fill = black] (1.3, 1.8) circle(1.5 pt);
+
+\draw[->, line width =.03cm](0, 0) -- (1.3, 1.8);
+
+
+\node[below, red] at (1.3, 0) {$a$};
+\node[left, blue] at (0, 1.8) {$b$};
+
+\node at (1, 2.2) {$z = \color{red}{a} \color{black}{+} \color{blue}{b}\color{black}{i}$}
+
+\end{tikzpicture}
+\end{center}
+}
+\end{center}
+Свойства комплексных чисел:
+\begin{tabular}{cll}
+1. & $z_{1} + z_{2} = z_{2} + z_{1}$ & $\forall z_{1}, z_{2} \in \Cm$ \\
+2. & $z_{1} \cdot z_{2} = z_{2} \cdot z_{1}$ & $\forall z_{1}, z_{2} \in \Cm$ \\
+3. & $(z_{1} + z_{2}) + z_{3} = z_{1} + (z_{2} + z_{3})$ & $\forall z_{1}, z_{2}, z_{3} \in \Cm$ \\
+4. & $z_{1} \cdot (z_{2} \cdot z_{3}) = (z_{1} \cdot z_{2}) \cdot z_{3}$ & $\forall z_{1}, z_{2}, z_{3} \in \Cm$ \\
+5. & $z_{1} \cdot (z_{2} + z_{3}) = z_{1} \cdot z_{2} + z_{1} \cdot z_{3}$ & $\forall z_{1}, z_{2}, z_{3} \in \Cm$ 
+\end{tabular}
+
+Если ввести на плоскости полярные координаты, то любой ненулевой вектор можно представить как $z = (r \cos{\phi}, r \sin{\phi})$, где $r$~---~модуль вектора, $\phi$~---~аргумент. То есть мы можем ввести \textit{тригонометрическую форму записи комплексного числа}~---~$z = r\cos{\phi} + i \sin{\phi}$, где $\phi$ определено с точностью до $2\pi$.
+
+\begin{definition}
+    Пусть $z = x + iy$. Тогда $e^{z} := e^{x} \cdot (\cos{y} + i \sin{y})$.
+\end{definition}
+\begin{corollary}
+    $e^{i \phi} := \cos{\phi} + i \sin{\phi}$~---~формула Эйлера. Как следствие $z = r e^{i \phi} \  \forall z \in \Cm$.
+\end{corollary}
+
+Свойства экспоненты комплексного числа:
+$e^{z_{1} + z_{2}} = e^{z_{1}} \cdot e^{z_{2}}, \  \forall z_{1}, z_{2} \in \Cm$.
+\begin{proof}
+    Пусть $z_{1} = x_{1} + i y_{1}$, $z_{2} = x_{2} + i y_{2}$.
+    
+    Тогда $e^{z_{1}} \cdot e^{z_{2}} = (e^{x_{1}} \cdot e^{x_{2}}) \cdot \big( \cos{y_{1}} + i \sin{y_{1}} \big) \cdot \big( \cos{y_{2}} + i \sin{y_{2}} \big) = e^{x_{1} + x_{2}} \cdot \big( \cos{y_{1} + y_{2}} + i \sin{y_{1} + y_{2}} \big) = e^{z_{1} + z_{2}}$.
+\end{proof}
+\begin{corollary}
+    Пусть $z_{1}, z_{2} \in \Cm$, то $|z_{1} \cdot z_{2}| = |z_{1}| \cdot |z_{2}|$, а $\arg{(z_{1} \cdot z_{2})} = \arg{z_{1}} + \arg{z_{2}}$.
+\end{corollary}
+\begin{proof}
+    Достаочно записать числа в экспоненциальном виде и воспользоваться свойством, которое мы доказали ранее $z_{1} \cdot z_{2} = r_{1} e^{i \phi_{1}} \cdot r_{2} e^{i \phi_{2}} = (r_{1} \cdot r_{2}) e^{i (\phi_{1} + \phi_{2})} \Rightarrow |z_{1} \cdot z_{2}| = |z_{1}| \cdot |z_{2}| = r_{1} \cdot r_{2}$, а $\arg{z_{1} \cdot z_{2}} = \arg{z_{1}} + \arg{z_{2}} = \phi_{1} + \phi_{2}$.
+\end{proof}
+\begin{corollary}
+    Пусть $z_{1}, z_{2} \in \Cm$, $z_{2} \neq 0$. Тогда $\displaystyle \exists! z = \frac{z_{1}}{z_{2}}$, при этом $\displaystyle |z| = \frac{|z_{1}|}{|z_{2}|}$, а $\arg{z} = \arg{z_{1}} - \arg{z_{2}}$.
+\end{corollary}
+\begin{proof}
+    Представим исходную дробь как $z \cdot z_{2} = z_{1}$. Пусть $z = r e^{i \phi}$, $z_{1} = r_{1} e^{i \phi_{1}}$, $z_{2} = r_{2} e^{i \phi_{2}}$. По правилам, выведенным ранее, получим $(r \cdot r_{2}) e^{i (\phi + \phi_{2})} = r_{1} e^{i \phi_{1}} \Rightarrow r = \frac{r_{1}}{r_{2}}$, а $\phi = \phi_{1} - \phi_{2}$.
+\end{proof}
+\begin{definition}
+    Пусть $z \in \Cm$, $z = a + bi$. Тогда его \textit{комплексно сопряженным} числом назовем $\overline{z} := a - bi$.
+\end{definition}
+Свойства комплексных сопряжений: \quad
+$\begin{gathered}
+    \text{1. } \overline{z_{1} \pm z_{2}} = \overline{z_{1}} \pm \overline{z_{2}}; \hfill \\
+    \text{2. } \overline{\overline{z}} = z; \hfill \\
+    \text{3. } \overline{z^{n}} = (\overline{z})^{n}; \hfill \\
+    \text{4. } z + \overline{z} = 2 \text{Re}z; \hfill \\
+    \text{5. } z - \overline{z} = 2 \text{Im}z. \hfill
+\end{gathered}$
+
+\subsection{Полиномы}
+\begin{definition}
+    \textit{Комплексным полиномом $n$-ой степени} назовём $\displaystyle P_{n} (z) = \sum_{k = 0}^{n} \alpha_{k} z^{k}$, притом $\alpha_{k} \in \Cm \  \forall k \in \{ 0, 1, \ldots, n \}$.
+\end{definition}
+\begin{proposition}
+    \hypertarget{prop6.1}{Cледующие условия эквивалентны:}
+    \begin{enumerate}
+        \item $P_{n} (z) = Q_{n} (z) \  \forall z \in \Cm$;
+        \item $P_{n} (x) = Q_{n} (x) \  \forall x \in \R$;
+        \item $a_{k} = b_{k} \  \forall k \in \{0, 1, \ldots, n \}$.
+    \end{enumerate}
+\end{proposition}
+\begin{proof}
+    $(1) \Rightarrow (2)$, $(3) \Rightarrow (1)$ очевидно.
+
+    Докажем $(2) \Rightarrow (3)$. Имеем $\displaystyle P_{n} (x) = \sum_{k = 0}^{n} a_{k} x^{k}$, $\displaystyle Q_{n} (x) = \sum_{k = 0}^{n} b_{k} x^{k}$, подставим $x = 0$, тогда $a_{0} = b_{0}$, тогда вычитая один полином из другого и деля на $x$, получим $a_{1} = b_{1}$ и так далее. Итого $a_{k} = b_{k} \  \forall k \in \{ 0, 1, \ldots, n \}$.
+\end{proof}
+\begin{definition}
+    \textit{Алгребраической дробью} назовём $R (z) = \frac{P_{n} (z)}{Q_{m} (z)}$. Притом, если $n \geq m$, то дробь называется \textit{неправильной}, иначе \textit{правильной}.
+\end{definition}
+\begin{theorem}
+    \hypertarget{thm6.4}{Для любых полиномов $P_{n} (z)$ и $Q_{m} (z)$: $n \geq m$, $\exists! D_{n - m} (z)$ и $R (z)$: $\displaystyle \frac{P_{n} (z)}{Q_{m} (z)} = D_{n - m} (z) + \frac{R (z)}{Q_{m} (z)}$, где $\deg{R (z)} < m$.}
+\end{theorem}
+\begin{proof}
+    Пусть $\displaystyle P_{n} (z) = \sum_{k = 0}^{n} a_{k} z^{k}$, $\displaystyle Q_{m} (z) = \sum_{k = 0}^{m} b_{k} z^{k}$. Воспользуемся методом неопределённых коэффициентов для поиска $D_{n - m} (z)$. Приведём к общему знаменателю, то есть умножим на $Q_{m} (z)$, получим $P_{n} (z) = D_{n - m} (z) Q_{m} (z) + R (z)$. Запишем $D_{n - m} (z)$ в виде $\displaystyle \sum_{k = 0}^{n - m} d_{k} z^{k}$, тогда имеем $\displaystyle \sum_{k = 0}^{n} a_{k} z^{k} = d_{n - m} z^{n - m} \cdot b_{m} z^{m} +$ младшие члены, так как степень $R (z)$ меньше, чем $n - m$. А так как \hyperlink{prop6.1}{полиномы равны}, то $\displaystyle a_{n} = d_{n - m} \cdot b_{m} \Rightarrow d_{n - m} = \frac{a_{n}}{b_{n}}$ однозначно. Рассмотрим разность $P_{n} (z) - d_{n - m} z^{n - m} \cdot Q_{m} (z) = \Tilde{P} (z)$, так как от $n$-ой степени мы уже избавились, то степень $\Tilde{P} (z)$ не выше $n - 1$. Итого имеем $\displaystyle \frac{P_{n} (z)}{Q_{m} (z)} = d_{n - m} z^{n - m} + \frac{\Tilde{P} (z)}{Q_{m} (z)}$, пока степень $\Tilde{P} > Q_{m}$, то продолжаем по индукции с $\Tilde{P} (z)$. Получаем, что требовалось.
+\end{proof}
+\begin{theorem}
+    \hypertarget{thm6.5}{(Теорема Безу) Число $z_{0}$ является корнем полинома $P_{n} (z) \Leftrightarrow P_{n} (z)$ делится на $(z - z_{0})$ без остатка.}
+\end{theorem}
+\begin{proof}
+    В силу только что доказанной \hyperlink{thm6.4}{теоремы} $\displaystyle \frac{P_{n} (z)}{z - z_{0}} = P_{n - 1} (z) + \frac{C_{0}}{z - z_{0}} \Leftrightarrow P_{n} (z) = P_{n - 1} (z) (z - z_{0}) + C_{0}$, а как как $z_{0}$ корень, то $P_{n} (z_{0}) = 0 = C_{0}$, а значит есть деление без остатка.
+\end{proof}
+\begin{theorem}
+    \hypertarget{thm6.6}{(Основная теорема алгебры) Пусть $n \in \N$. Тогда любой полином $P_{n} (z)$ имеет хотя бы один комплексный корень.}
+\end{theorem}
+\begin{corollary}
+    Любой полином $\displaystyle P_{n} (z) = a \prod_{k = 1}^{n} (z - z_{k}) \ $ (без учёта кратности).
+\end{corollary}
+\begin{proof}
+    По \hyperlink{thm6.6}{основной теореме алгебры} $P_{n} (z)$ имеет корень $z_{1}$, тогда в силу \hyperlink{thm6.5}{теоремы Безу} можно поделить $P_{n} (z)$ на $(z - z_{1})$ без остатка, то есть $P_{n} (z) = (z - z_{1}) P_{n - 1} (z)$. Продолжая по индукции, получаем разложение многочлена на множители.
+\end{proof}

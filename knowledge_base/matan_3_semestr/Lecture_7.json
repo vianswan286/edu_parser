@@ -1,0 +1,31 @@
+{
+  "units": [
+    {
+      "id": "D1",
+      "kind": "definition",
+      "title": "",
+      "statement": "Будем называть функцию $f: E \\rightarrow \\R$ \\textit{ \\underline{измеримой в широком смысле}} на $E \\in \\MM$, если $\\exists E': E'\\subset E$: $f$~---~измерима на $E'$, и $\\mu(E\\setminus E') = 0$. \\\\",
+      "proof": "",
+      "tags": [],
+      "source": "matan_3_semestr/Lecture_7.tex"
+    },
+    {
+      "id": "T2",
+      "kind": "theorem",
+      "title": "Беппо Леви",
+      "statement": "Пусть дана последовательность $\\{f_n\\}$ неотрицательных измеримых на $X$ функций: $f_n \\leq f_{n + 1}$ на $X$, сходящаяся $\\mu-$п.в. на $X$ к функции $f$. Тогда верно следующее: \\[\\lim\\limits_{n \\rightarrow +\\infty} \\int\\limits_X f_nd\\mu = \\int\\limits_X \\lim\\limits_{n \\rightarrow +\\infty} f_n d\\mu = \\int\\limits_X fd\\mu.\\]",
+      "proof": "",
+      "tags": [],
+      "source": "matan_3_semestr/Lecture_7.tex"
+    },
+    {
+      "id": "T3",
+      "kind": "theorem",
+      "title": "Фату",
+      "statement": "Пусть $\\{f_n\\}$~---~последовательность неотрицательных измеримых функций. Тогда верно следующее: \\[\\int\\limits_X \\underset{n \\ra \\infty}{\\underline{\\lim}} f_nd\\mu \\leq \\underset{n \\ra \\infty}{\\underline{\\lim}} \\int\\limits_{X} f_nd\\mu.\\]",
+      "proof": "",
+      "tags": [],
+      "source": "matan_3_semestr/Lecture_7.tex"
+    }
+  ]
+}

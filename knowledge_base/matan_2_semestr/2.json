@@ -1,0 +1,31 @@
+{
+  "units": [
+    {
+      "id": "D1",
+      "kind": "definition",
+      "title": "",
+      "statement": "Пусть $m, n \\in \\N$, $G \\subset \\R^{n}$~---~непустое открытое множество, $F$: $G \\mapsto \\R^{m}.$ Будем говорить, что отображение $F$ дифференцируемо в точке $x^0 \\in G,$ если существует линейное отображение $\\mathcal{L}$: $\\R^n \\mapsto \\R^m:$ $$F(x) - F(x^{0}) = \\mathcal{L}(x-x^0) + \\overline{o}(\\|x - x^{0}\\|)\\text{, }x\\rightarrow x^{0}.$$ При этом $\\mathcal{L}$ будем называть дифференциалом $F$ в точке $x_0$ и обозначать $d_{x^0}F.$",
+      "proof": "",
+      "tags": [],
+      "source": "matan_2_semestr/2.tex"
+    },
+    {
+      "id": "T2",
+      "kind": "theorem",
+      "title": "",
+      "statement": "Пусть $G \\subset \\R^{n}$ открытое непустое множество, $f$: $G \\mapsto \\R$, $x^{0} \\in G$ дифференцируема в точке $x^0$. Тогда $$\\forall i \\in \\{1, \\ldots, n\\} \\ \\exists \\dfrac{\\partial f}{\\partial x_i} (x^0) = \\left( \\textup{grad} f(x^0) \\right)_i$$",
+      "proof": "",
+      "tags": [],
+      "source": "matan_2_semestr/2.tex"
+    },
+    {
+      "id": "T3",
+      "kind": "theorem",
+      "title": "",
+      "statement": "(\\textit{Достаточные условия дифференцируемости в точке}) Пусть $G \\subset \\R^{n}$ открытое непустое множество, $f$: $G \\mapsto \\R$, $x^{0} \\in G.$ Пусть $\\exists \\delta > 0$: $\\forall x \\in B_{\\delta}(x^0) \\ \\ \\forall i \\in \\{1, \\ldots, n\\} \\ \\exists \\dfrac{\\partial f}{\\partial x_i} (x)$, то есть в каждой точке шара существует частная производная и пусть $\\dfrac{\\partial f}{\\partial x_i}$ непрерывна в точке $x^0$ $ \\ \\forall i \\in \\{1, \\ldots, n\\}.$ Тогда $f$ дифференцируема в точке $x^{0}$.",
+      "proof": "",
+      "tags": [],
+      "source": "matan_2_semestr/2.tex"
+    }
+  ]
+}

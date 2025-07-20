@@ -1,0 +1,58 @@
+{
+  "units": [
+    {
+      "id": "D1",
+      "kind": "definition",
+      "title": "Пространство пробных функций",
+      "statement": "Пространством $\\mathcal{D}(\\mathbb{R}^n)$ назовем $C_0^\\infty(\\mathbb{R}^n)$ со введенной сходимостью: Последовательность $\\{ \\varphi_m\\} \\subset \\mathcal{D}(\\mathbb{R}^n)$ сходится к $\\varphi \\in \\mathcal{D}(\\mathbb{R}^n)$, то есть $\\varphi_m \\xrightarrow[\\mathcal{D}(\\mathbb{R}^n)]{} \\varphi$, если \\begin{enumerate} \\item $\\forall \\alpha \\in \\mathbb{N}^n_0 \\hookrightarrow D^{\\alpha} \\varphi_m \\mathrel{\\mathop{\\rightrightarrows}\\limits_{\\mathbb{R}^n}} D^{\\alpha} \\varphi$, $m \\to \\infty$; \\item $\\exists C > 0$: $\\text{supp}\\varphi_m \\subset B_c(0)$ $\\forall m \\in \\mathbb{N}$. \\end{enumerate} Здесь \\[ \\alpha = (\\alpha_1, \\ldots, \\alpha_n), \\qquad |\\alpha|=\\alpha_1+\\cdots+\\alpha_n, \\qquad D^\\alpha =\\frac{\\partial^{|\\alpha|}}{\\partial x_1^{\\alpha_1}\\,\\partial x_2^{\\alpha_2}\\,\\cdots\\,\\partial x_n^{\\alpha_n}}. \\]",
+      "proof": "",
+      "tags": [],
+      "source": "matan_4_semestr/Lecture_11.tex"
+    },
+    {
+      "id": "D2",
+      "kind": "definition",
+      "title": "",
+      "statement": "Назовем $\\mathcal{D}'(\\mathbb{R}^n)$~---~пространство всех линейных непрерывных функционалов на $\\mathcal{D}(\\mathbb{R}^n)$. Функционал \\[ T\\in \\mathcal{D}'(\\mathbb{R}^n) \\quad\\Longleftrightarrow\\quad T\\text{: }\\mathcal{D}(\\mathbb{R}^n)\\to\\mathbb{R} \\] и удовлетворяет двум условиям: \\begin{enumerate} \\item (\\emph{Линейность}) $\\displaystyle T\\bigl(\\alpha\\,\\varphi_1 + \\beta\\,\\varphi_2\\bigr) =\\alpha\\,T(\\varphi_1)+\\beta\\,T(\\varphi_2), \\quad \\forall\\,\\alpha,\\beta\\in\\mathbb{R},\\;\\forall\\,\\varphi_1,\\varphi_2\\in\\mathcal{D}(\\mathbb{R}^n). $ \\item (\\emph{Непрерывность}) $\\displaystyle \\forall \\{\\varphi_m\\} \\subset \\mathcal{D}(\\mathbb{R}^n)\\text{: }\\exists \\varphi \\in \\mathcal{D}(\\mathbb{R}^n)\\text{: } \\varphi_m \\xrightarrow[\\mathcal{D}(\\mathbb{R}^n)]{} \\varphi \\;\\hookrightarrow \\; T(\\varphi_m)\\;\\longrightarrow\\;T(\\varphi), \\ m\\to\\infty. $ \\end{enumerate}",
+      "proof": "",
+      "tags": [],
+      "source": "matan_4_semestr/Lecture_11.tex"
+    },
+    {
+      "id": "D3",
+      "kind": "definition",
+      "title": "",
+      "statement": "Пусть $\\varphi\\in\\mathcal{D}'(\\mathbb{R}^n).$ Говорят, что \\(\\varphi\\) является \\emph{регулярным} обобщённым функционалом (или регулярной обобщённой функцией), если \\[ \\exists\\,f_\\varphi\\in L^{loc}_{\\mathrm{1}}(\\mathbb{R}^n)\\quad\\text{такое, что}\\quad \\langle \\varphi,\\psi\\rangle =\\int_{\\mathbb{R}^n}f_\\varphi(x)\\,\\psi(x)\\,dx, \\quad \\forall\\,\\psi\\in\\mathcal{D}(\\mathbb{R}^n). \\] В противном случае \\(\\varphi\\) называют \\emph{сингулярным} распределением.",
+      "proof": "",
+      "tags": [],
+      "source": "matan_4_semestr/Lecture_11.tex"
+    },
+    {
+      "id": "T4",
+      "kind": "theorem",
+      "title": "",
+      "statement": "Пусть $f, g\\in L^1(\\mathbb R)$. Тогда \\[ \\mathcal{F}[f * g](x) \\;=\\;\\sqrt{2\\pi}\\, \\mathcal{F}[f](x)\\, \\mathcal{F}[g](x), \\] где \\[ \\mathcal{F}[h](x)=\\frac1{\\sqrt{2\\pi}}\\int_{\\mathbb R}e^{-i x y}h(y)\\,dy. \\]",
+      "proof": "",
+      "tags": [],
+      "source": "matan_4_semestr/Lecture_11.tex"
+    },
+    {
+      "id": "T5",
+      "kind": "theorem",
+      "title": "преобразование Фурье производной",
+      "statement": "Пусть \\[ f\\in L^1(\\mathbb R)\\cap C^1(\\mathbb R), \\quad f'\\in L^1(\\mathbb R), \\] Тогда для любого $y\\in\\mathbb R$ \\[ \\mathcal F[f'](y) = i y\\,\\mathcal F[f](y), \\]",
+      "proof": "",
+      "tags": [],
+      "source": "matan_4_semestr/Lecture_11.tex"
+    },
+    {
+      "id": "T6",
+      "kind": "theorem",
+      "title": "Дифференцирование преобразования Фурье",
+      "statement": "Пусть \\[ f\\in L^1(\\mathbb R), \\qquad x\\,f(x)\\in L^1(\\mathbb R). \\] Тогда функция \\[ \\mathcal F[f](y) =\\frac1{\\sqrt{2\\pi}}\\int_{-\\infty}^{+\\infty}e^{-i x y}\\,f(x)\\,dx \\] непрерывна и имеет непрерывную первую производную по параметру~$y$: \\[ \\frac{d}{dy}\\,\\mathcal F[f](y) =\\mathcal F\\bigl[-\\,i x\\,f(x)\\bigr](y). \\]",
+      "proof": "",
+      "tags": [],
+      "source": "matan_4_semestr/Lecture_11.tex"
+    }
+  ]
+}

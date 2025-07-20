@@ -1,0 +1,166 @@
+{
+  "units": [
+    {
+      "id": "D1",
+      "kind": "definition",
+      "title": "",
+      "statement": "Пусть $E = (E, \\|\\cdot\\|)$ ~---~ линейное нормированое пространсвто (л.н.п.) Оно называется \\textit{полным}, если $\\forall$ фундаментальная (по норме $\\|\\cdot\\|$) последовательность $\\{x^n\\}$ пространства $E$ сходится по норме пространства $E$ к некоторому элементу $x \\in E$.",
+      "proof": "",
+      "tags": [],
+      "source": "matan_4_semestr/Lecture_1.tex"
+    },
+    {
+      "id": "D2",
+      "kind": "definition",
+      "title": "",
+      "statement": "Дано $E = (E, \\|\\cdot\\|)$ ~---~ л.н.п. Пара последовательностей $\\{x^n\\}_{n=1}^{\\infty}$ и $\\{S^k\\}_{k=1}^\\infty$, где \\[ S^k := \\sum_{n=1}^k x^n , \\] называется формальным рядом в $E$. При этом $\\{S^k\\}_{k=1}^\\infty$ называется последовательностью частичных сумм ряда, а $\\{x^n\\}_{n=1}^{\\infty}$ ~---~ членами ряда. Часто пишут просто \\[ \\sum_{k=1}^{\\infty} x^k\\text{ ~---~ формальный ряд.} \\]",
+      "proof": "",
+      "tags": [],
+      "source": "matan_4_semestr/Lecture_1.tex"
+    },
+    {
+      "id": "D3",
+      "kind": "definition",
+      "title": "",
+      "statement": "Ряд $\\sum\\limits_{k=1}^\\infty x^k$ называется сходящимся в л.н.п. $E$, если \\[ \\exists x \\in E:\\; \\left\\|x - \\sum_{k=1}^n x^k \\right\\| \\ra 0, n \\ra \\infty \\]",
+      "proof": "",
+      "tags": [],
+      "source": "matan_4_semestr/Lecture_1.tex"
+    },
+    {
+      "id": "D4",
+      "kind": "definition",
+      "title": "",
+      "statement": "Ряд $\\sum\\limits_{k=1}^\\infty x^k$ называется абсолютно сходящимся в л.н.п. $E$, если:\\[ \\sum_{k=1}^{\\infty} \\|x^k\\| \\text{ ~---~ сходится} \\]",
+      "proof": "",
+      "tags": [],
+      "source": "matan_4_semestr/Lecture_1.tex"
+    },
+    {
+      "id": "D5",
+      "kind": "definition",
+      "title": "",
+      "statement": "Пусть $RL_p([a, b])$ ~---~ линейное пространство функций, $p$-ая степень модуля которых интегрируема по Риману.",
+      "proof": "",
+      "tags": [],
+      "source": "matan_4_semestr/Lecture_1.tex"
+    },
+    {
+      "id": "D6",
+      "kind": "definition",
+      "title": "",
+      "statement": "Пусть $T$ ~---~ разбиение отрезка $[a, b]$, т.е. \\[ T = \\{x_i\\}_{i=0}^{N_T}, \\quad N_T \\in \\N \\]\\[ a = x_0 < x_1 < \\dots < x_{N_T} = b. \\] Пусть $f$: $[a, b] \\ra \\R$. Тогда $V_T(f)$ ~---~ вариация функции $f$ по разбиению $T$\\[ V_T(f) := \\sum_{k=0}^{N_T-1} |f(x_{k+1}) - f(x_k)| \\] \\[ V_a^b(f) := \\sup_{T\\text{ - разбиение } [a, b]} V_T(f) \\]",
+      "proof": "",
+      "tags": [],
+      "source": "matan_4_semestr/Lecture_1.tex"
+    },
+    {
+      "id": "D7",
+      "kind": "definition",
+      "title": "",
+      "statement": "$f$ называется функцией ограниченной вариации на $[a, b]$, если\\[ V_a^b (f) < +\\infty. \\] Обозначается $f\\in BV([a, b])$. От английского Bounded Variation.",
+      "proof": "",
+      "tags": [],
+      "source": "matan_4_semestr/Lecture_1.tex"
+    },
+    {
+      "id": "D8",
+      "kind": "definition",
+      "title": "",
+      "statement": "\\label{def:ac} функция $f$: $[a, b] \\ra \\R$ называется абсолютно непрерывной на $[a,b]$, если \\begin{equation*}\\begin{gathered} \\forall \\epsilon \\; \\exists \\delta (\\epsilon) > 0: \\forall \\text{ \\underline{дизъюнктивной} системы }\\{(a_k, b_k)\\}_{k=1}^N: \\sum_{k=1}^{N} |a_k - b_k| < \\delta(\\epsilon) \\\\ \\emb \\sum_{k=1}^{n} |f(b_k) - f(a_k)| < \\epsilon. \\end{gathered} \\end{equation*} $AC([a, b])$ ~---~ множество всех абсолютно непрерывных на $[a, b]$ функций. От английского Absolutely Continuous.",
+      "proof": "",
+      "tags": [],
+      "source": "matan_4_semestr/Lecture_1.tex"
+    },
+    {
+      "id": "D9",
+      "kind": "definition",
+      "title": "",
+      "statement": "Пусть $f$: $\\R^n \\rightarrow R$. Будем говорить, что функция обладает N-свойством Лузина, если для любого измеримого множества $E \\subset \\R^n \\ \\hookrightarrow \\LL^n(E) = 0 \\Rightarrow \\LL^1(f(E)) = 0$.",
+      "proof": "",
+      "tags": [],
+      "source": "matan_4_semestr/Lecture_1.tex"
+    },
+    {
+      "id": "T10",
+      "kind": "theorem",
+      "title": "",
+      "statement": "(Критерий полноты) $E$ ~---~ л.н.п. полно $\\Longleftrightarrow\\; \\forall$абсолютно сходящийся в $E$ ряд является сходящимся.",
+      "proof": "",
+      "tags": [],
+      "source": "matan_4_semestr/Lecture_1.tex"
+    },
+    {
+      "id": "T11",
+      "kind": "theorem",
+      "title": "",
+      "statement": "Пусть $p \\in [1, +\\infty]$. Тогда $L_p(\\mu)$ полно.\\\\",
+      "proof": "",
+      "tags": [],
+      "source": "matan_4_semestr/Lecture_1.tex"
+    },
+    {
+      "id": "T12",
+      "kind": "theorem",
+      "title": "",
+      "statement": "Пространство $RL_p([a, b])$ неполно.",
+      "proof": "",
+      "tags": [],
+      "source": "matan_4_semestr/Lecture_1.tex"
+    },
+    {
+      "id": "T13",
+      "kind": "theorem",
+      "title": "",
+      "statement": "$BV([a,b])$ ~---~ линейное пространство.",
+      "proof": "",
+      "tags": [],
+      "source": "matan_4_semestr/Lecture_1.tex"
+    },
+    {
+      "id": "T14",
+      "kind": "theorem",
+      "title": "",
+      "statement": "Пусть $f \\in BV([a, b])$. Тогда функция $g(x) := V_a^x$ монотонно не убывает на $[a, b]$",
+      "proof": "",
+      "tags": [],
+      "source": "matan_4_semestr/Lecture_1.tex"
+    },
+    {
+      "id": "T15",
+      "kind": "theorem",
+      "title": "",
+      "statement": "Пусть $f \\in BV([a, b])$. Тогда $\\exists f_1$ и $f_2$ монотонно неубывающие на $[a, b]$ такие, что $f = f_1 - f_2$.",
+      "proof": "",
+      "tags": [],
+      "source": "matan_4_semestr/Lecture_1.tex"
+    },
+    {
+      "id": "T16",
+      "kind": "theorem",
+      "title": "",
+      "statement": "Если $f \\in AC([a, b])$, то $f \\in BV([a, b])$.",
+      "proof": "",
+      "tags": [],
+      "source": "matan_4_semestr/Lecture_1.tex"
+    },
+    {
+      "id": "T17",
+      "kind": "theorem",
+      "title": "",
+      "statement": "Пусть $f \\in AC([a, b])$. Тогда она обладает N-свойством Лузина",
+      "proof": "",
+      "tags": [],
+      "source": "matan_4_semestr/Lecture_1.tex"
+    },
+    {
+      "id": "T18",
+      "kind": "theorem",
+      "title": "Банаха - Зарецкого",
+      "statement": "$$ f \\in AC([a, b]) \\Leftrightarrow \\begin{cases} f \\in BV([a, b]) \\\\ f \\in C([a, b]) \\\\ f \\text{обладает N-свойством Лузина} \\end{cases} $$ В одну сторону доказательство понятно и было в курсе. В другую сторону доказательство менее тривиальное и в курсе считается не обязательным. \\noindent Приведем пример функции из $BV([a, b])$ и $C([a, b])$, но при этом не обладают N-свойством Лузина. \\begin{example}[Канторова лестница] Построим канторово множество. Будем строить итеративно: на каждой итерации будем брать один из отрезков, полученных на предыдущей итерации, делить его на три равных части и <<выбрасывать>> среднюю. На $k$-ом шаге у нас будет $2^k$ равных отрезков длины $\\left(\\frac{2}{4} \\right)^{k}$. Обозначим объединение этих отрезков $F_k$. Тогда $F = \\bigcap\\limits_{k = 1}^{\\infty} F_k$. Мера этого множества равна 0, так как $(\\frac{2}{3})^{k} \\rightarrow 0, k \\rightarrow \\infty$. \\noindent Возникает вопрос: а не выкинем ли мы вообще все точки при таком построении множества? Очевидно нет, так как точно останутся точки 0 и 1. Все точки в множестве мы можем пронумеровать в виде двоичных чисел. На $k-ом$ шаге мы даем каждому отрезку номер ~---~ двоичное число длины $k$. \\noindent Теперь мы можем построить канторову лестницу. Подробное описание построения есть в книге <<Действительный анализ в задачах>>. Функция также строится итеративно. На каждой итерации мы делим отрезок, полученный на предыдущей итерации на три части. Приведем пример, как строится первая итерация для объяснения алгоритма построения. На первой итерации отрезок $[0, 1]$ делится на 3 части: $\\left[0, \\frac{1}{3}\\right]$, $\\left[\\frac{1}{3}, \\frac{2}{3} \\right]$, $\\left[\\frac{2}{3}, 1 \\right]$. Первому отрезку сопоставляем значение 0 (начала разбиваемого отрезка по $y$), второму отрезку сопоставляем значение $\\frac{1}{2}$ ~---~ середина, третьему отрезку сопоставляем значение 1. Далее мы берем отрезки, полученные на предыдущей итерации и работаем с ними аналогичным образом, <<сужая>> отрезки и сопоставляемые им множества. Точки, задающие границы отрезки мы соединяем прямыми. \\noindent Таким образом, мы получаем последовательность функций $F_n(x) \\rightarrow F(x)$. При этом, $F(1) - F(0) = 1$, но $F'(x) = 0$ п.в. Получаем, что канторова лестница непрерывна, ограниченной вариации, но не абсолютно непрерывна. \\end{example}",
+      "proof": "",
+      "tags": [],
+      "source": "matan_4_semestr/Lecture_1.tex"
+    }
+  ]
+}

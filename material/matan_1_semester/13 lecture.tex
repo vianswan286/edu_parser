@@ -1,0 +1,275 @@
+\subsection{Число $e$}
+\begin{lemma}
+    \hypertarget{lem4.14}{(Неравенство Бернулли)}
+    $$
+    \left( 1 + x \right)^{n} \geq 1 + nx, \quad \forall x \geq -1, \quad \forall n \in \N
+    $$
+\end{lemma}
+\begin{proof}
+     Будем доказывать по индукции:
+     
+     При $n = 1$ верно.
+
+    Предположим, что доказали при $n = k \in \N.$ Покажем, что для $n = k + 1$ верно.
+     $$ \left( 1 + x \right)^{k+1} = \left( 1+x \right)\left(1 + x\right)^{k} \geq (1 + x)(1 + kx) = 1 + (k+1) x + kx^{2} \geq 1 + (k+1)x,\ \textrm{так как} \  kx^{2} \geq 0.
+     $$
+
+     Следовательно, по индукции верно для всех $n \in \N$.
+\end{proof}
+
+
+\begin{theorem}
+    Последовательность:
+    $$ x_{n} = \left( 1 + \cfrac{1}{n}\right)^{n+1} \quad n \in \N
+    $$
+    ограничена снизу и монотонно не возрастает.
+\end{theorem}
+\begin{proof}
+    $$ \left( 1 +\cfrac{1}{n} \right)^{n+1} \geq 1 \quad \forall n \in \N
+    $$
+    Значит, она ограничена снизу.
+
+    Докажем монотонное невозрастание (нестрогое убывание) для $n \geq 2$:
+
+    $$ \cfrac{x_{n-1}}{x_{n}} = \cfrac{\left( 1 + \cfrac{1}{n-1}\right)^{n}}{\left( 1 + \cfrac{1}{n}\right)^{n+1}} = \left(\cfrac{n}{n-1}\right)^{n} \cdot \left(\cfrac{n}{n+1} \right)^{n+1} = \cfrac{n-1}{n} \cdot \left(\cfrac{n}{n-1}\right)^{n+1} \cdot \left(\cfrac{n}{n+1} \right)^{n+1}  =
+    $$ 
+    $$\cfrac{n-1}{n} \cdot \left(\cfrac{n^{2}}{n^{2}-1}\right)^{n+1} = \cfrac{n-1}{n} \cdot \left( 1 + \cfrac{1}{n^{2}-1}\right)^{n+1} \geq \left(1+ \cfrac{n+1}{(n+1)(n-1)}\right) \cdot \cfrac{n-1}{n} = 1
+    $$
+    По неравенству Бернулли для $x = \cfrac{1}{n^2 - 1}$.
+    $$
+    \text{Итого получаем: }\  \forall n \geq 2 \quad \cfrac{x_{n-1}}{x_{n}} \geq 1.
+    $$
+    Следовательно, последовательность нестрого убывает.
+\end{proof}
+
+\begin{theoremdefinition}
+    $\exists \lim\limits_{n \to \infty} \left( 1 + \cfrac{1}{n} \right)^{n} \geq 2 \ 
+    $и это число называется \textit{<<числом $e$>>}.
+\end{theoremdefinition}
+\begin{proof}
+$$ \left( 1 + \cfrac{1}{n} \right)^{n} \geq 2 \quad \forall n \in \N \ \textrm{из неравенства Бернулли.}
+    $$
+
+В силу предыдущей теоремы и \hyperlink{thm2.6}{теоремы Вейерштрасса о монотонной последовательности} 
+$$\exists \lim\limits_{n \to \infty} \left( 1 + \cfrac{1}{n}\right)^{n+1} = \inf \left\{ \left( 1 + \cfrac{1}{n}\right)^{n+1}: n \in \N \right\} \in \R$$
+
+$$\left( 1 + \cfrac{1}{n} \right)^{n} = \cfrac{\left( 1 + \cfrac{1}{n} \right)^{n+1}}{1 + \cfrac{1}{n}} \Rightarrow \exists \lim\limits_{n \to \infty} \left( 1 + \cfrac{1}{n} \right)^{n} = \cfrac{\lim\limits_{n \to \infty} \left( 1 + \cfrac{1}{n}\right)^{n+1}}{\lim\limits_{n \to \infty} \left(1 + \cfrac{1}{n}\right)}=\lim\limits_{n \to \infty} \left( 1 + \cfrac{1}{n}\right)^{n+1} $$
+
+Переходя к пределу в неравенстве:
+
+$$\left( 1 + \cfrac{1}{n} \right)^{n} \geq 2. $$
+    
+$ \left( 1 + \cfrac{1}{n} \right)^{n} \to e,\  n \to \infty$ и $2 \to 2, \ n\to \infty,$ откуда получаем $ e \geq 2.$
+\end{proof}
+
+\newpage
+\subsection{Показательная функция}
+\begin{lemma}
+    $\forall n \in \N $ функция $f(x) = x^{n}$ непрерывна на $\R$. 
+
+    Кроме того, $f\left( [0, +\infty) \right) = [0, +\infty) \quad (*)$
+\end{lemma}
+\begin{proof}
+    Непрерывность следует по индукции из непрерывности произведения непрерывных функций.
+
+    Докажем $(*)$. Так как $x \geq 0$, то, очевидно, $f\left( [0, +\infty) \right) \subset [0, +\infty)$.
+
+    Из $f \in C \big( [0,+\infty) \big)$ и \hyperlink{thm5.4}{ теоремы о промежуточном значении}:
+    $$ \left( \inf\limits_{x \in [0, +\infty)} f(x), \sup\limits_{x \in [0, +\infty)} f(x) \right) \subset f\left([0, +\infty)\right)
+    $$
+
+    $$
+    \begin{gathered}
+    \inf\limits_{x \in [0, +\infty)} x^{n} = 0 \\
+    \sup\limits_{x \in [0, +\infty)} x^{n} = + \infty
+    \end{gathered}
+    \Rightarrow (0, + \infty) \subset f \left( [0, +\infty) \right)
+    $$
+    Но кроме того $f(0) = 0$, следовательно:
+    $$
+        [0, + \infty) \subset f \left( [0, +\infty) \right)
+    $$
+    Из $f ([0, +\infty)) \subset [0, +\infty)$ и $[0, +\infty) \subset f ([0, +\infty))$ следует, что $f ([0, +\infty)) = [0, +\infty)$.
+\end{proof}
+
+\begin{lemma}
+    $\forall n\in \N \ f(x) = x^{n}$ строго возрастает на луче $[0, +\infty)$
+\end{lemma}
+\begin{proof}
+    Из только что доказанного следует, $
+    \ \exists \  f^{-1}: [0, +\infty) \mapsto [0, +\infty)
+    $, обратная к $f(x) = x^{n}$.
+\end{proof}
+
+\begin{definition}
+    Корень n-ой степени:$ \ f^{-1}(x^{n}) := \sqrt[n]{x}$.
+\end{definition}
+\begin{note}
+\hypertarget{upppp}{$f (x) = \sqrt[n]{x}$ строго возрастает на $[0, +\infty)$ и $C \big( [0, +\infty) \big).$}
+\end{note}
+\begin{definition}
+\hypertarget{def4.33}{Пусть $m \in \N$, $n \in \N$, $\cfrac{m}{n}$~---~ несократимая дробь}. $$f(x) = x^{\frac{m}{n}} := \big(\sqrt[n]{x}\big)^{m}, \quad x\in [0,+\infty).$$
+\end{definition}
+\begin{definition}
+$x^{-\frac{m}{n}} := \cfrac{1}{\big(\sqrt[n]{x}\big)^{m}}, \quad x\in (0,+\infty).$
+\end{definition}
+
+\begin{note}
+Следующие свойства являются <<школьными>>:
+
+Пусть $a \in (0; +\infty), b \in (0; +\infty).$
+
+\begin{table}[h]
+\begin{tabular}{cll}
+1. & $a^{r_{1}} < a^{r_{2}}, \ a > 1$, & $r_{1}, r_{2} \in \Q$: $r_{1} < r_{2}$ \\ 
+2. & $a^{r_{1}} > a^{r_{2}}, \ a \in (0, 1)$, & $r_{1}, r_{2} \in \Q$: $r_{1} < r_{2}$ \\
+3. & $a^{r_1} \cdot a^{r_{2}} = a^{r_{1} + r_{2}}$ & $\forall r_{1}, r_{2} \in \Q$ \\
+4. & $\left(a^{r_{1}}\right)^{r_{2}} = a^{r_{1} \cdot r_{2}}$ & $\forall r_{1}, r_{2} \in \Q$ \\
+5. & $\left(a \cdot b\right)^{r} = a^{r} \cdot b^{r}$ & $\forall r \in \Q$ \\
+6. & $a^{0} = 1$ &  \\
+\end{tabular}
+\end{table}
+\end{note}
+\begin{proof}
+    Докажем свойство 1. Так как $r_{1}, r_{2} \in \Q$, то мы всегда можем представить их в виде дробей $\cfrac{m_{1}}{n}$ и $\cfrac{m_{2}}{n}$ соответственно, где $m_{1}, m_{2} \in \Z$, $n \in \N$, притом $m_{1} < m_{2}$. Тогда нам нужно доказать, что $\sqrt[n]{a^{m_{1}}} < \sqrt[n]{a^{m_{2}}} \ (1)$, а для этого доказать, что $a^{m_{1}} < a^{m_{2}}$ и $\sqrt[n]{b} < \sqrt[n]{c} \ (2)$, где $b, c \in (0; +\infty)$:
+
+    \underline{Шаг 1.} Докажем $(1)$. 
+    
+    Для случая $m_{1}, m_{2} > 0$ очевидно, так как исходное неравенство преобразуется к виду $a^{m_{1}} \cdot (a^{m_{2} - m_{1}} - 1) > 0$, где оба множителя положительные. 
+    
+    Для случая $m_{1} < 0, m_{2} > 0$: рассмотрим $a^{-|m_{1}|} \vee a^{m_{2}} \Leftrightarrow 0 \vee \cfrac{a^{m_{2}} \cdot a^{|m_{1}|} - 1}{a^{|m_{1}|}}$, а так как слева и делимое, и делитель положительные, то должен стоять знак $<$, что нам и нужно было.
+
+    Случай $m_{1}, m_{2} < 0$ делается аналогично предыдущему (рассмотрением $a^{-|m_{1}|}$ и $a^{-|m_{2}|}$).
+
+    \underline{Шаг 2.} Неравенство $(2)$ следует из \hyperlink{upppp}{строгого возрастания} $f (x) = \sqrt[n]{x}$ на луче $[0; +\infty)$.
+
+    Объединяя, получаем $a^{r_{1}} < a^{r_{2}}, \ a > 1$, $r_{1}, r_{2} \in \Q$.
+\end{proof}
+
+\begin{lemma}
+\hypertarget{lem4.14}{(Неравенство Бернулли 2)} Пусть $a > 1,\ |r| \leq 1$, $r \in \Q.$ Тогда
+    $$
+    |a^{r} - 1| \leq 2|r| \cdot(a-1) \quad (*)
+    $$
+\end{lemma}
+\begin{proof}
+Сначала докажем для $r = \cfrac{1}{n}$. Поскольку $a > 1$, то $a^{\frac{1}{n}} = 1 + \alpha, \ \alpha > 0.$
+$$
+a= (1 + \alpha)^{n} \geq 1 + n\cdot \alpha \Rightarrow \alpha \leq \left(\cfrac{a-1}{n}\right), \text{ значит при $r = \cfrac{1}{n} \ $ $(*)$ выполняется.}$$
+
+Пусть $r \in (0,1]$. Следовательно,
+$\displaystyle \exists! \ n \in \N: \ r \in \left(\cfrac{1}{n+1}, \ \cfrac{1}{n}\right]$. И $2 r \geq \cfrac{1}{n}$.
+
+
+$$
+\displaystyle a^{r} - 1 \leq a^{\frac{1}{n}} - 1 \leq \cfrac{1}{n} \cdot(a-1) \leq 2r \cdot(a-1), \text{ получается при $r \in (0,1]$ доказали.}
+$$
+
+Для $r = 0$ очевидно. 
+
+Рассмотрим случай $r \in [-1, 0).$ Тогда $a^{r} = a^{-|r|} = \cfrac{1}{a^{|r|}}.$
+    
+$$
+|a^{r}-1| = 1-\cfrac{1}{a^{|r|}} = \cfrac{1}{a^{|r|}}\cdot (a^{|r|} - 1) \leq \cfrac{2|r| \cdot (a-1)}{a^{|r|}} \leq 2|r| \cdot(a-1)
+$$
+\end{proof}
+
+Чтобы доказать неравенство для произвольных действительных $|r| \leq 1$, нужно $\forall x \in (-1; 1)$ взять рациональную последовательность ${r_n}$, сходящуюся к $x$, так как для рациональных неравнество верно. А далее предельный переход в неравенстве.
+
+\begin{theoremdefinition}
+\hypertarget{thmdef4.2}{Пусть $a > 0, \ x\in \R$. Тогда $\forall \{r_{n}\}_{n = 1}^{\infty} \subset \Q$: $\lim\limits_{n \to \infty} r_{n} = x.$}
+$$
+\exists \lim\limits_{n \to \infty} a^{r_{n}} =: a^{x} 
+$$
+и этот предел не зависит от выбора последовательности $\{r_{n}\}$.
+\end{theoremdefinition}
+\begin{proof}
+    Рассмотрим случай $a > 1$. Зафиксируем $x \in \R$ и произвольную последовательность $\{r_{n}\} \subset \Q$: $\lim\limits_{n \to \infty} r_{n} = x$.
+
+    Так как сходящаяся последовательность ограничена, то 
+    $$
+    \exists M \in \N: |r_{n}| \leq M \Rightarrow \cfrac{1}{a^{M}} \leq a^{r_{n}} \leq a^{M} \quad \forall n \in \N.
+    $$
+    Пусть $n, m \in \N$.
+    $$
+    |a^{r_{n}} - a^{r_{m}}| = a^{r_{m}} \cdot |a^{r_{n} - r_{m}} - 1| \leq a^{M}\cdot |a^{r_{n} - r_{m}} - 1|.
+    $$
+    Так как $\{r_{n}\}$~---~сходящаяся последовательность, то она фундаментальна. Значит,
+    $$
+    \forall \epsilon > 0 \ \exists N(\epsilon) \in \N:\ \forall n, m \geq N(\epsilon) \hookrightarrow |r_{n} - r_{m}| < \epsilon  \Rightarrow
+    $$
+    $$
+    \begin{gathered}
+    \Rightarrow \textrm{при} \ n, m \geq N(1) \hookrightarrow |r_{n} - r_{m}| < 1 \Rightarrow
+    \hfill
+    \\
+    \Rightarrow \textrm{при} \ n, m \geq N(1) \hookrightarrow |a^{r_{n}} - a^{r_{m}}| \leq 2a^{M} |r_{n} - r_{m}| \cdot (a-1) 
+
+    \end{gathered}
+    $$
+    $$
+    \forall \epsilon > 0 \ \exists \Tilde{N}(\epsilon) = N \left(\cfrac{\epsilon}{2a^{M}\cdot (a-1)}\right): \forall n, m \geq \Tilde{N}(\epsilon) \hookrightarrow |a^{r_{n}} - a^{r_{m}}| \leq \cfrac{\epsilon \cdot 2a^{M}\cdot (a-1)}{2a^{M}\cdot (a-1)} = \epsilon
+    $$
+
+    Следовательно, $\{a^{r_{n}}\}$ фундаментальна. Значит, по критерию коши:
+    $$
+    \exists \lim\limits_{n \to \infty} a^{r_{n}} = a^{x}.
+    $$
+
+    Проверим корректность, то есть независимость от выбора последовательности $\{r_{n}\}$.
+
+    Пусть $\lim\limits_{n \to \infty} r_{n}' = x$ и $\lim\limits_{n \to \infty} r_{n}'' = x$.
+    $$
+    \exists \Tilde{N} \in \N: \  \forall n \geq \Tilde{N} \hookrightarrow |r_{n}' - r_{n}''| \leq 1 \Rightarrow
+    $$
+    $$
+     \Rightarrow \forall n \geq \Tilde{N}: \ |a^{r_{n}'} - a^{r_{n}''}| = a^{r_{n}'} \cdot |a^{r_{n}'' - r_{n}'} - 1| \leq 2a^{r_{n}'} \cdot |r_{n}' - r_{n}''| \cdot (a-1)
+    $$
+
+    Так как $\{a^{r_{n}'}\}\limits_{n = 1}^{\infty}$~---~сходящаяся последовательность, то она ограничена, значит
+    $$
+    \exists C> 0: \ a^{r_{n}'} \leq C \quad \forall n \in \N \Rightarrow 0 \leq |a^{r_{n}'} - a^{r_{n}''}| \leq 2C \cdot (a-1) \cdot |r_{n}' - r_{n}''| \to 0, n \to \infty
+    $$
+
+    По \hyperlink{thm2.4}{теореме о двух миллиционерах}: $$\lim\limits_{n \to \infty} a^{r_{n}'} = \lim\limits_{n \to \infty} a^{r_{n}''} = a^{x}.
+    $$
+
+    Случай $a = 1$ тривиален.
+
+    Случай $a \in (0, 1)$ сводится к только что рассмотренному, если учесть, что 
+    $$\displaystyle a^{r} = \left(\cfrac{1}{\frac{1}{a}}\right)^r, \quad \cfrac{1}{a} > 1.$$
+\end{proof}
+\begin{lemma}
+    \hyperlink{thmdef4.2}{Новое определение} совпадает с \hyperlink{def4.33}{предыдущим} при $x \in \Q.$
+\end{lemma}
+\begin{proof}
+     При $x \in \Q$ рассмотрим стационарную последовательность $\displaystyle \{r_{n}\}_{n = 1}^{\infty} = x.$
+
+    Тогда по \hyperlink{thmdef4.2}{новому определению} $a^x = \lim\limits_{n \to \infty} a^{r_{n}}$ для любой последовательности $\{r_{n}\}$, сходящейся к $x$, в частности и для последовательности  $\{r_{n}\} = x$.
+
+    Но тогда $a^x = \lim\limits_{n \to \infty} a^{r_{n}}$ по \hyperlink{def4.33}{старому определению}.
+\end{proof}
+
+    Таким образом, мы построили при любом $a > 0$ функцию $a^{x}: \R \mapsto (0, +\infty)$.
+    
+\begin{theorem}
+    Пусть $a > 0$. Функция $f(x) = a^{x}$ непрерывна в каждой точке числовой прямой.
+\end{theorem}
+\begin{proof}
+    Пусть $a > 1$.
+    Фиксируем точку $x_{0} \in \R$.
+
+    Тогда по неравенству Бернулли:
+    $$\forall x \in U_{1}(x_{0}) \hookrightarrow |a^{x} - a^{x_{0}}| = a^{x_{0}}\cdot|a^{x-x_{0}} - 1| \leq 2 a^{x_{0}} \cdot |x - x_{0}| \cdot (a-1)
+    $$
+    $$
+    0 \leq |a^{x} - a^{x_{0}}| \leq 2 a^{x_{0}} \cdot |x - x_{0}| \to 0, x \to x_{0} \Rightarrow a^{x} \to a_{x_{0}}\cdot (a-1), x \to x_{0}
+    $$
+
+    Следовательно, $a^{x}$ непрерывна в точке $x_{0}$. Но $x_{0}$ была выбрана произвольно. При $a > 1$ доказано.
+    
+    Случай $a = 1$ тривиален, так как $1 = 1^{r} \quad \forall r \in \Q \Rightarrow 1^{x} = 1  \quad \forall x \in \R$.
+
+    Случай $a \in (0, 1)$ сводится к только что рассмотренному, если учесть, что 
+    $$a^{r} = \left(\cfrac{1}{\frac{1}{a}}\right)^r, \quad \cfrac{1}{a} > 1.$$
+\end{proof}

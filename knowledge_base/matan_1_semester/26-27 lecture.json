@@ -1,0 +1,157 @@
+{
+  "units": [
+    {
+      "id": "D1",
+      "kind": "definition",
+      "title": "",
+      "statement": "Пусть $\\E$~---~множество в метрическом пространстве. Тогда \\textit{границей множества} назовём $\\text{cl}\\E \\backslash \\text{int}\\E$ и будем обозначать $\\partial \\E$.",
+      "proof": "",
+      "tags": [],
+      "source": "matan_1_semester/26-27 lecture.tex"
+    },
+    {
+      "id": "D2",
+      "kind": "definition",
+      "title": "",
+      "statement": "Пусть $(X, \\rho)$~---~метрическое пространство, $\\E \\subset X$. Множество $\\E$ называется \\textit{ограниченным}, если $\\exists B_{R} (x_{0})$: $\\E \\subset B_{R} (x_{0})$.",
+      "proof": "",
+      "tags": [],
+      "source": "matan_1_semester/26-27 lecture.tex"
+    },
+    {
+      "id": "D3",
+      "kind": "definition",
+      "title": "",
+      "statement": "Пусть $(X, \\rho)$~---~метрическое пространство, $\\E \\subset X$. Множество $\\E$ \\textit{вполне ограничено}, если $$ \\forall \\epsilon > 0 \\ \\exists \\text{конечное число точек } \\{ x_{1}, \\ldots, x_{N (\\epsilon)}\\}: \\E \\subset \\bigcup_{i = 1}^{N (\\epsilon)} B_{\\epsilon} (x_{i}).$$",
+      "proof": "",
+      "tags": [],
+      "source": "matan_1_semester/26-27 lecture.tex"
+    },
+    {
+      "id": "D4",
+      "kind": "definition",
+      "title": "",
+      "statement": "Метрическое пространство $(X, \\rho)$ называется \\textit{полным}, если любая его фундаментальная последовательность сходится к некоторой точке этого пространства, в противном случае пространство называется \\textit{неполным}.",
+      "proof": "",
+      "tags": [],
+      "source": "matan_1_semester/26-27 lecture.tex"
+    },
+    {
+      "id": "D5",
+      "kind": "definition",
+      "title": "",
+      "statement": "Пусть $\\E \\subset \\R$. \\textit{Вектор-функцией} будем называть $\\overline{a} (t)$: $\\E \\mapsto \\R^n$.",
+      "proof": "",
+      "tags": [],
+      "source": "matan_1_semester/26-27 lecture.tex"
+    },
+    {
+      "id": "D6",
+      "kind": "definition",
+      "title": "",
+      "statement": "Пусть $\\overline{a}$: $U_{\\delta_0} (t_0) \\mapsto \\R^n$. Будем говорить, что существует производная вектор-функции в точке $t_{0}$, если $\\displaystyle \\exists \\lim\\limits_{t\\to t_{0}} \\frac{\\overline{a} (t) - \\overline{a} (t_0)}{t - t_{0}} \\in \\R^n$ и этот предел обозначается $\\overline{a}' (t_{0})$.",
+      "proof": "",
+      "tags": [],
+      "source": "matan_1_semester/26-27 lecture.tex"
+    },
+    {
+      "id": "D7",
+      "kind": "definition",
+      "title": "",
+      "statement": "Пусть $\\phi$: $U_{\\delta} (t_0) \\mapsto \\R$, $\\overline{a}$: $U_{\\delta} (t_0) \\mapsto \\R^n$. Будем говорить, что $\\overline{a} = \\overline{o}(\\phi(t))$, $t\\to t_{0}$, если $\\exists \\overline{\\epsilon}$: $U_{\\delta} (t_{0}) \\mapsto \\R^n$: $\\lim\\limits_{t\\to t_{0}} \\overline{\\epsilon} (t) = \\overline{0}$ и $\\overline{a} (t) = \\phi (t) \\overline{a} (t) \\ \\ \\forall t \\in U_{\\delta} (t_0)$.",
+      "proof": "",
+      "tags": [],
+      "source": "matan_1_semester/26-27 lecture.tex"
+    },
+    {
+      "id": "D8",
+      "kind": "definition",
+      "title": "",
+      "statement": "Будем говорить, что вектор-функция $\\overline{a} (t)$: $U_{\\delta} (t_{0}) \\mapsto \\R^n$ дифференцируема в точке $t_{0}$, если $\\exists \\overline{A} \\in \\R^n$: $\\overline{a} (t) = \\overline{a} (t_{0}) + \\overline{A} (t - t_{0}) + \\overline{o} ((t - t_{0}))$, $t\\to t_{0}$.",
+      "proof": "",
+      "tags": [],
+      "source": "matan_1_semester/26-27 lecture.tex"
+    },
+    {
+      "id": "T9",
+      "kind": "theorem",
+      "title": "",
+      "statement": "(Критерий точки прикосновения) $x_{0}$~---~точка прикосновения множества $\\E \\Leftrightarrow \\exists \\{ x_{n}\\} \\subset \\E$: $\\rho(x_{n}, x_{0})\\to 0$, $n\\to \\infty$.",
+      "proof": "",
+      "tags": [],
+      "source": "matan_1_semester/26-27 lecture.tex"
+    },
+    {
+      "id": "T10",
+      "kind": "theorem",
+      "title": "",
+      "statement": "(Критерий предельной точки) $x_{0}$~---~предельная точка множества $\\E \\Leftrightarrow \\begin{cases} x_{n} \\neq x_{0} \\ \\forall n \\in \\N \\\\ \\rho(x_{n}, x_{0})\\to 0, n\\to \\infty \\end{cases}$",
+      "proof": "",
+      "tags": [],
+      "source": "matan_1_semester/26-27 lecture.tex"
+    },
+    {
+      "id": "T11",
+      "kind": "theorem",
+      "title": "",
+      "statement": "(Гейне-Борель 2.0) Пусть $(X, \\rho)$~---~метрическое пространство, $K \\subset X$~---~компакт. Тогда для любого открытого покрытия $\\{ U_{\\alpha}\\}_{\\alpha \\in A}$ компакта существует конечное подпокрытие $\\{ U_{\\alpha_{i}}\\}_{i = 1}^{N}$.",
+      "proof": "",
+      "tags": [],
+      "source": "matan_1_semester/26-27 lecture.tex"
+    },
+    {
+      "id": "T12",
+      "kind": "theorem",
+      "title": "",
+      "statement": "Пусть $(X, \\rho)$~---~метрическое пространство. Если $K$~---~компакт, то он ограничен и замкнут.",
+      "proof": "",
+      "tags": [],
+      "source": "matan_1_semester/26-27 lecture.tex"
+    },
+    {
+      "id": "T13",
+      "kind": "theorem",
+      "title": "",
+      "statement": "\\hypertarget{thm7.10}{(Теорема Больцано-Вейерштрасса в $\\R^{n}$) Из любой ограниченной последовательности $\\{ x^m \\}_{m = 1}^{\\infty}$ можно выделить сходящуюся подпоследовательность $\\{ x^{m_{j}} \\}_{j = 1}^{\\infty}$.}",
+      "proof": "",
+      "tags": [],
+      "source": "matan_1_semester/26-27 lecture.tex"
+    },
+    {
+      "id": "T14",
+      "kind": "theorem",
+      "title": "",
+      "statement": "(Критерий компактности в $\\R^n$) Множество $K \\subset \\R^n$~---~компакт $\\Leftrightarrow$ оно ограничено и замкнуто.",
+      "proof": "",
+      "tags": [],
+      "source": "matan_1_semester/26-27 lecture.tex"
+    },
+    {
+      "id": "T15",
+      "kind": "theorem",
+      "title": "",
+      "statement": "(Критерий Коши в $\\R^n$) Последовательность $\\{ x^{m}\\} \\subset \\R^{n}$ сходится $\\Leftrightarrow$ когда выполнено условие Коши, то есть $\\displaystyle \\forall \\epsilon > 0 \\ \\exists N (\\epsilon)$: $\\displaystyle \\forall m, l \\geq N (\\epsilon) \\hookrightarrow \\sqrt{\\sum_{i = 1}^{n} (x^{m}_{i} - x^{l}_{i})^{2}} \\leq \\epsilon$.",
+      "proof": "",
+      "tags": [],
+      "source": "matan_1_semester/26-27 lecture.tex"
+    },
+    {
+      "id": "T16",
+      "kind": "theorem",
+      "title": "",
+      "statement": "Вектор функция $\\overline{a}$: $U_{\\delta} (t_{0}) \\mapsto \\R^n$ дифференцируема в точке $t_{0} \\Leftrightarrow \\exists \\overline{a}' (t_{0}) \\in \\R^n \\Leftrightarrow \\exists \\overline{a}_{i}' (t_{0}) \\ \\ \\forall i \\in \\{1, \\ldots, n\\}$.",
+      "proof": "",
+      "tags": [],
+      "source": "matan_1_semester/26-27 lecture.tex"
+    },
+    {
+      "id": "T17",
+      "kind": "theorem",
+      "title": "",
+      "statement": "Пусть $\\overline{a}$: $U_{\\delta} (t_{0}) \\mapsto \\R^n$, $\\overline{b}$: $U_{\\delta} (t_{0}) \\mapsto \\R^n$, $\\phi$: $U_{\\delta} (t_{0}) \\mapsto \\R$: \\begin{enumerate} \\item если $\\overline{a}$ дифференцируема в точке $t_{0}$ и $\\phi$ дифференцируема в точке $t_{0}$, то $\\phi \\overline{a}$ дифференцируема в точке $t_{0}$ и $(\\phi \\overline{a})' (t_{0}) = \\phi' (t_{0}) \\overline{a} (t_{0}) + \\phi (t_{0}) \\overline{a}' (t_{0})$; \\item если $\\overline{a}$, $\\overline{b}$ дифференцируемы в точке $t_{0}$, тогда $(\\overline{a}, \\overline{b})$ дифференцируемо в точке $t_{0}$ и $(\\overline{a}, \\overline{b})' (t_{0}) = \\overline{a}' (t_{0}) \\overline{b} (t_{0}) + \\overline{a} (t_{0}) \\overline{b}' (t_{0})$; \\item если $n = 3$ и $\\overline{a}$, $\\overline{b}$ дифференцируемы в точке $t_{0}$, то $[\\overline{a}, \\overline{b}]$ дифференцируемо в точке $t_{0}$ и $[\\overline{a}, \\overline{b}]' (t_{0}) = [\\overline{a}' (t_{0}), \\overline{b} (t_{0})] + [\\overline{a} (t_{0}), \\overline{b}' (t_{0})]$. \\end{enumerate}",
+      "proof": "",
+      "tags": [],
+      "source": "matan_1_semester/26-27 lecture.tex"
+    }
+  ]
+}

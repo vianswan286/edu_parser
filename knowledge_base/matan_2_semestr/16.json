@@ -1,0 +1,85 @@
+{
+  "units": [
+    {
+      "id": "D1",
+      "kind": "definition",
+      "title": "",
+      "statement": "Пусть $-\\infty < a < b \\leq +\\infty$, $f$: $[a, b) \\rightarrow \\R$, причем $f \\in \\Rim([a, b'])$ $\\forall b' \\in (a, b).$ Несобственным интегралом Римана функции $f$ на $[a, b]$ называется $\\left \\{ \\int \\limits_a^{b'} f(x) dx \\ | \\ b' \\in (a, b) \\right \\}.$ И обозначается $\\int \\limits_a^b f(t) dt.$ Будем говорить, что такой интеграл сходится, если существует конечный предел $\\lim_{b' \\to b-0} \\int \\limits_a^{b'} f(x) dx.$",
+      "proof": "",
+      "tags": [],
+      "source": "matan_2_semestr/16.tex"
+    },
+    {
+      "id": "D2",
+      "kind": "definition",
+      "title": "",
+      "statement": "Пусть $-\\infty \\leq a < b \\leq +\\infty.$ Пусть $f: \\ (a, b) \\rightarrow \\R,$ а также пусть она не определена в конечном числе упорядоченных точек $\\{x_i\\}_{i = 1}^{N}.$ Пусть $f \\in R([c, d]) \\forall [c, d] \\subset (a, b),$ не содержащего точек $\\{x_i\\}_{i = 1}^{N}.$ На любом интервале $(x_i, x_{i + 1})$ выберем произвольно $\\psi_i.$ Несобственным интегралом по интервалу $(a, b)$ функции $f$ назовем конечный набор несобственных интегралов $$\\int \\limits_{x_{i -1}}^{\\psi_i} f(t) dt, \\int \\limits_{\\psi_i}^{x_i} f(t) dt$$ Говорят, что такой интеграл сходится, если сходятся все интегралы из этого набора. Если в окрестности точек $\\{x_i\\}$ функция $f$ не ограничена, то $x_i$ называется особой точкой несобственного интеграла или особенностью. По определению символы $-\\infty, +\\infty$ являются особыми точками.",
+      "proof": "",
+      "tags": [],
+      "source": "matan_2_semestr/16.tex"
+    },
+    {
+      "id": "D3",
+      "kind": "definition",
+      "title": "",
+      "statement": "Пусть $-\\infty < a < b \\leq +\\infty.$ Пусть $f: \\ [a, b) \\rightarrow \\R,$ причем $f \\in \\Rim([a, b']) \\ \\forall b' \\ \\in (a, b).$ Будем говорить, что $f$ абсолютно интегрируема на $[a, b),$ если $\\int \\limits_a^b |f(x)| dx$ сходится. Будем говорить, что $\\int \\limits_a^b f(t) dt$ сходится условно, если $\\int \\limits_a^b f(t) dt$ сходится, а $\\int \\limits_a^b |f(x)| dx$ расходится.",
+      "proof": "",
+      "tags": [],
+      "source": "matan_2_semestr/16.tex"
+    },
+    {
+      "id": "T4",
+      "kind": "theorem",
+      "title": "",
+      "statement": "Пусть $x = \\varphi(t), \\varphi \\in C^1([a, b])$, $f \\in C(\\varphi([a, b])).$ Тогда $$\\int \\limits_a^b f(\\varphi(t)) dt = \\int \\limits_{\\varphi(a)}^{\\varphi(b)} f(x) dx.$$",
+      "proof": "",
+      "tags": [],
+      "source": "matan_2_semestr/16.tex"
+    },
+    {
+      "id": "T5",
+      "kind": "theorem",
+      "title": "",
+      "statement": "\\textit{(Интегрирование по частям)} Пусть $u$, $v \\in C^1([a, b]).$ Тогда $$\\int \\limits_a^b u(x) v'(x) dx = u(b) v(b) - u(a) v(a) - \\int \\limits_{a}^{b}u'(x) v(x) dx$$",
+      "proof": "",
+      "tags": [],
+      "source": "matan_2_semestr/16.tex"
+    },
+    {
+      "id": "T6",
+      "kind": "theorem",
+      "title": "",
+      "statement": "\\textit{(Интегральная теорема о среднем)} Пусть $f$, $g \\in C([a, b])$, $\\forall x \\in [a, b]$: $g(x) \\neq 0$. Тогда $\\exists \\psi \\in (a, b)$: $$\\int \\limits_a^b f(x) g(x) dx = f(\\psi) \\int \\limits_a^b g(x) dx.$$",
+      "proof": "",
+      "tags": [],
+      "source": "matan_2_semestr/16.tex"
+    },
+    {
+      "id": "T7",
+      "kind": "theorem",
+      "title": "",
+      "statement": "Пусть $f \\in B([a, b))$ и $f \\in \\Rim([a, b']) \\ \\forall b' \\in (a, b).$ Тогда $f \\in R([a, b])$ при любом доопределении функции $f$ в точке $b.$ Кроме того, справедливо равенство: $$\\int \\limits_a^b f(x) dx = \\lim_{b' \\to b-0} \\int \\limits_a^{b'} f(x) dx$$",
+      "proof": "",
+      "tags": [],
+      "source": "matan_2_semestr/16.tex"
+    },
+    {
+      "id": "T8",
+      "kind": "theorem",
+      "title": "",
+      "statement": "\\textit{(Критерий Коши для несобственного интеграла)} Пусть $-\\infty < a < b \\leq +\\infty.$ Пусть $f: \\ [a, b) \\rightarrow \\R,$ причем $f \\in \\Rim([a, b']) \\ \\forall b' \\ \\in (a, b).$ Тогда $\\int \\limits_a^b f(x) dx$ сходится тогда и только тогда, когда $$\\forall \\epsilon > 0 \\ \\exists \\delta > 0: \\forall b', b'' \\in U_{\\delta}(b): \\ |\\int \\limits_{b'}^{b''} f(t) dt| < \\epsilon$$",
+      "proof": "",
+      "tags": [],
+      "source": "matan_2_semestr/16.tex"
+    },
+    {
+      "id": "T9",
+      "kind": "theorem",
+      "title": "",
+      "statement": "\\textit{(Принцип локализации)} Пусть $-\\infty < a < b \\leq +\\infty.$ Пусть $f: \\ [a, b) \\rightarrow \\R,$ причем $f \\in R([a, b']) \\ \\forall b' \\ \\in (a, b).$ Тогда $\\int \\limits_a^b f(x) dx$ сходится тогда и только тогда, когда $$\\forall c \\in (a, b) \\text{ сходится несобственный} \\int \\limits_c^b f(x) dx $$",
+      "proof": "",
+      "tags": [],
+      "source": "matan_2_semestr/16.tex"
+    }
+  ]
+}

@@ -1,0 +1,130 @@
+{
+  "units": [
+    {
+      "id": "D1",
+      "kind": "definition",
+      "title": "",
+      "statement": "Пусть $f: U_{\\delta_{0}}(x_{0}) \\mapsto \\R$. Функция $f$ называется \\textit{непрерывной в точке $x_{0}$}, если $\\exists \\lim\\limits_{x \\to x_{0}} f(x) = f(x_{0}) \\Leftrightarrow$ $$\\Leftrightarrow \\forall \\epsilon > 0 \\ \\exists \\delta(\\epsilon) \\in (0, \\delta_{0}]: \\ \\forall x\\in U_{\\delta(\\epsilon)}(x_{0}) \\hookrightarrow |f(x) - f(x_{0})| < \\epsilon. $$",
+      "proof": "",
+      "tags": [],
+      "source": "matan_1_semester/10 lecture.tex"
+    },
+    {
+      "id": "D2",
+      "kind": "definition",
+      "title": "",
+      "statement": "Функция $f: U_{\\delta_{0}}(x_{0}) \\mapsto \\R$, не являющаяся непрерывной в точке $x_0$, называется \\textit{разрывной в точке $x_0$}.",
+      "proof": "",
+      "tags": [],
+      "source": "matan_1_semester/10 lecture.tex"
+    },
+    {
+      "id": "D3",
+      "kind": "definition",
+      "title": "",
+      "statement": "Точка $x_0$ называется \\textit{точкой устранимого разрыва}, если: $$ \\begin{cases} \\exists \\lim\\limits_{x \\to x_{0}} f(x) \\in \\R,\\\\ \\lim\\limits_{x \\to x_{0}} f(x) \\neq f(x_{0}). \\end{cases}$$",
+      "proof": "",
+      "tags": [],
+      "source": "matan_1_semester/10 lecture.tex"
+    },
+    {
+      "id": "D4",
+      "kind": "definition",
+      "title": "",
+      "statement": "Точка $x_0$ называется \\textit{точкой разрыва первого рода}, если: $$ \\begin{cases} \\exists \\lim\\limits_{x \\to x_{0} +0} f(x) \\in \\R,\\\\ \\exists \\lim\\limits_{x \\to x_{0} -0} f(x) \\in \\R,\\\\ \\lim\\limits_{x \\to x_{0} +0} f(x) \\neq \\lim\\limits_{x \\to x_{0} -0} f(x). \\end{cases} $$",
+      "proof": "",
+      "tags": [],
+      "source": "matan_1_semester/10 lecture.tex"
+    },
+    {
+      "id": "D5",
+      "kind": "definition",
+      "title": "",
+      "statement": "Точка $x_0$ называется \\textit{точкой разрыва второго рода}, если хотя бы один из односторонних пределов не существует, либо бесконечен.",
+      "proof": "",
+      "tags": [],
+      "source": "matan_1_semester/10 lecture.tex"
+    },
+    {
+      "id": "D6",
+      "kind": "definition",
+      "title": "",
+      "statement": "Пусть $X \\subset \\R, X \\neq \\varnothing.$ Будем говорить, что $f$: $X\\mapsto \\R$ \\textit{непрерывна в точке $x_{0} \\in X$ по множеству $X$}, если $$\\left[ \\begin{gathered} x_{0} \\textrm{~---~ изолированная точка} \\ X, \\\\ \\exists \\lim\\limits_{\\underset{x \\in X}{x\\to x_{0}}}f(x) = f(x_{0}). \\hfill \\end{gathered} \\right. $$",
+      "proof": "",
+      "tags": [],
+      "source": "matan_1_semester/10 lecture.tex"
+    },
+    {
+      "id": "D7",
+      "kind": "definition",
+      "title": "",
+      "statement": "Функция $f$: $X\\in \\R$ называется \\textit{непрерывной на $X$}, если она непрерывна в каждой точке $x_{0} \\in X$ по множеству $X$.",
+      "proof": "",
+      "tags": [],
+      "source": "matan_1_semester/10 lecture.tex"
+    },
+    {
+      "id": "D8",
+      "kind": "definition",
+      "title": "",
+      "statement": "Пусть $X \\subset \\R$, $X \\neq \\varnothing$, $x_{0} \\in X$. Функция $f$: $X \\mapsto \\R$ называется \\textit{полунепрерывной сверху в точке $x_{0}$ по множеству $X$}, если $$ \\left[ \\begin{gathered} x_{0} \\textrm{~---~ изолирована,} \\\\ \\overline{\\lim\\limits_{\\underset{x \\in X}{x \\to x_{0}}}} f(x) \\leq f(x_{0}). \\end{gathered} \\right.$$",
+      "proof": "",
+      "tags": [],
+      "source": "matan_1_semester/10 lecture.tex"
+    },
+    {
+      "id": "D9",
+      "kind": "definition",
+      "title": "",
+      "statement": "Пусть $X \\subset \\R$, $X \\neq \\varnothing$, $x_{0} \\in X$. Функция $f$: $X \\mapsto \\R$ называется \\textit{полунепрерывной снизу в точке $x_{0}$ по множеству $X$}, если $$ \\left[ \\begin{gathered} x_{0} \\textrm{~---~ изолирована,} \\\\ \\lim\\limits_{\\overline{\\underset{x \\in X}{x \\to x_{0}}}} f(x) \\geq f(x_{0}). \\end{gathered} \\right.$$",
+      "proof": "",
+      "tags": [],
+      "source": "matan_1_semester/10 lecture.tex"
+    },
+    {
+      "id": "D10",
+      "kind": "definition",
+      "title": "",
+      "statement": "\\textit{Характеристическая функция множества (индикатор)}. $$ \\chi_{E} (x) = \\begin{cases} 1, x\\in E, \\\\ 0, x\\notin E, \\end{cases} \\text{где } E \\subset \\R \\text{~---~множество.} $$",
+      "proof": "",
+      "tags": [],
+      "source": "matan_1_semester/10 lecture.tex"
+    },
+    {
+      "id": "T11",
+      "kind": "theorem",
+      "title": "",
+      "statement": "Пусть $f$: $X \\mapsto \\R$. Тогда \\begin{center} $ \\overline{\\lim\\limits_{\\underset{x \\in X}{x\\to x_0}}} f(x) = \\sup \\{ \\overline{\\lim\\limits_{n\\to \\infty}} f(x_{n}): \\{x_{n}\\} \\subset X$, $\\{{x_n}\\}$ ~---~последовательность Гейне в точке $x_{0}\\}$ \\end{center} \\begin{center} $ \\lim\\limits_{\\overline{\\underset{x \\in X}{x\\to x_0}}} f(x) = \\inf \\{ \\lim\\limits_{\\overline{n\\to \\infty}} f(x_{n}): \\{x_{n}\\} \\subset X$, $\\{{x_n}\\}$ ~---~последовательность Гейне в точке $x_{0}\\}$ \\end{center}",
+      "proof": "",
+      "tags": [],
+      "source": "matan_1_semester/10 lecture.tex"
+    },
+    {
+      "id": "T12",
+      "kind": "theorem",
+      "title": "",
+      "statement": "\\hypertarget{thrm4.10}{(О верхнем и нижнем пределе для функции) }Пусть $f$: $X \\mapsto \\R$, $A \\in \\Hat{\\R}$. Следующие условия эквивалентны: \\begin{enumerate} \\item $ \\exists \\lim\\limits_{\\underset{x \\in X}{x\\to x_0}} f(x) = A;$ \\item $\\overline{\\lim\\limits_{\\underset{x \\in X}{x\\to x_0}}} f(x) = \\lim\\limits_{\\underset{x \\in X}{\\overline{x\\to x_0}}} f(x) = A.$ \\end{enumerate}",
+      "proof": "",
+      "tags": [],
+      "source": "matan_1_semester/10 lecture.tex"
+    },
+    {
+      "id": "T13",
+      "kind": "theorem",
+      "title": "",
+      "statement": "Пусть $K \\subset \\R$~---~компакт, $K \\neq \\varnothing.$ Пусть $f$ непрерывна на $K.$ Тогда $f(K) := \\{ f(x) : x \\in K$\\} ~---~ компакт.",
+      "proof": "",
+      "tags": [],
+      "source": "matan_1_semester/10 lecture.tex"
+    },
+    {
+      "id": "T14",
+      "kind": "theorem",
+      "title": "",
+      "statement": "Пусть $f$: $X \\mapsto \\R, x_{0} \\in X$. Тогда $f$ непрерывна в точке $x_{0}$ по множеству $X \\Leftrightarrow$ она полунепрерывна снизу в точке $x_{0}$ по множеству $X$ и полунепрерывна сверху в точке $x_{0}$ по множеству $X$.",
+      "proof": "",
+      "tags": [],
+      "source": "matan_1_semester/10 lecture.tex"
+    }
+  ]
+}

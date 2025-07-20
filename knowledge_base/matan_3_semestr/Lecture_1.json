@@ -1,0 +1,40 @@
+{
+  "units": [
+    {
+      "id": "D1",
+      "kind": "definition",
+      "title": "",
+      "statement": "Пусть $I$~---~индексное множество, $A_\\alpha$~---~абстрактное множество $\\forall \\alpha \\in I$. Тогда \\textit{системой множеств} назовём совокупность всех $A_\\alpha$ и будем обозначать $\\{A_\\alpha\\}_{\\alpha \\in I}$.",
+      "proof": "",
+      "tags": [],
+      "source": "matan_3_semestr/Lecture_1.tex"
+    },
+    {
+      "id": "D2",
+      "kind": "definition",
+      "title": "",
+      "statement": "Пусть $A$ и $B$~---~абстрактные множества. Назовём их \\textit{симметрической разностью} множество, определяемое равенством $A \\vartriangle B := (A \\bs B) \\cup (B \\bs A) = (A \\cup B) \\bs (A \\cap B)$.",
+      "proof": "",
+      "tags": [],
+      "source": "matan_3_semestr/Lecture_1.tex"
+    },
+    {
+      "id": "D3",
+      "kind": "definition",
+      "title": "",
+      "statement": "Пусть $\\{A_n\\}$~---~последовательность множеств. Её \\textit{нижним} пределом $\\underset{n \\ra \\infty}{\\underline{\\lim}} A_n = \\underset{n \\ra \\infty}{\\liminf} A_n$ назовём все $x$ такие, что каждый из них принадлежит всем $A_n$, начиная с некоторого номера $N(x)$, то есть \\[\\forall x \\in \\underset{n \\ra \\infty}{\\underline{\\lim}} A_n \\; \\exists N(x) \\in \\N : \\forall n \\geq N(x) \\emb x \\in A_n\\] \\[\\underset{n \\ra \\infty}{\\underline{\\lim}} A_n = \\overset{\\infty}{\\underset{N = 1}{\\bigcup}} \\, \\overset{\\infty}{\\underset{n = N}{\\bigcap}}A_n\\]",
+      "proof": "",
+      "tags": [],
+      "source": "matan_3_semestr/Lecture_1.tex"
+    },
+    {
+      "id": "D4",
+      "kind": "definition",
+      "title": "",
+      "statement": "Пусть $\\{A_n\\}$~---~последовательность множеств. Её \\textit{верхним} пределом $\\underset{n \\ra \\infty}{\\overline{\\lim}} A_n = \\underset{n \\ra \\infty}{\\limsup} A_n$ назовём все $x$ такие, что каждый из них принадлежит бесконечному набору множеств из $\\{A_n\\}$, то есть \\[\\forall x \\in \\underset{n \\ra \\infty}{\\overline{\\lim}} A_n \\; \\forall N \\in \\N : \\exists n(x, N) \\geq N \\emb x \\in A_n\\] \\[\\underset{n \\ra \\infty}{\\overline{\\lim}} A_n = \\overset{\\infty}{\\underset{N = 1}{\\bigcap}} \\, \\overset{\\infty}{\\underset{n = N}{\\bigcup}}A_n\\]",
+      "proof": "",
+      "tags": [],
+      "source": "matan_3_semestr/Lecture_1.tex"
+    }
+  ]
+}

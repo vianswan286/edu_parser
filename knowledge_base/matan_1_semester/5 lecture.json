@@ -1,0 +1,94 @@
+{
+  "units": [
+    {
+      "id": "D1",
+      "kind": "definition",
+      "title": "",
+      "statement": "Последовательность $\\{ x_{n} \\}$ называется \\textit{нестрого возрастающей (нестрого убывающей)}, если $\\forall n \\in \\N \\hookrightarrow x_{n + 1} \\geq x_{n} \\ (x_{n + 1} \\leq x_{n})$. Соответственно, если поставить строгое неравенство, то получим определения \\textit{строго возрастающей (строго убывающей)} последовательности.",
+      "proof": "",
+      "tags": [],
+      "source": "matan_1_semester/5 lecture.tex"
+    },
+    {
+      "id": "D2",
+      "kind": "definition",
+      "title": "",
+      "statement": "Последовательность $\\{ x_{n} \\}$ называется \\textit{монотонной}, если она нестрого возрастает или нестрого убывает. Соответственно она называется \\textit{строго монотонной}, если она строго возрастает или строго убывает.",
+      "proof": "",
+      "tags": [],
+      "source": "matan_1_semester/5 lecture.tex"
+    },
+    {
+      "id": "D3",
+      "kind": "definition",
+      "title": "",
+      "statement": "Пусть дана числовая последовательность $\\{ x_{n} \\}^{\\infty}_{n = 1}.$ Последовательность $\\{ y_{k} \\}^{\\infty}_{k = 1}$ называется \\textit{подпоследовательностью} последовательности $\\{ x_{n} \\}$, если существует строго возрастающая последовательность чисел $\\{ n_{k} \\}^{\\infty}_{k = 1} \\subset \\N$: $y_{k} = x_{n_{k}} \\ \\forall k \\in \\N.$",
+      "proof": "",
+      "tags": [],
+      "source": "matan_1_semester/5 lecture.tex"
+    },
+    {
+      "id": "D4",
+      "kind": "definition",
+      "title": "",
+      "statement": "Будем говорить, что элемент $A \\in \\overline{\\R}$~---~\\textit{частичный предел последовательности} $\\{ x_{n} \\}^{\\infty}_{n = 1}$, если $\\exists \\{ x_{n_{k}} \\}$~---~подпоследовательность последовательности $\\{ x_{n} \\}$: $\\lim\\limits_{k\\to \\infty} x_{n_{k}} = A .$",
+      "proof": "",
+      "tags": [],
+      "source": "matan_1_semester/5 lecture.tex"
+    },
+    {
+      "id": "T5",
+      "kind": "theorem",
+      "title": "",
+      "statement": "\\hypertarget{thm2.3}{(Теорема о предельном переходе в неравенстве)} Пусть $\\exists \\lim\\limits_{n\\to \\infty} x_{n} = A, \\ A \\in \\overline{\\R}$ и $\\exists \\lim\\limits_{n\\to \\infty} y_{n} = B, \\ B \\in \\overline{\\R}$. Пусть $\\exists N \\in \\N$: $x_{n} \\leq y_{n} \\ \\forall n \\geq N$. Тогда $A \\leq B$.",
+      "proof": "",
+      "tags": [],
+      "source": "matan_1_semester/5 lecture.tex"
+    },
+    {
+      "id": "T6",
+      "kind": "theorem",
+      "title": "",
+      "statement": "\\hypertarget{thm2.4}{(Теорема о трёх последовательностях или о двух миллиционерах)} Пусть $\\{ a_{n} \\}$, $\\{ b_{n} \\}$, $\\{ c_{n} \\}$~---~числовые последовательности. Пусть $\\exists \\lim\\limits_{n\\to \\infty} a_{n} = \\lim\\limits_{n\\to \\infty} b_{n} = c, \\ c \\in \\R$. Пусть $\\exists N \\in \\N$: $\\forall n \\geq N \\hookrightarrow a_{n} \\leq c_{n} \\leq b_{n}.$ Тогда $\\exists \\lim\\limits_{n\\to \\infty} c_{n} = c$.",
+      "proof": "",
+      "tags": [],
+      "source": "matan_1_semester/5 lecture.tex"
+    },
+    {
+      "id": "T7",
+      "kind": "theorem",
+      "title": "",
+      "statement": "Пусть $\\exists \\lim\\limits_{n\\to \\infty} x_{n} = + \\infty$ и $\\exists N \\in \\N$: $\\forall n \\geq N \\hookrightarrow y_{n} \\geq x_{n}$. Тогда $\\exists \\lim\\limits_{n\\to \\infty} y_{n} = + \\infty$. Аналогично для $- \\infty$.",
+      "proof": "",
+      "tags": [],
+      "source": "matan_1_semester/5 lecture.tex"
+    },
+    {
+      "id": "T8",
+      "kind": "theorem",
+      "title": "",
+      "statement": "\\hypertarget{thm2.6}{(Теорема Вейерштрасса)} Любая монотонная последовательность $\\{ x_{n} \\}$ имеет предел в $\\overline{\\R}$. При этом если $\\{ x_{n} \\}$ нестрого возрастает, то $\\exists \\lim\\limits_{n\\to \\infty} x_{n} = \\sup \\{ x_{n} \\}$. Соответственно, если $\\{ x_{n} \\}$ нестрого убывает, то $\\exists \\lim\\limits_{n\\to \\infty} x_{n} = \\inf \\{ x_{n} \\}$.",
+      "proof": "",
+      "tags": [],
+      "source": "matan_1_semester/5 lecture.tex"
+    },
+    {
+      "id": "T9",
+      "kind": "theorem",
+      "title": "",
+      "statement": "(Критерий частичного предела) Пусть $\\{ x_{n} \\}$~---~числовая последовательность. Пусть $A \\in \\overline{\\R}$. Следующие условия эквивалентны: \\begin{enumerate} \\item $A$ является частичным пределом последовательности $\\{ x_{n} \\}$; \\item $\\forall \\epsilon > 0$ в $U_{\\epsilon} (A)$ содержатся значения бесконечного количества элементов последовательности $\\{ x_{n} \\}$; \\item $\\forall \\epsilon > 0 \\ \\forall N \\in \\N \\ \\exists n (\\epsilon, N) \\geq N$: $x_{n} \\in U_{\\epsilon} (A).$ \\end{enumerate}",
+      "proof": "",
+      "tags": [],
+      "source": "matan_1_semester/5 lecture.tex"
+    },
+    {
+      "id": "T10",
+      "kind": "theorem",
+      "title": "",
+      "statement": "\\hypertarget{thm2.8}{(Теорема Больцано-Вейерштрасса)} Пусть $\\{ x_{n} \\}$~---~ограниченная числовая последовательность. Тогда она имеет хотя бы один конечный частичный предел.",
+      "proof": "",
+      "tags": [],
+      "source": "matan_1_semester/5 lecture.tex"
+    }
+  ]
+}

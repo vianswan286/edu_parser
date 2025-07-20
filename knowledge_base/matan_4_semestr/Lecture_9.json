@@ -1,0 +1,49 @@
+{
+  "units": [
+    {
+      "id": "T1",
+      "kind": "theorem",
+      "title": "",
+      "statement": "Пусть $Y = (Y, \\NN, \\nu)$~---~пространство конечной меры и задана $f$: $[a, b) \\times Y \\to \\overline{\\R}$: \\begin{enumerate} \\item[$\\bullet$] $\\forall y \\in Y$ интеграл $\\int_a^{\\ra b} f(t, y)dt = J(y)$ сходится; \\item[$\\bullet$] $\\int_a^{\\ra b}f(t, y)dt$ сходится равномерно по параметру; \\item[$\\bullet$] $\\forall b' \\in (a, b) \\hookrightarrow f \\in L_1(\\LL^1 \\otimes \\nu)$. \\end{enumerate} Тогда $J(y) \\in L_1(Y)$ и верно следующее утверждение: \\[ \\int_Y J(y)d\\nu = \\int_a^{\\ra b} \\int_Y f(t, y)d\\nu(y)dt. \\]",
+      "proof": "",
+      "tags": [],
+      "source": "matan_4_semestr/Lecture_9.tex"
+    },
+    {
+      "id": "T2",
+      "kind": "theorem",
+      "title": "",
+      "statement": "Пусть $f \\in C([a, b) \\times \\lceil c, d \\rfloor)$ и $\\forall (x, y) \\in [a, b) \\times \\lceil c, d \\rfloor$ существует $f'_y(x, y)$ и, более того, $f'_y \\in C([a, b) \\times \\lceil c, d \\rfloor)$. Пусть $\\int_a^{\\ra b} f'_y(x, y)dx$ равномерно сходится на $\\lceil c, d \\rfloor$, а $\\int_a^{\\ra b} f(x, y)dx$ сходится всюду поточечно. \\\\ Тогда $J(y) = \\int_a^{\\ra b} f(x, y)dx$ -- непрерывно дифференцируемая на $\\lceil c, d \\rfloor$ и справедливо равенство \\[ \\dfrac{dJ}{dy}(y) = \\int_a^{\\ra b} f'_y(x, y)dx. \\]",
+      "proof": "",
+      "tags": [],
+      "source": "matan_4_semestr/Lecture_9.tex"
+    },
+    {
+      "id": "T3",
+      "kind": "theorem",
+      "title": "Признак Дирихле.",
+      "statement": "Пусть $-\\infty < a < b \\leq + \\infty$, $Y$~---~параметрическое множество. Пусть функции $f, g$: $[a, b) \\times Y \\to \\mathbb{R}$: \\begin{enumerate} \\item $\\forall y \\in Y \\hookrightarrow f(\\cdot, y) \\in C([a, b))$ и $g(\\cdot, y) \\in C^1([a, b))$; \\item $g(x, y) \\underset{Y}{\\rr} 0$, $x \\rightarrow b - 0$. \\item $\\exists x_0 \\in (a, b): g'_x(x, y) \\leq 0\\ \\forall x > x_0$ и $\\forall y \\in Y$. \\item Равномерная ограниченность первообразной: $\\displaystyle M = \\sup\\limits_{y \\in Y} \\sup\\limits_{b' \\in (a, b)} \\biggr|\\int_a^{b'}f(x, y)dx\\biggr| < +\\infty$. \\end{enumerate} Тогда \\[ \\int_a^{\\ra b} f(x, y)g(x, y)dx. \\] равномерно сходится на множестве $Y$.",
+      "proof": "",
+      "tags": [],
+      "source": "matan_4_semestr/Lecture_9.tex"
+    },
+    {
+      "id": "T4",
+      "kind": "theorem",
+      "title": "Признак Вейерштрасса",
+      "statement": "Пусть $-\\infty < a < b \\leq +\\infty$, $Y$~---~абстрактное параметрическое множество. Пусть \\begin{enumerate} \\item[$\\bullet$] $f$: $[a, b) \\times Y \\to \\mathbb{R}$: $\\forall y \\in Y \\hookrightarrow f (\\cdot, y) \\in L_1 ([a, b']) \\ \\forall b' \\in (a, b)$; \\item[$\\bullet$] $\\exists g \\in L_1 ([a, b)),$ $g \\geq 0$ почти всюду на $[a, b)$: $|f(x, y)| \\leq g(x)$ $\\forall y \\in Y$ при почти всех $x \\in [a, b)$. \\end{enumerate} Тогда \\[ \\int_a^{\\ra b} f(x, y) \\text{d}x. \\] равномерно сходится на множестве $Y$.",
+      "proof": "",
+      "tags": [],
+      "source": "matan_4_semestr/Lecture_9.tex"
+    },
+    {
+      "id": "T5",
+      "kind": "theorem",
+      "title": "Критерий Коши",
+      "statement": "Пусть $-\\infty < a < b \\leq +\\infty$, $Y$~---~абстрактное параметрическое множество. Пусть $\\forall y \\in Y \\ \\forall b' \\in (a, b) \\hookrightarrow f(\\cdot, y) \\in L_1([a, b'])$. Тогда следующие утверждения эквивалентны: \\begin{enumerate} \\item[$\\bullet$] $\\displaystyle J(y) = \\int_a^{\\ra b} f(x, y)dx$ равномерно сходится на $Y$; \\item[$\\bullet$] $\\forall \\epsilon > 0 \\ \\exists b(\\epsilon) \\in (a, b) \\ \\forall b', b'' \\in (b(\\epsilon), b) \\ \\forall y \\in Y \\hookrightarrow$ \\[ \\biggr|\\int_{b'}^{b''} f(x, y)dx \\biggr| < \\epsilon. \\] \\end{enumerate}",
+      "proof": "",
+      "tags": [],
+      "source": "matan_4_semestr/Lecture_9.tex"
+    }
+  ]
+}

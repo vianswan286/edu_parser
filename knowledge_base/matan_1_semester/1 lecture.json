@@ -1,0 +1,193 @@
+{
+  "units": [
+    {
+      "id": "D1",
+      "kind": "definition",
+      "title": "",
+      "statement": "Множество называется бесконечным если $\\forall n \\in \\N$ $X$ содержит $n$ различных элементов.",
+      "proof": "",
+      "tags": [],
+      "source": "matan_1_semester/1 lecture.tex"
+    },
+    {
+      "id": "D2",
+      "kind": "definition",
+      "title": "",
+      "statement": "Пусть $X, Y$~---~непустые множества. Тогда $X \\times Y = \\{ (x,y)$: $x \\in X, y \\in Y \\}$~---~декартово произведение.",
+      "proof": "",
+      "tags": [],
+      "source": "matan_1_semester/1 lecture.tex"
+    },
+    {
+      "id": "D3",
+      "kind": "definition",
+      "title": "",
+      "statement": "Будем говорить, что задано соответствие $f$ из $X$ в $Y$, если $X \\times Y$ выделено подмножество $G_{f} \\subset X \\times Y.$",
+      "proof": "",
+      "tags": [],
+      "source": "matan_1_semester/1 lecture.tex"
+    },
+    {
+      "id": "D4",
+      "kind": "definition",
+      "title": "",
+      "statement": "Если $D_{f} = X, $ то говорят, что задано отображение (многозначное) из $X$ в $Y$ $f$: $X \\mapsto Y.$",
+      "proof": "",
+      "tags": [],
+      "source": "matan_1_semester/1 lecture.tex"
+    },
+    {
+      "id": "D5",
+      "kind": "definition",
+      "title": "",
+      "statement": "$X, Y \\neq \\varnothing$. Будем говорить, что $f$: $X \\mapsto Y$~---~\\textit{отображение}, если $D_{f} = X$ и $\\forall x \\in X$ $\\exists ! y \\in Y$: $(x,y) \\in G_{f}.$ Последнее можно интерпретировать как $y = f(x) .$ Если не сказано обратного, то отображение считать однозначным.",
+      "proof": "",
+      "tags": [],
+      "source": "matan_1_semester/1 lecture.tex"
+    },
+    {
+      "id": "D6",
+      "kind": "definition",
+      "title": "",
+      "statement": "$X, Y, Z \\neq \\varnothing.$ $f$: $X \\mapsto Y,$ $y$: $Y \\mapsto Z$~---~отображения. \\textit{Композицией отображений} $f$ и $g$ назовём отображение $h = g \\circ f, $ если $h(x) = g(f(x)) \\quad \\forall x \\in X.$",
+      "proof": "",
+      "tags": [],
+      "source": "matan_1_semester/1 lecture.tex"
+    },
+    {
+      "id": "D7",
+      "kind": "definition",
+      "title": "",
+      "statement": "Отображение $f$: $X \\mapsto Y$~---~\\textit{инъекция}, если $\\forall x_{1}, x_{2} \\in X \\hookrightarrow x_{1} \\neq x_{2} \\Rightarrow f(x_{1}) \\neq f(x_{2}).$",
+      "proof": "",
+      "tags": [],
+      "source": "matan_1_semester/1 lecture.tex"
+    },
+    {
+      "id": "D8",
+      "kind": "definition",
+      "title": "",
+      "statement": "Отображение $f$: $X \\mapsto Y$~---~\\textit{сюръекция}, если $E_{f} = Y.$ Каждый элемент множества $X$ вляется образом хотя бы одного элемента множества $Y.$",
+      "proof": "",
+      "tags": [],
+      "source": "matan_1_semester/1 lecture.tex"
+    },
+    {
+      "id": "D9",
+      "kind": "definition",
+      "title": "",
+      "statement": "Отображение $f$: $X \\mapsto Y$ называется \\textit{обратимым}, если $\\exists f^{-1}$: $Y \\mapsto X,$ такое, что \\begin{equation*} \\begin{cases} f \\circ f^{-1} = Id_{Y}\\\\ f^{-1} \\circ f = Id_{X} & \\text{ при этом $f^{-1}$ называется обратной к $f$.} \\end{cases} \\end{equation*}",
+      "proof": "",
+      "tags": [],
+      "source": "matan_1_semester/1 lecture.tex"
+    },
+    {
+      "id": "D10",
+      "kind": "definition",
+      "title": "",
+      "statement": "\\textit{Множеством действительных чисел} называется непустое множество $\\R$, в котором введены 2 бинарные операции: <<+>>: $\\R^{2} \\mapsto \\R$ <<$\\cdot$>>: $\\text{ } \\, \\R^{2} \\mapsto \\R$ и отношение порядка \"$\\leq$\". Удовлетворяют 15 аксиомам: $ \\begin{left} \\begin{tabular}{ll} 1. $a + b = b + a$ & $\\forall a, b \\in \\R$ \\\\ 2. $a + (b + c) = (a + b) + c$ & $\\forall a, b, c \\in \\R$ \\\\ 3. $\\exists 0 \\in \\R$: $a + 0 = 0 + a = 0$ & $\\forall a \\in \\R$ \\\\ 4. $\\exists (-a)$: $a + (-a) = 0$ & $\\forall a \\in \\R$ \\\\ 5. $a \\cdot b = b \\cdot a$ & $\\forall a, b \\in \\R$ \\\\ 6. $(a \\cdot b) \\cdot c = a \\cdot (b \\cdot c)$ & $\\forall a, b, c \\in \\R$ \\\\ 7. $\\exists 1 \\neq 0$: $a \\cdot 1 = a$ & $\\forall a \\in \\R$ \\\\ 8. $\\displaystyle \\exists \\frac{1}{a}$: $\\displaystyle a \\cdot \\frac{1}{a} = 1$ & $\\forall a \\neq 0$ \\\\ 9. $a \\cdot (b + c) = a \\cdot b + a \\cdot c$ & $\\forall a, b, c \\in \\R$ \\\\ 10. $a \\leq b \\vee b \\leq a$ & $\\forall a, b \\in \\R$ \\\\ 11. если $a \\leq b \\Rightarrow a + c \\leq b + c$ & $\\forall a, b, c \\in \\R$ \\\\ 12. если $a \\leq b \\Rightarrow ac \\leq bc$ & $\\forall a, b \\in \\R \\wedge \\forall c \\geq 0$ \\\\ 13. если $a \\leq b \\wedge b \\leq c \\Rightarrow a \\leq c$ & $\\forall a, b, c \\in \\R$ \\\\ 14. если $a \\leq b \\wedge b \\leq a \\Rightarrow a = b$ & $\\forall a, b \\in \\R$ \\\\ 15. Аксиома непрерывности & $\\forall A, B \\subset \\R$ \\end{tabular} \\end{left} $",
+      "proof": "",
+      "tags": [],
+      "source": "matan_1_semester/1 lecture.tex"
+    },
+    {
+      "id": "D11",
+      "kind": "definition",
+      "title": "",
+      "statement": "\\textit{Аксиома непрерывности.} $\\forall A, B \\subset \\R: A, B \\neq \\varnothing$ и $\\forall a \\in A, \\forall b \\in B \\hookrightarrow a \\leq b.$ $\\exists c \\in \\R$: $a \\leq c \\leq b.$ То есть существует <<разделительное число>>.",
+      "proof": "",
+      "tags": [],
+      "source": "matan_1_semester/1 lecture.tex"
+    },
+    {
+      "id": "D12",
+      "kind": "definition",
+      "title": "",
+      "statement": "$\\overline{\\R} := \\R \\cup \\{ -\\infty \\} \\cup \\{ +\\infty \\}.$ Притом $\\forall x \\in \\overline{\\R} \\neq \\pm \\infty \\hookrightarrow -\\infty < x < +\\infty.$",
+      "proof": "",
+      "tags": [],
+      "source": "matan_1_semester/1 lecture.tex"
+    },
+    {
+      "id": "D13",
+      "kind": "definition",
+      "title": "",
+      "statement": "$\\N_{0} := \\N \\cup \\{ 0 \\}.$",
+      "proof": "",
+      "tags": [],
+      "source": "matan_1_semester/1 lecture.tex"
+    },
+    {
+      "id": "D14",
+      "kind": "definition",
+      "title": "",
+      "statement": "$[a, b] := \\{x \\in \\R$: $a \\leq x \\leq b \\}.$",
+      "proof": "",
+      "tags": [],
+      "source": "matan_1_semester/1 lecture.tex"
+    },
+    {
+      "id": "D15",
+      "kind": "definition",
+      "title": "",
+      "statement": "$[a, b) := \\{x \\in \\R$: $a \\leq x < b \\}.$",
+      "proof": "",
+      "tags": [],
+      "source": "matan_1_semester/1 lecture.tex"
+    },
+    {
+      "id": "D16",
+      "kind": "definition",
+      "title": "",
+      "statement": "$(a, b] := \\{x \\in \\R$: $a < x \\leq b \\}.$",
+      "proof": "",
+      "tags": [],
+      "source": "matan_1_semester/1 lecture.tex"
+    },
+    {
+      "id": "D17",
+      "kind": "definition",
+      "title": "",
+      "statement": "$(a, b) := \\{x \\in \\R$: $a < x < b \\}.$",
+      "proof": "",
+      "tags": [],
+      "source": "matan_1_semester/1 lecture.tex"
+    },
+    {
+      "id": "D18",
+      "kind": "definition",
+      "title": "",
+      "statement": "$a = b \\Rightarrow (a, b) = \\varnothing .$",
+      "proof": "",
+      "tags": [],
+      "source": "matan_1_semester/1 lecture.tex"
+    },
+    {
+      "id": "D19",
+      "kind": "definition",
+      "title": "",
+      "statement": "Множество $A \\subset \\R$ называется \\textit{ограниченным сверху}, если $\\exists M \\in \\R$: $a \\leq M \\quad \\forall a \\in A.$",
+      "proof": "",
+      "tags": [],
+      "source": "matan_1_semester/1 lecture.tex"
+    },
+    {
+      "id": "D20",
+      "kind": "definition",
+      "title": "",
+      "statement": "Множество $A \\subset \\R$ называется \\textit{ограниченным снизу}, если $\\exists m \\in \\R$: $m \\leq a \\quad \\forall a \\in A.$",
+      "proof": "",
+      "tags": [],
+      "source": "matan_1_semester/1 lecture.tex"
+    },
+    {
+      "id": "D21",
+      "kind": "definition",
+      "title": "",
+      "statement": "Множество $A \\subset \\R$ называется \\textit{ограниченным}, если оно ограниченно и сверху, и снизу.",
+      "proof": "",
+      "tags": [],
+      "source": "matan_1_semester/1 lecture.tex"
+    }
+  ]
+}

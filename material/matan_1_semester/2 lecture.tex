@@ -1,0 +1,171 @@
+\begin{definition}
+        Число $M (m)$ называется \textit{верхней (нижней) гранью} числового непустого множества $A \subset \R,$ если $x \leq M$ ($x \geq m$) $\quad \forall x \in A.$
+    \end{definition}
+
+    \begin{definition}
+    \hypertarget{def1.23}{}
+        Пусть $A$~---~ограниченное сверху множество. Число $M \in \R$ называется супремумом $A$ и записывается $M = sup A$, если выполняется:
+
+        \begin{enumerate}
+            \item $M$ является верхней гранью, то есть $\forall x \in A \hookrightarrow x \leq M$.
+            \item $\forall M^{'} < M \quad \exists a(M^{'}) \in A$: $M^{'} < a(M^{'}) \leq M.$ То есть никакое другое число не является верхней гранью.
+        \end{enumerate}
+    \end{definition}
+
+    \begin{definition}
+        Если $A$~---~неограниченное сверху множество, то $sup A := +\infty .$
+    \end{definition}
+
+    \begin{theorem}{(о существовании и единственности супремума)} Супремум существует и единственен. $$\forall A \subset \R: A \neq \varnothing \hookrightarrow \exists! \sup{A}.$$
+    \end{theorem}
+
+    \begin{proof}
+        В случае неограниченного множества $A$ верность теоремы следует из определения.
+        Рассмотрим случай ограниченного множества $A \Rightarrow$ существует хотя бы одна верхняя грань.
+
+        Пусть $B := \{M \in \R: M - \text{верняя грань } A\}. \quad B \neq \varnothing .$
+
+        Кроме того $A$ расположенно левее $B$. Тогда в силу аксиомы непрерывности $\exists c \in \R$: $a \leq c \leq M \quad \forall a \in A, \quad \forall M \in B.$
+
+        Покажем, что $c = \sup{A}.$ Действительно, так как $a \leq c \ \forall a \in A \Rightarrow c$~---~верхняя грань, тогда 1 пункт определния супремума проверен.
+
+        Предположим $\exists c' < c$: $c'$~---~верхняя грань. Тогда $c' \in B$, но $c$ было выбранно так, что $c \leq M \quad \forall M \in B \Rightarrow c \leq c'$~---~противоречие $\Rightarrow \forall c' < c \hookrightarrow c \notin B \Leftrightarrow \lnot (c' \in B) \Leftrightarrow \lnot (\forall a \in A \hookrightarrow a \leq c') \Leftrightarrow \exists a(c') \in A: a(c') > c'$, но так как $a(c') \in A$, то $a(c') \leq c.$ И тогда мы показали, что $\forall c' < c \quad \exists a(c^{'}) \in A$: $c' < a(c') \leq c.$ Значит, мы проверили определние супремума с заменой $M$ на $c \Rightarrow$ он существует. 
+
+        Докажем единственность супремума. Предположим, что $\exists M_{1}, M_{2} \in \R$: $M_{1} = \sup{A}$ и $M_{2} = \sup{A}.$
+
+        Пусть $M_{1} > M_{2}.$ Тогда по (2) пункту определения супремума (для $M_{1}$) $\exists a(M_{2}) \in A$: $a(M_{2}) > M_{2} \Rightarrow$ это противоречит тому, что $M_{2}$~---~верхняя грань (то есть (1) пункт определения $M_{2}$ как супремума) $\Rightarrow$ такого быть не может.
+
+        Случай $M_{2} > M_{1}$ аналогичен $\Rightarrow M_{1} = M_{2},$ то есть супремум существует и единственнен.
+    \end{proof}
+    
+    \newpage
+    \begin{proposition}
+        $M = \sup{A} \text{  } (M \in \overline{\R}, \  A \subset \R, \  A \neq \varnothing$) тогда и только тогда, когда
+
+        \begin{equation*}
+            \begin{cases}
+                a \leq M \quad \forall a \in A\\
+                \forall M^{'} < M \  \exists a(M^{'}) \in A: M^{'} < a(M^{'}) \leq M& 
+            \end{cases}
+        \end{equation*}
+
+        Для случая $A$~---~ограниченное множество, это просто определние супремума. 
+        
+        Пусть $A$~---~неограниченно сверху, тогда $+\infty = \sup{A}$, но тогда система выше выполняется при замене $M$ на $+\infty$ по отношению порядка $\overline{\R}.$
+
+        И наоборот если система выполнена для $M = +\infty$, то тогда $A$~---~неограниченно сверху, и тогда $+\infty = \sup{A}.$
+    \end{proposition}
+
+    \begin{lemma}
+        (Лемма Архимеда) Множество натуральных чисел неограниченно сверху. $$\forall M^{'} \in \R \text{  } \exists N (M^{'}) \in \N: N (M^{'}) > M^{'}.$$
+    \end{lemma}
+    \begin{proof}
+        Предположим, что $\N$~---~ограниченно сверху $\Rightarrow$ существует верхняя грань и более того существует конечный супремум $M = \sup{\N} < +\infty.$ Тогда в силу второго пункта определения супрерума: $\forall M^{'} < M$ найдётся натуральное число его больше. Но так как это верно $\forall M^{'}$, то можем взять $M^{'} = M - 1. \newline$ Тогда $\exists N(M^{'}) \in \N$: $N(M^{'}) > M - 1 \Rightarrow N(M^{'}) + 1 > M \Rightarrow M$~---~не супремум. Противоречие.
+    \end{proof}
+
+    \begin{definition}
+    \hypertarget{def1.25}{}
+        $m \in \R$ называется \textit{инфимумом ограниченного снизу множества} $A$, если
+
+        \begin{equation*}
+            m = \inf{A} \Longleftrightarrow
+            \begin{cases}
+                a \geq m \quad \forall a \in A\\
+                \forall m^{'} > m, \  \exists a(m^{'}) \in A: m^{'} > a(m^{'}) \geq m& 
+            \end{cases}
+        \end{equation*}
+    \end{definition}
+
+    \begin{definition}
+        Если $A$~---~неограниченное снизу множество, то $\inf{A} := -\infty .$
+    \end{definition}
+
+    \begin{theorem}{(о существовании и единственности инфимума)} Инфимум существует и единственнен. $$\forall A \subset \R: A \neq \varnothing \hookrightarrow \exists! \inf{A}.$$
+    \end{theorem}
+
+    \begin{proof}
+        Аналогично супремуму с точностью до замены знаков.
+    \end{proof}
+
+    \begin{proposition}
+        $m = \inf{A} \text{  } (m \in \overline{\R}, \  A \subset \R, \  A \neq \varnothing$) тогда и только тогда, когда
+
+        \begin{equation*}
+            \begin{cases}
+                a \geq m \quad \forall a \in A\\
+                \forall m^{'} > m \  \exists a(m^{'}) \in A: m^{'} > a(m^{'}) \geq m& 
+            \end{cases}
+        \end{equation*}
+    \end{proposition}
+
+    \begin{definition}
+        Число $M$ называется \textit{максимумом (максимальным элементом)} множества $E \subset \R \Leftrightarrow M = max E$, если
+        \begin{enumerate}
+            \item $M \in E$;
+            \item $M \geq x \  \forall x \in E.$
+        \end{enumerate}
+        Аналогично определяется минимум.
+    \end{definition}
+
+    \newpage
+    \subsection{Вложенные отрезки}
+    Всегда предплогается, что $a_{n} \leq b_{n}.$
+    \begin{definition}
+        Отображение из $\N$ в множество всех отрезков на числовой прямой $\R$ назовём \textit{последовательностью отрезков} и обозначим $\{ [a_{n}, b_{n}] \}^{\infty}_{n = 1}$
+    \end{definition}
+
+    \begin{definition}
+        Будем говорить, что $\{ [a_{n}, b_{n}] \}^{\infty}_{n = 1}$~---~последовательность \textit{вложенных отрезков}, если $\{ [a_{n+1}, b_{n+1}] \} \subset \{ [a_{n}, b_{n}] \} \quad \forall n \in \N$
+    \end{definition}
+    \begin{lemma}
+        (Лемма Кантора или принцип вложенных отрезков) Любая последовательность вложенных отрезков имеет непустое пересечение (точка лежит сразу во всех отрезках), то есть
+        $$\forall \text{ вложенной } \{ [a_{n}, b_{n}] \}^{\infty}_{n = 1} \quad \exists x \in \bigcap_{n = 1}^{\infty} [a_{n}, b_{n}] \Longleftrightarrow \bigcap_{n = 1}^{\infty} [a_{n}, b_{n}] \neq \varnothing$$
+    \end{lemma}
+    \begin{proof}
+        $\forall n \in \N$ справедливы неравенства:
+        $$-\infty < a_{n} \leq a_{n+1} \leq b_{n+1} \leq b_{n} < +\infty.$$
+
+        Заметим следующий факт (*):
+        $$ \forall n, m \in \N \hookrightarrow -\infty < a_{n} \leq b_{m} < +\infty$$
+
+        Действительно, предположим $m \geq n \Rightarrow$ по индукции $b_{m} \leq b_{n} \Rightarrow a_{m} \leq b_{m} \leq b_{n}.$
+        
+        Если же $m < n$, то $a_{m} \leq a_{n} \leq b_{n}.$
+
+        $A := \{a_{1}, a_{2} \dots , a_{n}, \dots \}$~---~ множество «левых» концов.
+        
+        $B := \{b_{1}, b_{2} \dots , b_{m}, \dots \}$~---~множество «правых» концов.
+
+        Из (*) получаем, что $A$ расположенно «левее» $B \Rightarrow \exists c \in \R$: $a_{n} \leq c \leq b_{m} \  \forall n, m \in \N \Rightarrow \newline \Rightarrow a_{n} \leq c \leq b_{n} \quad \forall n \in \N \Rightarrow c \in [a_{n}, b_{n}] \  \forall n \in \N \Rightarrow c \in \displaystyle \bigcap_{n = 1}^{\infty} [a_{n}, b_{n}]$
+    \end{proof}
+    \begin{note}
+        Лемма Кантора о вложенных отрезках может не работать для интервалов.
+
+        Пример: $\displaystyle a_{n} = 0 \  \forall n \in \N$, $\displaystyle b_{n} = \frac{1}{n} \  \forall n \in \N.$
+
+        ($\displaystyle a_{n}, b_{n}) = \Big(0, \frac{1}{n} \Big).$ $\quad \displaystyle \bigcap_{n = 1}^{\infty} [a_{n}, b_{n}] = \varnothing.$
+
+        Действительно, предположим $\displaystyle \exists x > 0$: $\displaystyle x \in \bigcap_{n = 1}^{\infty} \bigg( 0, \frac{1}{n} \bigg) \Rightarrow 0 < x < \frac{1}{n} \  \forall n \in \N \Rightarrow n < \frac{1}{x}$~---~противоречие c леммой Архимеда.
+    \end{note}
+    \begin{definition}
+        Последовательность вложенных отрезков $\displaystyle \bigcap_{n = 1}^{\infty} [a_{n}, b_{n}]$ называется \newline \textit{стягивающейся}, если $\forall n \in \N \  \exists [a_{m(n)}, b_{m(n)}]$: $l \displaystyle < \frac{1}{n}$, где $l = (b_{i} - a_{i})$. $l$~---~длина.
+    \end{definition}
+    \begin{theorem}
+        Стягивающаяся последовательность вложенных отрезков $\{ [a_{n}, b_{n}] \}^{\infty}_{n = 1}$ имеет единственную общую точку, то есть
+        $$ \exists ! x \in \bigcap_{n = 1}^{\infty} [a_{n}, b_{n}]$$
+    \end{theorem}
+    \begin{proof}
+        Ранее было доказано, что пересечение не пусто \bigg($\displaystyle \exists x \in \bigcap_{n = 1}^{\infty} [a_{n}, b_{n}]$\bigg).
+
+        Тогда предположим, что $\displaystyle \exists x_{1}, x_{2} \in \bigcap_{n = 1}^{\infty} [a_{n}, b_{n}] \quad (x_{1} \neq x_{2}).$
+
+        Так как $x_{1} \neq x_{2} \Rightarrow |x_{1} - x_{2}| > 0.$ Пусть $\displaystyle |x_{1} - x_{2}| = \frac{1}{M}.$ Но тогда по лемма Архимеда $\displaystyle \exists N \in \N$: $\displaystyle N > M \Rightarrow \frac{1}{N} < |x_{1} - x_{2}| \Rightarrow$ в силу того, что система отрезков стягивающаяся, то $\exists [a_{m(N)}, b_{m(N)}]$ длина которого $\displaystyle < \frac{1}{N}$, но по предположению $x_{1}, x_{2}$ принадлежат всем отрезкам этой последовательности, в частности $\displaystyle x_{1}, x_{2} \in [a_{m(N)}, b_{m(N)}] \Rightarrow |x_{1} - x_{2}| < \frac{1}{N} \Rightarrow |x_{1} - x_{2}| < |x_{1} - x_{2}|$~---~ противоречие. Получается $x_{1} = x_{2}.$
+    \end{proof}
+    \begin{theorem}
+        (3 принципа непрерывности числовой прямой) Следующие утверждения эквивалентны:
+        \begin{enumerate}
+            \item Аксиома непрерывности.
+            \item Существование $\inf$ и $\sup$ у любого непустого множества.
+            \item Лемма Кантора о непустоте пересечения вложенной системы и лемма Архимеда.
+        \end{enumerate}
+    \end{theorem}

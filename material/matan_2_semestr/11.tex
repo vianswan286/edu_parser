@@ -1,0 +1,224 @@
+
+\begin{note}
+    Назовем условием (*): \\
+    Пусть $G \subset \R^m, $ $1 \leq k < m$
+    \begin{enumerate}
+        \item $\phi_1, \dots \phi_k \in C^1(G)$
+        \item $M := \{ x \in \R^m : \phi_1(x)=\phi_2(x)=\dots=\phi_k(x)=0 \}$
+        \item $\forall p \in M \hookrightarrow  \grad \phi_1(p), \dots, \grad \phi_k(p) $ линейно независимы.
+    \end{enumerate}
+\end{note}
+
+\begin{definition}
+    Пусть $f \in C^1(G)$. \\Определим функцию Лагранжа $L(x, \lambda) := f - \lambda^T \cdot \phi$, где $L \in C^1(G \times \R^k)$
+\end{definition}
+
+\begin{theorem} (Необходимое условие локального экстремума)
+
+    Пусть верно (*). Если $f \in C^1(G)$ и $p$~---~точка условного локального экстремума функции $f$ на $M$, то $\exists \lambda^0 \in \R^k$(Вектор множителей Лагранжа) такой что $(p, \lambda^0)$~---~стационарная точка $L$. То есть это точке, где градиент функции Лагранжа обращается в 0.
+\end{theorem}
+\begin{proof}
+    \begin{equation*}
+        \text{Из стационарности $(p, \lambda^0) \Rightarrow$}
+        \begin{cases}
+            \dfrac {\partial f}{\partial x_1} (p, \lambda^0) = 0  \\
+            \dots \\
+            \dfrac {\partial f}{\partial x_k} (p, \lambda^0) = 0 \Longleftrightarrow \grad f(p) = \sum_{i = 0}^k \lambda_i^0 \cdot \grad \phi_i (p) \\ 
+            \phi_1 (p) = 0 \\
+            \dots \\
+            \phi_k (p)=0
+        \end{cases}
+    \end{equation*}
+    Предположим противное, то есть что $\forall \lambda \in \R^k$: $\grad f(p) \neq \sum_{i = 1}^k \lambda_i^0 \cdot \grad \phi_i (p) \Rightarrow$ \\
+    \[\Rightarrow \grad f(p), \grad \phi_1(p) , \dots \grad \phi_k(p) \hspace{0.2cm} \text{линейно независимы}\]
+
+    В силу непрерывности градиентов $\phi_i$ и градиента $f \Rightarrow$ \\
+    $\Rightarrow \exists B_{\delta}(p) \subset G \text{ и } \grad f(q), \grad \phi_1(q), \dots \grad \phi_k(q) \text{ линейно независимы } \forall q \in B_{\delta}(p)$
+
+    Рассмотрим отображение: 
+    \[\Psi: B_{\delta}(p) \mapsto \R^{k + 1}, \hspace{0.2cm} k + 1 \leq m: \hspace{0.4cm} \Psi(q) = ( \phi_1(q), \dots, \phi_k(q), f(q) - f(p)\]
+
+    Кроме того, отображение $\Psi$ непрерывно дифференцируемо (это следует из непр. диф. его составляющих): $\Psi \in C^1(B_{\delta}(p), \R^{k + 1})$
+
+    Так как градиенты линейно независимы, то  $ \hspace{0.2cm} \rank \D \Psi(q) = k + 1 \hspace{0.4cm}\forall q \in B_{\delta}(p)$, \\
+    это в свою очередь даёт открытость отображения, значит применяя Теорему об открытом отображении получаем
+    $\Psi(B_{\delta}(p))$~---~открытое множество в $\R^{k + 1}$, содержащая точку 0 $\Rightarrow$ \\
+    $\Rightarrow \Psi(B_{\delta}(p)) \supset B_{\epsilon}^{k+1}(0) \Rightarrow$ 
+    \[\forall t \in (-\delta, \delta) \hspace{0.3cm} \exists q_t \in B_\delta^m(p)\]
+    \[\text{такое что } \Psi(q) = (0, 0, \dots 0, t) \Rightarrow q_t \in M \cap B_{\delta}(p) \text{ и } f(q_t) - f(p) = t\]
+    $\Rightarrow$ так как $t$ может быть как положительным так и отрицательным, то 
+    \[\exists q_{t1}:  f(q_{t1}) - f(p) > 0\]
+    \[\exists q_{t2}:  f(q_{t2}) - f(p) < 0\] 
+    Аналогичные рассуждения будут верны и для $\forall \widetilde{\delta} \in (0, \delta)$. Тогда запишем полученное в кванторах:
+    \begin{equation*}
+        \forall \widetilde{\delta} \in (0, \delta)
+        \begin{cases}
+            \exists q_1 \in M \subset B_{\widetilde{\delta}}(p), & f(q_1) - f(p) > 0 \\
+            \exists q_2 \in M \subset B_{\widetilde{\delta}}(p), & f(q_2) - f(p) < 0
+        \end{cases}
+    \end{equation*}
+    Что является отрицанием локального экстремума $\Rightarrow$ $p$ не является условным локальным экстремумом.
+\end{proof}
+
+\subsection{Достаточные условия условного экстремума}
+
+\begin{definition}
+    Отображение $\Psi: K \Rightarrow \R^n$ удовлетворяет условию Липшица на $K$ с константой $L > 0$, если $\forall x, y \in K \hookrightarrow \| \Psi(x) - \Psi(y) \| \leq L \cdot \|x - y\|$
+\end{definition}
+
+\begin{lemma}
+    Пусть $\Phi \in C^1(B_{\delta}(x^0), \R^n), \hspace{0.2cm} m, n \in \N$ \\
+    Тогда $\forall \tilde{\delta} \in (0, \delta)$ отображение $\Psi$ удовлетворяет на шаре $B_{\delta}(x^0)$ условию Липшица с константой $L(\tilde{\delta})$
+\end{lemma}
+
+\begin{proof}
+    Так как $\Phi \in C^1(B_{\delta}(x^0)$, то по теореме Лагранжа о среднем для отображений 
+    \[ \forall x, y \in B_{\delta}(x^0) \hookrightarrow \|\Phi(x) - \Phi(y)\| \leq \| \D \Phi (x_\theta) \| \cdot \| x - y \| \text{,}\]
+    
+    \[\text{где } x_{\theta} \in [x, y] \subset B_{\tilde{\delta}}(x^0) \]
+
+    Заметим, что $\overline{B_{\tilde{\delta}}(x^0)} \subset B_{\delta}(x^0) \Rightarrow$ это компакт в шаре $B_{\delta}(x^0)$. \\
+    Так как в силу непрерывности $\| \D \Phi(x) \|$ на $\overline{B_{\tilde{\delta}}(x^0)} \Rightarrow$ $\exists L(\tilde{\delta}) := \max_{x\in\overline{B_{\tilde{\delta}}(x^0)}}{\| \D \Phi (x) \|}$
+\end{proof}
+
+\begin{reminder}
+    Простое гладкое многообразие задаётся с помощью параметризации $\Phi$. \\ 
+    \[\Phi \in C^1(G, \R^m), \text{где $G \subset \R^k$}, \Phi  \text{~---~гомеоморфизм.} \] 
+    \[ \rank \D \Phi(a) = k \hspace{0.4cm} \forall a \in G\] 
+    \[ \forall a \in G \hspace{0.2cm} \exists U(a) \subset{\R^m} \text{и отображение } \overline{\Phi} \in C^1(U(a), \R^m), \text{такое что } \overline{\Phi}\big|_{U(a) \cap \R^k} = \Phi \big|_{U(a) \cap \R^k} \]
+    \[\text{причем } \overline{\Phi} - \text{диффеоморфизм} \]
+
+    Откуда следует, что $\overline{\Phi}$ и $\overline{\Phi}^{-1}$ удовлетворяют условию Липшица в маленьких шариках.
+    \\
+    
+    Если продолженные отображения удовлетворяют условию Липшица, то и их сужения удовлетворяют условию Липшица в малых шарах $\Rightarrow$ \\ \\
+    %тут нужно сделать фигурную скобочку, вообще не ебу как это делать(
+    (**)\\$\forall a \in G \hspace{0.2cm} \exists \delta(a) > 0, \text{т.ч. $\Phi$ удовлетворяет условию Липшица в шаре $B_{\delta}(a)$ с константой $L(\delta)$}$
+    $\forall p \in M \hspace{0.2cm} \exists \epsilon(p) > 0, \text{т.ч. $\Phi^{-1}$ удовлетворяет условию Липшица в $B_{\delta}(a) \cap M$ с константой $\widehat{L}(\epsilon)$}$
+    
+
+    Если отображение $\Phi$ ~---~ дифференцируема, то 
+    \[\Phi(t) = \underbrace{\Phi(t_0)}_{p_0} + \underbrace{\D \Phi(t_0)(t - t_0)}_{\widetilde{p}} + o(\|t - t_0\|)\]
+    Заметим, что выделенная часть есть не что иное как точка $p_0$ и приращение $\widetilde{p}$ соответственно $\Rightarrow$ выделенная часть принадлежит касательному пространству, а именно аффинному касательному пространству. 
+
+    \textbf{Картинка будет на следующей итерации}
+
+    Пусть $p$ - ортогональная проекция $\Phi(t)$ на аффинное касательное пространство $L_p$.\\Заметим, что, так как $\text{dist}(\Phi(t), L_p)$~---~инфимум расстояния от $\Phi(t)$ до всех точек $L_p$, \\то верно
+    \begin{table}[h]
+    \centering
+    \begin{tabular}{ll}
+    $\text{dist}(\Phi(t), L_{p_0}) \leq \| \Phi(t) - \Phi(t_0) - \D \Phi(t_0)(t - t_0) \| = o(\| t - t_0 \|) = $& $ \epsilon(t) \|t - t_0 \| $\\
+     & $ \text{ где } \epsilon(t) \rightarrow 0, \text{ при } t \rightarrow t_0$.
+    \end{tabular}
+    \end{table}
+    
+    Далее, расписываем $t -t_0$:
+    \[t = \Phi^{-1} \circ \Phi(t)\]
+    \[t_0 = \Phi^{-1} \circ \Phi(t_0)\]
+    \[\| t - t_0 \| = \| \Phi^{-1}(\Phi(t)) - \Phi^{-1}(\Phi(t_0)) \| \leq L \cdot \| \Phi(t) - \Phi(t_0) \| \]
+    \[\epsilon(t) = \epsilon(\Phi^{-1}(\Phi(t)) \Rightarrow \widetilde{\epsilon}(p) = \epsilon(\Phi^{-1}(p)) \rightarrow 0, \text{ при } p \rightarrow p_0\]
+    \[\rightarrow \text{dist}(\Phi(t), L_p) = o(\|p - p_0\|)\]
+\end{reminder}
+
+% я честно не знаю как этот весь монолог парсить, придется тебе это сделать)
+% :(
+
+\begin{lemma} Вспоминаем линал \\
+    $A$~---~симметричная квадратная матрица. \\
+    $K(h) = h^{T} \cdot A \cdot h$~---~квадратичная форма. \\
+    Тогда $|K(u + v) - K(u)| \leq 3 \cdot \|A\| \|u\|\cdot\|v\|$, если $\|v\| \leq \|u\|$
+\end{lemma}
+\begin{proof}
+
+% как красиво рисовать эти уголки я хз
+
+    \[K(u + v) - K(u) = \langle A(u + v), u + v \rangle - \langle A(u), u \rangle = \langle Au + Av, u + v \rangle - \langle Au, u \rangle = \] 
+    \[= \langle Av, u\rangle + \langle Au, v\rangle + \langle AV, v\rangle = \langle Av, 2u\rangle + \langle Av, v\rangle = \langle Av, v + 2u \rangle\]
+
+    Итого, используя то, что $\|v\| \leq \|u\|$:
+    \[|K(u + v) - K(u)| = |\langle Av, v + 2u \rangle| \leq \text{неравенство Коши-Буняковского} \leq\]
+    \[\leq \|A\| \cdot \|v\| \cdot (\|v\| + 2 \|u|\|) \leq 3 \cdot \|A\| \cdot \|v\| \cdot \|u\| \]
+\end{proof}
+
+
+\begin{lemma}
+    Пусть $k$~---~положительно определенная квадратичная форма в $\R^n$.\\
+    Тогда она достигает положительного минимума на единичной сфере, то есть 
+    \[\exists C > 0, \text{такой что } k(u) \geq C \hspace{0.3cm} \forall u \in S_1(0) \Longleftrightarrow\]
+    \[\Longleftrightarrow k(u) \geq C \cdot \|u\|^2 \hspace{0.3cm} \forall u \in \R^n\]
+\end{lemma}
+
+
+\begin{theorem}[Достаточные условия условного экстремума] Пусть выполнено условие (*). Пусть $f$, $\phi_1, \ldots \phi_k \in C^2(G)$. Пусть $(p_0, \lambda_0)$~---~стационарная точка функции Лагранжа. $Q$~---~схождение $d^2_{(p_0, \lambda_0)}L$. \\
+    Тогда, если 
+    \begin{enumerate}
+        \item $Q$ положительно определена на $T_p M$, то $p$ является точкой условного локального минимума функции $f$ на $M$.
+        \item $Q$ отрицательно определена на $T_p M$, то $p$ является точкой условного локального максимума функции $f$ на $M$.
+        \item $Q$ знаконеопределена на $T_p M$, то $f$ не имеет локального экстремума в точке $p$ на $M$.
+        \item в остальных случаях ничего сказать нельзя.
+    \end{enumerate}
+\end{theorem}
+\begin{proof} 
+    \text{} 
+    
+    Достаточно очевидно, что для функции Лагранжа верно:
+    \[L(x) - L(p_0) = f(x) - f(p_0) \hspace{0.2cm} \forall x \in M\]
+    Теперь воспользуемся формулой Тейлора с остаточным членом в форме Пеано до второго порядка:
+    \[L(x, \lambda_0) = L(p_0, \lambda_0) + 0 + \frac{1}{2} d_{p_0}^2L(x - p_0, \lambda_0) + o(\| x -  p_0 \|) = \]
+    Вторым получаем слагаемым 0, из-за стационарности точки $(p_0, \lambda_0)$
+
+    Спроектируем $x$ на аффинное касательное пространство $L_{p_0}M$ в точке $p_0$ и обозначим проекцию как $\widetilde{x}$. 
+    Тогда можно сказать, что $\hspace{0.2cm} x - \widetilde{x} = w(x) = o(\|x - p_0\|)$
+    
+    Тогда, используя выше доказанную лемму: 
+    \[ |d_{p_0}^2L(x - p_0) - d_{p_0}^2(\widetilde{x} - p_0)| \leq C \cdot \|x - p_0\| \cdot \|w(x)\| = C \cdot o(\|x - p_0\|), \hspace{0.2cm} x \rightarrow p_0\]
+    Следовательно, можно продолжить формулу Тейлора как:
+    \[ = L(p_0, \lambda_0) + \frac{1}{2} d_{p_0}^2 L(\widetilde{x}-p_0, \lambda_0) + o(\|x - p_0\|)\]
+
+    %у ревьюера есть прекрасная возможность добавить ссылки на теоремы )
+    %если надо будет, то пни меня - я сделаю, просто хз, практикуется ли тут такое...
+    
+    %ссылки сас кста, я как раз заебался их крафтить; только делай их "уникальными", тип \hypertarget{th11.n}, чтобы потом конфликта имен не возникало
+
+
+    %пон пон)
+    В силу положительной определенности на касательном пространстве и используя лемму, получаем:
+    \[\frac{1}{2} \cdot d^2_{p_0} L(\widetilde{x} - p_0) \geq \frac{C}{2} \cdot \|\widetilde{x} - p_0 \|^2\]
+
+    Откуда получаем, что 
+    \[L(x, \lambda_0) - L(p_0, \lambda_0) \geq \frac{C}{2} \cdot \|\widetilde{x} - p_0 \|^2 + o(\|x - p_0\|^2), \hspace{0.3cm} x \rightarrow p_0 \]
+
+    Теперь же надо избавиться от $\widetilde{x}$, сделать это можно так,\\ используя $w(x) = o(\|x - p_0\|), \hspace{0.3cm} x \rightarrow p_0$, получаем, что:
+    \[\|w(x)\| \leq \frac{\|x - p_0\|}{2}, \hspace{0.2cm} \text{при $x$ достаточно близких к $p_0$}\]
+    Из неравенства треугольника получаем, что
+    \[\|\widetilde{x} - p_0\| \geq \|x - p_0\| - \|w(x)\| \geq \frac{\|x-p_0\|}{2} \hspace{0.3cm} \forall x \text{ из малой окрестности $p_0$}\]
+    Следовательно:
+    \[L(x, \lambda_0) - L(p_0, \lambda_0) \geq \frac{C}{8} \cdot \| x - p_0 \|^2 + o(\|x - p_0\|^2), \hspace{0.3cm} x \rightarrow p_0, \hspace{0.2cm} x \in M\]
+
+    Из определения $o(\dots) \Rightarrow \exists \widetilde{\delta} > 0$: $\forall x \in M \cap B_{\widetilde{\delta}}(p_0) \hookrightarrow $ \\
+    \[\hookrightarrow L(x, \lambda_0) - L(p_0, \lambda_0) \geq \frac{C}{16}\cdot \|x - p_0\|^2 > 0\]
+    \[\Rightarrow f(x) - f(p_0) \geq \frac{C}{16}\|x - p_0\|^2 > 0\]
+    То есть мы нашли шар в многообразии, в котором $f(x) > f(p_0)$. Доказали первый пункт.
+
+    Второй пункт доказывается аналогично с заменой $f$ на $-f$.
+\end{proof}
+
+% если у тебя обычные $$, а не $$$$, то кажется лучше просто выходить из $$ и начинать новые, чем hspace подстраивать. имхо удобнее просто
+% да не, просто это и тебе менее запарно будет..
+% ну тип $f$: $[a, b] gjisegjsig \R$, то есть просто пробел обычный вне $$
+% окей
+
+% да, помню, ты говорил. постараюсь исправиться..
+% так а дополнять проблами или чем, или как..
+% пон пон
+% не стирай, чтобы я не забывал
+
+
+% Неплохо техаешь броо.
+% боже, я это в рамочку повешу :)
+
+
+% все, я пошел жестко смотреть майнкрафт, вернусь через 2 часа
+% оке, ждемс.
+% блин, кушать хочеца..
+% жиза(

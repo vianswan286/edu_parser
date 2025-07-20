@@ -1,0 +1,127 @@
+\subsection{Формулы Тейлора с остаточными членами в форме Лагранжа и Пеано}
+\begin{note}
+    Считаем $dx = (dx_1, \ldots dx_n)$~---~фиксированным вектором;
+    \[A = dx_1 \dfrac{\partial}{\partial x_{1}} + \ldots + dx_n \dfrac{\partial}{\partial x_{n}}\]~---~линейный оператор дифференцирования.
+    \[A[f](x) = d_x f(dx).\]
+\end{note}
+
+\begin{lemma}
+    Пусть $\Omega \subset \R^n$, $\Omega \neq \varnothing$~---~открыто, $f$: $\Omega \rightarrow \R$~---~$k-$раз дифференцируемо в любой точке $x^{0} \in \Omega$. Тогда $$\forall dx \in \R^n \hookrightarrow A^k[f](x^0)(dx) = d^k_{x_0}[f](dx).$$
+\end{lemma}
+\begin{proof}
+    Доказательство очевидно, предполагается читателю в качестве упражнения (спойлер: по индукции).
+\end{proof}
+\begin{theorem}[Формула Тейлора с остаточным членом в форме Лагранжа] $\newline$
+    Пусть $m \in \N_0$, $\Omega \subset \R^n$, $\Omega \neq \varnothing$~---~открыто, $f$: $\Omega \rightarrow \R$ и $f \in \DIF^{m + 1}(B_{\delta}(x^{0}))$ при каком-то $\delta > 0$. Тогда $\forall x \in B_{\delta}(x^{0})$ $\exists \theta \in (0, 1)$: справедлива следующая формула
+    \[f(x) = f(x^0) + \sum\limits_{k = 1}^{m}\frac{d^k_{x^0}(dx)}{k!} + \frac{d^{m + 1}_{x^{\theta}}(dx)}{(m + 1)!}, \text{ где }dx = x - x^0, x^{\theta} = x^0 + \theta(x - x^0).\]
+\end{theorem}
+\begin{proof}
+    Зафиксируем точку $x \in B_{\delta}(x^0)$. Пусть $x^t = x^0 + t(x - x^0)$, где $t \in [0, 1]$. Рассмотрим функцию $\phi(t) = f(x^t) = f\left(x^0 + t(x - x^0)\right)$. Заметим, что \[\dfrac{d\phi}{dt} (t) = \sum\limits_{i = 1}^n \dfrac{\partial f}{\partial x_i}(x^t) \cdot (x_i - x^0_i) = d_{x^t}f(dx)\]
+    Тогда $\forall s \in \{1, \ldots, m + 1\}$ будет выполнено следующее равенство: 
+    \[\dfrac{d^s \phi}{d t^s}(t) = d^s_{x^t} f(dx).\]
+    Докажем это по индукции. База была показана выше, докажем переход от $s$ к $s + 1$:
+    \[\dfrac{d^{s + 1}}{dt^{s + 1}} \phi(t) = \dfrac{d}{dt}(d^s_{x^t} f(dx)) = \dfrac{d}{dt} \left(\sum\limits_{i_1 = 1}^n\sum\limits_{i_2 = 1}^{n} \ldots \sum\limits_{i_s = 1}^n \dfrac{\partial^sf}{\partial x_{i_s} \ldots \partial x_{i_1}}(x^t)dx_{i_1} \ldots dx_{i_s}\right) =\]
+    \[= \sum\limits_{i_1 = 1}^n \ldots \sum\limits_{i_{s + 1} = 1}^n \dfrac{\partial^{s + 1}f}{\partial x_{i_{s+1}} \ldots \partial x_{i_1}}dx_{i_1}\ldots dx_{i_{s+1}} = d^{s + 1}_{x^t} f(dx)\]
+    Значит, к $\phi$ можно применить одномерную формулу Тейлора с остаточным членом в форме Лагранжа:
+    \[\phi(1) = \phi(0) + \sum\limits_{k = 1}^m \frac{1}{k!} \dfrac{d^k \phi}{dt^k}(0) + \frac{1}{(m + 1)!} \dfrac{d^{m + 1}\phi}{dt^{m + 1}}(\theta) \cdot 1\]
+    \[f(x) = f(x^0) + \sum\limits_{i = 1}^m \frac{1}{i!} d_{x^0}^if(dx) + \frac{1}{(m + 1)!}d_{x^\theta}^{m + 1}f(dx)\]
+\end{proof}
+\begin{theorem}[Формула Тейлора с остаточным членом в форме Пеано]
+    Пусть $f$: $\Omega \rightarrow \R, m \in \N$ и $\exists \delta > 0$: $f \in C^m(B_\delta(x^0))$ (f~---~$m$-гладкая). Тогда $\forall x \in B_{\delta}(x^0)$: 
+    \[f(x) = f(x^0) + \sum\limits_{i = 1}^n \frac{1}{i!}d^k_{x^0} f(dx) + o(||x - x^0||^m), x \rightarrow x^0\]
+\end{theorem}
+\begin{proof}
+    Все частные производные порядка $m$~---~непрерывны в $B_{\delta}(x^0)$, значит, по достаточному условию дифференцируемости, все частные производные $m - 1$ порядка являются дифференцируемыми функциями в этом шаре. $\Rightarrow f \in \DIF^m(B_{\delta}(x^m) \Rightarrow$ по формуле Тейлора с остаточным членом в форме Лагранжа:
+    \[\forall x \in B_{\delta}(x^0) \ \exists \theta \in (0, 1):\]
+    \[f(x) = f(x^0) + \sum\limits_{k = 1}^{m - 1} \dfrac{d_{x^0}^k f(dx)}{k!} + \dfrac{1}{m!} d_{x^\theta}^m f(dx) = (*), x^\theta = x^0 + \theta(x - x^0)\]
+
+Добавим и вычтем m дифференциал в точке $x^0$
+
+    \[(*) = f(x^0) + \sum\limits_{k = 1}^m \dfrac{d_{x^0}^k f(dx)}{k!} + R, R = \dfrac{1}{m!}[d_{x^\theta}^m f(dx) - d_{x^0}^m f(dx)]\]
+    Покажем, что $R = o(||x - x^0||), x \rightarrow x^0$. Тогда по неравенству треугольника
+    \[|R| \leq \dfrac{n^m}{m!}\sum\limits_{i_1 = 1}^n \cdot \ldots \cdot \sum\limits_{i_m = 1}^n| \dfrac{\partial^m f}{\partial x_{i_m} \cdot \ldots \cdot \partial x_{i_1}}(x^\theta) - \dfrac{\partial^m f}{\partial x_{i_m} \cdot \ldots \cdot \partial x_{i_1}}(x^0)|
+    \cdot |dx_{i_1}| \cdot \ldots \cdot |dx_{i_n}| \leq (*)\]
+    В то же время, из непрерывности частных производных $m-$го порядка следует
+    \[\varepsilon_{x^0}(x) = \max\limits_{i_1, \ldots, i_m} |\dfrac{\partial^m f(x^{\theta})}{\partial x_{i_m} \cdot \ldots \cdot \partial x_{i_1}} - \dfrac{\partial^m f(x^0)}{\partial x_{i_m} \cdot \ldots \cdot \partial x_{i_1}}| \rightarrow 0, x \rightarrow x^0\]
+    Поскольку $x^\theta \xrightarrow{x \rightarrow x^0} x^0 \Rightarrow |dx_{i_1}\cdot \ldots \cdot dx_{i_m}| \leq ||x - x^\theta||^m$, поскольку $|dx_{i_j}| = |x_{i_j}^0 - x_{i_j}| = \sqrt{|x^0_{i_j} - x_{i_j}|^2} \leq ||x - x^0||$. 
+    \[(*) \leq \dfrac{m^n}{m!} \varepsilon_{x^0} (x) ||x - x^0||^m = o(||x - x^0||^m), \ x \rightarrow x^{0}.\]
+\end{proof}
+\begin{note}
+    Справедлива теорема о единственности: если $f \in C^m(B_\delta(x^0)) \Rightarrow f(x) = P_m(dx) + o(||x - x^0||^m), x \rightarrow x^0 \Rightarrow P_m(dx)$ совпадает $\sum\limits_{k = 0}^m \dfrac{1}{k!}  d_{x^0}^k f(dx)$, то есть с полиномом Тейлора.
+\end{note}
+
+
+\begin{note} 
+Заметим, что в формуле Тейлора с остаточным членом в форме Лагранжа, мы требуем $f \in \DIF^{m + 1}(B_{\delta}(x^{0}))$. А с остаточным членом в форме $f \in C^m(B_\delta(x^0))$
+\end{note}
+
+\newpage
+\section{Теорема о неявной функции}
+
+\subsection{Теоремы об открытом отображении и локальном диффеоморфизме}
+\begin{lemma}
+    Пусть $A \in \mathcal{L}(\R^m, \R^m)$,  $A$~---~обратимое. Тогда $\exists c > 0$: $\|A(x) - A(y)\| \geq c\|x - y\|$.
+\end{lemma}
+\begin{proof}
+    Так как $A$ обратимо, то $\exists A^{-1} \Rightarrow x = A^{-1}(A(x)) \Rightarrow \|x|| = \|A^{-1}(A(x))\| \leq \|A^{-1}\|\|A(x)\| \Rightarrow \|A(x)\| \geq \dfrac{1}{\|A^{-1}\|} ||x\| \Rightarrow$ в силу линейности отображения $$\forall x, y \in \R^m\text{: }\|A(x - y)\| = \|A(x) - A(y)\| \geq \dfrac{1}{\|A^{-1}\|}\|x - y\|.$$
+\end{proof}
+
+\begin{note}
+    Мы научились ограничивать сверху растяжение векторов линейным оператором (Норма оператора). Но оказывается, если оператор обратим, то он растягивает векторы не менее чем на определенную константу (один поделить на норму обратного оператора)
+\end{note}
+ 
+\begin{theorem}
+\hypertarget{lecture_6_geom_theorem} \ % Почему-то без слеша происходит непонятная ошибка компиляции латеха. UPD: предположу, что hypertarget пытается сослаться на следующий за ним символ, а на русскую "П" он ссылаться не умеет
+    Пусть $F$: $\Omega \rightarrow \R^m$, $\Omega \subset \R^m$~---~дифференцируемо в точке $x^0 \in \Omega$ и матрица Якоби отображения, $DF(x^0)$,~---~обратима. Тогда $\exists \delta > 0$ и $\exists c > 0$: $\forall x \in \overline{B}_\delta(x^0) \hookrightarrow \|F(x) - F(x^0)\| \geq c \|x - x^{0}\|$.
+\end{theorem}
+\begin{proof}
+    Поскольку $F$~---~дифференцируемо в точке $x^0 \Rightarrow$
+    \[F(x) = F(x^0) + DF(x^0)(x - x^0) + \varepsilon_{x^0}\|x - x^0\|\]
+    По предыдущей лемме, $ \|DF(x^0)(x - x^0)\| \geq 2C \cdot \|x - x^0\|, 2C = \dfrac{1}{\|(DF(x^0))^{-1}\|}$
+    Тогда по неравенству треугольника
+    (Прим ред.) На лекции это опущено, но идея такая $a = b + c \Longrightarrow |b| = |a - c| \leq |a| + |c| \Longrightarrow |a| \geq |b| - |c|$:
+    
+    \[\|F(x) - F(x^0)\| \geq \|DF(x^0)(x - x^0)\| - \big{\|} \varepsilon_{x^0}(x)\|x - x^0\|\big{\|} \geq (*)\]
+    Но $\big{\|} \varepsilon_{x^0}(x)\| x - x^0 \| \big{\|} \rightarrow 0, x \rightarrow x^0$, значит $\exists \delta > 0$: $\|\varepsilon_{x^0}(x) \| \leq \dfrac{1}{2\|(DF(x^0))^{-1}\|}$. Поэтому
+    \[(*) \geq \dfrac{1}{\|(DF(x^0))^{-1}\|} \|x - x^0 \| - \dfrac{\|x - x^0\|}{2\|(DF(x^0))^{-1}\|} = c\|x - x^0\|\]
+    И это верно для $\forall x \in B_\delta(x^0)$. Из нестрогости неравенства $\Rightarrow$ справедливость неравенства и для $\overline{B}_\delta(x^0)$. (Небольшое замечание: всё это время мы работаем с $\overline{B}_\delta(x^0) \subset \Omega$)
+\end{proof}
+
+\begin{note}
+    Отличие теоремы и леммы в том, что лемма для линейного отображение, а в теореме мы доказали уже для произвольного отображения. Идея в том, что дифференцируемость~---~это приближение линейным, с точностью до бесконечно малого, более высокого порядка. Если матрица Якоби обратима, то линейное отображение будет удовлетворять оценке из леммы
+\end{note}
+
+\begin{theorem}[Теорема об открытом отображении]
+    \ \newline
+    Пусть $F: \Omega \rightarrow \R^m$$, \Omega \text{~---~непустое и открытое множество},$
+    $ F \in \DIF(\Omega, \R^m)$ и пусть $\forall x^0 \in \Omega \hookrightarrow DF(x^0)$~---~обратима (Якобиан не обращается в 0)
+    
+    Тогда $F(\Omega)$~---~открыто в $\R^m$
+\end{theorem}
+\begin{proof}
+    (Прим. ред.) Мы хотим доказать открытость по определению. Мы берем произвольную точку, смотрим на куда она переходит, предъявляем такой $r$, что открытый $r$-шар вкладывается в образ, доказывая что для любой точки из этого шара есть прообраз. \\
+    
+    Фиксируем $x^0 \in \Omega$ и $y^0 = F(x^0)$. Покажем, что $\exists r > 0$ такое что $B_r(y^0) \subset F(\Omega)$: 
+    Пользуясь предыдущей теоремой $\exists \delta > 0$ и $c > 0$: $\overline{B}_\delta \subset \Omega$ и $\|F(x) - F(x^0)\| \geq c \|x - x^0\| \forall x \in \overline{B}_\delta(x^0)$. Покажем что $r = \dfrac{c\delta}{2}$ является искомым. Возьмём произвольную $y^* \in B_{r}(y^0)$ и покажем что $\exists x^* \in B_\delta(x^0)$: $F(x^*) = y^*$. Заметим, что
+    \[\forall x \in S_\delta (x^0) \hookrightarrow \|F(x) - F(x^0)\| \geq c\delta \]
+    \[\|F(x) - y^*\| \geq \|F(x) - y^0\| - \|y^0 - y^*\| \geq c\delta - \|y^0 - y^*\| > \dfrac{c\delta}{2}\]
+    Рассмотрим функцию $h(x) = \|F(x) - y^*\|$. \\
+,    Тогда, $h(x^0) < r = \dfrac{c\delta}{2}$, а с другой стороны $\forall x \in S_\delta (x^0) \hookrightarrow h(x) > \dfrac{c\delta}{2}$. В то же время, поскольку $h \in C$ как функция от $x$, из компактности $\overline{B}_\delta(x^0)$ следует что $h(x)$ достигает своё наименьшее значение, при этом минимум достигается во внутренней точке, так как, как было показано, на границе $h > \frac{c\delta}{2}$, а минимум не больше $h(x^0)$, которое меньше этой величины. Из неотрицательности нормы следует истинность данного утверждения и для $h^2(x) = \sum\limits_{j = 1}^m(F_j(x) - y_i^*)^2$. Значит $\exists x^* \in B_\delta(x^0)$, в которой $h^2(x)$ принимает минимальное значение. Это внутренняя точка шара $\Rightarrow$ в ней $\grad h = 0$
+    \[\dfrac{\partial h^2}{\partial x_i}(x) = \dfrac{\partial}{\partial x_i}(\|F(x) - y^*\|^2) = \]
+    \[= \dfrac{\partial}{\partial x_i}(\sum\limits_{j = 1}^m(F_j(x) - y_i^*)^2 = \sum\limits_{j = 1}^m 2(F_j(x) - y^*_j) \dfrac{\partial F_j}{\partial x_i}(x) \Rightarrow \]
+    Рассмотрим в точке $x^*$:
+    \[\sum\limits_{j = 1}^m 2\dfrac{\partial F_j}{\partial x_i}(x^*) (F_j(x^*) - y_i^*)\Rightarrow\]
+    Вспоминая, что j строка матрицы Якоби выглядит как $\text{grad}F_{j} (x^{*}) = \left(\cfrac{\partial F_{j}}{\partial x_{1}} (x^{*}), \ldots, \cfrac{\partial F_{j}}{\partial x_{n}} (x^{*})\right)$
+    
+    \[\grad h^2(x^*) = 2(\D F(x^*))^T(F(x^*) - y^*) \Rightarrow\]
+    Тк матрица Якоби, также как и транспонированая не обращается в ноль по условию
+    \[ \Rightarrow F(x^*) - y^* = 0\] 
+    Что и требовалось доказать. Мы показали, что $\forall y \in F(\Omega) \ \exists r: B_r(y) \subset F(\Omega) \Longrightarrow \forall y \in F(\Omega) \hookrightarrow y \in Int(F(\Omega))$~---~открытое по определению
+\end{proof}
+
+\begin{note}
+    Если убрать обратимость, то существует контрпример, образ $(-1, 1)$ для параболы. Интервал переходит в полуинтервал 
+\end{note}
+%Используй лучше ~---~ для тире (пробелы до и после ~ делать не надо)
+%для ... есть \ldots
+%также из мелочей можешь пж разделять $$: $$, то есть тип чтобы двоеточие с пробелом было вне формулы (если в двойных $$, то есть тип по центру формула, то \text{: }), так отступ другой оно делает

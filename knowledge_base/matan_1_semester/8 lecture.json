@@ -1,0 +1,94 @@
+{
+  "units": [
+    {
+      "id": "D1",
+      "kind": "definition",
+      "title": "",
+      "statement": "Под \\textit{функцией}, если не оговорено обратное, понимаем однозначное отображение $f: E \\mapsto \\R,$ где $E \\subset \\R, E\\neq \\varnothing.$",
+      "proof": "",
+      "tags": [],
+      "source": "matan_1_semester/8 lecture.tex"
+    },
+    {
+      "id": "D2",
+      "kind": "definition",
+      "title": "",
+      "statement": "Пусть $\\delta > 0, \\ x_{0} \\in \\overline{\\R}$. Тогда \\textit{проколотой дельта-окрестностью} точки $x_{0}$ называется множество $\\mathring{U}_{\\delta} (x_{0}) := U_{\\delta} (x_{0}) \\backslash \\{ x_{0} \\}$",
+      "proof": "",
+      "tags": [],
+      "source": "matan_1_semester/8 lecture.tex"
+    },
+    {
+      "id": "D3",
+      "kind": "definition",
+      "title": "",
+      "statement": "(\\hypertarget{def4.3}{По Коши/в терминах окрестностей}) Пусть $x_0 \\in \\Hat{\\R}$ и пусть $A \\in \\Hat{\\R}. $ Пусть $f$: $\\mathring{U}_{\\delta_{0}} \\mapsto \\R.$ Будем говорить, что $A$~---~ предел функции $f$ в точке $x_{0}$ и записывать: \\[ \\left[ \\begin{gathered} \\lim\\limits_{x\\to x_0} f(x) = A \\hfill \\\\ f(x) \\to A, x \\to x_0 \\end{gathered} \\right. \\Leftrightarrow \\forall \\epsilon > 0 \\ \\exists \\ \\delta(\\epsilon) \\in (0; \\delta_0]: \\ \\forall x \\in \\mathring{U}_{\\delta}(x_0) \\ \\hookrightarrow \\ f(x) \\in U_\\epsilon(A) \\] \\begin{center} \\centering \\begin{tabular}{cc} \\begin{tikzpicture}[scale=0.8, decoration=curveto] \\begin{axis} [ samples=500, axis lines = middle, xlabel = {$x$}, ylabel = {$y$}, xtick ={4, 5}, xticklabels={$x_0$, $ $}, ytick={1.33, 4}, yticklabels={$A$, $ $}, xmax = 5, ymax = 2 ] \\addplot[]{x^(1/2)+cos(deg(x))}; \\end{axis} \\draw[] (6.70, 3.30) circle (1pt); \\draw[dotted] (0, 2.8) -- (8, 2.8); \\draw[<->] (5, 2.8) -- (5, 3.8); \\draw[dotted] (0, 3.8) -- (8, 3.8); \\node[left] at (5, 3.25) {$2\\epsilon$}; \\draw[dotted] (6.3, 0) -- (6.3, 7); \\draw[<->] (6.3, 1) -- (7.2, 1); \\draw[dotted] (7.2, 0) -- (7.2, 7); \\node[above] at (6.65, 1) {$2\\delta$}; \\node[below] at(2.5, 0) {$A\\in \\R, x_0 \\in \\R$}; \\end{tikzpicture} & \\begin{tikzpicture}[scale=0.8, decoration=curveto] \\draw[->, thin] (0,0) -- (8,0) node[below] {$x$}; \\draw[->, thin] (0,0) -- (0, 7) node[left] {$y$}; \\draw (0, 0) arc (-90:0:5.5 and 7) -- cycle; \\draw[white, line width = .05 cm] (0,0) -- (5.5, 7); \\draw[dotted] (0, 5) -- (8, 5); \\node[left] at (0, 5) {$1 / \\epsilon$}; \\draw[dotted] (5, 0) -- (5, 7); \\draw[<->] (5, 1) -- (6, 1); \\draw[dotted] (6, 0) -- (6, 7); \\draw[dotted] (5.5, 0) -- (5.5, 7); \\node[above] at (5.5, 1) {$2\\delta$}; \\node[below] at (5.5, 0) {$x_0$}; \\filldraw[pattern=north east lines] (5,5) rectangle (6,7); \\draw[white, line width = .03 cm] (5,7) -- (6,7); \\node[below] at(2.5, 0) {$A=+\\infty, x_0 \\in \\R$}; \\end{tikzpicture} \\end{tabular} \\end{center}",
+      "proof": "",
+      "tags": [],
+      "source": "matan_1_semester/8 lecture.tex"
+    },
+    {
+      "id": "D4",
+      "kind": "definition",
+      "title": "",
+      "statement": "\\textit{Последовательностью Гейне} в точке $x_{0} \\in \\Hat{\\R}$ называется такая числовая последовательность $\\{ x_{n} \\} \\subset \\R$, что выполнено два условия: \\begin{enumerate} \\item $\\lim\\limits_{n\\to \\infty} x_{n} = x_{0};$ \\item $x_{n} \\neq x_{0} \\ \\forall n \\in \\N.$ \\end{enumerate}",
+      "proof": "",
+      "tags": [],
+      "source": "matan_1_semester/8 lecture.tex"
+    },
+    {
+      "id": "D5",
+      "kind": "definition",
+      "title": "",
+      "statement": "\\hypertarget{def4.5}{(По Гейне/в терминах последовательностей)} Пусть $x_{0} \\in \\Hat{\\R}$ и $A \\in \\Hat{\\R}$. Пусть $f$: $\\mathring{U_{\\delta_{0}}} (x_{0}) \\mapsto \\R.$ Будем говорить, что $f$ имеет предел в точке $x_{0}$ равный $A$, если для любой последовательности Гейне $\\{ x_{n} \\} \\subset \\mathring{U}_{\\delta_{0}} (x_{0})$ в точке $x_{0}$ $\\exists \\lim\\limits_{n\\to \\infty} f (x_{n}) = A.$ Пишем: $ \\left[ \\begin{gathered} \\lim\\limits_{x\\to x_0} f(x) = A \\hfill \\\\ f(x) \\to A, x \\to x_0 \\end{gathered} \\right.$",
+      "proof": "",
+      "tags": [],
+      "source": "matan_1_semester/8 lecture.tex"
+    },
+    {
+      "id": "D6",
+      "kind": "definition",
+      "title": "",
+      "statement": "Пусть $E \\subset \\R$, $E \\neq \\varnothing$, а $x_{0} \\in \\Hat{\\R}$. Будем говорить, что $x_{0}$~---~\\textit{предельная точка} множества $E$, если $$ \\forall \\delta > 0 \\ \\mathring{U}_{\\delta} (x_{0}) \\cap E \\neq \\varnothing.$$",
+      "proof": "",
+      "tags": [],
+      "source": "matan_1_semester/8 lecture.tex"
+    },
+    {
+      "id": "D7",
+      "kind": "definition",
+      "title": "",
+      "statement": "(Предел по множеству) Пусть $A \\in \\Hat{\\R}$, $x_{0} \\in \\Hat{\\R}$. Пусть $f$: $E \\mapsto \\R$, $E \\neq \\varnothing$ и $x_{0}$~---~предельная точка множества $E$. Будем говорить, что $A$~---~предел $f$ по множеству $E$ при $x \\to x_{0}$ и записывать это $\\lim\\limits_{\\underset{x \\in E}{x\\to x_{0}}} f (x) = A$, если $$ \\forall \\epsilon > 0 \\ \\exists \\delta (\\epsilon) > 0: \\forall x \\in E \\cap \\mathring{U}_{\\delta (\\epsilon)} (x_{0}) \\hookrightarrow f (x) \\in U_{\\epsilon} (A) \\text{~---~по Коши.}$$ $$ \\forall \\text{ последовательности Гейне }\\{ x_{n}\\} \\subset E \\ \\text{в точке } x_{0} \\hookrightarrow \\lim\\limits_{n\\to \\infty} f (x_{n}) = A.$$",
+      "proof": "",
+      "tags": [],
+      "source": "matan_1_semester/8 lecture.tex"
+    },
+    {
+      "id": "D8",
+      "kind": "definition",
+      "title": "",
+      "statement": "\\textit{Функция Дирихле} $f = \\begin{cases} 0, \\ x \\in \\R \\backslash \\Q \\\\ 1, \\ x \\in \\Q & \\end{cases} $",
+      "proof": "",
+      "tags": [],
+      "source": "matan_1_semester/8 lecture.tex"
+    },
+    {
+      "id": "T9",
+      "kind": "theorem",
+      "title": "",
+      "statement": "\\hypertarget{thm4.1}{(Эквивалентность определений по Коши и по Гейне)} Пусть $x_{0} \\in \\Hat{\\R}$, $A \\in \\Hat{\\R}$. Пусть $f$: $\\mathring{U}_{\\delta_{0}} (x_{0}) \\mapsto \\R$. Тогда $\\lim\\limits_{x\\to x_{0}} f (x) = A$ (по Коши) $\\Leftrightarrow \\lim\\limits_{x\\to x_{0}} f (x) = A$ (по Гейне).",
+      "proof": "",
+      "tags": [],
+      "source": "matan_1_semester/8 lecture.tex"
+    },
+    {
+      "id": "T10",
+      "kind": "theorem",
+      "title": "",
+      "statement": "Определения предела по множеству в терминах Коши и Гейне эквивалентны.",
+      "proof": "",
+      "tags": [],
+      "source": "matan_1_semester/8 lecture.tex"
+    }
+  ]
+}

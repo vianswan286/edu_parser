@@ -1,0 +1,31 @@
+{
+  "units": [
+    {
+      "id": "T1",
+      "kind": "theorem",
+      "title": "``абстрактный'' критерий сходимости ряда Фурье в точке",
+      "statement": "\\label{Th.abstract_criterion} Пусть $f:\\mathbb{R} \\to \\mathbb{R}$ является $2\\pi$-периодичной, и $f \\in L_{1}([-\\pi,\\pi])$. Ряд Фурье $f$ сходится в точке $x \\in \\mathbb{R}$ к числу $S \\in \\mathbb{R}$ в том и только том случае, если существует $\\delta \\in (0,\\pi]$ такое, что \\begin{equation} \\label{eqq.22} \\lim\\limits_{n \\to \\infty}\\int\\limits_{0}^{\\delta}\\Bigl[\\frac{f(x+u)+f(x-u)}{2}-S\\Bigr]\\frac{\\sin(nu)}{u}\\,du = 0. \\end{equation}",
+      "proof": "",
+      "tags": [],
+      "source": "matan_4_semestr/Lecture_3.tex"
+    },
+    {
+      "id": "T2",
+      "kind": "theorem",
+      "title": "Признак Дини",
+      "statement": "Пусть дана $2\\pi$-периодическая функция $f \\in L_1([-\\pi, \\pi])$ и для некоторой точки $x$ существуют $\\delta \\in (0, \\pi)$ и $S \\in \\R$ такие, что \\[ \\int_0^\\delta |f(x + u) + f(x - u) - 2S|\\dfrac{du}{u} < +\\infty. \\] то ряд Фурье функции $f$ сходится в точке $x$ к $S$.",
+      "proof": "",
+      "tags": [],
+      "source": "matan_4_semestr/Lecture_3.tex"
+    },
+    {
+      "id": "T3",
+      "kind": "theorem",
+      "title": "Признак Дирихле--Жордана",
+      "statement": "Если функция $f:\\mathbb{R} \\to \\mathbb{R}$ $2\\pi$-периодична, и $f \\in BV((a,b)) \\cap L_{1}([-\\pi,\\pi])$ для некоторого интервала $(a,b)$, то её ряд Фурье сходится в каждой точке $x \\in (a,b)$, причем $$ S_{n}[f](x) \\to \\frac{f(x+0)+f(x-0)}{2}, \\quad n \\to \\infty. $$ % Если дополнительно потребовать, что $f \\in C((a,b))$, то ряд Фурье функции $f$ сходится к ней равномерно на любом отрезке $[a',b'] \\subset (a,b)$.",
+      "proof": "",
+      "tags": [],
+      "source": "matan_4_semestr/Lecture_3.tex"
+    }
+  ]
+}

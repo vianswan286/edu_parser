@@ -1,0 +1,156 @@
+\textbf{Далее до конца главы коэффициенты подразумеваются вещественные.}
+\begin{definition}
+    Пусть $\displaystyle P_{n} (z) = \sum_{k = 0}^{n} a_{k} z^{k}$, $a_{k} \in \R \  \forall k \in \{0, 1, \ldots, n \}$. Тогда $\displaystyle \overline{P_{n} (z)} = \overline{\sum_{k = 0}^{n} a_{k} z^{k}} = \sum_{k = 0}^{n} \overline{a_{k} z^{k}} = \sum_{k = 0}^{n} a_{k} \overline{z^{k}} = \sum_{k = 0}^{n} a_{k} (\overline{z})^{k} = P_{n} (\overline{z})$.
+\end{definition}
+\begin{definition}
+    Будем говорить, что $z_{0}$~---~\textit{корень кратности $k$} ($k \leq n$) полинома $P_{n} (z)$, если $P_{n} (z) = (z - z_{0})^{k} \cdot Q (z)$, где $Q (z)$ не имеет в качестве корня $z_{0}$.
+\end{definition}
+\begin{theorem}
+    Пусть $\displaystyle P_{n} (z) = \sum_{k = 0}^{n} a_{k} z^{k}$, $a_{k} \in \R \  \forall k \in \{0, 1, \ldots, n \}$ и $z_{0}$~---~корень кратности $k \leq n$. Тогда $\overline{z}_{0}$~---~корень кратности $k$.
+\end{theorem}
+\begin{proof}
+   Так как $z_{0}$~---~корень кратности $k$, то $P_{n} (z) = (z - z_{0})^{k} \cdot Q (z)$. Тогда $\overline{P_{n} (z)} = \overline{(z - z_{0})^{k}} \cdot \overline{Q (z)}$, но так как $\overline{P_{n} (z)} = P_{n} (\overline{z})$, то получаем $P_{n} (\overline{\overline{z}}) = (\overline{\overline{z}} - \overline{z_{0}})^{k} \cdot \overline{Q (\overline{z})} \Rightarrow P_{n} (z) = (z - \overline{z_{0}})^{k} \cdot \overline{Q (\overline{z})}$, откуда получаем, что $\overline{z_{0}}$~---~корень кратности $k$.
+
+   Примечание. Необходимо также убедиться, что $Q (\overline{z})$. Пусть $Q_{1} (z) = \overline{Q (\overline{z})}$. Тогда $Q_{1} (\overline{z_{0}}) = \overline{Q (\overline{\overline{z_{0}}})} = \overline{Q (z_{0})} \neq 0$.
+\end{proof}
+\begin{corollary}
+    Пусть $\displaystyle P_{n} (z) = \sum_{k = 0}^{n} a_{k} z^{k}$, $a_{k} \in \R \  \forall k \in \{0, 1, \ldots, n \}$. Тогда $P_{n} (x) = a (x - x_{1})^{k_{1}} \cdot \ldots \cdot (x - x_{s})^{k_{s}} \cdot (x^{2} + p_{1} x + q_{1})^{l_{1}} \cdot \ldots \cdot (x^{2} + p_{t} x + q_{t})^{l_{t}}$, $n = k_{1} + \ldots + k_{s} + l_{1} + \ldots + l_{t}$, где $\forall i \in \{ 1, 2, \ldots, t \} \hookrightarrow p^2_{i} - 4 q_{i} < 0$.
+\end{corollary}
+\begin{proof}
+    Рассмотрим $P_{n} (z) = a (z - x_{1})^{k_{1}} \cdot \ldots \cdot (z - x_{s})^{k_{s}} \cdot (z - z_{1})^{l_{1}} \cdot (z - \overline{z_{1}})^{l_{1}} \cdot \ldots \ \cdot (z - z_{t})^{l_{t}} \cdot (z - \overline{z_{t}})^{l_{t}}$, где $x_{i} \in \R \  \forall i \in \{ 1, 2, \ldots, s \}$. Раскроем все полиномы $(z - z_{i}) (z - \overline{z_{i}}) \  \forall i \in \{ 1, 2, \ldots, t\}$, получим $z^{2} - (z_{i} + \overline{z_{i}}) z + z_{i} \overline{z_{i}}$, тогда $p^{2}_{i} - 4 q_{i} = (z_{i} + \overline{z_{i}})^{2} - 4 z_{i} \overline{z_{i}} = (z_{i} - \overline{z_{i}})^{2} = (2i \cdot \text{Im}z_{i})^2 = -4 (\text{Im} z_{i})^{2}$, что меньше нуля.
+\end{proof}
+\begin{theorem}
+    \hypertarget{thm6.8}{Пусть $P (x)$, $Q (x)$~---~полиномы с вещественными коэффициентами, $\displaystyle R (x) = \frac{P (x)}{Q (x)}$~---~правильная дробь и $x_{0}$~---~корень кратности $k$ знаменателя, то есть $Q (x) = (x - x_{0})^{k} \cdot \Tilde{Q} (x)$, где $\Tilde{Q} (x_{0}) \neq 0$. Тогда $\exists! A \in \R$, $F (x)$: $\displaystyle \frac{P (x)}{Q (x)} = \frac{A}{(x - x_{0})^{k}} + \frac{F (x)}{(x - x_{0})^{k - 1} \cdot \Tilde{Q} (x)}$, где $\deg{F (x)} < \deg{\Tilde{Q (x)}} + k - 1$.}
+\end{theorem}
+\begin{proof}
+    Равенство теоремы равносильно $\displaystyle P (x) = A \cdot \Tilde{Q} (x) + F (x) \cdot (x - x_{0}) \Leftrightarrow P (x) - A \cdot \Tilde{Q} (x) = F (x) \cdot (x - x_{0}) \Leftrightarrow$ левая часть делится на $(x - x_{0})$ без остатка, следовательно по \hyperlink{thm6.5}{теореме Безу} $P (x_{0}) - A \cdot \Tilde{Q} (x_{0}) = 0$, а так как $\Tilde{Q} (x_{0}) \neq 0$, то $\displaystyle A = \frac{P (x_{0})}{\Tilde{Q} (x_{0})}$~---~однозначно, откуда однозначно определяется $\displaystyle F (x) = \frac{P (x) - A \cdot \Tilde{Q} (x)}{x - x_{0}}$. Получаем $\deg{P (x) - A \cdot \Tilde{Q} (x)} < \deg{Q (x)} \Rightarrow \deg{F (x)} < \deg{Q (x)} - 1 = \deg{\Tilde{Q (x)}} + k - 1$.
+\end{proof}
+\begin{theorem}
+    Пусть $P$ и $Q$~---~полиномы с вещественными коэффициентами, $\cfrac{P}{Q}$~---~правильная дробь и $z_{0} \in \Cm$ ($\text{Im}z_{0} \neq 0$)~---~корень кратности $k$. Тогда $\exists! B, C \in \R$ и полином $F$: $\cfrac{P (x)}{Q (x)} = \cfrac{Bx + C}{(x^{2} + p_{0} x +q_{0})^{k}} + \cfrac{F (x)}{(x^{2} + p_{0} x +q_{0})^{k - 1} \cdot \Tilde{Q} (x)}$, где $\Tilde{Q} (x)$ определяется из $Q (x) = (x^{2} + p_{0} x +q_{0})^{k} \cdot \Tilde{Q} (x)$, при этом второе слагаемое~---~правильная дробь.
+\end{theorem}
+\begin{proof}
+    Равенство теоремы равносильно $P (x) = (Bx + C) \cdot \Tilde{Q} (x) + F (x) (x^2 + p_{0} x + q_{0}) \Leftrightarrow P (x) - (Bx + C) \cdot \Tilde{Q} (x) = F (x) (x^2 + p_{0} x + q_{0}) \Leftrightarrow P (x) - (Bx + C) \cdot \Tilde{Q} (x)$ делится без остатка на $(x - z_{0})$, что по \hyperlink{thm6.5}{теореме Безу} равносильно $P (z_{0}) - (B z_{0} + C) \cdot \Tilde{Q} (z_{0}) = 0$, но $\Tilde{Q} (z_{0}) \neq 0$, тогда $B z_{0} + C = \cfrac{P (z_{0})}{\Tilde{Q} (z_{0})} = x_{1} + y_{1} i$. Пусть $z_{0} = x_{0} + y_{0} i$. Тогда $B x_{0} + B y_{0} i + C = x_{1} + y_{1} i \Rightarrow B x_{0} + C = x_{1}$ и $B y_{0} = y_{1}$. А так как $\text{Im}z_{0} \neq 0$, то $B = \cfrac{y_{1}}{y_{0}} \Rightarrow C = x_{1} - \cfrac{y_{1}}{y_{0}} \cdot x_{0}$, то есть мы однозначно нашли коэффициенты, а тогда полином $F$ тоже строится однозначно.
+
+    То, что второе слагаемое правильная дробь доказывается аналогично \hyperlink{thm6.8}{предыдущей теореме}.
+\end{proof}
+\begin{corollary}
+    Пусть $R (x) = \cfrac{P (x)}{Q (x)}$~---~правильная дробь и $Q (x) = a (x - x_{1})^{k_{1}} \cdot \ldots \cdot (x - x_{s})^{k_{s}} \cdot (x^{2} + p_{1} x + q_{1})^{l_{1}} \cdot \ldots \cdot (x^{2} + p_{t} x + q_{t})^{l_{t}}$, $n = k_{1} + \ldots + k_{s} + l_{1} + \ldots + l_{t}$, где $\forall i \in \{ 1, 2, \ldots, t \} \hookrightarrow p^2_{i} - 4 q_{i} < 0$. Тогда $R (x) = \displaystyle \sum_{i = 1}^{s} \sum_{j = 1}^{k_{i}} \cfrac{A^{i}_{j}}{(x - x_{i})^{j}} + \sum_{i' = 1}^{t} \sum_{j' = 1}^{l_{i'}} \cfrac{B^{i'}_{j'} x + C^{i'}_{j'}}{(x^2 + p_{i'} x + q_{i'})^{j'}}$.
+\end{corollary}
+\begin{proof}
+    <<Доказывается многократным повторением теорем, которые только что были>> (с) Тюленев А.И.
+\end{proof}
+
+\subsection{Интегрирование дробей}
+\underline{Алгоритм работы с дробями}: если дробь неправильная, значит надо поделить её в стоблик.
+
+$\displaystyle \int \cfrac{1}{(x - x_{0})^{k}} \, dx = \cfrac{1}{1 - k} \cdot \cfrac{1}{(x - x_{0})^{k - 1}} + C$, $k \neq 1$.
+
+$\displaystyle \int \cfrac{1}{(x - x_{0})^{k}} \, dx = \ln{|x - x_{0}| + C}$.
+
+Научимся считать $\displaystyle \int \cfrac{Bx + C}{(x^2 + px + q)^{l}}$, $l \in \R$. 
+
+Вынесем $\cfrac{B}{2}$, получим $\displaystyle \cfrac{B}{2} \int \cfrac{2x + \frac{2 C}{B}}{(x^2 + px + q)^{l}} \, dx = \cfrac{B}{2} \int \cfrac{2x + p}{(x^2 + px + q)^{l}} \, dx + \left(C - \cfrac{B \cdot p}{2}\right) \int \cfrac{1}{(x^2 + px + q)^{l}} \, dx$. Первый интеграл берётся заменой $t = x^2 + px + q$, со вторым сложнее:
+
+$\displaystyle \int \cfrac{1}{(x^2 + px + q)^{l}} \, dx = \int \cfrac{1}{\left((x + \frac{p}{2})^2 + (q - \frac{p^2}{4})\right)^{l}} \, dx$, так как $q - \frac{p^2}{4} > 0$, то оно представимо в виде $a^2$, $a \in \R_{+}$, сделаем замену $t = x + \frac{p}{2}$. Получаем $\displaystyle \int \cfrac{1}{(t^2 + a^2)^{l}} \, dx$.
+
+Если $l = 1$, то искомый интеграл равен $\frac{1}{a} \text{arctg} \frac{t}{a} + C$. Если $l > 1$, то будем интегрировать по частям. Обозначим $\displaystyle I_{l} (t) = \int \cfrac{1}{(t^2 + a^2)^{l}} \, dt$. Получаем $\displaystyle \cfrac{t}{(t^2 + a^2)^{l}} + l \cdot \int \cfrac{t \cdot 2t}{(t^2 + a^2)^{l + 1}} \, dt = \cfrac{t}{(t^2 + a^2)^{l}} + 2l \cdot \int \cfrac{1}{(t^2 + a^2)^{l}} \, dt - 2 l \cdot a^2 \cdot \int \cfrac{1}{(t^2 + a^2)^{l + 1}} \, dx$.
+
+Итого получаем $I_{l} (t) = \cfrac{t}{(t^2 + a^2)^{l}} + 2l \cdot I_{l} (t) - 2l \cdot a^2 \cdot I_{l + 1} (t)$, то есть рекуррентное соотношение. Откуда $I_{l + 1} (t) = \left[ \cfrac{t}{(t^2 + a^2)^{l}} + (2l - 1) \cdot I_{l} (t) \right] \cdot \cfrac{1}{2l \cdot a^{2}}$.
+
+\begin{table}[h]
+\begin{tabular}{clcl}
+1) & $\displaystyle \int R (x^{1/n}) \, dx$ & 3) Подстановки Чебышева & $\displaystyle \int a x^{m} (b x^{n} + c)^{p} \, dx$  \\
+& делается замена $t = x^{1/n}$ &  & \\
+2) & $\displaystyle \int R (x, ) \, dx$ & & \\
+ &  &  &
+\end{tabular}
+\end{table}
+
+\begin{theorem}
+    
+\end{theorem}
+
+\textbf{COMING SOON.......}
+
+\newpage
+
+\section{Линейные пространства (векторные пространства)}
+
+\begin{definition}
+    $\R^n$, $n \in \N$~---~пространство строк длины $n$ из вещественных чисел, то есть $x \in \R^n$, $x = (x_{1}, \ldots, x_{n})$.
+\end{definition}
+\begin{note}
+    В литературе можно ещё встретить $\Cm^n \sim \R^{2n}$, $z = (z_{1}, \ldots, z_{n})$.
+\end{note}
+\begin{definition}
+    Пусть $E$~---~множество, на котором введены операции (отображения):
+    $\begin{gathered}
+	\text{<<+>>}: \E \times \E \mapsto \E \\
+	\text{<<}\cdot\text{>>: }\  \R \times \E \mapsto \E
+    \end{gathered} \quad$
+    удовлетворяющее следующим условиям:
+
+    \begin{tabular}{lll}
+    1. & $a + b = b + a$ & $\forall a, b \in \E$ \\
+    2. & $(a + b) + c = a + (b + c)$ & $\forall a, b, c \in \E$ \\
+    3. & $\exists \overline{0} \in E$: $a + \overline{0} = a$ & $\forall a \in \E$ \\
+    4. & $\exists -a \in E$: $a + (-a) = \overline{0}$ & $\forall a \in \E$ \\
+    5. & $(\alpha \beta) \cdot a = \alpha \cdot (\beta \cdot a)$ & $\forall \alpha, \beta \in \R$, $\forall a \in \E$ \\
+    6. & $1 \cdot a = a$ & $1 \in \R$, $\forall a \in \E$ \\
+    7. & $(\alpha + \beta) \cdot a = \alpha \cdot a + \beta \cdot a$ & $\forall \alpha, \beta \in \R$, $\forall a \in \E$ \\
+    8. & $\alpha \cdot (a + b) = \alpha \cdot a + \alpha \cdot b$ & $\forall \alpha \in \R$, $\forall a, b \in \E$
+    \end{tabular}
+
+    то $(\E, +, \cdot)$ называется \textit{вещественным векторным пространством} или \textit{вещественным линейным пространством} или \textit{линейным пространством над полем вещественных чисел} ($\R$).
+\end{definition}
+\begin{note}
+    Заменяя вещественные числа на комплексные, можно получить определение \textit{комплексного линейного пространства} или \textit{линейного пространства над} $\Cm$.
+\end{note}
+\begin{examples}
+    <<Базовые>> линейные пространства~---~$\R^n$, $\Cm^n$.
+
+    В $\R^n$ введём операцию <<$+$>> следующим образом: $\forall x, y \in \R^n \hookrightarrow x + y = (x_1, \ldots, x_n) + (y_1, \ldots, y_n) = (x_1 + y_1, \ldots, x_n + y_n)$, - а <<$\cdot$>> так: $\forall \alpha \in \R$, $\forall x \in \R^n \hookrightarrow \alpha \cdot x = (\alpha x_1, \ldots, \alpha x_n)$. Требуемым аксиомам $\R^n$ очевидно удовлетворяет.
+\end{examples}
+\begin{proposition}
+    Элемент $\overline{0}$ единственен.
+\end{proposition}
+\begin{proof}
+    Пусть $\exists \overline{0}_{1}, \overline{0}_{2}$: $\overline{0}_{1} \neq \overline{0}_{2}$. Тогда по аксиомам $1$ и $3$ получаем $\overline{0}_{1} = \overline{0}_{1} + \overline{0}_{2} = \overline{0}_{2} + \overline{0}_{1} = \overline{0}_{2} \Rightarrow \overline{0}_{1} = \overline{0}_{2}$, то есть исходное предположение было неверно и $\overline{0}$ единственен.
+\end{proof}
+\begin{proposition}
+    $\forall a \in \E$ элемент $-a$ единственен.
+\end{proposition}
+\begin{proof}
+    Пусть $\exists -a_{1}$ и $-a_{2} \in \E$: $a + (-a_{1}) = 0$ и $a + (-a_{2}) = 0$. Тогда $-a_{1} = -a_{1} + 0 = -a_{1} + a + (-a_{2}) = 0 + (-a_{2}) = -a_{2} \Rightarrow -a_{1} = -a_{2}$, то есть исходное предположение было неверно и $-a$ единственно.
+\end{proof}
+\begin{proposition}
+    $0 \cdot a = \overline{0}$, $\forall a \in \E$.
+\end{proposition}
+\begin{proof}
+    $0 \cdot a = (0 \cdot a) + \overline{0} = (0 \cdot a) + a + (-a) = (0 + 1) \cdot a + (-a) = a + (-a) = \overline{0}$.
+\end{proof}
+
+Линейные пространства~---~это не только $\R^n$ и $\Cm^n$.
+\begin{examples}
+    Пусть $\E = \{ P (x)$: $x \in \R\}$, то есть пространства всех полиномов $P(x)$. Это будет вещественным векторным пространством, так как удовлетворяет всем аксиомам. Также $\text{F} = \{ P(z)$: $z \in \Cm\}$~---~комплексное векторное пространство.
+\end{examples}
+\begin{note}
+    Эти примеры интересны тем, что они <<бесконечномерны>>, но об этом позже.
+\end{note}
+
+\subsection{Нормированное пространство}
+
+\begin{definition}
+    \textit{Линейное нормированное пространство (ЛНП)}~---~это пара $(\E, \| \|)$, где $\E$~---~вещественное линейное пространство, а $\| \|$: $\E \mapsto [0; +\infty)$~---~отображение, удовлетворяющее свойствам (назовём это нормой):
+    \begin{tabular}{lll}
+    1. & $\| x\| \geq 0$ & $\forall x \in \E$; $\| x\| = 0 \Leftrightarrow x = \overline{0}$\\
+    2. & $\| \alpha x \| = |\alpha| \| x\|$ & $\forall \alpha \in \R$, $\forall x \in \E$ \\
+    3. & $\| x + y \| \leq \| x \| + \| y\|$ & $\forall x, y \in \E$  
+    \end{tabular}
+\end{definition}
+\begin{example}
+    В $\displaystyle \R^n$ $\displaystyle \| x\|_{1} = \sum_{k = 1}^{n} |x_{k}|$ и $\| x\|_{\infty} = \max\limits_{1 \leq i \leq n} |x_{i}|$. Проверка, почему эти нормы удовлетворяют свойствам, очевидна.
+\end{example}
+\begin{note}
+    $\displaystyle \forall p \in (1; +\infty)\  \| x \|_p = \left( \sum_{k = 1}^{n} |x_k|^{p} \right)^{\cfrac{1}{p}}$, но эту формулу тяжелее доказать.
+\end{note}

@@ -1,0 +1,124 @@
+\subsection{Критерий интегрируемости по Риману}
+\begin{definition}
+    Пусть $T$~---~разбиение отрезка $[a, b]$, и задана функция $f: [a, b] \rightarrow \R$. Тогда $\Delta_T f:= \sum\limits_{i = 1}^N \omega_{[x_{i - 1}, x_i]} (x_i - x_{i - 1})$.
+\end{definition}
+
+\begin{lemma}
+    \hypertarget{lemma13.1}{Пусть $f$: $[a, b] \rightarrow \R$, $T$~---~произвольное разбиение отрезка $[a, b]$. Тогда $\Delta_Tf = S(f, T) - s(f, T)$.}
+\end{lemma}
+\begin{proof}
+    Введём обозначение $\omega_i := \omega_{[x_{i - 1}, x_i]} = \sup\limits_{x', x'' \in [x_{i - 1}, x_i]}|f(x') - f(x'')|$. 
+    
+    Заметим, что 
+    $$\omega_i = \sup\limits_{x', x'' \in [x_{i - 1}, x_i]} \left(f(x') - f(x'')\right) =$$
+    \[= \sup\limits_{x'' \in [x_{i - 1}, x_i]}\left( (\sup\limits_{x' \in [x_{i - 1}, x_i]} \left(f(x') - f(x'')\right) \right) = \sup\limits_{x' \in [x_{i - 1}, x_i]} f(x') + \sup\limits_{x'' \in [x_{i - 1}, x_i]} (-f(x'')) \]
+    \[= \sup\limits_{x' \in [x_{i - 1}, x_i]} - \inf\limits_{x'' \in [x_{i - 1}, x_i]} f(x'') = M_i - m_i \Rightarrow\]
+    \[\Delta_T f = \sum\limits_{i} \omega_i(x_i - x_{i - 1}) = \sum\limits_i (M_i - m_i)(x_i - x_{i - 1}) = S(f, T) - s(f, T).\]
+\end{proof}
+
+\begin{theorem}[Критерий интегрируемости 1]
+    Пусть $f$: $[a, b] \rightarrow \R \hookrightarrow f \in \Rim([a, b]) \Longleftrightarrow \forall \epsilon > 0 $ $\exists \delta(\epsilon)$: $ \forall T$~---~разбиения $[a, b]$ мелкости $l(T) < \delta \hookrightarrow \Delta_T f < \epsilon$. 
+\end{theorem}
+\begin{proof} $\newline$
+    $(\Longrightarrow)$ Пусть $f \in \Rim([a, b])$. Тогда $\exists J \in \R$: $\forall \epsilon > 0$ $\exists \delta > 0$: $\forall T$~---~разбиения $[a, b]$ с мелкостью $l(T) < \delta \hookrightarrow$
+    \begin{equation*}
+    \begin{cases}
+    |J - s(f, T)| < \epsilon / 2 \\
+    |J - S(f, T)| < \epsilon / 2 
+    \end{cases}
+    \end{equation*}
+    $\Rightarrow \forall \epsilon > 0$ $\exists \delta > 0$: $\forall T$~---~разбиения $[a, b]$ мелкости $l(T) < \delta (\epsilon) \hookrightarrow |s(f, T) - S(f, T)| \leq |J - s(f, T)| + |S(f, T) - J| < \epsilon$
+    В силу \hyperlink{lemma13.1}{предыдущей леммы} мы получаем необходимое.
+
+    $(\Longleftarrow)$ Пусть выполнены условия справа. Тогда $\forall i\in\{1, \ldots, N\} \hookrightarrow \omega_i < +\infty$ для достаточно <<мелких разбиений>>. Значит, $M_i < +\infty$, $m_i > -\infty$ (в силу конечности колебаний) $\Rightarrow$ суммы Дарбу конечны. В прошлой лекции мы ввели
+    
+    \[J_* := \sup\limits_T s(f, T)\]
+    \[J^* := \inf\limits_T S(f, T)\]
+    Также доказали, что $s(f, T_1) \leq S(f, T_2)$ $\forall T_1$, $T_2$~---~разбиений $[a, b]$.
+    \[\Rightarrow s(f, T_1) \leq \sup\limits_T s(f, T) = J_* \leq J^{*} = \inf\limits_T S(f, T) \leq S(f, T_2) \Rightarrow -\infty < J_{*} \leq J^{*} < +\infty.\]
+    Тогда в силу \hyperlink{lemma13.1}{леммы} $\forall \epsilon > 0$ $\exists \delta (\epsilon) > 0$: $\forall T$~---~разбиения $[a, b]$ мелкости $l(T) < \delta (\epsilon) \hookrightarrow |S(f, T) - s(f, T)| < \epsilon$, а значит $$\forall \varepsilon > 0 \exists \delta (\epsilon) > 0\text{: } \underset{\text{не зависит от }\delta (\epsilon)}{|J_{*} - J^{*}|} < \epsilon.$$
+    Итого
+    $$\forall \epsilon > 0 \hookrightarrow 0 \leq J^{*} - J_{*} < \epsilon \Rightarrow J^* = J_* \in \R \Rightarrow J^* = J_* = J \in \R.$$
+    Поэтому $\forall \epsilon > 0$ $\exists \delta > 0$: $\forall T$~---~разбиения $[a, b]$ мелкости $l(T) < \delta \hookrightarrow S(f, T) - s(f, T) < \epsilon \Rightarrow s(f, T) \leq J \leq S(f, T) \Rightarrow$ $\forall T$~---~разбиения $[a, b]$ мелкости $l (T) < \delta (\epsilon)$.
+    \begin{equation*}
+        \begin{cases}
+            |J - s(f, T)| < \epsilon \\
+            |J - S(f, T)| < \epsilon
+        \end{cases} \Rightarrow f \in \Rim([a, b]).
+    \end{equation*}
+\end{proof}
+
+% ДО СЮДА ОК.
+
+\subsection{Критерий Лебега}
+\begin{definition}
+     Если $\{a_k\}$~---~числовая последовательность из неотрицательных $a_k$, то символом $\sum\limits_{1}^{\infty}a_k := \sup\limits_{N \in \N} \sum\limits_{k = 1}^N a_k = \lim\limits_{N \rightarrow \infty} \sum\limits_{k = 1}^N a_k$.
+\end{definition}
+\begin{definition}
+    Будем говорить, что множество $E \subset \R^n$ имеет \textit{лебегову меру нуль}, если для любого $\epsilon > 0$ существует не более чем счётное множество открытых шаров (некоторые могут быть пусты) $\{B_i\}_{i = 1}^{N}, N \in \N \cup \{+\infty\}$, обладающее следующими свойствами:
+    \begin{enumerate}
+        \item $E \subset \bigcup\limits_{i = 1}^{N} B_i$;
+        \item $\sum\limits_{i = 1}^{N} r(B_i) < \epsilon$ (в случае $N = \infty$ под суммой ряда мы понимаем супремум/предел множества частичных сумм).
+    \end{enumerate}
+\end{definition}
+
+\begin{note}
+    По определению \textit{пустое множество имеет лебегову меру нуль}, произвольное конечное множество точек тоже имеет лебегову меру нуль.
+\end{note}
+
+\begin{lemma}
+    Пусть $E = \bigcup\limits_{j = 1}^{\infty} E_j$, где $E_j \subset \R^n$~---~имеет лебегову меру нуль $\forall j \in \N$. Тогда $E$ тоже имеет лебегову меру нуль. (Из данной формулировки следует то же и для конечного объединения)
+\end{lemma}
+\begin{proof}
+    Фиксируем произвольный $\epsilon > 0$. $\forall j \in \N \hookrightarrow$
+    $E_j$ имеет лебегову меру ноль, а значит $\exists \{B_{j,i}\}_{i = 1}^{\infty}$: $\sum\limits_{i = 1}^{\infty} r(B_{j,i}) < \frac{\varepsilon}{2^{j + 1}}$. Заметим, что $\{B_{j, i}\}_{j, i = 1}^{\infty}$~---~счётный набор ребер, а значит $E = \bigcup\limits_{j = 1}^{\infty} E_j \subset \bigcup\limits_{j = 1}^{\infty}\bigcup\limits_{i = 1}^{\infty} B_{j, i} = \bigcup\limits_{k = 1}^{\infty} B_{j(k), i(k)} = \bigcup\limits_{k = 1}^{\infty} \widetilde{B}_k$.
+    Покажем, что $\sum\limits_{k = 1}^{\infty} r(\widetilde{B}_k) < \varepsilon$: $\sum\limits_{k = 1}^{\infty} r(\widetilde{B}_k) = \lim\limits_{N \rightarrow \infty} \sum\limits_{j = 1}^{N}\sum\limits_{i = 1}^{N} r(B_{j, i}) \leq \sum\limits_{j = 1}^{\infty}\sum\limits_{i = 1}^{\infty} \frac{\varepsilon}{2^{j + 1}} = \frac{\varepsilon}{2} < \varepsilon$. (Биективность $\N^2$ и $\N$ показываем как в доказательстве счётности рациональных)
+\end{proof}
+
+\begin{example}
+    Множество $\Q^n \subset \R^n$ имеет лебегову меру нуль.
+\end{example}
+
+\begin{example}
+    Стандартное канторово множество (англ. middle third Cantor-set) имеет лебегову меру нуль. \\ Как оно строится: \\
+    Берётся отрезок $K^0 = [0, 1]$. Из него выкидыванием средней трети мы получаем $K^1 = [0, 1/3] \cup [2/3, 1]$~---~ аналогично мы получаем дальнейшие $K^j = \bigcup\limits_{k = 1}^{2^j} I_k$, где $\|I_k\| = \frac{1}{3^j}$, и тогда канторовым множеством $K$ называется $K = \bigcap\limits_{j = 1}^\infty K^j$. \\
+    Канторово множество несчётно: $K \supset \bigcup\limits_{j = 1}^{\infty} \{\frac{L}{3^j}, L = 0, \ldots, 3^j\}$~---~содержит их все пределы, а значит несчётно. \\
+    Канторово множество имеет лебегову меру нуль: $K^j \subset \bigcup\limits_{i = 1}^{2^j} J_{j, i}$, где $L(J_{j, i}) < \frac{1 + \varepsilon}{3^j} \Rightarrow$ $K^j$ можно покрыть конечным набором интервалов с суммарной длиной меньше $\frac{2^j}{3^j}(1 + \varepsilon) \rightarrow 0, j \rightarrow \infty$. Тогда поскольку $K \subset K^j, K = \bigcap\limits_{j = 1}^\infty K^j$, то $K$ является множеством лебеговой меры нуль.
+\end{example}
+
+\begin{definition}
+    $\B ([a, b])$ (от английского bounded)~---~\textit{множество всех ограниченных на $[a, b]$ функций}.
+\end{definition}
+
+\begin{definition}
+    $\D[f]$ (от английского discontinuous)~---~\textit{множество всех точек разрыва функции}.
+\end{definition}
+
+\begin{theorem}[Критерий Лебега]
+    Функция $f \in \Rim ([a, b]) \Longleftrightarrow f \in \B ([a, b])$ и $\D[f]$ имеет лебегову меру нуль.
+\end{theorem}
+
+\begin{note}
+    Далее используются следующие обозначения:
+    \begin{itemize}
+        \item $C(f)$~---~множество всех точек непрерывности функции.
+        \item Пусть $f$: $E \rightarrow \R$. Тогда, если $x_0 \in E$ является изолированной точкой, то колебания в ней равны 0, иначе если $x_0$~---~предельная точка, то $\omega_{x_0}f = \lim\limits_{\delta \rightarrow +0} \omega_{E \cap U_\delta(x_0)}f = \inf\limits_{\delta > 0} \omega_{E \cap U_\delta(x_0)}f$
+    \end{itemize}
+\end{note}
+
+\begin{corollary}
+    $C([a, b]) \subset R([a, b])$.
+\end{corollary}
+\begin{proof}
+    В силу критерия Лебега: из теоремы Вейерштрасса непрерывная на отрезке функция ограничена, и поскольку она непрерывна, то множество точек её разрыва пусто и имеет лебегову меру ноль.
+\end{proof}
+
+\begin{corollary}
+    Любая монотонная на отрезке функция интегрируема по Риману.
+\end{corollary}
+\begin{proof}
+    Функция ограничена, поскольку лежит между своими значениями в начале и конце отрезка, и множество точек её разрыва не более чем счетно (в силу монотонности), а значит по критерию Лебега она интегрируема.
+\end{proof}
+\begin{example}
+    Функция Римана интегрируема на $[0, 1]$: она разрывна во всех рациональных точках отрезка (кроме $0$), во всех остальных точках непрерывна. Тогда множество её точек разрыва счетно, следовательно имеет лебегову меру нуль; и на $[0, 1]$ она ограничена, а значит по критерию Лебега интегрируема на $[0, 1]$.
+\end{example}

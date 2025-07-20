@@ -1,0 +1,49 @@
+{
+  "units": [
+    {
+      "id": "D1",
+      "kind": "definition",
+      "title": "",
+      "statement": "Функция $\\arcsin x$ по определению обратна к $\\sin x$ на отрезке $\\left[-\\cfrac{\\pi}{2}, \\cfrac{\\pi}{2}\\right]$ Она существует, так как $\\sin x$ монотонен и непрерывен на отрезке $\\left[-\\cfrac{\\pi}{2}, \\cfrac{\\pi}{2}\\right]$ Следовательно, $arcsin x$ строго возрастает и непрерывна на $[-1, 1].$",
+      "proof": "",
+      "tags": [],
+      "source": "matan_1_semester/12 lecture.tex"
+    },
+    {
+      "id": "D2",
+      "kind": "definition",
+      "title": "",
+      "statement": "Функция $\\arccos x$ по определению обратна к $\\sin x$ на отрезке $\\left[0, \\pi\\right]$ Она существует, так как $\\cos x$ монотонен и непрерывен на отрезке $\\left[0, \\pi\\right]$. Следовательно, $arccos x$ строго убывает и непрерывна на $[-1, 1].$",
+      "proof": "",
+      "tags": [],
+      "source": "matan_1_semester/12 lecture.tex"
+    },
+    {
+      "id": "T3",
+      "kind": "theorem",
+      "title": "",
+      "statement": "\\hypertarget{thrm4.18}{(Предел композиции 2)} Пусть $f: U_{\\sigma_{0}} (y_{0}) \\mapsto \\R, \\ y: \\mathring{U}_{\\delta_{0}} (x_{0}) \\mapsto U_{\\sigma_{0}}(y_{0}). $ Пусть $f$ непрерывна в точке $y_0$ и $\\lim\\limits_{x \\to x_{0}} y(x) = y_{0}$, Тогда: $$ \\exists \\lim\\limits_{x \\to x_{0}} f \\circ y(x) = \\lim\\limits_{x\\to x_{0}} f(y(x)) = f(y_{0}) $$",
+      "proof": "",
+      "tags": [],
+      "source": "matan_1_semester/12 lecture.tex"
+    },
+    {
+      "id": "T4",
+      "kind": "theorem",
+      "title": "",
+      "statement": "\\hypertarget{thrm4.19}{(Об обратной функции)} Пусть $f \\in \\text{C} \\big([a, b]\\big)$ строго монотонна на $[a, b]$. Тогда $\\exists f^{-1} \\in \\text{C} \\big( [m, M]\\big)$ (где $m = \\underset{x \\in [a, b]}{min} f (x)$, а $M = \\underset{x \\in [a, b]}{max} f (x)$) и имеет характер монотонности тот же, что и у $f$.",
+      "proof": "",
+      "tags": [],
+      "source": "matan_1_semester/12 lecture.tex"
+    },
+    {
+      "id": "T5",
+      "kind": "theorem",
+      "title": "",
+      "statement": "$\\sin x$ и $\\cos x$ непрерывны по всей своей области определения.",
+      "proof": "",
+      "tags": [],
+      "source": "matan_1_semester/12 lecture.tex"
+    }
+  ]
+}

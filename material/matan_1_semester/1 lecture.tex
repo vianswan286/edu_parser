@@ -1,0 +1,170 @@
+\section{Множество действительных чисел}
+
+    \subsection{Кванторы и множества}
+
+    Определим следующие символы: 
+
+    \begin{center}
+    \begin{tabular}{ll}
+        $\wedge$ ~---~ логическое <<и>>       & $\vee$ ~---~ логическое <<или>>     \\
+        $\Rightarrow$ ~---~ <<следует>>      &    $\lra$ ~---~ <<тогда и только тогда>>             \\
+          $\lnot$ ~---~ <<отрицание>>           &    $\forall$ ~---~ <<для любого>>                  \\
+           $\exists$ ~---~ <<существует>>          &       $:$ ~---~ <<такой, что>>               \\
+    $:=$ ~---~ <<равно по определению>> & $\exists !$ ~---~ <<существует и единственно>> \\
+    $\hookrightarrow$ ~---~ <<выполняется>> & $\varnothing$ ~---~ пустое множество
+    \end{tabular}
+    \end{center}
+
+    Множества можно задавать перечислением, если они конечны,
+    $X = \{ x_{1}, x_{2}, \dots x_{n} \}$ или как набор условий $X = \{ x: P(x) \} .$
+
+    Для множеств будем использовать следующие операции:
+
+    \begin{enumerate}
+        \item $X \cup Y := \{ z$: $z \in X \vee z \in Y \}$ ~---~ объединение;
+
+        \item $X \cap Y := \{ z$: $z \in X \wedge z \in Y \}$ ~---~ пересечение;
+
+        \item $X\setminus\text{}Y := \{ z$: $z \in X \wedge z \notin Y \}$ ~---~ разность.
+    \end{enumerate}
+    
+    
+    \begin{definition}
+	   Множество называется бесконечным если $\forall n \in \N$ $X$ содержит $n$ различных элементов. 
+    \end{definition}
+
+    \begin{definition}
+	   Пусть $X, Y$~---~непустые множества. Тогда $X \times Y = \{ (x,y)$: $x \in X, y \in Y \}$~---~декартово произведение.
+    \end{definition}
+
+    \begin{definition}
+	   Будем говорить, что задано соответствие $f$ из $X$ в $Y$, если $X \times Y$ выделено подмножество $G_{f} \subset X \times Y.$
+    \end{definition}
+
+    \textbf{При этом}, если $(x,y) \in G_{f},$ то говорят, что $y$ поставлен в соответствие $x.$
+
+    $D_{f} := \{ x \in X$: $\exists y \in Y \hookrightarrow (x,y) \in G_{f} \}$~---~область определения.
+
+    $E_{f} := \{ y \in Y$: $\exists x \in X \hookrightarrow (x,y) \in G_{f} \}$~---~область значений.
+
+    \begin{definition}
+        Если $D_{f} = X, $ то говорят, что задано отображение (многозначное) из $X$ в $Y$ $f$: $X \mapsto Y.$
+    \end{definition}
+
+    \begin{definition}
+        $X, Y \neq \varnothing$. Будем говорить, что $f$: $X \mapsto Y$~---~\textit{отображение}, если $D_{f} = X$ и $\forall x \in X$ $\exists ! y \in Y$: $(x,y) \in G_{f}.$ Последнее можно интерпретировать как $y = f(x) .$ Если не сказано обратного, то отображение считать однозначным.
+    \end{definition}
+
+    \begin{definition}
+        $X, Y, Z \neq \varnothing.$ $f$: $X \mapsto Y,$ $y$: $Y \mapsto Z$~---~отображения. \textit{Композицией отображений} $f$ и $g$ назовём отображение $h = g \circ f, $ если $h(x) = g(f(x)) \quad \forall x \in X.$
+    \end{definition}
+
+    \begin{definition}
+        Отображение $f$: $X \mapsto Y$~---~\textit{инъекция}, если $\forall x_{1}, x_{2} \in X \hookrightarrow x_{1} \neq x_{2} \Rightarrow f(x_{1}) \neq f(x_{2}).$
+    \end{definition}
+
+    \begin{definition}
+        Отображение $f$: $X \mapsto Y$~---~\textit{сюръекция}, если $E_{f} = Y.$  Каждый элемент множества $X$ вляется образом хотя бы одного элемента множества $Y.$
+    \end{definition}
+
+    \begin{definition}
+        Отображение $f$: $X \mapsto Y$ называется \textit{обратимым}, если $\exists f^{-1}$: $Y \mapsto X,$ такое, что
+        \begin{equation*}
+            \begin{cases}
+                f \circ f^{-1} = Id_{Y}\\
+                f^{-1} \circ f = Id_{X} & \text{ при этом $f^{-1}$ называется обратной к $f$.}
+            \end{cases}
+        \end{equation*}
+        
+    \end{definition}
+
+    \subsection{Аксиомы действительных чисел}
+
+    \begin{definition}
+        \textit{Множеством действительных чисел} называется непустое множество $\R$, в котором введены 2 бинарные операции:
+        
+        <<+>>: $\R^{2} \mapsto \R$
+
+        <<$\cdot$>>: $\text{ } \, \R^{2} \mapsto \R$
+
+        и отношение порядка "$\leq$". Удовлетворяют 15 аксиомам:
+
+    $    \begin{left}
+        \begin{tabular}{ll}
+        1. $a + b = b + a$ & $\forall a, b \in \R$ \\
+        2. $a + (b + c) = (a + b) + c$    &     $\forall a, b, c \in \R$             \\
+        3. $\exists 0 \in \R$: $a + 0 = 0 + a = 0$               &           $\forall a \in \R$       \\
+        4. $\exists (-a)$: $a + (-a) = 0$       &     $\forall a \in \R$             \\
+        5. $a \cdot b = b \cdot a$       &       $\forall a, b \in \R$           \\
+        6.  $(a \cdot b) \cdot c = a \cdot (b \cdot c)$      &    $\forall a, b, c \in \R$              \\
+        7.  $\exists 1 \neq 0$: $a \cdot 1 = a$      &    $\forall a \in \R$              \\
+
+        8.  $\displaystyle \exists \frac{1}{a}$: $\displaystyle a \cdot \frac{1}{a} = 1$      &         $\forall a \neq 0$         \\
+        
+        9.  $a \cdot (b + c) = a \cdot b + a \cdot c$      &    $\forall a, b, c \in \R$              \\
+        10.  $a \leq b \vee b \leq a$      &       $\forall a, b \in \R$           \\
+        11.  если $a \leq b \Rightarrow a + c \leq b + c$      &   $\forall a, b, c \in \R$               \\
+        12.  если $a \leq b \Rightarrow ac \leq bc$      &      $\forall a, b \in \R \wedge \forall c \geq 0$            \\
+        13.  если $a \leq b \wedge b \leq c \Rightarrow a \leq c$      &  $\forall a, b, c \in \R$                \\
+        14.   если $a \leq b \wedge b \leq a \Rightarrow a = b$    &  $\forall a, b \in \R$                \\
+        15.   Аксиома непрерывности     &      $\forall A, B \subset \R$           
+        \end{tabular}
+        \end{left} $
+    \end{definition}
+
+    \begin{definition}
+        \textit{Аксиома непрерывности.} 
+        
+        $\forall A, B \subset \R: A, B \neq \varnothing$ и $\forall a \in A, \forall b \in B \hookrightarrow a \leq b.$ $\exists c \in \R$: $a \leq c \leq b.$ То есть существует <<разделительное число>>.
+    \end{definition}
+
+    \begin{note}
+        Аксиома непрерывности не справедлива для рациональных чисел ($\Q$).
+    \end{note}
+    \begin{proof}
+        Предположим, что $\Q$ удовлетворяет аксиоме непрерывности.
+
+        $A := \{ x \in \Q$: $x \geq 0, x^2 < 2\}$, $B := \{ x \in \Q$: $x^2 > 2 \}$.
+
+        Если аксиомa непрерывности верна для $\Q$, то это означает, что $\exists c \in \Q$: $\forall a \in A, \newline \forall b \in B \hookrightarrow a \leq c \leq b$. Возьмём наши множества $A, B$, тогда $c^2 = 2,$ но $! \exists c \in \Q$: $c^2 = 2 \Rightarrow$ противоречие.
+    \end{proof}
+
+    \begin{definition}
+        $\overline{\R} := \R \cup \{ -\infty \} \cup \{ +\infty \}.$ Притом $\forall x \in \overline{\R} \neq \pm \infty \hookrightarrow -\infty < x < +\infty.$
+    \end{definition}
+    \begin{definition}
+        $\N_{0} := \N \cup \{ 0 \}.$
+    \end{definition}
+
+    \begin{definition}
+        $[a, b] := \{x \in \R$: $a \leq x \leq b \}.$
+    \end{definition}
+    \begin{definition}
+        $[a, b) := \{x \in \R$: $a \leq x < b \}.$
+    \end{definition}
+    \begin{definition}
+        $(a, b] := \{x \in \R$: $a < x \leq b \}.$
+    \end{definition}
+    
+    \begin{definition}
+        $(a, b) := \{x \in \R$: $a < x < b \}.$
+    \end{definition}
+    \begin{definition}
+        $a = b \Rightarrow (a, b) = \varnothing .$
+    \end{definition}
+
+    \newpage
+    \subsection{Супремумы, инфимумы и грани числовых множеств}
+
+    \begin{definition}
+        Множество $A \subset \R$ называется \textit{ограниченным сверху}, если $\exists M \in \R$: $a \leq M \quad \forall a \in A.$
+    \end{definition}
+    \begin{note}
+        Множество неограниченно сверху, если $\forall M \in \R \quad \exists a \in A$: $a(M) > M.$ Где $a \equiv a(M).$ Т.е. мы как бы "подбираем" $\text{ }a$ в зависимости от данного $M.$
+    \end{note}
+    \begin{definition}
+        Множество $A \subset \R$ называется \textit{ограниченным снизу}, если $\exists m \in \R$: $m \leq a  \quad \forall a \in A.$
+    \end{definition}
+    \begin{definition}
+        Множество $A \subset \R$ называется \textit{ограниченным}, если оно ограниченно и сверху, и снизу.
+    \end{definition}

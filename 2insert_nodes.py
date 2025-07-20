@@ -43,32 +43,65 @@ class KnowledgeInserter:
         }
     
     def process_embeddings_dir(self, embeddings_dir: Path) -> None:
-        """Process all JSON files in the embeddings directory."""
+        """
+        Process all JSON files in the embeddings directory and its subdirectories.
+        
+        Args:
+            embeddings_dir: Root directory containing the embedding JSON files
+        """
         if not embeddings_dir.exists() or not embeddings_dir.is_dir():
             logger.error(f"Embeddings directory not found: {embeddings_dir}")
             return
         
-        # Get all JSON files in the embeddings directory
-        json_files = list(embeddings_dir.glob("*.json"))
+        # Get all JSON files in the embeddings directory and its subdirectories
+        json_files = list(embeddings_dir.rglob("*.json"))
         self.stats['total_files'] = len(json_files)
         
         if not json_files:
-            logger.warning(f"No JSON files found in {embeddings_dir}")
+            logger.warning(f"No JSON files found in {embeddings_dir} or its subdirectories")
             return
         
-        logger.info(f"Found {len(json_files)} JSON files to process")
+        # Group files by their parent directory for better progress reporting
+        files_by_dir = {}
+        for file_path in json_files:
+            parent_dir = str(file_path.parent.relative_to(embeddings_dir))
+            if parent_dir not in files_by_dir:
+                files_by_dir[parent_dir] = []
+            files_by_dir[parent_dir].append(file_path)
         
-        # Process each file
-        for json_file in tqdm(json_files, desc="Processing files"):
-            self.process_embedding_file(json_file)
+        logger.info(f"Found {len(json_files)} JSON files in {len(files_by_dir)} directories")
+        
+        # Process each directory
+        for dir_name, dir_files in files_by_dir.items():
+            logger.info(f"Processing {len(dir_files)} files in directory: {dir_name or '.'}")
+            
+            # Process each file in the directory
+            for json_file in tqdm(dir_files, desc=f"Processing {dir_name or 'root'}"):
+                # Pass the embeddings root to maintain directory structure in lecture_id
+                self.process_embedding_file(json_file, embeddings_dir)
     
-    def process_embedding_file(self, file_path: Path) -> None:
-        """Process a single embedding JSON file."""
+    def process_embedding_file(self, file_path: Path, embeddings_root: Optional[Path] = None) -> None:
+        """
+        Process a single embedding JSON file.
+        
+        Args:
+            file_path: Path to the JSON file to process
+            embeddings_root: Root directory of the embeddings (used to determine relative paths)
+        """
         try:
             with open(file_path, 'r', encoding='utf-8') as f:
                 data = json.load(f)
             
-            lecture_id = data.get('lecture_id', file_path.stem)
+            # Determine the lecture ID based on the file path
+            if embeddings_root is not None:
+                # Get the relative path from the embeddings root, convert to string, and remove .json extension
+                rel_path = str(file_path.relative_to(embeddings_root).with_suffix(''))
+                # Use the relative path as part of the lecture ID to maintain uniqueness
+                lecture_id = f"{rel_path}"
+            else:
+                # Fallback to the original behavior if no root is provided
+                lecture_id = data.get('lecture_id', file_path.stem)
+            
             units = data.get('units', [])
             
             if not units:

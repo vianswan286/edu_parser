@@ -1,0 +1,49 @@
+{
+  "units": [
+    {
+      "id": "D1",
+      "kind": "definition",
+      "title": "",
+      "statement": "Будем говорить что $f \\in \\widetilde{L}_1^{loc}(\\R^n)$ и называть её локально интегрируемой по Лебегу, если $\\forall R > 0 \\ f \\in \\widetilde{L}_1(B_R(0), \\LL^n)$.",
+      "proof": "",
+      "tags": [],
+      "source": "matan_3_semestr/Lecture_16.tex"
+    },
+    {
+      "id": "D2",
+      "kind": "definition",
+      "title": "",
+      "statement": "Пусть $f \\in \\Tilde{L}_1^{loc}(\\R^n)$. Тогда будем называть $x^* \\in \\R^n$ точкой Лебега функции $f$, если \\[\\lim\\limits_{r \\rightarrow +0} \\dfrac{1}{\\LL^n(B_r(x^*))}\\int\\limits_{B_r(x^*)} |f(y) - f(x^*)|dy = 0.\\]",
+      "proof": "",
+      "tags": [],
+      "source": "matan_3_semestr/Lecture_16.tex"
+    },
+    {
+      "id": "D3",
+      "kind": "definition",
+      "title": "Максимальная функция Харди-Литтлвуда",
+      "statement": "Пусть $f \\in \\Tilde{L}_1^{loc}(\\R^n)$. Определим $M[f](x)$ как \\[M[f](x) := \\sup\\limits_{r > 0}\\dashint_{B_r(x)} |f(y)|dy\\].",
+      "proof": "",
+      "tags": [],
+      "source": "matan_3_semestr/Lecture_16.tex"
+    },
+    {
+      "id": "T4",
+      "kind": "theorem",
+      "title": "",
+      "statement": "Пусть $f \\in \\mathcal{R}([a, b])$. Тогда $f \\in \\Tilde{L}_1([a, b])$. Более того, верно следующее: \\[ \\int\\limits_a^b f(x)dx = \\int\\limits_{[a, b]}f(x)d\\LL^1(x).\\]",
+      "proof": "",
+      "tags": [],
+      "source": "matan_3_semestr/Lecture_16.tex"
+    },
+    {
+      "id": "T5",
+      "kind": "theorem",
+      "title": "",
+      "statement": "Пусть $f \\in \\widetilde{L}_1^{loc}(\\R^n)$. Тогда п.в. $x \\in \\R^n$ является точкой Лебега функции $f$.",
+      "proof": "",
+      "tags": [],
+      "source": "matan_3_semestr/Lecture_16.tex"
+    }
+  ]
+}

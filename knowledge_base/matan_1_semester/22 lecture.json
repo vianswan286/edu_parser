@@ -1,0 +1,103 @@
+{
+  "units": [
+    {
+      "id": "D1",
+      "kind": "definition",
+      "title": "",
+      "statement": "$\\Cm$~---~множество пар вещественных чисел $(x_{1}, x_{2})$ с введёнными следующим образом операциями: \\begin{enumerate} \\item $(x_{1}, x_{2}) \\pm (y_{1}, y_{2}) = (x_{1} \\pm y_{1}, x_{2} \\pm y_{2})$, $\\forall (x_{1}, x_{2}), (y_{1}, y_{2}) \\in \\Cm$; \\item $\\alpha (x_{1}, x_{2}) = (\\alpha x_{1}, \\alpha x_{2})$, $\\forall (x_{1}, x_{2}) \\in \\Cm, \\alpha \\in \\R$; \\item $(x_{1}, x_{2}) \\cdot (y_{1}, y_{2}) = (x_{1} y_{1} - x_{2} y_{2}, x_{2} y_{1} + x_{1} y_{2})$, $\\forall (x_{1}, x_{2}), (y_{1}, y_{2}) \\in \\Cm$; \\item $\\forall z \\neq 0 \\ \\exists! \\frac{1}{z}$: $z \\cdot \\frac{1}{z} = 1$. \\end{enumerate}",
+      "proof": "",
+      "tags": [],
+      "source": "matan_1_semester/22 lecture.tex"
+    },
+    {
+      "id": "D2",
+      "kind": "definition",
+      "title": "",
+      "statement": "Пусть $z = x + iy$. Тогда $e^{z} := e^{x} \\cdot (\\cos{y} + i \\sin{y})$.",
+      "proof": "",
+      "tags": [],
+      "source": "matan_1_semester/22 lecture.tex"
+    },
+    {
+      "id": "D3",
+      "kind": "definition",
+      "title": "",
+      "statement": "Пусть $z \\in \\Cm$, $z = a + bi$. Тогда его \\textit{комплексно сопряженным} числом назовем $\\overline{z} := a - bi$.",
+      "proof": "",
+      "tags": [],
+      "source": "matan_1_semester/22 lecture.tex"
+    },
+    {
+      "id": "D4",
+      "kind": "definition",
+      "title": "",
+      "statement": "\\textit{Комплексным полиномом $n$-ой степени} назовём $\\displaystyle P_{n} (z) = \\sum_{k = 0}^{n} \\alpha_{k} z^{k}$, притом $\\alpha_{k} \\in \\Cm \\ \\forall k \\in \\{ 0, 1, \\ldots, n \\}$.",
+      "proof": "",
+      "tags": [],
+      "source": "matan_1_semester/22 lecture.tex"
+    },
+    {
+      "id": "D5",
+      "kind": "definition",
+      "title": "",
+      "statement": "\\textit{Алгребраической дробью} назовём $R (z) = \\frac{P_{n} (z)}{Q_{m} (z)}$. Притом, если $n \\geq m$, то дробь называется \\textit{неправильной}, иначе \\textit{правильной}.",
+      "proof": "",
+      "tags": [],
+      "source": "matan_1_semester/22 lecture.tex"
+    },
+    {
+      "id": "T6",
+      "kind": "theorem",
+      "title": "",
+      "statement": "Пусть $a, b \\in \\R$: $a < b$ и существуют первообразные для $f_{1}$ на $(a, b)$ и $f_{2}$ на $(a, b)$. Тогда если $\\alpha_{1}, \\alpha_{2} \\in \\R$: $|\\alpha_{1}| + |\\alpha_{2}| > 0$, то существует первообразная для $\\alpha_{1} f_{1} + \\alpha_{2} f_{2}$ и более того $\\displaystyle \\int \\bigg( \\alpha_{1} f_{1} (x) + \\alpha_{2} f_{2} (x) \\bigg) \\, dx = \\alpha_{1} \\int f_{1} (x) \\, dx + \\alpha_{2} \\int f_{2} (x) \\, dx$.",
+      "proof": "",
+      "tags": [],
+      "source": "matan_1_semester/22 lecture.tex"
+    },
+    {
+      "id": "T7",
+      "kind": "theorem",
+      "title": "",
+      "statement": "Пусть $a, b \\in \\R$: $a < b$ и $f$ имеет первообразную $F$ на $(a, b)$. Пусть $x$: $(\\alpha, \\beta) \\mapsto (a, b)$ дифференцируема на $(\\alpha, \\beta)$. Тогда $\\displaystyle \\int f \\big( x (t) \\big) x' (t) \\, dt = \\int f \\big( x (t) \\big) \\, dx(t) = F \\big( x(t) \\big) + C$.",
+      "proof": "",
+      "tags": [],
+      "source": "matan_1_semester/22 lecture.tex"
+    },
+    {
+      "id": "T8",
+      "kind": "theorem",
+      "title": "",
+      "statement": "Пусть $a, b \\in \\R$: $a < b$ и $U, V$ дифференцируемы на $(a, b)$. Тогда выполняется $\\displaystyle \\int U (x) \\, dV(x) = U(x) \\cdot V(x) - \\int V (x) \\, dU(x)$, где $dV(x) = V' (x) dx$, $dU(x) = U' (x) dx$.",
+      "proof": "",
+      "tags": [],
+      "source": "matan_1_semester/22 lecture.tex"
+    },
+    {
+      "id": "T9",
+      "kind": "theorem",
+      "title": "",
+      "statement": "\\hypertarget{thm6.4}{Для любых полиномов $P_{n} (z)$ и $Q_{m} (z)$: $n \\geq m$, $\\exists! D_{n - m} (z)$ и $R (z)$: $\\displaystyle \\frac{P_{n} (z)}{Q_{m} (z)} = D_{n - m} (z) + \\frac{R (z)}{Q_{m} (z)}$, где $\\deg{R (z)} < m$.}",
+      "proof": "",
+      "tags": [],
+      "source": "matan_1_semester/22 lecture.tex"
+    },
+    {
+      "id": "T10",
+      "kind": "theorem",
+      "title": "",
+      "statement": "\\hypertarget{thm6.5}{(Теорема Безу) Число $z_{0}$ является корнем полинома $P_{n} (z) \\Leftrightarrow P_{n} (z)$ делится на $(z - z_{0})$ без остатка.}",
+      "proof": "",
+      "tags": [],
+      "source": "matan_1_semester/22 lecture.tex"
+    },
+    {
+      "id": "T11",
+      "kind": "theorem",
+      "title": "",
+      "statement": "\\hypertarget{thm6.6}{(Основная теорема алгебры) Пусть $n \\in \\N$. Тогда любой полином $P_{n} (z)$ имеет хотя бы один комплексный корень.}",
+      "proof": "",
+      "tags": [],
+      "source": "matan_1_semester/22 lecture.tex"
+    }
+  ]
+}

@@ -1,0 +1,206 @@
+\begin{example}
+    Рассмотрим интеграл $\int\limits_{1}^{+\infty} \dfrac{\sin x}{x^{\alpha}} dx $. Обозначим $f(x) = \sin x, \ g(x) = \dfrac{1}{x^{\alpha}}$. Воспользуемся признаком Дирихле, так как:
+    \begin{enumerate}
+        \item $ \left | \int \limits_{1}^{x} \sin t \ dt \right | = | \cos x - \cos 1 | \le 2 $
+        \item Если $\alpha > 0$, то $\dfrac{1}{x^{\alpha}} \downarrow 0$
+    \end{enumerate}
+    $\Rightarrow$ по признаку Дирихле сходится. 
+
+    \noindent Если $\alpha \le 0$~---~расходится. Воспользуемся отрицанием условия Коши: $\exists \ \epsilon > 0 \ : \forall \ \delta > 0 \ \exists \ b', b'' \in [\delta, + \infty) \text{ т.ч. } \left | \int \limits_{b'}^{b''} \dfrac{\sin x}{x^{\alpha}} dx \right | \ge \epsilon$
+
+    \noindent $\exists \ \epsilon = \frac{1}{2} : \ \forall \ \delta > 0 \ b' = \frac{\pi}{6} + 2 \pi n > \delta, \ b'' = \frac{5\pi}{6} + 2\pi n > \delta$. Тогда $\int\limits_{b'}^{b''} \frac{\sin x}{x^{\alpha}} dx \ge \frac{1}{2} \int\limits_{b'}^{b''} dx = \frac{\pi}{3} > \frac{1}{2}$. Значит интеграл расходится. 
+
+    \noindent Исследуем на абсолютную сходимость. Если $\alpha > 1$, то $\dfrac{|\sin x|}{x^{\alpha}} \le \frac{1}{x^{\alpha}}$, при этом $\int\limits_{1}^{+\infty} \frac{1}{x^{\alpha}} dx$~---~сходится абсолютно $\Rightarrow \int\limits_{1}^{+\infty} \frac{\sin x}{x^{\alpha}} dx$~---~сходится абсолютно. 
+
+    \noindent Рассмотрим $0 < \alpha \le 1$. Заметим, что $|\sin x| \ge \sin^2 x = \frac{1 - \cos 2x}{2}$. $\frac{|\sin x|}{x^{\alpha}} \ge \frac{1 - \cos 2x}{2x^{\alpha}}$. Здесь мы имеем разность двух функций $\frac{1}{2x^{\alpha}}$ и $\frac{-\cos 2x}{2x^{\alpha}}$. При этом $\int\limits_{1}^{+\infty} \frac{1}{2x^{\alpha}}$~---~расходится, $\int\limits_{1}^{+\infty} \frac{-\cos 2x}{x^{\alpha}}$~---~сходится по признаку Дирихле. Тогда интеграл от функции, полученной суммой двух данных~---~расходится. 
+\end{example}
+
+\begin{corollary}[Из признака Абеля]
+     Пусть $f \in \mathcal{C}([a, b)), \ g \in \mathcal{C}^1([a, b)), \ g$ -- нестрого монотонна и $\exists \ \lim\limits_{x \rightarrow b-0} g(x) = C \neq 0$. Тогда $\int \limits_{a}^{b} f(x) dx$ и $\int\limits_{a}^{b}f(x)g(x) dx$ ~---~ имеют одинаковый тип сходимости и абсолютной сходимости. 
+\end{corollary}
+
+\begin{proof}
+    Рассмотрим интегралы $\int\limits_{a}^{b}|f(x)|dx$ и $\int\limits_{a}^{b}|f(x)||g(x)| dx$. Так как $\exists \ \lim\limits_{x\rightarrow b-0} |g(x)| = |C|$. Тогда $|g(x)| \overset{\text{сх.}}{\sim} 1, x \rightarrow b-0$. По второму признаку сравнения, это означает, что рассматриваемые интегралы сходятся или расходятся одновременно.
+
+    \noindent Пусть $\int\limits_{a}^{b}f(x)dx$ ~---~ сходится, тогда по признаку Абеля получаем, что  $\int\limits_{a}^{b}f(x)g(x)dx$
+
+    \noindent Пусть наоборот $\int\limits_{a}^{b}f(x)g(x)dx$ ~---~ сходится. Так как $\exists \ \lim \limits_{x\rightarrow b-0} g(x) = C \neq 0 \Rightarrow \exists \widetilde{b} \in (a, b)$ т.ч. $g(x) \neq 0 \ \forall x \in (\widetilde{b}, b)$. Тогда можем записать $f(x) = f(x)g(x)\cdot \frac{1}{g(x)}$. Тогда $\exists \lim\limits_{x\rightarrow b-0} = \frac{1}{C} \neq 0$. При этом $\frac{1}{g} \in \mathcal{C}^1((\widetilde{b}, b))$ и кроме того $\frac{1}{g}$ ~---~ монотонна на $(\widetilde(b), b)$. По признаку Абеля, рассматривая как функции $\phi(x) = f(x)g(x)$ и $\psi(x) = \frac{1}{g(x)}$, интеграл сходится, так как мы предположили, что $\phi(x)$ ~---~ сходится, а $\psi(x)$ ~---~ монотонна. Тогда $\int\limits_{\widetilde{b}}^{b}f(x)g(x)\frac{1}{g(x)}dx = \int\limits_{\widetilde{b}^{b}}f(x) dx$ тоже сходится на $(\widetilde{b}, b)$. Следовательно, по принципу локализации, $\int\limits_{a}^{b} f(x)dx$ -- сходится.  
+\end{proof}
+
+\begin{corollary}
+    Монотонность в следствии из признака Абеля нельзя отбросить. 
+\end{corollary}
+\begin{example}
+    Рассмотрим $\int\limits_{1}^{+\infty} \frac{\sin x}{\sqrt{x}}(1 + \frac{\sin x}{\sqrt{x}}) dx$. Обозначим $f(x) = \frac{\sin x}{\sqrt{x}}, \ g(x) = 1 + \frac{\sin x}{\sqrt{x}}$.  $\int\limits_{1}^{+\infty} \frac{\sin x}{\sqrt{x}} dx$ ~---~ сходится, $\exists \ \lim \limits_{x \rightarrow + \infty} (1 + \frac{\sin x}{\sqrt{x}}) = 1 \neq 0$. Но $g(x)$ не является монотонной. $\frac{\sin x}{\sqrt{x}}(1 + \frac{\sin x}{\sqrt{x}}) = \frac{\sin x}{\sqrt{x}} + \frac{\sin^2x}{x}$. При этом $\int\limits_{1}^{+\infty} \frac{\sin^2 x}{x} dx$ ~---~ расходится. Получаем, что $\int\limits_{1}^{+\infty} \frac{\sin x}{\sqrt{x}}(1 + \frac{\sin x}{\sqrt{x}}) dx$ ~---~ расходится. Также, этот пример показывает, что замена на функцию, эквивалентную по сходимости, не работает для знакопеременных функций. 
+\end{example}
+
+\begin{example}
+    $\int\limits_{1}^{+\infty} x^{\alpha}\ln(1 + \frac{1}{x})\sin x^2 dx$. Заметим, что $\ln (1 + \frac{1}{x}) \sim \frac{1}{x}$ -- монотонны. Тогда исходный интеграл сходится по следствию из признака Абеля $\int\limits_{1}^{+\infty} x^{\alpha - 1} \sin x^2 dx$, Далее уже необходимо исследовать эту функцию 
+\end{example}
+
+\begin{example}
+    Пусть $f(x) \ge 0 \ \forall x \in [1, + \infty), f \in \mathcal{C}([1, +\infty)) \text{ и } \int\limits_{1}^{+\infty} f(x) dx $ ~---~ сходится. Верно ли, что $f(x) \rightarrow 0$. 
+
+    \noindent Неверно. \textbf{ЗДЕСЬ НУЖЕН РИСУНОК ТРЕУГОЛЬНИКОВ}. 
+
+    \noindent Зададим функцию в каждой натуральной точке. В каждой натуральной точке будет располагаться треугольник высоты $1$ и с основанием $2 \cdot 2^{-n}$. Интеграл будет сходиться, но предел будет не равен $0$
+\end{example}
+
+\section{Ряды}
+
+\subsection{Числовые ряды}
+
+\begin{definition}
+    \textit{Рядом} будем называть пару последовательностей $\{a_n\}_{n = 1}^{\infty} \subset \R$~---~члены ряда и $\{ S_n\}_{n = 1}^{\infty} \subset \R$~---~частичные суммы ряда, где $S_n = \sum_{k = 1}^{n} a_k$.
+    
+    Обозначать \textit{ряд} будем $\sum_{k = 1}^{\infty}a_n$. 
+\end{definition}
+
+\begin{definition}
+    Ряд $\sum_{n = 1}^{\infty} a_n$ называется \textit{сходящимся}, если $\exists \ \lim\limits_{n\to \infty} S_n \in \R$. В противном случае ряд называется \textit{расходящимся}. 
+\end{definition}
+
+\begin{definition}
+    Ряд \textit{сходится абсолютно}, если  $\sum_{n = 1}^{\infty}|a_n|$~---~сходится
+\end{definition}
+
+\begin{definition}
+    Ряд $\sum_{n = 1}^{\infty} a_n$ называется \textit{условно сходящимся}, если $\sum_{n = 1}^{\infty} a_n$ сходится, но не абсолютно. 
+\end{definition}
+
+\begin{definition}
+    $\lim \limits_{n\rightarrow \infty}S_n$ называется суммой ряда.
+\end{definition}
+
+\begin{theorem}[Необходимые условия сходимости числового ряда]
+    Если ряд сходится, то $a_n \rightarrow 0$, $n \rightarrow +\infty$.
+\end{theorem}
+
+\begin{proof}
+    Если ряд сходится, то $\exists \ \lim \limits_{x\rightarrow \infty} S_n \in \R$.
+    
+$$a_n = S_n - S_{n - 1} \ \forall n \geq 2 \Rightarrow \exists \lim \limits_{n \rightarrow \infty} a_n = \lim \limits_{n\rightarrow \infty}S_n - \lim\limits_{n \rightarrow \infty}S_{n - 1} = 0.$$
+\end{proof}
+
+\begin{theorem}[Критерий Коши для числового ряда]
+    $\sum_{n = 1}^{\infty} a_n$ сходится $\Leftrightarrow$ выполнено условие Коши для ряда: $\forall \epsilon > 0 \ \exists \ N(\epsilon) : \forall \ n, m \ge N(\epsilon) \hookrightarrow \left | \sum_{k = n}^{m} a_k \right | < \epsilon$.
+\end{theorem}
+
+\begin{proof}
+    Заметим, что утверждение равносильно условию Коши для последовательности $\{ S_n\}$.
+\end{proof}
+
+\begin{theorem}
+    Пусть $\sum_{n = 1}^{\infty} a_n$~---~сходится, $\sum_{n = 1}^{\infty} b_n$~---~сходится, $\alpha \in \R$, $\beta \in \R$. Тогда $\sum_{n = 1}^{\infty} (\alpha a_n + \beta b_n) $~---~тоже сходится, при этом $\sum_{n = 1}^{\infty} (\alpha a_n + \beta b_n) = \alpha \sum_{n = 1}^{\infty} a_n + \beta \sum_{n = 1}^{\infty} b_n$.
+\end{theorem}
+
+\begin{proof}
+    Доказательство состоит в применении теоремы о пределе суммы для числовых последовательностей $S_n = \sum_{n = 1}^{\infty} a_n$ и $\Sigma_n = \sum_{n = 1}^{\infty} b_n$.
+\end{proof}
+
+\begin{corollary}
+    Пусть $\sum_{n = 1}^{\infty} a_n + b_n$ -- ряд. Пусть $\sum_{n = 1}^{\infty} a_n$ ~---~ сходится, а $\sum_{n = 1}^{\infty} b_n$ ~---~ расходится, то исходный ряд расходится. 
+\end{corollary}
+
+\begin{theorem} [Принцип локализации]
+    $\forall n_0 \in \N \hookrightarrow \sum_{n = 1}^{\infty} a_n$ ~---~ сходится $\Leftrightarrow \sum_{n = n_0}^{\infty} a_n$ сходится.
+\end{theorem}
+
+\begin{proof}
+    $\exists \ \lim\limits_{N \rightarrow \infty} \sum_{n = 1}^{N} a_n \in \R \Leftrightarrow \exists \lim \limits_{N \rightarrow \infty } \sum_{n = n_0}^{N} a_n \in \R$.
+\end{proof}
+
+\subsection{Ряды с неотрицательными членами}
+
+\begin{lemma}
+    \hypertarget{lemm18.1}{Пусть $a_n \ge 0 \ \forall n \in \N$. Тогда $\sum_{n = 1}^{\infty} a_n$~---~сходится $\Leftrightarrow \ \sup\limits_{N \in \N} \sum_{n = 1}^{N} a_n < +\infty$.}
+\end{lemma}
+
+\begin{proof}
+    Так как $\forall n \in \N$ $a_n \geq 0$, то $S_N = \sum_{n = 1}^{N} a_n$~---~монотонно неубывает $\Rightarrow$ по теореме Вейерштрасса $\exists \ \lim \limits_{N \rightarrow \infty }S_N = \sup\limits_{N} S_N \in \overline{\R}$. Поэтому $\sup \limits_{N} S_N < +\infty \Leftrightarrow \lim \limits_{N \rightarrow \infty} S_N < + \infty$.
+\end{proof}
+
+\begin{theorem}[Признак сравнения]
+    Пусть $0 \le a_n \le b_n \ \forall n \in \N$. Тогда если $\sum_{n = 1}^{\infty} b_n$~---~сходится, то $\sum_{n = 1}^{\infty} a_n$~---~сходится. И наоборот: если $\sum_{n = 1}^{\infty} a_n$~---~расходится, то $\sum_{n = 1}^{\infty} b_n$~---~расходится.
+\end{theorem}
+
+\begin{proof}
+    Если $\sup \limits_{N} \sum\limits_{n = 1}^N a_n = +\infty$, то в силу неравенства $\sup\limits_{N} \sum_{n = 1}^{N} b_n = + \infty$, поэтому в силу \hyperlink{lemm18.1}{леммы}, из расходимости $\sum_{n = 1}^{\infty} a_n \Rightarrow \sum_{n = 1}^{\infty} b_n$~---~расходится. 
+
+    \noindent Наоборот, $\sup \limits_{N \in \N} \sum_{n = 1}^{N} b_n < + \infty \Rightarrow \sup\limits_{N \in \N} \sum_{n = 1}^{N} a_n$. В силу \hyperlink{lemm18.1}{леммы} получаем, что $\sum_{n = 1}^{\infty} b_n$ ~---~ сходится $\Rightarrow \sum_{n = 1}^{\infty} a_n$~---~сходится.
+\end{proof}
+
+\begin{definition}
+    Пусть $\{a_n\}_{n = 1}^{\infty}$, $\{b_n\}_{n = 1}^{\infty}$~---~две неотрицательных последовательности. Будем говорить, что $a_n \overset{\text{сх.}}{\sim} b_n, n \rightarrow +\infty$, если $\exists n_0 \in \N$ и $\exists m > 0, M > 0$: $$ma_n \le b_n \le Ma_n, \ \forall n \ge n_0.$$
+\end{definition}
+
+\begin{remark}
+    Аналогично, как и для функций, можно доказать, что это отношение эквивалентности на множестве неотрицательных последовательностей.
+\end{remark}
+
+\begin{theorem}[Второй признак сравнения]
+    Пусть $\sum_{n = 1}^{\infty} a_n$ и $\sum_{n = 1}^{\infty} b_n$~---~ряды с неотрицательными членами. Пусть $a_n \overset{\text{сх.}}{\sim} b_n$. Тогда ряды $\sum_{n = 1}^{\infty} a_n$ и $\sum_{n = 1}^{\infty} b_n$~---~сходятся или расходятся одновременно.  
+\end{theorem}
+
+\begin{proof}
+    Доказательство аналогично доказательству соответствующей теоремы для несобственных интегралов.
+\end{proof}
+
+\begin{question}
+    Пусть $f \in \mathcal{C}([1, + \infty)), f \ge 0$ на $[1, + \infty)$. Как связаны условия? 
+    \begin{enumerate}
+        \item $\sum_{n = 1}^{\infty} f(n)$~---~сходится;
+        \item $\int\limits_{1}^{+\infty} f(x) dx$~---~сходится.
+    \end{enumerate}
+
+    \textbf{Ответ}: не связаны.
+\end{question}
+
+
+\begin{theorem}[Интегральный признак]
+    Пусть $f(x)$~---~нестрого монотонна на луче $[1, +\infty)$. Тогда $\sum_{n = 1}^{\infty} f(n)$~---~сходится $\Leftrightarrow \int\limits_{1}^{+\infty}f(x)dx $~---~сходится. 
+\end{theorem}
+
+\begin{proof}
+    Без ограничения общности, считаем, что $f$ нестрого убывает.
+    
+    Тогда $\exists \lim \limits_{x\rightarrow +\infty} f(x) \in \overline{\R}$.
+
+    \begin{enumerate}
+    \item Пусть $\lim\limits_{x \rightarrow +\infty}f(x) \neq 0$. Тогда $f(n) \nrightarrow 0, n \rightarrow \infty \Rightarrow$ не выполнено необходимое условие сходимости ряда, то есть $\sum_{n = 1}^{\infty} f(n)$~---~расходится.
+
+    \noindent Кроме того, $\exists C \in [1, +\infty)$, $\exists m > 0$: $\forall x > C \hookrightarrow \left[ 
+      \begin{gathered} 
+        f(x) \ge m , \forall x > C\\ 
+        f(x) \le -m , \forall x > C\\ 
+      \end{gathered} \right.$
+      
+      В любом случае $\int\limits_{1}^{+\infty}f(x) dx$ ~---~ расходится. 
+
+      \item Рассмотрим случай $f(x) \downarrow 0, x \rightarrow \infty$ (то есть $f(x)$ монотонно стремится к $0$). 
+
+      Обозначим за $S_n = \sum_{k = 1}^n f(k)$~---~сумму первых $n$ чисел ряда. 
+      
+      Из монотонности следует, что $\sum_{k = 1}^n f(k) \geq \sum_{k = 1}^n \int\limits_{k}^{k+1} f(x) dx \hspace{0.1cm} = \int\limits_1^{n+1} f(x)dx \quad (1)$.
+      
+      Из монотонности и того, что $f(k) \geq f(x) \geq f(k + 1) \hspace{0.3cm} \forall x \in [k, k + 1] \Rightarrow$ 
+      \[\sum_{k = 2}^n f(k) \leq \sum_{k = 2}^n \int\limits_{k - 1}^{k}f(x)dx \hspace{1cm}(2)\]
+
+      Так как $f$ неотрицательна $\Rightarrow$
+      
+      $$\int\limits_1^{+\infty}f(x)\hspace{0.1cm}dx\text{~---~сходится} \Longleftrightarrow \sup_{N\in \N} \int_{1}^{N}f(x)\hspace{0.1cm}dx < +\infty \quad (**)$$
+      \[\sum_{k = 1}^{\infty}f(k)\text{~---~сходится} \Longleftrightarrow \sup_{N \in \N} \sum_{k = 1}^{N}f(k) < +\infty \hspace{1cm}(*)\]
+
+      Из $(1)$ и $(*)$ вытекает, что если $\sum_{n = 1}^{\infty} f(n)$~---~сходится, то $\displaystyle \int_{1}^{+\infty} f(x), dx$~---~сходится.
+
+      Из $(2)$, $(*)$ и $(**)$ вытекает, что из $\displaystyle \int_{1}^{+\infty} f(x), dx$~---~сходится $\Rightarrow \sum_{n = 2}^{\infty} f(n)$~---~сходится $\Rightarrow \sum_{n = 1}^{\infty} f(n)$ сходится в силу принципа локализации.
+      \end{enumerate}
+\end{proof}
+
+\begin{note}
+    Монотонность в интегральном признаке нельзя отбросить.
+\end{note}
+
+\begin{example}
+    
+\end{example}

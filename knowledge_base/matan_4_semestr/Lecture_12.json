@@ -1,0 +1,94 @@
+{
+  "units": [
+    {
+      "id": "D1",
+      "kind": "definition",
+      "title": "",
+      "statement": "Определим дельта-функцию Дирака как $\\langle \\delta, \\phi \\rangle := \\phi(0) \\quad \\forall \\phi \\in \\D(\\R^n).$",
+      "proof": "",
+      "tags": [],
+      "source": "matan_4_semestr/Lecture_12.tex"
+    },
+    {
+      "id": "D2",
+      "kind": "definition",
+      "title": "",
+      "statement": "Пусть $\\{\\lambda_m\\} \\subset \\D'(\\R^n)$ и $\\lambda \\in \\D'(\\R^n)$. Будем говорить что $\\lambda_m \\xrightarrow[\\D' (\\R^n)]{} \\lambda, m \\ra +\\infty$, если \\[ \\forall \\phi \\in D(\\R^n) \\hookrightarrow \\langle \\lambda_m, \\phi \\rangle \\ra \\langle \\lambda, \\phi \\rangle, m \\ra +\\infty. \\]",
+      "proof": "",
+      "tags": [],
+      "source": "matan_4_semestr/Lecture_12.tex"
+    },
+    {
+      "id": "D3",
+      "kind": "definition",
+      "title": "",
+      "statement": "Если $\\lambda$~---~сингулярное распределение и $\\exists \\{f_m\\} \\in L_1^{loc}(\\R^n)$: $f_m \\xrightarrow[D'(\\R^n)]{} \\lambda$, $m \\ra +\\infty$, то $\\{f_m\\}$ называется регуляризацией $\\lambda$.",
+      "proof": "",
+      "tags": [],
+      "source": "matan_4_semestr/Lecture_12.tex"
+    },
+    {
+      "id": "D4",
+      "kind": "definition",
+      "title": "",
+      "statement": "Пусть $g \\in C^{\\infty}(\\R^n)$ и $\\lambda \\in D'(\\R^n)$. Определим произведение $g\\cdot\\lambda$ как функционал, действующий на $\\phi \\in D(\\R^n)$ следующим образом: \\[ \\langle g \\cdot \\lambda, \\phi \\rangle = \\langle \\lambda, g \\cdot \\phi \\rangle \\quad \\tag{$\\ast$} \\]",
+      "proof": "",
+      "tags": [],
+      "source": "matan_4_semestr/Lecture_12.tex"
+    },
+    {
+      "id": "D5",
+      "kind": "definition",
+      "title": "",
+      "statement": "$\\delta_x$~-- сдвинутую дельта-функцию Дирака определим как \\[ \\forall \\phi \\in D(\\R^n) \\hookrightarrow (\\delta_x, \\phi) = \\phi(x). \\]",
+      "proof": "",
+      "tags": [],
+      "source": "matan_4_semestr/Lecture_12.tex"
+    },
+    {
+      "id": "D6",
+      "kind": "definition",
+      "title": "",
+      "statement": "Пусть $\\lambda \\in D'(\\R^n)$, $\\alpha \\in (\\N_0)^n$. Определим $D^\\alpha \\lambda$~---~такой функционал, который на любую пробную функцию $\\phi \\in D(\\R^n)$, действует по правилу: \\[ \\langle D^{\\alpha} \\lambda, \\phi \\rangle = (-1)^{|\\alpha|} \\langle \\lambda, D^{\\alpha}\\phi \\rangle, \\] где \\[ D^{\\alpha}\\phi:= \\dfrac{\\partial^{|\\alpha|\\phi(x)}}{\\partial x_1^{\\alpha_1}\\dots\\partial x_n^{\\alpha_n}}. \\]",
+      "proof": "",
+      "tags": [],
+      "source": "matan_4_semestr/Lecture_12.tex"
+    },
+    {
+      "id": "T7",
+      "kind": "theorem",
+      "title": "",
+      "statement": "$\\delta \\in \\D'(\\R^n) \\setminus L_1^{loc}(\\R^n)$.",
+      "proof": "",
+      "tags": [],
+      "source": "matan_4_semestr/Lecture_12.tex"
+    },
+    {
+      "id": "T8",
+      "kind": "theorem",
+      "title": "",
+      "statement": "Пусть задана последовательность $\\{f_m\\} \\subset L_1^{loc}(\\R)$ такая, что: \\begin{enumerate} \\item $\\displaystyle \\forall m \\in \\N \\hookrightarrow \\int_{\\R} f_m(x) dx = 1$ (интеграл, вообще говоря, несобственный Лебеговский); \\item $\\displaystyle \\exists C > 0 : \\left|\\int_a^b f_m(x)dx\\right| \\leq C$ $\\forall a, b \\in \\overline{\\R}$ $\\forall m \\in \\N$; \\item $\\displaystyle \\forall \\epsilon > 0 \\hookrightarrow \\int_{\\R \\setminus (-\\epsilon, \\epsilon)} |f_m(t)|dt \\ra 0, m \\ra +\\infty$. \\end{enumerate} Тогда она является регуляризацией $\\delta$ $(f_m \\xrightarrow[D'(\\R)]{} \\delta, \\ m \\ra +\\infty)$.",
+      "proof": "",
+      "tags": [],
+      "source": "matan_4_semestr/Lecture_12.tex"
+    },
+    {
+      "id": "T9",
+      "kind": "theorem",
+      "title": "",
+      "statement": "Определение выше~-- корректно в том смысле, что $g\\lambda$ действительно лежит в $D'(\\R^n)$ и в случае регулярных распределений совпадает с обычным умножением.",
+      "proof": "",
+      "tags": [],
+      "source": "matan_4_semestr/Lecture_12.tex"
+    },
+    {
+      "id": "T10",
+      "kind": "theorem",
+      "title": "",
+      "statement": "Определение выше корректно и в случае регулярного распределения, порождённого непрерывно дифференцируемой функцией (столько раз, сколько нам надо) совпадает с классическим определением.",
+      "proof": "",
+      "tags": [],
+      "source": "matan_4_semestr/Lecture_12.tex"
+    }
+  ]
+}

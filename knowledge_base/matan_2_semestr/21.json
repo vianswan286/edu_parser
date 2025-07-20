@@ -1,0 +1,103 @@
+{
+  "units": [
+    {
+      "id": "D1",
+      "kind": "definition",
+      "title": "",
+      "statement": "Пусть есть множество $X, \\ X \\neq \\emptyset.$ Пусть также $\\forall \\ n \\in \\N$ определена функция $f_n : X \\rightarrow \\R.$ Тогда будем говорить, что на $X$ задана функциональная последовательность $\\{f_n\\}_{n = 1}^\\infty$",
+      "proof": "",
+      "tags": [],
+      "source": "matan_2_semestr/21.tex"
+    },
+    {
+      "id": "D2",
+      "kind": "definition",
+      "title": "",
+      "statement": "Будем говорить, что последовательность $\\{f_n\\}_{n = 1}^\\infty$ поточечно сходится к функциии $f : X \\rightarrow \\R,$ если $$\\forall \\ x \\in X: \\lim_{n \\rightarrow \\infty} f_n(x) = f(x).$$ При этом записывают это так: $$f_n \\underset{X}{\\rightarrow} f, \\ n\\rightarrow \\infty$$",
+      "proof": "",
+      "tags": [],
+      "source": "matan_2_semestr/21.tex"
+    },
+    {
+      "id": "D3",
+      "kind": "definition",
+      "title": "",
+      "statement": "Будем говорить, что последовательность $\\{f_n\\}_{n = 1}^\\infty$ равномерно сходится к $f : X \\rightarrow \\R,$ если $$\\forall \\epsilon > 0 \\ \\exists N \\in \\N: \\ \\forall n \\geq N, \\ \\forall x \\in X: \\ |f_n(x) - f(x)| < \\epsilon$$",
+      "proof": "",
+      "tags": [],
+      "source": "matan_2_semestr/21.tex"
+    },
+    {
+      "id": "D4",
+      "kind": "definition",
+      "title": "",
+      "statement": "Последовательность $\\{f_n\\}$ на $X$ называется равномерно ограниченной на $X,$ если $\\exists \\ C > 0:$ $$|f_n(x)| \\leq C \\ \\forall n \\in N, \\ \\forall x \\in X.$$",
+      "proof": "",
+      "tags": [],
+      "source": "matan_2_semestr/21.tex"
+    },
+    {
+      "id": "D5",
+      "kind": "definition",
+      "title": "",
+      "statement": "Последовательность $\\{f_n\\}$ на $X$ называется поточечно ограниченной на $X,$ если $$\\forall x \\in X \\ \\exists \\ C > 0: |f_n(x)| \\leq C(x) \\ \\forall n \\in N$$",
+      "proof": "",
+      "tags": [],
+      "source": "matan_2_semestr/21.tex"
+    },
+    {
+      "id": "D6",
+      "kind": "definition",
+      "title": "",
+      "statement": "Пусть $X \\neq \\emptyset.$ Функциональным рядом на $X$ будем называть пару функциональных последовательностей $\\{f_n\\}$ и $\\{S_n\\},$ где $\\{f_n\\}$ -- член функционального ряда, $\\{S_n\\}$ -- частичная сумма функционального ряда, $S_n := \\sum_{k = 1}^{n} f_k.$ Обозначается $\\sum_{k = 1}^{\\infty} f_k.$",
+      "proof": "",
+      "tags": [],
+      "source": "matan_2_semestr/21.tex"
+    },
+    {
+      "id": "D7",
+      "kind": "definition",
+      "title": "",
+      "statement": "Говорят, что функциональный ряд $\\sum_{k = 1}^{\\infty} f_k$ поточечно сходится на $X,$ если существует функция $S: X \\rightarrow \\R,$ такая что $S_n$ поточечно сходится к $S.$ При этом говорят, что $S$ -- сумма ряда.",
+      "proof": "",
+      "tags": [],
+      "source": "matan_2_semestr/21.tex"
+    },
+    {
+      "id": "D8",
+      "kind": "definition",
+      "title": "",
+      "statement": "Говорят, что функциональный ряд $\\sum_{k = 1}^{\\infty} f_k$ равномерно сходится на $X,$ если существует функция $S: X \\rightarrow \\R,$ такая что $S_n$ равномерно сходится к $S.$",
+      "proof": "",
+      "tags": [],
+      "source": "matan_2_semestr/21.tex"
+    },
+    {
+      "id": "T9",
+      "kind": "theorem",
+      "title": "",
+      "statement": "(Критерий равномерной сходимости) $X \\neq \\emptyset$ $$f_n \\underset{X}{\\rr} f, \\ n\\rightarrow \\infty \\Longleftrightarrow \\exists \\ \\{a_n\\} \\subset [0; +\\infty): \\ a_n \\rightarrow 0, n \\rightarrow \\infty; \\ |f_n(x) - f(x)| \\leq a_n \\ \\forall n \\in \\N, \\forall x \\in X$$",
+      "proof": "",
+      "tags": [],
+      "source": "matan_2_semestr/21.tex"
+    },
+    {
+      "id": "T10",
+      "kind": "theorem",
+      "title": "",
+      "statement": "(Критерий отсутствия равномерной сходимости) Отсутствие равномерной сходимости $f_n$ к $f$ эквивалентно существованию последовательности $\\{x_n\\} \\subset X,$ такой что $|f_n(x_n) - f(x_n)|$ не стремится к $0, n \\rightarrow \\infty.$",
+      "proof": "",
+      "tags": [],
+      "source": "matan_2_semestr/21.tex"
+    },
+    {
+      "id": "T11",
+      "kind": "theorem",
+      "title": "",
+      "statement": "(Критерий Коши) Пусть $X \\neq \\emptyset$ и $\\{f_n\\}$ функциональная последовательность на $X.$ Тогда $$\\exists f: \\ f_n \\underset{X}{\\rr} f, \\ n\\rightarrow \\infty \\Longleftrightarrow \\forall \\epsilon > 0 \\ \\exists \\ N(\\epsilon) \\in \\N: \\forall m \\geq N(\\epsilon) \\forall n \\geq N(\\epsilon), \\ \\forall x \\in X: |f_n(x) - f_m(x)| < \\epsilon.$$",
+      "proof": "",
+      "tags": [],
+      "source": "matan_2_semestr/21.tex"
+    }
+  ]
+}

@@ -1,0 +1,58 @@
+{
+  "units": [
+    {
+      "id": "T1",
+      "kind": "theorem",
+      "title": "",
+      "statement": "Пусть $ -\\infty < a < b \\leq + \\infty$ и $f \\in \\Rim\\left( [a, b']\\right) \\: \\forall b' \\in (a, b)$. \\\\ Пусть $\\int \\limits_a^b f(x) dx$ сходится абсолютно, тогда он сходится.",
+      "proof": "",
+      "tags": [],
+      "source": "matan_2_semestr/17.tex"
+    },
+    {
+      "id": "T2",
+      "kind": "theorem",
+      "title": "",
+      "statement": "(замена переменной в несобственном интеграле) \\\\ Пусть $f \\in C\\left([a, b]\\right)$ и $x = x(t) \\in C^1\\left([\\alpha, \\beta]\\right)$ и $x$ строго монотонно переводит $[\\alpha, \\beta)$ в $[a, b)$. \\\\ Тогда, либо интегралы $\\int \\limits_a^b f(x)dx$ и $\\int \\limits_{\\alpha}^{\\beta} f(x(t))x'(t)dt$ сходятся или расходятся одновременно.\\\\ В случае их сходимости они равны. $$\\int \\limits_a^b f(x)dx = \\int \\limits_{\\alpha}^{\\beta} f(x(t))x'(t)dt$$",
+      "proof": "",
+      "tags": [],
+      "source": "matan_2_semestr/17.tex"
+    },
+    {
+      "id": "T3",
+      "kind": "theorem",
+      "title": "",
+      "statement": "(признак сравнения) Пусть $f, \\ g \\in \\Rim([a, b'])$ и пусть $0 \\leq f(x) \\leq g(x) \\ \\forall x \\in [a, b)$ $(\\star)$ \\\\ Тогда если $\\int \\limits_a^b g(x)dx$ сходится, то $\\int \\limits_a^b f(x) dx$ сходится. Если $\\int \\limits_a^b f(x)dx$ расходится, то $\\int \\limits_a^b g(x) dx$ расходится.",
+      "proof": "",
+      "tags": [],
+      "source": "matan_2_semestr/17.tex"
+    },
+    {
+      "id": "T4",
+      "kind": "theorem",
+      "title": "",
+      "statement": "(замена на эквивалентную) \\\\ Пусть $-\\infty < a < b < +\\infty$, $f, g \\in R([a, b']) \\ \\forall b' \\in (a, b).$ \\\\ Пусть $f, g \\geq 0$ на $[a, b)$. Пусть $f(x) \\overset{\\text{сх.}}{\\sim} g(x)$, $x \\to b - 0$. Тогда $\\int \\limits_a^b f(x) dx$ и $\\int \\limits_a^b g(x) dx $ сходятся или расходятся одновременно.",
+      "proof": "",
+      "tags": [],
+      "source": "matan_2_semestr/17.tex"
+    },
+    {
+      "id": "T5",
+      "kind": "theorem",
+      "title": "",
+      "statement": "(признак Дирихле) \\\\ Пусть $- \\infty < a < b \\leq + \\infty $. Пусть $f \\in C([a, b])$, $g \\in C^1([a, b))$. \\\\ \\begin{enumerate} \\item Первообразная $F$ функции $f$ ограничена на $[a, b).$ \\\\ $\\Longleftrightarrow$ $\\exists C > 0$: $\\left| \\int \\limits_a^x f(x) dx \\right| \\leq C \\ \\forall x \\in [a, b).$ \\item $\\exists \\lim \\limits_{x \\to b - 0} g(x) = 0.$ \\item $g'(x) \\leq 0$ $\\forall x \\in [a, b)$ $\\Longleftrightarrow$ $g$ нестрого убывает на $[a, b)$. \\end{enumerate} Тогда $\\int \\limits_a^b f(x) g(x) dx$ сходится.",
+      "proof": "",
+      "tags": [],
+      "source": "matan_2_semestr/17.tex"
+    },
+    {
+      "id": "T6",
+      "kind": "theorem",
+      "title": "",
+      "statement": "(признак Абеля) \\\\ Пусть $f \\in C([a, b]), \\ g \\in C^1([a, b])$. \\\\ \\begin{enumerate} \\item $\\int \\limits_a^b f(x) dx$ сходится. \\\\ \\item $g$~---~ограничена на $[a, b).$ \\item $g$~---~нестрого монотонна на $[a, b)$. \\end{enumerate} Тогда $\\int \\limits_a^b f(x) g(x) dx$ сходится.",
+      "proof": "",
+      "tags": [],
+      "source": "matan_2_semestr/17.tex"
+    }
+  ]
+}

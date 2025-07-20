@@ -1,0 +1,94 @@
+{
+  "units": [
+    {
+      "id": "D1",
+      "kind": "definition",
+      "title": "",
+      "statement": "\\textit{(Последовательность Гейне в точке)} Последовательностью Гейне в точке $x^0$ называют последовательность $\\{x^n\\}$: \\begin{enumerate} \\item $\\lim\\limits_{n\\to \\infty} x^{n} = x^{0};$ \\item $x^{n} \\neq x^{0} \\ \\forall n \\in \\N.$ \\end{enumerate}",
+      "proof": "",
+      "tags": [],
+      "source": "matan_2_semestr/0.tex"
+    },
+    {
+      "id": "D2",
+      "kind": "definition",
+      "title": "",
+      "statement": "Пусть $x^{0}$~---~предельная точка множества $E \\subset X$. Пусть $Y = (Y, d)$ — метрическое пространство и $f: E \\mapsto Y$ Будем говорить, что $\\lim\\limits_{\\underset{x \\in E}{x\\to x_{0}}} f (x) = y^{0} \\in Y$, если: $$ \\forall \\epsilon > 0 \\ \\exists \\delta = \\delta (\\epsilon) > 0: \\forall x \\in \\mathring{B}_{\\delta (\\epsilon)} (x^{0}) \\cap E \\hookrightarrow f (x) \\in B_{\\epsilon} (y^{0}) \\cap E \\text{~---~по Коши.}$$ $$ \\forall \\text{ последовательности Гейне }\\{ x^{n}\\} \\subset E \\ \\text{в точке } x_{0} \\hookrightarrow \\exists \\lim\\limits_{n\\to \\infty} f (x^{n}) = A\\text{~---~по Гейне.}$$",
+      "proof": "",
+      "tags": [],
+      "source": "matan_2_semestr/0.tex"
+    },
+    {
+      "id": "D3",
+      "kind": "definition",
+      "title": "",
+      "statement": "\\textit{(Предел по совокупности)} Пусть $f$: $\\mathring{B}_{\\delta _0} \\mapsto \\R$. Предел в смысле общей теории метрических пространств будем называть пределом по совокупности переменных и записывать: $$\\lim_{x \\to x^0} f(x) = A \\in \\overline{\\R} \\Longleftrightarrow \\lim\\limits_{\\underset{x_n \\to x_n^0}{x_1 \\to x_{1}^0}} f (x_1, ..., x_n) = A. $$ $$\\forall \\epsilon > 0 \\ \\exists \\ \\delta(\\epsilon) > 0: \\ \\forall x = (x_{1}, ..., x_n) \\in \\mathring{B}_{\\delta(\\epsilon)}(x^0) \\ \\hookrightarrow \\ f(x) \\in U_\\epsilon(A). $$",
+      "proof": "",
+      "tags": [],
+      "source": "matan_2_semestr/0.tex"
+    },
+    {
+      "id": "D4",
+      "kind": "definition",
+      "title": "",
+      "statement": "\\textit{(Предел по направлению)} Пусть $f$: $B_{\\delta _0} \\mapsto \\R$ и $\\overline{l} \\in \\R^n$: $||\\overline{l}|| = 1$. Пределом функции $f$ в точке $x^0$ по направлению $\\overline{l}$ будем называть: $$\\lim_{t \\to +0} f (x^0 + t\\overline{l}) = y^{0} \\in Y. $$",
+      "proof": "",
+      "tags": [],
+      "source": "matan_2_semestr/0.tex"
+    },
+    {
+      "id": "D5",
+      "kind": "definition",
+      "title": "",
+      "statement": "$S_r^{n-1}(x^0) := (n-1)$мерная сфера радиуса $r$ с центром в точке $x^0$. Сфера в $\\R^n$ имеет размерность $n-1$, так как нужна $n-1$ координата для определения положения точки, ведь радиус фиксирован.",
+      "proof": "",
+      "tags": [],
+      "source": "matan_2_semestr/0.tex"
+    },
+    {
+      "id": "D6",
+      "kind": "definition",
+      "title": "",
+      "statement": "(Повторный предел) Пусть $f$: $Q_{\\delta}(x^0, y^0) \\mapsto \\R$. Предположим, что $\\forall y \\in (y^0 - \\delta, y^0 + \\delta)$ $\\exists \\lim_{x \\to x^{0}} f(x, y) = \\phi(y).$ Тогда \\textit{повторным пределом} функции $f$ в точке называют: $\\lim_{y \\to y^0} \\phi(y) = \\lim_{x \\to x^0} \\lim_{y \\to y^0} f(x, y).$",
+      "proof": "",
+      "tags": [],
+      "source": "matan_2_semestr/0.tex"
+    },
+    {
+      "id": "D7",
+      "kind": "definition",
+      "title": "",
+      "statement": "Функция $f: X \\mapsto Y$, где $X$ и $Y$ - метрические пространства непрерывна на $X$ если она непрерывна по множеству в каждой точке $X$",
+      "proof": "",
+      "tags": [],
+      "source": "matan_2_semestr/0.tex"
+    },
+    {
+      "id": "D8",
+      "kind": "definition",
+      "title": "",
+      "statement": "Образом множества называют $f(X):= \\{f(x): x \\in X\\}$",
+      "proof": "",
+      "tags": [],
+      "source": "matan_2_semestr/0.tex"
+    },
+    {
+      "id": "T9",
+      "kind": "theorem",
+      "title": "",
+      "statement": "(Непрерывность композиции отображений) Пусть даны три метрических пространства $(X, d_{1}), \\ (Y, d_2), \\ (Z, d_3)$. В них выбраны подмножества $G \\subset X, \\ E \\subset Y, F \\subset Z$. И есть функции: $$f: G \\mapsto E$$ $$h: E \\mapsto F$$ Пусть $f$ непрерывна в точке $x^0 \\in G$ по множеству $G$. Пусть $h$ непрерывна в точке $y^0 \\in E$ по множеству $E$. При том $y^0 = f(x^0)$ \\\\ Тогда композиция $h \\circ f: G \\mapsto F$ непрерывна в точке $x^0$",
+      "proof": "",
+      "tags": [],
+      "source": "matan_2_semestr/0.tex"
+    },
+    {
+      "id": "T10",
+      "kind": "theorem",
+      "title": "",
+      "statement": "(О непрерывном отображении компакта) Пусть $K \\subset X$ — компакт. $(X, d)$ и $(Y, \\rho)$ - метрические пространства. $f: K \\mapsto Y$ - непрерывна на $K$. Тогда образ компакта $f(K)$ — компакт",
+      "proof": "",
+      "tags": [],
+      "source": "matan_2_semestr/0.tex"
+    }
+  ]
+}

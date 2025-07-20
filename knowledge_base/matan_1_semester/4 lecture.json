@@ -1,0 +1,58 @@
+{
+  "units": [
+    {
+      "id": "D1",
+      "kind": "definition",
+      "title": "",
+      "statement": "Последовательность $\\{ x_{n} \\}$ называется \\textit{сходящейся}, если она имеет конечный предел. В противном случае она называется \\textit{расходящейся}.",
+      "proof": "",
+      "tags": [],
+      "source": "matan_1_semester/4 lecture.tex"
+    },
+    {
+      "id": "D2",
+      "kind": "definition",
+      "title": "",
+      "statement": "Последовательность $\\{ x_{n} \\}$ называется \\textit{ограниченной}, если множество значений её элементов ограничено. То есть $$ \\exists M \\in [0; +\\infty): \\ \\forall n \\in \\N \\hookrightarrow |x_{n}| \\leq M.$$",
+      "proof": "",
+      "tags": [],
+      "source": "matan_1_semester/4 lecture.tex"
+    },
+    {
+      "id": "D3",
+      "kind": "definition",
+      "title": "",
+      "statement": "Последовательность $\\{ x_{n} \\}$ называется \\textit{бесконечно большой}, если \\newline $\\exists \\lim\\limits_{n\\to \\infty} x_{n} = \\infty.$",
+      "proof": "",
+      "tags": [],
+      "source": "matan_1_semester/4 lecture.tex"
+    },
+    {
+      "id": "D4",
+      "kind": "definition",
+      "title": "",
+      "statement": "Последовательность $\\{ x_{n} \\}$ называется \\textit{бесконечно малой}, если её предел равен 0.",
+      "proof": "",
+      "tags": [],
+      "source": "matan_1_semester/4 lecture.tex"
+    },
+    {
+      "id": "T5",
+      "kind": "theorem",
+      "title": "",
+      "statement": "Если у последовательности $\\{ x_{n} \\}$ существует предел в $\\overline{\\R}$, то он единственен в $\\overline{\\R}$.",
+      "proof": "",
+      "tags": [],
+      "source": "matan_1_semester/4 lecture.tex"
+    },
+    {
+      "id": "T6",
+      "kind": "theorem",
+      "title": "",
+      "statement": "Если последовательность $\\{ x_{n} \\}$ сходится, то она ограничена. Обратное неверно.",
+      "proof": "",
+      "tags": [],
+      "source": "matan_1_semester/4 lecture.tex"
+    }
+  ]
+}

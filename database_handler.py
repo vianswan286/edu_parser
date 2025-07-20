@@ -2,6 +2,7 @@ import sqlite3
 import json
 import struct
 import logging
+import json
 from typing import List, Dict, Any, Optional, Union
 from pathlib import Path
 
@@ -27,12 +28,44 @@ class DatabaseHandler:
         self.conn.execute("PRAGMA foreign_keys = ON")  # Enable foreign key constraints
         
         # Check if vector extension is available
+        self.vector_extension_available = False
+        
+        # Try to import sqlite-vss
         try:
-            self.conn.enable_load_extension(True)
-            self.conn.load_extension('vector')
-            self.vector_extension_available = True
-        except sqlite3.OperationalError:
-            self.vector_extension_available = False
+            import sqlite_vss
+            
+            # Try to load the extension
+            try:
+                # First try the standard way
+                self.conn.enable_load_extension(True)
+                self.conn.load_extension('vector')
+            except (AttributeError, sqlite3.OperationalError):
+                # If that fails, try using sqlite_vss.load()
+                sqlite_vss.load(self.conn)
+            
+            # Test if vector operations work
+            cursor = self.conn.cursor()
+            try:
+                cursor.execute("SELECT vss_version()")
+                version = cursor.fetchone()[0]
+                logger.info(f"Vector extension loaded successfully (v{version})")
+                self.vector_extension_available = True
+            except (sqlite3.OperationalError, IndexError):
+                # If vss_version() doesn't exist, try a simple vector operation
+                try:
+                    cursor.execute("SELECT vector_to_json('[1.0, 2.0, 3.0]')")
+                    logger.info("Vector extension loaded successfully")
+                    self.vector_extension_available = True
+                except sqlite3.OperationalError as e:
+                    logger.warning(f"Vector operations not available: {str(e)}")
+                    
+        except ImportError:
+            logger.warning("sqlite-vss package not installed")
+        except Exception as e:
+            logger.warning(f"Could not initialize vector extension: {str(e)}")
+            
+        if not self.vector_extension_available:
+            logger.info("Falling back to FTS-only mode")
     
     def __del__(self):
         """Close the database connection when the object is destroyed"""
@@ -144,35 +177,37 @@ class DatabaseHandler:
         try:
             cursor = self.conn.cursor()
             
-            # First, check if the vector extension is properly loaded
-            cursor.execute("SELECT 1 FROM sqlite_master WHERE type='table' AND name='knowledge_vectors'")
-            if not cursor.fetchone():
-                logger.warning("Vector table 'knowledge_vectors' does not exist. Creating it now.")
+            # Check if the embedding column exists in the knowledge_units table
+            cursor.execute("PRAGMA table_info(knowledge_units)")
+            columns = [column[1] for column in cursor.fetchall()]
+            
+            # Add the embedding column if it doesn't exist
+            if 'embedding' not in columns:
                 cursor.execute('''
-                CREATE VIRTUAL TABLE IF NOT EXISTS knowledge_vectors 
-                USING vector(
-                    embedding_id INTEGER PRIMARY KEY,
-                    vector_embedding,
-                    FOREIGN KEY (embedding_id) REFERENCES knowledge_units(id)
-                )
+                ALTER TABLE knowledge_units 
+                ADD COLUMN embedding BLOB
                 ''')
             
-            # Convert the embedding to a format suitable for the vector extension
-            # The vector extension expects a binary blob of 32-bit floats in little-endian format
-            embedding_bytes = struct.pack(f'<{len(embedding)}f', *embedding)
+            # Convert the embedding to a JSON string for storage
+            import json
+            embedding_json = json.dumps(embedding)
             
+            # Update the knowledge_units table with the embedding
             cursor.execute(
                 """
-                INSERT OR REPLACE INTO knowledge_vectors (embedding_id, vector_embedding)
-                VALUES (?, ?)
+                UPDATE knowledge_units 
+                SET embedding = ?
+                WHERE id = ?
                 """,
-                (unit_id, sqlite3.Binary(embedding_bytes))
+                (embedding_json, unit_id)
             )
+            
             self.conn.commit()
             return True
+            
         except Exception as e:
+            logger.error(f"Error adding embedding for unit {unit_id}: {str(e)}", exc_info=True)
             self.conn.rollback()
-            logger.error(f"Error adding embedding for unit {unit_id}: {str(e)}")
             return False
     
     def get_unit_by_id(self, unit_id: int) -> Optional[Dict[str, Any]]:
@@ -311,74 +346,84 @@ class DatabaseHandler:
                 if 'embedding' in result:
                     del result['embedding']
                 results.append(result)
-                
             return results
-            
+                
         except sqlite3.OperationalError as e:
             logger.error(f"Error performing full-text search: {str(e)}")
             return []
 
-    def find_similar_by_embedding(self, embedding: List[float], limit: int = 5) -> List[Dict[str, Any]]:
+    def find_similar_by_embedding(self, embedding, limit=5):
         """
-        Find knowledge units with similar embeddings.
+        Find similar knowledge units using vector similarity search.
         
         Args:
-            embedding: The query embedding vector
-            limit: Maximum number of similar units to return (default: 5)
-            
+            embedding: The embedding vector to compare against
+            limit: Maximum number of results to return
+                    
         Returns:
-            List[Dict]: List of similar units with their data (excluding embeddings)
+            List of similar knowledge units with their similarity scores
         """
         if not self.vector_extension_available:
-            logger.warning("Vector extension not available. Cannot perform similarity search.")
+            logger.warning("Vector extension not available, returning empty results")
             return []
-            
-        cursor = self.conn.cursor()
-        
+                    
         try:
-            # Convert the embedding to a format suitable for the vector extension
-            embedding_blob = sqlite3.Binary(bytes(bytearray(struct.pack(f'<{len(embedding)}f', *embedding))))
+            # Convert embedding to a list if it's not already
+            if not isinstance(embedding, list):
+                if isinstance(embedding, str):
+                    # If it's a JSON string, parse it
+                    embedding = json.loads(embedding)
+                elif hasattr(embedding, 'tolist'):
+                    # If it's a numpy array, convert to list
+                    embedding = embedding.tolist()
+                else:
+                    # Otherwise, try to convert to list directly
+                    embedding = list(embedding)
             
-            query = """
-            SELECT 
-                ku.id,
-                ku.original_id,
-                ku.lecture_id,
-                ku.kind,
-                ku.title,
-                ku.statement,
-                ku.proof,
-                ku.tags,
-                ku.source,
-                vector_distance(kv.vector_embedding, ?) AS distance
-            FROM knowledge_units ku
-            JOIN knowledge_vectors kv ON ku.id = kv.embedding_id
-            ORDER BY distance ASC
-            LIMIT ?
-            """
+            cursor = self.conn.cursor()
             
-            cursor.execute(query, (embedding_blob, limit))
+            # Get all knowledge units with embeddings
+            cursor.execute("""
+                SELECT id, title, statement, embedding
+                FROM knowledge_units
+                WHERE embedding IS NOT NULL
+            """)
+            
             results = []
-            columns = [desc[0] for desc in cursor.description]
             
+            # Calculate cosine similarity between the query embedding and each unit's embedding
             for row in cursor.fetchall():
-                result = dict(zip(columns, row))
-                # Convert tags from JSON string back to list if needed
-                if 'tags' in result and isinstance(result['tags'], str):
-                    try:
-                        result['tags'] = json.loads(result['tags'])
-                    except (json.JSONDecodeError, TypeError):
-                        result['tags'] = []
-                # Ensure we don't include embeddings
-                if 'embedding' in result:
-                    del result['embedding']
-                results.append(result)
-                
-            return results
+                try:
+                    # Parse the stored embedding
+                    stored_embedding = json.loads(row['embedding'])
+                    
+                    # Calculate cosine similarity
+                    dot_product = sum(a * b for a, b in zip(embedding, stored_embedding))
+                    norm_a = sum(a * a for a in embedding) ** 0.5
+                    norm_b = sum(b * b for b in stored_embedding) ** 0.5
+                    
+                    if norm_a == 0 or norm_b == 0:
+                        similarity = 0.0
+                    else:
+                        similarity = dot_product / (norm_a * norm_b)
+                    
+                    # Add to results
+                    results.append({
+                        'id': row['id'],
+                        'title': row['title'],
+                        'statement': row['statement'],
+                        'similarity': similarity
+                    })
+                except (json.JSONDecodeError, TypeError) as e:
+                    logger.warning(f"Error processing embedding for unit {row['id']}: {str(e)}")
+                    continue
             
-        except sqlite3.OperationalError as e:
-            logger.error(f"Error performing similarity search: {str(e)}")
-            return []
+            # Sort by similarity in descending order and take top results
+            results.sort(key=lambda x: x['similarity'], reverse=True)
+            results = results[:limit]
+            
+            return results
+                        
         except Exception as e:
-            logger.error(f"Unexpected error in find_similar_by_embedding: {str(e)}")
+            logger.error(f"Error in find_similar_by_embedding: {str(e)}", exc_info=True)
             return []

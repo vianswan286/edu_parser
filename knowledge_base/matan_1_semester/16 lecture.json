@@ -1,0 +1,94 @@
+{
+  "units": [
+    {
+      "id": "D1",
+      "kind": "definition",
+      "title": "",
+      "statement": "\\textit{Односторонние окрестности:} $$ U^{+}_{\\delta} (x_{0}) := [x_{0}, x_{0} + \\delta) $$ $$ U^{-}_{\\delta} (x_{0}) := (x_{0} - \\delta, x_{0}] $$",
+      "proof": "",
+      "tags": [],
+      "source": "matan_1_semester/16 lecture.tex"
+    },
+    {
+      "id": "D2",
+      "kind": "definition",
+      "title": "",
+      "statement": "Пусть $f:U^{+}_{\\delta_{0}} (x_{0}) \\mapsto \\R.$ Тогда если $$\\exists \\lim\\limits_{x \\to x_{0} +0} \\cfrac{f(x) - f(x_{0})}{x-x_{0}} \\in \\overline{R},$$ то он называется \\textit{правосторонней производной функции $f$ в точке $x_{0} \\ $} и обозначается $f'_{+}(x_{0})$ Аналогично определяется \\textit{левосторонняя производная функции $f$ в точке $x_{0} \\ $} и обозначается $f'_{-}(x_{0})$",
+      "proof": "",
+      "tags": [],
+      "source": "matan_1_semester/16 lecture.tex"
+    },
+    {
+      "id": "D3",
+      "kind": "definition",
+      "title": "",
+      "statement": "$f^{0} = f(x), f'(x)$ определили. ($f'(x)$~---~ функция точки $x$). Далее по индукции. Если в некоторой окрестности точки $x_{0}$ определена $f^{(n)}(x)$, то $f^{(n+1)} (x_{0}) = \\left(f^{(n)}\\right)'(x_{0})$",
+      "proof": "",
+      "tags": [],
+      "source": "matan_1_semester/16 lecture.tex"
+    },
+    {
+      "id": "D4",
+      "kind": "definition",
+      "title": "",
+      "statement": "Пусть $f$ дифференцируема в окрестности точки $x_{0}$ и $\\exists f''(x_{0})$. Тогда \\textit{дифференциалом 2-ого порядка функции f в точке $x_{0}$} называется дифференциал от дифференциала 1-ого порядка как функции точки $x$ при фиксированном $dx$",
+      "proof": "",
+      "tags": [],
+      "source": "matan_1_semester/16 lecture.tex"
+    },
+    {
+      "id": "D5",
+      "kind": "definition",
+      "title": "",
+      "statement": "Если определён $d^{(n)}f(x)$ в некоторой окрестности точки $x_{0}$ и $\\exists f^{(n+1)}(x_{0})$, то $d^{(n+1)} f(x_{0}) := d\\Bigl(d^{(n)}f(x)\\Bigr)(x_{0})$",
+      "proof": "",
+      "tags": [],
+      "source": "matan_1_semester/16 lecture.tex"
+    },
+    {
+      "id": "T6",
+      "kind": "theorem",
+      "title": "",
+      "statement": "Пусть $f$ дифференцируется в точке $x_{0}$. Тогда $f'_{+}(x_{0}) = f'_{-}(x_{0}) \\in \\R$.",
+      "proof": "",
+      "tags": [],
+      "source": "matan_1_semester/16 lecture.tex"
+    },
+    {
+      "id": "T7",
+      "kind": "theorem",
+      "title": "",
+      "statement": "\\hypertarget{thrm5.3}{} Пусть функции $f$ и $g$ дифференцируемые в точке $x_{0}\\in \\R.$ Тогда $f \\pm g$ и $ f\\cdot g$ дифференцируемые в точке $x_{0}$, если $g(x_{0}) \\neq 0,$ то $\\cfrac{f}{g}$ дифференцируема в точке $x_{0}$ Более того справедливы равенства: \\begin{enumerate} \\item $(f \\pm g)'(x_{0}) = f'(x_{0}) \\pm g'({x_{0}}) $ \\item $(f \\cdot g)'(x_{0}) = f'(x_{0}) \\cdot g({x_{0}}) + f(x_{0}) \\cdot g'({x_{0}})$ \\item $\\left(\\cfrac{f}{g}\\right)' (x_{0}) = \\cfrac{f'(x_{0}) \\cdot g({x_{0}}) - f(x_{0}) \\cdot g'({x_{0}})}{g^{2}(x_{0})}, \\quad$ $g'(x_{0}) \\neq 0$. \\end{enumerate}",
+      "proof": "",
+      "tags": [],
+      "source": "matan_1_semester/16 lecture.tex"
+    },
+    {
+      "id": "T8",
+      "kind": "theorem",
+      "title": "",
+      "statement": "\\hypertarget{thrm5.10}{(Производная сложной функции)} Пусть $f$ дифференцируема в точке $y_{0}$, $g$ дифференцируем в точке $x_{0}$. Тогда композиция $f \\circ g$ дифференцируема в точке $x_{0} $ и $(f\\circ g)'(x_{0}) = f'(g(x_{0})) g'(x_{0})$.",
+      "proof": "",
+      "tags": [],
+      "source": "matan_1_semester/16 lecture.tex"
+    },
+    {
+      "id": "T9",
+      "kind": "theorem",
+      "title": "",
+      "statement": "\\hypertarget{5.11}{(Производная обратной функции)} Пусть $y: U_{\\delta}(x_{0}) \\mapsto \\R$ строго монотонна и непрерывна в этой окрестности. Пусть $y'(x_{0}) \\neq 0$. Тогда существует обратная функция $x: U_{\\sigma}(y_{0}) \\mapsto U_{\\delta}(x_{0})$ строго монотонна и непрерывна в $U_{\\sigma}(y_{0})$. При этом $x$ дифференцируема в точке $y_{0} = y(x_{0})$ и $x'(y_{0}) = \\cfrac{1}{y'(x_{0})}$",
+      "proof": "",
+      "tags": [],
+      "source": "matan_1_semester/16 lecture.tex"
+    },
+    {
+      "id": "T10",
+      "kind": "theorem",
+      "title": "",
+      "statement": "Пусть $n\\in N, \\ \\exists f^{(n)}(x_{0})$. Тогда $d^{(n+1)} f(x_{0}) = f^{(n)}(x_{0}) (dx)^{n}$",
+      "proof": "",
+      "tags": [],
+      "source": "matan_1_semester/16 lecture.tex"
+    }
+  ]
+}

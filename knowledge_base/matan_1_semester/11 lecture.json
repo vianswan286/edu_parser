@@ -1,0 +1,85 @@
+{
+  "units": [
+    {
+      "id": "D1",
+      "kind": "definition",
+      "title": "",
+      "statement": "\\textit{Промежутком} назовём либо отрезок, либо инвервал, либо полуинтервал, то есть $\\lfloor a, b\\rceil \\Leftrightarrow$ $[a, b]$ или $(a, b)$, или $[a, b)$, или $(a, b]$.",
+      "proof": "",
+      "tags": [],
+      "source": "matan_1_semester/11 lecture.tex"
+    },
+    {
+      "id": "D2",
+      "kind": "definition",
+      "title": "",
+      "statement": "Пусть $E \\subset \\R$, $E \\neq \\varnothing$. Пусть $f$: $E \\mapsto \\R$. \\textit{Колебание $f$ на $E$}~---~$\\omega_{E} [f] := \\underset{x_{1}, x_{2} \\in E}{\\sup} |f (x_{1}) - f (x_{2})|$.",
+      "proof": "",
+      "tags": [],
+      "source": "matan_1_semester/11 lecture.tex"
+    },
+    {
+      "id": "D3",
+      "kind": "definition",
+      "title": "",
+      "statement": "Пусть $X \\subset \\R$, $X \\neq \\varnothing$, $x_{0} \\in X$. Тогда \\textit{колебанием функции в точке} назовём $\\omega_{x_{0}} [f] := \\underset{\\delta > 0}{\\inf} \\omega_{U_{\\delta} (x_{0})} [f]$.",
+      "proof": "",
+      "tags": [],
+      "source": "matan_1_semester/11 lecture.tex"
+    },
+    {
+      "id": "D4",
+      "kind": "definition",
+      "title": "",
+      "statement": "\\textit{Функцией Римана} назовём: $$ R (x) := \\begin{cases} 0, \\ \\forall x \\in \\R \\backslash \\Q \\\\ \\frac{1}{q}, \\ \\forall x \\in \\Q \\ (x = \\frac{p}{q}, \\ p \\in \\Z, \\ q \\in \\N, \\ (p, q) = 1) \\end{cases} $$",
+      "proof": "",
+      "tags": [],
+      "source": "matan_1_semester/11 lecture.tex"
+    },
+    {
+      "id": "T5",
+      "kind": "theorem",
+      "title": "",
+      "statement": "Пусть $K$~---~компакт, $K \\neq \\varnothing$. Пусть $f$: $K \\mapsto R$. Если $f$~---~полунепрерывна снизу на компакте, то она достигает своего минимума, а если полунепрерывна сверху, то~---~максимума.",
+      "proof": "",
+      "tags": [],
+      "source": "matan_1_semester/11 lecture.tex"
+    },
+    {
+      "id": "T6",
+      "kind": "theorem",
+      "title": "",
+      "statement": "\\hypertarget{thm5.4}{(Теорема Больцано-Коши/о промежуточном значении) Пусть} $a < b$. Пусть $f \\in \\text{C} ([a, b])$. Тогда $\\forall y^{*} \\in [min\\big[f (a), f (b)\\big], max\\big[f (a), f (b)\\big]]\\ \\exists x^{*} \\in [a, b]$: $f (x^{*}) = y^{*}.$",
+      "proof": "",
+      "tags": [],
+      "source": "matan_1_semester/11 lecture.tex"
+    },
+    {
+      "id": "T7",
+      "kind": "theorem",
+      "title": "",
+      "statement": "\\hypertarget{thrm4.15}{(Обобщённая теорема о промежуточном значении)} Пусть $f$: $\\lfloor a, b\\rceil \\mapsto \\R$. Пусть $f \\in \\text{C} \\big(\\lfloor a, b\\rceil \\big)$. Пусть $m = \\underset{x \\in \\lfloor a, b\\rceil}{\\inf} f (x)$, $M = \\underset{x \\in \\lfloor a, b\\rceil}{\\sup} f (x)$. Тогда $\\forall y^{*} \\in (m, M) \\ \\exists x^{*} \\in \\lfloor a, b\\rceil$: $f (x^{*}) = y^{*}$.",
+      "proof": "",
+      "tags": [],
+      "source": "matan_1_semester/11 lecture.tex"
+    },
+    {
+      "id": "T8",
+      "kind": "theorem",
+      "title": "",
+      "statement": "\\hypertarget{thm4.16}{Функция непрерывна в точке по множеству} $\\Leftrightarrow$ колебание в ней 0. То есть пусть $X \\subset \\R$, $X \\neq \\varnothing$, $x_{0} \\in X$, $f$~---~непрерывна в точке $x_{0}$ по множеству $X \\Leftrightarrow \\omega_{x_{0}} [f] = 0.$",
+      "proof": "",
+      "tags": [],
+      "source": "matan_1_semester/11 lecture.tex"
+    },
+    {
+      "id": "T9",
+      "kind": "theorem",
+      "title": "",
+      "statement": "\\hypertarget{thrm4.17}{(О замене переменной под знаком предела)} Пусть $x_{0}, y_{0} \\in \\overline{\\R}$. Пусть $y$: $\\mathring{U}_{\\delta_{0}} (x_{0}) \\mapsto \\R$, $f$: $\\mathring{U}_{\\delta_{0}} (y_{0}) \\mapsto \\R$. Пусть $\\exists \\lim\\limits_{y\\to y_{0}} f (y) = A$, $A \\in \\Hat{\\R}$ и $y (x) \\neq y_{0} \\ \\forall x \\in \\mathring{U}_{\\delta_{0}} (x_{0}).$ Тогда $\\exists \\lim\\limits_{x\\to x_{0}} f (y (x)) = A.$",
+      "proof": "",
+      "tags": [],
+      "source": "matan_1_semester/11 lecture.tex"
+    }
+  ]
+}

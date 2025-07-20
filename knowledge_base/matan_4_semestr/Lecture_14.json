@@ -1,0 +1,58 @@
+{
+  "units": [
+    {
+      "id": "D1",
+      "kind": "definition",
+      "title": "",
+      "statement": "Пусть $\\lambda \\in S'(\\R)$. Определим преобразование Фурье как \\[ (F[\\lambda], \\phi) = (\\lambda, F[\\phi]). \\] И обратное произведение Фурье: \\[ (F^{-1}[\\lambda], \\phi) = (\\lambda, F^{-1}[\\phi]). \\] На всякой пробной функции.",
+      "proof": "",
+      "tags": [],
+      "source": "matan_4_semestr/Lecture_14.tex"
+    },
+    {
+      "id": "D2",
+      "kind": "definition",
+      "title": "",
+      "statement": "Зафиксируем $f \\in L_2(\\R)$. Пусть $\\{\\phi_n\\} \\subset S(\\R)$ такая, что \\[ \\|\\phi_n - f\\|_{L_2} \\ra 0, n \\ra +\\infty. \\] А значит $\\{\\phi_n\\}$ -- фундаментальна по $L_2$-норме. Тогда и $\\{F[\\phi_n]\\}$ -- фундаментальна в $L_2(\\R)$. В силу полноты $L_2$ мы определим \\[ F[f] = \\lim\\limits_{n \\ra +\\infty} F[\\phi_n]. \\]",
+      "proof": "",
+      "tags": [],
+      "source": "matan_4_semestr/Lecture_14.tex"
+    },
+    {
+      "id": "T3",
+      "kind": "theorem",
+      "title": "Теорема X",
+      "statement": "Пусть $\\phi_m \\xrightarrow{S} \\phi, \\; m \\ra \\infty$. Тогда $F[\\phi_m] \\xrightarrow{S} F[\\phi], \\; m \\ra \\infty$.",
+      "proof": "",
+      "tags": [],
+      "source": "matan_4_semestr/Lecture_14.tex"
+    },
+    {
+      "id": "T4",
+      "kind": "theorem",
+      "title": "",
+      "statement": "Определение преобразования Фурье в $S'$ -- корректно, то есть $\\forall \\lambda \\in S'(\\R)$ функционалы $F[\\lambda]$ и $F^{-1}[\\lambda]$ являются корректно определёнными линейными непрерывными функционалами в $S'$. Более того, если $\\lambda \\in S'(\\R)$ порождён $f \\in L_1(\\R)$, то преобразование Фурье в обобщённом смысле совпадает с преобразованием Фурье в классическом смысле.",
+      "proof": "",
+      "tags": [],
+      "source": "matan_4_semestr/Lecture_14.tex"
+    },
+    {
+      "id": "T5",
+      "kind": "theorem",
+      "title": "",
+      "statement": "Определение преобразования Фурье в $L_2(\\R)$ корректно.",
+      "proof": "",
+      "tags": [],
+      "source": "matan_4_semestr/Lecture_14.tex"
+    },
+    {
+      "id": "T6",
+      "kind": "theorem",
+      "title": "Теорема Планшереля.",
+      "statement": "Преобразование Фурье осуществляет изометрический изоморфизм $L_2(\\R)$ на $L_2(\\R)$. \\\\ Кроме того, справедливы следующие свойства: \\begin{enumerate} \\item $\\forall f, g \\in L_2(\\R) \\hookrightarrow (f, g) = (F[f], F[g])$. \\item Если $f \\in L_2(\\R)$ и $\\{f_n\\} \\subset L_2(\\R)$, такая, что $\\|f_n - f\\|_{L_2} \\ra 0, n \\ra \\infty$, то $\\|F[f_n] - F[f]\\|_{L_2} \\ra 0, n \\ra \\infty$. \\item $F^{-1}[F[f]] = F[F^{-1}[f]] = f$. \\end{enumerate}",
+      "proof": "",
+      "tags": [],
+      "source": "matan_4_semestr/Lecture_14.tex"
+    }
+  ]
+}

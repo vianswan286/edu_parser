@@ -1,0 +1,199 @@
+\begin{proposition}
+    Пусть $a \in \Hat{\R}, c \geq 1, \   \lim\limits_{n\to \infty} x_{n} = a$. Cледующие условия эквивалентны:
+    \begin{enumerate}
+        \item $\forall \epsilon > 0 \  \exists N(\epsilon) \in \N$: $\forall n \geq N(\epsilon) \hookrightarrow |x_{n}| \in U_{\epsilon}(a)$;
+        \item $\forall \epsilon > 0 \  \exists \Tilde{N}(\epsilon) \in \N$: $\forall n \geq \Tilde{N}(\epsilon) \hookrightarrow |x_{n}| \in U_{c\epsilon}(a)$.
+    \end{enumerate}
+\end{proposition}
+\begin{proof}$ \ $
+    Так как $c \geq 1$, то $U_{\epsilon} \subset U_{c\epsilon}$, откуда получаем импликацию $(1)\to (2)$ (при $\Tilde{N} (\epsilon) = N(\epsilon)$).
+
+    Теперь докажем $(2)\to (1)$. Так как для любого $\epsilon$, то возьмём $\epsilon / c$, то $\forall \epsilon > 0 \  N(\epsilon) := \Tilde{N}(\epsilon / c)$: $\forall n \geq \Tilde{N}(\epsilon / c) \hookrightarrow x_{n} \in U_{c \epsilon / с} (a) = U_{\epsilon} (a).$
+\end{proof}
+\begin{definition}
+    Последовательность $\{ x_{n} \}$ называется \textit{сходящейся}, если она имеет конечный предел. В противном случае она называется \textit{расходящейся}.
+\end{definition}
+\begin{definition}
+    Последовательность $\{ x_{n} \}$ называется \textit{ограниченной}, если множество значений её элементов ограничено. То есть
+
+    $$ \exists M \in [0; +\infty): \  \forall n \in \N \hookrightarrow |x_{n}| \leq M.$$
+\end{definition}
+\begin{definition}
+    Последовательность $\{ x_{n} \}$ называется \textit{бесконечно большой}, если \newline $\exists \lim\limits_{n\to \infty} x_{n} = \infty.$
+\end{definition}
+\begin{note}
+    Притом
+
+    $$\left[ 
+      \begin{gathered} 
+        \exists \lim\limits_{n\to \infty} x_{n} = -\infty \\ 
+        \exists \lim\limits_{n\to \infty} x_{n} = +\infty \\ 
+      \end{gathered}
+      \quad \Rightarrow \{ x_{n} \} - \textit{бесконечно большая.}
+\right.$$
+
+    Обратное неверно. Контрпример: $\{ x_{n} \} = \{ (-1)^{n} \cdot n \} \  \forall n \in \N.$ Она бесконечно большая, но при этом $\lim\limits_{n\to \infty} x_{n} \neq -\infty$, $\lim\limits_{n\to \infty} x_{n} \neq +\infty.$
+\end{note}
+\begin{problem}
+    Как связаны условия:
+    \begin{enumerate}
+        \item Последовательность $\{ x_{n} \}$~---~неограничена;
+        \item Последовательность $\{ x_{n} \}$~---~бесконечно большая?
+    \end{enumerate}
+\end{problem}
+\begin{solution}
+    $(2)\rightarrow (1).$ Но $(1) \nrightarrow (2).$ Контрпример: $\{ x_{n} \}^{\infty}_{n = 1} = \{ (1 + (-1)^{n}) \cdot n \}^{\infty}_{n = 1}$~---~неограничена, но и не бесконечно большая.
+\end{solution}
+\begin{lemma}
+    (Лемма о непересекающихся окрестностях)
+
+    $$ \forall a, b \in \overline{\R}, \  a \neq b \  \exists \epsilon > 0: U_{\epsilon} (a) \cap U_{\epsilon} (b) = \varnothing.$$
+\end{lemma}
+\begin{proof}
+    Возможны 4 случая:
+    
+    \begin{enumerate}
+        \item $a, b \in \R$, $-\infty < a < b < +\infty.$ Тогда возьмём $\displaystyle \epsilon = \frac{b - a}{2}.$
+
+        $$\displaystyle U_{\epsilon} (a) = \bigg( a - \frac{b - a}{2}, \  a + \frac{b - a}{2} \bigg) \cap U_{\epsilon} (b) = \bigg( a + \frac{b - a}{2}, \  b + \frac{b - a}{2} \bigg) = \varnothing.$$
+        \item $-\infty < a < b = +\infty.$ Рассмотрим $\displaystyle \epsilon = \frac{1}{|a| + 1}$ и заметим, что тогда $\epsilon \leq 1.$
+
+        $$\displaystyle U_{\epsilon} (b) = (|a| + 1, \  +\infty) \cap U_{\epsilon} (a) = \bigg (a - \frac{1}{|a| + 1}, \  a + \frac{1}{|a| + 1} \bigg) = \varnothing,$$
+
+        так как $U_{\epsilon} (a) \subset (a - 1, \  a + 1)$, который не пересекается с $U_{\epsilon} (b).$
+
+        \newpage
+
+        \item $-\infty = a < b < +\infty$. Тогда действуем по аналогии с пунктом выше и рассматриваем $\displaystyle \epsilon = \frac{1}{|b| + 1}.$
+
+        \item $-\infty = a < b = +\infty.$ Рассмотрим $\epsilon = 1.$
+
+        $$ U_{\epsilon} (a) = (-\infty, \ -1) \cap U_{\epsilon} (b) = (1, \ +\infty) = \varnothing. $$
+    \end{enumerate}
+\end{proof}
+\begin{theorem}
+    Если у последовательности $\{ x_{n} \}$ существует предел в $\overline{\R}$, то он единственен в $\overline{\R}$.
+\end{theorem}
+\begin{proof}
+    Предположим, что $\exists a, b \in \overline{\R} \hookrightarrow a \neq b, \lim\limits_{n\to \infty} x_{n} = a, \lim\limits_{n\to \infty} x_{n} = b.$
+
+    Тогда по лемме о непересекающихся окрестностях $\exists \epsilon^{*} > 0$: $U_{\epsilon^{*}} (a) \cap U_{\epsilon^{*}} (b) = \varnothing.$
+
+    Запишем определение предела:
+
+    $$\lim\limits_{n\to \infty} x_{n} = a \  \Leftrightarrow \   \forall \epsilon > 0 \  \exists N_{1} (\epsilon) \in \N: \  \forall n \geq N_{1} (\epsilon) \hookrightarrow |x_{n}| \in U_{\epsilon}(a)$$
+    $$\lim\limits_{n\to \infty} x_{n} = b \  \Leftrightarrow \   \forall \epsilon > 0 \  \exists N_{2} (\epsilon) \in \N: \  \forall n \geq N_{2} (\epsilon) \hookrightarrow |x_{n}| \in U_{\epsilon}(b)$$
+
+    Подставим $\epsilon = \epsilon^{*}.$
+    
+    Следовательно, если мы возьмём $n > max \{ N_{1} (\epsilon^{*}), N_{2} (\epsilon^{*} )\}$, то $x_{n} \in \left(U_{\epsilon^{*}} (a) \cap U_{\epsilon^{*}} (b)\right) = \varnothing.$ Противоречие. Следовательно $a = b$.
+\end{proof}
+\begin{note}
+    В $\Hat{\R}$ предел может быть не единственен. (Так как если $+\infty$~---~предел, то и $\infty$~---~предел).
+
+    Если $\{ x_{n} = n \}^{\infty}_{n = 1}$, то $ \lim\limits_{n\to \infty} x_{n} = +\infty$ и $ \lim\limits_{n\to \infty} x_{n} = \infty$.
+\end{note}
+\begin{theorem}
+    Если последовательность $\{ x_{n} \}$ сходится, то она ограничена. Обратное неверно.
+\end{theorem}
+\begin{proof}
+    Пусть последовательность $\{ x_{n} \}$ сходится, значит у неё есть предел, назовём его $a$, и этот предел~---~число. Но тогда по определению
+
+    $$ \forall \epsilon > 0 \  \exists N(\epsilon) \in \N: \forall n \geq N(\epsilon) \hookrightarrow x_{n} \in U_{\epsilon} (a).$$
+
+    Тогда в частности $\exists N = N(1)$: $\forall n \geq N(1) \hookrightarrow |x_{n}| \leq |a| + 1.$
+
+    Поскольку вне хвоста конечное число элементов, то возьмём $M := max \{ |x_{1}|, |x_{2}, \ldots, |x_{N(1)}|, \newline |a| + 1\}.$ Отсюда следует, $|x_{n}| \leq M \  \forall n \in \N.$
+
+    Контрпример: $\{ x_{n} \} = \{ (-1)^{n} \}^{\infty}_{n = 1}$~---~ограничена, но не является сходящейся. Более того эта последовательность не имеет предела в $\Hat{\R}$.
+\end{proof}
+
+\newpage 
+\subsection{Свойства пределов сходящихся последовательностей, связанные с арифметическими операциями}
+
+\begin{definition}
+    Последовательность $\{ x_{n} \}$ называется \textit{бесконечно малой}, если её предел равен 0.
+\end{definition}
+\begin{lemma}
+    Произведение ограниченной и бесконечно малой последовательностей есть бесконечно малая последовательность. То есть, если $ \{ x_{n} \}$~---~ограниченная последовательность, а $ \{ y_{n} \}$ бесконечно малая, то $\{ z_{n} \} := \{ x_{n} \cdot y_{n}\}^{\infty}_{n = 1}$~---~бесконечно малая последовательность.
+\end{lemma}
+\begin{proof}
+    $$\{ x_{n} \} \text{~---~ограниченная последовательность} \Leftrightarrow \exists M \geq 0: \forall n \in \N \hookrightarrow |x_{n}| \leq M.$$
+    $$\{ y_{n} \} \text{~---~бесконечно малая последовательность} \Leftrightarrow \forall \epsilon > 0 \  \exists N (\epsilon) \in \N: \  \forall n \geq N (\epsilon) \hookrightarrow |y_{n} - 0| < \epsilon.$$
+
+    Тогда $\forall \epsilon > 0 \  \exists N (\epsilon) \in \N$: $\forall n \geq N (\epsilon) \hookrightarrow |x_{n} \cdot y_{n}| < M \cdot \epsilon$, а тогда по утверждению 2.1 $\forall \epsilon > 0 \  \exists \Tilde{N} (\epsilon) = N (\epsilon), \  M < 1$ или $\Tilde{N} (\epsilon) = N (\epsilon / M), \  M \geq 1.$ Итого $\forall n \geq \Tilde{N} (\epsilon) \hookrightarrow |x_{n} \cdot y_{n}| < \epsilon.$
+\end{proof}
+\begin{lemma}
+    Сумма, разность и произведение бесконечно малых последовательностей есть бесконечно малая последовательность, то есть, если 
+    \begin{equation*}
+        \begin{cases}
+            \{ x_{n} \} \text{~---~бесконечно малая}\\
+            \{ y_{n} \} \text{~---~бесконечно малая}& 
+        \end{cases}
+        \Rightarrow
+        \begin{cases}
+            \{ x_{n} \pm y_{n} \} \text{~---~бесконечно малая}\\
+            \{ x_{n} \cdot y_{n} \}\  \text{~---~бесконечно малая}& 
+        \end{cases}
+    \end{equation*}
+\end{lemma}
+\begin{proof}
+    Докажем для суммы и разности. Тогда с учётом утверждения 2.1:
+
+    $$\forall \epsilon > 0 \  \exists N_{1} (\epsilon) \in \N: \  \forall n \geq N_{1} (\epsilon) \hookrightarrow |x_{n}| \in U_{\epsilon / 2}(0)$$
+    $$\forall \epsilon > 0 \  \exists N_{2} (\epsilon) \in \N: \  \forall n \geq N_{2} (\epsilon) \hookrightarrow |y_{n}| \in U_{\epsilon / 2}(0)$$
+
+    Возьмём $N(\epsilon) := max\{ N_{1} (\epsilon), N_{2} (\epsilon) \}$. Получим
+
+    $$\forall \epsilon > 0 \  \exists N (\epsilon) \in \N: \  \forall n \geq N(\epsilon) \hookrightarrow x_{n} \pm y_{n} \in U_{\epsilon}(0).$$
+
+    Тот факт, что $\{ x_{n} \cdot y_{n} \}$~---~бесконечно малая следует из того, что $\{ x_{n} \}$ ограничена (а это следует из того, что она сходящаяся, так как она бесконечно малая) и $\{ y_{n} \}$~---~бесконечно малая, а по лемме 2.2 их произведение будет бесконечно малой последовательностью.
+\end{proof}
+\begin{lemma}
+    $$ \lim\limits_{n\to \infty} x_{n} = a \in \R \Leftrightarrow \text{последовательность } \{a - x_{n} \} \text{~---~бесконечно малая}.$$
+\end{lemma}
+\begin{lemma}
+    Пусть $a = \lim\limits_{n\to \infty} a_{n}$, $b = \lim\limits_{n\to \infty} b_{n}$, при этом $a, b \in \R$. Тогда
+    $$ \lim\limits_{n\to \infty} (a_{n} \pm b_{n}) = a \pm b$$
+    $$ \lim\limits_{n\to \infty} (a_{n} \cdot b_{n}) = a \cdot b$$
+\end{lemma}
+\begin{proof}
+    Для суммы и разности нужно лишь заметить, что последовательность $\{ (a_{n} \pm b_{n}) - (a \pm b)\}^{\infty}_{n = 1}$~---~бесконечно малая (можно убедиться, раскрыв скобки и воспользовавшись леммой 2.4).
+
+    Покажем для произведения. Для этого достаточно доказать, что $\{ (a_{n} b_{n}) - (a b)\}^{\infty}_{n = 1}$~---~бесконечно малая последовательность.
+
+    Заметим, что $a_{n} b_{n} - a b = a_{n} b_{n} - a_{n} b + a_{n} b - ab = a_{n} \cdot (b_{n} - b) + b \cdot (a_{n} - a)$.
+
+    Рассмотрим последовательность $\{ a_{n} \cdot (b_{n} - b) \}^{\infty}_{n = 1}$. Она бесконечно малая, как произведение ограниченной на бесконечно малую (так как $\{ a_{n} \}$~---~это бесконечно малая последовательность, то она является сходящейся, как следствие и ограниченной), а $\{ b_{n} - b \}$~---~бесконечно малая).
+
+    Теперь рассмотрим последовательность $\{ b \cdot (a_{n} - a) \}^{\infty}_{n = 1}$ и стационарную последовательность, которая равна $b$ при всех $n \in N$, тогда снова получаем произведение ограниченной последовательности на бесконечно малую ($\{ b \}$~---~ограничена, $\{ a_{n}-a \}$~---~бесконечно малая), что есть бесконечно малая последовательность.
+
+    Итого получаем разность двух бесконечно малых последовательностей, которая есть бесконечно малая последовательность, что мы и хотели. Правило для произведения теперь доказано.
+\end{proof}
+\begin{lemma}
+    Пусть $x_{n} \neq 0 \  \forall n \in \N$ и $\exists \lim\limits_{n\to \infty} x_{n} = x$: $x \in \R, x \neq 0$. Тогда $\displaystyle \exists \lim\limits_{n\to \infty} \frac{1}{x_{n}} = \frac{1}{x}$.
+\end{lemma}
+\begin{proof}
+    Покажем, что последовательность $\{ \frac{1}{x_{n}} \}$~---~ограничена.
+
+    Действительно, по определению предела получаем
+
+    $$\forall \epsilon > 0 \  \exists N (\epsilon) \in \N: \forall n \geq N \hookrightarrow x_{n} \in U_{\epsilon} (x).$$
+
+    Возьмём $\epsilon = \frac{|x|}{2}$, то $\exists N^{*} \in \N$: $\forall n \geq N^{*} \hookrightarrow x_{n} \in U_{\frac{|x|}{2}} (x) \Leftrightarrow x - \frac{|x|}{2} < x_{n} < x + \frac{|x|}{2}$.
+
+    $$\forall n \geq N^{*} \hookrightarrow |x_{n}| \geq \frac{|x|}{2} \Rightarrow \forall n \geq N^{*} \hookrightarrow \frac{1}{|x_{n}|} \leq \frac{2}{|x|}.$$
+    Возьмём $M := max \{ \frac{1}{|x_{1}|}, \frac{1}{|x_{2}|}, \ldots, \frac{1}{|x_{N^{*}}|}, \frac{2}{|x|}\} \Rightarrow \frac{1}{|x_{n}|} \leq M \  \forall n \in \N \Rightarrow$ последовательность $\{ \frac{1}{x_{n}} \}$~---~ограничена.
+
+    Рассмотрим $\displaystyle \frac{1}{x_{n}} - \frac{1}{x} = \frac{x - x_{n}}{x \cdot x_{n}} = \frac{1}{x \cdot x_{n}} \cdot (x - x_{n})$ и заметим, что $\{ x - x_{n} \}$~---~бесконечно малая последовательность, а $\ \displaystyle \frac{1}{x \cdot x_{n}}$~---~ограничена, так как $\displaystyle \left\{{1 \over x_{n}}\right\}$~---~ограничена.
+
+    Итого получаем $\displaystyle \frac{1}{x_{n}} - \frac{1}{x}$~---~бесконечно малая $\displaystyle \Leftrightarrow \lim\limits_{n\to \infty} \frac{1}{x_{n}} = \frac{1}{x}$.
+\end{proof}
+\begin{corollary}
+    \hypertarget{corollemm2.6}{Пусть} $\exists \lim\limits_{n\to \infty} y_{n} = y$, $y \in \R$; $\exists \lim\limits_{n\to \infty} x_{n} = x$, $x \in \R$, $x \neq 0$ и $x_{n} \neq 0 \  \forall n \in \N$.
+
+    Тогда $\displaystyle \exists \lim\limits_{n\to \infty} \frac{y_{n}}{x_{n}} = \frac{y}{x}$.
+\end{corollary}
+\begin{proof}
+    Достаточно воспользоваться предыдущей леммой и леммой о пределе произведения последовательностей и рассмотреть $\displaystyle \frac{y_{n}}{x_{n}}$, как $\displaystyle y_{n} \cdot \frac{1}{x_{n}} .$
+\end{proof}
